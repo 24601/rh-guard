@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { parseHookEvent, score, toClaudeOutput } from "@/lib/risk";
+import { parseHookEvent, scoreEvent, toClaudeOutput } from "@/lib/risk";
 
 export async function POST(request: Request) {
   let raw: unknown;
@@ -9,6 +9,6 @@ export async function POST(request: Request) {
     return NextResponse.json({}, { status: 200 });
   }
   const parsed = parseHookEvent(raw);
-  const report = score(parsed.input);
+  const report = await scoreEvent(parsed.input);
   return NextResponse.json(toClaudeOutput(parsed.event, report));
 }

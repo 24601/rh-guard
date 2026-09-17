@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { parseScoreRequest, score } from "@/lib/risk";
+import { parseScoreRequest, scoreEvent } from "@/lib/risk";
 
 export async function POST(request: Request) {
   let raw: unknown;
@@ -8,6 +8,6 @@ export async function POST(request: Request) {
   } catch {
     return NextResponse.json({ error: "JSON body required." }, { status: 400 });
   }
-  const report = score(parseScoreRequest(raw));
+  const report = await scoreEvent(parseScoreRequest(raw));
   return NextResponse.json(report);
 }

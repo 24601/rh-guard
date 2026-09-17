@@ -36,7 +36,7 @@ export function zeroshotLabels(haystack: string): Evidence[] {
       detectorId: `gliclass-shape:${spec.kind}`,
       weight: Number((0.45 + 0.4 * combined).toFixed(3)),
       excerpt: clipExcerpt(excerpt),
-      why: `Zero-shot overlap with the GLiClass label "${spec.gliclass}". Swap this scorer for knowledgator/gliclass-base-v3.0 without changing the label set.`,
+      why: `Lexical overlap with the offline GLiClass label "${spec.gliclass}". Live scoring uses TypeSafe Jev when TYPESAFE_API_KEY is set.`,
     });
   }
   return evidence;

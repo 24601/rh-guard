@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { parseHookEvent, score, toClaudeOutput, toCursorOutput } from "../src/lib/risk";
+import { parseHookEvent, scoreEvent, toClaudeOutput, toCursorOutput } from "../src/lib/risk";
 
 async function main() {
   const flavor = process.argv[2] === "cursor" ? "cursor" : "claude";
@@ -13,7 +13,7 @@ async function main() {
   }
   const raw = JSON.parse(text) as unknown;
   const parsed = parseHookEvent(raw);
-  const report = score(parsed.input);
+  const report = await scoreEvent(parsed.input);
   const out =
     flavor === "cursor"
       ? toCursorOutput(parsed.event, report)

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,16 +18,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { EXAMPLES } from "@/lib/risk/examples";
 import {
-  EXAMPLES,
   RISK_KINDS,
   kindBlurb,
   kindTitle,
-  score,
-  type ScoreInput,
+  type NeuralBackend,
   type Stage,
   type Verdict,
-} from "@/lib/risk";
+} from "@/lib/risk/kinds";
+import type { ScoreInput, ScoreReport } from "@/lib/risk/domain";
 
 const STAGES: { value: Stage; label: string }[] = [
   { value: "prompt", label: "Prompt" },
@@ -44,10 +44,18 @@ function verdictTone(verdict: Verdict): "secondary" | "outline" | "destructive" 
   return "destructive";
 }
 
+function backendLabel(backend: NeuralBackend, model: string): string {
+  if (backend === "jev") return model || "jev";
+  return "Lexical fallback";
+}
+
 export function ScoreWorkbench() {
   const [exampleId, setExampleId] = useState(EXAMPLES[1].id);
   const [stage, setStage] = useState<Stage>(EXAMPLES[1].input.stage);
   const [text, setText] = useState(EXAMPLES[1].input.prompt ?? "");
+  const [report, setReport] = useState<ScoreReport | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const input: ScoreInput = useMemo(() => {
     if (stage === "tool") {
@@ -65,13 +73,39 @@ export function ScoreWorkbench() {
     return { stage, transcript: text };
   }, [stage, text]);
 
-  let report = null;
-  let error: string | null = null;
-  try {
-    report = score(input);
-  } catch (err) {
-    error = err instanceof Error ? err.message : "Scoring failed.";
-  }
+  useEffect(() => {
+    if (!text.trim()) {
+      return;
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(() => {
+      setLoading(true);
+      setError(null);
+      fetch("/api/score", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(input),
+        signal: controller.signal,
+      })
+        .then(async (response) => {
+          const body: unknown = await response.json().catch(() => null);
+          if (!response.ok) {
+            throw new Error("Score request failed.");
+          }
+          setReport(body as ScoreReport);
+        })
+        .catch((err: unknown) => {
+          if (err instanceof DOMException && err.name === "AbortError") return;
+          setReport(null);
+          setError(err instanceof Error ? err.message : "Scoring failed.");
+        })
+        .finally(() => setLoading(false));
+    }, 250);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
+  }, [input, text]);
 
   function loadExample(id: string) {
     const example = EXAMPLES.find((item) => item.id === id);
@@ -93,7 +127,9 @@ export function ScoreWorkbench() {
         <CardHeader>
           <CardTitle>Score a prompt or trace</CardTitle>
           <CardDescription>
-            Same engine the Claude and Cursor hooks call. Structural detectors plus GLiClass-shaped labels.
+            Structural denies first. Semantic scoring is TypeSafe Jev when
+            TYPESAFE_API_KEY is set, otherwise the lexical GLiClass stand-in. The
+            same path the Claude and Cursor hooks call.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-3">
@@ -145,7 +181,8 @@ export function ScoreWorkbench() {
             </p>
           ) : null}
           <p className="text-xs text-muted-foreground">
-            Empty input scores as ok. Load a risky example or paste a real Claude/Cursor trace.
+            Empty input scores as ok. Load a risky example or paste a real Claude or
+            Cursor trace. Set TYPESAFE_API_KEY to score with Jev.
           </p>
         </CardContent>
       </Card>
@@ -156,8 +193,16 @@ export function ScoreWorkbench() {
             <CardHeader>
               <CardTitle>Empty</CardTitle>
               <CardDescription>
-                Nothing to score yet. A hook in this state exits 0 and leaves the agent alone.
+                Nothing to score yet. A hook in this state exits 0 and leaves the agent
+                alone.
               </CardDescription>
+            </CardHeader>
+          </Card>
+        ) : loading && !report ? (
+          <Card>
+            <CardHeader>
+              <CardTitle>Scoring</CardTitle>
+              <CardDescription>Waiting on the hook scorer.</CardDescription>
             </CardHeader>
           </Card>
         ) : report ? (
@@ -167,12 +212,22 @@ export function ScoreWorkbench() {
                 <div>
                   <CardTitle>Verdict</CardTitle>
                   <CardDescription>
-                    Combined score {report.overall.toFixed(2)} at the {report.stage} stage.
+                    Combined score {report.overall.toFixed(2)} at the {report.stage}{" "}
+                    stage. {backendLabel(report.backend, report.model)}
+                    {report.confidence !== null
+                      ? ` · choice confidence ${report.confidence.toFixed(2)}`
+                      : ""}
+                    {loading ? " · updating" : ""}
                   </CardDescription>
                 </div>
                 <Badge variant={verdictTone(report.verdict)}>{report.verdict}</Badge>
               </CardHeader>
               <CardContent className="flex flex-col gap-3">
+                {report.neuralError ? (
+                  <p className="text-sm text-destructive">
+                    Jev failed ({report.neuralError}). Using the lexical fallback.
+                  </p>
+                ) : null}
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {RISK_KINDS.map((kind) => (
                     <div
@@ -221,7 +276,8 @@ export function ScoreWorkbench() {
                 <CardHeader>
                   <CardTitle>Steer</CardTitle>
                   <CardDescription>
-                    What the user should change about the eval, and what the hook injects into the agent.
+                    What the user should change about the eval, and what the hook
+                    injects into the agent. Jev does not write this copy. Code does.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">

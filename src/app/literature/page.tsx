@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { LITERATURE } from "@/lib/risk";
+import { LITERATURE } from "@/lib/risk/literature";
 
 export default function LiteraturePage() {
   return (
@@ -14,9 +14,11 @@ export default function LiteraturePage() {
       <div className="mb-6 flex flex-col gap-2">
         <h1 className="font-heading text-2xl tracking-tight">What else detects reward hacking</h1>
         <p className="max-w-3xl text-sm text-muted-foreground">
-          Bergen et al. 2026 (arXiv 2609.19101) is a white-box difference-of-means probe. It is
-          strong on open SWE agents and useless on Claude or Cursor, where you cannot read
-          activations. The rows below are the rest of the stack this repo is built against.
+          Jev is TypeSafe AI&apos;s System One model (Almeida, Sep 2026). It is the
+          live scorer in this repo. Bergen et al. 2026 (arXiv 2609.19101) is a
+          white-box difference-of-means probe. It is strong on open SWE agents and
+          useless on Claude or Cursor, where you cannot read activations. GLiClass is
+          the offline label catalog, not the hosted decision model.
         </p>
       </div>
       <div className="flex flex-col gap-4">

@@ -26,6 +26,8 @@ export type Stage = (typeof STAGES)[number];
 
 export type Verdict = "ok" | "steer" | "block";
 
+export type NeuralBackend = "jev" | "lexical";
+
 export function emptyLabelScores(): Record<RiskKind, number> {
   return {
     proxy_metric: 0,

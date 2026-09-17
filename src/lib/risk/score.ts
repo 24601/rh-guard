@@ -1,6 +1,13 @@
 import { blob, type Evidence, type ScoreInput, type ScoreReport } from "./domain";
 import { runDetectors } from "./detectors";
 import {
+  callJev,
+  jevQuestions,
+  neuralFromJev,
+  packState,
+  type NeuralLayer,
+} from "./jev";
+import {
   emptyLabelScores,
   kindTitle,
   type RiskKind,
@@ -38,13 +45,18 @@ function kindScores(evidence: Evidence[]): Record<RiskKind, number> {
   return labels;
 }
 
-function overallFrom(labels: Record<RiskKind, number>): number {
+function overallFrom(labels: Record<RiskKind, number>, severity: number | null): number {
   let survival = 1;
   for (const value of Object.values(labels)) {
     if (value <= 0) continue;
     survival *= 1 - Math.min(value, 0.97);
   }
-  return Number((1 - survival).toFixed(3));
+  let overall = 1 - survival;
+  if (severity !== null) {
+    const fromSeverity = Math.min(Math.max(severity / 3, 0), 1);
+    overall = Math.max(overall, fromSeverity * 0.85);
+  }
+  return Number(overall.toFixed(3));
 }
 
 function verdictFor(input: ScoreInput, overall: number, labels: Record<RiskKind, number>): Verdict {
@@ -82,14 +94,36 @@ function agentContext(evidence: Evidence[], kinds: RiskKind[]): string {
   return lines.join("\n");
 }
 
-export function score(input: ScoreInput): ScoreReport {
+export function lexicalNeural(haystack: string): NeuralLayer {
+  return {
+    backend: "lexical",
+    model: "lexical-gliclass-shape",
+    confidence: null,
+    evidence: zeroshotLabels(haystack),
+    severity: null,
+  };
+}
+
+export async function collectNeural(input: ScoreInput, haystack: string): Promise<NeuralLayer> {
+  if (!process.env.TYPESAFE_API_KEY) {
+    return lexicalNeural(haystack);
+  }
+  try {
+    const result = await callJev(packState(input), jevQuestions());
+    return neuralFromJev(result);
+  } catch (err) {
+    const fallback = lexicalNeural(haystack);
+    const message = err instanceof Error ? err.message : "Jev call failed.";
+    return { ...fallback, error: message };
+  }
+}
+
+export function score(input: ScoreInput, neural?: NeuralLayer): ScoreReport {
   const haystack = blob(input);
-  const evidence = mergeEvidence([
-    runDetectors(input, haystack),
-    zeroshotLabels(haystack),
-  ]);
+  const layer = neural ?? lexicalNeural(haystack);
+  const evidence = mergeEvidence([runDetectors(input, haystack), layer.evidence]);
   const labels = kindScores(evidence);
-  const overall = overallFrom(labels);
+  const overall = overallFrom(labels, layer.severity);
   const verdict = verdictFor(input, overall, labels);
   const activeKinds = (Object.entries(labels) as [RiskKind, number][])
     .filter(([, value]) => value >= 0.36)
@@ -104,10 +138,21 @@ export function score(input: ScoreInput): ScoreReport {
     verdict,
     labels,
     evidence,
+    backend: layer.backend,
+    model: layer.model,
+    confidence: layer.confidence,
+    severity: layer.severity,
+    neuralError: layer.error,
     steer: {
       user,
       agentContext: verdict === "ok" ? "" : agentContext(evidence, activeKinds),
       moves,
     },
   };
+}
+
+export async function scoreEvent(input: ScoreInput): Promise<ScoreReport> {
+  const haystack = blob(input);
+  const neural = await collectNeural(input, haystack);
+  return score(input, neural);
 }
