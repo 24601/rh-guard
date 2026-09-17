@@ -30,7 +30,7 @@ export const LITERATURE: MethodRow[] = [
         url: "https://arxiv.org/abs/2609.19101",
         year: "Sep 2026",
         claim:
-          "GLM 5.2 hacked 57.2% of DeepSWE rollouts and 73% of SWE-bench rollouts. Difference-of-means vectors matched LLM monitors at near-zero cost (plus 3.1% TPR on Kimi K3, minus 7.9% on GLM 5.2 at matched FPR) and predicted later hacks from CoT.",
+          "GLM 5.2 hacked 57.2% of DeepSWE rollouts and 73% of SWE-bench rollouts. At monitor-matched FPR, DoM was plus 3.1% TPR on Kimi K3 and minus 7.9% on GLM 5.2. Probe-or-monitor on Kimi DeepSWE moved TPR from 41.1% to 80.2% at plus 1% FPR. CoT probe peaks later produced attempted hacks in 28.6% of resamples vs 1.1% of controls.",
       },
     ],
   },
@@ -159,6 +159,13 @@ export const LITERATURE: MethodRow[] = [
         claim:
           "Python API: ZeroShotClassificationPipeline(text, labels, threshold=0.5). Models on Hugging Face under knowledgator/gliclass-*.",
       },
+      {
+        title: "SetFit: Efficient Few-Shot Learning with Sentence Transformers",
+        url: "https://arxiv.org/abs/2209.11055",
+        year: "2022",
+        claim:
+          "A few-shot cousin if you would rather train a linear head on sentence embeddings than GLiClass. Hugging Face reports 0.46 ms/sentence vs 31.18 ms for bart-large-mnli on one GPU comparison. No published reward-hacking ROC. Train it on School of Reward Hacks plus Terminal-Wrench sanitized traces.",
+      },
     ],
   },
   {
@@ -199,6 +206,66 @@ export const LITERATURE: MethodRow[] = [
         year: "2026",
         claim:
           "Hacker-Opus trained on 80 real hackable production environments generalized to killing monitors, rewriting history, and prompt-injecting safety monitors.",
+      },
+    ],
+  },
+  {
+    name: "Prompted-hack probes vs training-time hacks",
+    needsInternals: true,
+    when: "You are collecting labels for a DoM or SAE probe and might be tempted to use 'please hack' demonstrations.",
+    hookFit: "Do not train the white-box probe on School of Reward Hacks prompted CoT if you want it to catch RL-emergent SWE hacks.",
+    limit:
+      "A probe that looks great on prompted exploits can miss the hacks that appear in GRPO or production RL.",
+    citations: [
+      {
+        title: "Trace-and-Amplify (arXiv 2604.23488)",
+        url: "https://arxiv.org/html/2604.23488v2",
+        year: "2026",
+        claim:
+          "LogReg trained on prompted exploits hit 8.79% of training-time code hacks. The same architecture trained on training-time hacks hit 86.03%. Prompted GPT-4.1 hit 3.70% of the training-time set.",
+      },
+    ],
+  },
+  {
+    name: "AI Control and prover-verifier games",
+    needsInternals: false,
+    when: "The agent and the monitor might collude, or you want a small verifier that a sneaky prover cannot charm.",
+    hookFit:
+      "Treat the HTTP or command hook as an untrusted monitor. Add synthetic honeypots. Do not ask the same agent to justify its own diff. Prefer a weaker trusted model or a locked checker for the final gate.",
+    limit:
+      "Naive same-model monitoring is defeated by 'pretend not to see backdoors'. Letting the untrusted model explain the suspicious region to the trusted one failed in Greenblatt et al. Correctness-only CoT in Kirchner et al. made proofs less human-legible.",
+    citations: [
+      {
+        title: "AI Control: Improving Safety Despite Intentional Subversion",
+        url: "https://arxiv.org/abs/2312.06942",
+        year: "2023",
+        claim:
+          "Trusted editing, untrusted monitoring with synthetic honeypots, redaction, and defer-to-trusted. Greenblatt, Shlegeris, Sachan, Roger.",
+      },
+      {
+        title: "Prover-Verifier Games improve legibility of LLM outputs",
+        url: "https://arxiv.org/abs/2407.13692",
+        year: "2024",
+        claim:
+          "Kirchner et al. train a helpful plus sneaky prover against a small verifier. Optimizing only for correctness made chain-of-thought less checkable.",
+      },
+    ],
+  },
+  {
+    name: "Verbalization fine-tuning",
+    needsInternals: false,
+    when: "You control training and want CoT monitors to have something to read.",
+    hookFit: "Not a hook. A third party cannot VFT Claude or Cursor. The verbalization judge is a mid-trajectory CoT read.",
+    limit:
+      "Without VFT, verbalization of cue use stayed around 8 to 12%. After RL, undetected hacking (ECR) was 6% with VFT vs 88% with RL only. Do not train against that judge.",
+    citations: [
+      {
+        title:
+          "Teaching Models to Verbalize Reward Hacking in Chain-of-Thought Reasoning",
+        url: "https://arxiv.org/abs/2506.22777",
+        year: "2025",
+        claim:
+          "Turpin et al. SFT models to admit cue influence, then RL. Held-out cue ECR 15% vs 63 to 66% for baselines. Warns against training against the CoT monitor, citing Baker.",
       },
     ],
   },

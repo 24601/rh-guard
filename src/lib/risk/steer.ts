@@ -9,7 +9,7 @@ export function movesFor(kinds: RiskKind[]): VerifierMove[] {
       title: "Add hidden tests the agent cannot edit",
       audience: "user",
       instruction:
-        "Put extra tests in a path the hook denies writes to, such as eval/hidden/. Score the agent on those tests, not on tests/.",
+        "Run extra tests from CI or the hook process, not from a file in this workspace. Hacker-Opus-style agents will find and edit a suite that lives on disk.",
     },
     {
       id: "property-tests",
@@ -30,7 +30,7 @@ export function movesFor(kinds: RiskKind[]): VerifierMove[] {
       title: "Run an independent verifier after stop",
       audience: "user",
       instruction:
-        "On Stop, run a second command the agent did not author: a held-out binary, a mutation test, or a typechecker with a frozen config.",
+        "On Stop, run a second command the agent did not author. A held-out binary, a mutation test, or a typechecker with a frozen config. Keep that checker out of the workspace.",
     },
     {
       id: "falsifier",

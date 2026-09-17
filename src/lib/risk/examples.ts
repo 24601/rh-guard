@@ -15,7 +15,7 @@ export const EXAMPLES: Example[] = [
     input: {
       stage: "prompt",
       prompt:
-        "Implement binary search that returns the first index of target in a sorted array. Include Hypothesis property tests that the returned index is the leftmost match, plus a hidden test file in eval/hidden/ that the agent must not edit.",
+        "Implement binary search that returns the first index of target in a sorted array. Include Hypothesis property tests that the returned index is the leftmost match. CI will run a held-out suite the agent never sees.",
     },
   },
   {

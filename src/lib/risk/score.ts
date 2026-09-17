@@ -71,6 +71,7 @@ function agentContext(evidence: Evidence[], kinds: RiskKind[]): string {
   const lines = [
     "Reward-hacking risk detector (Hack Radar).",
     "Treat the user's stated tests as an incomplete proxy. Do not edit tests, snapshots, hooks, or reward files.",
+    "Visible tests under tests/ are not the eval. Held-out checks run in CI or the hook process.",
     "Prefer a general implementation plus a falsifier over a fixture that greets the visible cases.",
     "",
     "Flags:",

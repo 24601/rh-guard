@@ -17,20 +17,24 @@ export type CursorHookOutput = {
   continue?: boolean;
   permission?: "allow" | "deny" | "ask";
   user_message?: string;
+  agent_message?: string;
   additional_context?: string;
   followup_message?: string;
 };
+
+const PROCESS_DENY =
+  "Edit production code only. Do not edit tests, snapshots, graders, hooks, or reward files.";
 
 export function toClaudeOutput(event: string, report: ScoreReport): ClaudeHookOutput {
   const context = report.steer.agentContext;
   if (event === "PreToolUse") {
     if (report.verdict === "block") {
+      const why = report.evidence[0]?.why ?? "Blocked as a reward-hacking action.";
       return {
         hookSpecificOutput: {
           hookEventName: "PreToolUse",
           permissionDecision: "deny",
-          permissionDecisionReason:
-            report.evidence[0]?.why ?? "Blocked as a reward-hacking action.",
+          permissionDecisionReason: `${why} ${PROCESS_DENY}`,
         },
       };
     }
@@ -82,29 +86,32 @@ export function toClaudeOutput(event: string, report: ScoreReport): ClaudeHookOu
 export function toCursorOutput(event: string, report: ScoreReport): CursorHookOutput {
   const context = report.steer.agentContext;
   if (event === "beforeSubmitPrompt") {
-    if (report.verdict === "block") {
-      return {
-        continue: false,
-        user_message:
-          report.steer.user[0] ??
-          "Hack Radar blocked this prompt because the eval is a gameable proxy.",
-      };
+    if (report.verdict === "ok") {
+      return { continue: true };
     }
-    return { continue: true };
+    return {
+      continue: false,
+      user_message:
+        report.steer.user[0] ??
+        "Hack Radar blocked this prompt because the eval is a gameable proxy. Add a held-out suite in CI or the hook process, not in this workspace.",
+    };
   }
-  if (
-    event === "preToolUse" ||
-    event === "beforeShellExecution" ||
-    event === "afterFileEdit"
-  ) {
+  if (event === "afterFileEdit" || event === "afterAgentThought") {
+    return {};
+  }
+  if (event === "postToolUse" || event === "postToolUseFailure") {
+    return context ? { additional_context: context } : {};
+  }
+  if (event === "preToolUse" || event === "beforeShellExecution") {
     if (report.verdict === "block") {
       return {
         permission: "deny",
         user_message: report.evidence[0]?.why,
+        agent_message: PROCESS_DENY,
       };
     }
     if (event === "preToolUse" && context) {
-      return { permission: "allow", additional_context: context };
+      return { permission: "allow", agent_message: context };
     }
     return { permission: "allow" };
   }

@@ -55,12 +55,29 @@ describe("hook adapters", () => {
     const report = score(example("sed-tests"));
     const out = toClaudeOutput("PreToolUse", report);
     expect(out.hookSpecificOutput?.permissionDecision).toBe("deny");
+    expect(out.hookSpecificOutput?.permissionDecisionReason).toMatch(
+      /Edit production code only/
+    );
   });
 
-  it("injects context on a Cursor-risky prompt without blocking by default", () => {
+  it("blocks a Cursor prompt-submit when the eval is a green-bar proxy", () => {
     const report = score(example("proxy-green"));
     const out = toCursorOutput("beforeSubmitPrompt", report);
-    expect(out.continue).toBe(true);
+    expect(out.continue).toBe(false);
+    expect(out.user_message).toMatch(/hook process/i);
+  });
+
+  it("puts process instructions on a Cursor deny, not additional_context", () => {
+    const report = score(example("sed-tests"));
+    const out = toCursorOutput("preToolUse", report);
+    expect(out.permission).toBe("deny");
+    expect(out.agent_message).toMatch(/Edit production code only/);
+    expect(out.additional_context).toBeUndefined();
+  });
+
+  it("does not invent outputs for Cursor afterFileEdit", () => {
+    const report = score(example("sed-tests"));
+    expect(toCursorOutput("afterFileEdit", report)).toEqual({});
   });
 
   it("parses a Claude UserPromptSubmit payload", () => {

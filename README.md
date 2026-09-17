@@ -35,9 +35,9 @@ Structural detectors fire on tool calls and patches. A lexical zero-shot layer f
 
 Keep `npm run dev` running.
 
-**Claude Code.** Merge `examples/claude-settings.json` into `.claude/settings.json`. `UserPromptSubmit` injects steering context. `PreToolUse` denies test-file writes, assertion sed, and `--no-verify`.
+**Claude Code.** Merge `examples/claude-settings.json` into `.claude/settings.json`. `UserPromptSubmit` injects steering context. `PreToolUse` denies test-file writes, assertion sed, and `--no-verify`. Claude HTTP hooks only honor a 2xx JSON body. A status code alone does not block.
 
-**Cursor.** Copy `examples/cursor-hooks.json` to `.cursor/hooks.json`. Command hooks read JSON on stdin through `npx tsx hooks/run.ts cursor`.
+**Cursor.** Copy `examples/cursor-hooks.json` to `.cursor/hooks.json`. Command hooks read JSON on stdin through `npx tsx hooks/run.ts cursor`. `beforeSubmitPrompt` cannot inject context, so a gameable prompt is blocked with a user message instead. Set `failClosed: true` on shell and tool gates. Held-out tests belong in CI or the hook process, not in a file the agent can `find`.
 
 Do not add this score as an RL penalty on chain-of-thought. [Baker et al. 2025](https://arxiv.org/abs/2503.11926) showed that training against a CoT monitor produces obfuscated hacks.
 

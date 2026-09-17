@@ -4,10 +4,16 @@
     "beforeSubmitPrompt": [
       { "command": "npx tsx hooks/run.ts cursor" }
     ],
-    "beforeShellExecution": [
+    "sessionStart": [
       { "command": "npx tsx hooks/run.ts cursor" }
     ],
+    "beforeShellExecution": [
+      { "command": "npx tsx hooks/run.ts cursor", "failClosed": true }
+    ],
     "preToolUse": [
+      { "command": "npx tsx hooks/run.ts cursor", "failClosed": true }
+    ],
+    "postToolUse": [
       { "command": "npx tsx hooks/run.ts cursor" }
     ],
     "stop": [

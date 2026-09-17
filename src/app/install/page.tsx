@@ -50,10 +50,16 @@ const cursorHooks = `{
     "beforeSubmitPrompt": [
       { "command": "npx tsx hooks/run.ts cursor" }
     ],
-    "beforeShellExecution": [
+    "sessionStart": [
       { "command": "npx tsx hooks/run.ts cursor" }
     ],
+    "beforeShellExecution": [
+      { "command": "npx tsx hooks/run.ts cursor", "failClosed": true }
+    ],
     "preToolUse": [
+      { "command": "npx tsx hooks/run.ts cursor", "failClosed": true }
+    ],
+    "postToolUse": [
       { "command": "npx tsx hooks/run.ts cursor" }
     ],
     "stop": [
@@ -69,7 +75,9 @@ export default function InstallPage() {
         <h1 className="font-heading text-2xl tracking-tight">Install on a coding agent</h1>
         <p className="max-w-3xl text-sm text-muted-foreground">
           Keep this app running. Point Claude Code at the HTTP routes. Point Cursor at the stdin
-          CLI. Prompts get extra context. Test-file writes and `--no-verify` get denied.
+          CLI. Claude can inject verifier context on submit. Cursor cannot, so a risky prompt is
+          blocked and the user is asked to add a held-out suite. Test-file writes and `--no-verify`
+          get denied.
         </p>
       </div>
       <div className="grid gap-4 lg:grid-cols-2">
@@ -78,6 +86,7 @@ export default function InstallPage() {
             <CardTitle>Claude Code</CardTitle>
             <CardDescription>
               Merge into .claude/settings.json. HTTP hooks POST the event JSON to this process.
+              A non-2xx response cannot block. The body has to be 2xx JSON with a decision.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -89,6 +98,8 @@ export default function InstallPage() {
             <CardTitle>Cursor</CardTitle>
             <CardDescription>
               Save as .cursor/hooks.json. Cloud agents run project hooks from the repo root.
+              beforeSubmitPrompt cannot inject context, so a gameable prompt is blocked for the
+              user. failClosed keeps a broken scorer from failing open on shell and tool gates.
             </CardDescription>
           </CardHeader>
           <CardContent>
