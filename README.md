@@ -10,6 +10,18 @@ Agent-visible denials are opaque filesystem-integrity messages. Scores and taxon
 
 Closed agents such as Claude and Cursor do not expose activations, so Bergen et al. 2026 difference-of-means vectors cannot run here. The Methods page lists those methods and when they do apply.
 
+## Clone
+
+Both copies are private.
+
+```bash
+# GitHub
+git clone https://github.com/24601/rh-guard.git
+
+# Origin
+origin repo clone basit/rh-guard
+```
+
 ## Run it
 
 ```bash
