@@ -24,6 +24,7 @@ export {
   DENY_KINDS,
   ADVISORY_KINDS,
   parsePolicyMode,
+  blockThreshold,
 } from "./kinds";
 export type { ScoreInput, ScoreReport, Evidence, VerifierMove } from "./domain";
 export type {

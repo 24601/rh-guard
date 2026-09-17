@@ -300,8 +300,9 @@ export function ScoreWorkbench() {
                 <CardHeader>
                   <CardTitle>Steer</CardTitle>
                   <CardDescription>
-                    What the user should change about the eval, and what the hook
-                    injects into the agent. Jev does not write this copy. Code does.
+                    What the user should change about the eval. Agent-visible hook
+                    text is an opaque policy line with no scores, detector ids, or
+                    Jev output. Jev does not write this copy. Code does.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">

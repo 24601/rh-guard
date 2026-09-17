@@ -1,4 +1,12 @@
-import { clipExcerpt, type Evidence, type ScoreInput } from "./domain";
+import { blob, clipExcerpt, type Evidence, type ScoreInput } from "./domain";
+import {
+  commandFromInput,
+  diffSummary,
+  injectionDetected,
+  parseCommandLine,
+  targetPaths,
+  tickPath,
+} from "./digest";
 import type { NeuralBackend } from "./kinds";
 import {
   GLICLASS_LABELS,
@@ -66,7 +74,7 @@ export type SystemOneResult = {
 
 const FIELD_LIMIT = 4000;
 const STATE_LIMIT = 12000;
-const JEV_TIMEOUT_MS = 2000;
+const JEV_TIMEOUT_MS = 1200;
 const NOUL_FIRE = 0.36;
 
 function clip(text: string, max = FIELD_LIMIT): string {
@@ -89,8 +97,12 @@ function artifactRole(path: string | undefined): string {
 }
 
 export function packState(input: ScoreInput): Record<string, unknown> {
+  const haystack = blob(input);
+  const command = commandFromInput(input);
+  const parsed = command ? parseCommandLine(command) : null;
+  const paths = targetPaths(input);
   const evidenceMissing: string[] = [];
-  if (!input.prompt && !input.patch && !input.toolInput && !input.transcript) {
+  if (!input.prompt && !input.patch && !input.toolInput) {
     evidenceMissing.push("subject");
   }
   const state: Record<string, unknown> = {
@@ -107,46 +119,26 @@ export function packState(input: ScoreInput): Record<string, unknown> {
         private_evaluation_access_authorized: false,
         approved_specification_changes: [] as string[],
       },
+      injection_detected: injectionDetected(haystack),
       evidence_missing: evidenceMissing,
     },
     subject: {
       request: input.prompt ? clip(input.prompt) : "",
-      tool_arguments: {
-        file_path: input.path ?? null,
-        tool: input.toolName ?? null,
-        input: input.toolInput ? clip(input.toolInput, 2500) : null,
-      },
-      changes:
-        input.path || input.patch
-          ? [
-              {
-                path: input.path ?? null,
-                artifact_role: artifactRole(input.path),
-                before: "",
-                after: input.patch ? clip(input.patch, 2500) : "",
-              },
-            ]
-          : [],
-      claims: [] as string[],
+      command: parsed,
+      normalized_targets: paths.map(tickPath),
+      diff_summary: input.patch ? diffSummary(input.patch) : "",
+      artifact_role: artifactRole(input.path ?? paths[0]),
     },
     context: {
-      relevant_prior_events: input.transcript
-        ? [{ kind: "transcript_digest", text: clip(input.transcript, 2000) }]
-        : [],
+      relevant_prior_events: [] as unknown[],
       trusted_verification_results: [] as string[],
     },
   };
   const encoded = JSON.stringify(state);
   if (encoded.length <= STATE_LIMIT) return state;
-  const context = state.context as { relevant_prior_events: unknown[] };
-  if (context.relevant_prior_events.length > 0) {
-    context.relevant_prior_events = [
-      {
-        kind: "transcript_digest",
-        text: clip(input.transcript ?? "", 800),
-      },
-    ];
-  }
+  const subject = state.subject as { diff_summary: string; request: string };
+  subject.diff_summary = diffSummary(input.patch ?? "", 400);
+  subject.request = clip(input.prompt ?? "", 800);
   return state;
 }
 

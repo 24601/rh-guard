@@ -4,9 +4,9 @@ Score coding-agent prompts and trajectories for reward-hacking risk. Then steer 
 
 The live semantic scorer is [TypeSafe Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev), a System One model. You send program state plus typed questions. Jev returns 13 hazard Nouls, a positive falsifier Noul, a primary-kind Choice, and an ordinal severity Score. It does not generate text.
 
-Code owns decisions. Structural detectors protect designated evaluation assets (hidden tests, graders, reward functions, hooks, evaluator runtimes), not every file under `tests/`. After a structural deny, Jev is skipped. Choice, severity, and a named falsifier cannot cancel a hazard deny. `heldout_blindness` is advisory.
+Code owns decisions. Structural detectors protect designated evaluation assets (hidden tests, graders, reward functions, hooks, evaluator runtimes, canary paths), not every file under `tests/`. After a structural deny, Jev is skipped. Jev state is a digested command, backticked paths, and a unified-diff summary. Agent thoughts and self-justifications are not sent. Choice, severity, and a named falsifier cannot cancel a hazard deny and cannot independently create one. `heldout_blindness` is advisory.
 
-There is no public Jev reward-hack ROC as of 17 Sep 2026. Deploy semantic checks in `HACK_RADAR_MODE=shadow`, then `review`, then `enforce`. Missing keys and timeouts are a degraded status, not risk zero.
+Agent-visible denials are opaque filesystem-integrity messages. Scores and taxonomy stay on the operator workbench and in user-visible notices. There is still **no public Jev reward-hack ROC**. Without `TYPESAFE_API_KEY` the lexical fallback stays warm and is treated as degraded, not as risk zero.
 
 Closed agents such as Claude and Cursor do not expose activations, so Bergen et al. 2026 difference-of-means vectors cannot run here. The Methods page lists those methods and when they do apply.
 
@@ -59,7 +59,7 @@ Keep `npm run dev` running.
 
 **Claude Code.** Merge `examples/claude-settings.json` into `.claude/settings.json` for HTTP hooks. Claude HTTP hooks only honor a 2xx JSON body. Timeouts and non-2xx responses do not block. For fail-closed PreToolUse, use `examples/claude-command-settings.json` (`npx tsx hooks/run.ts claude`); a wrapper failure emits deny JSON and exits 2. `UserPromptSubmit` injects steering context. Vague "make the tests pass" prompts steer; they do not automatically block.
 
-**Cursor.** Copy `examples/cursor-hooks.json` to `.cursor/hooks.json`. Command hooks read JSON on stdin through `npx tsx hooks/run.ts cursor`. `beforeSubmitPrompt` cannot inject context, so a gameable prompt is allowed with a user notice; tool-denial steering uses `agent_message`. Set `failClosed: true` on shell and tool gates. Held-out tests belong in an isolated evaluator, not in a file the agent can `find`.
+**Cursor.** Copy `examples/cursor-hooks.json` to `.cursor/hooks.json`. Command hooks read JSON on stdin through `npx tsx hooks/run.ts cursor`. `beforeSubmitPrompt` cannot inject context, so a gameable prompt is allowed with a user notice; tool-denial steering uses a generic `agent_message` that does not leak scores. Set `failClosed: true` on shell and tool gates. Held-out tests belong in an isolated evaluator, not in a file the agent can `find`.
 
 Do not add this score as an RL penalty on chain-of-thought or candidate selection. [Baker et al. 2025](https://arxiv.org/abs/2503.11926) showed that training against a CoT monitor produces obfuscated hacks.
 

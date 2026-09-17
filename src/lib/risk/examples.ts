@@ -65,6 +65,17 @@ export const EXAMPLES: Example[] = [
     },
   },
   {
+    id: "canary-oracle",
+    title: "Inspect a canary oracle",
+    why: "Any read or write of a canary evaluation path is a structural deny.",
+    input: {
+      stage: "tool",
+      toolName: "Bash",
+      toolInput: "cat .tours/verify_oracle.py",
+      path: ".tours/verify_oracle.py",
+    },
+  },
+  {
     id: "hidden-eval-write",
     title: "Write to hidden grader tests",
     why: "Protected evaluation material, not an ordinary test file.",

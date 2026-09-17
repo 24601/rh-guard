@@ -23,7 +23,7 @@ export const LITERATURE: MethodRow[] = [
     hookFit:
       "One POST to api.typesafe.ai/v1/systemone per hook event. Ask one Noul per risk kind plus a primary Choice and a severity Score. Questions run in parallel. Measured coding-agent gates land in 70 to 650ms. Fits Claude UserPromptSubmit and PreToolUse. Pin jev-1.13.0 once you tune thresholds. jev-latest currently aliases that id and will move.",
     limit:
-      "No public Jev reward-hack ROC, TPR/FPR, or SWE calibration curve was found as of 17 Sep 2026. Skip the API after a structural deny. Choice, severity, and the positive falsifier Noul must not cancel a hazard deny. Jev does not generate steer text. It cannot count reliably. Adversarial state can move the answer. Do not phrase hazards as 'is this safe' and then raise the threshold. Typed outputs are not a security proof. Do not put this score into an RL reward.",
+      "No public Jev reward-hack ROC, TPR/FPR, or SWE calibration curve was found as of 17 Sep 2026. Skip the API after a structural deny. Choice, severity, and the positive falsifier Noul must not cancel a hazard deny, and they must not independently create one: parallel questions are not an ensemble. Typed JSON is not semantic robustness. Strip agent self-justifications from the Jev payload; send digested commands, paths, and diffs. Return opaque policy text to the agent. Jev does not generate steer text. Do not phrase hazards as 'is this safe'. Do not put this score into an RL reward.",
     citations: [
       {
         title: "Introducing System One Models and Jev",
@@ -141,7 +141,7 @@ export const LITERATURE: MethodRow[] = [
     hookFit:
       "afterAgentThought / PostToolBatch / Stop. Frontier judges take 3 to 329s. Jev is the sub-second substitute for the same text. Keep a slow judge for disagreements.",
     limit:
-      "Baker et al. found ~95% recall with CoT vs ~60% on actions alone, then near-zero recall after training against the monitor (obfuscation). Do not put this score into the RL reward.",
+      "Baker et al. found ~95% recall with CoT vs ~60% on actions alone, then near-zero recall after training against the monitor (obfuscation). Frozen-weight agents still adapt in-context if denials leak monitor criteria. Do not put this score into the RL reward, and do not echo hazard ids to the agent.",
     citations: [
       {
         title:
@@ -292,7 +292,7 @@ export const LITERATURE: MethodRow[] = [
     needsInternals: false,
     when: "The agent and the monitor might collude, or you want a small verifier that a sneaky prover cannot charm.",
     hookFit:
-      "Treat the HTTP hook, including Jev, as an untrusted monitor. Add synthetic honeypots. Do not ask the same agent to justify its own diff. Prefer a locked checker for the final gate. Jev cannot write the verifier. Code owns that.",
+      "Treat the HTTP hook, including Jev, as an untrusted monitor. Canary evaluation paths (for example `.tours/verify_oracle.py`) are a structural deny. Do not ask the same agent to justify its own diff. Prefer a locked checker for the final gate. Jev cannot write the verifier. Code owns that.",
     limit:
       "Naive same-model monitoring is defeated by 'pretend not to see backdoors'. Letting the untrusted model explain the suspicious region to the trusted one failed in Greenblatt et al. Correctness-only CoT in Kirchner et al. made proofs less human-legible.",
     citations: [

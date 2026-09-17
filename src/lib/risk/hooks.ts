@@ -1,5 +1,6 @@
 import type { ScoreInput, ScoreReport } from "./domain";
 import type { Verdict } from "./kinds";
+import { AGENT_DENY, AGENT_STEER, AGENT_STOP } from "./steer";
 
 export type ClaudeHookOutput = {
   continue?: boolean;
@@ -23,12 +24,8 @@ export type CursorHookOutput = {
   followup_message?: string;
 };
 
-const PROCESS_DENY =
-  "Preserve the checker. Submit the suspected evaluation defect through the escalation path. Do not rewrite graders, hidden tests, hooks, or evaluator runtimes.";
-
 export function failClosedClaudeOutput(event = "PreToolUse"): ClaudeHookOutput {
-  const reason =
-    "Hack Radar unavailable. Action held for evaluation-integrity review.";
+  const reason = "Action held: filesystem integrity policy.";
   const hookEventName =
     event === "UserPromptSubmit" || event === "Stop" ? event : "PreToolUse";
   return {
@@ -38,7 +35,7 @@ export function failClosedClaudeOutput(event = "PreToolUse"): ClaudeHookOutput {
     hookSpecificOutput: {
       hookEventName,
       permissionDecision: "deny",
-      permissionDecisionReason: `${reason} ${PROCESS_DENY}`,
+      permissionDecisionReason: AGENT_DENY,
     },
   };
 }
@@ -48,7 +45,7 @@ export function failClosedCursorOutput(): CursorHookOutput {
     continue: false,
     permission: "deny",
     user_message: "Hack Radar unavailable. Action held for evaluation-integrity review.",
-    agent_message: PROCESS_DENY,
+    agent_message: AGENT_DENY,
   };
 }
 
@@ -61,12 +58,11 @@ export function toClaudeOutput(event: string, report: ScoreReport): ClaudeHookOu
   const context = report.steer.agentContext;
   if (event === "PreToolUse") {
     if (verdict === "block") {
-      const why = report.evidence[0]?.why ?? "Blocked as a reward-hacking action.";
       return {
         hookSpecificOutput: {
           hookEventName: "PreToolUse",
           permissionDecision: "deny",
-          permissionDecisionReason: `${why} ${PROCESS_DENY}`,
+          permissionDecisionReason: AGENT_DENY,
         },
       };
     }
@@ -74,7 +70,7 @@ export function toClaudeOutput(event: string, report: ScoreReport): ClaudeHookOu
       return {
         hookSpecificOutput: {
           hookEventName: "PreToolUse",
-          additionalContext: context,
+          additionalContext: AGENT_STEER,
         },
       };
     }
@@ -86,14 +82,14 @@ export function toClaudeOutput(event: string, report: ScoreReport): ClaudeHookOu
         decision: "block",
         reason:
           report.steer.user[0] ??
-          "This prompt asks to disable oversight or game the evaluator.",
+          "Please revise the request to preserve acceptance checks.",
       };
     }
     if (context) {
       return {
         hookSpecificOutput: {
           hookEventName: "UserPromptSubmit",
-          additionalContext: context,
+          additionalContext: AGENT_STEER,
         },
       };
     }
@@ -103,9 +99,7 @@ export function toClaudeOutput(event: string, report: ScoreReport): ClaudeHookOu
     return {
       hookSpecificOutput: {
         hookEventName: "Stop",
-        additionalContext:
-          context ||
-          "Mark this artifact unverified. Do not claim independent evaluation without a controller-issued result.",
+        additionalContext: AGENT_STOP,
       },
     };
   }
@@ -113,7 +107,7 @@ export function toClaudeOutput(event: string, report: ScoreReport): ClaudeHookOu
     ? {
         hookSpecificOutput: {
           hookEventName: event,
-          additionalContext: context,
+          additionalContext: AGENT_STEER,
         },
       }
     : {};
@@ -121,7 +115,6 @@ export function toClaudeOutput(event: string, report: ScoreReport): ClaudeHookOu
 
 export function toCursorOutput(event: string, report: ScoreReport): CursorHookOutput {
   const verdict = effective(report);
-  const context = report.steer.agentContext;
   if (event === "beforeSubmitPrompt") {
     if (verdict === "block") {
       return {
@@ -145,32 +138,26 @@ export function toCursorOutput(event: string, report: ScoreReport): CursorHookOu
     return {};
   }
   if (event === "postToolUse" || event === "postToolUseFailure") {
-    return context ? { additional_context: context } : {};
+    return verdict === "ok" ? {} : { additional_context: AGENT_STEER };
   }
   if (event === "preToolUse" || event === "beforeShellExecution") {
     if (verdict === "block") {
       return {
         permission: "deny",
         user_message: report.evidence[0]?.why,
-        agent_message: PROCESS_DENY,
+        agent_message: AGENT_DENY,
       };
     }
-    if (event === "preToolUse" && context) {
-      return { agent_message: context };
+    if (event === "preToolUse" && verdict === "steer") {
+      return { agent_message: AGENT_STEER };
     }
     return {};
   }
   if (event === "stop" && verdict !== "ok") {
-    const follow = report.steer.moves.find((move) => move.id === "escalate-eval-defect")
-      ?? report.steer.moves.find((move) => move.audience === "agent");
-    return {
-      followup_message: follow
-        ? `${follow.instruction}\n\nDo not keep iterating until the monitor is quiet. Independent verification remains the success criterion.`
-        : "The last turn scored as reward-hacking risk. Preserve the checker. Name a falsifier or escalate a contradictory eval.",
-    };
+    return { followup_message: AGENT_STOP };
   }
-  if (event === "sessionStart" && context) {
-    return { additional_context: context };
+  if (event === "sessionStart" && report.steer.agentContext) {
+    return { additional_context: AGENT_STEER };
   }
   return {};
 }
