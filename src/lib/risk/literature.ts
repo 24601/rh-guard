@@ -23,7 +23,7 @@ export const LITERATURE: MethodRow[] = [
     hookFit:
       "One POST to api.typesafe.ai/v1/systemone per hook event. Ask one Noul per risk kind plus a primary Choice and a severity Score. Questions run in parallel. Measured coding-agent gates land in 70 to 650ms. Fits Claude UserPromptSubmit and PreToolUse. Pin jev-1.13.0 once you tune thresholds. jev-latest currently aliases that id and will move.",
     limit:
-      "Jev does not generate steer text. It cannot count reliably. Adversarial state can move the answer. It is waitlisted early access. Do not phrase hazards as 'is this safe' and then raise the threshold. On a Noul, a high number must mean the hazard is present, and you block when noul >= t. The inverted 1-t band used in some safety gates lets a 0.02 secret-exfil score slip through if you raise t. Jev is not a sandbox. Structural detectors still own path denies. Do not put this score into an RL reward.",
+      "No public Jev reward-hack ROC, TPR/FPR, or SWE calibration curve was found as of 17 Sep 2026. Skip the API after a structural deny. Choice, severity, and the positive falsifier Noul must not cancel a hazard deny. Jev does not generate steer text. It cannot count reliably. Adversarial state can move the answer. Do not phrase hazards as 'is this safe' and then raise the threshold. Typed outputs are not a security proof. Do not put this score into an RL reward.",
     citations: [
       {
         title: "Introducing System One Models and Jev",
@@ -44,7 +44,14 @@ export const LITERATURE: MethodRow[] = [
         url: "https://dev.to/jomatsu/jev-pi-a-probability-gate-for-my-coding-agents-shell-commands-95d",
         year: "Sep 2026",
         claim:
-          "Rules first. Jev cannot overrule a hard deny. 18 fixtures: intent_coverage was bimodal (0.77 to 0.98 vs 0.06 to 0.15). Judged calls 193 to 642ms. Tightening a positively phrased safety Noul from 0.97 to 0.99 moved a 0.02 SSH-key upload out of the violation band. No key means halt unvouched commands, not silent pass.",
+          "Jo Matsuda. Rules first. Jev cannot overrule a hard deny. 18 fixtures, sampled once; eleven shell-command calls at 193 to 642ms. Tightening a positively phrased safety Noul from 0.97 to 0.99 moved a 0.02 SSH-key upload out of the violation band. No key means halt unvouched commands, not silent pass. Not a reward-hack ROC.",
+      },
+      {
+        title: "Verification is the bottleneck",
+        url: "https://goodstartlabs.com/research/verification-is-the-bottleneck",
+        year: "Sep 2026",
+        claim:
+          "Alex Duffy / Good Start Labs. 6,003 rubric checks over 1,203 financial-research answers; 91.5% agreement with Fable 5.1. Agreement is not accuracy and this is not a reward-hack benchmark. Strongest additional public Jev verification report found.",
       },
     ],
   },
@@ -178,7 +185,7 @@ export const LITERATURE: MethodRow[] = [
     hookFit:
       "Local alternative to Jev when you cannot call TypeSafe. Train on sanitized traces. Keep the same RiskKind ids.",
     limit:
-      "The 14M encoder's AUC dropped from 0.95 to 0.62 when reasoning was stripped. Action-only detection is real but weaker. Do not train on unsanitized hack-elicitation prompts.",
+      "Full-input AUROC 0.9467. Stripping reasoning at inference dropped it to 0.6213. Retraining on action-only inputs recovered 0.7631, TPR 0.2275 at 5% FPR. Do not deploy the reasoning-rich checkpoint on action-only hook inputs and expect the headline number.",
     citations: [
       {
         title: "Cheap Reward Hacking Detection",
@@ -337,7 +344,86 @@ export const LITERATURE: MethodRow[] = [
         url: "https://arxiv.org/abs/2609.11028",
         year: "Sep 2026",
         claim:
-          "456 labeled trajectories from more than 31,000 public agent runs. Runtime analysis 96% accuracy detecting reward hacking from infrastructure-side evidence. Full-chain recall 77 to 100% vs 23 to 94% for an agentic scanner baseline.",
+          "456 labeled trajectories from more than 31,000 public agent runs. Runtime analysis 96% accuracy detecting reward hacking from infrastructure-side evidence. Full-chain recall 77 to 100% vs 23 to 94% for an agentic scanner baseline. Structural exposure is not exploitation; semantic payloads can escape structural detection.",
+      },
+    ],
+  },
+  {
+    name: "Escalation channel for eval defects",
+    needsInternals: false,
+    when:
+      "The agent has no legitimate way to stop when tests contradict the spec, so it manufactures a pass.",
+    hookFit:
+      "Expose a report_evaluation_defect action and steer denials toward it. Denial copy that says try harder is not an escalation path.",
+    limit:
+      "Gomez reports 23.6% to 5.3% hacking across eight models in one experimental setting. That is not a universal effect size for your harness.",
+    citations: [
+      {
+        title:
+          "Can escalation channels redirect reward hacking toward defect disclosure?",
+        url: "https://arxiv.org/abs/2608.29460",
+        year: "Sep 2026",
+        claim:
+          "Francesca Gomez. Combined escalation-tool-plus-policy intervention reduced hacking from 23.6% to 5.3% across eight models in the reported setting.",
+      },
+    ],
+  },
+  {
+    name: "SpecBench (visible vs held-out composition)",
+    needsInternals: false,
+    when:
+      "You need to measure whether a coding agent satisfies the spec or only the visible tests.",
+    hookFit:
+      "Offline eval. Use the visible/held-out gap to tune steering, not as a per-tool deny. Not every gap is deliberate cheating.",
+    limit:
+      "The broader visible/held-out gap includes ordinary compositional failures. Do not label every gap as a hack.",
+    citations: [
+      {
+        title: "SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents",
+        url: "https://arxiv.org/abs/2605.21384",
+        year: "Sep 2026",
+        claim:
+          "Thirty systems tasks with visible feature tests vs held-out feature-composition tests. One compiler artifact memorized test answers: 97% visible vs 0% held-out.",
+      },
+    ],
+  },
+  {
+    name: "Multi-agent project trajectory",
+    needsInternals: false,
+    when:
+      "Several agents share a workspace. Per-event and per-agent monitors can miss distributed attacks.",
+    hookFit:
+      "Keep a controller-owned project log: which agent changed an imported module, which later ran the checker, which claimed success.",
+    limit:
+      "The fragmentation effect is reported in a synthetic multi-agent setting. Still the right architecture for shared-workspace SWE.",
+    citations: [
+      {
+        title:
+          "Multi-Agent AI Control: Distributed Attacks Hamper Per-Instance Monitors",
+        url: "https://arxiv.org/abs/2607.07368",
+        year: "Jul 2026",
+        claim:
+          "Individually innocuous events can compose into evaluator compromise when monitors are per-instance.",
+      },
+    ],
+  },
+  {
+    name: "HackProbe (holdout rotation)",
+    needsInternals: false,
+    when:
+      "You are designing holdouts that the agent must not turn into a development set.",
+    hookFit:
+      "Borrow rotating probes and a fixed secret comparison core. Do not import monitor-driven candidate reselection into the agent objective.",
+    limit:
+      "Reported 0.763 AUROC and 0.434 FPR in a controlled experiment. That FPR is unusable as a gate.",
+    citations: [
+      {
+        title:
+          "Harness-agnostic detection and immunization of reward hacking in self-evolving language models",
+        url: "https://arxiv.org/abs/2609.04665",
+        year: "Sep 2026",
+        claim:
+          "Fixed secret comparison core plus rotating probes. Controlled experiment AUROC 0.763 at FPR 0.434. Useful holdout-management ideas, not production operating points.",
       },
     ],
   },

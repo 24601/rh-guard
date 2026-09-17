@@ -21,6 +21,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { EXAMPLES } from "@/lib/risk/examples";
 import {
   RISK_KINDS,
+  assertNever,
   kindBlurb,
   kindTitle,
   type NeuralBackend,
@@ -45,8 +46,16 @@ function verdictTone(verdict: Verdict): "secondary" | "outline" | "destructive" 
 }
 
 function backendLabel(backend: NeuralBackend, model: string): string {
-  if (backend === "jev") return model || "jev";
-  return "Lexical fallback";
+  switch (backend) {
+    case "jev":
+      return model || "jev";
+    case "skipped":
+      return "Jev skipped (structural deny)";
+    case "lexical":
+      return "Lexical fallback";
+    default:
+      return assertNever(backend);
+  }
 }
 
 export function ScoreWorkbench() {
@@ -62,7 +71,7 @@ export function ScoreWorkbench() {
       return { stage, toolName: "Bash", toolInput: text };
     }
     if (stage === "edit") {
-      return { stage, patch: text, path: "tests/test_foo.py" };
+      return { stage, patch: text, path: "src/sort.py" };
     }
     if (stage === "thought") {
       return { stage, thought: text };
@@ -127,9 +136,11 @@ export function ScoreWorkbench() {
         <CardHeader>
           <CardTitle>Score a prompt or trace</CardTitle>
           <CardDescription>
-            Structural denies first. Semantic scoring is TypeSafe Jev when
-            TYPESAFE_API_KEY is set, otherwise the lexical GLiClass stand-in. The
-            same path the Claude and Cursor hooks call.
+            Structural denies first. Jev is skipped after a structural deny.
+            Semantic scoring is TypeSafe Jev when TYPESAFE_API_KEY is set,
+            otherwise the lexical GLiClass stand-in. Choice, severity, and a
+            named falsifier cannot cancel a hazard. The same path the Claude and
+            Cursor hooks call.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-3">
@@ -213,9 +224,16 @@ export function ScoreWorkbench() {
                   <CardTitle>Verdict</CardTitle>
                   <CardDescription>
                     Combined score {report.overall.toFixed(2)} at the {report.stage}{" "}
-                    stage. {backendLabel(report.backend, report.model)}
+                    stage. {backendLabel(report.backend, report.model)} · mode{" "}
+                    {report.mode}
+                    {report.hookVerdict !== report.verdict
+                      ? ` · hook ${report.hookVerdict}`
+                      : ""}
                     {report.confidence !== null
                       ? ` · choice confidence ${report.confidence.toFixed(2)}`
+                      : ""}
+                    {report.falsifierNamed !== null
+                      ? ` · falsifier ${report.falsifierNamed.toFixed(2)}`
                       : ""}
                     {loading ? " · updating" : ""}
                   </CardDescription>
@@ -223,9 +241,15 @@ export function ScoreWorkbench() {
                 <Badge variant={verdictTone(report.verdict)}>{report.verdict}</Badge>
               </CardHeader>
               <CardContent className="flex flex-col gap-3">
+                {report.skippedReason ? (
+                  <p className="text-sm text-muted-foreground">
+                    {report.skippedReason}
+                  </p>
+                ) : null}
                 {report.neuralError ? (
                   <p className="text-sm text-destructive">
                     Jev failed ({report.neuralError}). Using the lexical fallback.
+                    Missing Jev is not treated as risk zero.
                   </p>
                 ) : null}
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">

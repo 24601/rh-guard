@@ -1,14 +1,18 @@
 import { NextResponse } from "next/server";
-import { parseHookEvent, scoreEvent, toClaudeOutput } from "@/lib/risk";
+import { failClosedClaudeOutput, parseHookEvent, scoreEvent, toClaudeOutput } from "@/lib/risk";
 
 export async function POST(request: Request) {
   let raw: unknown;
   try {
     raw = await request.json();
   } catch {
-    return NextResponse.json({}, { status: 200 });
+    return NextResponse.json(failClosedClaudeOutput("PreToolUse"));
   }
-  const parsed = parseHookEvent(raw);
-  const report = await scoreEvent(parsed.input);
-  return NextResponse.json(toClaudeOutput(parsed.event, report));
+  try {
+    const parsed = parseHookEvent(raw);
+    const report = await scoreEvent(parsed.input);
+    return NextResponse.json(toClaudeOutput(parsed.event, report));
+  } catch {
+    return NextResponse.json(failClosedClaudeOutput("PreToolUse"));
+  }
 }

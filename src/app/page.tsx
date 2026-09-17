@@ -10,8 +10,8 @@ export default function HomePage() {
           Score a prompt or a trajectory for the ways coding agents game tests, then
           steer toward hidden tests, properties, and independent verifiers. Live
           semantic scoring is TypeSafe Jev, a System One model. Structural detectors
-          still deny test-file writes in code. The same function runs in Claude Code
-          and Cursor hooks.
+          protect designated evaluation assets, not every test file, and skip Jev
+          after a deny. The same function runs in Claude Code and Cursor hooks.
         </p>
       </div>
       <ScoreWorkbench />

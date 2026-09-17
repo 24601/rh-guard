@@ -1,4 +1,4 @@
-import type { NeuralBackend, RiskKind, Stage, Verdict } from "./kinds";
+import type { NeuralBackend, PolicyMode, RiskKind, Stage, Verdict } from "./kinds";
 
 export type Evidence = {
   kind: RiskKind;
@@ -36,6 +36,9 @@ export type ScoreReport = {
   stage: Stage;
   overall: number;
   verdict: Verdict;
+  hookVerdict: Verdict;
+  mode: PolicyMode;
+  structuralDeny: boolean;
   labels: Record<RiskKind, number>;
   evidence: Evidence[];
   steer: SteerAdvice;
@@ -43,6 +46,9 @@ export type ScoreReport = {
   model: string;
   confidence: number | null;
   severity: number | null;
+  falsifierNamed: number | null;
+  primaryKind: string | null;
+  skippedReason?: string;
   neuralError?: string;
 };
 

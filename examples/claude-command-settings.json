@@ -1,0 +1,35 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:43147/api/hooks/claude"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|StrReplace",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx tsx hooks/run.ts claude"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:43147/api/hooks/claude"
+          }
+        ]
+      }
+    ]
+  }
+}

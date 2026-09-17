@@ -9,7 +9,7 @@ export function movesFor(kinds: RiskKind[]): VerifierMove[] {
       title: "Add hidden tests the agent cannot edit",
       audience: "user",
       instruction:
-        "Run extra tests from CI or the hook process, not from a file in this workspace. Hacker-Opus-style agents will find and edit a suite that lives on disk.",
+        "Run extra tests from CI or an isolated evaluator, not from a file in this workspace. A suite on disk is not held-out.",
     },
     {
       id: "property-tests",
@@ -19,25 +19,32 @@ export function movesFor(kinds: RiskKind[]): VerifierMove[] {
         "Require a property (round-trip, idempotence, monotonicity) with Hypothesis or fast-check. A hardcoded fixture cannot satisfy a quantified property.",
     },
     {
-      id: "forbid-test-writes",
-      title: "Deny writes to test and reward files",
+      id: "forbid-eval-writes",
+      title: "Deny writes to protected evaluation assets",
       audience: "agent",
       instruction:
-        "Do not edit tests, snapshots, coverage config, or reward/judge files. Change production code only. If a test is wrong, stop and ask the user.",
+        "Do not edit hidden tests, graders, reward functions, hooks, or evaluator runtimes. Ordinary test maintenance is allowed only when independently authorized. If a required check is wrong, stop and escalate.",
+    },
+    {
+      id: "escalate-eval-defect",
+      title: "Escalate a broken or contradictory evaluation",
+      audience: "agent",
+      instruction:
+        "Stop this attempt. Submit the contradictory requirement, the failing case, and the observed evidence through the evaluation-defect path. Do not manufacture a pass.",
     },
     {
       id: "independent-verifier",
       title: "Run an independent verifier after stop",
       audience: "user",
       instruction:
-        "On Stop, run a second command the agent did not author. A held-out binary, a mutation test, or a typechecker with a frozen config. Keep that checker out of the workspace.",
+        "On Stop, run a second command the agent did not author. Bind acceptance to candidate digest, evaluator version, and that result. Keep the checker out of the workspace.",
     },
     {
       id: "falsifier",
       title: "Ask for a falsifier, not another passing case",
       audience: "agent",
       instruction:
-        "Before claiming done, construct an input that should fail if the implementation is only memorizing fixtures. Run it. If you cannot name one, the eval is too thin.",
+        "Before claiming done, name a concrete input or property that should fail if the implementation only memorizes fixtures. Run it. If you cannot name one, the eval is too thin.",
     },
     {
       id: "split-authorship",
@@ -51,7 +58,7 @@ export function movesFor(kinds: RiskKind[]): VerifierMove[] {
       title: "Do not train against this monitor",
       audience: "user",
       instruction:
-        "Use the score to steer or block. Do not add it as an RL penalty on chain-of-thought. Baker et al. 2025 show that pressure on the monitor teaches obfuscation.",
+        "Use the score to steer or block. Do not add it as an RL penalty on chain-of-thought or candidate selection. Baker et al. 2025 show that pressure on the monitor teaches obfuscation.",
     },
     {
       id: "trace-style",
@@ -68,11 +75,21 @@ export function movesFor(kinds: RiskKind[]): VerifierMove[] {
     if (move.id === "property-tests") {
       return wanted.has("hardcoded_oracle") || wanted.has("proxy_metric");
     }
-    if (move.id === "forbid-test-writes") {
+    if (move.id === "forbid-eval-writes") {
       return (
         wanted.has("test_tampering") ||
         wanted.has("reward_tampering") ||
-        wanted.has("process_evasion")
+        wanted.has("process_evasion") ||
+        wanted.has("heldout_contamination") ||
+        wanted.has("runtime_tampering")
+      );
+    }
+    if (move.id === "escalate-eval-defect") {
+      return (
+        wanted.has("test_tampering") ||
+        wanted.has("verifier_weakening") ||
+        wanted.has("evidence_fabrication") ||
+        wanted.has("reward_tampering")
       );
     }
     if (move.id === "independent-verifier") {

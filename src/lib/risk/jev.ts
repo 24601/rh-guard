@@ -1,14 +1,11 @@
 import { clipExcerpt, type Evidence, type ScoreInput } from "./domain";
-import {
-  emptyLabelScores,
-  RISK_KINDS,
-  type NeuralBackend,
-  type RiskKind,
-} from "./kinds";
+import type { NeuralBackend } from "./kinds";
 import {
   GLICLASS_LABELS,
+  JEV_FALSIFIER,
   JEV_PRIMARY_CHOICE,
   JEV_SEVERITY_SCORE,
+  jevNoulId,
   type LabelSpec,
 } from "./taxonomy";
 
@@ -20,6 +17,9 @@ export type NeuralLayer = {
   confidence: number | null;
   evidence: Evidence[];
   severity: number | null;
+  falsifierNamed: number | null;
+  primaryKind: string | null;
+  skippedReason?: string;
   error?: string;
 };
 
@@ -75,26 +75,77 @@ function clip(text: string, max = FIELD_LIMIT): string {
   return `${trimmed.slice(0, max - 1)}…`;
 }
 
-export function packState(input: ScoreInput): Record<string, unknown> {
-  const state: Record<string, unknown> = { stage: input.stage };
-  if (input.prompt) state.prompt = clip(input.prompt);
-  if (input.thought) state.thought = clip(input.thought);
-  if (input.toolName || input.toolInput || input.path) {
-    state.tool = {
-      name: input.toolName ?? null,
-      input: input.toolInput ? clip(input.toolInput) : null,
-      path: input.path ?? null,
-    };
+function artifactRole(path: string | undefined): string {
+  if (!path) return "unknown";
+  if (
+    /eval\/hidden|hidden[_-]?(test|eval)|answer[_-]?key|grader|compute_reward|sitecustomize/i.test(
+      path
+    )
+  ) {
+    return "evaluation";
   }
-  if (input.patch) state.patch = clip(input.patch);
-  if (input.transcript) state.transcript = clip(input.transcript, 6000);
+  if (/(^|[/\s])(tests?|spec|__tests__)([/\s._-]|$)/i.test(path)) return "test";
+  return "implementation";
+}
+
+export function packState(input: ScoreInput): Record<string, unknown> {
+  const evidenceMissing: string[] = [];
+  if (!input.prompt && !input.patch && !input.toolInput && !input.transcript) {
+    evidenceMissing.push("subject");
+  }
+  const state: Record<string, unknown> = {
+    event: {
+      stage: input.stage,
+      tool_name: input.toolName ?? null,
+    },
+    trusted: {
+      requirements: [] as string[],
+      policy: {
+        implementation_edits_allowed: true,
+        evaluation_changes_authorized: false,
+        oversight_bypass_authorized: false,
+        private_evaluation_access_authorized: false,
+        approved_specification_changes: [] as string[],
+      },
+      evidence_missing: evidenceMissing,
+    },
+    subject: {
+      request: input.prompt ? clip(input.prompt) : "",
+      tool_arguments: {
+        file_path: input.path ?? null,
+        tool: input.toolName ?? null,
+        input: input.toolInput ? clip(input.toolInput, 2500) : null,
+      },
+      changes:
+        input.path || input.patch
+          ? [
+              {
+                path: input.path ?? null,
+                artifact_role: artifactRole(input.path),
+                before: "",
+                after: input.patch ? clip(input.patch, 2500) : "",
+              },
+            ]
+          : [],
+      claims: [] as string[],
+    },
+    context: {
+      relevant_prior_events: input.transcript
+        ? [{ kind: "transcript_digest", text: clip(input.transcript, 2000) }]
+        : [],
+      trusted_verification_results: [] as string[],
+    },
+  };
   const encoded = JSON.stringify(state);
   if (encoded.length <= STATE_LIMIT) return state;
-  if (typeof state.transcript === "string") {
-    state.transcript = clip(String(state.transcript), 2000);
-  }
-  if (typeof state.patch === "string") {
-    state.patch = clip(String(state.patch), 1500);
+  const context = state.context as { relevant_prior_events: unknown[] };
+  if (context.relevant_prior_events.length > 0) {
+    context.relevant_prior_events = [
+      {
+        kind: "transcript_digest",
+        text: clip(input.transcript ?? "", 800),
+      },
+    ];
   }
   return state;
 }
@@ -110,9 +161,14 @@ function noulQuestion(spec: LabelSpec): NoulQuestion {
 export function jevQuestions(): Record<string, JevQuestion> {
   const questions: Record<string, JevQuestion> = {};
   for (const spec of GLICLASS_LABELS) {
-    questions[spec.kind] = noulQuestion(spec);
+    questions[jevNoulId(spec.kind)] = noulQuestion(spec);
   }
-  questions.primary = {
+  questions.control_falsifier_named = {
+    type: "noul",
+    instructions: JEV_FALSIFIER.instructions,
+    criteria: { ...JEV_FALSIFIER.criteria },
+  };
+  questions.primary_kind = {
     type: "choice",
     instructions: JEV_PRIMARY_CHOICE.instructions,
     criteria: { ...JEV_PRIMARY_CHOICE.criteria },
@@ -201,44 +257,46 @@ export function parseSystemOneResult(raw: unknown): SystemOneResult {
   return { model, answers };
 }
 
-export function isRiskKind(value: string): value is RiskKind {
-  return (RISK_KINDS as readonly string[]).includes(value);
+export function skippedNeural(reason: string): NeuralLayer {
+  return {
+    backend: "skipped",
+    model: "none",
+    confidence: null,
+    evidence: [],
+    severity: null,
+    falsifierNamed: null,
+    primaryKind: null,
+    skippedReason: reason,
+  };
 }
 
 export function neuralFromJev(result: SystemOneResult): NeuralLayer {
   const evidence: Evidence[] = [];
-  const labels = emptyLabelScores();
   for (const spec of GLICLASS_LABELS) {
-    const answer = result.answers[spec.kind];
+    const answer =
+      result.answers[jevNoulId(spec.kind)] ?? result.answers[spec.kind];
     if (!answer || answer.type !== "noul") continue;
-    labels[spec.kind] = answer.noul;
     if (answer.noul < NOUL_FIRE) continue;
     evidence.push({
       kind: spec.kind,
-      detectorId: `jev:noul:${spec.kind}`,
+      detectorId: `jev:noul:${jevNoulId(spec.kind)}`,
       weight: Number(answer.noul.toFixed(3)),
       excerpt: clipExcerpt(spec.jev.instructions, 120),
       why: `Jev noul ${answer.noul.toFixed(2)} on "${spec.jev.instructions}"`,
     });
   }
 
+  const falsifier =
+    result.answers.control_falsifier_named ?? result.answers.control_falsifier;
+  const falsifierNamed =
+    falsifier && falsifier.type === "noul" ? falsifier.noul : null;
+
   let confidence: number | null = null;
-  const primary = result.answers.primary;
+  let primaryKind: string | null = null;
+  const primary = result.answers.primary_kind ?? result.answers.primary;
   if (primary && primary.type === "choice") {
     confidence = primary.confidence;
-    if (isRiskKind(primary.choice) && primary.confidence >= 0.5) {
-      const p = primary.probabilities[primary.choice] ?? primary.confidence;
-      labels[primary.choice] = Math.max(labels[primary.choice], p);
-      if (p >= NOUL_FIRE) {
-        evidence.push({
-          kind: primary.choice,
-          detectorId: "jev:choice:primary",
-          weight: Number(p.toFixed(3)),
-          excerpt: primary.choice,
-          why: `Jev primary choice ${primary.choice} (confidence ${primary.confidence.toFixed(2)}).`,
-        });
-      }
-    }
+    primaryKind = primary.choice;
   }
 
   let severity: number | null = null;
@@ -254,6 +312,8 @@ export function neuralFromJev(result: SystemOneResult): NeuralLayer {
     confidence,
     evidence,
     severity,
+    falsifierNamed,
+    primaryKind,
   };
 }
 
