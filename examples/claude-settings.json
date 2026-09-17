@@ -1,0 +1,35 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:43147/api/hooks/claude"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|StrReplace",
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:43147/api/hooks/claude"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:43147/api/hooks/claude"
+          }
+        ]
+      }
+    ]
+  }
+}

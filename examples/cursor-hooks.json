@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeSubmitPrompt": [
+      { "command": "npx tsx hooks/run.ts cursor" }
+    ],
+    "beforeShellExecution": [
+      { "command": "npx tsx hooks/run.ts cursor" }
+    ],
+    "preToolUse": [
+      { "command": "npx tsx hooks/run.ts cursor" }
+    ],
+    "stop": [
+      { "command": "npx tsx hooks/run.ts cursor" }
+    ]
+  }
+}
