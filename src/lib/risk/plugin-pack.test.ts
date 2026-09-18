@@ -137,6 +137,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/ToolRuntime/);
     expect(skill).toMatch(/thevibeworks\/jevgate/);
     expect(skill).toMatch(/allowlist proves what may run/i);
+    expect(skill).toMatch(/fastino-ai\/GLiGuard/);
   });
 
   it("keeps jevgate as a sibling link on host docs, not a merged product", () => {
@@ -144,6 +145,7 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/thevibeworks\/jevgate/);
     expect(hosts).toMatch(/allowlist proves what may run/i);
     expect(hosts).toMatch(/Do not merge the products/i);
+    expect(hosts).toMatch(/fastino-ai\/GLiGuard/);
     expect(hosts).toMatch(/hooks\/run\.ts dsh/);
     expect(hosts).toMatch(/command-hook/);
   });

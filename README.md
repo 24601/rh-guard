@@ -17,6 +17,8 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 
 **Complementary, not a competitor.** [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval integrity gate.
 
+**Complementary, not a competitor.** [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval integrity gate.
+
 ## Install hooks
 
 `examples/` is the source of truth. Per-host contracts: [docs/hosts.md](docs/hosts.md). Packaging notes: [docs/install-plugin.md](docs/install-plugin.md).

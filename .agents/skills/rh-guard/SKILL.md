@@ -38,6 +38,10 @@ unlisted verbs; it cannot block (unsure → the agent's own permission
 prompt). Same shape as structural deny + System One sidecar here. Different
 job (permission prompts vs reward-hack denials). Do not merge them.
 
+[GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM
+prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval
+integrity gate (complementary, not a competitor).
+
 ## Install the gate (hooks), not this skill
 
 Canonical hook JSON and host copies live in `examples/`. Host matrix:
@@ -143,4 +147,5 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Broader System One placement: [Augustus](https://github.com/24601/Augustus)
 - Semantic convention lint (quality vs gaming): [JevLint](https://github.com/huntedman/JevLint)
 - Shell allowlist, then Jev on the rest: [jevgate](https://github.com/thevibeworks/jevgate)
+- Encoder LLM prompt/response safety (complementary): [GLiGuard](https://github.com/fastino-ai/GLiGuard)
 - Official TypeSafe contracts: [typesafe-ai/skills](https://github.com/typesafe-ai/skills)

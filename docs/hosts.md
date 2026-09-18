@@ -11,6 +11,10 @@ uses the same shape: an allowlist proves what may run; Jev judges only the
 rest. rh-guard's structural deny is that first gate; the System One sidecar
 is the rest. Do not merge the products.
 
+[GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM
+prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval
+integrity gate (complementary, not a competitor).
+
 `hooks/run.ts <flavor>` reads JSON on stdin. Flavors:
 
 | argv | Output shape |
