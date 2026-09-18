@@ -23,6 +23,12 @@ project instructions on the diff; fail-open; banded confidence (repair /
 note / silence). Soft judgment is never the sole hard veto. Sibling, not
 a merge, and not a reward-hack detector.
 
+[pi-jev-approver](https://github.com/phin-tech/pi-jev-approver) is structural-first on Pi bash with the opposite envelope default: `commandRules` deny is a hard block; missing `TYPESAFE_API_KEY` fails closed. Contrast jevgate's fail-open rest (it cannot block). Sibling, not this sidecar.
+
+[jevscan](https://github.com/alexykn/jevscan) composes tree-sitter extract (hard envelope; no execute) with independent Jev questions (soft judgment). Same layering; quality lint, not reward-hack.
+
+[agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai) is the soft-sidecar extreme: advisory `no_action` receipts; the plugin never changes host routing/executor. Missing key → no-action, not a veto.
+
 ## Fail-open vs fail-closed
 
 | Channel | If the scorer is down |

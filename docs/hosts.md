@@ -122,7 +122,7 @@ Copy [`examples/pi-extension.ts`](../examples/pi-extension.ts) to
 extension listens on `tool_call` and returns `{ block: true, reason,
 terminate: true }` (Pi supports `terminate`). It calls HTTP `/api/hooks/pi`
 (or stdin `hooks/run.ts pi` for tests). On sidecar failure it fail-closes
-in the plugin.
+in the plugin. Sibling Pi bash gate (not this copy): [pi-jev-approver](https://github.com/phin-tech/pi-jev-approver) — code-computed state then Jev; `commandRules` can hard-block; no key → fail-closed. Contrast jevgate allowlist + fail-open rest.
 
 Optional Claude-compatible settings via `@hsingjui/pi-hooks` (command
 handlers only; HTTP / prompt / agent types are not supported): merge

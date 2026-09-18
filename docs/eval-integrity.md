@@ -64,6 +64,14 @@ Watch, not an endorsement: [jev-gate-student-b](https://huggingface.co/SargeDev/
 
 [is-malicious](https://github.com/luantak/is-malicious) is a complementary codebase covert-behavior scanner (listed on awesome-jev); rh-guard is a coding-agent reward-hack / eval integrity gate.
 
+[pi-jev-approver](https://github.com/phin-tech/pi-jev-approver) is a Pi bash safety gate: code-computed state, then Jev; `commandRules` can hard-block; missing `TYPESAFE_API_KEY` fails closed. Contrast jevgate: allowlist then Jev on the rest, fail-open (it cannot block). Same structural-first shape, opposite envelope default. Sibling, not this reward-hack sidecar.
+
+[agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai) emits advisory `no_action` semantic receipts. The plugin never changes host routing/executor (or model policy). Missing credentials, SDK, or service failures stay no-action — hard fail-open evidence for soft sidecars.
+
+[jevscan](https://github.com/alexykn/jevscan) composes tree-sitter extract (hard envelope; no execute) with independent Jev questions (soft judgment). Same layering as structural deny then System One here; quality scanner, not a reward-hack gate.
+
+[jev-testbench](https://github.com/ufx7/jev-testbench) collab harness measures `llm_autonomous` vs `scripted_plus_jev` vs `llm_plus_jev` (Wilson intervals, McNemar; Jev is not a peer arm). Do not claim collab helps without arms.
+
 ## Anti-pattern
 
 Using **LLM-as-judge** (or gaming jevals labels) as the reward signal is
