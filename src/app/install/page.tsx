@@ -81,7 +81,7 @@ Grok Build       ~/.grok/hooks/*.json / .grok/hooks/*.json         host fail-ope
 Pi               ~/.pi/agent/extensions/ or .pi/extensions/        plugin {block,reason,terminate} on fetch failure
 Amp              .amp/plugins/ or ~/.config/amp/plugins/           reject-and-continue (not error); catch throws
 Prime Agent      ~/.prime/agent/extensions/                        plugin {block,reason}; no terminate
-DSH              Claude/Codex command bridges (generic/adapter)    HTTP skipped; generic stdin {block} + exit 2
+DSH              generic stdin (hooks/run.ts dsh or generic)       HTTP skipped (404); {block,reason} + exit 2
 Exo              wrap ToolRuntime.execute (not drop-in hooks)      tool error {ok:false, error: AGENT_DENY}`;
 
 const pluginInstall = `# Claude Code plugin (skill + hook pack). Sidecar still required.

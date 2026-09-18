@@ -111,7 +111,10 @@ fn score_via_http(url: &str, request: &ToolRequest) -> Option<bool> {
 }
 
 #[async_trait]
-impl<T: ToolRuntime> ToolRuntime for RhGuardToolRuntime<T> {
+impl<T> ToolRuntime for RhGuardToolRuntime<T>
+where
+    T: ToolRuntime + Send + Sync,
+{
     async fn prepare_conversation(
         &self,
         agent: &dyn AgentHandle,

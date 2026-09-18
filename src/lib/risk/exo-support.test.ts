@@ -219,7 +219,7 @@ describe("exo docs stay honest", () => {
     expect(ts).toMatch(/scoreViaHttp/);
     expect(ts).toMatch(/\/api\/hooks\/exo/);
     expect(rs).toMatch(/async fn execute/);
-    expect(rs).toMatch(/impl<T: ToolRuntime> ToolRuntime for RhGuardToolRuntime/);
+    expect(rs).toMatch(/impl<T> ToolRuntime for RhGuardToolRuntime/);
     expect(rs).toMatch(/score_via_http/);
     expect(gate).toMatch(/\.exo\/agent-tools/);
     expect(gate).toMatch(/wrapToolHandlerExecute/);

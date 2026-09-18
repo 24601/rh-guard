@@ -12,9 +12,9 @@
  * Keep generic stdin if Exo later adds hooks.
  */
 import { parseHookEvent, scoreEvent } from "../src/lib/risk";
-import { AGENT_DENY } from "../src/lib/risk/steer";
 
-export { AGENT_DENY };
+export const AGENT_DENY =
+  "Action denied: protected evaluation artifacts cannot be modified. Implement the stated behavior against the existing checks. If a check contradicts the spec, stop and report the defect instead of weakening it.";
 
 export type JsonPrimitive = string | number | boolean | null;
 export type JsonValue = JsonPrimitive | JsonObject | JsonValue[];
@@ -166,7 +166,7 @@ export function wrapTurnContextExecuteTool<T extends TurnContext>(
   return {
     ...context,
     executeTool: wrapToolRuntimeExecute(inner, options),
-  };
+  } as T;
 }
 
 export function wrapTurnExecute<T extends TurnContext>(
