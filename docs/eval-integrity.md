@@ -58,7 +58,7 @@ Practices (from the jevals skill):
 
 [jev-harness](https://github.com/AntonioCoppe/jev-harness) is a measurement pattern: shadow mode, confidence gates, and evals that assert on the action, not free text — so you can see when a System One gate is being gamed vs calibrated. Contrast with LLM-as-judge as the primary score.
 
-[jev-pref](https://github.com/doeixd/jev-pref) encodes AGENTS.md prefs as a Jev linter. Watch preference-theater: prefs that are not independently enforceable (tests, types, structural detectors) are not a substitute for this gate.
+[jev-pref](https://github.com/doeixd/jev-pref) encodes AGENTS.md prefs as a Jev linter. Watch preference-theater: prefs that are not independently enforceable (tests, types, structural detectors) are not a substitute for this gate. [Abide](https://github.com/coldteadotai/abide) is the productized sibling for those same soft instruction files (compile / calibrate / tune / replay / Claude / Codex / OpenCode hooks). Complementary to this reward-hack gate, not a merge.
 
 Watch, not an endorsement: [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b) is a distilled memory-relevance student of teacher Jev. Agreement with teacher labels is not independent gold; a student gate can overfit teacher quirks (distill → gate integrity).
 
@@ -83,3 +83,11 @@ is semantic convention Noul lint in a write → check → fix loop (quality,
 not gaming). [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an
 encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent
 reward-hack / eval integrity gate.
+
+[Abide](https://github.com/coldteadotai/abide) enforces soft project
+instructions (AGENTS.md / CLAUDE.md) via Jev on diffs — not reward hacking.
+Shared patterns: multi-host hooks, fail-open (no key/network → edit
+proceeds), banded confidence (repair / note / silence), and soft judgment
+never the sole hard veto. Its `replay` plus independent review (flagged
+edits/turns confirmed or not; flags are not labels) is Harbor/jevals-adjacent
+measurement discipline, not a claim that Abide measures reward hacking.

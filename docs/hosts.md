@@ -16,6 +16,13 @@ the System One sidecar is the rest. Do not merge the products.
 prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval
 integrity gate (complementary, not a competitor).
 
+**Sibling, not a merge.** [Abide](https://github.com/coldteadotai/abide)
+also ships Claude / Codex / OpenCode hooks, but it scores project-instruction
+rules on diffs, not reward-hack hazard. Its hooks fail-open (exit 0; no key
+→ edit proceeds). Soft Jev verdicts are banded (repair / note / silence);
+they are not a hard veto. Do not merge adapters; Abide does not catch
+reward hacking.
+
 `hooks/run.ts <flavor>` reads JSON on stdin. Flavors:
 
 | argv | Output shape |

@@ -97,6 +97,10 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/fastino-ai\/GLiGuard/);
     expect(readme).toMatch(/encoder-based LLM prompt\/response safety guard/i);
     expect(readme).toMatch(/reward-hack \/ eval integrity gate/i);
+    expect(readme).toMatch(/coldteadotai\/abide/);
+    expect(readme).toMatch(/soft project instructions/i);
+    expect(readme).toMatch(/banded confidence/);
+    expect(readme).toMatch(/Abide does not catch reward hacking/);
     expect(readme).toMatch(/Eval integrity & measurement/);
     expect(readme).toMatch(/harbor-framework\/harbor/);
     expect(readme).toMatch(/dayhaysoos\/jevals/);
@@ -118,6 +122,13 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Harbor scores product\/agent loops/);
     expect(readme).toMatch(/\*\*practices\*\*, not install dependencies/);
     expect(readme).not.toMatch(/research-prompt/i);
+  });
+
+  it("does not add Abide as a runtime dependency", () => {
+    const pkg = readFileSync(join(root, "package.json"), "utf8");
+    const lock = readFileSync(join(root, "package-lock.json"), "utf8");
+    expect(pkg).not.toMatch(/abide/i);
+    expect(lock).not.toMatch(/@coldtea\/abide/);
   });
 
   it("does not advertise Deep Research paste workflows on public surfaces", () => {
@@ -159,6 +170,11 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/thevibeworks\/jevgate/);
     expect(skill).toMatch(/allowlist proves what may run/i);
     expect(skill).toMatch(/fastino-ai\/GLiGuard/);
+    expect(skill).toMatch(/coldteadotai\/abide/);
+    expect(skill).toMatch(/soft\s+project-instruction/);
+    expect(skill).toMatch(/banded confidence/);
+    expect(skill).toMatch(/Abide does not catch reward hacking/);
+    expect(skill).toMatch(/Harbor\/jevals-adjacent measurement discipline/);
     expect(skill).toMatch(/Eval integrity & measurement/);
     expect(skill).toMatch(/harbor-framework\/harbor/);
     expect(skill).toMatch(/dayhaysoos\/jevals/);
@@ -210,7 +226,15 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/thevibeworks\/jevgate/);
     expect(evalDoc).toMatch(/huntedman\/JevLint/);
     expect(evalDoc).toMatch(/fastino-ai\/GLiGuard/);
+    expect(evalDoc).toMatch(/coldteadotai\/abide/);
+    expect(evalDoc).toMatch(/banded confidence/);
+    expect(evalDoc).toMatch(/Harbor\/jevals-adjacent/);
+    expect(evalDoc).toMatch(/not a claim that Abide measures reward hacking/);
     expect(install).toMatch(/practices, not install dependencies/);
+    expect(install).toMatch(/coldteadotai\/abide/);
+    expect(install).toMatch(/not a reward-hack detector/);
+    expect(shape).toMatch(/coldteadotai\/abide/);
+    expect(shape).toMatch(/banded confidence/);
     expect(install).toMatch(/memovai\/openevals/);
     expect(install).toMatch(/eval-integrity\.md/);
     expect(shape).toMatch(/eval-integrity\.md/);
@@ -226,8 +250,16 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/never the sole veto/);
     expect(hosts).toMatch(/Do not merge the products/i);
     expect(hosts).toMatch(/fastino-ai\/GLiGuard/);
+    expect(hosts).toMatch(/coldteadotai\/abide/);
+    expect(hosts).toMatch(/Abide does not catch\s+reward hacking/);
     expect(hosts).toMatch(/hooks\/run\.ts dsh/);
     expect(hosts).toMatch(/command-hook/);
+    const gates = readFileSync(
+      join(root, ".agents/skills/rh-guard/references/gates.md"),
+      "utf8"
+    );
+    expect(gates).toMatch(/coldteadotai\/abide/);
+    expect(gates).toMatch(/never the sole hard veto/);
   });
 });
 
