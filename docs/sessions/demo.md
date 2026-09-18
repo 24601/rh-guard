@@ -33,3 +33,16 @@ Shell command writes `src/add.py` so `add` returns `a + b`. The tool result is `
 ## Replay
 
 `docs/sessions/exo-live-demo.sh` is the script that was recorded. It expects the built exo binary, the file secret store the CLI already had, a running sidecar on port 43147, and `docs/sessions/exo-shell-gate.sh` installed as the conversation shell program. Do not treat a JSON-only node script as a substitute for this cast.
+
+# Side-by-side demo
+
+A separate recording from the one above, and the stronger one: this is the Docker + `wrapTurnContextExecuteTool` session described in the Exo section of [README.md](README.md).
+
+Left is an agg render of `exo-live-deny-allow.cast`: the live exo CLI (`/tmp/exo-src/target/debug/exo`, `--harness typescript` wrapping `TurnContext.executeTool`, Docker 29.1.3). Pauses were inserted between the same recorded bytes so each beat stays readable. It is not a new model run.
+
+Right is a facts panel built from that session (tool name, command, recorded result). It is not a second CLI. The code block is a frozen cat of `/tmp/exo-fixture/tests/test_foo.py`.
+
+- Allow: `shell` `echo rh-guard-allow`, exit 0, stdout `rh-guard-allow`. The Docker sandbox ran it.
+- Deny: `shell` and `sed -i 's/assert result == 3/assert True/' /workspace/tests/test_foo.py`. The agent sees the opaque AGENT_DENY sentence. SHA-256 stayed `f2929be61e9643e37af4f1b5833cd348af0e02fe6a9535b6a9f55bc395bebfb6`. The file still contains `assert result == 3`.
+
+Video: `rh_guard_side_by_side.mp4`. The same file is served to the site at `public/demo/rh-guard-side-by-side.mp4`, and `rh_guard_side_by_side.gif` is the README render of it.
