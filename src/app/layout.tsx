@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hack Radar",
+  title: "Reward Hack Guard",
   description:
-    "Score coding-agent prompts and trajectories for reward-hacking risk, then steer toward real verifiers.",
+    "RH Guard scores coding-agent prompts and trajectories for reward-hacking risk, then steers toward real verifiers.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,6 +1,6 @@
 # Host adapters
 
-Hack Radar scores every host through the same `scoreEvent` path. Adapters
+RH Guard scores every host through the same `scoreEvent` path. Adapters
 only change install location and the deny JSON the host understands.
 `examples/` is the source of truth. Agent-visible text is always
 `AGENT_DENY` (opaque filesystem-integrity copy). Scores stay on the operator
@@ -14,7 +14,7 @@ the System One sidecar is the rest. Do not merge the products.
 
 [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM
 prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval
-integrity gate (complementary, not a competitor).
+integrity gate (complementary, not a competitor). [gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction) is the same encoder family (GLiNER2.5) on Claude context compaction, not prompt/response safety and not reward-hack detection. Extractive character-offset spans, not generated summaries; uncertain → fail-closed `keep_full`; hard shell/mutation policy overrides the soft model; `shadowMode` default true before rewriting history. Sibling envelope next to jevgate (opposite default).
 
 **Sibling, not a merge.** [Abide](https://github.com/coldteadotai/abide)
 also ships Claude / Codex / OpenCode hooks, but it scores project-instruction
@@ -80,7 +80,7 @@ npx tsx hooks/run.ts exo < examples/generic-event.json
 Merge [`examples/claude-settings.json`](../examples/claude-settings.json)
 (HTTP) or [`examples/claude-command-settings.json`](../examples/claude-command-settings.json)
 (fail-closed PreToolUse). Plugin pack: `hooks/claude-hook.sh`. HTTP is
-fail-open (non-2xx / timeout do not block).
+fail-open (non-2xx / timeout do not block). Sibling permission gate (not this copy): [claude-code-jev](https://github.com/RahulBalakavi/claude-code-jev) — OpenRouter `typesafe/jev-1.13` PreToolUse (230.8ms p50 / 263.9ms mean); low-confidence and network fail → human. Additive; Anthropic auto-mode is not replaceable via a supported API.
 
 ### Cursor
 

@@ -236,7 +236,9 @@ export function score(
 
 export async function scoreEvent(
   input: ScoreInput,
-  mode: PolicyMode = parsePolicyMode(process.env.HACK_RADAR_MODE)
+  mode: PolicyMode = parsePolicyMode(
+    process.env.RH_GUARD_MODE ?? process.env.HACK_RADAR_MODE
+  )
 ): Promise<ScoreReport> {
   const haystack = blob(input);
   const structural = runDetectors(input, haystack);

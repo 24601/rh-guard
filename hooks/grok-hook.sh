@@ -5,7 +5,7 @@
 # Deny JSON stays aligned with failClosedGrokOutput() in src/lib/risk/hosts.ts.
 set -eu
 
-SIDECAR="${HACK_RADAR_URL:-http://127.0.0.1:43147/api/hooks/grok}"
+SIDECAR="${RH_GUARD_URL:-${HACK_RADAR_URL:-http://127.0.0.1:43147/api/hooks/grok}}"
 DENY='{"decision":"deny","reason":"Action denied: protected evaluation artifacts cannot be modified. Implement the stated behavior against the existing checks. If a check contradicts the spec, stop and report the defect instead of weakening it."}'
 
 body=$(cat || true)

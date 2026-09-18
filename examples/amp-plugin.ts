@@ -1,5 +1,5 @@
 /**
- * Hack Radar for Amp. Copy to .amp/plugins/ or ~/.config/amp/plugins/.
+ * RH Guard for Amp. Copy to .amp/plugins/ or ~/.config/amp/plugins/.
  * Self-contained: POSTs tool.call events to the sidecar so copies work.
  * In-repo you may instead `import { parseHookEvent, scoreEvent, toAmpOutput } from "../src/lib/risk"`
  * at the top of the module (never inline). Do not add the Amp plugin SDK.
@@ -11,7 +11,10 @@
 const AGENT_DENY =
   "Action denied: protected evaluation artifacts cannot be modified. Implement the stated behavior against the existing checks. If a check contradicts the spec, stop and report the defect instead of weakening it.";
 
-const SIDECAR = process.env.HACK_RADAR_URL ?? "http://127.0.0.1:43147/api/hooks/amp";
+const SIDECAR =
+  process.env.RH_GUARD_URL ??
+  process.env.HACK_RADAR_URL ??
+  "http://127.0.0.1:43147/api/hooks/amp";
 
 type AmpToolCallEvent = {
   tool: string;

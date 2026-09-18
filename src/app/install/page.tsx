@@ -189,7 +189,7 @@ export default function InstallPage() {
               fired. Thirteen hazard Nouls, one positive falsifier Noul, one Choice,
               one severity Score. Code owns thresholds and steer copy. The falsifier
               Noul does not enter hazard aggregation. Pin jev-1.13.0. Get a key from
-              console.typesafe.ai. Set HACK_RADAR_MODE to shadow, then review, then
+              console.typesafe.ai. Set RH_GUARD_MODE to shadow, then review, then
               enforce.
             </CardDescription>
           </CardHeader>

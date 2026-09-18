@@ -6,7 +6,7 @@ as the install unit. Per-host deny JSON and honest limits:
 [docs/hosts.md](hosts.md). The Next workbench is optional once hooks can
 reach the scorer.
 
-Hack Radar is **not** [Augustus](https://github.com/24601/Augustus). Augustus
+RH Guard is **not** [Augustus](https://github.com/24601/Augustus). Augustus
 places typed System One judgments. This pack is the live hazard gate on agent
 tools. It is also **not** [jevgate](https://github.com/thevibeworks/jevgate):
 an allowlist proves what may run, Jev judges only the rest, and the tool
@@ -63,8 +63,8 @@ Layout:
 
 `hooks/hooks.json` uses HTTP for `UserPromptSubmit` and `Stop` (fail-open if
 the sidecar is down) and `hooks/claude-hook.sh` for `PreToolUse` (fail-closed).
-Override the sidecar URL with `HACK_RADAR_URL` if you do not bind
-`127.0.0.1:43147`.
+Override the sidecar URL with `RH_GUARD_URL` if you do not bind
+`127.0.0.1:43147` (`HACK_RADAR_URL` is still accepted).
 
 Keep the sidecar running. The plugin does not start Next.js.
 
@@ -119,7 +119,7 @@ use it as a runbook for `next dev`.
 - Do not put hidden tests in a workspace file the agent can edit.
 - Do not treat lexical scores as a Jev ROC.
 - Do not treat [Harbor](https://github.com/harbor-framework/harbor), [jevals](https://github.com/dayhaysoos/jevals), or [openevals](https://github.com/memovai/openevals) as required to install the hooks (practices, not install dependencies). See [eval-integrity.md](eval-integrity.md).
-- Do not treat [pi-jev-approver](https://github.com/phin-tech/pi-jev-approver), [agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai), [jevscan](https://github.com/alexykn/jevscan), or [jev-testbench](https://github.com/ufx7/jev-testbench) as install dependencies (sibling notes; no runtime deps).
+- Do not treat [pi-jev-approver](https://github.com/phin-tech/pi-jev-approver), [agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai), [jevscan](https://github.com/alexykn/jevscan), [jev-testbench](https://github.com/ufx7/jev-testbench), [semantic-firewall](https://github.com/CeamKrier/semantic-firewall), [claude-code-jev](https://github.com/RahulBalakavi/claude-code-jev), [jev-agent-safety-arena](https://github.com/mjyoke1111/jev-agent-safety-arena), [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router), or [gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction) as install dependencies (sibling notes; no runtime deps).
 - Do not merge this pack into Augustus, [JevLint](https://github.com/huntedman/JevLint), [jevgate](https://github.com/thevibeworks/jevgate), or [Abide](https://github.com/coldteadotai/abide) (or vice versa). Abide is soft project-instruction Jev on diffs, not a reward-hack detector. Do not merge [pi-jev-approver](https://github.com/phin-tech/pi-jev-approver) into `examples/pi-extension.ts`.
 - Do not send `continue: false` on Codex PreToolUse (Codex fails the hook and continues the tool).
 - Do not deny Amp with `action: "error"` or by throwing (Amp ignores thrown plugin errors).

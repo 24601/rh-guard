@@ -2,7 +2,7 @@
 name: rh-guard
 description: >
   Use when designing or evaluating coding-agent evals for reward-hacking, interpreting
-  Hack Radar / rh-guard denials, choosing structural vs Jev gates, or relating that
+  Reward Hack Guard / RH Guard (`rh-guard`) denials, choosing structural vs Jev gates, or relating that
   live hazard gate to Augustus decision-design. Do not use to run or debug the Next.js
   sidecar (npm run dev, /api/hooks/*).
 metadata:
@@ -13,7 +13,7 @@ metadata:
 
 # rh-guard
 
-Hack Radar (`rh-guard`) is a **live hazard gate** on coding-agent tools
+Reward Hack Guard (`rh-guard`, RH Guard) is a **live hazard gate** on coding-agent tools
 (Claude Code, Cursor, Codex, Grok Build, Pi, Amp, Prime Agent, and
 DeepSeek Harness / `dsh`). Same `scoreEvent` path; multi-host adapters per
 install surface. Structural detectors deny writes to designated evaluation assets.
@@ -71,6 +71,10 @@ confidence; held-out discipline; compare only equivalent case sets.
 [wellposed](https://github.com/suraj-phanindra/wellposed) lints Choice / Score / Noul requests before runtime: a Choice with no "other" can be forced wrong at confidence 1.0. Confidence gating cannot catch a forced wrong Choice — inspect request shape first.
 
 [pi-jev-approver](https://github.com/phin-tech/pi-jev-approver) is a Pi bash safety gate (code state then Jev; `commandRules` can hard-block; no key → fail-closed). Contrast jevgate allowlist + fail-open rest. [agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai) is advisory `no_action` receipts; the plugin never changes host routing/executor (hard fail-open evidence for soft sidecars). [jevscan](https://github.com/alexykn/jevscan) composes tree-sitter extract with Jev questions (hard envelope vs soft judgment). Measure collab with [jev-testbench](https://github.com/ufx7/jev-testbench) arms (`llm_autonomous` vs `scripted_plus_jev` vs `llm_plus_jev`); do not claim collab helps without arms.
+
+[semantic-firewall](https://github.com/CeamKrier/semantic-firewall) is LLM-proposes / Jev 5-noul control plane / code `ALLOW`/`ASK_USER`/`REVISE`/`BLOCK` (`untrustedInstruction` skip-when-absent). Contrast: fail-open soft Jev overlay here; the hard envelope stays structural. [claude-code-jev](https://github.com/RahulBalakavi/claude-code-jev) is an additive Claude `PreToolUse` permission gate via OpenRouter `typesafe/jev-1.13` (230.8ms p50 / 263.9ms mean); low-confidence and network fail → human. [jev-agent-safety-arena](https://github.com/mjyoke1111/jev-agent-safety-arena) is a small browser-agent Jev-vs-baseline eval on benign + injected pages. [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is adjacent model+effort routing, not a rh-guard peer.
+
+[gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction) is local GLiNER2.5 (`fastino/gliner2.5-base-v1`) Claude context compaction: extractive character-offset spans, not generated summaries; Choice `keep_full`/`keep_evidence`/`keep_call_only`/`drop`; uncertain/invalid → fail-closed `keep_full`; hard shell/mutation policy overrides the soft model; `shadowMode` default true before rewriting history. Not reward-hack detection. Sibling envelope next to jevgate (fail-closed retention vs fail-open rest).
 
 [Abide](https://github.com/coldteadotai/abide)'s `replay` plus independent
 review (flagged edits/turns confirmed or not; flags are not labels) is
@@ -202,6 +206,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Semantic convention lint (quality vs gaming): [JevLint](https://github.com/huntedman/JevLint)
 - Shell allowlist, then Jev on the rest: [jevgate](https://github.com/thevibeworks/jevgate)
 - Encoder LLM prompt/response safety (complementary): [GLiGuard](https://github.com/fastino-ai/GLiGuard)
+- Extractive Claude context compaction (fail-closed `keep_full`; not reward-hack): [gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction)
 - Decision-stage Jev workbench: [jevals](https://github.com/dayhaysoos/jevals)
 - E2e agent eval substrate: [Harbor](https://github.com/harbor-framework/harbor)
 - Online eval / observability (cheap parallel System One, not primary score): [openevals](https://github.com/memovai/openevals)
@@ -213,4 +218,8 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Advisory `no_action` receipts (plugin never changes host routing/executor): [agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai)
 - tree-sitter extract then Jev questions: [jevscan](https://github.com/alexykn/jevscan)
 - Collab arms (`llm_autonomous` vs `scripted_plus_jev` vs `llm_plus_jev`): [jev-testbench](https://github.com/ufx7/jev-testbench)
+- LLM-proposes / Jev-noul / code authority PoC: [semantic-firewall](https://github.com/CeamKrier/semantic-firewall)
+- Additive Claude PreToolUse permission gate (OpenRouter Jev): [claude-code-jev](https://github.com/RahulBalakavi/claude-code-jev)
+- Browser-agent Jev-vs-baseline eval (benign + injected): [jev-agent-safety-arena](https://github.com/mjyoke1111/jev-agent-safety-arena)
+- Model+effort router (not a safety gate): [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router)
 - Official TypeSafe contracts: [typesafe-ai/skills](https://github.com/typesafe-ai/skills)

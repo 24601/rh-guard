@@ -1,6 +1,6 @@
 {
   "name": "rh-guard",
-  "displayName": "Hack Radar",
+  "displayName": "Reward Hack Guard",
   "version": "0.1.0",
   "description": "Live reward-hack gate for Claude Code: structural denies plus a TypeSafe Jev System One sidecar. Not the Next.js workbench.",
   "author": {

@@ -1,5 +1,5 @@
 /**
- * Hack Radar for Prime Agent. Copy to ~/.prime/agent/extensions/ or
+ * RH Guard for Prime Agent. Copy to ~/.prime/agent/extensions/ or
  * .prime/agent/extensions/. Self-contained: POSTs tool_call events to the sidecar.
  *
  * Prime's tool_call result is { block, reason } only — no terminate in Prime docs.
@@ -9,7 +9,9 @@ const AGENT_DENY =
   "Action denied: protected evaluation artifacts cannot be modified. Implement the stated behavior against the existing checks. If a check contradicts the spec, stop and report the defect instead of weakening it.";
 
 const SIDECAR =
-  process.env.HACK_RADAR_URL ?? "http://127.0.0.1:43147/api/hooks/prime";
+  process.env.RH_GUARD_URL ??
+  process.env.HACK_RADAR_URL ??
+  "http://127.0.0.1:43147/api/hooks/prime";
 
 type PrimeToolCallEvent = {
   toolName: string;
