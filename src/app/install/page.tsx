@@ -73,6 +73,15 @@ const cursorHooks = `{
   }
 }`;
 
+const pluginInstall = `# Claude Code plugin (skill + hook pack). Sidecar still required.
+claude plugin marketplace add 24601/rh-guard
+claude plugin install rh-guard@rh-guard
+
+# Companion skill only (does not start Next.js)
+npx skills add 24601/rh-guard --skill rh-guard
+
+# Cursor "plugin": copy examples/cursor-hooks.json to .cursor/hooks.json`;
+
 export default function InstallPage() {
   return (
     <AppShell>
@@ -81,8 +90,10 @@ export default function InstallPage() {
         <p className="max-w-3xl text-sm text-muted-foreground">
           Keep this app running. Point Claude Code at the HTTP routes for prompt
           steering and at the command wrapper for fail-closed PreToolUse. Point Cursor
-          at the stdin CLI. Set TYPESAFE_API_KEY for Jev. Without a key the lexical
-          layer still scores, and structural detectors still deny protected evaluation
+          at the stdin CLI. Canonical JSON lives in examples/. The Claude plugin pack
+          and Cursor hooks.json install are documented in docs/install-plugin.md. Set
+          TYPESAFE_API_KEY for Jev. Without a key the lexical layer still scores as a
+          degraded fallback, and structural detectors still deny protected evaluation
           assets and `--no-verify`. Claude HTTP hooks are not fail-closed: a timeout is
           a no-op. Cursor `beforeSubmitPrompt` cannot inject context; tool-denial steering
           uses `agent_message`.
@@ -115,6 +126,22 @@ export default function InstallPage() {
           </CardHeader>
           <CardContent>
             <pre className="overflow-x-auto rounded-lg bg-muted p-3 text-xs">{cursorHooks}</pre>
+          </CardContent>
+        </Card>
+        <Card className="lg:col-span-2">
+          <CardHeader>
+            <CardTitle>Plugin, skill, source of truth</CardTitle>
+            <CardDescription>
+              examples/ is the hook JSON source of truth. The Claude marketplace
+              installs the protocol skill plus hooks/hooks.json. Cursor has no
+              marketplace: copy examples/cursor-hooks.json to .cursor/hooks.json.
+              Augustus is design-judgment for where System One belongs; this pack
+              is the live hazard gate. Do not merge the products. The rh-guard
+              skill is not a runbook for this Next server.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <pre className="overflow-x-auto rounded-lg bg-muted p-3 text-xs">{pluginInstall}</pre>
           </CardContent>
         </Card>
         <Card className="lg:col-span-2">

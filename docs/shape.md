@@ -62,6 +62,14 @@ GLiClass as the only neural head. Fine for air-gapped boxes. Wrong default now t
 
 Averaging all Nouls or multiplying by Choice confidence. Parallel questions are not a statistically independent ensemble. A high-confidence `none` cannot override a hazard Noul.
 
+## System One class
+
+The live head is TypeSafe Jev. Lexical / GLiClass-shaped labels are a degraded fallback when the key is missing or the call fails, not a calibrated substitute. Open System One heads (for example Laya) are future backends: same *class* (typed Choice / Score / Noul), not drop-in ROC replacements for this reward-hack hook. There is no public Jev reward-hack ROC. Do not cite support-ticket calibration as a SWE-hack claim.
+
+## TOCTOU
+
+A Noul is a score at one hook event, not a capability grant. Deny mutating tools with fresh structural checks on that event. Do not authorize a write, `sed`, or `--no-verify` because an earlier prompt-stage Noul was below threshold. Soft semantic scores may steer; they do not replace an atomic policy on the side effect. Check-then-act on a stale overlay is how a gate looks closed in logs and still loses the race.
+
 ## Open questions and risks
 
 Jev has no published ROC on School of Reward Hacks or Terminal-Wrench. Calibration on support tickets is not a claim about SWE hacks.
