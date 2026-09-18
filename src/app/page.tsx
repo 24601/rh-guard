@@ -13,6 +13,18 @@ export default function HomePage() {
           protect designated evaluation assets, not every test file, and skip Jev
           after a deny. The same function runs in Claude Code and Cursor hooks.
         </p>
+        <video
+          className="w-full"
+          src="/demo/rh-guard-side-by-side.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+        />
+        <p className="max-w-3xl text-sm text-muted-foreground">
+          Left pane is the live Exo turn; right pane is what rh-guard did (sed denied, assertion unchanged, harmless echo allowed).
+        </p>
       </div>
       <ScoreWorkbench />
     </AppShell>
