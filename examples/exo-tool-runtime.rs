@@ -2,7 +2,9 @@
 //! hooks. It does not ship Claude-style PreToolUse JSON hooks.
 //!
 //! Wrap `ToolRuntime::execute` (see crates/executor/src/executor_types.rs in
-//! https://github.com/exoharness/exo) before `shell` / mutating tools. Score
+//! https://github.com/exoharness/exo) before every tool outside the verified
+//! read-only surface — `shell`, `manage_tool`, `rebuild_and_restart_exo`,
+//! `rewind_sandbox`, adapter enable/disable, and agent-created tools. Score
 //! with HTTP `POST /api/hooks/exo` (or `/api/hooks/generic`) `{ block, reason }`,
 //! or stdin `hooks/run.ts exo`. Deny by returning
 //! `{ "ok": false, "error": AGENT_DENY }` — the same shape Exo uses when
@@ -29,6 +31,27 @@ const AGENT_DENY: &str = "Action denied: protected evaluation artifacts cannot b
 
 const DEFAULT_EXO_HOOK_URL: &str = "http://127.0.0.1:43147/api/hooks/exo";
 
+/// Same budget as the Pi, Amp, Prime, and Grok wrappers. A hang is a deny.
+const SIDECAR_TIMEOUT_SECS: &str = "8";
+
+/// Read-only tools on exoharness/exo main (`crates/executor/src/harness_tool.rs`
+/// dispatch plus the TypeScript harness built-in, adapter, and skill tools).
+/// Everything else is gated, including agent-created tools from
+/// `.exo/agent-tools/`. Exo ships no `bash`, `write`, or `edit` tool.
+const READ_ONLY_TOOLS: &[&str] = &[
+    "inspect_tools",
+    "list_adapters",
+    "list_adapter_events",
+    "list_conversation_events",
+    "list_scheduled_tasks",
+    "list_sandbox_snapshots",
+    "get_sandbox_status",
+    "list_skills",
+    "read_skill_file",
+    "web_search",
+    "web_fetch",
+];
+
 pub struct RhGuardToolRuntime<T> {
     pub inner: T,
     pub sidecar_url: String,
@@ -47,21 +70,14 @@ impl<T> RhGuardToolRuntime<T> {
     }
 }
 
-fn is_mutating(function_name: &str) -> bool {
+/// Deny-by-default: gate every tool except the verified read-only surface.
+/// `shell`, `manage_tool`, `install_agent_tool`, `uninstall_agent_tool`,
+/// `rebuild_and_restart_exo`, `snapshot_sandbox`, `rewind_sandbox`, the
+/// scheduler verbs, and adapter enable/disable/create/delete all fall through
+/// to the gate without being named.
+fn is_gated(function_name: &str) -> bool {
     let name = function_name.to_ascii_lowercase();
-    name == "shell"
-        || name == "bash"
-        || name == "write"
-        || name == "edit"
-        || name == "install_agent_tool"
-        || name == "snapshot_sandbox"
-        || name == "create_adapter"
-        || name == "delete_adapter"
-        || name == "send_adapter_message"
-        || name.contains("write")
-        || name.contains("edit")
-        || name.contains("shell")
-        || name.contains("snapshot")
+    !READ_ONLY_TOOLS.contains(&name.as_str())
 }
 
 fn denied_tool_result() -> ToolResult {
@@ -84,6 +100,8 @@ fn score_via_http(url: &str, request: &ToolRequest) -> Option<bool> {
         .args([
             "-sS",
             "-f",
+            "--max-time",
+            SIDECAR_TIMEOUT_SECS,
             "-X",
             "POST",
             "-H",
@@ -136,7 +154,7 @@ where
         config: &ConversationConfig,
         request: &ToolRequest,
     ) -> Result<ToolResult> {
-        if is_mutating(&request.function_name) {
+        if is_gated(&request.function_name) {
             let denied = match score_via_http(&self.sidecar_url, request) {
                 Some(block) => block,
                 None => true,

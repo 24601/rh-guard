@@ -4,7 +4,11 @@
  *
  * Wrap `ToolRuntime::execute` (Rust trait in exoharness/exo
  * `crates/executor/src/executor_types.rs`) / `TurnContext.executeTool`
- * (TypeScript harness) before shell and other mutating tools. Score with
+ * (TypeScript harness). The gate is deny-by-default: every tool outside the
+ * verified read-only surface is scored, including `shell`, `manage_tool`,
+ * `install_agent_tool`, `uninstall_agent_tool`, `rebuild_and_restart_exo`,
+ * `snapshot_sandbox`, `rewind_sandbox`, adapter enable/disable, and
+ * agent-created tools from `.exo/agent-tools/`. Score with
  * HTTP `POST /api/hooks/exo` (alias of generic `{ block, reason? }`),
  * `/api/hooks/generic`, in-repo `scoreEvent`, or stdin `hooks/run.ts exo`.
  * Deny by returning `{ ok: false, error: AGENT_DENY }`. Fail-closed is the
@@ -45,35 +49,72 @@ export type ToolHandler = {
 
 export const DEFAULT_EXO_HOOK_URL = "http://127.0.0.1:43147/api/hooks/exo";
 
+/** Same budget as the Pi, Amp, Prime, and Grok wrappers. A hang is a deny. */
+export const SIDECAR_TIMEOUT_MS = 8000;
+
 export type RhGuardExoOptions = {
   score?: (input: {
     functionName: string;
     arguments: JsonObject;
   }) => Promise<{ block: boolean }>;
   sidecarUrl?: string;
+  timeoutMs?: number;
 };
 
-const GATED_HOST_TOOLS = new Set([
+/**
+ * Read-only tools on exoharness/exo main (`exoharness/typescript/harness`
+ * built-in / adapter / skill tools, `exo/tools/*`, and the Rust dispatch in
+ * `crates/executor/src/harness_tool.rs`). Everything else is gated, including
+ * agent-created tools from `.exo/agent-tools/`, whose names are unknown ahead
+ * of time. Exo ships no `bash`, `write`, or `edit` tool; do not invent
+ * Claude-shaped names here.
+ */
+export const EXO_READ_ONLY_TOOLS = [
+  "inspect_tools",
+  "list_adapters",
+  "list_adapter_events",
+  "list_conversation_events",
+  "list_scheduled_tasks",
+  "list_sandbox_snapshots",
+  "get_sandbox_status",
+  "list_skills",
+  "read_skill_file",
+  "web_search",
+  "web_fetch",
+] as const;
+
+/**
+ * Mutating tools Exo actually ships. The gate does not depend on this list —
+ * it is deny-by-default — but the names are asserted in tests so a rename
+ * upstream shows up as a failure rather than a silent hole.
+ */
+export const EXO_MUTATING_TOOLS = [
   "shell",
-  "bash",
-  "write",
-  "edit",
+  "manage_tool",
   "install_agent_tool",
+  "uninstall_agent_tool",
+  "rebuild_and_restart_exo",
   "snapshot_sandbox",
+  "rewind_sandbox",
+  "schedule_sandbox_task",
+  "cancel_scheduled_task",
+  "delete_scheduled_task",
   "create_adapter",
+  "enable_adapter",
+  "disable_adapter",
   "delete_adapter",
   "send_adapter_message",
-]);
+  "install_skill",
+  "uninstall_skill",
+  "remember",
+  "forget",
+  "todowrite",
+] as const;
+
+const READ_ONLY = new Set<string>(EXO_READ_ONLY_TOOLS);
 
 export function isGatedExoHostTool(functionName: string): boolean {
-  const name = functionName.toLowerCase();
-  if (GATED_HOST_TOOLS.has(name)) return true;
-  return (
-    name.includes("write") ||
-    name.includes("edit") ||
-    name.includes("shell") ||
-    name.includes("snapshot")
-  );
+  return !READ_ONLY.has(functionName.toLowerCase());
 }
 
 export function deniedToolResult(): ToolResult {
@@ -95,6 +136,7 @@ export async function scoreViaHttp(
       functionName: input.functionName,
       arguments: input.arguments,
     }),
+    signal: AbortSignal.timeout(SIDECAR_TIMEOUT_MS),
   });
   if (!response.ok) {
     throw new Error(`rh-guard ${url} HTTP ${response.status}`);
@@ -130,20 +172,51 @@ function resolveScore(
   return defaultScore;
 }
 
+/**
+ * A wrap that waits forever is an open gate. Bound every scoring path — HTTP,
+ * in-process, or a caller-supplied `score` — and treat the timeout as a deny.
+ */
+async function withScoreTimeout<T>(pending: Promise<T>, ms: number): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    return await Promise.race([
+      pending,
+      new Promise<never>((_resolve, reject) => {
+        timer = setTimeout(
+          () => reject(new Error(`rh-guard scoring timed out after ${ms}ms`)),
+          ms
+        );
+      }),
+    ]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+async function scoreOrDeny(
+  input: { functionName: string; arguments: JsonObject },
+  options: RhGuardExoOptions
+): Promise<boolean> {
+  try {
+    const result = await withScoreTimeout(
+      resolveScore(options)(input),
+      options.timeoutMs ?? SIDECAR_TIMEOUT_MS
+    );
+    return result.block;
+  } catch {
+    return true;
+  }
+}
+
 async function shouldDeny(
   request: ToolRequest,
   options: RhGuardExoOptions
 ): Promise<boolean> {
   if (!isGatedExoHostTool(request.functionName)) return false;
-  try {
-    const result = await resolveScore(options)({
-      functionName: request.functionName,
-      arguments: request.arguments,
-    });
-    return result.block;
-  } catch {
-    return true;
-  }
+  return scoreOrDeny(
+    { functionName: request.functionName, arguments: request.arguments },
+    options
+  );
 }
 
 export function wrapToolRuntimeExecute(
@@ -181,18 +254,9 @@ export function wrapToolHandlerExecute(
   handler: ToolHandler,
   options: RhGuardExoOptions = {}
 ): ToolHandler {
-  const score = resolveScore(options);
   return {
     async execute(args, execution) {
-      try {
-        const result = await score({
-          functionName: toolName,
-          arguments: args,
-        });
-        if (result.block) {
-          return deniedToolResult();
-        }
-      } catch {
+      if (await scoreOrDeny({ functionName: toolName, arguments: args }, options)) {
         return deniedToolResult();
       }
       return handler.execute(args, execution);

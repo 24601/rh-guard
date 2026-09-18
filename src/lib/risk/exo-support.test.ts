@@ -8,6 +8,9 @@ import {
 } from "../../../examples/exo-agent-tools-gate";
 import {
   AGENT_DENY as EXAMPLE_AGENT_DENY,
+  EXO_MUTATING_TOOLS,
+  EXO_READ_ONLY_TOOLS,
+  SIDECAR_TIMEOUT_MS,
   deniedToolResult,
   isGatedExoHostTool,
   wrapToolRuntimeExecute,
@@ -61,10 +64,45 @@ describe("examples wrap ToolRuntime.execute", () => {
     expect(deniedToolResult()).toEqual({ ok: false, error: AGENT_DENY });
   });
 
-  it("gates shell and other mutating host execute names", () => {
-    expect(isGatedExoHostTool("shell")).toBe(true);
-    expect(isGatedExoHostTool("snapshot_sandbox")).toBe(true);
-    expect(isGatedExoHostTool("list_scheduled_tasks")).toBe(false);
+  it("gates the mutating verbs exo actually ships", () => {
+    for (const name of EXO_MUTATING_TOOLS) {
+      expect(isGatedExoHostTool(name), name).toBe(true);
+    }
+    for (const name of [
+      "manage_tool",
+      "rebuild_and_restart_exo",
+      "uninstall_agent_tool",
+      "rewind_sandbox",
+      "enable_adapter",
+      "disable_adapter",
+    ]) {
+      expect(EXO_MUTATING_TOOLS as readonly string[], name).toContain(name);
+    }
+  });
+
+  it("exempts only read-only exo tools and gates unknown agent tools", () => {
+    for (const name of EXO_READ_ONLY_TOOLS) {
+      expect(isGatedExoHostTool(name), name).toBe(false);
+    }
+    expect(isGatedExoHostTool("rewrite_grader")).toBe(true);
+    expect(isGatedExoHostTool("some_agent_created_tool")).toBe(true);
+  });
+
+  it("does not claim exo ships claude-shaped bash, write, or edit tools", () => {
+    const named = [...EXO_READ_ONLY_TOOLS, ...EXO_MUTATING_TOOLS] as readonly string[];
+    for (const invented of ["bash", "write", "edit", "strreplace", "notebookedit"]) {
+      expect(named, invented).not.toContain(invented);
+    }
+    const sources = [
+      readExample("exo-tool-runtime.ts"),
+      readExample("exo-tool-runtime.rs"),
+    ];
+    for (const source of sources) {
+      expect(source).not.toMatch(/"bash"/);
+      expect(source).toMatch(/manage_tool/);
+      expect(source).toMatch(/rebuild_and_restart_exo/);
+      expect(source).toMatch(/rewind_sandbox/);
+    }
   });
 
   it("returns AGENT_DENY from wrapToolRuntimeExecute before inner execute", async () => {
@@ -130,7 +168,9 @@ describe("examples wrap ToolRuntime.execute", () => {
   it("fail-closes wrapTurnContextExecuteTool when scoring throws", async () => {
     const context = wrapTurnContextExecuteTool(
       {
-        executeTool: async (): Promise<ToolResult> => ({ ok: true }),
+        executeTool: async (_request: ToolRequest): Promise<ToolResult> => ({
+          ok: true,
+        }),
       },
       {
         score: async () => {
@@ -143,6 +183,37 @@ describe("examples wrap ToolRuntime.execute", () => {
       arguments: { command: "true" },
     });
     expect(result).toEqual({ ok: false, error: AGENT_DENY });
+  });
+
+  it("denies instead of hanging when the sidecar never answers", async () => {
+    const calls: ToolRequest[] = [];
+    const execute = wrapToolRuntimeExecute(
+      async (request) => {
+        calls.push(request);
+        return { ok: true };
+      },
+      {
+        timeoutMs: 20,
+        score: () => new Promise<{ block: boolean }>(() => {}),
+      }
+    );
+    const result = await execute({
+      functionName: "rebuild_and_restart_exo",
+      arguments: { reason: "ship it" },
+    });
+    expect(result).toEqual({ ok: false, error: AGENT_DENY });
+    expect(calls).toEqual([]);
+  });
+
+  it("uses the same 8s budget as the other host wrappers", () => {
+    expect(SIDECAR_TIMEOUT_MS).toBe(8000);
+    expect(readExample("exo-tool-runtime.ts")).toMatch(
+      /AbortSignal\.timeout\(SIDECAR_TIMEOUT_MS\)/
+    );
+    expect(readExample("exo-tool-runtime.rs")).toMatch(/--max-time/);
+    expect(readExample("exo-tool-runtime.rs")).toMatch(
+      /SIDECAR_TIMEOUT_SECS: &str = "8"/
+    );
   });
 
   it("gates agent-created tools from .exo/agent-tools/", async () => {
