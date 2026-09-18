@@ -1,7 +1,7 @@
 # Eval integrity & measurement
 
 Harbor, jevals, and openevals are **practices**, not install dependencies.
-Installing Hack Radar hooks does not require those packages.
+Installing RH Guard hooks does not require those packages.
 
 ## Harbor (e2e substrate)
 

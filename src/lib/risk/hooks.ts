@@ -61,7 +61,7 @@ export function failClosedCursorOutput(): CursorHookOutput {
   return {
     continue: false,
     permission: "deny",
-    user_message: "Hack Radar unavailable. Action held for evaluation-integrity review.",
+    user_message: "RH Guard unavailable. Action held for evaluation-integrity review.",
     agent_message: AGENT_DENY,
   };
 }

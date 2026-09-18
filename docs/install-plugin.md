@@ -6,7 +6,7 @@ as the install unit. Per-host deny JSON and honest limits:
 [docs/hosts.md](hosts.md). The Next workbench is optional once hooks can
 reach the scorer.
 
-Hack Radar is **not** [Augustus](https://github.com/24601/Augustus). Augustus
+RH Guard is **not** [Augustus](https://github.com/24601/Augustus). Augustus
 places typed System One judgments. This pack is the live hazard gate on agent
 tools. It is also **not** [jevgate](https://github.com/thevibeworks/jevgate):
 an allowlist proves what may run, Jev judges only the rest, and the tool
@@ -63,8 +63,8 @@ Layout:
 
 `hooks/hooks.json` uses HTTP for `UserPromptSubmit` and `Stop` (fail-open if
 the sidecar is down) and `hooks/claude-hook.sh` for `PreToolUse` (fail-closed).
-Override the sidecar URL with `HACK_RADAR_URL` if you do not bind
-`127.0.0.1:43147`.
+Override the sidecar URL with `RH_GUARD_URL` if you do not bind
+`127.0.0.1:43147` (`HACK_RADAR_URL` is still accepted).
 
 Keep the sidecar running. The plugin does not start Next.js.
 

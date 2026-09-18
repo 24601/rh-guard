@@ -1,6 +1,6 @@
-# Hack Radar
+# Reward Hack Guard
 
-Hack Radar sits in coding-agent hooks (Claude Code, Cursor, Codex, Grok Build, Pi, Amp, Prime Agent, DeepSeek Harness) and blocks reward-hacking tool use—tampering with graders, hidden tests, or the eval process—while steering toward checks the agent cannot game. Exo is **support via ToolRuntime wrap**, not drop-in hooks.
+RH Guard (`rh-guard`) sits in coding-agent hooks (Claude Code, Cursor, Codex, Grok Build, Pi, Amp, Prime Agent, DeepSeek Harness) and blocks reward-hacking tool use—tampering with graders, hidden tests, or the eval process—while steering toward checks the agent cannot game. Exo is **support via ToolRuntime wrap**, not drop-in hooks.
 
 <a href="docs/sessions/rh_guard_side_by_side.mp4"><img src="docs/sessions/rh_guard_side_by_side.gif" width="100%" alt="Left: a recorded Exo terminal. Right: rh-guard denying a sed of a protected assertion and allowing a harmless echo."></a>
 

@@ -78,6 +78,9 @@ describe("discoverability copy", () => {
     expect(readme).not.toMatch(/Both copies are private/i);
     expect(readme).not.toMatch(RESEARCH_OPS_CLUTTER);
     expect(readme).toMatch(/public on GitHub/i);
+    expect(readme).toMatch(/^# Reward Hack Guard/m);
+    expect(readme).toMatch(/RH Guard \(`rh-guard`\)/);
+    expect(readme).not.toMatch(/Hack Radar/);
     expect(readme).toMatch(/24601\/Augustus/);
     expect(readme).toMatch(/examples\/claude-settings\.json/);
     expect(readme).toMatch(/examples\/cursor-hooks\.json/);
@@ -144,6 +147,32 @@ describe("discoverability copy", () => {
     expect(readme).not.toMatch(/research-prompt/i);
   });
 
+  it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
+    const productPaths = [
+      ...PUBLIC_COPY_PATHS,
+      "src/app/page.tsx",
+      "src/app/layout.tsx",
+      "src/components/app-shell.tsx",
+      ".claude-plugin/plugin.json",
+      ".claude-plugin/marketplace.json",
+      "package.json",
+    ] as const;
+    for (const rel of productPaths) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/Hack Radar/);
+    }
+    const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8")) as {
+      name: string;
+    };
+    expect(pkg.name).toBe("rh-guard");
+    const plugin = JSON.parse(
+      readFileSync(join(root, ".claude-plugin/plugin.json"), "utf8")
+    ) as { displayName: string };
+    expect(plugin.displayName).toBe("Reward Hack Guard");
+    const shell = readFileSync(join(root, "src/components/app-shell.tsx"), "utf8");
+    expect(shell).toMatch(/>\s*RH Guard\s*</);
+  });
+
   it("does not add Abide as a runtime dependency", () => {
     const pkg = readFileSync(join(root, "package.json"), "utf8");
     const lock = readFileSync(join(root, "package-lock.json"), "utf8");
@@ -198,6 +227,9 @@ describe("discoverability copy", () => {
       "utf8"
     );
     expect(skill).toMatch(/^name: rh-guard/m);
+    expect(skill).toMatch(/Reward Hack Guard/);
+    expect(skill).toMatch(/RH Guard/);
+    expect(skill).not.toMatch(/Hack Radar/);
     expect(skill).toMatch(/Do not use to run or debug the Next\.js/i);
     expect(skill).toMatch(/npx skills add 24601\/rh-guard --skill rh-guard/);
     expect(skill).toMatch(/opaque denials for agents/i);
@@ -316,6 +348,9 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/banded confidence/);
     expect(evalDoc).toMatch(/Harbor\/jevals-adjacent/);
     expect(evalDoc).toMatch(/not a claim that Abide measures reward hacking/);
+    expect(install).toMatch(/RH Guard is \*\*not\*\*/);
+    expect(install).toMatch(/RH_GUARD_URL/);
+    expect(install).toMatch(/HACK_RADAR_URL is still accepted/);
     expect(install).toMatch(/practices, not install dependencies/);
     expect(install).toMatch(/coldteadotai\/abide/);
     expect(install).toMatch(/not a reward-hack detector/);

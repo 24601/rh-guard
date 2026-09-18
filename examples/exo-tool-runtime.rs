@@ -61,11 +61,14 @@ impl<T> RhGuardToolRuntime<T> {
     pub fn wrap(inner: T) -> Self {
         Self {
             inner,
-            sidecar_url: env::var("HACK_RADAR_EXO_URL").unwrap_or_else(|_| {
-                env::var("HACK_RADAR_URL")
-                    .map(|base| format!("{}/api/hooks/exo", base.trim_end_matches('/')))
-                    .unwrap_or_else(|_| DEFAULT_EXO_HOOK_URL.to_string())
-            }),
+            sidecar_url: env::var("RH_GUARD_EXO_URL")
+                .or_else(|_| env::var("HACK_RADAR_EXO_URL"))
+                .unwrap_or_else(|_| {
+                    env::var("RH_GUARD_URL")
+                        .or_else(|_| env::var("HACK_RADAR_URL"))
+                        .map(|base| format!("{}/api/hooks/exo", base.trim_end_matches('/')))
+                        .unwrap_or_else(|_| DEFAULT_EXO_HOOK_URL.to_string())
+                }),
         }
     }
 }

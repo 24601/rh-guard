@@ -2,7 +2,7 @@
 name: rh-guard
 description: >
   Use when designing or evaluating coding-agent evals for reward-hacking, interpreting
-  Hack Radar / rh-guard denials, choosing structural vs Jev gates, or relating that
+  Reward Hack Guard / RH Guard (`rh-guard`) denials, choosing structural vs Jev gates, or relating that
   live hazard gate to Augustus decision-design. Do not use to run or debug the Next.js
   sidecar (npm run dev, /api/hooks/*).
 metadata:
@@ -13,7 +13,7 @@ metadata:
 
 # rh-guard
 
-Hack Radar (`rh-guard`) is a **live hazard gate** on coding-agent tools
+Reward Hack Guard (`rh-guard`, RH Guard) is a **live hazard gate** on coding-agent tools
 (Claude Code, Cursor, Codex, Grok Build, Pi, Amp, Prime Agent, and
 DeepSeek Harness / `dsh`). Same `scoreEvent` path; multi-host adapters per
 install surface. Structural detectors deny writes to designated evaluation assets.

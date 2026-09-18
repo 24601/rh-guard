@@ -1,5 +1,5 @@
 /**
- * Hack Radar for Pi. Copy to ~/.pi/agent/extensions/ or .pi/extensions/.
+ * RH Guard for Pi. Copy to ~/.pi/agent/extensions/ or .pi/extensions/.
  * Self-contained: POSTs tool_call events to HTTP /api/hooks/pi. For stdin
  * testing: `npx tsx hooks/run.ts pi`. Do not add a Pi SDK dep.
  *
@@ -10,7 +10,10 @@
 const AGENT_DENY =
   "Action denied: protected evaluation artifacts cannot be modified. Implement the stated behavior against the existing checks. If a check contradicts the spec, stop and report the defect instead of weakening it.";
 
-const SIDECAR = process.env.HACK_RADAR_URL ?? "http://127.0.0.1:43147/api/hooks/pi";
+const SIDECAR =
+  process.env.RH_GUARD_URL ??
+  process.env.HACK_RADAR_URL ??
+  "http://127.0.0.1:43147/api/hooks/pi";
 
 type PiToolCallEvent = {
   toolName: string;

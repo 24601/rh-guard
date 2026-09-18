@@ -12,7 +12,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <header className="border-b border-border/80">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <Link href="/" className="font-heading text-sm tracking-tight">
-            Hack Radar
+            RH Guard
           </Link>
           <nav className="flex items-center gap-1 text-sm">
             {links.map((link) => (

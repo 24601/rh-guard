@@ -4,7 +4,7 @@
     "name": "rh-guard contributors"
   },
   "metadata": {
-    "description": "Reward-hack radar for Claude Code and Cursor: structural denies plus a TypeSafe Jev System One sidecar."
+    "description": "Reward Hack Guard (RH Guard) for Claude Code and Cursor: structural denies plus a TypeSafe Jev System One sidecar."
   },
   "plugins": [
     {

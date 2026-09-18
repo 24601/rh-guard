@@ -1,6 +1,6 @@
 # Host adapters
 
-Hack Radar scores every host through the same `scoreEvent` path. Adapters
+RH Guard scores every host through the same `scoreEvent` path. Adapters
 only change install location and the deny JSON the host understands.
 `examples/` is the source of truth. Agent-visible text is always
 `AGENT_DENY` (opaque filesystem-integrity copy). Scores stay on the operator
