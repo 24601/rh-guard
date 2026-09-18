@@ -7,9 +7,15 @@ Hack Radar sits in Claude Code and Cursor agent hooks and blocks reward-hacking 
 [![TypeSafe Jev](https://img.shields.io/badge/TypeSafe-Jev_System_One-111111.svg)](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
 [![Augustus](https://img.shields.io/badge/companion-Augustus-blue.svg)](https://github.com/24601/Augustus)
 
-Public GitHub: [24601/rh-guard](https://github.com/24601/rh-guard). Suggested description: *Reward-hack radar for coding agents: structural denies + TypeSafe Jev System One sidecar for Claude Code & Cursor hooks.*
+This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/rh-guard).
 
 **Companion, not a merge.** [Augustus](https://github.com/24601/Augustus) is design-judgment for where typed System One judgment belongs. This repo is the live hazard gate on agent tools. Keep them separate.
+
+**Sibling, not a merge.** [JevLint](https://github.com/huntedman/JevLint) is semantic convention Noul lint in a write → check → fix loop (quality vs gaming). Not the same product.
+
+**Sibling, not a merge.** [jevgate](https://github.com/thevibeworks/jevgate) is an allowlist that proves what may run; Jev judges only the rest. Same shape as structural deny + System One sidecar. Do not merge the products.
+
+**Complementary, not a competitor.** [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval integrity gate.
 
 ## Install hooks
 
@@ -38,25 +44,17 @@ Keep `npm run dev` running so HTTP hooks can reach `127.0.0.1:43147`. Held-out t
 
 Do not add this score as an RL penalty on chain-of-thought or candidate selection. [Baker et al. 2025](https://arxiv.org/abs/2503.11926) showed that training against a CoT monitor produces obfuscated hacks.
 
-## Clone
-
-This repository is public on GitHub. An Origin clone is optional if you already use that host.
-
-```bash
-# GitHub (canonical)
-git clone https://github.com/24601/rh-guard.git
-
-# Origin (optional)
-origin repo clone basit/rh-guard
-```
-
 ## Run the sidecar
 
 ```bash
+git clone https://github.com/24601/rh-guard.git
+cd rh-guard
 npm install
 npm test
 npm run dev
 ```
+
+If you already use Origin: `origin repo clone basit/rh-guard`.
 
 Open [http://127.0.0.1:43147](http://127.0.0.1:43147).
 
@@ -102,11 +100,6 @@ Jev does not write verifier instructions. `src/lib/risk/steer.ts` does. Denials 
 ## System One class (honest limits)
 
 Lexical / GLiClass fallback is **degraded**, not risk zero, and not interchangeable with Jev even when `RiskKind` ids match. Open System One heads (for example Laya) are future backends, not drop-in ROC replacements for this hook. There is still **no public Jev reward-hack ROC**. Closed agents such as Claude and Cursor do not expose activations, so Bergen et al. 2026 difference-of-means vectors cannot run here. The Methods page lists those methods and when they do apply.
-
-## GitHub topics
-
-`jev` `typesafe` `system-one` `reward-hacking` `ai-agents` `agent-hooks`
-`claude-code` `cursor` `agent-skills` `eval-integrity` `ai-safety`
 
 ## Offline fallback
 
