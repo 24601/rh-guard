@@ -2,7 +2,7 @@
  * Hack Radar for Amp. Copy to .amp/plugins/ or ~/.config/amp/plugins/.
  * Self-contained: POSTs tool.call events to the sidecar so copies work.
  * In-repo you may instead `import { parseHookEvent, scoreEvent, toAmpOutput } from "../src/lib/risk"`
- * at the top of the module (never inline). Do not add @ampcode/plugin.
+ * at the top of the module (never inline). Do not add the Amp plugin SDK.
  *
  * Deny with reject-and-continue + AGENT_DENY. Do not use the error action
  * as a deny, and do not throw — Amp ignores thrown plugin errors (fail-open).

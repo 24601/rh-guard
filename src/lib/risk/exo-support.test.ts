@@ -96,6 +96,37 @@ describe("examples wrap ToolRuntime.execute", () => {
     ).resolves.toEqual({ ok: true, stdout: "ok" });
   });
 
+  it("POSTs /api/hooks/exo from wrapToolRuntimeExecute when sidecarUrl is set", async () => {
+    const originalFetch = globalThis.fetch;
+    const calls: string[] = [];
+    globalThis.fetch = (async (input: RequestInfo | URL) => {
+      calls.push(String(input));
+      return new Response(JSON.stringify({ block: true, reason: AGENT_DENY }), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      });
+    }) as typeof fetch;
+    try {
+      const callsInner: ToolRequest[] = [];
+      const execute = wrapToolRuntimeExecute(
+        async (request) => {
+          callsInner.push(request);
+          return { ok: true };
+        },
+        { sidecarUrl: "http://127.0.0.1:43147/api/hooks/exo" }
+      );
+      const result = await execute({
+        functionName: "shell",
+        arguments: { command: "rm hidden_eval.py" },
+      });
+      expect(result).toEqual({ ok: false, error: AGENT_DENY });
+      expect(callsInner).toEqual([]);
+      expect(calls).toEqual(["http://127.0.0.1:43147/api/hooks/exo"]);
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
   it("fail-closes wrapTurnContextExecuteTool when scoring throws", async () => {
     const context = wrapTurnContextExecuteTool(
       {
@@ -185,8 +216,11 @@ describe("exo docs stay honest", () => {
     expect(ts).toMatch(/executeTool/);
     expect(ts).toMatch(/does not ship Claude-style PreToolUse JSON hooks/);
     expect(ts).not.toMatch(/native PreToolUse/);
+    expect(ts).toMatch(/scoreViaHttp/);
+    expect(ts).toMatch(/\/api\/hooks\/exo/);
     expect(rs).toMatch(/async fn execute/);
-    expect(rs).toMatch(/impl<T> ToolRuntime for RhGuardToolRuntime/);
+    expect(rs).toMatch(/impl<T: ToolRuntime> ToolRuntime for RhGuardToolRuntime/);
+    expect(rs).toMatch(/score_via_http/);
     expect(gate).toMatch(/\.exo\/agent-tools/);
     expect(gate).toMatch(/wrapToolHandlerExecute/);
   });

@@ -2,11 +2,14 @@
  * Exo has no native hooks.json. This is support via ToolRuntime wrap, not
  * drop-in hooks. It does not ship Claude-style PreToolUse JSON hooks.
  *
- * Wrap `ToolRuntime::execute` (Rust) / `TurnContext.executeTool` (TypeScript
- * harness) before shell and other mutating tools. Deny by returning
- * `{ ok: false, error: AGENT_DENY }`. Generic stdin (`hooks/run.ts exo`) is
- * available later; HTTP flavor `exo` is skipped — score via `/api/hooks/generic`
- * or in-repo `scoreEvent`.
+ * Wrap `ToolRuntime::execute` (Rust trait in exoharness/exo
+ * `crates/executor/src/executor_types.rs`) / `TurnContext.executeTool`
+ * (TypeScript harness) before shell and other mutating tools. Score with
+ * HTTP `POST /api/hooks/exo` (alias of generic `{ block, reason? }`),
+ * `/api/hooks/generic`, in-repo `scoreEvent`, or stdin `hooks/run.ts exo`.
+ * Deny by returning `{ ok: false, error: AGENT_DENY }`. Fail-closed is the
+ * wrapper returning that tool error; the Exo host has no hook failClosed flag.
+ * Keep generic stdin if Exo later adds hooks.
  */
 import { parseHookEvent, scoreEvent } from "../src/lib/risk";
 import { AGENT_DENY } from "../src/lib/risk/steer";
@@ -19,13 +22,16 @@ export interface JsonObject {
   [key: string]: JsonValue;
 }
 
+/** Matches exoharness/typescript/harness `ToolRequest`. */
 export type ToolRequest = {
   functionName: string;
   arguments: JsonObject;
 };
 
+/** Exo `ToolResult` is JsonValue; deny uses the host's `{ ok: false, error }` shape. */
 export type ToolResult = { ok: false; error: string } | JsonObject;
 
+/** Structural subset of exo `TurnContext` — wrap `executeTool` only. */
 export type TurnContext = {
   executeTool(request: ToolRequest): Promise<ToolResult>;
 };
@@ -37,11 +43,14 @@ export type ToolHandler = {
   ): Promise<ToolResult>;
 };
 
+export const DEFAULT_EXO_HOOK_URL = "http://127.0.0.1:43147/api/hooks/exo";
+
 export type RhGuardExoOptions = {
   score?: (input: {
     functionName: string;
     arguments: JsonObject;
   }) => Promise<{ block: boolean }>;
+  sidecarUrl?: string;
 };
 
 const GATED_HOST_TOOLS = new Set([
@@ -71,6 +80,29 @@ export function deniedToolResult(): ToolResult {
   return { ok: false, error: AGENT_DENY };
 }
 
+export async function scoreViaHttp(
+  input: {
+    functionName: string;
+    arguments: JsonObject;
+  },
+  url = DEFAULT_EXO_HOOK_URL
+): Promise<{ block: boolean }> {
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      event: "tool_call",
+      functionName: input.functionName,
+      arguments: input.arguments,
+    }),
+  });
+  if (!response.ok) {
+    throw new Error(`rh-guard ${url} HTTP ${response.status}`);
+  }
+  const json = (await response.json()) as { block?: boolean };
+  return { block: json.block === true };
+}
+
 async function defaultScore(input: {
   functionName: string;
   arguments: JsonObject;
@@ -84,14 +116,27 @@ async function defaultScore(input: {
   return { block: report.hookVerdict === "block" };
 }
 
+function resolveScore(
+  options: RhGuardExoOptions
+): (input: {
+  functionName: string;
+  arguments: JsonObject;
+}) => Promise<{ block: boolean }> {
+  if (options.score) return options.score;
+  if (options.sidecarUrl) {
+    const url = options.sidecarUrl;
+    return (input) => scoreViaHttp(input, url);
+  }
+  return defaultScore;
+}
+
 async function shouldDeny(
   request: ToolRequest,
   options: RhGuardExoOptions
 ): Promise<boolean> {
   if (!isGatedExoHostTool(request.functionName)) return false;
-  const score = options.score ?? defaultScore;
   try {
-    const result = await score({
+    const result = await resolveScore(options)({
       functionName: request.functionName,
       arguments: request.arguments,
     });
@@ -113,20 +158,21 @@ export function wrapToolRuntimeExecute(
   };
 }
 
-export function wrapTurnContextExecuteTool(
-  context: TurnContext,
+export function wrapTurnContextExecuteTool<T extends TurnContext>(
+  context: T,
   options: RhGuardExoOptions = {}
-): TurnContext {
+): T {
   const inner = context.executeTool.bind(context);
   return {
+    ...context,
     executeTool: wrapToolRuntimeExecute(inner, options),
   };
 }
 
-export function wrapTurnExecute(
-  context: TurnContext,
+export function wrapTurnExecute<T extends TurnContext>(
+  context: T,
   options: RhGuardExoOptions = {}
-): TurnContext {
+): T {
   return wrapTurnContextExecuteTool(context, options);
 }
 
@@ -135,9 +181,9 @@ export function wrapToolHandlerExecute(
   handler: ToolHandler,
   options: RhGuardExoOptions = {}
 ): ToolHandler {
+  const score = resolveScore(options);
   return {
     async execute(args, execution) {
-      const score = options.score ?? defaultScore;
       try {
         const result = await score({
           functionName: toolName,

@@ -201,6 +201,8 @@ describe("multi-host examples/", () => {
     );
     expect(route).toMatch(/params: Promise<\{ flavor: string \}>/);
     expect(route).toMatch(/toHostOutput/);
+    expect(route).toMatch(/httpEnabled/);
+    expect(route).toMatch(/has no HTTP hook type/);
   });
 });
 

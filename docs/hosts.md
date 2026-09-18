@@ -22,8 +22,8 @@ workbench.
 HTTP sidecar: `POST /api/hooks/<flavor>` (Next.js 16 dynamic `params` is a
 Promise). Claude and Cursor URLs stay `/api/hooks/claude` and
 `/api/hooks/cursor`. Codex and DeepSeek Harness have **no HTTP hook type on
-the host**; the sidecar route still exists for tests (`hooks/run.ts` is the
-install path). Exo has **no native hooks.json** and no host HTTP hook type;
+the host**; `POST /api/hooks/codex` and `/api/hooks/dsh` return 404. Use
+`hooks/run.ts`. Exo has **no native hooks.json** and no host HTTP hook type;
 the sidecar still serves `POST /api/hooks/exo` (alias of generic
 `{ block, reason? }`) for the `ToolRuntime` wrap. Pi, Prime, and Amp reach
 HTTP from the copied plugin.
@@ -152,8 +152,10 @@ This is **support via ToolRuntime wrap**, not drop-in hooks. Wrap
 `TurnContext.executeTool` before `shell` / mutating tools. The wrapper
 POSTs to `/api/hooks/exo` or `/api/hooks/generic` (same `{ block, reason? }`
 JSON) or calls `scoreEvent` in-process. Deny by returning a tool error
-`{ ok: false, error: AGENT_DENY }` — never scores. Fail-closed is whatever
-the wrapper does; the Exo host has no hook `failClosed` flag.
+`{ ok: false, error: AGENT_DENY }` — never leak scores. Fail-closed is whatever
+the wrapper does; the Exo host has no hook `failClosed` flag. Opaque copy:
+
+`Action denied: protected evaluation artifacts cannot be modified. Implement the stated behavior against the existing checks. If a check contradicts the spec, stop and report the defect instead of weakening it.`
 
 Keep generic stdin (`hooks/run.ts generic` / `exo`) if Exo later adds
 hooks. Optional gate for agent-created tools under `.exo/agent-tools/`:

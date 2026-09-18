@@ -3,10 +3,11 @@
  * `.exo/agent-tools/` (DEFAULT_AGENT_TOOL_DIRECTORY in
  * exoharness/typescript/harness/tool-modules.ts).
  *
- * Honest limitation: Exo has no native hooks.json. Wrap register() /
- * registerTools so agent-source ToolInstance.handler.execute is scored
- * before it runs. Deny with opaque AGENT_DENY. Same sidecar as
- * examples/exo-tool-runtime.ts (`/api/hooks/generic` or `/api/hooks/exo`).
+ * Honest limitation: Exo has no native hooks.json. This is support via
+ * ToolRuntime wrap (not drop-in hooks): wrap register() / registerTools so
+ * agent-source ToolInstance.handler.execute is scored before it runs. Deny
+ * with opaque AGENT_DENY. Same sidecar as examples/exo-tool-runtime.ts
+ * (`POST /api/hooks/exo` or `/api/hooks/generic`, or in-repo scoreEvent).
  */
 import {
   AGENT_DENY,

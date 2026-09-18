@@ -42,8 +42,7 @@ export type PiHookOutput =
 
 export type AmpHookOutput =
   | { action: "allow" }
-  | { action: "reject-and-continue"; message: string }
-  | { action: "error"; message: string };
+  | { action: "reject-and-continue"; message: string };
 
 export type GrokHookOutput = { decision?: "deny"; reason?: string };
 
@@ -97,10 +96,10 @@ export function httpEnabled(flavor: HookFlavor): boolean {
     case "pi":
     case "prime":
     case "amp":
+    case "exo":
       return true;
     case "codex":
     case "dsh":
-    case "exo":
       return false;
     default:
       return assertNever(flavor);

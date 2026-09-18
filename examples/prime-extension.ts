@@ -62,6 +62,6 @@ async function scoreToolCall(
   }
 }
 
-export default function hackRadar(pi: PrimeExtensionAPI) {
-  pi.on("tool_call", async (event) => scoreToolCall(event));
+export default function hackRadar(prime: PrimeExtensionAPI) {
+  prime.on("tool_call", async (event) => scoreToolCall(event));
 }
