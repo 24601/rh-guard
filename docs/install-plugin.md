@@ -8,7 +8,9 @@ reach the scorer.
 
 Hack Radar is **not** [Augustus](https://github.com/24601/Augustus). Augustus
 places typed System One judgments. This pack is the live hazard gate on agent
-tools.
+tools. It is also **not** [jevgate](https://github.com/thevibeworks/jevgate):
+an allowlist proves what may run, Jev judges only the rest, and the tool
+cannot block. Same layering as structural deny + sidecar, different job.
 
 ## 1. Sidecar (required for live scoring)
 

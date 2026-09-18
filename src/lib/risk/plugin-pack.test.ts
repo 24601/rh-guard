@@ -96,6 +96,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/fastino-ai\/GLiGuard/);
     expect(readme).toMatch(/encoder-based LLM prompt\/response safety guard/i);
     expect(readme).toMatch(/reward-hack \/ eval integrity gate/i);
+    expect(readme).not.toMatch(/research-prompt/i);
   });
 
   it("does not advertise Deep Research paste workflows on public surfaces", () => {
@@ -134,6 +135,17 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Codex/);
     expect(skill).toMatch(/docs\/hosts\.md/);
     expect(skill).toMatch(/ToolRuntime/);
+    expect(skill).toMatch(/thevibeworks\/jevgate/);
+    expect(skill).toMatch(/allowlist proves what may run/i);
+  });
+
+  it("keeps jevgate as a sibling link on host docs, not a merged product", () => {
+    const hosts = readFileSync(join(root, "docs/hosts.md"), "utf8");
+    expect(hosts).toMatch(/thevibeworks\/jevgate/);
+    expect(hosts).toMatch(/allowlist proves what may run/i);
+    expect(hosts).toMatch(/Do not merge the products/i);
+    expect(hosts).toMatch(/hooks\/run\.ts dsh/);
+    expect(hosts).toMatch(/command-hook/);
   });
 });
 

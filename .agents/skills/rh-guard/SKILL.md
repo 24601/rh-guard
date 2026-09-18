@@ -29,9 +29,14 @@ runtime gate on agent tools. Use Augustus to place judgments; use this skill
 when the judgment is reward-hack risk on a coding-agent hook.
 [JevLint](https://github.com/huntedman/JevLint) is semantic convention lint
 (plain-English plugins, file-level Nouls) in a write → check → fix loop—
-quality, not gaming. [jevgate](https://github.com/thevibeworks/jevgate) is
-the same shape for shell: an allowlist proves what may run; Jev judges only
-the rest.
+quality, not gaming.
+
+[jevgate](https://github.com/thevibeworks/jevgate) is a sibling Bash gate: an
+allowlist proves what may run; writers, wrappers, and credential-shaped
+input are refused in code and never sent to the model; Jev judges only
+unlisted verbs; it cannot block (unsure → the agent's own permission
+prompt). Same shape as structural deny + System One sidecar here. Different
+job (permission prompts vs reward-hack denials). Do not merge them.
 
 ## Install the gate (hooks), not this skill
 
@@ -95,7 +100,10 @@ ToolRuntime wrap**, not drop-in hooks. It has no native `hooks.json`. Wrap
    paths, assertion `sed`, `--no-verify`, runtime hijacks) fire before any
    semantic call. After a structural deny, skip Jev. Jev cannot overrule a
    structural deny. Do not authorize a mutate on a stale soft Noul alone
-   (TOCTOU: check-then-act is not atomic). See `references/gates.md`.
+   (TOCTOU: check-then-act is not atomic). Same shape as
+   [jevgate](https://github.com/thevibeworks/jevgate) (allowlist proves what
+   may run; Jev judges only the rest)—sibling, not a merge. See
+   `references/gates.md`.
 7. **Lexical / GLiClass / open System One heads are not ROC-equivalent.**
    Without `TYPESAFE_API_KEY`, the lexical fallback is **degraded**, not risk
    zero. Shared `RiskKind` ids do not make probabilities interchangeable with

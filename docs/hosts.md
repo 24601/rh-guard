@@ -6,6 +6,11 @@ only change install location and the deny JSON the host understands.
 `AGENT_DENY` (opaque filesystem-integrity copy). Scores stay on the operator
 workbench.
 
+**Sibling, not a merge.** [jevgate](https://github.com/thevibeworks/jevgate)
+uses the same shape: an allowlist proves what may run; Jev judges only the
+rest. rh-guard's structural deny is that first gate; the System One sidecar
+is the rest. Do not merge the products.
+
 `hooks/run.ts <flavor>` reads JSON on stdin. Flavors:
 
 | argv | Output shape |

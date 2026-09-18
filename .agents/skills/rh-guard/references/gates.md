@@ -13,6 +13,10 @@ Use this card when choosing a gate. Policy still lives in `src/lib/risk/`.
 5. Code fuses labels. Choice, severity, and `control_falsifier_named` cannot
    cancel a hazard and cannot independently deny.
 
+That order is the same shape as [jevgate](https://github.com/thevibeworks/jevgate):
+an allowlist proves what may run; Jev judges only the rest. jevgate is a
+sibling CLI, not this sidecar. Do not merge the products.
+
 ## Fail-open vs fail-closed
 
 | Channel | If the scorer is down |
@@ -25,7 +29,7 @@ Use this card when choosing a gate. Policy still lives in `src/lib/risk/`.
 | Codex PreToolUse command | Fail-closed only if stdout is Codex-safe deny JSON (no `continue: false`) + exit 2 |
 | Grok PreToolUse | Host fail-open on crash/timeout; `hooks/grok-hook.sh` fail-closed |
 | Pi / Prime / Amp plugins | Fail-closed in the copy (block / reject-and-continue) if fetch throws |
-| dsh | Command bridges only; HTTP skipped |
+| dsh | Generic stdin (`hooks/run.ts dsh` / `generic`); Claude/Codex command-hook bridges also work; HTTP skipped |
 
 A wrapper that never runs (killed, not installed) is fail-open. Keep a
 separate capability boundary for hidden tests and graders.

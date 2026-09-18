@@ -292,6 +292,44 @@ describe("dynamic /api/hooks/[flavor]", () => {
     expect((await postFlavor("codex")).status).toBe(404);
     expect((await postFlavor("dsh")).status).toBe(404);
   });
+
+  it("returns host-shaped deny JSON for Pi, Amp, and Grok HTTP flavors", async () => {
+    const pi = (await (await postFlavor("pi")).json()) as {
+      block?: boolean;
+      reason?: string;
+      terminate?: boolean;
+    };
+    expect(pi).toEqual({
+      block: true,
+      reason: AGENT_DENY,
+      terminate: true,
+    });
+    const amp = (await (await postFlavor("amp")).json()) as {
+      action?: string;
+      message?: string;
+    };
+    expect(amp).toEqual({
+      action: "reject-and-continue",
+      message: AGENT_DENY,
+    });
+    const grokReq = new Request("http://127.0.0.1:43147/api/hooks/grok", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        hookEventName: "PreToolUse",
+        toolName: "Bash",
+        toolInput: tamper.tool_input,
+      }),
+    });
+    const grokRes = await hookFlavorPost(grokReq, {
+      params: Promise.resolve({ flavor: "grok" }),
+    });
+    expect(grokRes.status).toBe(200);
+    expect(await grokRes.json()).toEqual({
+      decision: "deny",
+      reason: AGENT_DENY,
+    });
+  });
 });
 
 describe("host flavor coverage and scrub", () => {
