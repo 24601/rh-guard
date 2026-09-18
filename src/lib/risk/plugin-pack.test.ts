@@ -104,6 +104,8 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/cheap parallel/);
     expect(readme).toMatch(/caiovicentino\/jev-align/);
     expect(readme).toMatch(/AntonioCoppe\/jev-harness/);
+    expect(readme).toMatch(/suraj-phanindra\/wellposed/);
+    expect(readme).toMatch(/never the sole veto/);
     expect(readme).toMatch(/taskset \(score first\)/);
     expect(readme).toMatch(/do not replace a scored taskset/i);
     expect(readme).toMatch(/independent answer keys/i);
@@ -164,6 +166,8 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/cheap parallel/);
     expect(skill).toMatch(/caiovicentino\/jev-align/);
     expect(skill).toMatch(/AntonioCoppe\/jev-harness/);
+    expect(skill).toMatch(/suraj-phanindra\/wellposed/);
+    expect(skill).toMatch(/never the sole veto/);
     expect(skill).toMatch(/do not replace a scored taskset/i);
     expect(skill).toMatch(/independent answer keys/i);
     expect(skill).toMatch(/practices\*\*, not install dependencies/);
@@ -187,6 +191,9 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/SargeDev\/jev-gate-student-b/);
     expect(evalDoc).toMatch(/luantak\/is-malicious/);
     expect(evalDoc).toMatch(/distill → gate integrity/);
+    expect(evalDoc).toMatch(/suraj-phanindra\/wellposed/);
+    expect(evalDoc).toMatch(/never the sole veto/);
+    expect(evalDoc).toMatch(/Confidence gating cannot catch a forced wrong Choice/);
     expect(evalDoc).toMatch(/taskset \(score first\)/i);
     expect(evalDoc).toMatch(/independent validator/);
     expect(evalDoc).toMatch(/HoH evidence loop/);
@@ -209,12 +216,14 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/eval-integrity\.md/);
     expect(shape).toMatch(/LLM-as-judge/);
     expect(shape).toMatch(/memovai\/openevals/);
+    expect(shape).toMatch(/suraj-phanindra\/wellposed/);
   });
 
   it("keeps jevgate as a sibling link on host docs, not a merged product", () => {
     const hosts = readFileSync(join(root, "docs/hosts.md"), "utf8");
     expect(hosts).toMatch(/thevibeworks\/jevgate/);
     expect(hosts).toMatch(/allowlist proves what may run/i);
+    expect(hosts).toMatch(/never the sole veto/);
     expect(hosts).toMatch(/Do not merge the products/i);
     expect(hosts).toMatch(/fastino-ai\/GLiGuard/);
     expect(hosts).toMatch(/hooks\/run\.ts dsh/);

@@ -17,7 +17,7 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 
 **Sibling, not a merge.** [JevLint](https://github.com/huntedman/JevLint) is semantic convention Noul lint in a write → check → fix loop (quality vs gaming). Not the same product.
 
-**Sibling, not a merge.** [jevgate](https://github.com/thevibeworks/jevgate) is an allowlist that proves what may run; Jev judges only the rest. Same shape as structural deny + System One sidecar. Do not merge the products.
+**Sibling, not a merge.** [jevgate](https://github.com/thevibeworks/jevgate) is an allowlist that proves what may run; Jev judges only the rest. Hard envelope owns safety; soft judgment is never the sole veto (fail-open: it cannot block). Same complementary pattern as structural deny + System One sidecar. Do not merge the products.
 
 **Complementary, not a competitor.** [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval integrity gate.
 
@@ -26,6 +26,8 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 [Harbor](https://github.com/harbor-framework/harbor) is the preferred e2e substrate for reward-hack / eval-gaming scenarios: **taskset (score first) + harness + runtime**, an independent validator, and a [HoH](https://arxiv.org/abs/2609.01481) evidence loop. rh-guard hooks are structural / System One gates *inside* a harness — they do not replace a scored taskset.
 
 [jevals](https://github.com/dayhaysoos/jevals) is the complementary decision-stage workbench for typed Noul / Choice / Score falsification when this sidecar or a policy uses Jev-class judgments. Practices: independent answer keys (never promote predictions to labels); correctness ≠ confidence; held-out discipline; compare only equivalent case sets.
+
+[wellposed](https://github.com/suraj-phanindra/wellposed) lints Choice / Score / Noul requests before runtime: a Choice with no "other" can be forced wrong at confidence 1.0, and broken state paths are unanswerable. Confidence gating cannot catch a forced wrong Choice — inspect request shape first.
 
 [openevals](https://github.com/memovai/openevals) is adjacent **online** eval / observability: code graders first, then cheap parallel System One as a per-step/trace judge — not LLM-as-judge as the primary score.
 

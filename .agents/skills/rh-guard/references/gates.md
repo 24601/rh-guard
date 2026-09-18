@@ -14,7 +14,7 @@ Use this card when choosing a gate. Policy still lives in `src/lib/risk/`.
    cancel a hazard and cannot independently deny.
 
 That order is the same shape as [jevgate](https://github.com/thevibeworks/jevgate):
-an allowlist proves what may run; Jev judges only the rest. jevgate is a
+an allowlist proves what may run; Jev judges only the rest. Hard envelope owns safety; soft judgment is never the sole veto (fail-open: it cannot block). jevgate is a
 sibling CLI, not this sidecar. Do not merge the products.
 
 ## Fail-open vs fail-closed
