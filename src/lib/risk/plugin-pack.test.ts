@@ -435,7 +435,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/`allow` \/ `block` \/ `review`/);
     expect(evalDoc).toMatch(/given → expected → actual/);
     expect(evalDoc).toMatch(/ickma2311\/jev-baselines-eval/);
-    expect(evalDoc).toMatch(/three same-day errata/);
+    expect(evalDoc).toMatch(/[Tt]hree same-day errata/);
     expect(evalDoc).toMatch(/AMBIGUOUS/);
     expect(evalDoc).toMatch(/Dharundp6\/jev-carryforward/);
     expect(evalDoc).toMatch(/nothing summarised/);
