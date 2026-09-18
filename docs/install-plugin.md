@@ -116,7 +116,7 @@ use it as a runbook for `next dev`.
 - Do not train RL against this monitor or against chain-of-thought.
 - Do not put hidden tests in a workspace file the agent can edit.
 - Do not treat lexical scores as a Jev ROC.
-- Do not merge this pack into Augustus or vice versa.
+- Do not merge this pack into Augustus, [JevLint](https://github.com/huntedman/JevLint), or [jevgate](https://github.com/thevibeworks/jevgate) (or vice versa).
 - Do not send `continue: false` on Codex PreToolUse (Codex fails the hook and continues the tool).
 - Do not deny Amp with `action: "error"` or by throwing (Amp ignores thrown plugin errors).
 - Do not reuse Claude stdout for Grok (`{decision:deny,reason}` only).

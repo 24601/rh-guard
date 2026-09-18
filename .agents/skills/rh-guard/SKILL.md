@@ -27,6 +27,11 @@ they protect. It is **not** how to boot the Next server.
 design-judgment for *where* typed System One judgment belongs. rh-guard is the
 runtime gate on agent tools. Use Augustus to place judgments; use this skill
 when the judgment is reward-hack risk on a coding-agent hook.
+[JevLint](https://github.com/huntedman/JevLint) is semantic convention lint
+(plain-English plugins, file-level Nouls) in a write → check → fix loop—
+quality, not gaming. [jevgate](https://github.com/thevibeworks/jevgate) is
+the same shape for shell: an allowlist proves what may run; Jev judges only
+the rest.
 
 ## Install the gate (hooks), not this skill
 
@@ -128,4 +133,6 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Sidecar, questions, and hook JSON: this repository (`README.md`, `examples/`,
   `docs/hosts.md`, `docs/install-plugin.md`, `docs/shape.md`)
 - Broader System One placement: [Augustus](https://github.com/24601/Augustus)
+- Semantic convention lint (quality vs gaming): [JevLint](https://github.com/huntedman/JevLint)
+- Shell allowlist, then Jev on the rest: [jevgate](https://github.com/thevibeworks/jevgate)
 - Official TypeSafe contracts: [typesafe-ai/skills](https://github.com/typesafe-ai/skills)
