@@ -1,7 +1,7 @@
 # Eval integrity & measurement
 
-Harbor and jevals are **practices**, not install dependencies. Installing
-Hack Radar hooks does not require either package.
+Harbor, jevals, and openevals are **practices**, not install dependencies.
+Installing Hack Radar hooks does not require those packages.
 
 ## Harbor (e2e substrate)
 
@@ -43,6 +43,12 @@ Practices (from the jevals skill):
   Comparable runs keep question IDs/types, Choice labels or Score rubric,
   case states, and reviewed keys. Changing the answer key changes the
   experiment.
+
+## Online eval (adjacent)
+
+[openevals](https://github.com/memovai/openevals) is Harbor/jevals-adjacent **online** eval / observability. Code graders first, then cheap parallel System One (Jev) per-step and trace questions written back to Langfuse/OTLP. Composite and pass rules live in code; human annotation calibrates whether those questions can be trusted. Parallel judge for traces — not the primary task score and not LLM-as-judge as the reward.
+
+[typesafe-jev-tools](https://github.com/wotai-dev/typesafe-jev-tools) is an adjacent abstention / VOI meta-gate: ask "does this decision need a model?" before calling one. Code first, then maybe System One; never LLM-as-judge as the reward. It never blocks.
 
 ## Anti-pattern
 

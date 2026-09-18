@@ -100,6 +100,8 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Eval integrity & measurement/);
     expect(readme).toMatch(/harbor-framework\/harbor/);
     expect(readme).toMatch(/dayhaysoos\/jevals/);
+    expect(readme).toMatch(/memovai\/openevals/);
+    expect(readme).toMatch(/cheap parallel/);
     expect(readme).toMatch(/taskset \(score first\)/);
     expect(readme).toMatch(/do not replace a scored taskset/i);
     expect(readme).toMatch(/independent answer keys/i);
@@ -156,18 +158,24 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Eval integrity & measurement/);
     expect(skill).toMatch(/harbor-framework\/harbor/);
     expect(skill).toMatch(/dayhaysoos\/jevals/);
+    expect(skill).toMatch(/memovai\/openevals/);
+    expect(skill).toMatch(/cheap parallel/);
     expect(skill).toMatch(/do not replace a scored taskset/i);
     expect(skill).toMatch(/independent answer keys/i);
     expect(skill).toMatch(/practices\*\*, not install dependencies/);
   });
 
-  it("keeps Harbor and jevals as practices, not hook install deps", () => {
+  it("keeps Harbor, jevals, and openevals as practices, not hook install deps", () => {
     const evalDoc = readFileSync(join(root, "docs/eval-integrity.md"), "utf8");
     const install = readFileSync(join(root, "docs/install-plugin.md"), "utf8");
     const shape = readFileSync(join(root, "docs/shape.md"), "utf8");
     expect(evalDoc).toMatch(/Eval integrity & measurement/);
     expect(evalDoc).toMatch(/harbor-framework\/harbor/);
     expect(evalDoc).toMatch(/dayhaysoos\/jevals/);
+    expect(evalDoc).toMatch(/memovai\/openevals/);
+    expect(evalDoc).toMatch(/cheap parallel/);
+    expect(evalDoc).toMatch(/wotai-dev\/typesafe-jev-tools/);
+    expect(evalDoc).toMatch(/does this decision need a model\?/);
     expect(evalDoc).toMatch(/taskset \(score first\)/i);
     expect(evalDoc).toMatch(/independent validator/);
     expect(evalDoc).toMatch(/HoH evidence loop/);
@@ -185,9 +193,11 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/huntedman\/JevLint/);
     expect(evalDoc).toMatch(/fastino-ai\/GLiGuard/);
     expect(install).toMatch(/practices, not install dependencies/);
+    expect(install).toMatch(/memovai\/openevals/);
     expect(install).toMatch(/eval-integrity\.md/);
     expect(shape).toMatch(/eval-integrity\.md/);
     expect(shape).toMatch(/LLM-as-judge/);
+    expect(shape).toMatch(/memovai\/openevals/);
   });
 
   it("keeps jevgate as a sibling link on host docs, not a merged product", () => {
