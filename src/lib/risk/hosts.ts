@@ -5,6 +5,7 @@ import { AGENT_DENY } from "./steer";
 import {
   failClosedClaudeOutput,
   failClosedCursorOutput,
+  isPreExecuteEvent,
   toClaudeOutput,
   toCursorOutput,
   type ClaudeHookOutput,
@@ -197,6 +198,9 @@ export function successExitCode(
     case "generic":
       return blocked ? 2 : 0;
     case "claude":
+      // Claude Code honours the deny JSON at exit 0. The DeepSeek Harness
+      // bridge that reuses this wrapper only fails closed on a non-zero exit.
+      return blocked && isPreExecuteEvent(event) ? 2 : 0;
     case "cursor":
     case "pi":
     case "prime":
@@ -213,7 +217,8 @@ function isGrokBlockingEvent(event: string): boolean {
     event === "preToolUse" ||
     event === "pre_tool_use" ||
     event === "tool_call" ||
-    event === "tool.call"
+    event === "tool.call" ||
+    isPreExecuteEvent(event)
   );
 }
 
