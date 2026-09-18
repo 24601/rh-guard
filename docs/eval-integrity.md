@@ -50,6 +50,18 @@ Practices (from the jevals skill):
 
 [typesafe-jev-tools](https://github.com/wotai-dev/typesafe-jev-tools) is an adjacent abstention / VOI meta-gate: ask "does this decision need a model?" before calling one. Code first, then maybe System One; never LLM-as-judge as the reward. It never blocks.
 
+## Gate watch (adjacent)
+
+[jev-align](https://github.com/caiovicentino/jev-align) verifies a plan or response against policy before act (including fabricated verification). Complementary to this sidecar's tool gate, not a merge.
+
+[jev-harness](https://github.com/AntonioCoppe/jev-harness) is a measurement pattern: shadow mode, confidence gates, and evals that assert on the action, not free text — so you can see when a System One gate is being gamed vs calibrated. Contrast with LLM-as-judge as the primary score.
+
+[jev-pref](https://github.com/doeixd/jev-pref) encodes AGENTS.md prefs as a Jev linter. Watch preference-theater: prefs that are not independently enforceable (tests, types, structural detectors) are not a substitute for this gate.
+
+Watch, not an endorsement: [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b) is a distilled memory-relevance student of teacher Jev. Agreement with teacher labels is not independent gold; a student gate can overfit teacher quirks (distill → gate integrity).
+
+[is-malicious](https://github.com/luantak/is-malicious) is a complementary codebase covert-behavior scanner (listed on awesome-jev); rh-guard is a coding-agent reward-hack / eval integrity gate.
+
 ## Anti-pattern
 
 Using **LLM-as-judge** (or gaming jevals labels) as the reward signal is

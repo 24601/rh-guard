@@ -25,6 +25,8 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 
 [openevals](https://github.com/memovai/openevals) is adjacent **online** eval / observability: code graders first, then cheap parallel System One as a per-step/trace judge — not LLM-as-judge as the primary score.
 
+[jev-align](https://github.com/caiovicentino/jev-align) verifies a plan or response against policy before act (including fabricated verification). Complementary to this tool gate, not a merge. Measure a live System One gate with shadow / confidence action evals ([jev-harness](https://github.com/AntonioCoppe/jev-harness)), not LLM-as-judge as the primary score.
+
 **Anti-pattern.** Using LLM-as-judge (or gaming jevals labels) as the reward signal is the failure mode this gate is meant to catch. See [docs/shape.md](docs/shape.md) and [Baker et al. 2025](https://arxiv.org/abs/2503.11926).
 
 **Siblings, not a merge.** jevals measures decisions; rh-guard gates agent tool use; Harbor scores product/agent loops.

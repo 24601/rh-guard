@@ -58,6 +58,8 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [openevals](https://github.com/memovai/openevals) is adjacent online eval / observability: cheap parallel System One as a trace judge (code graders first), not LLM-as-judge as the primary score.
 
+[jev-align](https://github.com/caiovicentino/jev-align) verifies a plan or response against policy before act (including fabricated verification). Complementary to these tool gates, not a merge.
+
 **Anti-pattern.** Using LLM-as-judge (or gaming jevals labels) as the
 reward signal is the failure mode this gate is meant to catch. See
 `docs/shape.md` and Baker et al. 2025.
@@ -186,4 +188,6 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Decision-stage Jev workbench: [jevals](https://github.com/dayhaysoos/jevals)
 - E2e agent eval substrate: [Harbor](https://github.com/harbor-framework/harbor)
 - Online eval / observability (cheap parallel System One, not primary score): [openevals](https://github.com/memovai/openevals)
+- Verify plan/response vs policy before act: [jev-align](https://github.com/caiovicentino/jev-align)
+- Shadow / confidence action evals for a System One gate: [jev-harness](https://github.com/AntonioCoppe/jev-harness)
 - Official TypeSafe contracts: [typesafe-ai/skills](https://github.com/typesafe-ai/skills)
