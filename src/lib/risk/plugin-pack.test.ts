@@ -82,6 +82,9 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/thevibeworks\/jevgate/);
     expect(readme).toMatch(/allowlist that proves what may run/i);
     expect(readme).toMatch(/write → check → fix/);
+    expect(readme).toMatch(/fastino-ai\/GLiGuard/);
+    expect(readme).toMatch(/encoder-based LLM prompt\/response safety guard/i);
+    expect(readme).toMatch(/reward-hack \/ eval integrity gate/i);
   });
 
   it("does not advertise Deep Research paste workflows on public surfaces", () => {

@@ -15,6 +15,8 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 
 **Sibling, not a merge.** [jevgate](https://github.com/thevibeworks/jevgate) is an allowlist that proves what may run; Jev judges only the rest. Same shape as structural deny + System One sidecar. Do not merge the products.
 
+**Complementary, not a competitor.** [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval integrity gate.
+
 ## Install hooks
 
 `examples/` is the source of truth. Full packaging notes (Claude plugin + Cursor `hooks.json`) are in [docs/install-plugin.md](docs/install-plugin.md).
