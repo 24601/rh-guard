@@ -108,6 +108,17 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/cheap parallel/);
     expect(readme).toMatch(/caiovicentino\/jev-align/);
     expect(readme).toMatch(/AntonioCoppe\/jev-harness/);
+    expect(readme).toMatch(/phin-tech\/pi-jev-approver/);
+    expect(readme).toMatch(/commandRules/);
+    expect(readme).toMatch(/ngallodev-software\/agent-workflow-typesafe-ai/);
+    expect(readme).toMatch(/never changes host routing\/executor/);
+    expect(readme).toMatch(/alexykn\/jevscan/);
+    expect(readme).toMatch(/tree-sitter extract/);
+    expect(readme).toMatch(/ufx7\/jev-testbench/);
+    expect(readme).toMatch(/llm_autonomous/);
+    expect(readme).toMatch(/scripted_plus_jev/);
+    expect(readme).toMatch(/llm_plus_jev/);
+    expect(readme).toMatch(/do not claim collab helps without arms/);
     expect(readme).toMatch(/suraj-phanindra\/wellposed/);
     expect(readme).toMatch(/never the sole veto/);
     expect(readme).toMatch(/taskset \(score first\)/);
@@ -129,6 +140,19 @@ describe("discoverability copy", () => {
     const lock = readFileSync(join(root, "package-lock.json"), "utf8");
     expect(pkg).not.toMatch(/abide/i);
     expect(lock).not.toMatch(/@coldtea\/abide/);
+  });
+
+  it("does not add hourly sibling watches as runtime dependencies", () => {
+    const pkg = readFileSync(join(root, "package.json"), "utf8");
+    const lock = readFileSync(join(root, "package-lock.json"), "utf8");
+    expect(pkg).not.toMatch(/pi-jev-approver/);
+    expect(pkg).not.toMatch(/agent-workflow-typesafe/);
+    expect(pkg).not.toMatch(/jevscan/);
+    expect(pkg).not.toMatch(/jev-testbench/);
+    expect(lock).not.toMatch(/pi-jev-approver/);
+    expect(lock).not.toMatch(/agent-workflow-typesafe/);
+    expect(lock).not.toMatch(/jevscan/);
+    expect(lock).not.toMatch(/jev-testbench/);
   });
 
   it("does not advertise Deep Research paste workflows on public surfaces", () => {
@@ -182,6 +206,17 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/cheap parallel/);
     expect(skill).toMatch(/caiovicentino\/jev-align/);
     expect(skill).toMatch(/AntonioCoppe\/jev-harness/);
+    expect(skill).toMatch(/phin-tech\/pi-jev-approver/);
+    expect(skill).toMatch(/commandRules/);
+    expect(skill).toMatch(/ngallodev-software\/agent-workflow-typesafe-ai/);
+    expect(skill).toMatch(/never changes host routing\/executor/);
+    expect(skill).toMatch(/alexykn\/jevscan/);
+    expect(skill).toMatch(/tree-sitter extract/);
+    expect(skill).toMatch(/ufx7\/jev-testbench/);
+    expect(skill).toMatch(/llm_autonomous/);
+    expect(skill).toMatch(/scripted_plus_jev/);
+    expect(skill).toMatch(/llm_plus_jev/);
+    expect(skill).toMatch(/do not claim collab helps without arms/);
     expect(skill).toMatch(/suraj-phanindra\/wellposed/);
     expect(skill).toMatch(/never the sole veto/);
     expect(skill).toMatch(/do not replace a scored taskset/i);
@@ -207,6 +242,17 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/SargeDev\/jev-gate-student-b/);
     expect(evalDoc).toMatch(/luantak\/is-malicious/);
     expect(evalDoc).toMatch(/distill → gate integrity/);
+    expect(evalDoc).toMatch(/phin-tech\/pi-jev-approver/);
+    expect(evalDoc).toMatch(/commandRules/);
+    expect(evalDoc).toMatch(/ngallodev-software\/agent-workflow-typesafe-ai/);
+    expect(evalDoc).toMatch(/never changes host routing\/executor/);
+    expect(evalDoc).toMatch(/alexykn\/jevscan/);
+    expect(evalDoc).toMatch(/tree-sitter extract/);
+    expect(evalDoc).toMatch(/ufx7\/jev-testbench/);
+    expect(evalDoc).toMatch(/llm_autonomous/);
+    expect(evalDoc).toMatch(/scripted_plus_jev/);
+    expect(evalDoc).toMatch(/llm_plus_jev/);
+    expect(evalDoc).toMatch(/Do not claim collab helps without arms/);
     expect(evalDoc).toMatch(/suraj-phanindra\/wellposed/);
     expect(evalDoc).toMatch(/never the sole veto/);
     expect(evalDoc).toMatch(/Confidence gating cannot catch a forced wrong Choice/);
@@ -233,6 +279,12 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/practices, not install dependencies/);
     expect(install).toMatch(/coldteadotai\/abide/);
     expect(install).toMatch(/not a reward-hack detector/);
+    expect(install).toMatch(/phin-tech\/pi-jev-approver/);
+    expect(install).toMatch(/ngallodev-software\/agent-workflow-typesafe-ai/);
+    expect(install).toMatch(/alexykn\/jevscan/);
+    expect(install).toMatch(/ufx7\/jev-testbench/);
+    expect(install).toMatch(/sibling notes; no runtime deps/);
+    expect(install).toMatch(/examples\/pi-extension\.ts/);
     expect(shape).toMatch(/coldteadotai\/abide/);
     expect(shape).toMatch(/banded confidence/);
     expect(install).toMatch(/memovai\/openevals/);
@@ -252,6 +304,8 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/fastino-ai\/GLiGuard/);
     expect(hosts).toMatch(/coldteadotai\/abide/);
     expect(hosts).toMatch(/Abide does not catch\s+reward hacking/);
+    expect(hosts).toMatch(/phin-tech\/pi-jev-approver/);
+    expect(hosts).toMatch(/commandRules/);
     expect(hosts).toMatch(/hooks\/run\.ts dsh/);
     expect(hosts).toMatch(/command-hook/);
     const gates = readFileSync(
@@ -260,6 +314,12 @@ describe("discoverability copy", () => {
     );
     expect(gates).toMatch(/coldteadotai\/abide/);
     expect(gates).toMatch(/never the sole hard veto/);
+    expect(gates).toMatch(/phin-tech\/pi-jev-approver/);
+    expect(gates).toMatch(/commandRules/);
+    expect(gates).toMatch(/alexykn\/jevscan/);
+    expect(gates).toMatch(/tree-sitter extract/);
+    expect(gates).toMatch(/ngallodev-software\/agent-workflow-typesafe-ai/);
+    expect(gates).toMatch(/never changes host routing\/executor/);
   });
 });
 

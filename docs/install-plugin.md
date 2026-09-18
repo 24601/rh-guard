@@ -119,7 +119,8 @@ use it as a runbook for `next dev`.
 - Do not put hidden tests in a workspace file the agent can edit.
 - Do not treat lexical scores as a Jev ROC.
 - Do not treat [Harbor](https://github.com/harbor-framework/harbor), [jevals](https://github.com/dayhaysoos/jevals), or [openevals](https://github.com/memovai/openevals) as required to install the hooks (practices, not install dependencies). See [eval-integrity.md](eval-integrity.md).
-- Do not merge this pack into Augustus, [JevLint](https://github.com/huntedman/JevLint), [jevgate](https://github.com/thevibeworks/jevgate), or [Abide](https://github.com/coldteadotai/abide) (or vice versa). Abide is soft project-instruction Jev on diffs, not a reward-hack detector.
+- Do not treat [pi-jev-approver](https://github.com/phin-tech/pi-jev-approver), [agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai), [jevscan](https://github.com/alexykn/jevscan), or [jev-testbench](https://github.com/ufx7/jev-testbench) as install dependencies (sibling notes; no runtime deps).
+- Do not merge this pack into Augustus, [JevLint](https://github.com/huntedman/JevLint), [jevgate](https://github.com/thevibeworks/jevgate), or [Abide](https://github.com/coldteadotai/abide) (or vice versa). Abide is soft project-instruction Jev on diffs, not a reward-hack detector. Do not merge [pi-jev-approver](https://github.com/phin-tech/pi-jev-approver) into `examples/pi-extension.ts`.
 - Do not send `continue: false` on Codex PreToolUse (Codex fails the hook and continues the tool).
 - Do not deny Amp with `action: "error"` or by throwing (Amp ignores thrown plugin errors).
 - Do not reuse Claude stdout for Grok (`{decision:deny,reason}` only).

@@ -70,6 +70,8 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [wellposed](https://github.com/suraj-phanindra/wellposed) lints Choice / Score / Noul requests before runtime: a Choice with no "other" can be forced wrong at confidence 1.0. Confidence gating cannot catch a forced wrong Choice — inspect request shape first.
 
+[pi-jev-approver](https://github.com/phin-tech/pi-jev-approver) is a Pi bash safety gate (code state then Jev; `commandRules` can hard-block; no key → fail-closed). Contrast jevgate allowlist + fail-open rest. [agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai) is advisory `no_action` receipts; the plugin never changes host routing/executor (hard fail-open evidence for soft sidecars). [jevscan](https://github.com/alexykn/jevscan) composes tree-sitter extract with Jev questions (hard envelope vs soft judgment). Measure collab with [jev-testbench](https://github.com/ufx7/jev-testbench) arms (`llm_autonomous` vs `scripted_plus_jev` vs `llm_plus_jev`); do not claim collab helps without arms.
+
 [Abide](https://github.com/coldteadotai/abide)'s `replay` plus independent
 review (flagged edits/turns confirmed or not; flags are not labels) is
 Harbor/jevals-adjacent measurement discipline. It measures soft project-rule
@@ -207,4 +209,8 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Shadow / confidence action evals for a System One gate: [jev-harness](https://github.com/AntonioCoppe/jev-harness)
 - Request-shape lint (forced wrong Choice at confidence 1.0): [wellposed](https://github.com/suraj-phanindra/wellposed)
 - Soft project-instruction Jev on diffs (not reward hacking): [Abide](https://github.com/coldteadotai/abide)
+- Pi bash safety gate (code state then Jev; can hard-block / fail-closed): [pi-jev-approver](https://github.com/phin-tech/pi-jev-approver)
+- Advisory `no_action` receipts (plugin never changes host routing/executor): [agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai)
+- tree-sitter extract then Jev questions: [jevscan](https://github.com/alexykn/jevscan)
+- Collab arms (`llm_autonomous` vs `scripted_plus_jev` vs `llm_plus_jev`): [jev-testbench](https://github.com/ufx7/jev-testbench)
 - Official TypeSafe contracts: [typesafe-ai/skills](https://github.com/typesafe-ai/skills)
