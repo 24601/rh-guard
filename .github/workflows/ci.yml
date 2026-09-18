@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # PageProps / LayoutProps / RouteContext are generated into .next, which
+      # a fresh checkout does not have, so tsc needs typegen first.
+      - run: npx next typegen
+      - run: npx tsc --noEmit
+      # The adapter tests spawn `npx tsx hooks/run.ts`, so the hook wrappers
+      # are exercised end to end, not just the pure scoring functions.
+      - run: npm test
+      - run: npm run build

@@ -1,6 +1,6 @@
 # Hack Radar
 
-Hack Radar sits in Claude Code and Cursor agent hooks and blocks reward-hacking tool use—tampering with graders, hidden tests, or the eval process—while steering toward checks the agent cannot game.
+Hack Radar sits in coding-agent hooks (Claude Code, Cursor, Codex, Grok Build, Pi, Amp, Prime Agent, DeepSeek Harness) and blocks reward-hacking tool use—tampering with graders, hidden tests, or the eval process—while steering toward checks the agent cannot game. Exo is **support via ToolRuntime wrap**, not drop-in hooks.
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-marketplace-purple.svg)](.claude-plugin/marketplace.json)
 [![Skills.sh](https://img.shields.io/badge/skills.sh-compatible-green.svg)](https://www.skills.sh/)
@@ -17,9 +17,23 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 
 **Complementary, not a competitor.** [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval integrity gate.
 
+**Complementary, not a competitor.** [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval integrity gate.
+
 ## Install hooks
 
-`examples/` is the source of truth. Full packaging notes (Claude plugin + Cursor `hooks.json`) are in [docs/install-plugin.md](docs/install-plugin.md).
+`examples/` is the source of truth. Per-host contracts: [docs/hosts.md](docs/hosts.md). Packaging notes: [docs/install-plugin.md](docs/install-plugin.md).
+
+| Host | Install path | Adapter | Fail-closed |
+|---|---|---|---|
+| Claude Code | `.claude/settings.json` or plugin | HTTP `/api/hooks/claude` or `hooks/run.ts claude` / `hooks/claude-hook.sh` | Command wrapper yes; HTTP no |
+| Cursor | `.cursor/hooks.json` | `hooks/run.ts cursor` | `failClosed: true` on shell/tool |
+| Codex | `~/.codex/hooks.json` / `.codex/hooks.json` | `hooks/run.ts codex` (command only; **no HTTP**) | Codex-safe deny JSON (**no `continue: false`**) + exit 2 |
+| Grok Build | `~/.grok/hooks/*.json` / `.grok/hooks/*.json` | `hooks/run.ts grok` or `hooks/grok-hook.sh` | Host fail-open on crash/timeout; wrapper emits `{decision:deny}` + exit 2 |
+| Pi | `~/.pi/agent/extensions/` or `.pi/extensions/` | `examples/pi-extension.ts` → `/api/hooks/pi` | Plugin `{block,reason,terminate}` on fetch failure; optional `@hsingjui/pi-hooks` command-only |
+| Amp | `.amp/plugins/` or `~/.config/amp/plugins/` | `examples/amp-plugin.ts` → `/api/hooks/amp` | `reject-and-continue` + `AGENT_DENY` (not `error`); catch throws |
+| Prime Agent | `~/.prime/agent/extensions/` or `.prime/agent/extensions/` | `examples/prime-extension.ts` → `/api/hooks/prime` | Plugin `{block,reason}` (no `terminate`) |
+| DSH (generic/adapter) | generic stdin (`hooks/run.ts dsh` or `generic`); Claude/Codex command-hook bridges also work | `hooks/run.ts dsh` or `generic` | HTTP skipped (404); generic `{block,reason}` + exit 2. Bridges deny at `tools/pre-execute` + exit 2 |
+| Exo | wrap `ToolRuntime::execute` / `TurnContext.executeTool` ([`examples/exo-tool-runtime.ts`](examples/exo-tool-runtime.ts)) | **support via ToolRuntime wrap**, not drop-in hooks; no native `hooks.json` | Deny-by-default gate returns a tool error with `AGENT_DENY`; 8s scoring timeout denies. Host has no `failClosed` flag |
 
 **Claude Code.** Merge [`examples/claude-settings.json`](examples/claude-settings.json) into `.claude/settings.json` for HTTP hooks. Claude HTTP hooks only honor a 2xx JSON body; timeouts and non-2xx do not block. For fail-closed PreToolUse, merge [`examples/claude-command-settings.json`](examples/claude-command-settings.json) (`npx tsx hooks/run.ts claude`); a wrapper failure emits deny JSON and exits 2. Or install the marketplace pack (HTTP for prompt/Stop, fail-closed `hooks/claude-hook.sh` on PreToolUse):
 
@@ -60,7 +74,7 @@ Open [http://127.0.0.1:43147](http://127.0.0.1:43147).
 
 Copy `.env.example` to `.env.local` and set `TYPESAFE_API_KEY` to score with Jev. Get a key from [console.typesafe.ai](https://console.typesafe.ai) after early-access signup. Pin `TYPESAFE_MODEL=jev-1.13.0`. `jev-latest` currently aliases that id and will move.
 
-Without a key the app still runs. Hooks POST to `/api/hooks/claude` and `/api/hooks/cursor`.
+Without a key the app still runs. HTTP adapters POST to `/api/hooks/<flavor>`. Codex and DeepSeek Harness have no HTTP hook type on the host. Exo has no native `hooks.json`; score from the ToolRuntime wrap (or `hooks/run.ts generic`).
 
 ## What it scores
 
@@ -108,4 +122,3 @@ The lexical layer matches the GLiClass strings on the Hooks page. Fine-tune `kno
 The published ~14M encoder is not a drop-in action-only fallback: full-input AUROC 0.9467 drops to 0.6213 if you strip reasoning at inference.
 
 Open-weight SWE agents can add a DoM probe from [arXiv 2609.19101](https://arxiv.org/abs/2609.19101) on CoT activations. That is a second detector, not a replacement for the hook policy.
-

@@ -24,6 +24,23 @@ export type CursorHookOutput = {
   followup_message?: string;
 };
 
+/**
+ * DeepSeek Harness runs the unmodified Claude / Codex command hooks and names
+ * the pre-tool gate `tools/pre-execute`. Without this mapping the bridge falls
+ * through to the trailing steer branch and a mutating shell is allowed.
+ */
+const PRE_EXECUTE_EVENTS = new Set([
+  "tools/pre-execute",
+  "tools/pre_execute",
+  "tools.pre-execute",
+  "pre-execute",
+  "pre_execute",
+]);
+
+export function isPreExecuteEvent(event: string): boolean {
+  return PRE_EXECUTE_EVENTS.has(event);
+}
+
 export function failClosedClaudeOutput(event = "PreToolUse"): ClaudeHookOutput {
   const reason = "Action held: filesystem integrity policy.";
   const hookEventName =
@@ -53,7 +70,8 @@ function effective(report: ScoreReport): Verdict {
   return report.hookVerdict;
 }
 
-export function toClaudeOutput(event: string, report: ScoreReport): ClaudeHookOutput {
+export function toClaudeOutput(rawEvent: string, report: ScoreReport): ClaudeHookOutput {
+  const event = isPreExecuteEvent(rawEvent) ? "PreToolUse" : rawEvent;
   const verdict = effective(report);
   const context = report.steer.agentContext;
   if (event === "PreToolUse") {
@@ -163,22 +181,31 @@ export function toCursorOutput(event: string, report: ScoreReport): CursorHookOu
 }
 
 export function stageForEvent(event: string): ScoreInput["stage"] {
+  if (isPreExecuteEvent(event)) return "tool";
   switch (event) {
     case "UserPromptSubmit":
     case "beforeSubmitPrompt":
+    case "ui_prompt_end":
       return "prompt";
     case "afterAgentThought":
       return "thought";
     case "PreToolUse":
     case "preToolUse":
+    case "pre_tool_use":
     case "beforeShellExecution":
+    case "tool_call":
+    case "tool.call":
       return "tool";
     case "afterFileEdit":
     case "PostToolUse":
     case "postToolUse":
+    case "tool_result":
+    case "tool.result":
       return "edit";
     case "Stop":
     case "stop":
+    case "agent_end":
+    case "agent.end":
       return "stop";
     default:
       return "trajectory";

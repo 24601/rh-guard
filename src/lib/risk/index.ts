@@ -7,6 +7,38 @@ export {
   failClosedClaudeOutput,
   failClosedCursorOutput,
 } from "./hooks";
+export {
+  HOOK_FLAVORS,
+  canonicalFlavor,
+  failClosedAmpOutput,
+  failClosedCodexOutput,
+  failClosedExitCode,
+  failClosedGenericOutput,
+  failClosedGrokOutput,
+  failClosedHostOutput,
+  failClosedPiOutput,
+  failClosedPrimeOutput,
+  httpEnabled,
+  isHookFlavor,
+  parseHookFlavor,
+  successExitCode,
+  toAmpOutput,
+  toCodexOutput,
+  toGenericOutput,
+  toGrokOutput,
+  toHostOutput,
+  toPiOutput,
+  toPrimeOutput,
+} from "./hosts";
+export type {
+  AmpHookOutput,
+  CanonicalFlavor,
+  GenericHookOutput,
+  GrokHookOutput,
+  HookFlavor,
+  HostHookOutput,
+  PiHookOutput,
+} from "./hosts";
 export { EXAMPLES } from "./examples";
 export { LITERATURE } from "./literature";
 export { GLICLASS_LABELS, gliclassLabelList } from "./zeroshot";

@@ -24,18 +24,33 @@ function toolBlob(toolInput: unknown): string | undefined {
 
 export function parseHookEvent(raw: unknown): ParsedHookEvent {
   const body = asRecord(raw);
+  const nested = asRecord(body.input);
+  const toolName =
+    str(body.tool_name) ??
+    str(body.toolName) ??
+    str(body.tool) ??
+    str(body.functionName) ??
+    str(body.function_name);
+  const toolInput =
+    body.tool_input ??
+    body.toolInput ??
+    body.command ??
+    body.arguments ??
+    (Object.keys(nested).length > 0 ? body.input : undefined);
+  const inferredToolEvent = toolName ? "tool_call" : undefined;
   const event =
     str(body.hook_event_name) ??
     str(body.hookEventName) ??
     str(body.event) ??
+    inferredToolEvent ??
     "raw";
-  const toolName = str(body.tool_name) ?? str(body.toolName);
-  const toolInput = body.tool_input ?? body.toolInput ?? body.command;
   const path =
     str(body.file_path) ??
     str(body.filePath) ??
+    str(body.path) ??
     str(asRecord(toolInput).file_path) ??
-    str(asRecord(toolInput).path);
+    str(asRecord(toolInput).path) ??
+    str(nested.path);
   const prompt = str(body.prompt) ?? str(body.text);
   const thought = event === "afterAgentThought" ? str(body.text) : undefined;
   const transcript = str(body.transcript) ?? str(body.conversation);
@@ -43,12 +58,18 @@ export function parseHookEvent(raw: unknown): ParsedHookEvent {
     str(body.patch) ??
     str(asRecord(toolInput).new_string) ??
     str(asRecord(toolInput).contents) ??
-    str(asRecord(toolInput).command);
-  const source = event.startsWith("before") || event.startsWith("pre") || event === "stop"
-    ? "cursor"
-    : event === "raw"
-      ? "raw"
-      : "claude";
+    str(asRecord(toolInput).command) ??
+    str(nested.command);
+  const source =
+    str(body.hookEventName) && !str(body.hook_event_name)
+      ? "grok"
+      : event.startsWith("before") || event.startsWith("pre") || event === "stop"
+        ? "cursor"
+        : event === "raw"
+          ? "raw"
+          : event === "tool_call" || event === "tool.call"
+            ? "generic"
+            : "claude";
   const input: ScoreInput = {
     stage: stageForEvent(event),
     prompt,

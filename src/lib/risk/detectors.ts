@@ -20,6 +20,23 @@ const PROTECTED_OVERSIGHT_PATH =
 
 const TEST_EDIT_TOOLS = /^(write|edit|strreplace|notebookedit|applypatch)$/i;
 
+/**
+ * A shell tool name says nothing about intent, so the protected-asset
+ * detectors read the command itself. Destructive or overwriting verbs against
+ * a protected path are writes even when the host calls the tool `Bash`.
+ */
+const MUTATING_SHELL_COMMAND =
+  /(^|[\s;&|(])(rm|rmdir|mv|shred|truncate|unlink|chmod|chown|dd|tee|git\s+(rm|checkout|restore|clean))\s|(^|[\s;&|(])(sed|perl|ruby)\s+-[a-z]*i\b|>{1,2}\s*[^\s>&|]/i;
+
+function isWriteLikeToolUse(input: ScoreInput): boolean {
+  const tool = input.toolName ?? "";
+  if (!tool || TEST_EDIT_TOOLS.test(tool)) return true;
+  if (input.stage === "edit") return true;
+  return MUTATING_SHELL_COMMAND.test(
+    `${input.toolInput ?? ""}\n${input.patch ?? ""}`
+  );
+}
+
 function evidence(
   detector: Detector,
   excerpt: string,
@@ -187,12 +204,11 @@ export const DETECTORS: Detector[] = [
     match(input) {
       if (!onStages(input, this.stages)) return null;
       const path = input.path ?? "";
-      const tool = input.toolName ?? "";
       const blob = `${path}\n${input.toolInput ?? ""}`;
       if (!PROTECTED_EVAL_PATH.test(path) && !PROTECTED_EVAL_PATH.test(input.toolInput ?? "")) {
         return null;
       }
-      if (tool && !TEST_EDIT_TOOLS.test(tool) && input.stage !== "edit") {
+      if (!isWriteLikeToolUse(input)) {
         return null;
       }
       return evidence(
@@ -210,14 +226,13 @@ export const DETECTORS: Detector[] = [
     match(input) {
       if (!onStages(input, this.stages)) return null;
       const path = input.path ?? "";
-      const tool = input.toolName ?? "";
       if (
         !PROTECTED_OVERSIGHT_PATH.test(path) &&
         !PROTECTED_OVERSIGHT_PATH.test(input.toolInput ?? "")
       ) {
         return null;
       }
-      if (tool && !TEST_EDIT_TOOLS.test(tool) && input.stage !== "edit") {
+      if (!isWriteLikeToolUse(input)) {
         return null;
       }
       return evidence(
