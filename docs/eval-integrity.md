@@ -44,6 +44,8 @@ Practices (from the jevals skill):
   case states, and reviewed keys. Changing the answer key changes the
   experiment.
 
+[wellposed](https://github.com/suraj-phanindra/wellposed) lints Choice / Score / Noul requests before runtime. A Choice with no "other" can be forced wrong at confidence 1.0; broken backtick paths are unanswerable. Confidence gating cannot catch a forced wrong Choice — inspect request shape first.
+
 ## Online eval (adjacent)
 
 [openevals](https://github.com/memovai/openevals) is Harbor/jevals-adjacent **online** eval / observability. Code graders first, then cheap parallel System One (Jev) per-step and trace questions written back to Langfuse/OTLP. Composite and pass rules live in code; human annotation calibrates whether those questions can be trusted. Parallel judge for traces — not the primary task score and not LLM-as-judge as the reward.
@@ -76,8 +78,7 @@ jevals accuracy number, or an LLM judge into the RL reward.
 
 jevals measures decisions; rh-guard gates agent tool use; Harbor scores product/agent loops.
 
-[jevgate](https://github.com/thevibeworks/jevgate) is an allowlist that
-proves what may run; Jev judges only the rest. [JevLint](https://github.com/huntedman/JevLint)
+[jevgate](https://github.com/thevibeworks/jevgate) is an allowlist that proves what may run; Jev judges only the rest. Hard envelope owns safety; soft judgment is never the sole veto (fail-open: it cannot block). Complementary to this sidecar's structural deny + Jev overlay. [JevLint](https://github.com/huntedman/JevLint)
 is semantic convention Noul lint in a write → check → fix loop (quality,
 not gaming). [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an
 encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent

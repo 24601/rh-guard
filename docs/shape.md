@@ -60,7 +60,7 @@ White-box only. Wins on open SWE agents, cannot see Claude or Cursor.
 
 GLiClass as the only neural head. Fine for air-gapped boxes. Wrong default now that Jev exists as a 70 to 500ms typed decision model.
 
-Averaging all Nouls or multiplying by Choice confidence. Parallel questions are not a statistically independent ensemble. A high-confidence `none` cannot override a hazard Noul.
+Averaging all Nouls or multiplying by Choice confidence. Parallel questions are not a statistically independent ensemble. A high-confidence `none` cannot override a hazard Noul. A Choice with no "other" can still be forced wrong at confidence 1.0; [wellposed](https://github.com/suraj-phanindra/wellposed) lints that request shape — confidence gating cannot catch it.
 
 ## System One class
 

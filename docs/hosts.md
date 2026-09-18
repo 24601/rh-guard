@@ -8,8 +8,9 @@ workbench.
 
 **Sibling, not a merge.** [jevgate](https://github.com/thevibeworks/jevgate)
 uses the same shape: an allowlist proves what may run; Jev judges only the
-rest. rh-guard's structural deny is that first gate; the System One sidecar
-is the rest. Do not merge the products.
+rest. Hard envelope owns safety; soft judgment is never the sole veto
+(fail-open: it cannot block). rh-guard's structural deny is that first gate;
+the System One sidecar is the rest. Do not merge the products.
 
 [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM
 prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval

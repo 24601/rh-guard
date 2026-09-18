@@ -35,7 +35,8 @@ quality, not gaming.
 allowlist proves what may run; writers, wrappers, and credential-shaped
 input are refused in code and never sent to the model; Jev judges only
 unlisted verbs; it cannot block (unsure → the agent's own permission
-prompt). Same shape as structural deny + System One sidecar here. Different
+prompt). Hard envelope owns safety; soft judgment is never the sole veto.
+Same shape as structural deny + System One sidecar here. Different
 job (permission prompts vs reward-hack denials). Do not merge them.
 
 [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM
@@ -59,6 +60,8 @@ confidence; held-out discipline; compare only equivalent case sets.
 [openevals](https://github.com/memovai/openevals) is adjacent online eval / observability: cheap parallel System One as a trace judge (code graders first), not LLM-as-judge as the primary score.
 
 [jev-align](https://github.com/caiovicentino/jev-align) verifies a plan or response against policy before act (including fabricated verification). Complementary to these tool gates, not a merge.
+
+[wellposed](https://github.com/suraj-phanindra/wellposed) lints Choice / Score / Noul requests before runtime: a Choice with no "other" can be forced wrong at confidence 1.0. Confidence gating cannot catch a forced wrong Choice — inspect request shape first.
 
 **Anti-pattern.** Using LLM-as-judge (or gaming jevals labels) as the
 reward signal is the failure mode this gate is meant to catch. See
@@ -190,4 +193,5 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Online eval / observability (cheap parallel System One, not primary score): [openevals](https://github.com/memovai/openevals)
 - Verify plan/response vs policy before act: [jev-align](https://github.com/caiovicentino/jev-align)
 - Shadow / confidence action evals for a System One gate: [jev-harness](https://github.com/AntonioCoppe/jev-harness)
+- Request-shape lint (forced wrong Choice at confidence 1.0): [wellposed](https://github.com/suraj-phanindra/wellposed)
 - Official TypeSafe contracts: [typesafe-ai/skills](https://github.com/typesafe-ai/skills)
