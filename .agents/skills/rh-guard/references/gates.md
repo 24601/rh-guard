@@ -27,6 +27,10 @@ a merge, and not a reward-hack detector.
 
 [pi-jev-approver](https://github.com/phin-tech/pi-jev-approver) is structural-first on Pi bash with the opposite envelope default: `commandRules` deny is a hard block; missing `TYPESAFE_API_KEY` fails closed. Contrast jevgate's fail-open rest (it cannot block). Sibling, not this sidecar.
 
+[wakegate](https://github.com/shitianfang/wakegate) is the fail-open wake-gate contrast: skip a wakeup only when Jev answers and puts less than 0.2 on wake; error, no key, and unsure all wake. Opposite default from pi-jev-approver fail-closed. Not a reward-hack detector.
+
+[latch](https://github.com/CaseReed/latch) is a CI merge-gate cousin: code clusters, Jev labels, code owns `Gate: PASS` / `Gate: BLOCK`. `ignore_as_infra` needs an explicit network fingerprint; Jev cannot ignore on its own. Flaky-test gaming counter-pattern.
+
 [jevscan](https://github.com/alexykn/jevscan) composes tree-sitter extract (hard envelope; no execute) with independent Jev questions (soft judgment). Same layering; quality lint, not reward-hack.
 
 [agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai) is the soft-sidecar extreme: advisory `no_action` receipts; the plugin never changes host routing/executor. Missing key → no-action, not a veto.
@@ -59,6 +63,22 @@ gliner25-compaction (m-newhauser/gliner25-compaction)
   hard shell/mutation policy overrides the soft model
   shadowMode default true before rewriting history
   not reward-hack detection; not this sidecar
+
+latch (CaseReed/latch)
+  cluster failures (code) → Jev labels cause → code Gate: PASS / Gate: BLOCK
+  ignore_as_infra needs env_cascade + infra fingerprint
+  Jev cannot ignore on its own; flaky-test gaming counter-pattern
+
+clear-head (VladyslavHontar/clear-head)
+  Stop hook: claims vs session evidence
+  CONTRADICTED / UNSUPPORTED → block; low JEV_FIRM never blocks
+
+wakegate (shitianfang/wakegate)
+  fail-open wake: skip only if Jev answers and p < 0.2
+  error / no-key / unsure wake. Contrast pi-jev-approver fail-closed
+
+omp-auto-mode (alexsatch/omp-auto-mode)
+  oh-my-pi safe / ask / unsafe; classifier fail → omp approval (fail-open)
 ```
 
 Do not merge those hooks into `examples/`. [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is adjacent model+effort routing, not a rh-guard peer.

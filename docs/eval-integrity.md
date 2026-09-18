@@ -82,6 +82,18 @@ Watch, not an endorsement: [jev-gate-student-b](https://huggingface.co/SargeDev/
 
 [gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction) is local GLiNER2.5 (`fastino/gliner2.5-base-v1`) Claude context compaction, not a prose summarizer and not reward-hack detection. Extractive character-offset spans; Choice `keep_full` / `keep_evidence` / `keep_call_only` / `drop`. Uncertain or invalid evidence fail-closed to `keep_full`. Hard shell/mutation policy overrides the soft model. Public default `shadowMode` true (analyze + log, no history replace until explicitly false). Sibling envelope next to jevgate (opposite default: fail-closed retention vs fail-open rest). Encoder family with GLiGuard; different job.
 
+[latch](https://github.com/CaseReed/latch) is a CI merge-gate: code clusters failures by signature; Jev labels each cause; code owns `Gate: PASS` (infra) vs `Gate: BLOCK` (real). `ignore_as_infra` requires `env_cascade` plus an explicit network fingerprint; Jev cannot ignore on its own. `--gate` exits 1 on a real failure; the reporter never fails Playwright. Eval-integrity / flaky-test gaming: treating a real failure as noise is the pattern this counters. Cousin, not this sidecar.
+
+[clear-head](https://github.com/VladyslavHontar/clear-head) is a Claude Stop hook: factual claims vs session evidence (`CONTRADICTED` / `UNSUPPORTED`). Blocks on contradiction or unsupported with no relevant evidence. Low `JEV_FIRM` logs but never blocks. Anti-done-without-reading / reward-hack cousin. Not a merge.
+
+[jev-marshal](https://github.com/LightningK0ala/jev-marshal) is named as repository rules for pull requests, enforced by Jev. Empty public tree at capture; watch, not an endorsement.
+
+[if-ai](https://github.com/Victor-Casado/if-ai) is a GitHub Action for plain-English PR condition checks (Jev Choice + required `min-confidence`). False, low-confidence, timeout, or API error fail the check; making it a merge block is a required-check choice. Cousin, not this sidecar.
+
+[wakegate](https://github.com/shitianfang/wakegate) is a fail-open wake gate: skip a wakeup only when Jev answers and puts less than 0.2 on wake; error, no key, unsure, skip-limit, and user-message all wake. Contrast pi-jev-approver fail-closed. Not a reward-hack detector.
+
+[omp-auto-mode](https://github.com/alexsatch/omp-auto-mode) is an oh-my-pi plugin: TypeSafe Jev classifies gated tool calls as `safe` / `ask` / `unsafe`; low confidence → ask; classifier failure defers to omp's own approval (fail-open). Sibling to the Pi `pi-jev-auto-mode` gate. Do not merge into `examples/pi-extension.ts`.
+
 ## Anti-pattern
 
 Using **LLM-as-judge** (or gaming jevals labels) as the reward signal is
