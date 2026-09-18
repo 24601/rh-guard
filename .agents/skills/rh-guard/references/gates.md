@@ -29,6 +29,8 @@ a merge, and not a reward-hack detector.
 
 [wakegate](https://github.com/shitianfang/wakegate) is the fail-open wake-gate contrast: skip a wakeup only when Jev answers and puts less than 0.2 on wake; error, no key, and unsure all wake. Opposite default from pi-jev-approver fail-closed. Not a reward-hack detector.
 
+[toolgate](https://github.com/fdemir/toolgate) is a pre-execution allow / block / review gate: error or timeout stops the call (fail-safe). Distinct from [ndolinschi/toolgate](https://github.com/ndolinschi/toolgate). Eval CLI is given → expected → actual; only given reaches Jev. Cousin, not this sidecar.
+
 [latch](https://github.com/CaseReed/latch) is a CI merge-gate cousin: code clusters, Jev labels, code owns `Gate: PASS` / `Gate: BLOCK`. `ignore_as_infra` needs an explicit network fingerprint; Jev cannot ignore on its own. Flaky-test gaming counter-pattern.
 
 [jevscan](https://github.com/alexykn/jevscan) composes tree-sitter extract (hard envelope; no execute) with independent Jev questions (soft judgment). Same layering; quality lint, not reward-hack.
@@ -79,6 +81,15 @@ wakegate (shitianfang/wakegate)
 
 omp-auto-mode (alexsatch/omp-auto-mode)
   oh-my-pi safe / ask / unsafe; classifier fail → omp approval (fail-open)
+
+toolgate (fdemir/toolgate)
+  pre-exec allow | block | review; error/timeout → stop (fail-safe)
+  given → expected → actual; only given reaches Jev
+  distinct from ndolinschi/toolgate
+
+jev-carryforward (Dharundp6/jev-carryforward)
+  verbatim ledger; nothing summarised, nothing deleted
+  no key → whole list (fail-open); cousin to extractive compaction
 ```
 
 Do not merge those hooks into `examples/`. [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is adjacent model+effort routing, not a rh-guard peer.
