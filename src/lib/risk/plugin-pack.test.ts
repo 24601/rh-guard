@@ -350,7 +350,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/not a claim that Abide measures reward hacking/);
     expect(install).toMatch(/RH Guard is \*\*not\*\*/);
     expect(install).toMatch(/RH_GUARD_URL/);
-    expect(install).toMatch(/HACK_RADAR_URL is still accepted/);
+    expect(install).toMatch(/`HACK_RADAR_URL` is still accepted/);
     expect(install).toMatch(/practices, not install dependencies/);
     expect(install).toMatch(/coldteadotai\/abide/);
     expect(install).toMatch(/not a reward-hack detector/);
