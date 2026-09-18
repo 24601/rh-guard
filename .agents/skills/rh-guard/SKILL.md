@@ -76,6 +76,10 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction) is local GLiNER2.5 (`fastino/gliner2.5-base-v1`) Claude context compaction: extractive character-offset spans, not generated summaries; Choice `keep_full`/`keep_evidence`/`keep_call_only`/`drop`; uncertain/invalid → fail-closed `keep_full`; hard shell/mutation policy overrides the soft model; `shadowMode` default true before rewriting history. Not reward-hack detection. Sibling envelope next to jevgate (fail-closed retention vs fail-open rest).
 
+[latch](https://github.com/CaseReed/latch) is a CI merge-gate: code clusters failures, Jev labels each cause, code owns `Gate: PASS` (infra) vs `Gate: BLOCK` (real). `ignore_as_infra` requires an explicit network fingerprint; Jev cannot ignore on its own. Eval-integrity cousin — treating real failures as noise is the gaming angle it counters. [clear-head](https://github.com/VladyslavHontar/clear-head) is a Claude Stop hook that checks claims against session evidence (`CONTRADICTED` / `UNSUPPORTED`); anti-done-without-reading.
+
+[jev-marshal](https://github.com/LightningK0ala/jev-marshal) is named PR policy rules enforced by Jev (empty public tree at capture). [if-ai](https://github.com/Victor-Casado/if-ai) is plain-English PR condition checks (Jev Choice + min-confidence; Action fails on false/low-confidence/error; required-check is optional). [wakegate](https://github.com/shitianfang/wakegate) is a fail-open wake gate (skip only when Jev answers and p < 0.2; error/no-key/unsure wake). Contrast pi-jev-approver fail-closed. [omp-auto-mode](https://github.com/alexsatch/omp-auto-mode) is an oh-my-pi `safe`/`ask`/`unsafe` classifier; classifier failure defers to omp approval (fail-open). Cousins, not runtime deps.
+
 [Abide](https://github.com/coldteadotai/abide)'s `replay` plus independent
 review (flagged edits/turns confirmed or not; flags are not labels) is
 Harbor/jevals-adjacent measurement discipline. It measures soft project-rule
@@ -222,4 +226,10 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Additive Claude PreToolUse permission gate (OpenRouter Jev): [claude-code-jev](https://github.com/RahulBalakavi/claude-code-jev)
 - Browser-agent Jev-vs-baseline eval (benign + injected): [jev-agent-safety-arena](https://github.com/mjyoke1111/jev-agent-safety-arena)
 - Model+effort router (not a safety gate): [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router)
+- CI merge-gate (infra `Gate: PASS` vs real `Gate: BLOCK`): [latch](https://github.com/CaseReed/latch)
+- Stop-hook claims vs session evidence (`CONTRADICTED` / `UNSUPPORTED`): [clear-head](https://github.com/VladyslavHontar/clear-head)
+- PR policy rules enforced by Jev (watch): [jev-marshal](https://github.com/LightningK0ala/jev-marshal)
+- Fail-open wake gate (skip only if Jev answers and p < 0.2): [wakegate](https://github.com/shitianfang/wakegate)
+- Plain-English PR condition checks: [if-ai](https://github.com/Victor-Casado/if-ai)
+- oh-my-pi `safe`/`ask`/`unsafe` classifier: [omp-auto-mode](https://github.com/alexsatch/omp-auto-mode)
 - Official TypeSafe contracts: [typesafe-ai/skills](https://github.com/typesafe-ai/skills)

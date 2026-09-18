@@ -139,6 +139,18 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/hard shell\/mutation policy overrides the soft model/);
     expect(readme).toMatch(/Not reward-hack detection/);
     expect(readme).toMatch(/fail-closed retention vs fail-open rest/);
+    expect(readme).toMatch(/CaseReed\/latch/);
+    expect(readme).toMatch(/Gate: PASS/);
+    expect(readme).toMatch(/Gate: BLOCK/);
+    expect(readme).toMatch(/ignore_as_infra/);
+    expect(readme).toMatch(/VladyslavHontar\/clear-head/);
+    expect(readme).toMatch(/CONTRADICTED/);
+    expect(readme).toMatch(/LightningK0ala\/jev-marshal/);
+    expect(readme).toMatch(/empty public tree at capture/);
+    expect(readme).toMatch(/Victor-Casado\/if-ai/);
+    expect(readme).toMatch(/shitianfang\/wakegate/);
+    expect(readme).toMatch(/fail-open wake gate/);
+    expect(readme).toMatch(/alexsatch\/omp-auto-mode/);
     expect(readme).toMatch(/suraj-phanindra\/wellposed/);
     expect(readme).toMatch(/never the sole veto/);
     expect(readme).toMatch(/taskset \(score first\)/);
@@ -200,6 +212,12 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/jev-agent-safety-arena/);
     expect(pkg).not.toMatch(/jev-model-router/);
     expect(pkg).not.toMatch(/gliner25-compaction/);
+    expect(pkg).not.toMatch(/latch/);
+    expect(pkg).not.toMatch(/clear-head/);
+    expect(pkg).not.toMatch(/jev-marshal/);
+    expect(pkg).not.toMatch(/wakegate/);
+    expect(pkg).not.toMatch(/if-ai/);
+    expect(pkg).not.toMatch(/omp-auto-mode/);
     expect(lock).not.toMatch(/pi-jev-approver/);
     expect(lock).not.toMatch(/agent-workflow-typesafe/);
     expect(lock).not.toMatch(/jevscan/);
@@ -209,6 +227,12 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/jev-agent-safety-arena/);
     expect(lock).not.toMatch(/jev-model-router/);
     expect(lock).not.toMatch(/gliner25-compaction/);
+    expect(lock).not.toMatch(/latch/);
+    expect(lock).not.toMatch(/clear-head/);
+    expect(lock).not.toMatch(/jev-marshal/);
+    expect(lock).not.toMatch(/wakegate/);
+    expect(lock).not.toMatch(/if-ai/);
+    expect(lock).not.toMatch(/omp-auto-mode/);
   });
 
   it("does not advertise Deep Research paste workflows on public surfaces", () => {
@@ -293,6 +317,18 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/hard shell\/mutation policy overrides the soft model/);
     expect(skill).toMatch(/Not reward-hack detection/);
     expect(skill).toMatch(/fail-closed retention vs fail-open rest/);
+    expect(skill).toMatch(/CaseReed\/latch/);
+    expect(skill).toMatch(/Gate: PASS/);
+    expect(skill).toMatch(/Gate: BLOCK/);
+    expect(skill).toMatch(/ignore_as_infra/);
+    expect(skill).toMatch(/VladyslavHontar\/clear-head/);
+    expect(skill).toMatch(/CONTRADICTED/);
+    expect(skill).toMatch(/LightningK0ala\/jev-marshal/);
+    expect(skill).toMatch(/empty public tree at capture/);
+    expect(skill).toMatch(/Victor-Casado\/if-ai/);
+    expect(skill).toMatch(/shitianfang\/wakegate/);
+    expect(skill).toMatch(/fail-open wake gate/);
+    expect(skill).toMatch(/alexsatch\/omp-auto-mode/);
     expect(skill).toMatch(/suraj-phanindra\/wellposed/);
     expect(skill).toMatch(/never the sole veto/);
     expect(skill).toMatch(/do not replace a scored taskset/i);
@@ -351,6 +387,19 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/[Hh]ard shell\/mutation policy overrides the soft model/);
     expect(evalDoc).toMatch(/not reward-hack detection/);
     expect(evalDoc).toMatch(/fail-closed retention vs fail-open rest/);
+    expect(evalDoc).toMatch(/CaseReed\/latch/);
+    expect(evalDoc).toMatch(/Gate: PASS/);
+    expect(evalDoc).toMatch(/Gate: BLOCK/);
+    expect(evalDoc).toMatch(/ignore_as_infra/);
+    expect(evalDoc).toMatch(/env_cascade/);
+    expect(evalDoc).toMatch(/VladyslavHontar\/clear-head/);
+    expect(evalDoc).toMatch(/CONTRADICTED/);
+    expect(evalDoc).toMatch(/LightningK0ala\/jev-marshal/);
+    expect(evalDoc).toMatch(/empty public tree at capture/i);
+    expect(evalDoc).toMatch(/Victor-Casado\/if-ai/);
+    expect(evalDoc).toMatch(/shitianfang\/wakegate/);
+    expect(evalDoc).toMatch(/fail-open wake gate/);
+    expect(evalDoc).toMatch(/alexsatch\/omp-auto-mode/);
     expect(evalDoc).toMatch(/suraj-phanindra\/wellposed/);
     expect(evalDoc).toMatch(/never the sole veto/);
     expect(evalDoc).toMatch(/Confidence gating cannot catch a forced wrong Choice/);
@@ -389,6 +438,12 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/mjyoke1111\/jev-agent-safety-arena/);
     expect(install).toMatch(/Mandrilsquad1441\/jev-model-router/);
     expect(install).toMatch(/m-newhauser\/gliner25-compaction/);
+    expect(install).toMatch(/CaseReed\/latch/);
+    expect(install).toMatch(/VladyslavHontar\/clear-head/);
+    expect(install).toMatch(/LightningK0ala\/jev-marshal/);
+    expect(install).toMatch(/shitianfang\/wakegate/);
+    expect(install).toMatch(/Victor-Casado\/if-ai/);
+    expect(install).toMatch(/alexsatch\/omp-auto-mode/);
     expect(install).toMatch(/sibling notes; no runtime deps/);
     expect(install).toMatch(/examples\/pi-extension\.ts/);
     expect(shape).toMatch(/coldteadotai\/abide/);
@@ -399,6 +454,7 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/LLM-as-judge/);
     expect(shape).toMatch(/memovai\/openevals/);
     expect(shape).toMatch(/suraj-phanindra\/wellposed/);
+    expect(shape).toMatch(/alexsatch\/omp-auto-mode/);
   });
 
   it("keeps jevgate as a sibling link on host docs, not a merged product", () => {
@@ -412,6 +468,8 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Abide does not catch\s+reward hacking/);
     expect(hosts).toMatch(/phin-tech\/pi-jev-approver/);
     expect(hosts).toMatch(/commandRules/);
+    expect(hosts).toMatch(/alexsatch\/omp-auto-mode/);
+    expect(hosts).toMatch(/fail-open/);
     expect(hosts).toMatch(/RahulBalakavi\/claude-code-jev/);
     expect(hosts).toMatch(/m-newhauser\/gliner25-compaction/);
     expect(hosts).toMatch(/character-offset/);
@@ -448,6 +506,14 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/shadowMode/);
     expect(gates).toMatch(/hard shell\/mutation policy overrides the soft model/);
     expect(gates).toMatch(/not reward-hack detection/);
+    expect(gates).toMatch(/CaseReed\/latch/);
+    expect(gates).toMatch(/Gate: PASS/);
+    expect(gates).toMatch(/ignore_as_infra/);
+    expect(gates).toMatch(/VladyslavHontar\/clear-head/);
+    expect(gates).toMatch(/CONTRADICTED/);
+    expect(gates).toMatch(/shitianfang\/wakegate/);
+    expect(gates).toMatch(/fail-open wake/);
+    expect(gates).toMatch(/alexsatch\/omp-auto-mode/);
   });
 });
 
