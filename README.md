@@ -30,7 +30,7 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 | Pi | `~/.pi/agent/extensions/` or `.pi/extensions/` | `examples/pi-extension.ts` → `/api/hooks/pi` | Plugin `{block,reason,terminate}` on fetch failure; optional `@hsingjui/pi-hooks` command-only |
 | Amp | `.amp/plugins/` or `~/.config/amp/plugins/` | `examples/amp-plugin.ts` → `/api/hooks/amp` | `reject-and-continue` + `AGENT_DENY` (not `error`); catch throws |
 | Prime Agent | `~/.prime/agent/extensions/` or `.prime/agent/extensions/` | `examples/prime-extension.ts` → `/api/hooks/prime` | Plugin `{block,reason}` (no `terminate`) |
-| DSH (DeepSeek Harness) | generic stdin | `hooks/run.ts dsh` or `generic` | HTTP skipped (404); generic `{block,reason}` + exit 2 |
+| DSH (generic/adapter) | Claude/Codex command-hook bridges | `hooks/run.ts claude` or `codex`; also `dsh`/`generic` stdin | HTTP skipped (404); command deny / generic `{block}` + exit 2 |
 | Exo | wrap `ToolRuntime::execute` / `TurnContext.executeTool` ([`examples/exo-tool-runtime.ts`](examples/exo-tool-runtime.ts)) | **support via ToolRuntime wrap**, not drop-in hooks; no native `hooks.json` | Wrapper returns a tool error with `AGENT_DENY`. Host has no `failClosed` flag |
 
 **Claude Code.** Merge [`examples/claude-settings.json`](examples/claude-settings.json) into `.claude/settings.json` for HTTP hooks. Claude HTTP hooks only honor a 2xx JSON body; timeouts and non-2xx do not block. For fail-closed PreToolUse, merge [`examples/claude-command-settings.json`](examples/claude-command-settings.json) (`npx tsx hooks/run.ts claude`); a wrapper failure emits deny JSON and exits 2. Or install the marketplace pack (HTTP for prompt/Stop, fail-closed `hooks/claude-hook.sh` on PreToolUse):

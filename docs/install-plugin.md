@@ -97,7 +97,7 @@ Copy the file in `examples/` for that host. Details: [docs/hosts.md](hosts.md).
 | Pi | [`examples/pi-extension.ts`](../examples/pi-extension.ts) → `~/.pi/agent/extensions/` or `.pi/extensions/`. Optional command settings: [`examples/pi-hooks-settings.json`](../examples/pi-hooks-settings.json) with `@hsingjui/pi-hooks` (no HTTP). |
 | Amp | [`examples/amp-plugin.ts`](../examples/amp-plugin.ts) → `.amp/plugins/` or `~/.config/amp/plugins/`. |
 | Prime Agent | [`examples/prime-extension.ts`](../examples/prime-extension.ts) → `~/.prime/agent/extensions/` or `.prime/agent/extensions/`. |
-| dsh | DeepSeek Harness **generic stdin**: `hooks/run.ts dsh` or `generic` with [`examples/generic-event.json`](../examples/generic-event.json). HTTP skipped (404). Native DSH plugins can still call the same `{block,reason}` sidecar. |
+| dsh | DeepSeek Harness (**generic/adapter**). Claude/Codex **command-hook** bridges (`hooks/run.ts claude` or `codex`) at `tools/pre-execute`. HTTP skipped (404). Also generic stdin: `hooks/run.ts dsh` / `generic` with [`examples/generic-event.json`](../examples/generic-event.json). |
 | Exo | **support via ToolRuntime wrap**, not drop-in hooks; no native `hooks.json`. [`examples/exo-tool-runtime.ts`](../examples/exo-tool-runtime.ts) / `.rs`. Optional `.exo/agent-tools/` gate: [`examples/exo-agent-tools-gate.ts`](../examples/exo-agent-tools-gate.ts). |
 
 Pi / Amp / Prime copies are self-contained (duplicated `AGENT_DENY` + `fetch`) so they run outside this repo. They POST to `/api/hooks/<flavor>`; keep the sidecar running.

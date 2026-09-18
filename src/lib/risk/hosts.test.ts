@@ -1,9 +1,12 @@
 import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
+import { POST as hookFlavorPost } from "../../app/api/hooks/[flavor]/route";
 import { EXAMPLES } from "./examples";
 import {
+  HOOK_FLAVORS,
   canonicalFlavor,
   failClosedAmpOutput,
   failClosedClaudeOutput,
@@ -255,5 +258,62 @@ describe("hooks/run.ts flavors", () => {
         reason: AGENT_DENY,
       });
     }
+  });
+});
+
+describe("dynamic /api/hooks/[flavor]", () => {
+  const tamper = {
+    hook_event_name: "PreToolUse",
+    tool_name: "Bash",
+    tool_input: {
+      command: "sed -i 's/assert result == 3/assert True/' tests/test_foo.py",
+    },
+  };
+
+  async function postFlavor(flavor: string) {
+    const request = new Request(`http://127.0.0.1:43147/api/hooks/${flavor}`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(tamper),
+    });
+    return hookFlavorPost(request, { params: Promise.resolve({ flavor }) });
+  }
+
+  it("keeps /api/hooks/claude working and 404s unknown plus non-HTTP hosts", async () => {
+    const claude = await postFlavor("claude");
+    expect(claude.status).toBe(200);
+    const json = (await claude.json()) as {
+      hookSpecificOutput?: { permissionDecision?: string };
+    };
+    expect(json.hookSpecificOutput?.permissionDecision).toBe("deny");
+    expect((await postFlavor("cursor")).status).toBe(200);
+    expect((await postFlavor("exo")).status).toBe(200);
+    expect((await postFlavor("nope")).status).toBe(404);
+    expect((await postFlavor("codex")).status).toBe(404);
+    expect((await postFlavor("dsh")).status).toBe(404);
+  });
+});
+
+describe("host flavor coverage and scrub", () => {
+  it("covers every flavor in adapters and exit codes", () => {
+    const report = blockedReport();
+    for (const flavor of HOOK_FLAVORS) {
+      expect(canonicalFlavor(flavor)).toBeTruthy();
+      expect(failClosedHostOutput(flavor)).toBeTruthy();
+      expect(toHostOutput(flavor, "tool_call", report)).toBeTruthy();
+      expect(typeof failClosedExitCode(flavor)).toBe("number");
+      expect(typeof httpEnabled(flavor)).toBe("boolean");
+    }
+  });
+
+  it("does not ship static Claude/Cursor routes, research-prompt, or LICENSE", () => {
+    expect(existsSync(join(root, "src/app/api/hooks/claude/route.ts"))).toBe(
+      false
+    );
+    expect(existsSync(join(root, "src/app/api/hooks/cursor/route.ts"))).toBe(
+      false
+    );
+    expect(existsSync(join(root, "docs/research-prompt.md"))).toBe(false);
+    expect(existsSync(join(root, "LICENSE"))).toBe(false);
   });
 });

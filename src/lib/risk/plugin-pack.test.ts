@@ -83,6 +83,8 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/docs\/hosts\.md/);
     expect(readme).toMatch(/Codex/);
     expect(readme).toMatch(/DeepSeek Harness/);
+    expect(readme).toMatch(/command-hook/);
+    expect(readme).toMatch(/DSH \(generic\/adapter\)/);
     expect(readme).toMatch(/support via ToolRuntime wrap/i);
     expect(readme).toMatch(/no public Jev reward-hack ROC/i);
     expect(readme).toMatch(/Lexical \/ GLiClass fallback is \*\*degraded\*\*/);
