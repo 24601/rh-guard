@@ -94,6 +94,14 @@ Watch, not an endorsement: [jev-gate-student-b](https://huggingface.co/SargeDev/
 
 [omp-auto-mode](https://github.com/alexsatch/omp-auto-mode) is an oh-my-pi plugin: TypeSafe Jev classifies gated tool calls as `safe` / `ask` / `unsafe`; low confidence → ask; classifier failure defers to omp's own approval (fail-open). Sibling to the Pi `pi-jev-auto-mode` gate. Do not merge into `examples/pi-extension.ts`.
 
+[toolgate](https://github.com/fdemir/toolgate) is a pre-execution tool-call gate: `allow` / `block` / `review` before the executor runs. Guard error or timeout stops the call (fail-safe), distinct from a model decision. Distinct from [ndolinschi/toolgate](https://github.com/ndolinschi/toolgate) (awesomejev demo: allow / ask_human / deny). AI SDK + LangGraph adapters. Eval CLI is `given → expected → actual`; only `given` reaches Jev; labels stay local; the CLI never executes scenario tools. Jev is a probabilistic check, not an authorization system. Cousin, not this sidecar.
+
+[jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval) is a pre-registered independent Jev-vs-baselines eval. Three same-day errata rounds after external review found overstated results (calibration language, mixed samples, missing cross-fit accuracies, and a threshold-margin sensitivity that flips the sign of the headline cascade result). Both experiments returned AMBIGUOUS. Harbor/jevals lesson: independent review; do not promote first-publish numbers to labels; do not cite the withdrawn framing. Not a rh-guard peer and not a ROC for this sidecar.
+
+[jev-carryforward](https://github.com/Dharundp6/jev-carryforward) is a verbatim fact ledger scored for relevance: `record` saves the original words; `recall` ranks them; nothing summarised, nothing deleted. Constraints and corrections always return in full (Jev never votes on a rule). No key / scorer down → whole list (fail-open). Claim/evidence cousin to clear-head and to gliner25-compaction extractive spans (anti-summarization that erases evidence). Not a reward-hack detector.
+
+[databricks-jev-pdf-lab](https://github.com/laurentfabre/databricks-jev-pdf-lab) publishes a measured negative result: no quality-equivalent, end-to-end Jev PDF payoff demonstrated. Typed output is not truth; missing evidence must remain unknown. Anti-soundness-theater / honest eval culture. Cousin, not this sidecar.
+
 ## Anti-pattern
 
 Using **LLM-as-judge** (or gaming jevals labels) as the reward signal is

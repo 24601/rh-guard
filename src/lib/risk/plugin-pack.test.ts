@@ -151,6 +151,17 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/shitianfang\/wakegate/);
     expect(readme).toMatch(/fail-open wake gate/);
     expect(readme).toMatch(/alexsatch\/omp-auto-mode/);
+    expect(readme).toMatch(/fdemir\/toolgate/);
+    expect(readme).toMatch(/ndolinschi\/toolgate/);
+    expect(readme).toMatch(/`allow` \/ `block` \/ `review`/);
+    expect(readme).toMatch(/given → expected → actual/);
+    expect(readme).toMatch(/ickma2311\/jev-baselines-eval/);
+    expect(readme).toMatch(/three same-day errata/);
+    expect(readme).toMatch(/AMBIGUOUS/);
+    expect(readme).toMatch(/Dharundp6\/jev-carryforward/);
+    expect(readme).toMatch(/nothing summarised/);
+    expect(readme).toMatch(/laurentfabre\/databricks-jev-pdf-lab/);
+    expect(readme).toMatch(/no quality-equivalent/);
     expect(readme).toMatch(/suraj-phanindra\/wellposed/);
     expect(readme).toMatch(/never the sole veto/);
     expect(readme).toMatch(/taskset \(score first\)/);
@@ -218,6 +229,10 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/wakegate/);
     expect(pkg).not.toMatch(/if-ai/);
     expect(pkg).not.toMatch(/omp-auto-mode/);
+    expect(pkg).not.toMatch(/toolgate/);
+    expect(pkg).not.toMatch(/jev-baselines-eval/);
+    expect(pkg).not.toMatch(/jev-carryforward/);
+    expect(pkg).not.toMatch(/databricks-jev-pdf-lab/);
     expect(lock).not.toMatch(/pi-jev-approver/);
     expect(lock).not.toMatch(/agent-workflow-typesafe/);
     expect(lock).not.toMatch(/jevscan/);
@@ -233,6 +248,10 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/wakegate/);
     expect(lock).not.toMatch(/if-ai/);
     expect(lock).not.toMatch(/omp-auto-mode/);
+    expect(lock).not.toMatch(/toolgate/);
+    expect(lock).not.toMatch(/jev-baselines-eval/);
+    expect(lock).not.toMatch(/jev-carryforward/);
+    expect(lock).not.toMatch(/databricks-jev-pdf-lab/);
   });
 
   it("does not advertise Deep Research paste workflows on public surfaces", () => {
@@ -329,6 +348,17 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/shitianfang\/wakegate/);
     expect(skill).toMatch(/fail-open wake gate/);
     expect(skill).toMatch(/alexsatch\/omp-auto-mode/);
+    expect(skill).toMatch(/fdemir\/toolgate/);
+    expect(skill).toMatch(/ndolinschi\/toolgate/);
+    expect(skill).toMatch(/`allow` \/ `block` \/ `review`/);
+    expect(skill).toMatch(/given → expected → actual/);
+    expect(skill).toMatch(/ickma2311\/jev-baselines-eval/);
+    expect(skill).toMatch(/three same-day errata/);
+    expect(skill).toMatch(/AMBIGUOUS/);
+    expect(skill).toMatch(/Dharundp6\/jev-carryforward/);
+    expect(skill).toMatch(/nothing summarised/);
+    expect(skill).toMatch(/laurentfabre\/databricks-jev-pdf-lab/);
+    expect(skill).toMatch(/no quality-equivalent/);
     expect(skill).toMatch(/suraj-phanindra\/wellposed/);
     expect(skill).toMatch(/never the sole veto/);
     expect(skill).toMatch(/do not replace a scored taskset/i);
@@ -400,6 +430,17 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/shitianfang\/wakegate/);
     expect(evalDoc).toMatch(/fail-open wake gate/);
     expect(evalDoc).toMatch(/alexsatch\/omp-auto-mode/);
+    expect(evalDoc).toMatch(/fdemir\/toolgate/);
+    expect(evalDoc).toMatch(/ndolinschi\/toolgate/);
+    expect(evalDoc).toMatch(/`allow` \/ `block` \/ `review`/);
+    expect(evalDoc).toMatch(/given → expected → actual/);
+    expect(evalDoc).toMatch(/ickma2311\/jev-baselines-eval/);
+    expect(evalDoc).toMatch(/[Tt]hree same-day errata/);
+    expect(evalDoc).toMatch(/AMBIGUOUS/);
+    expect(evalDoc).toMatch(/Dharundp6\/jev-carryforward/);
+    expect(evalDoc).toMatch(/nothing summarised/);
+    expect(evalDoc).toMatch(/laurentfabre\/databricks-jev-pdf-lab/);
+    expect(evalDoc).toMatch(/no quality-equivalent/);
     expect(evalDoc).toMatch(/suraj-phanindra\/wellposed/);
     expect(evalDoc).toMatch(/never the sole veto/);
     expect(evalDoc).toMatch(/Confidence gating cannot catch a forced wrong Choice/);
@@ -444,6 +485,10 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/shitianfang\/wakegate/);
     expect(install).toMatch(/Victor-Casado\/if-ai/);
     expect(install).toMatch(/alexsatch\/omp-auto-mode/);
+    expect(install).toMatch(/fdemir\/toolgate/);
+    expect(install).toMatch(/ickma2311\/jev-baselines-eval/);
+    expect(install).toMatch(/Dharundp6\/jev-carryforward/);
+    expect(install).toMatch(/laurentfabre\/databricks-jev-pdf-lab/);
     expect(install).toMatch(/sibling notes; no runtime deps/);
     expect(install).toMatch(/examples\/pi-extension\.ts/);
     expect(shape).toMatch(/coldteadotai\/abide/);
@@ -471,6 +516,9 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/alexsatch\/omp-auto-mode/);
     expect(hosts).toMatch(/fail-open/);
     expect(hosts).toMatch(/RahulBalakavi\/claude-code-jev/);
+    expect(hosts).toMatch(/fdemir\/toolgate/);
+    expect(hosts).toMatch(/ndolinschi\/toolgate/);
+    expect(hosts).toMatch(/fail-safe/);
     expect(hosts).toMatch(/m-newhauser\/gliner25-compaction/);
     expect(hosts).toMatch(/character-offset/);
     expect(hosts).toMatch(/keep_full/);
@@ -514,6 +562,12 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/shitianfang\/wakegate/);
     expect(gates).toMatch(/fail-open wake/);
     expect(gates).toMatch(/alexsatch\/omp-auto-mode/);
+    expect(gates).toMatch(/fdemir\/toolgate/);
+    expect(gates).toMatch(/ndolinschi\/toolgate/);
+    expect(gates).toMatch(/given → expected → actual/);
+    expect(gates).toMatch(/fail-safe/);
+    expect(gates).toMatch(/Dharundp6\/jev-carryforward/);
+    expect(gates).toMatch(/nothing summarised/);
   });
 });
 
