@@ -40,7 +40,7 @@ Recorded 2026-09-18 UTC with `asciinema rec` (asciinema 2.4.0). Pi and Grok GIFs
 | Files | `exo-live-deny-allow.cast`, `exo-live-deny-allow.mp4` |
 | What ran | Live `exo` CLI (`/tmp/exo-src/target/debug/exo`, exoharness debug build) with Docker sandboxes. Not an in-process `TurnContext` script. |
 | Command | `bash docs/sessions/exo-live-session.sh` |
-| Harness | `--harness typescript`. Module `docs/sessions/exo-live-harness.ts`, copied into the exo tree as `exoharness/examples/typescript/rh-guard-harness.ts`. `runTurn` wraps `TurnContext.executeTool` with `examples/exo-tool-runtime.ts` `wrapTurnContextExecuteTool` before `shell` reaches the Docker sandbox. |
+| Harness | `--harness typescript`. Module `docs/sessions/exo-live-harness.ts`, copied into the exo tree as `exoharness/examples/typescript/rh-guard-harness.ts`. `runTurn` wraps `TurnContext.executeTool` with `examples/exo-tool-runtime.ts` `wrapTurnContextExecuteTool` before `shell` reaches the Docker sandbox. Its `@exo/*` imports only resolve inside the exo checkout, so `docs` is excluded from this repo's `tsc --noEmit`; the harness is a recording artifact, not shipped rh-guard code. |
 | Docker | Client and server 29.1.3. This environment cannot mount overlay2, so the daemon uses the `vfs` storage driver. Conversation sandboxes are `docker.io/library/ubuntu:24.04`. |
 | Model | `grok-code-fast-1` via `https://api.x.ai/v1`. The xAI key came from 1Password and was stored with `exo secret set --env` (not printed). |
 | Sidecar | `http://127.0.0.1:43147/api/hooks/exo`. `TYPESAFE_API_KEY` from 1Password was in the sidecar process environment only. The `sed` deny is structural, so Jev is not what blocked it. |
