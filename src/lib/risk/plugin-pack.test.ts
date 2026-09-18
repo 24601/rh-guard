@@ -171,7 +171,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/allowlist proves what may run/i);
     expect(skill).toMatch(/fastino-ai\/GLiGuard/);
     expect(skill).toMatch(/coldteadotai\/abide/);
-    expect(skill).toMatch(/soft project-instruction/);
+    expect(skill).toMatch(/soft\s+project-instruction/);
     expect(skill).toMatch(/banded confidence/);
     expect(skill).toMatch(/Abide does not catch reward hacking/);
     expect(skill).toMatch(/Harbor\/jevals-adjacent measurement discipline/);
@@ -251,7 +251,7 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Do not merge the products/i);
     expect(hosts).toMatch(/fastino-ai\/GLiGuard/);
     expect(hosts).toMatch(/coldteadotai\/abide/);
-    expect(hosts).toMatch(/Abide does not catch reward hacking/);
+    expect(hosts).toMatch(/Abide does not catch\s+reward hacking/);
     expect(hosts).toMatch(/hooks\/run\.ts dsh/);
     expect(hosts).toMatch(/command-hook/);
     const gates = readFileSync(
