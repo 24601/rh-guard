@@ -60,7 +60,7 @@ Practices (from the jevals skill):
 
 [jev-pref](https://github.com/doeixd/jev-pref) encodes AGENTS.md prefs as a Jev linter. Watch preference-theater: prefs that are not independently enforceable (tests, types, structural detectors) are not a substitute for this gate. [Abide](https://github.com/coldteadotai/abide) is the productized sibling for those same soft instruction files (compile / calibrate / tune / replay / Claude / Codex / OpenCode hooks). Complementary to this reward-hack gate, not a merge.
 
-Watch, not an endorsement: [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b) is a distilled memory-relevance student of teacher Jev. Agreement with teacher labels is not independent gold; a student gate can overfit teacher quirks (distill → gate integrity).
+Watch, not an endorsement: [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b) is a distilled memory-relevance student of teacher Jev (LoRA on Qwen2.5-0.5B). Agreement with teacher labels is not independent gold; a student gate can overfit teacher quirks (distill → gate integrity). A local student is a candidate path when cloud Jev is unreachable; the published card fails open on errors. Soft judgments stay fail-open here; a student is not the hard envelope.
 
 [is-malicious](https://github.com/luantak/is-malicious) is a complementary codebase covert-behavior scanner (listed on awesome-jev); rh-guard is a coding-agent reward-hack / eval integrity gate.
 
@@ -71,6 +71,14 @@ Watch, not an endorsement: [jev-gate-student-b](https://huggingface.co/SargeDev/
 [jevscan](https://github.com/alexykn/jevscan) composes tree-sitter extract (hard envelope; no execute) with independent Jev questions (soft judgment). Same layering as structural deny then System One here; quality scanner, not a reward-hack gate.
 
 [jev-testbench](https://github.com/ufx7/jev-testbench) collab harness measures `llm_autonomous` vs `scripted_plus_jev` vs `llm_plus_jev` (Wilson intervals, McNemar; Jev is not a peer arm). Do not claim collab helps without arms.
+
+[semantic-firewall](https://github.com/CeamKrier/semantic-firewall) is a PoC split: LLM = proposal engine; Jev = semantic control plane (5 noul: `goalAlignment`, `authorization`, `sideEffect`, `untrustedInstruction`, `evidenceSufficient`); code = authority (`ALLOW` / `ASK_USER` / `REVISE` / `BLOCK`). Deterministic policy thresholds; eval corpus + stability + LLM-as-policy baseline. `untrustedInstruction` is skip-when-absent (code skips it when there is no untrusted content). Contrast this sidecar: fail-open soft Jev overlay; the hard envelope stays structural. Soft-semantic + code authority is not a substitute for structural deny.
+
+[claude-code-jev](https://github.com/RahulBalakavi/claude-code-jev) is an additive Claude Code `PreToolUse` permission gate via OpenRouter `typesafe/jev-1.13` (measured 230.8ms p50 / 263.9ms mean on their 18-case fixture). Low-confidence → ask; network fail → human. Anthropic's auto-mode classifier is not replaceable via a supported API — measurable extra gate, not a drop-in for that classifier. Latency/cost vs LLM-as-judge is the useful framing; do not claim the agent is 93% faster.
+
+[jev-agent-safety-arena](https://github.com/mjyoke1111/jev-agent-safety-arena) is a small real browser-agent safety eval: Jev vs a mini-model baseline on benign + injected local Playwright pages. Fixture, not production proof; they do not ship sample benchmark numbers. Eval-integrity / gaming surface: independent cases, not self-reported safety.
+
+[jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is a model+effort router (read-only MCP). Adjacent routing surface, not a safety gate and not a rh-guard peer.
 
 ## Anti-pattern
 

@@ -29,6 +29,30 @@ a merge, and not a reward-hack detector.
 
 [agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai) is the soft-sidecar extreme: advisory `no_action` receipts; the plugin never changes host routing/executor. Missing key → no-action, not a veto.
 
+## Hook-pattern sketch (siblings, not this pack)
+
+Soft judgments stay fail-open by default. The hard envelope stays structural.
+
+```
+rh-guard
+  structural registry ──deny──► skip Jev, opaque AGENT_DENY
+                    └──rest──► Jev Nouls (fail-open / degraded if no key)
+  Code fuses; soft judgment is never the sole veto.
+
+semantic-firewall (CeamKrier/semantic-firewall)
+  LLM proposes action → Jev 5 noul (goalAlignment, authorization, sideEffect,
+  untrustedInstruction skip-when-absent, evidenceSufficient) → code
+  ALLOW / ASK_USER / REVISE / BLOCK. Soft-semantic + code authority; not a
+  substitute for structural deny.
+
+claude-code-jev (RahulBalakavi/claude-code-jev)
+  human msgs + tool + cwd → OpenRouter typesafe/jev-1.13 → allow / block / ask
+  low-confidence and network fail → human. Additive PreToolUse; Anthropic
+  auto-mode is not replaceable via a supported API.
+```
+
+Do not merge those hooks into `examples/`. [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is adjacent model+effort routing, not a rh-guard peer.
+
 ## Fail-open vs fail-closed
 
 | Channel | If the scorer is down |
