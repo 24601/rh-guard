@@ -17,7 +17,17 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 
 **Complementary, not a competitor.** [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval integrity gate.
 
-**Complementary, not a competitor.** [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval integrity gate.
+## Eval integrity & measurement
+
+[Harbor](https://github.com/harbor-framework/harbor) is the preferred e2e substrate for reward-hack / eval-gaming scenarios: **taskset (score first) + harness + runtime**, an independent validator, and a [HoH](https://arxiv.org/abs/2609.01481) evidence loop. rh-guard hooks are structural / System One gates *inside* a harness — they do not replace a scored taskset.
+
+[jevals](https://github.com/dayhaysoos/jevals) is the complementary decision-stage workbench for typed Noul / Choice / Score falsification when this sidecar or a policy uses Jev-class judgments. Practices: independent answer keys (never promote predictions to labels); correctness ≠ confidence; held-out discipline; compare only equivalent case sets.
+
+**Anti-pattern.** Using LLM-as-judge (or gaming jevals labels) as the reward signal is the failure mode this gate is meant to catch. See [docs/shape.md](docs/shape.md) and [Baker et al. 2025](https://arxiv.org/abs/2503.11926).
+
+**Siblings, not a merge.** jevals measures decisions; rh-guard gates agent tool use; Harbor scores product/agent loops.
+
+Harbor and jevals are **practices**, not install dependencies. You do not need them to install the hooks. Card: [docs/eval-integrity.md](docs/eval-integrity.md).
 
 ## Install hooks
 
