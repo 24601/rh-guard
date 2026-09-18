@@ -95,7 +95,7 @@ npx skills add 24601/rh-guard --skill rh-guard
 
 # Other hosts: copy examples/pi-extension.ts, amp-plugin.ts, prime-extension.ts,
 # codex-hooks.json, grok-hooks.json. DSH uses generic stdin
-# (`hooks/run.ts dsh` or `generic`); Claude/Codex command-hook bridges also
+# (\`hooks/run.ts dsh\` or \`generic\`); Claude/Codex command-hook bridges also
 # work. Exo wraps ToolRuntime.`;
 
 export default function InstallPage() {
