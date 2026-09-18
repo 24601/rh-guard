@@ -168,7 +168,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Eval integrity & measurement/);
     expect(evalDoc).toMatch(/harbor-framework\/harbor/);
     expect(evalDoc).toMatch(/dayhaysoos\/jevals/);
-    expect(evalDoc).toMatch(/taskset \(score first\)/);
+    expect(evalDoc).toMatch(/taskset \(score first\)/i);
     expect(evalDoc).toMatch(/independent validator/);
     expect(evalDoc).toMatch(/HoH evidence loop/);
     expect(evalDoc).toMatch(/do not replace a scored taskset/i);

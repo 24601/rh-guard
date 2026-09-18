@@ -11,8 +11,7 @@ end-to-end substrate for reward-hack / eval-gaming scenarios:
 1. **Taskset (score first).** Instruction, tests, and reward live on the
    task. The score is not the agent's self-report and not a hook Noul.
 2. **Harness.** The agent loop that attempts the task. rh-guard hooks are
-   structural / System One gates *inside* this loop. They do not replace a
-   scored taskset.
+   structural / System One gates *inside* this loop. They do not replace a scored taskset.
 3. **Runtime.** Isolated sandbox (Docker, Daytona, …). Hidden tests belong
    here or in the validator, not in a workspace file the agent can `find`.
 
@@ -57,8 +56,7 @@ jevals accuracy number, or an LLM judge into the RL reward.
 
 ## Siblings, not a merge
 
-jevals measures decisions; rh-guard gates agent tool use; Harbor scores
-product/agent loops.
+jevals measures decisions; rh-guard gates agent tool use; Harbor scores product/agent loops.
 
 [jevgate](https://github.com/thevibeworks/jevgate) is an allowlist that
 proves what may run; Jev judges only the rest. [JevLint](https://github.com/huntedman/JevLint)

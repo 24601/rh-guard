@@ -48,13 +48,12 @@ integrity gate (complementary, not a competitor).
 substrate for reward-hack / eval-gaming scenarios: **taskset (score first)
 + harness + runtime**, an independent validator, and a
 [HoH](https://arxiv.org/abs/2609.01481) evidence loop. These hooks are
-structural / System One gates *inside* a harness — they do not replace a
-scored taskset.
+structural / System One gates *inside* a harness — they do not replace a scored taskset.
 
 [jevals](https://github.com/dayhaysoos/jevals) is the complementary
 decision-stage workbench for typed Noul / Choice / Score falsification when
-the sidecar or a policy uses Jev-class judgments. Practices: independent
-answer keys (never promote predictions to labels); correctness ≠
+the sidecar or a policy uses Jev-class judgments. Practices: independent answer keys
+(never promote predictions to labels); correctness ≠
 confidence; held-out discipline; compare only equivalent case sets.
 
 **Anti-pattern.** Using LLM-as-judge (or gaming jevals labels) as the
