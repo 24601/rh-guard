@@ -17,6 +17,12 @@ That order is the same shape as [jevgate](https://github.com/thevibeworks/jevgat
 an allowlist proves what may run; Jev judges only the rest. Hard envelope owns safety; soft judgment is never the sole veto (fail-open: it cannot block). jevgate is a
 sibling CLI, not this sidecar. Do not merge the products.
 
+[Abide](https://github.com/coldteadotai/abide) is the same envelope on a
+different job: linters own checkable rules; Jev scores residual soft
+project instructions on the diff; fail-open; banded confidence (repair /
+note / silence). Soft judgment is never the sole hard veto. Sibling, not
+a merge, and not a reward-hack detector.
+
 ## Fail-open vs fail-closed
 
 | Channel | If the scorer is down |

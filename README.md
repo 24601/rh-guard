@@ -21,6 +21,8 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 
 **Complementary, not a competitor.** [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval integrity gate.
 
+**Sibling, not a merge.** [Abide](https://github.com/coldteadotai/abide) enforces soft project instructions (AGENTS.md / CLAUDE.md) via Jev on diffs. rh-guard is eval-integrity / reward-hacking on agent tool use. Same hook surface (Claude, Codex, OpenCode), different judgment class. Fail-open, banded confidence, and soft judgment never the sole hard veto — same envelope as jevgate. Do not merge the products; Abide does not catch reward hacking.
+
 ## Eval integrity & measurement
 
 [Harbor](https://github.com/harbor-framework/harbor) is the preferred e2e substrate for reward-hack / eval-gaming scenarios: **taskset (score first) + harness + runtime**, an independent validator, and a [HoH](https://arxiv.org/abs/2609.01481) evidence loop. rh-guard hooks are structural / System One gates *inside* a harness — they do not replace a scored taskset.
