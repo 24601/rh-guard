@@ -1,6 +1,6 @@
 # Host session recordings
 
-Recorded 2026-09-18 UTC with `asciinema rec` (asciinema 2.4.0). GIFs are `agg` 1.6.0 renders of those casts, not hand-drawn frames. Pi and Grok scored with the lexical fallback (no `TYPESAFE_API_KEY` in those processes). The Exo sidecar process did have `TYPESAFE_API_KEY`; the recorded `sed` deny is still the structural detector, and the agent-visible text is the opaque `AGENT_DENY` string either way. A Next sidecar was listening on `127.0.0.1:43147`. These outputs do not include noul values, `hookVerdict`, or detector ids.
+Recorded 2026-09-18 UTC with `asciinema rec` (asciinema 2.4.0). Pi and Grok GIFs are `agg` 1.6.0 renders of those casts, not hand-drawn frames. The Exo review file is `exo-live-deny-allow.mp4` (that same agg render, then ffmpeg). Pi and Grok scored with the lexical fallback (no `TYPESAFE_API_KEY` in those processes). The Exo sidecar process did have `TYPESAFE_API_KEY`; the recorded `sed` deny is still the structural detector, and the agent-visible text is the opaque `AGENT_DENY` string either way. A Next sidecar was listening on `127.0.0.1:43147`. These outputs do not include noul values, `hookVerdict`, or detector ids.
 
 ## Pi
 
@@ -37,7 +37,7 @@ Recorded 2026-09-18 UTC with `asciinema rec` (asciinema 2.4.0). GIFs are `agg` 1
 
 | | |
 |---|---|
-| Files | `exo-live-deny-allow.cast`, `exo-live-deny-allow.gif` |
+| Files | `exo-live-deny-allow.cast`, `exo-live-deny-allow.mp4` |
 | What ran | Live `exo` CLI (`/tmp/exo-src/target/debug/exo`, exoharness debug build) with Docker sandboxes. Not an in-process `TurnContext` script. |
 | Command | `bash docs/sessions/exo-live-session.sh` |
 | Harness | `--harness typescript`. Module `docs/sessions/exo-live-harness.ts`, copied into the exo tree as `exoharness/examples/typescript/rh-guard-harness.ts`. `runTurn` wraps `TurnContext.executeTool` with `examples/exo-tool-runtime.ts` `wrapTurnContextExecuteTool` before `shell` reaches the Docker sandbox. |
