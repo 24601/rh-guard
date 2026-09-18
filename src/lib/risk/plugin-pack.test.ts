@@ -83,6 +83,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/docs\/hosts\.md/);
     expect(readme).toMatch(/Codex/);
     expect(readme).toMatch(/DeepSeek Harness/);
+    expect(readme).toMatch(/hooks\/run\.ts dsh/);
     expect(readme).toMatch(/command-hook/);
     expect(readme).toMatch(/DSH \(generic\/adapter\)/);
     expect(readme).toMatch(/support via ToolRuntime wrap/i);
