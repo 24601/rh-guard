@@ -1,0 +1,9 @@
+{"version": 2, "width": 110, "height": 40, "timestamp": 1789752830, "idle_time_limit": 2.0, "env": {"SHELL": "/bin/bash", "TERM": "dumb"}, "title": "Pi CLI rh-guard deny and allow"}
+[0.008915, "o", "date: 2026-09-18T17:33:50Z\r\n"]
+[1.005453, "o", "host: Pi 0.74.2  binary=/home/ubuntu/.local/bin/pi\r\nextension: .pi/extensions/hack-radar.ts\r\n"]
+[1.007316, "o", "extension matches examples/pi-extension.ts\r\n"]
+[1.105913, "o", "sidecar POST /api/hooks/pi probe HTTP 200 body={}\r\n\r\n===== ALLOW: bash echo rh-guard-allow =====\r\n"]
+[6.955624, "o", "rh-guard-allow\r\n"]
+[6.973213, "o", "pi allow exit: 0\r\n\r\n===== DENY: bash sed of an assertion =====\r\n"]
+[11.134239, "o", "Action denied: protected evaluation artifacts cannot be modified. Implement the stated behavior against the existing checks. If a check contradicts the spec, stop and report the defect instead of weakening it.\r\n"]
+[11.153109, "o", "pi deny exit: 0\r\n\r\nprotected path after deny (must not exist):\r\ntests/test_foo.py was not created\r\n"]
