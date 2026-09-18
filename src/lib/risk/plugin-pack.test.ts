@@ -102,6 +102,8 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/dayhaysoos\/jevals/);
     expect(readme).toMatch(/memovai\/openevals/);
     expect(readme).toMatch(/cheap parallel/);
+    expect(readme).toMatch(/caiovicentino\/jev-align/);
+    expect(readme).toMatch(/AntonioCoppe\/jev-harness/);
     expect(readme).toMatch(/taskset \(score first\)/);
     expect(readme).toMatch(/do not replace a scored taskset/i);
     expect(readme).toMatch(/independent answer keys/i);
@@ -160,6 +162,8 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/dayhaysoos\/jevals/);
     expect(skill).toMatch(/memovai\/openevals/);
     expect(skill).toMatch(/cheap parallel/);
+    expect(skill).toMatch(/caiovicentino\/jev-align/);
+    expect(skill).toMatch(/AntonioCoppe\/jev-harness/);
     expect(skill).toMatch(/do not replace a scored taskset/i);
     expect(skill).toMatch(/independent answer keys/i);
     expect(skill).toMatch(/practices\*\*, not install dependencies/);
@@ -176,6 +180,13 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/cheap parallel/);
     expect(evalDoc).toMatch(/wotai-dev\/typesafe-jev-tools/);
     expect(evalDoc).toMatch(/does this decision need a model\?/);
+    expect(evalDoc).toMatch(/caiovicentino\/jev-align/);
+    expect(evalDoc).toMatch(/AntonioCoppe\/jev-harness/);
+    expect(evalDoc).toMatch(/doeixd\/jev-pref/);
+    expect(evalDoc).toMatch(/preference-theater/);
+    expect(evalDoc).toMatch(/SargeDev\/jev-gate-student-b/);
+    expect(evalDoc).toMatch(/luantak\/is-malicious/);
+    expect(evalDoc).toMatch(/distill → gate integrity/);
     expect(evalDoc).toMatch(/taskset \(score first\)/i);
     expect(evalDoc).toMatch(/independent validator/);
     expect(evalDoc).toMatch(/HoH evidence loop/);
