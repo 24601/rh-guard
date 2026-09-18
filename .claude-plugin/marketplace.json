@@ -1,0 +1,35 @@
+{
+  "name": "rh-guard",
+  "owner": {
+    "name": "rh-guard contributors"
+  },
+  "metadata": {
+    "description": "Reward-hack radar for Claude Code and Cursor: structural denies plus a TypeSafe Jev System One sidecar."
+  },
+  "plugins": [
+    {
+      "name": "rh-guard",
+      "source": "./",
+      "description": "Live hazard gate on coding-agent tools. Opaque denials for agents; scores for operators. Pair with the sidecar in this repo. Companion to Augustus, not a merge.",
+      "version": "0.1.0",
+      "author": {
+        "name": "rh-guard contributors"
+      },
+      "homepage": "https://github.com/24601/rh-guard",
+      "repository": "https://github.com/24601/rh-guard",
+      "keywords": [
+        "jev",
+        "typesafe",
+        "system-one",
+        "reward-hacking",
+        "ai-agents",
+        "agent-hooks",
+        "claude-code",
+        "cursor",
+        "agent-skills",
+        "eval-integrity",
+        "ai-safety"
+      ]
+    }
+  ]
+}

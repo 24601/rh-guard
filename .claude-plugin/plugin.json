@@ -1,0 +1,22 @@
+{
+  "name": "rh-guard",
+  "displayName": "Hack Radar",
+  "version": "0.1.0",
+  "description": "Live reward-hack gate for Claude Code: structural denies plus a TypeSafe Jev System One sidecar. Not the Next.js workbench.",
+  "author": {
+    "name": "rh-guard contributors",
+    "url": "https://github.com/24601/rh-guard"
+  },
+  "homepage": "https://github.com/24601/rh-guard",
+  "repository": "https://github.com/24601/rh-guard",
+  "keywords": [
+    "jev",
+    "typesafe",
+    "system-one",
+    "reward-hacking",
+    "agent-hooks",
+    "eval-integrity"
+  ],
+  "skills": ["./.agents/skills/rh-guard"],
+  "hooks": "./hooks/hooks.json"
+}

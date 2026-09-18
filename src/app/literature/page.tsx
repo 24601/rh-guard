@@ -19,7 +19,9 @@ export default function LiteraturePage() {
           Sep 2026. Bergen et al. 2026 (arXiv 2609.19101) is a white-box
           difference-of-means probe. It is strong on open SWE agents and useless on
           Claude or Cursor, where you cannot read activations. GLiClass is the
-          offline label catalog, not the hosted decision model.
+          offline label catalog, not the hosted decision model. Lexical /
+          GLiClass fallback in this app is degraded. Open System One heads
+          (for example Laya) are future backends, not drop-in ROC replacements.
         </p>
       </div>
       <div className="flex flex-col gap-4">
