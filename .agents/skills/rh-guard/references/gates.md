@@ -21,6 +21,11 @@ Use this card when choosing a gate. Policy still lives in `src/lib/risk/`.
 | Claude command PreToolUse (`hooks/run.ts` or `hooks/claude-hook.sh`) | Fail-closed (deny JSON, exit 2) |
 | Cursor `failClosed: true` on shell/tool | Fail-closed |
 | Cursor `beforeSubmitPrompt` | Cannot inject context; gameable prompts get a user notice |
+| Exo `ToolRuntime` wrap | Wrapper fail-closed: return a tool error with `AGENT_DENY`. Host has no `failClosed` flag. Not drop-in hooks; no native `hooks.json` |
+| Codex PreToolUse command | Fail-closed only if stdout is Codex-safe deny JSON (no `continue: false`) + exit 2 |
+| Grok PreToolUse | Host fail-open on crash/timeout; `hooks/grok-hook.sh` fail-closed |
+| Pi / Prime / Amp plugins | Fail-closed in the copy (block / reject-and-continue) if fetch throws |
+| dsh | Command bridges only; HTTP skipped |
 
 A wrapper that never runs (killed, not installed) is fail-open. Keep a
 separate capability boundary for hidden tests and graders.

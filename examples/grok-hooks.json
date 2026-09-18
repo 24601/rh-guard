@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|StrReplace",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx tsx hooks/run.ts grok",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

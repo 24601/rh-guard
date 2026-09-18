@@ -166,19 +166,28 @@ export function stageForEvent(event: string): ScoreInput["stage"] {
   switch (event) {
     case "UserPromptSubmit":
     case "beforeSubmitPrompt":
+    case "ui_prompt_end":
       return "prompt";
     case "afterAgentThought":
       return "thought";
     case "PreToolUse":
     case "preToolUse":
+    case "pre_tool_use":
     case "beforeShellExecution":
+    case "tool_call":
+    case "tool.call":
+    case "tools/pre-execute":
       return "tool";
     case "afterFileEdit":
     case "PostToolUse":
     case "postToolUse":
+    case "tool_result":
+    case "tool.result":
       return "edit";
     case "Stop":
     case "stop":
+    case "agent_end":
+    case "agent.end":
       return "stop";
     default:
       return "trajectory";

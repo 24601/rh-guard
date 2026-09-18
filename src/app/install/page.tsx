@@ -73,6 +73,17 @@ const cursorHooks = `{
   }
 }`;
 
+const hostMatrix = `Host              Install path                                      Fail-closed
+Claude Code      .claude/settings.json or plugin                   command wrapper; HTTP no
+Cursor           .cursor/hooks.json                                failClosed: true on shell/tool
+Codex            ~/.codex/hooks.json / .codex/hooks.json           Codex-safe deny JSON; no continue:false; no HTTP
+Grok Build       ~/.grok/hooks/*.json / .grok/hooks/*.json         host fail-open; grok-hook.sh emits {decision:deny}
+Pi               ~/.pi/agent/extensions/ or .pi/extensions/        plugin {block,reason,terminate} on fetch failure
+Amp              .amp/plugins/ or ~/.config/amp/plugins/           reject-and-continue (not error); catch throws
+Prime Agent      ~/.prime/agent/extensions/                        plugin {block,reason}; no terminate
+DSH              Claude/Codex command bridges (generic/adapter)    HTTP skipped; generic stdin {block} + exit 2
+Exo              wrap ToolRuntime.execute (not drop-in hooks)      tool error {ok:false, error: AGENT_DENY}`;
+
 const pluginInstall = `# Claude Code plugin (skill + hook pack). Sidecar still required.
 claude plugin marketplace add 24601/rh-guard
 claude plugin install rh-guard@rh-guard
@@ -80,7 +91,10 @@ claude plugin install rh-guard@rh-guard
 # Companion skill only (does not start Next.js)
 npx skills add 24601/rh-guard --skill rh-guard
 
-# Cursor "plugin": copy examples/cursor-hooks.json to .cursor/hooks.json`;
+# Cursor "plugin": copy examples/cursor-hooks.json to .cursor/hooks.json
+
+# Other hosts: copy examples/pi-extension.ts, amp-plugin.ts, prime-extension.ts,
+# codex-hooks.json, grok-hooks.json. DSH uses command bridges. Exo wraps ToolRuntime.`;
 
 export default function InstallPage() {
   return (
@@ -90,8 +104,9 @@ export default function InstallPage() {
         <p className="max-w-3xl text-sm text-muted-foreground">
           Keep this app running. Point Claude Code at the HTTP routes for prompt
           steering and at the command wrapper for fail-closed PreToolUse. Point Cursor
-          at the stdin CLI. Canonical JSON lives in examples/. The Claude plugin pack
-          and Cursor hooks.json install are documented in docs/install-plugin.md. Set
+          at the stdin CLI. Canonical JSON lives in examples/. Host matrix:
+          docs/hosts.md. The Claude plugin pack and Cursor hooks.json install are
+          documented in docs/install-plugin.md. Set
           TYPESAFE_API_KEY for Jev. Without a key the lexical layer still scores as a
           degraded fallback, and structural detectors still deny protected evaluation
           assets and `--no-verify`. Claude HTTP hooks are not fail-closed: a timeout is
@@ -130,14 +145,31 @@ export default function InstallPage() {
         </Card>
         <Card className="lg:col-span-2">
           <CardHeader>
+            <CardTitle>Host matrix</CardTitle>
+            <CardDescription>
+              Same scoreEvent path. examples/ is the copy you install. Opaque
+              AGENT_DENY for agents; scores for operators. Codex PreToolUse must
+              not include continue: false. Grok cannot reuse Claude stdout. Amp
+              deny is reject-and-continue. DSH is DeepSeek Harness
+              (generic/adapter). Exo is support via ToolRuntime wrap, not
+              drop-in hooks. Full contracts: docs/hosts.md.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <pre className="overflow-x-auto rounded-lg bg-muted p-3 text-xs">{hostMatrix}</pre>
+          </CardContent>
+        </Card>
+        <Card className="lg:col-span-2">
+          <CardHeader>
             <CardTitle>Plugin, skill, source of truth</CardTitle>
             <CardDescription>
-              examples/ is the hook JSON source of truth. The Claude marketplace
-              installs the protocol skill plus hooks/hooks.json. Cursor has no
-              marketplace: copy examples/cursor-hooks.json to .cursor/hooks.json.
-              Augustus is design-judgment for where System One belongs; this pack
-              is the live hazard gate. Do not merge the products. The rh-guard
-              skill is not a runbook for this Next server.
+              examples/ is the hook JSON and host-plugin source of truth. The
+              Claude marketplace installs the protocol skill plus hooks/hooks.json.
+              Cursor has no marketplace: copy examples/cursor-hooks.json to
+              .cursor/hooks.json. Other hosts: docs/hosts.md. Augustus is
+              design-judgment for where System One belongs; this pack is the live
+              hazard gate. Do not merge the products. The rh-guard skill is not a
+              runbook for this Next server.
             </CardDescription>
           </CardHeader>
           <CardContent>

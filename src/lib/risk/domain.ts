@@ -53,7 +53,7 @@ export type ScoreReport = {
 };
 
 export type ParsedHookEvent = {
-  source: "claude" | "cursor" | "raw";
+  source: "claude" | "cursor" | "grok" | "generic" | "raw";
   event: string;
   input: ScoreInput;
   raw: unknown;
