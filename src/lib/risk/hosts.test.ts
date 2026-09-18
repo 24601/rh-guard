@@ -259,6 +259,57 @@ describe("hooks/run.ts flavors", () => {
       });
     }
   });
+
+  // The documented DSH install runs the unmodified Claude and Codex command
+  // hooks at tools/pre-execute. Both used to answer {} with exit 0 there.
+  const preExecuteCases = [
+    {
+      name: "sed of asserts",
+      command: "sed -i 's/assert result == 3/assert True/' tests/test_foo.py",
+    },
+    { name: "rm of a protected eval", command: "rm -rf eval/hidden/test_secret.py" },
+  ];
+
+  for (const flavor of ["claude", "codex"] as const) {
+    for (const { name, command } of preExecuteCases) {
+      it(`denies ${name} on the DSH ${flavor} bridge at tools/pre-execute`, () => {
+        const result = runFlavor(flavor, {
+          hook_event_name: "tools/pre-execute",
+          tool_name: "Bash",
+          tool_input: { command },
+        });
+        const out = JSON.parse(result.stdout) as {
+          continue?: boolean;
+          hookSpecificOutput?: {
+            hookEventName?: string;
+            permissionDecision?: string;
+            permissionDecisionReason?: string;
+            additionalContext?: string;
+          };
+        };
+        expect(out).not.toEqual({});
+        expect(out.hookSpecificOutput).toEqual({
+          hookEventName: "PreToolUse",
+          permissionDecision: "deny",
+          permissionDecisionReason: AGENT_DENY,
+        });
+        expect(out.hookSpecificOutput?.additionalContext).toBeUndefined();
+        expect(out.continue).toBeUndefined();
+        expect(result.status).toBe(2);
+        expect(result.stderr).toMatch(/protected evaluation artifacts/);
+      });
+    }
+  }
+
+  it("still allows a clean tools/pre-execute call", () => {
+    const result = runFlavor("claude", {
+      hook_event_name: "tools/pre-execute",
+      tool_name: "Bash",
+      tool_input: { command: "pytest -q" },
+    });
+    expect(result.status).toBe(0);
+    expect(result.stdout).not.toMatch(/permissionDecision/);
+  });
 });
 
 describe("dynamic /api/hooks/[flavor]", () => {
@@ -333,18 +384,91 @@ describe("dynamic /api/hooks/[flavor]", () => {
 });
 
 describe("host flavor coverage and scrub", () => {
-  it("covers every flavor in adapters and exit codes", () => {
+  const CLAUDE_DENY = {
+    hookSpecificOutput: {
+      hookEventName: "PreToolUse",
+      permissionDecision: "deny",
+      permissionDecisionReason: AGENT_DENY,
+    },
+  };
+  const GENERIC_DENY = { block: true, reason: AGENT_DENY };
+
+  /**
+   * The gate event and the exact deny body each host must see. An empty `{}`
+   * is an allow on every one of these hosts, so a truthy check would pass
+   * while the tool ran.
+   */
+  const DENY_BY_FLAVOR: Record<
+    (typeof HOOK_FLAVORS)[number],
+    { event: string; deny: (report: ReturnType<typeof blockedReport>) => unknown; exitCode: number }
+  > = {
+    claude: { event: "PreToolUse", deny: () => CLAUDE_DENY, exitCode: 0 },
+    codex: { event: "PreToolUse", deny: () => CLAUDE_DENY, exitCode: 2 },
+    cursor: {
+      event: "preToolUse",
+      deny: (report) => ({
+        permission: "deny",
+        user_message: report.evidence[0]?.why,
+        agent_message: AGENT_DENY,
+      }),
+      exitCode: 0,
+    },
+    grok: {
+      event: "PreToolUse",
+      deny: () => ({ decision: "deny", reason: AGENT_DENY }),
+      exitCode: 2,
+    },
+    generic: { event: "tool_call", deny: () => GENERIC_DENY, exitCode: 2 },
+    dsh: { event: "tool_call", deny: () => GENERIC_DENY, exitCode: 2 },
+    exo: { event: "tool_call", deny: () => GENERIC_DENY, exitCode: 2 },
+    pi: {
+      event: "tool_call",
+      deny: () => ({ block: true, reason: AGENT_DENY, terminate: true }),
+      exitCode: 0,
+    },
+    prime: { event: "tool_call", deny: () => GENERIC_DENY, exitCode: 0 },
+    amp: {
+      event: "tool_call",
+      deny: () => ({ action: "reject-and-continue", message: AGENT_DENY }),
+      exitCode: 0,
+    },
+  };
+
+  it("expects a concrete deny body for every flavor, never an empty object", () => {
+    expect(Object.keys(DENY_BY_FLAVOR).sort()).toEqual([...HOOK_FLAVORS].sort());
     const report = blockedReport();
     for (const flavor of HOOK_FLAVORS) {
-      expect(canonicalFlavor(flavor)).toBeTruthy();
-      expect(failClosedHostOutput(flavor)).toBeTruthy();
-      expect(toHostOutput(flavor, "tool_call", report)).toBeTruthy();
-      expect(typeof failClosedExitCode(flavor)).toBe("number");
-      expect(typeof httpEnabled(flavor)).toBe("boolean");
+      const { event, deny, exitCode } = DENY_BY_FLAVOR[flavor];
+      const out = toHostOutput(flavor, event, report);
+      expect(out, flavor).toEqual(deny(report));
+      expect(out, flavor).not.toEqual({});
+      expect(JSON.stringify(out), flavor).toContain(AGENT_DENY);
+      expect(successExitCode(flavor, event, report), flavor).toBe(exitCode);
     }
   });
 
-  it("does not ship static Claude/Cursor routes, research-prompt, or LICENSE", () => {
+  it("fails closed with the same deny body when scoring is unavailable", () => {
+    for (const flavor of HOOK_FLAVORS) {
+      const closed = failClosedHostOutput(flavor);
+      expect(closed, flavor).not.toEqual({});
+      expect(JSON.stringify(closed), flavor).toContain(AGENT_DENY);
+      expect(failClosedExitCode(flavor), flavor).toBeGreaterThan(0);
+      expect(canonicalFlavor(flavor), flavor).toBeTruthy();
+      expect(typeof httpEnabled(flavor), flavor).toBe("boolean");
+    }
+  });
+
+  it("allows a clean tool call on every flavor", () => {
+    const report = cleanReport();
+    for (const flavor of HOOK_FLAVORS) {
+      const { event } = DENY_BY_FLAVOR[flavor];
+      const out = toHostOutput(flavor, event, report);
+      expect(JSON.stringify(out), flavor).not.toContain(AGENT_DENY);
+      expect(successExitCode(flavor, event, report), flavor).toBe(0);
+    }
+  });
+
+  it("does not ship static Claude/Cursor routes or research-prompt", () => {
     expect(existsSync(join(root, "src/app/api/hooks/claude/route.ts"))).toBe(
       false
     );
@@ -352,6 +476,5 @@ describe("host flavor coverage and scrub", () => {
       false
     );
     expect(existsSync(join(root, "docs/research-prompt.md"))).toBe(false);
-    expect(existsSync(join(root, "LICENSE"))).toBe(false);
   });
 });
