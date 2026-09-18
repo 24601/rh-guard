@@ -63,6 +63,7 @@ describe("discoverability copy", () => {
     "docs/hosts.md",
     "docs/install-plugin.md",
     "docs/shape.md",
+    "docs/eval-integrity.md",
     "src/app/install/page.tsx",
     "src/app/literature/page.tsx",
     ".agents/skills/rh-guard/SKILL.md",
@@ -96,6 +97,20 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/fastino-ai\/GLiGuard/);
     expect(readme).toMatch(/encoder-based LLM prompt\/response safety guard/i);
     expect(readme).toMatch(/reward-hack \/ eval integrity gate/i);
+    expect(readme).toMatch(/Eval integrity & measurement/);
+    expect(readme).toMatch(/harbor-framework\/harbor/);
+    expect(readme).toMatch(/dayhaysoos\/jevals/);
+    expect(readme).toMatch(/taskset \(score first\)/);
+    expect(readme).toMatch(/do not replace a scored taskset/i);
+    expect(readme).toMatch(/independent answer keys/i);
+    expect(readme).toMatch(/never promote predictions to labels/i);
+    expect(readme).toMatch(/correctness ≠ confidence/);
+    expect(readme).toMatch(/equivalent case sets/i);
+    expect(readme).toMatch(/LLM-as-judge/);
+    expect(readme).toMatch(/jevals measures decisions/);
+    expect(readme).toMatch(/rh-guard gates agent tool use/);
+    expect(readme).toMatch(/Harbor scores product\/agent loops/);
+    expect(readme).toMatch(/\*\*practices\*\*, not install dependencies/);
     expect(readme).not.toMatch(/research-prompt/i);
   });
 
@@ -138,6 +153,41 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/thevibeworks\/jevgate/);
     expect(skill).toMatch(/allowlist proves what may run/i);
     expect(skill).toMatch(/fastino-ai\/GLiGuard/);
+    expect(skill).toMatch(/Eval integrity & measurement/);
+    expect(skill).toMatch(/harbor-framework\/harbor/);
+    expect(skill).toMatch(/dayhaysoos\/jevals/);
+    expect(skill).toMatch(/do not replace a scored taskset/i);
+    expect(skill).toMatch(/independent answer keys/i);
+    expect(skill).toMatch(/practices\*\*, not install dependencies/);
+  });
+
+  it("keeps Harbor and jevals as practices, not hook install deps", () => {
+    const evalDoc = readFileSync(join(root, "docs/eval-integrity.md"), "utf8");
+    const install = readFileSync(join(root, "docs/install-plugin.md"), "utf8");
+    const shape = readFileSync(join(root, "docs/shape.md"), "utf8");
+    expect(evalDoc).toMatch(/Eval integrity & measurement/);
+    expect(evalDoc).toMatch(/harbor-framework\/harbor/);
+    expect(evalDoc).toMatch(/dayhaysoos\/jevals/);
+    expect(evalDoc).toMatch(/taskset \(score first\)/);
+    expect(evalDoc).toMatch(/independent validator/);
+    expect(evalDoc).toMatch(/HoH evidence loop/);
+    expect(evalDoc).toMatch(/do not replace a scored taskset/i);
+    expect(evalDoc).toMatch(/never promote predictions to labels/i);
+    expect(evalDoc).toMatch(/Correctness ≠ confidence/);
+    expect(evalDoc).toMatch(/held-out discipline/i);
+    expect(evalDoc).toMatch(/Compare only equivalent case sets/i);
+    expect(evalDoc).toMatch(/LLM-as-judge/);
+    expect(evalDoc).toMatch(/jevals measures decisions/);
+    expect(evalDoc).toMatch(/rh-guard gates agent tool use/);
+    expect(evalDoc).toMatch(/Harbor scores product\/agent loops/);
+    expect(evalDoc).toMatch(/\*\*practices\*\*, not install dependencies/);
+    expect(evalDoc).toMatch(/thevibeworks\/jevgate/);
+    expect(evalDoc).toMatch(/huntedman\/JevLint/);
+    expect(evalDoc).toMatch(/fastino-ai\/GLiGuard/);
+    expect(install).toMatch(/practices, not install dependencies/);
+    expect(install).toMatch(/eval-integrity\.md/);
+    expect(shape).toMatch(/eval-integrity\.md/);
+    expect(shape).toMatch(/LLM-as-judge/);
   });
 
   it("keeps jevgate as a sibling link on host docs, not a merged product", () => {

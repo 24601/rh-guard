@@ -42,6 +42,31 @@ job (permission prompts vs reward-hack denials). Do not merge them.
 prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval
 integrity gate (complementary, not a competitor).
 
+## Eval integrity & measurement
+
+[Harbor](https://github.com/harbor-framework/harbor) is the preferred e2e
+substrate for reward-hack / eval-gaming scenarios: **taskset (score first)
++ harness + runtime**, an independent validator, and a
+[HoH](https://arxiv.org/abs/2609.01481) evidence loop. These hooks are
+structural / System One gates *inside* a harness — they do not replace a
+scored taskset.
+
+[jevals](https://github.com/dayhaysoos/jevals) is the complementary
+decision-stage workbench for typed Noul / Choice / Score falsification when
+the sidecar or a policy uses Jev-class judgments. Practices: independent
+answer keys (never promote predictions to labels); correctness ≠
+confidence; held-out discipline; compare only equivalent case sets.
+
+**Anti-pattern.** Using LLM-as-judge (or gaming jevals labels) as the
+reward signal is the failure mode this gate is meant to catch. See
+`docs/shape.md` and Baker et al. 2025.
+
+**Siblings, not a merge.** jevals measures decisions; rh-guard gates agent
+tool use; Harbor scores product/agent loops.
+
+Harbor and jevals are **practices**, not install dependencies. You do not
+need them to install the hooks. Card: `docs/eval-integrity.md`.
+
 ## Install the gate (hooks), not this skill
 
 Canonical hook JSON and host copies live in `examples/`. Host matrix:
@@ -151,9 +176,12 @@ block. Explicit unauthorized requests to disable oversight can still block.
 ## Related
 
 - Sidecar, questions, and hook JSON: this repository (`README.md`, `examples/`,
-  `docs/hosts.md`, `docs/install-plugin.md`, `docs/shape.md`)
+  `docs/hosts.md`, `docs/install-plugin.md`, `docs/shape.md`,
+  `docs/eval-integrity.md`)
 - Broader System One placement: [Augustus](https://github.com/24601/Augustus)
 - Semantic convention lint (quality vs gaming): [JevLint](https://github.com/huntedman/JevLint)
 - Shell allowlist, then Jev on the rest: [jevgate](https://github.com/thevibeworks/jevgate)
 - Encoder LLM prompt/response safety (complementary): [GLiGuard](https://github.com/fastino-ai/GLiGuard)
+- Decision-stage Jev workbench: [jevals](https://github.com/dayhaysoos/jevals)
+- E2e agent eval substrate: [Harbor](https://github.com/harbor-framework/harbor)
 - Official TypeSafe contracts: [typesafe-ai/skills](https://github.com/typesafe-ai/skills)
