@@ -78,6 +78,10 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/examples\/cursor-hooks\.json/);
     expect(readme).toMatch(/no public Jev reward-hack ROC/i);
     expect(readme).toMatch(/Lexical \/ GLiClass fallback is \*\*degraded\*\*/);
+    expect(readme).toMatch(/huntedman\/JevLint/);
+    expect(readme).toMatch(/thevibeworks\/jevgate/);
+    expect(readme).toMatch(/allowlist that proves what may run/i);
+    expect(readme).toMatch(/write → check → fix/);
   });
 
   it("does not advertise Deep Research paste workflows on public surfaces", () => {

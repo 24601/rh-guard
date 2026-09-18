@@ -11,6 +11,10 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 
 **Companion, not a merge.** [Augustus](https://github.com/24601/Augustus) is design-judgment for where typed System One judgment belongs. This repo is the live hazard gate on agent tools. Keep them separate.
 
+**Sibling, not a merge.** [JevLint](https://github.com/huntedman/JevLint) is semantic convention Noul lint in a write → check → fix loop (quality vs gaming). Not the same product.
+
+**Sibling, not a merge.** [jevgate](https://github.com/thevibeworks/jevgate) is an allowlist that proves what may run; Jev judges only the rest. Same shape as structural deny + System One sidecar. Do not merge the products.
+
 ## Install hooks
 
 `examples/` is the source of truth. Full packaging notes (Claude plugin + Cursor `hooks.json`) are in [docs/install-plugin.md](docs/install-plugin.md).
