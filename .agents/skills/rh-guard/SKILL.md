@@ -56,6 +56,8 @@ the sidecar or a policy uses Jev-class judgments. Practices: independent answer 
 (never promote predictions to labels); correctness ≠
 confidence; held-out discipline; compare only equivalent case sets.
 
+[openevals](https://github.com/memovai/openevals) is adjacent online eval / observability: cheap parallel System One as a trace judge (code graders first), not LLM-as-judge as the primary score.
+
 **Anti-pattern.** Using LLM-as-judge (or gaming jevals labels) as the
 reward signal is the failure mode this gate is meant to catch. See
 `docs/shape.md` and Baker et al. 2025.
@@ -63,7 +65,7 @@ reward signal is the failure mode this gate is meant to catch. See
 **Siblings, not a merge.** jevals measures decisions; rh-guard gates agent
 tool use; Harbor scores product/agent loops.
 
-Harbor and jevals are **practices**, not install dependencies. You do not
+Harbor, jevals, and openevals are **practices**, not install dependencies. You do not
 need them to install the hooks. Card: `docs/eval-integrity.md`.
 
 ## Install the gate (hooks), not this skill
@@ -183,4 +185,5 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Encoder LLM prompt/response safety (complementary): [GLiGuard](https://github.com/fastino-ai/GLiGuard)
 - Decision-stage Jev workbench: [jevals](https://github.com/dayhaysoos/jevals)
 - E2e agent eval substrate: [Harbor](https://github.com/harbor-framework/harbor)
+- Online eval / observability (cheap parallel System One, not primary score): [openevals](https://github.com/memovai/openevals)
 - Official TypeSafe contracts: [typesafe-ai/skills](https://github.com/typesafe-ai/skills)

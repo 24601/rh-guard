@@ -23,11 +23,13 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 
 [jevals](https://github.com/dayhaysoos/jevals) is the complementary decision-stage workbench for typed Noul / Choice / Score falsification when this sidecar or a policy uses Jev-class judgments. Practices: independent answer keys (never promote predictions to labels); correctness ≠ confidence; held-out discipline; compare only equivalent case sets.
 
+[openevals](https://github.com/memovai/openevals) is adjacent **online** eval / observability: code graders first, then cheap parallel System One as a per-step/trace judge — not LLM-as-judge as the primary score.
+
 **Anti-pattern.** Using LLM-as-judge (or gaming jevals labels) as the reward signal is the failure mode this gate is meant to catch. See [docs/shape.md](docs/shape.md) and [Baker et al. 2025](https://arxiv.org/abs/2503.11926).
 
 **Siblings, not a merge.** jevals measures decisions; rh-guard gates agent tool use; Harbor scores product/agent loops.
 
-Harbor and jevals are **practices**, not install dependencies. You do not need them to install the hooks. Card: [docs/eval-integrity.md](docs/eval-integrity.md).
+Harbor, jevals, and openevals are **practices**, not install dependencies. You do not need them to install the hooks. Card: [docs/eval-integrity.md](docs/eval-integrity.md).
 
 ## Install hooks
 

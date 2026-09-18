@@ -54,7 +54,7 @@ Claude HTTP hooks are not a complete security boundary. Command wrappers can emi
 
 ## Alternatives considered
 
-LLM-as-judge on every tool call. Higher recall on obfuscated CoT, too slow for PreToolUse, and Baker et al. 2025 show it collapses if you train against it. Using that judge (or gaming [jevals](https://github.com/dayhaysoos/jevals) labels) as the reward signal is the failure mode this gate is meant to catch. Preferred e2e substrate is [Harbor](https://github.com/harbor-framework/harbor) with an independent validator; see [docs/eval-integrity.md](eval-integrity.md).
+LLM-as-judge on every tool call. Higher recall on obfuscated CoT, too slow for PreToolUse, and Baker et al. 2025 show it collapses if you train against it. Using that judge (or gaming [jevals](https://github.com/dayhaysoos/jevals) labels) as the reward signal is the failure mode this gate is meant to catch. Preferred e2e substrate is [Harbor](https://github.com/harbor-framework/harbor) with an independent validator; see [docs/eval-integrity.md](eval-integrity.md). For live traces, [openevals](https://github.com/memovai/openevals) uses cheap parallel System One as an observability judge, not as the primary score or RL reward.
 
 White-box only. Wins on open SWE agents, cannot see Claude or Cursor.
 
