@@ -63,9 +63,16 @@ as well (`docs/hosts.md`).
 Exo ([exoharness/exo](https://github.com/exoharness/exo)) is **support via
 ToolRuntime wrap**, not drop-in hooks. It has no native `hooks.json`. Wrap
 `ToolRuntime::execute` / `TurnContext.executeTool` with
-`examples/exo-tool-runtime.ts`. Optional `.exo/agent-tools/` gate:
-`examples/exo-agent-tools-gate.ts`. Generic stdin (`hooks/run.ts generic` /
+`examples/exo-tool-runtime.ts`. The gate is deny-by-default with a read-only
+exemption, so `shell`, `manage_tool`, `rebuild_and_restart_exo`,
+`rewind_sandbox`, adapter enable/disable, and agent-created tools are all
+scored; Exo ships no `bash` / `write` / `edit`. Optional `.exo/agent-tools/`
+gate: `examples/exo-agent-tools-gate.ts`. Generic stdin (`hooks/run.ts generic` /
 `exo`) stays usable if Exo later adds hooks.
+
+DeepSeek Harness runs the unmodified Claude and Codex command hooks at
+`tools/pre-execute`. Both adapters treat that as `PreToolUse` and exit 2 on a
+deny so the bridge fails closed.
 
 ## Protocol
 
@@ -90,7 +97,8 @@ ToolRuntime wrap**, not drop-in hooks. It has no native `hooks.json`. Wrap
    emits `{decision:deny,reason}`. Amp deny is `reject-and-continue`, not
    `error`. HTTP UserPromptSubmit is still fail-open. Exo fail-closed is
    whatever the `ToolRuntime` wrapper does (return a tool error with
-   `AGENT_DENY`); the host itself has no `failClosed` flag. A killed wrapper is
+   `AGENT_DENY`, including on the 8s scoring timeout); the host itself has no
+   `failClosed` flag. A killed wrapper is
    not a security boundary; keep an independent capability fence.
 4. **Positive falsifier is a control, not a hazard.** `control_falsifier_named`
    must not enter hazard aggregation. Choice, severity, and the falsifier Noul

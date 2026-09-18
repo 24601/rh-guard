@@ -81,8 +81,8 @@ Grok Build       ~/.grok/hooks/*.json / .grok/hooks/*.json         host fail-ope
 Pi               ~/.pi/agent/extensions/ or .pi/extensions/        plugin {block,reason,terminate} on fetch failure
 Amp              .amp/plugins/ or ~/.config/amp/plugins/           reject-and-continue (not error); catch throws
 Prime Agent      ~/.prime/agent/extensions/                        plugin {block,reason}; no terminate
-DSH (generic/adapter)  generic stdin (hooks/run.ts dsh or generic)  HTTP skipped (404); {block,reason} + exit 2
-Exo              wrap ToolRuntime.execute (not drop-in hooks)      tool error {ok:false, error: AGENT_DENY}`;
+DSH (generic/adapter)  generic stdin (hooks/run.ts dsh or generic)  HTTP skipped (404); {block,reason} + exit 2; bridges deny at tools/pre-execute
+Exo              wrap ToolRuntime.execute (not drop-in hooks)      deny-by-default; tool error {ok:false, error: AGENT_DENY}; 8s timeout denies`;
 
 const pluginInstall = `# Claude Code plugin (skill + hook pack). Sidecar still required.
 claude plugin marketplace add 24601/rh-guard
@@ -153,9 +153,11 @@ export default function InstallPage() {
               AGENT_DENY for agents; scores for operators. Codex PreToolUse must
               not include continue: false. Grok cannot reuse Claude stdout. Amp
               deny is reject-and-continue. DSH is DeepSeek Harness
-              generic stdin (`hooks/run.ts dsh` or `generic`); command-hook
-              bridges also work. Exo is support via ToolRuntime wrap, not
-              drop-in hooks. Full contracts: docs/hosts.md.
+              generic stdin (`hooks/run.ts dsh` or `generic`); its Claude and
+              Codex command-hook bridges deny at `tools/pre-execute` and exit 2.
+              Exo is support via ToolRuntime wrap, not drop-in hooks, and the
+              wrap gates every tool outside a read-only exemption. Full
+              contracts: docs/hosts.md.
             </CardDescription>
           </CardHeader>
           <CardContent>

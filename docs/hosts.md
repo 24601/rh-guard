@@ -146,6 +146,13 @@ This is the real [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harn
 unmodified `hooks/run.ts claude` or `codex` at `tools/pre-execute`. HTTP
 hook types are skipped. There is no separate drop-in DSH `hooks.json`.
 
+`tools/pre-execute` is the pre-tool gate, so both adapters map it onto
+`PreToolUse`: the Claude bridge answers with `permissionDecision: "deny"`
+(`hookEventName: "PreToolUse"`) and the Codex bridge with its Codex-safe deny
+JSON. Both **exit 2** on a deny for this event, because the bridge only fails
+closed on a non-zero exit. Claude Code's own `PreToolUse` still exits 0 with
+the deny JSON, which is what that host expects.
+
 For a host-neutral stdin adapter use `hooks/run.ts dsh` (alias of
 `generic`) with [`examples/generic-event.json`](../examples/generic-event.json).
 Native typed plugins listen on `tools/pre-execute` and return
@@ -158,13 +165,29 @@ a fake product we invented.
 This is **support via ToolRuntime wrap**, not drop-in hooks. Wrap
 `ToolRuntime::execute` (Rust trait in
 `crates/executor/src/executor_types.rs`) and TypeScript
-`TurnContext.executeTool` before `shell` / mutating tools. The wrapper
+`TurnContext.executeTool`. The wrapper
 POSTs to `/api/hooks/exo` or `/api/hooks/generic` (same `{ block, reason? }`
 JSON) or calls `scoreEvent` in-process. Deny by returning a tool error
 `{ ok: false, error: AGENT_DENY }` — never leak scores. Fail-closed is whatever
-the wrapper does; the Exo host has no hook `failClosed` flag. Opaque copy:
+the wrapper does; the Exo host has no hook `failClosed` flag. Scoring is
+bounded at 8s (`AbortSignal.timeout` / `curl --max-time 8`) and a timeout is a
+deny, same as the Pi, Amp, Prime, and Grok wrappers. Opaque copy:
 
 `Action denied: protected evaluation artifacts cannot be modified. Implement the stated behavior against the existing checks. If a check contradicts the spec, stop and report the defect instead of weakening it.`
+
+The gate is **deny-by-default**: every tool is scored except a verified
+read-only exemption (`inspect_tools`, `list_adapters`, `list_adapter_events`,
+`list_conversation_events`, `list_scheduled_tasks`, `list_sandbox_snapshots`,
+`get_sandbox_status`, `list_skills`, `read_skill_file`, `web_search`,
+`web_fetch`). That covers the mutating verbs Exo ships — `shell`,
+`manage_tool`, `install_agent_tool`, `uninstall_agent_tool`,
+`rebuild_and_restart_exo`, `snapshot_sandbox`, `rewind_sandbox`, the scheduler
+verbs, and adapter create/enable/disable/delete/send — and agent-created tools
+from `.exo/agent-tools/`, whose names are not known ahead of time. Exo ships no
+`bash`, `write`, or `edit` tool; do not gate Claude-shaped names. Names are
+from `crates/executor/src/harness_tool.rs` plus the TypeScript harness built-in,
+adapter, sandbox, scheduler, and skill tools on
+[exoharness/exo](https://github.com/exoharness/exo) `main`.
 
 Keep generic stdin (`hooks/run.ts generic` / `exo`) if Exo later adds
 hooks. Optional gate for agent-created tools under `.exo/agent-tools/`:

@@ -166,12 +166,11 @@ describe("examples wrap ToolRuntime.execute", () => {
   });
 
   it("fail-closes wrapTurnContextExecuteTool when scoring throws", async () => {
+    const executeTool: (request: ToolRequest) => Promise<ToolResult> = async () => ({
+      ok: true,
+    });
     const context = wrapTurnContextExecuteTool(
-      {
-        executeTool: async (_request: ToolRequest): Promise<ToolResult> => ({
-          ok: true,
-        }),
-      },
+      { executeTool },
       {
         score: async () => {
           throw new Error("sidecar down");
