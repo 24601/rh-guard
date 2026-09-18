@@ -17,6 +17,8 @@ That order is the same shape as [jevgate](https://github.com/thevibeworks/jevgat
 an allowlist proves what may run; Jev judges only the rest. Hard envelope owns safety; soft judgment is never the sole veto (fail-open: it cannot block). jevgate is a
 sibling CLI, not this sidecar. Do not merge the products.
 
+[gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction) names the opposite envelope default on a different job (Claude context compaction, not reward-hack detection): extractive character-offset spans, not generated summaries; uncertain/invalid → fail-closed `keep_full`; hard shell/mutation policy overrides the soft model; `shadowMode` default true before rewriting history. Soft model never rewrites mutating or unknown shell. Sibling, not this sidecar.
+
 [Abide](https://github.com/coldteadotai/abide) is the same envelope on a
 different job: linters own checkable rules; Jev scores residual soft
 project instructions on the diff; fail-open; banded confidence (repair /
@@ -49,6 +51,14 @@ claude-code-jev (RahulBalakavi/claude-code-jev)
   human msgs + tool + cwd → OpenRouter typesafe/jev-1.13 → allow / block / ask
   low-confidence and network fail → human. Additive PreToolUse; Anthropic
   auto-mode is not replaceable via a supported API.
+
+gliner25-compaction (m-newhauser/gliner25-compaction)
+  GLiNER2.5 Choice keep_full | keep_evidence | keep_call_only | drop
+  extractive character-offset spans, not generated summaries
+  uncertain / invalid → fail-closed keep_full
+  hard shell/mutation policy overrides the soft model
+  shadowMode default true before rewriting history
+  not reward-hack detection; not this sidecar
 ```
 
 Do not merge those hooks into `examples/`. [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is adjacent model+effort routing, not a rh-guard peer.

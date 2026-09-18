@@ -80,6 +80,8 @@ Watch, not an endorsement: [jev-gate-student-b](https://huggingface.co/SargeDev/
 
 [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is a model+effort router (read-only MCP). Adjacent routing surface, not a safety gate and not a rh-guard peer.
 
+[gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction) is local GLiNER2.5 (`fastino/gliner2.5-base-v1`) Claude context compaction, not a prose summarizer and not reward-hack detection. Extractive character-offset spans; Choice `keep_full` / `keep_evidence` / `keep_call_only` / `drop`. Uncertain or invalid evidence fail-closed to `keep_full`. Hard shell/mutation policy overrides the soft model. Public default `shadowMode` true (analyze + log, no history replace until explicitly false). Sibling envelope next to jevgate (opposite default: fail-closed retention vs fail-open rest). Encoder family with GLiGuard; different job.
+
 ## Anti-pattern
 
 Using **LLM-as-judge** (or gaming jevals labels) as the reward signal is

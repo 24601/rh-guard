@@ -74,6 +74,8 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [semantic-firewall](https://github.com/CeamKrier/semantic-firewall) is LLM-proposes / Jev 5-noul control plane / code `ALLOW`/`ASK_USER`/`REVISE`/`BLOCK` (`untrustedInstruction` skip-when-absent). Contrast: fail-open soft Jev overlay here; the hard envelope stays structural. [claude-code-jev](https://github.com/RahulBalakavi/claude-code-jev) is an additive Claude `PreToolUse` permission gate via OpenRouter `typesafe/jev-1.13` (230.8ms p50 / 263.9ms mean); low-confidence and network fail → human. [jev-agent-safety-arena](https://github.com/mjyoke1111/jev-agent-safety-arena) is a small browser-agent Jev-vs-baseline eval on benign + injected pages. [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is adjacent model+effort routing, not a rh-guard peer.
 
+[gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction) is local GLiNER2.5 (`fastino/gliner2.5-base-v1`) Claude context compaction: extractive character-offset spans, not generated summaries; Choice `keep_full`/`keep_evidence`/`keep_call_only`/`drop`; uncertain/invalid → fail-closed `keep_full`; hard shell/mutation policy overrides the soft model; `shadowMode` default true before rewriting history. Not reward-hack detection. Sibling envelope next to jevgate (fail-closed retention vs fail-open rest).
+
 [Abide](https://github.com/coldteadotai/abide)'s `replay` plus independent
 review (flagged edits/turns confirmed or not; flags are not labels) is
 Harbor/jevals-adjacent measurement discipline. It measures soft project-rule
@@ -204,6 +206,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Semantic convention lint (quality vs gaming): [JevLint](https://github.com/huntedman/JevLint)
 - Shell allowlist, then Jev on the rest: [jevgate](https://github.com/thevibeworks/jevgate)
 - Encoder LLM prompt/response safety (complementary): [GLiGuard](https://github.com/fastino-ai/GLiGuard)
+- Extractive Claude context compaction (fail-closed `keep_full`; not reward-hack): [gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction)
 - Decision-stage Jev workbench: [jevals](https://github.com/dayhaysoos/jevals)
 - E2e agent eval substrate: [Harbor](https://github.com/harbor-framework/harbor)
 - Online eval / observability (cheap parallel System One, not primary score): [openevals](https://github.com/memovai/openevals)

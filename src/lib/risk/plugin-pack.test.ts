@@ -131,6 +131,14 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/mjyoke1111\/jev-agent-safety-arena/);
     expect(readme).toMatch(/Mandrilsquad1441\/jev-model-router/);
     expect(readme).toMatch(/not a rh-guard peer/);
+    expect(readme).toMatch(/m-newhauser\/gliner25-compaction/);
+    expect(readme).toMatch(/fastino\/gliner2\.5-base-v1/);
+    expect(readme).toMatch(/character-offset/);
+    expect(readme).toMatch(/keep_full/);
+    expect(readme).toMatch(/shadowMode/);
+    expect(readme).toMatch(/hard shell\/mutation policy overrides the soft model/);
+    expect(readme).toMatch(/Not reward-hack detection/);
+    expect(readme).toMatch(/fail-closed retention vs fail-open rest/);
     expect(readme).toMatch(/suraj-phanindra\/wellposed/);
     expect(readme).toMatch(/never the sole veto/);
     expect(readme).toMatch(/taskset \(score first\)/);
@@ -191,6 +199,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/claude-code-jev/);
     expect(pkg).not.toMatch(/jev-agent-safety-arena/);
     expect(pkg).not.toMatch(/jev-model-router/);
+    expect(pkg).not.toMatch(/gliner25-compaction/);
     expect(lock).not.toMatch(/pi-jev-approver/);
     expect(lock).not.toMatch(/agent-workflow-typesafe/);
     expect(lock).not.toMatch(/jevscan/);
@@ -199,6 +208,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/claude-code-jev/);
     expect(lock).not.toMatch(/jev-agent-safety-arena/);
     expect(lock).not.toMatch(/jev-model-router/);
+    expect(lock).not.toMatch(/gliner25-compaction/);
   });
 
   it("does not advertise Deep Research paste workflows on public surfaces", () => {
@@ -275,6 +285,14 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/mjyoke1111\/jev-agent-safety-arena/);
     expect(skill).toMatch(/Mandrilsquad1441\/jev-model-router/);
     expect(skill).toMatch(/not a rh-guard peer/);
+    expect(skill).toMatch(/m-newhauser\/gliner25-compaction/);
+    expect(skill).toMatch(/fastino\/gliner2\.5-base-v1/);
+    expect(skill).toMatch(/character-offset/);
+    expect(skill).toMatch(/keep_full/);
+    expect(skill).toMatch(/shadowMode/);
+    expect(skill).toMatch(/hard shell\/mutation policy overrides the soft model/);
+    expect(skill).toMatch(/Not reward-hack detection/);
+    expect(skill).toMatch(/fail-closed retention vs fail-open rest/);
     expect(skill).toMatch(/suraj-phanindra\/wellposed/);
     expect(skill).toMatch(/never the sole veto/);
     expect(skill).toMatch(/do not replace a scored taskset/i);
@@ -325,6 +343,14 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/mjyoke1111\/jev-agent-safety-arena/);
     expect(evalDoc).toMatch(/Mandrilsquad1441\/jev-model-router/);
     expect(evalDoc).toMatch(/not a rh-guard peer/);
+    expect(evalDoc).toMatch(/m-newhauser\/gliner25-compaction/);
+    expect(evalDoc).toMatch(/fastino\/gliner2\.5-base-v1/);
+    expect(evalDoc).toMatch(/character-offset/);
+    expect(evalDoc).toMatch(/keep_full/);
+    expect(evalDoc).toMatch(/shadowMode/);
+    expect(evalDoc).toMatch(/[Hh]ard shell\/mutation policy overrides the soft model/);
+    expect(evalDoc).toMatch(/not reward-hack detection/);
+    expect(evalDoc).toMatch(/fail-closed retention vs fail-open rest/);
     expect(evalDoc).toMatch(/suraj-phanindra\/wellposed/);
     expect(evalDoc).toMatch(/never the sole veto/);
     expect(evalDoc).toMatch(/Confidence gating cannot catch a forced wrong Choice/);
@@ -362,6 +388,7 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/RahulBalakavi\/claude-code-jev/);
     expect(install).toMatch(/mjyoke1111\/jev-agent-safety-arena/);
     expect(install).toMatch(/Mandrilsquad1441\/jev-model-router/);
+    expect(install).toMatch(/m-newhauser\/gliner25-compaction/);
     expect(install).toMatch(/sibling notes; no runtime deps/);
     expect(install).toMatch(/examples\/pi-extension\.ts/);
     expect(shape).toMatch(/coldteadotai\/abide/);
@@ -386,6 +413,12 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/phin-tech\/pi-jev-approver/);
     expect(hosts).toMatch(/commandRules/);
     expect(hosts).toMatch(/RahulBalakavi\/claude-code-jev/);
+    expect(hosts).toMatch(/m-newhauser\/gliner25-compaction/);
+    expect(hosts).toMatch(/character-offset/);
+    expect(hosts).toMatch(/keep_full/);
+    expect(hosts).toMatch(/shadowMode/);
+    expect(hosts).toMatch(/hard shell\/mutation policy overrides the soft model/);
+    expect(hosts).toMatch(/not reward-hack detection/);
     expect(hosts).toMatch(/230\.8ms p50/);
     expect(hosts).toMatch(/263\.9ms mean/);
     expect(hosts).toMatch(/hooks\/run\.ts dsh/);
@@ -409,6 +442,12 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/typesafe\/jev-1\.13/);
     expect(gates).toMatch(/Mandrilsquad1441\/jev-model-router/);
     expect(gates).toMatch(/not a rh-guard peer/);
+    expect(gates).toMatch(/m-newhauser\/gliner25-compaction/);
+    expect(gates).toMatch(/character-offset/);
+    expect(gates).toMatch(/keep_full/);
+    expect(gates).toMatch(/shadowMode/);
+    expect(gates).toMatch(/hard shell\/mutation policy overrides the soft model/);
+    expect(gates).toMatch(/not reward-hack detection/);
   });
 });
 

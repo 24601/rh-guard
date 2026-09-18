@@ -14,7 +14,7 @@ the System One sidecar is the rest. Do not merge the products.
 
 [GLiGuard](https://github.com/fastino-ai/GLiGuard) is an encoder-based LLM
 prompt/response safety guard; rh-guard is a coding-agent reward-hack / eval
-integrity gate (complementary, not a competitor).
+integrity gate (complementary, not a competitor). [gliner25-compaction](https://github.com/m-newhauser/gliner25-compaction) is the same encoder family (GLiNER2.5) on Claude context compaction, not prompt/response safety and not reward-hack detection. Extractive character-offset spans, not generated summaries; uncertain → fail-closed `keep_full`; hard shell/mutation policy overrides the soft model; `shadowMode` default true before rewriting history. Sibling envelope next to jevgate (opposite default).
 
 **Sibling, not a merge.** [Abide](https://github.com/coldteadotai/abide)
 also ships Claude / Codex / OpenCode hooks, but it scores project-instruction
