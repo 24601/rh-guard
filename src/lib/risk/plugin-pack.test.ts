@@ -54,14 +54,37 @@ describe("hook pack stays aligned with examples/", () => {
   });
 });
 
+const PUBLIC_COPY_PATHS = [
+  "README.md",
+  "docs/install-plugin.md",
+  "docs/shape.md",
+  "src/app/install/page.tsx",
+  "src/app/literature/page.tsx",
+  ".agents/skills/rh-guard/SKILL.md",
+  ".agents/skills/rh-guard/references/gates.md",
+] as const;
+
+const RESEARCH_OPS_CLUTTER =
+  /research-prompt|Deep Research|ChatGPT Pro|Gemini Deep Research|Both copies are private|Suggested description|GitHub topics/i;
+
 describe("discoverability copy", () => {
-  it("does not call the GitHub copy private", () => {
+  it("keeps the public product README, not research-ops housekeeping", () => {
     const readme = readFileSync(join(root, "README.md"), "utf8");
     expect(readme).not.toMatch(/Both copies are private/i);
+    expect(readme).not.toMatch(RESEARCH_OPS_CLUTTER);
     expect(readme).toMatch(/public on GitHub/i);
     expect(readme).toMatch(/24601\/Augustus/);
     expect(readme).toMatch(/examples\/claude-settings\.json/);
     expect(readme).toMatch(/examples\/cursor-hooks\.json/);
+    expect(readme).toMatch(/no public Jev reward-hack ROC/i);
+    expect(readme).toMatch(/Lexical \/ GLiClass fallback is \*\*degraded\*\*/);
+  });
+
+  it("does not advertise Deep Research paste workflows on public surfaces", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(RESEARCH_OPS_CLUTTER);
+    }
   });
 
   it("ships a thin rh-guard skill that refuses to be a Next runbook", () => {
