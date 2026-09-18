@@ -2,6 +2,10 @@
 
 Hack Radar sits in coding-agent hooks (Claude Code, Cursor, Codex, Grok Build, Pi, Amp, Prime Agent, DeepSeek Harness) and blocks reward-hacking tool use—tampering with graders, hidden tests, or the eval process—while steering toward checks the agent cannot game. Exo is **support via ToolRuntime wrap**, not drop-in hooks.
 
+<a href="docs/sessions/rh_guard_side_by_side.mp4"><img src="docs/sessions/rh_guard_side_by_side.gif" width="100%" alt="Left: a recorded Exo terminal. Right: rh-guard denying a sed of a protected assertion and allowing a harmless echo."></a>
+
+Left pane is a render of the recorded Exo session; right pane is a facts panel from that same session, not a second CLI (sed denied, assertion unchanged, harmless echo allowed). Click through for the mp4, or see [docs/sessions/demo.md](docs/sessions/demo.md).
+
 [![Claude Code](https://img.shields.io/badge/Claude_Code-marketplace-purple.svg)](.claude-plugin/marketplace.json)
 [![Skills.sh](https://img.shields.io/badge/skills.sh-compatible-green.svg)](https://www.skills.sh/)
 [![TypeSafe Jev](https://img.shields.io/badge/TypeSafe-Jev_System_One-111111.svg)](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
