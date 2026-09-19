@@ -168,6 +168,8 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [dinostomp](https://github.com/collapseindex/dinostomp) audits eval instruments (data / scorer / runs / claims) before you trust the score. Pointer when people hard-gate on Jev scores inside reward/eval loops: check the instrument first. Harbor/jevals-adjacent; not a rh-guard peer.
 
+[classifier.dev](https://github.com/mrmps/classifier-dev) lived an undeclared-fallback integrity failure: upstream delisted `inclusionai/ling-2.6-flash`; backup `granite-4.0-h-micro` served for weeks at F1 **0.546** while docs advertised ~**0.800**, with nothing saying so. Digest now marks `FALLBACK`; `eval/bench.py` scores a candidate offline before it ships. **Undeclared fallback = eval integrity failure**; advertised score ≠ live model. Cousin of soundness theater — the lie is which model answered. Not a new hook.
+
 [jev-packs](https://github.com/dtduc-git/jev-packs) is an evidence-gated registry of Jev question packs: a pack is `verified` only when accuracy / ECE / cost / latency are recorded on a pinned Jev version. Every Choice and Score must offer `unknown` (mandatory abstention). Anti-soundness-theater for gate criteria: no numbers, no endorsement.
 
 [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) matured: README + `action.yml` + `src/` + committed `dist/`. Jev via Vercel AI Gateway asks four typed questions (`should_review`, `risk`, `route`, `touches_secrets`); configurable thresholds route to `auto-approve` | `human-review` | `block`. Conservative default `risk_threshold_for_review: cosmetic` escalated even trivial diffs Jev called `moderate`. Timeout/Jev-failure still → human-review, never silent auto-approve. Eval-gaming surface: optimizing the four Jev questions / thresholds instead of real review quality. Watch, not an endorsement — do not hard-gate merge on a Jev auto-approve without a deterministic path floor.
@@ -279,7 +281,9 @@ deny so the bridge fails closed.
    Without `TYPESAFE_API_KEY`, the lexical fallback is **degraded**, not risk
    zero. Shared `RiskKind` ids do not make probabilities interchangeable with
    Jev. Open System One heads (for example Laya) are future backends, not
-   drop-in replacements. There is **no public Jev reward-hack ROC**.
+   drop-in replacements. There is **no public Jev reward-hack ROC**. An
+   undeclared model swap is an eval-integrity failure (advertised score ≠
+   live model) — see [classifier.dev](https://github.com/mrmps/classifier-dev).
 
 ## Structural vs Jev (choose in this order)
 
@@ -303,6 +307,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
   (`verdict`, `hookVerdict`, `labels`, `structuralDeny`, `backend`).
 - `structuralDeny: true` → a code detector already decided; Jev was skipped.
 - `backend: "lexical"` → degraded; do not treat scores as Jev-calibrated.
+- Advertised scorer ≠ live model is an eval-integrity failure. This sidecar names `backend`; silent undeclared fallback is the [classifier.dev](https://github.com/mrmps/classifier-dev) lesson (`FALLBACK` digest marker).
 - `backend: "jev"` plus a high deny-kind Noul → semantic overlay fired.
 - Prompt-stage steer without a tool deny → change the **eval**, not the
   agent's wording, unless the user asked to disable oversight.
@@ -382,6 +387,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Corpus curation with Jev pass/fail gates (`curated.jsonl` / `rejected.jsonl`; eval-data integrity): [jev-curate](https://github.com/ThyFriendlyFox/jev-curate)
 - toxic-chat safety eval (Jev 90.9% precision / 1 FP; do not treat uncalibrated PCD as a safety gate): [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark)
 - Eval-instrument audit (check the instrument first): [dinostomp](https://github.com/collapseindex/dinostomp)
+- Silent model-swap serving (`FALLBACK` marker; advertised ~0.800 vs live granite F1 **0.546**): [classifier.dev](https://github.com/mrmps/classifier-dev)
 - Evidence-gated question packs (mandatory `unknown`; no numbers, no endorsement): [jev-packs](https://github.com/dtduc-git/jev-packs)
 - CI PR-triage gate (`should_review` / `risk` / `route` / `touches_secrets`; threshold gaming surface; watch): [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev)
 - Changed-file Jev scores in CI (shadow-mode only until calibrated; calibration-first before automerge; soundness theater): [jev-pr-review](https://github.com/ohernandezdev/jev-pr-review)

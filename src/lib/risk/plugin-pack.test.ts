@@ -203,6 +203,10 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/uncalibrated open PCD/);
     expect(readme).toMatch(/collapseindex\/dinostomp/);
     expect(readme).toMatch(/check the instrument first/);
+    expect(readme).toMatch(/mrmps\/classifier-dev/);
+    expect(readme).toMatch(/FALLBACK/);
+    expect(readme).toMatch(/0\.546/);
+    expect(readme).toMatch(/Undeclared fallback = eval integrity failure/);
     expect(readme).toMatch(/godspede\/construct-auto-classifier/);
     expect(readme).toMatch(/0 dangerous/);
     expect(readme).toMatch(/Privilege Is Not a Verdict/);
@@ -392,6 +396,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/omp-greenlight/);
     expect(pkg).not.toMatch(/skill-broker/);
     expect(pkg).not.toMatch(/dinostomp/);
+    expect(pkg).not.toMatch(/classifier-dev/);
     expect(pkg).not.toMatch(/construct-auto-classifier/);
     expect(pkg).not.toMatch(/actiongate-jev/);
     expect(pkg).not.toMatch(/pi-heed/);
@@ -460,6 +465,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/omp-greenlight/);
     expect(lock).not.toMatch(/skill-broker/);
     expect(lock).not.toMatch(/dinostomp/);
+    expect(lock).not.toMatch(/classifier-dev/);
     expect(lock).not.toMatch(/construct-auto-classifier/);
     expect(lock).not.toMatch(/actiongate-jev/);
     expect(lock).not.toMatch(/pi-heed/);
@@ -644,6 +650,10 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/90\.9%/);
     expect(skill).toMatch(/uncalibrated open PCD/);
     expect(skill).toMatch(/collapseindex\/dinostomp/);
+    expect(skill).toMatch(/mrmps\/classifier-dev/);
+    expect(skill).toMatch(/FALLBACK/);
+    expect(skill).toMatch(/0\.546/);
+    expect(skill).toMatch(/Undeclared fallback = eval integrity failure/);
     expect(skill).toMatch(/check the instrument first/);
     expect(skill).toMatch(/godspede\/construct-auto-classifier/);
     expect(skill).toMatch(/0 dangerous/);
@@ -877,6 +887,12 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/90\.9%/);
     expect(evalDoc).toMatch(/uncalibrated open PCD/);
     expect(evalDoc).toMatch(/collapseindex\/dinostomp/);
+    expect(evalDoc).toMatch(/mrmps\/classifier-dev/);
+    expect(evalDoc).toMatch(/FALLBACK/);
+    expect(evalDoc).toMatch(/0\.546/);
+    expect(evalDoc).toMatch(/Undeclared fallback = eval integrity failure/);
+    expect(evalDoc).toMatch(/Nothing in the deployed numbers said so/);
+    expect(evalDoc).toMatch(/ibm-granite\/granite-4\.0-h-micro/);
     expect(evalDoc).toMatch(/check the instrument first/);
     expect(evalDoc).toMatch(/godspede\/construct-auto-classifier/);
     expect(evalDoc).toMatch(/0 dangerous/);
@@ -1051,6 +1067,7 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(install).toMatch(/mallahyari\/system-one-benchmark/);
     expect(install).toMatch(/collapseindex\/dinostomp/);
+    expect(install).toMatch(/mrmps\/classifier-dev/);
     expect(install).toMatch(/godspede\/construct-auto-classifier/);
     expect(install).toMatch(/omkarghugarkar007\/actiongate-jev/);
     expect(install).toMatch(/Nyarlathoteppppp\/pi-heed/);
@@ -1310,6 +1327,10 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/77\.93/);
     expect(gates).toMatch(/490\.38/);
     expect(gates).toMatch(/exactness/);
+    expect(gates).toMatch(/mrmps\/classifier-dev/);
+    expect(gates).toMatch(/FALLBACK/);
+    expect(gates).toMatch(/0\.546/);
+    expect(gates).toMatch(/undeclared fallback = eval integrity failure/);
     expect(gates).toMatch(/adamjralph\/skill-broker/);
     expect(gates).toMatch(/never grants access/);
     expect(gates).toMatch(/rashedInt32\/jev-lens/);
