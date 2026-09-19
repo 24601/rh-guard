@@ -112,9 +112,11 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [construct-auto-classifier](https://github.com/godspede/construct-auto-classifier) is an effect-based OpenCode / Antigravity (`agy`) shell PreToolUse gate: structural fast-deny/fast-allow first, then Jev Choice plus nine independent risk Nouls (`data_loss`, `secrets`, `remote_code`, …). Allow only if the choice is `allow` at `jev.minConfidence` (0.6) and every risk is below `jev.riskThreshold` (0.7). Missing, low-confidence, high-risk, or a failed call all deny. Certified **0 dangerous** commands allowed for Jev (main 113 + blind 82, five passes, 975 decisions); chat LLMs all leaked. Operator owns minConfidence/riskThreshold (same dial as omp-greenlight). Privilege Is Not a Verdict (`sudo` is blast radius, not a deny). Pair with [dinostomp](https://github.com/collapseindex/dinostomp) before hard-gating on those scores. Do not merge into `examples/`. Cousin, not this sidecar. Hunch: keyword privilege filters are reward-hackable (`sudo` ≠ dangerous); effect semantics resist surface gaming.
 
-[actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) is runtime authorization for tool calls before side effects: deterministic policy + RBAC + schemas + amount/limit checks own `ALLOW` / `REVIEW` / `BLOCK`. TypeSafe Jev (OpenRouter) supplies semantic evidence (intent match, scope expand, sensitive exposure). **Jev supplies evidence. Code owns authority.** A positive model score never overrides a deterministic security failure. **Schema-valid ≠ intent-matched.** Early public MVP with an explicit [threat model](https://github.com/omkarghugarkar007/actiongate-jev/blob/main/docs/threat-model.md): ActionGate decides; the app owns execution and credentials. Compose with construct-auto-classifier (effect-based shell) and jev-lens (attention≠authority, never blocks). Do not treat Jev ALLOW as a safety proof. Cousin, not this sidecar.
+[actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) is runtime authorization for tool calls before side effects: deterministic policy + RBAC + schemas + amount/limit checks own `ALLOW` / `REVIEW` / `BLOCK`. TypeSafe Jev (OpenRouter) supplies semantic evidence (intent match, scope expand, sensitive exposure). **Jev supplies evidence. Code owns authority.** A positive model score never overrides a deterministic security failure. **Schema-valid ≠ intent-matched.** Enforced `ALLOW` issues a signed, short-lived **single-use Action Grant** bound to the exact tool call (tenant, agent, user/session, tool, operation, arguments, risk, policy); consumption atomically rejects replayed, expired, mutated, and unknown permits. A Noul is not a permit. Early public MVP with an explicit [threat model](https://github.com/omkarghugarkar007/actiongate-jev/blob/main/docs/threat-model.md): ActionGate decides; the app owns execution and credentials; SDK `wrapTool` is advisory until a gateway or credential broker makes bypass impossible. Compose with construct-auto-classifier (effect-based shell) and jev-lens (attention≠authority, never blocks). Do not treat Jev ALLOW as a safety proof. No Claude/Cursor hook pack — `wrapTool` is not `hooks.json`; do not merge into `examples/`. Cousin, not this sidecar.
 
 [turnstile](https://github.com/zyphr-labs/turnstile) is an agent action guardrail: deterministic policy + Jev semantic checks + receipts with threshold replay. Same doctrine as actiongate-jev: Jev supplies evidence; code owns `allow` / `review` / `deny`. **Jev never grants authority that policy denied.** Missing goal, disabled Jev, timeout, or invalid response → review. Experimental alpha; Claude observe-mode default; not an OS sandbox. Do not merge `turnstile-hooks.json` into `examples/`. Cousin, not this sidecar.
+
+[pi-heed](https://github.com/Nyarlathoteppppp/pi-heed) persists user constraints across tool calls and context compaction and checks every side-effecting call against what the user said (anti instruction-drift / reward-hack). TypeSafe Jev powered: Jev never writes policy; code owns the ledger and the block. Constraints rebuild from the session after compaction (no Jev on reload). Shadow by default; fail-open on Jev error/timeout. Complementary to jev-carryforward 0/4: injecting persisted constraints beats hoping the model looks. Do not merge into `examples/pi-extension.ts`. Cousin of pi-jev-approver / omp-auto-mode, not this sidecar.
 
 [jev-labs](https://github.com/copyleftdev/jev-labs) wraps a probabilistic oracle in a formal consensus kernel (TLA+ → AsyncAPI → Rust). Pharmacy-sim golden 1,080 rounds: **wrong=0**; under severe chaos 314 correct / 46 escalated / **0 wrong** (accuracy 0.834–0.903). **Never confidently wrong.** The invariant is escalate-not-guess: the kernel may escalate, and it may never return a confident wrong verdict. A stability gate excludes votes whose margin sits inside the measured noise floor (identity 0.042). Anti-pattern: treating TLA+/model-check theater as proof the soft judge is safe without an exception path. TLC 1,049,750 states / 0 errors proves the protocol, not that the oracle is never wrong. Scope: synthetic pharmacy, not clinical. Limitation: underdetermined records escalated 86/120 and decided 34 split both ways — the stability gate is not an answerability check. Cousin, not this sidecar.
 
@@ -142,6 +144,8 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [jev-triage](https://github.com/ThyFriendlyFox/jev-triage) routes unlabeled data by calibrated confidence and logs soft labels. If used as an eval filter: do not distill Jev as teacher of record — real outcome labels remain the training targets.
 
+[jev-curate](https://github.com/ThyFriendlyFox/jev-curate) is corpus curation with Jev pass/fail gates → `curated.jsonl` vs `rejected.jsonl` (eval-data integrity). Filter with Jev; train on real outcome labels. Sibling of jev-triage (curate first, then triage). Do not treat Jev as teacher of record.
+
 [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark) is a 50-sample LMSYS toxic-chat safety eval: Jev precision 90.9% (1 FP) vs local PCD flooding FPs (16). Calibration is the eval-integrity angle; do not treat uncalibrated open PCD as a safety gate. Bounded fixture, not a rh-guard ROC.
 
 [dinostomp](https://github.com/collapseindex/dinostomp) audits eval instruments (data / scorer / runs / claims) before you trust the score. Pointer when people hard-gate on Jev scores inside reward/eval loops: check the instrument first. Harbor/jevals-adjacent; not a rh-guard peer.
@@ -150,9 +154,11 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) matured: README + `action.yml` + `src/` + committed `dist/`. Jev via Vercel AI Gateway asks four typed questions (`should_review`, `risk`, `route`, `touches_secrets`); configurable thresholds route to `auto-approve` | `human-review` | `block`. Conservative default `risk_threshold_for_review: cosmetic` escalated even trivial diffs Jev called `moderate`. Timeout/Jev-failure still → human-review, never silent auto-approve. Eval-gaming surface: optimizing the four Jev questions / thresholds instead of real review quality. Watch, not an endorsement — do not hard-gate merge on a Jev auto-approve without a deterministic path floor.
 
+[jev-pr-review](https://github.com/ohernandezdev/jev-pr-review) is a GitHub Action that scores each changed file with Jev. **Shadow-mode only** until calibrated — automerge is designed but unreachable (`mode: enforce` fails loudly; the merge path is unwritten). Hard path gates (`blocked_paths`, `max_lines`, CI) run before scores; max aggregation, never average. Calibration-first gating before any automerge. Soft judgment as sole merge authority is soundness theater. Cousin of ci-gatekeeper / jev-reviewer / prune-review.
+
 [prune-review](https://github.com/shubhangi013/prune-review) is a cost-aware Jev gate before a generative PR reviewer: Jev scores hunks; a deterministic **safety escarpment** always keeps matching hunks whatever Jev says. Jev does not generate review comments. Cost results are not quality claims. Source preview. Cousin of jev-reviewer; not this sidecar.
 
-[jev-intent-review](https://github.com/yottayoshida/jev-intent-review) is under construction (spec only): typed Jev judgments of the post-change repository against originating intent. The diff is a search hint, not the object being verified. Prefer UNKNOWN over a false VERIFIED. Watch, not an endorsement.
+[jev-intent-review](https://github.com/yottayoshida/jev-intent-review) is whole-repo intent verification beyond the diff: typed Jev judgments `VERIFIED` / `VIOLATION` / `UNKNOWN` against stated requirements — catches incomplete-change gaming (requirement misses in unchanged paths). The diff is a search hint, not the object being verified. Prefer UNKNOWN over a false VERIFIED. CLI works; GitHub Action not written yet. Watch, not an endorsement.
 
 [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval) is a pre-registered Jev-vs-baselines eval with three same-day errata rounds after external review found overstated results (both experiments AMBIGUOUS; headline cascade sign flips at a tighter margin). Harbor/jevals lesson: independent review; do not promote first-publish numbers to labels.
 
@@ -239,11 +245,14 @@ deny so the bridge fails closed.
    `noul >= t` on a deny kind at a mutating stage (default band starts at
    0.82 / 0.88, monitor gaming 0.70). Do not invert the question into "is this
    safe" and then raise the threshold; that contracts the rejection band.
-6. **Structural first, then Jev.** Code-computable denies (protected eval
+   6. **Structural first, then Jev.** Code-computable denies (protected eval
    paths, assertion `sed`, `--no-verify`, runtime hijacks) fire before any
    semantic call. After a structural deny, skip Jev. Jev cannot overrule a
    structural deny. Do not authorize a mutate on a stale soft Noul alone
-   (TOCTOU: check-then-act is not atomic). Same shape as
+   (TOCTOU: check-then-act is not atomic). [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev)
+   binds a **single-use Action Grant** to the exact tool call and consumes it
+   once (replayed/expired/mutated permits fail closed). A Noul is not a permit.
+   `wrapTool` is not `hooks.json` — do not merge into `examples/`. Same shape as
    [jevgate](https://github.com/thevibeworks/jevgate) (allowlist proves what
    may run; Jev judges only the rest)—sibling, not a merge. See
    `references/gates.md`.
@@ -314,7 +323,8 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - OMP/pi acceptance gating + subagent routing (fail-open): [omp-jev-extensions](https://github.com/luw2007/omp-jev-extensions)
 - Measured OMP approval-gate (graded allow; default 0/94 unsafe; operator owns the risk dial): [omp-greenlight](https://github.com/SemetricLabs/omp-greenlight)
 - Effect-based OpenCode/agy shell gate (Privilege Is Not a Verdict; 0 dangerous allowed for Jev): [construct-auto-classifier](https://github.com/godspede/construct-auto-classifier)
-- Runtime tool authorization (Jev supplies evidence. Code owns authority; Schema-valid ≠ intent-matched): [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev)
+- Runtime tool authorization (Jev supplies evidence. Code owns authority; Schema-valid ≠ intent-matched; single-use Action Grant; replayed/expired permits fail closed; wrapTool ≠ hooks.json): [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev)
+- Pi constraint integrity across compaction (instruction-drift / reward-hack; Jev never writes policy): [pi-heed](https://github.com/Nyarlathoteppppp/pi-heed)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
 - Formal consensus around a probabilistic oracle (Never confidently wrong; escalate-not-guess): [jev-labs](https://github.com/copyleftdev/jev-labs)
 - Advance gate + coverage ledger (Hiding escalations is a product lie; mint ≠ product brain): [seal](https://github.com/Reasonofmoon/seal)
@@ -341,12 +351,14 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - LangGraph Jev vs LLM guardrails (96.8%; classify accuracy is not a safety proof): [jev-vs-llm-guardrails-intent-router](https://github.com/TeoMastro/jev-vs-llm-guardrails-intent-router)
 - LoRA distill of Jev memory-relevance (student is not the hard envelope): [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b)
 - Soft-label eval filter (do not distill Jev as teacher of record): [jev-triage](https://github.com/ThyFriendlyFox/jev-triage)
+- Corpus curation with Jev pass/fail gates (`curated.jsonl` / `rejected.jsonl`; eval-data integrity): [jev-curate](https://github.com/ThyFriendlyFox/jev-curate)
 - toxic-chat safety eval (Jev 90.9% precision / 1 FP; do not treat uncalibrated PCD as a safety gate): [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark)
 - Eval-instrument audit (check the instrument first): [dinostomp](https://github.com/collapseindex/dinostomp)
 - Evidence-gated question packs (mandatory `unknown`; no numbers, no endorsement): [jev-packs](https://github.com/dtduc-git/jev-packs)
 - CI PR-triage gate (`should_review` / `risk` / `route` / `touches_secrets`; threshold gaming surface; watch): [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev)
+- Changed-file Jev scores in CI (shadow-mode only until calibrated; calibration-first before automerge; soundness theater): [jev-pr-review](https://github.com/ohernandezdev/jev-pr-review)
 - Cost-aware Jev gate before generative PR review (safety escarpment): [prune-review](https://github.com/shubhangi013/prune-review)
-- PR vs originating intent (diff is a search hint; watch): [jev-intent-review](https://github.com/yottayoshida/jev-intent-review)
+- Whole-repo intent vs requirements (`VERIFIED` / `VIOLATION` / `UNKNOWN`; diff is a search hint; incomplete-change gaming): [jev-intent-review](https://github.com/yottayoshida/jev-intent-review)
 - Pre-registered eval + same-day errata (claim vs evidence): [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval)
 - Verbatim fact ledger scored for relevance (0/4 recall; hope the model looks): [jev-carryforward](https://github.com/Dharundp6/jev-carryforward)
 - Measured negative result (no quality-equivalent Jev PDF payoff): [databricks-jev-pdf-lab](https://github.com/laurentfabre/databricks-jev-pdf-lab)
