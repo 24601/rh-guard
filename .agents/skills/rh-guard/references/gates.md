@@ -47,6 +47,8 @@ a merge, and not a reward-hack detector.
 
 [omp-greenlight](https://github.com/SemetricLabs/omp-greenlight) is a measured OMP approval-gate (default 0/94 unsafe). The operator owns the risk dial; the plugin never tunes its own threshold. Graded allow, not hard deny. Permission ≠ probability. Cousin, not this sidecar.
 
+[construct-auto-classifier](https://github.com/godspede/construct-auto-classifier) is an effect-based OpenCode / Antigravity (`agy`) shell PreToolUse gate: structural fast-deny/fast-allow first, then Jev Choice plus nine independent risk Nouls (`data_loss`, …). Allow only if choice is `allow` at `jev.minConfidence` (0.6) and every risk is below `jev.riskThreshold` (0.7). Certified **0 dangerous** commands allowed for Jev; chat LLMs all leaked. Operator owns the dial. Privilege Is Not a Verdict. Pair with dinostomp before hard-gating on those scores. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [firehose-judge](https://github.com/ragelink/firehose-judge) is typed Jev on the Bluesky firehose (Durable Object). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Soft judgment is never the sole veto. Cousin, not this sidecar.
 
 [jav-email-cascade](https://github.com/skiingfalcon/jav-email-cascade) is decide → policy → LLM leftover. A Noul at 0.5 means "cannot tell" (never rounded). `injection_suspected` always force-review even with an LLM configured. Force-review is a real lane, not soundness theater. Cousin, not this sidecar.
@@ -54,6 +56,8 @@ a merge, and not a reward-hack detector.
 [waymode](https://github.com/mossburgh/waymode) lets the host keep permissions, validation, and handlers; Jev decides over typed actions on the live UI with retained evidence. Jev confidence grants no permission (sensor ≠ verdict). Cousin, not this sidecar.
 
 [skill-broker](https://github.com/adamjralph/skill-broker) keeps authority in deterministic code; Jev judges relevance only and never grants access. Anti-pattern: letting System One confidence expand the allowed skill set. Cousin, not this sidecar.
+
+[jev-lens](https://github.com/rashedInt32/jev-lens) is an advisory Claude Stop hook: it never blocks, never edits, and never says green unless sure (`JEV_LENS_GREEN` 0.9). Attention/VOI, not authority — keep it separate from skill-broker / construct-auto-classifier. Cousin, not this sidecar.
 
 [latch](https://github.com/CaseReed/latch) is a CI merge-gate cousin: code clusters, Jev labels, code owns `Gate: PASS` / `Gate: BLOCK`. `ignore_as_infra` needs an explicit network fingerprint; Jev cannot ignore on its own. Flaky-test gaming counter-pattern.
 
@@ -147,6 +151,18 @@ omp-greenlight (SemetricLabs/omp-greenlight)
   operator owns the risk dial; plugin never tunes its own threshold
   permission ≠ probability
 
+construct-auto-classifier (godspede/construct-auto-classifier)
+  OpenCode / agy PreToolUse; Privilege Is Not a Verdict
+  structural fast path then Jev Choice + nine Nouls (data_loss, …)
+  minConfidence 0.6 / riskThreshold 0.7; 0 dangerous allowed (Jev)
+  operator owns the dial; do not merge into examples/
+
+slo-router (zeeshan8281/slo-router)
+  Jev on routing hot path; fail-open local features
+  77.93 → 490.38 ms p95 (~6.3×); same routes/accuracy
+  exactness never overrides context/capability; 503 if infeasible
+  not a rh-guard peer
+
 firehose-judge (ragelink/firehose-judge)
   Bluesky firehose; Durable Object; uncertain → "needs a human"
   nsfw dropped server-side
@@ -164,12 +180,16 @@ skill-broker (adamjralph/skill-broker)
   Jev judges relevance only; never grants access
   anti-pattern: System One confidence expanding the allowed skill set
 
+jev-lens (rashedInt32/jev-lens)
+  advisory Stop hook; never blocks; never says green unless sure
+  attention/VOI, not authority (pair skill-broker / construct)
+
 jev-carryforward (Dharundp6/jev-carryforward)
   verbatim ledger; nothing summarised, nothing deleted
   no key → whole list (fail-open); cousin to extractive compaction
 ```
 
-Do not merge those hooks into `examples/`. [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is adjacent model+effort routing, not a rh-guard peer.
+Do not merge those hooks into `examples/`. [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is adjacent model+effort routing, not a rh-guard peer. [slo-router](https://github.com/zeeshan8281/slo-router) is the latency/fallback cousin of that routing surface: Jev on the hot path preserved accuracy but raised p95 from 77.93 ms to 490.38 ms; fail-open local features; exactness never overrides context/capability.
 
 ## Fail-open vs fail-closed
 
