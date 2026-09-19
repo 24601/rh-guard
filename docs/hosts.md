@@ -80,7 +80,7 @@ npx tsx hooks/run.ts exo < examples/generic-event.json
 Merge [`examples/claude-settings.json`](../examples/claude-settings.json)
 (HTTP) or [`examples/claude-command-settings.json`](../examples/claude-command-settings.json)
 (fail-closed PreToolUse). Plugin pack: `hooks/claude-hook.sh`. HTTP is
-fail-open (non-2xx / timeout do not block). Sibling permission gate (not this copy): [claude-code-jev](https://github.com/RahulBalakavi/claude-code-jev) — OpenRouter `typesafe/jev-1.13` PreToolUse (230.8ms p50 / 263.9ms mean); low-confidence and network fail → human. Additive; Anthropic auto-mode is not replaceable via a supported API. Distinct pre-execution SDK cousin (not this copy): [toolgate](https://github.com/fdemir/toolgate) — `allow` / `block` / `review`; error/timeout fail-safe stop; not [ndolinschi/toolgate](https://github.com/ndolinschi/toolgate).
+fail-open (non-2xx / timeout do not block). Sibling permission gate (not this copy): [claude-code-jev](https://github.com/RahulBalakavi/claude-code-jev) — OpenRouter `typesafe/jev-1.13` PreToolUse (230.8ms p50 / 263.9ms mean); low-confidence and network fail → human. Additive; Anthropic auto-mode is not replaceable via a supported API. Distinct pre-execution SDK cousin (not this copy): [toolgate](https://github.com/fdemir/toolgate) — `allow` / `block` / `review`; error/timeout fail-safe stop; not [ndolinschi/toolgate](https://github.com/ndolinschi/toolgate). Soft-judgment UX cousin (not this copy): [jev-reviewer](https://github.com/egma-ai/jev-reviewer) — P0/P1/P2 attention expand/collapse; never equate P0 with blocked as unsafe. Static shell cousin (not this copy): [safe-sh](https://github.com/EpicEric/safe-sh) — Jev analysis, never executes; contrast toolgate fail-safe pre-exec.
 
 ### Cursor
 

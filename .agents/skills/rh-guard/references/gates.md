@@ -31,6 +31,10 @@ a merge, and not a reward-hack detector.
 
 [toolgate](https://github.com/fdemir/toolgate) is a pre-execution allow / block / review gate: error or timeout stops the call (fail-safe). Distinct from [ndolinschi/toolgate](https://github.com/ndolinschi/toolgate). Eval CLI is given → expected → actual; only given reaches Jev. Cousin, not this sidecar.
 
+[jev-reviewer](https://github.com/egma-ai/jev-reviewer) is a local PR overlay: Jev P0/P1/P2 attention (P0 expanded; P1/P2 collapsed). Attention is not a correctness verdict; never equate P0 with blocked as unsafe. Soft-judgment UX, not a merge gate. Cousin, not this sidecar.
+
+[safe-sh](https://github.com/EpicEric/safe-sh) is static shell analysis with Jev (tree-sitter bash chunks; never executes). Contrast toolgate fail-safe pre-exec. Same extract-then-Jev layering as jevscan. Gate-adjacent; not a reward-hack detector.
+
 [latch](https://github.com/CaseReed/latch) is a CI merge-gate cousin: code clusters, Jev labels, code owns `Gate: PASS` / `Gate: BLOCK`. `ignore_as_infra` needs an explicit network fingerprint; Jev cannot ignore on its own. Flaky-test gaming counter-pattern.
 
 [jevscan](https://github.com/alexykn/jevscan) composes tree-sitter extract (hard envelope; no execute) with independent Jev questions (soft judgment). Same layering; quality lint, not reward-hack.
@@ -86,6 +90,14 @@ toolgate (fdemir/toolgate)
   pre-exec allow | block | review; error/timeout → stop (fail-safe)
   given → expected → actual; only given reaches Jev
   distinct from ndolinschi/toolgate
+
+jev-reviewer (egma-ai/jev-reviewer)
+  P0 expand / P1+P2 collapse attention
+  attention ≠ correctness; P0 ≠ blocked as unsafe
+
+safe-sh (EpicEric/safe-sh)
+  tree-sitter bash chunks → Jev Scores; never executes
+  contrast toolgate fail-safe pre-exec
 
 jev-carryforward (Dharundp6/jev-carryforward)
   verbatim ledger; nothing summarised, nothing deleted
