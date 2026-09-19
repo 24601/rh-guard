@@ -75,6 +75,8 @@ a merge, and not a reward-hack detector.
 
 [jev-routing](https://github.com/nekowasabi/jev-routing) is a multi-host Go proxy: compact, then Jev Choice+Noul, then rewrite `tools[]` to 1 schema. Default `filter`; `forced` only with a verified real Jev answer. Not MCP. Advisory filter vs hard route. Cousin of slo-router / pi-jev-control. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[classifier.dev](https://github.com/mrmps/classifier-dev) is an eval-integrity cousin, not a gate: undeclared fallback serving. Upstream delisted `inclusionai/ling-2.6-flash`; `granite-4.0-h-micro` answered for weeks at F1 **0.546** while docs advertised ~**0.800**. Digest now marks `FALLBACK`; `eval/bench.py` measures a model offline before it ships. Surface which backend answered; advertised score ≠ live model. Not a rh-guard peer.
+
 [jev-labs](https://github.com/copyleftdev/jev-labs) wraps a probabilistic oracle in a formal consensus kernel. **Never confidently wrong.** Escalate-not-guess: under severe chaos accuracy drops but wrong=0 because the system escalates. Anti-pattern: TLA+/model-check theater as proof the soft judge is safe without an exception path. Cousin, not this sidecar.
 
 [seal](https://github.com/Reasonofmoon/seal) is an advance gate plus a visible coverage ledger (`auto` | `code` | `human` | `escalate`). Effects stay locked while escalations remain open. **Hiding escalations is a product lie.** **schema-valid ≠ semantically correct.** **mint ≠ product brain**. Cousin, not this sidecar.
@@ -310,6 +312,11 @@ slo-router (zeeshan8281/slo-router)
   77.93 → 490.38 ms p95 (~6.3×); same routes/accuracy
   exactness never overrides context/capability; 503 if infeasible
   not a rh-guard peer
+
+classifier-dev (mrmps/classifier-dev)
+  undeclared fallback = eval integrity failure
+  advertised ~0.800 vs live granite F1 0.546; digest FALLBACK
+  not a gate / not a new hook
 
 firehose-judge (ragelink/firehose-judge)
   Bluesky firehose; Durable Object; uncertain → "needs a human"
