@@ -41,6 +41,14 @@ a merge, and not a reward-hack detector.
 
 [jev-dspy-control-plane](https://github.com/manikanda-kumar/jev-dspy-control-plane) is a typed control plane: fraud/security force a human path even when the classifier predicts routine; after the plane fixes the action, the LLM cannot add routes or tools. Same structural-first shape. Cousin, not this sidecar.
 
+[cmdc-auto-mode](https://github.com/mja00/cmdc-auto-mode) is a Command Code auto-permission gate: `beforeToolCall` after the host permission check; policy `decide` in code (`allow` / `deny` / `escalate`). `within_scope ≤ 0.25` is out of scope (deny). Escalation always goes to a human, never back to the model. Default `auto-fail-closed` true. Jev is a sensor; policy in code owns the verdict. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[firehose-judge](https://github.com/ragelink/firehose-judge) is typed Jev on the Bluesky firehose (Durable Object). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Soft judgment is never the sole veto. Cousin, not this sidecar.
+
+[jav-email-cascade](https://github.com/skiingfalcon/jav-email-cascade) is decide → policy → LLM leftover. A Noul at 0.5 means "cannot tell" (never rounded). `injection_suspected` always force-review even with an LLM configured. Force-review is a real lane, not soundness theater. Cousin, not this sidecar.
+
+[waymode](https://github.com/mossburgh/waymode) is named as app-owned controls, typed actions, host permissions, and retained evidence (empty public tree at capture). Watch, not this sidecar.
+
 [latch](https://github.com/CaseReed/latch) is a CI merge-gate cousin: code clusters, Jev labels, code owns `Gate: PASS` / `Gate: BLOCK`. `ignore_as_infra` needs an explicit network fingerprint; Jev cannot ignore on its own. Flaky-test gaming counter-pattern.
 
 [jevscan](https://github.com/alexykn/jevscan) composes tree-sitter extract (hard envelope; no execute) with independent Jev questions (soft judgment). Same layering; quality lint, not reward-hack.
@@ -117,6 +125,25 @@ port-cleanup (epiphany-dynamics/port-cleanup)
 jev-dspy-control-plane (manikanda-kumar/jev-dspy-control-plane)
   fraud/security → human even if classifier says routine
   LLM cannot add routes/tools after control plane fixes action
+
+cmdc-auto-mode (mja00/cmdc-auto-mode)
+  Command Code beforeToolCall after host permission check
+  decide() in code allow|deny|escalate; within_scope ≤ 0.25 out of scope deny
+  escalate to a human never model; auto-fail-closed default true
+  do not merge into examples/
+
+firehose-judge (ragelink/firehose-judge)
+  Bluesky firehose; Durable Object; uncertain → "needs a human"
+  nsfw dropped server-side
+
+jav-email-cascade (skiingfalcon/jav-email-cascade)
+  decide → policy → LLM leftover
+  Noul 0.5 cannot tell, never rounded
+  injection_suspected force-review
+
+waymode (mossburgh/waymode)
+  app-owned controls + typed actions + retained evidence
+  empty public tree at capture (watch)
 
 jev-carryforward (Dharundp6/jev-carryforward)
   verbatim ledger; nothing summarised, nothing deleted
