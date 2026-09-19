@@ -99,6 +99,16 @@ a merge, and not a reward-hack detector.
 
 [apa-agent-harness](https://github.com/AiPersonacademy/apa-agent-harness) is a rebrand of [jev-harness](https://github.com/AntonioCoppe/jev-harness) (`src/` SHA identical). README trajectory verification is **advertised capability ≠ shipped module**. Real pattern: **shadow vs live** (`shadow_noop` / `intendedAction`). Example 0.85 is uncalibrated. Fold gate/eval-integrity only. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard) is a Claude PreToolUse Bash classifier + PostToolUse injection sentinel. **Tripwires never deny** (only block auto-allow). Fail-open (no key / timeout → silent). `allow` bypasses host deny rules. Distinct from [leepokai/jev-guard](https://github.com/leepokai/jev-guard) and [pablozr/JevGuard](https://github.com/pablozr/JevGuard). Contrast yolo-shell named floor. Do not merge `guard.py` into `examples/`. Cousin, not this sidecar.
+
+[pablozr/JevGuard](https://github.com/pablozr/JevGuard) is a semantic policy engine: attributed turn + Jev + local gate → PASS/WARN/FAIL. Incomplete evidence → `UNAVAILABLE` (never a reassuring verdict). Observe-only V0.1. **advertised monorepo ≠ shipped packages**. Policy-integrity cousin of Abide, not reward-hack. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[ybadragon/jev-proving-ground](https://github.com/ybadragon/jev-proving-ground) is synthetic `verify-criteria` cases. Planted defects are withheld from this repo so criteria writers cannot read the answer. Soundness-theater antidote. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jevbrain](https://github.com/Synxneuos/jevbrain) is a local n-gram daemon: confidence ≥ 0.80 → `AUTO_ACT`, else `REVIEW_QUEUE`. **Not TypeSafe Jev.** Silent-fallback risk if mis-calibrated. Fold attention-firewall / AUTO_ACT only. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-crawlers](https://github.com/russfranky/jev-crawlers) is judge then verify on bug-discovery crawlers. Failures are an **unverified lead, never a bug**. **ranking signals**, not calibrated confidence. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC.
@@ -407,6 +417,38 @@ apa-agent-harness (AiPersonacademy/apa-agent-harness)
   advertised capability ≠ shipped module (trajectory)
   shadow vs live: shadow_noop / intendedAction
   confidenceThreshold 0.85 uncalibrated; fold gate/eval-integrity only
+  do not merge into examples/
+
+alsoleg89/jev-guard
+  Claude PreToolUse Bash classifier + PostToolUse injection sentinel
+  Tripwires never deny (only block auto-allow); fail-open
+  allow bypasses host deny rules; 0.95 Nouls are not a safety veto
+  distinct from leepokai/jev-guard and pablozr/JevGuard
+  do not merge guard.py into examples/
+
+pablozr/JevGuard
+  attributed turn + Jev + local gate → PASS/WARN/FAIL
+  UNAVAILABLE on incomplete evidence; never a reassuring verdict
+  advertised monorepo ≠ shipped packages; observe-only V0.1
+  policy-integrity cousin of Abide, not reward-hack
+  do not merge into examples/
+
+ybadragon/jev-proving-ground
+  synthetic verify-criteria cases; planted defect withheld
+  criteria writers must not read the answer
+  soundness-theater antidote; thin card
+  do not merge into examples/
+
+jevbrain (Synxneuos/jevbrain)
+  local n-gram daemon; confidence ≥ 0.80 AUTO_ACT else REVIEW_QUEUE
+  not TypeSafe Jev; silent-fallback if mis-calibrated
+  fold attention-firewall / AUTO_ACT only
+  do not merge into examples/
+
+jev-crawlers (russfranky/jev-crawlers)
+  crawl-judge then crawl-verify
+  unverified lead, never a bug
+  ranking signals, not calibrated bug confidence
   do not merge into examples/
 
 localjev (githubnext/localjev)
