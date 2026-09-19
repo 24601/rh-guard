@@ -51,7 +51,7 @@ a merge, and not a reward-hack detector.
 
 [construct-auto-classifier](https://github.com/godspede/construct-auto-classifier) is an effect-based OpenCode / Antigravity (`agy`) shell PreToolUse gate: structural fast-deny/fast-allow first, then Jev Choice plus nine independent risk Nouls (`data_loss`, …). Allow only if choice is `allow` at `jev.minConfidence` (0.6) and every risk is below `jev.riskThreshold` (0.7). Certified **0 dangerous** commands allowed for Jev; chat LLMs all leaked. Operator owns the dial. Privilege Is Not a Verdict. Pair with dinostomp before hard-gating on those scores. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) is runtime tool-call authorization before side effects: deterministic policy owns `ALLOW` / `REVIEW` / `BLOCK`; Jev supplies evidence. **Jev supplies evidence. Code owns authority.** A positive model score never overrides a deterministic security failure. Early public MVP; current SDK is advisory. Compose with construct-auto-classifier and jev-lens. Cousin, not this sidecar.
+[actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) is runtime tool-call authorization before side effects: deterministic policy owns `ALLOW` / `REVIEW` / `BLOCK`; Jev supplies evidence. **Jev supplies evidence. Code owns authority.** A positive model score never overrides a deterministic security failure. **Schema-valid ≠ intent-matched.** Early public MVP; current SDK is advisory. Compose with construct-auto-classifier and jev-lens. Cousin, not this sidecar.
 
 [firehose-judge](https://github.com/ragelink/firehose-judge) is typed Jev on the Bluesky firehose (Durable Object). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Soft judgment is never the sole veto. Cousin, not this sidecar.
 
@@ -65,7 +65,7 @@ a merge, and not a reward-hack detector.
 
 [jev-packs](https://github.com/dtduc-git/jev-packs) is an evidence-gated question-pack registry: verified only with recorded ECE/accuracy on a pinned Jev version; every Choice/Score must offer `unknown`. No numbers, no endorsement. Cousin, not this sidecar.
 
-[ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) is a draft PR-triage spec (no README, no implementation). Timeout → human-review, never silent auto-approve. Watch: do not hard-gate merge on a Jev auto-approve.
+[ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) is a draft PR-triage spec (no README, no implementation). Jev via Vercel AI Gateway. Timeout → human-review, never silent auto-approve. No README claiming sole-authority. Watch: do not hard-gate merge on a Jev auto-approve.
 
 [latch](https://github.com/CaseReed/latch) is a CI merge-gate cousin: code clusters, Jev labels, code owns `Gate: PASS` / `Gate: BLOCK`. `ignore_as_infra` needs an explicit network fingerprint; Jev cannot ignore on its own. Flaky-test gaming counter-pattern.
 
@@ -173,7 +173,7 @@ construct-auto-classifier (godspede/construct-auto-classifier)
 actiongate-jev (omkarghugarkar007/actiongate-jev)
   Jev supplies evidence. Code owns authority
   ALLOW | REVIEW | BLOCK; positive score never overrides a deterministic fail
-  early MVP; compose with construct / jev-lens
+  Schema-valid ≠ intent-matched; early MVP; compose with construct / jev-lens
 
 slo-router (zeeshan8281/slo-router)
   Jev on routing hot path; fail-open local features
@@ -207,8 +207,8 @@ jev-packs (dtduc-git/jev-packs)
   mandatory unknown abstention; no numbers, no endorsement
 
 ci-gatekeeper-bot-jev (NemanjaManic/ci-gatekeeper-bot-jev)
-  draft PR-triage spec; timeout → human-review, never silent auto-approve
-  watch; do not hard-gate merge on Jev auto-approve
+  Jev via Vercel AI Gateway; draft spec; timeout → human-review
+  no README claiming sole-authority; do not hard-gate merge on Jev auto-approve
 
 jev-carryforward (Dharundp6/jev-carryforward)
   verbatim ledger; nothing summarised, nothing deleted

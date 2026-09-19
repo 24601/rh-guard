@@ -106,7 +106,7 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [construct-auto-classifier](https://github.com/godspede/construct-auto-classifier) is an effect-based OpenCode / Antigravity (`agy`) shell PreToolUse gate: structural fast-deny/fast-allow first, then Jev Choice plus nine independent risk Nouls (`data_loss`, `secrets`, `remote_code`, …). Allow only if the choice is `allow` at `jev.minConfidence` (0.6) and every risk is below `jev.riskThreshold` (0.7). Missing, low-confidence, high-risk, or a failed call all deny. Certified **0 dangerous** commands allowed for Jev (main 113 + blind 82, five passes, 975 decisions); chat LLMs all leaked. Operator owns minConfidence/riskThreshold (same dial as omp-greenlight). Privilege Is Not a Verdict (`sudo` is blast radius, not a deny). Pair with [dinostomp](https://github.com/collapseindex/dinostomp) before hard-gating on those scores. Do not merge into `examples/`. Cousin, not this sidecar. Hunch: keyword privilege filters are reward-hackable (`sudo` ≠ dangerous); effect semantics resist surface gaming.
 
-[actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) is runtime authorization for tool calls before side effects: deterministic policy + RBAC + schemas + amount/limit checks own `ALLOW` / `REVIEW` / `BLOCK`. TypeSafe Jev (OpenRouter) supplies semantic evidence (intent match, scope expand, sensitive exposure). **Jev supplies evidence. Code owns authority.** A positive model score never overrides a deterministic security failure. Early public MVP with an explicit [threat model](https://github.com/omkarghugarkar007/actiongate-jev/blob/main/docs/threat-model.md): ActionGate decides; the app owns execution and credentials. Compose with construct-auto-classifier (effect-based shell) and jev-lens (attention≠authority, never blocks). Do not treat Jev ALLOW as a safety proof. Cousin, not this sidecar.
+[actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) is runtime authorization for tool calls before side effects: deterministic policy + RBAC + schemas + amount/limit checks own `ALLOW` / `REVIEW` / `BLOCK`. TypeSafe Jev (OpenRouter) supplies semantic evidence (intent match, scope expand, sensitive exposure). **Jev supplies evidence. Code owns authority.** A positive model score never overrides a deterministic security failure. **Schema-valid ≠ intent-matched.** Early public MVP with an explicit [threat model](https://github.com/omkarghugarkar007/actiongate-jev/blob/main/docs/threat-model.md): ActionGate decides; the app owns execution and credentials. Compose with construct-auto-classifier (effect-based shell) and jev-lens (attention≠authority, never blocks). Do not treat Jev ALLOW as a safety proof. Cousin, not this sidecar.
 
 [firehose-judge](https://github.com/ragelink/firehose-judge) puts typed Jev judgment on the Bluesky firehose (Cloudflare Durable Objects). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Jev is a sensor, not a verdict.
 
@@ -128,7 +128,7 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [jev-packs](https://github.com/dtduc-git/jev-packs) is an evidence-gated registry of Jev question packs: a pack is `verified` only when accuracy / ECE / cost / latency are recorded on a pinned Jev version. Every Choice and Score must offer `unknown` (mandatory abstention). Anti-soundness-theater for gate criteria: no numbers, no endorsement.
 
-[ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) is a draft GitHub Action spec (no README, no implementation at capture): Jev triage routes PRs to auto-approve / human-review / block. Timeout fails to human-review, never silent auto-approve. Watch, not an endorsement — do not hard-gate merge on a Jev auto-approve without a deterministic path floor.
+[ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) is a draft GitHub Action spec (no README, no implementation at capture): Jev via Vercel AI Gateway triages PRs to auto-approve / human-review / block. Timeout fails to human-review, never silent auto-approve. No README claiming sole-authority. Watch, not an endorsement — do not hard-gate merge on a Jev auto-approve without a deterministic path floor.
 
 [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval) is a pre-registered Jev-vs-baselines eval with three same-day errata rounds after external review found overstated results (both experiments AMBIGUOUS; headline cascade sign flips at a tighter margin). Harbor/jevals lesson: independent review; do not promote first-publish numbers to labels.
 
@@ -290,7 +290,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - OMP/pi acceptance gating + subagent routing (fail-open): [omp-jev-extensions](https://github.com/luw2007/omp-jev-extensions)
 - Measured OMP approval-gate (graded allow; default 0/94 unsafe; operator owns the risk dial): [omp-greenlight](https://github.com/SemetricLabs/omp-greenlight)
 - Effect-based OpenCode/agy shell gate (Privilege Is Not a Verdict; 0 dangerous allowed for Jev): [construct-auto-classifier](https://github.com/godspede/construct-auto-classifier)
-- Runtime tool authorization (Jev supplies evidence. Code owns authority): [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev)
+- Runtime tool authorization (Jev supplies evidence. Code owns authority; Schema-valid ≠ intent-matched): [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev)
 - Pre-execution tool-call gate (`allow` / `block` / `review`; fail-safe): [toolgate](https://github.com/fdemir/toolgate)
 - Attention-priority PR overlay (P0 expand; never "blocked as unsafe"): [jev-reviewer](https://github.com/egma-ai/jev-reviewer)
 - Static shell analysis with Jev (never executes): [safe-sh](https://github.com/EpicEric/safe-sh)
@@ -310,7 +310,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - toxic-chat safety eval (Jev 90.9% precision / 1 FP; do not treat uncalibrated PCD as a safety gate): [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark)
 - Eval-instrument audit (check the instrument first): [dinostomp](https://github.com/collapseindex/dinostomp)
 - Evidence-gated question packs (mandatory `unknown`; no numbers, no endorsement): [jev-packs](https://github.com/dtduc-git/jev-packs)
-- Draft CI PR-triage spec (timeout → human-review; watch): [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev)
+- Draft CI PR-triage spec (Jev via Vercel AI Gateway; timeout → human-review; watch): [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev)
 - Pre-registered eval + same-day errata (claim vs evidence): [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval)
 - Verbatim fact ledger scored for relevance: [jev-carryforward](https://github.com/Dharundp6/jev-carryforward)
 - Measured negative result (no quality-equivalent Jev PDF payoff): [databricks-jev-pdf-lab](https://github.com/laurentfabre/databricks-jev-pdf-lab)

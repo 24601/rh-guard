@@ -212,11 +212,13 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Jev supplies evidence/);
     expect(readme).toMatch(/Code owns authority/);
     expect(readme).toMatch(/never overrides/);
+    expect(readme).toMatch(/Schema-valid ≠ intent-matched/);
     expect(readme).toMatch(/edwardyen724-g\/jev-compactor/);
     expect(readme).toMatch(/regex floor/);
     expect(readme).toMatch(/dtduc-git\/jev-packs/);
     expect(readme).toMatch(/evidence-gated/);
     expect(readme).toMatch(/NemanjaManic\/ci-gatekeeper-bot-jev/);
+    expect(readme).toMatch(/Vercel AI Gateway/);
     expect(readme).toMatch(/zeeshan8281\/slo-router/);
     expect(readme).toMatch(/77\.93/);
     expect(readme).toMatch(/490\.38/);
@@ -529,11 +531,13 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Jev supplies evidence/);
     expect(skill).toMatch(/Code owns authority/);
     expect(skill).toMatch(/never overrides/);
+    expect(skill).toMatch(/Schema-valid ≠ intent-matched/);
     expect(skill).toMatch(/edwardyen724-g\/jev-compactor/);
     expect(skill).toMatch(/regex floor/);
     expect(skill).toMatch(/dtduc-git\/jev-packs/);
     expect(skill).toMatch(/evidence-gated/);
     expect(skill).toMatch(/NemanjaManic\/ci-gatekeeper-bot-jev/);
+    expect(skill).toMatch(/Vercel AI Gateway/);
     expect(skill).toMatch(/zeeshan8281\/slo-router/);
     expect(skill).toMatch(/77\.93/);
     expect(skill).toMatch(/490\.38/);
@@ -691,6 +695,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Jev supplies evidence/);
     expect(evalDoc).toMatch(/Code owns authority/);
     expect(evalDoc).toMatch(/never overrides/);
+    expect(evalDoc).toMatch(/Schema-valid ≠ intent-matched/);
     expect(evalDoc).toMatch(/Adilmp\/jevcal/);
     expect(evalDoc).toMatch(/Ranking ≠ calibration/);
     expect(evalDoc).toMatch(/edwardyen724-g\/jev-compactor/);
@@ -699,6 +704,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/dtduc-git\/jev-packs/);
     expect(evalDoc).toMatch(/evidence-gated/);
     expect(evalDoc).toMatch(/NemanjaManic\/ci-gatekeeper-bot-jev/);
+    expect(evalDoc).toMatch(/Vercel AI Gateway/);
     expect(evalDoc).toMatch(/zeeshan8281\/slo-router/);
     expect(evalDoc).toMatch(/77\.93/);
     expect(evalDoc).toMatch(/490\.38/);
@@ -839,6 +845,7 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Jev supplies evidence/);
     expect(hosts).toMatch(/Code owns authority/);
     expect(hosts).toMatch(/never overrides/);
+    expect(hosts).toMatch(/Schema-valid ≠ intent-matched/);
     expect(hosts).toMatch(/zeeshan8281\/slo-router/);
     expect(hosts).toMatch(/77\.93/);
     expect(hosts).toMatch(/exactness/);
@@ -902,11 +909,13 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Jev supplies evidence/);
     expect(gates).toMatch(/Code owns authority/);
     expect(gates).toMatch(/never overrides/);
+    expect(gates).toMatch(/Schema-valid ≠ intent-matched/);
     expect(gates).toMatch(/edwardyen724-g\/jev-compactor/);
     expect(gates).toMatch(/regex floor/);
     expect(gates).toMatch(/dtduc-git\/jev-packs/);
     expect(gates).toMatch(/evidence-gated/);
     expect(gates).toMatch(/NemanjaManic\/ci-gatekeeper-bot-jev/);
+    expect(gates).toMatch(/Vercel AI Gateway/);
     expect(gates).toMatch(/zeeshan8281\/slo-router/);
     expect(gates).toMatch(/77\.93/);
     expect(gates).toMatch(/490\.38/);
