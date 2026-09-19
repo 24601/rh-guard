@@ -324,6 +324,11 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Confirm is a gate/);
     expect(readme).toMatch(/Confidence is a gate, not proof/);
     expect(readme).toMatch(/fail-opens/);
+    expect(readme).toMatch(/hyperspaceai\/jevcache/);
+    expect(readme).toMatch(/cache hit ≠ correctness/);
+    expect(readme).toMatch(/fingerprint bundles/);
+    expect(readme).toMatch(/sutro-sh\/jev-align/);
+    expect(readme).toMatch(/never accepts a proposal automatically/);
     expect(readme).toMatch(/--error-on/);
     expect(readme).toMatch(/githubnext\/localjev/);
     expect(readme).toMatch(/consequential decisions/);
@@ -502,6 +507,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/hermes-switchyard/);
     expect(pkg).not.toMatch(/typesafe_agent_gates/);
     expect(pkg).not.toMatch(/jev-pastepilot/);
+    expect(pkg).not.toMatch(/jevcache/);
     expect(pkg).not.toMatch(/construct-auto-classifier/);
     expect(pkg).not.toMatch(/actiongate-jev/);
     expect(pkg).not.toMatch(/AgentGhost/);
@@ -540,6 +546,8 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/bgrablin\/hermes-switchyard/);
     expect(pkg).not.toMatch(/ThiagaoBR\/typesafe_agent_gates/);
     expect(pkg).not.toMatch(/buberlo\/jev-pastepilot/);
+    expect(pkg).not.toMatch(/hyperspaceai\/jevcache/);
+    expect(pkg).not.toMatch(/sutro-sh\/jev-align/);
     expect(pkg).not.toMatch(/githubnext\/localjev/);
     expect(pkg).not.toMatch(/NandhaKishorM\/laya/);
     expect(pkg).not.toMatch(/jev-sift/);
@@ -621,6 +629,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/hermes-switchyard/);
     expect(lock).not.toMatch(/typesafe_agent_gates/);
     expect(lock).not.toMatch(/jev-pastepilot/);
+    expect(lock).not.toMatch(/jevcache/);
     expect(lock).not.toMatch(/construct-auto-classifier/);
     expect(lock).not.toMatch(/actiongate-jev/);
     expect(lock).not.toMatch(/AgentGhost/);
@@ -659,6 +668,8 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/bgrablin\/hermes-switchyard/);
     expect(lock).not.toMatch(/ThiagaoBR\/typesafe_agent_gates/);
     expect(lock).not.toMatch(/buberlo\/jev-pastepilot/);
+    expect(lock).not.toMatch(/hyperspaceai\/jevcache/);
+    expect(lock).not.toMatch(/sutro-sh\/jev-align/);
     expect(lock).not.toMatch(/githubnext\/localjev/);
     expect(lock).not.toMatch(/NandhaKishorM\/laya/);
     expect(lock).not.toMatch(/jev-sift/);
@@ -990,6 +1001,11 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Confirm is a gate/);
     expect(skill).toMatch(/Confidence is a gate, not proof/);
     expect(skill).toMatch(/fail-opens/);
+    expect(skill).toMatch(/hyperspaceai\/jevcache/);
+    expect(skill).toMatch(/cache hit ≠ correctness/);
+    expect(skill).toMatch(/fingerprint bundles/);
+    expect(skill).toMatch(/sutro-sh\/jev-align/);
+    expect(skill).toMatch(/never accepts a proposal automatically/);
     expect(skill).toMatch(/--error-on/);
     expect(skill).toMatch(/githubnext\/localjev/);
     expect(skill).toMatch(/consequential decisions/);
@@ -1315,6 +1331,11 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Confirm is a gate/);
     expect(evalDoc).toMatch(/Confidence is a gate, not proof/);
     expect(evalDoc).toMatch(/fail-opens/);
+    expect(evalDoc).toMatch(/hyperspaceai\/jevcache/);
+    expect(evalDoc).toMatch(/cache hit ≠ correctness/);
+    expect(evalDoc).toMatch(/fingerprint bundles/);
+    expect(evalDoc).toMatch(/sutro-sh\/jev-align/);
+    expect(evalDoc).toMatch(/never accepts a proposal automatically/);
     expect(evalDoc).toMatch(/githubnext\/localjev/);
     expect(evalDoc).toMatch(/consequential decisions/);
     expect(evalDoc).toMatch(/NandhaKishorM\/laya/);
@@ -1488,6 +1509,8 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/bgrablin\/hermes-switchyard/);
     expect(install).toMatch(/ThiagaoBR\/typesafe_agent_gates/);
     expect(install).toMatch(/buberlo\/jev-pastepilot/);
+    expect(install).toMatch(/hyperspaceai\/jevcache/);
+    expect(install).toMatch(/sutro-sh\/jev-align/);
     expect(install).toMatch(/githubnext\/localjev/);
     expect(install).toMatch(/NandhaKishorM\/laya/);
     expect(install).toMatch(/ThyFriendlyFox\/jev-curate/);
@@ -1574,6 +1597,11 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/Confirm is a gate/);
     expect(shape).toMatch(/Confidence is a gate, not proof/);
     expect(shape).toMatch(/fail-opens/);
+    expect(shape).toMatch(/hyperspaceai\/jevcache/);
+    expect(shape).toMatch(/cache hit ≠ correctness/);
+    expect(shape).toMatch(/fingerprint bundles/);
+    expect(shape).toMatch(/sutro-sh\/jev-align/);
+    expect(shape).toMatch(/never accepts a proposal automatically/);
   });
 
   it("keeps jevgate as a sibling link on host docs, not a merged product", () => {
@@ -1705,6 +1733,11 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Confirm is a gate/);
     expect(hosts).toMatch(/Confidence is a gate, not proof/);
     expect(hosts).toMatch(/fail-opens/);
+    expect(hosts).toMatch(/hyperspaceai\/jevcache/);
+    expect(hosts).toMatch(/cache hit ≠ correctness/);
+    expect(hosts).toMatch(/fingerprint bundles/);
+    expect(hosts).toMatch(/sutro-sh\/jev-align/);
+    expect(hosts).toMatch(/never accepts a proposal automatically/);
     expect(hosts).toMatch(/--error-on/);
     expect(hosts).toMatch(/githubnext\/localjev/);
     expect(hosts).toMatch(/consequential decisions/);
@@ -1897,6 +1930,11 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Confirm is a gate/);
     expect(gates).toMatch(/Confidence is a gate, not proof/);
     expect(gates).toMatch(/fail-opens/);
+    expect(gates).toMatch(/hyperspaceai\/jevcache/);
+    expect(gates).toMatch(/cache hit ≠ correctness/);
+    expect(gates).toMatch(/fingerprint bundles/);
+    expect(gates).toMatch(/sutro-sh\/jev-align/);
+    expect(gates).toMatch(/never accepts a proposal automatically/);
     expect(gates).toMatch(/--error-on/);
     expect(gates).toMatch(/githubnext\/localjev/);
     expect(gates).toMatch(/consequential decisions/);

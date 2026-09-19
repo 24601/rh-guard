@@ -184,6 +184,10 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [jev-pastepilot](https://github.com/buberlo/jev-pastepilot) (`PastePilot`) is a paste-to-action launcher: allowlisted tools, preview, then Confirm. Quoted README: **Confirm is a gate, not a formality.** **Pasted text is untrusted data. It cannot grant new permissions.** Optional live Jev: a Choice for the allowlisted action, a Noul for injection/suspicion, a Noul for emptiness/clarity, and a Score for fit; **code combines those answers**. Quoted: **Confidence is a gate, not proof** — high (default ≥ 0.75) may keep a select; low (default < 0.45) abstains to the manual tools. Missing key / timeout / 429 → **fail-opens**. Quoted: **Do not treat this README, a vendor claim, or a confidence score as a measured accuracy result.** Not an autonomous agent (no browsing, no shell, no silent writes). Fold paste/injection/confirm-gate only — not Share Sheet. Treating 0.75 as a safety proof is confidence theater. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[jevcache](https://github.com/hyperspaceai/jevcache) is a local-first decision ledger for Jev-class models: fingerprint `(model, schema, state)` after redact/canonicalize, then `recall` (ledger-only) or `decide` (recall then backend). `publish`/`add` share fingerprints+answers, never raw state. **cache hit ≠ correctness.** Shared fingerprint bundles are trust theater if treated as calibrated truth / auto-act. Distinct from Hyperspace KV attention cache. Not a PreToolUse gate. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[sutro-sh/jev-align](https://github.com/sutro-sh/jev-align) (`jeva`) is a GEPA loop that aligns TypeSafe Jev with human labels (uncertain rows + audit sample; human accept/reject/rewind). Distinct from [caiovicentino/jev-align](https://github.com/caiovicentino/jev-align) (policy verify before act). Quoted README: **A higher training score never accepts a proposal automatically.** Positive envelope. Anti-pattern cousin if someone hard-gates on the GEPA training score. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head (typed Choice / Score / Noul). Confidence-gating recipe at **0.85** (RLCD → "statistically meaningful") is still soft. Auto-act at that uncalibrated threshold is confidence theater, especially given Khmer OOD **0.000 at 95.2% confidence** — the model's own confidence gives no warning. Future backend, not a drop-in ROC replacement for this hook. Pair with jev-ood-calibration / capability-atlas.
@@ -399,7 +403,14 @@ deny so the bridge fails closed.
    **never executes**) are not yolo-shell's exec floor. Confirm-as-gate paste
    routing ([jev-pastepilot](https://github.com/buberlo/jev-pastepilot):
    **Confirm is a gate, not a formality**; **Confidence is a gate, not
-   proof**; **fail-opens**) is not a safety envelope. There is **no public Jev reward-hack ROC**.
+   proof**; **fail-opens**) is not a safety envelope. A cache hit is not
+   a correctness proof
+   ([jevcache](https://github.com/hyperspaceai/jevcache): **cache hit ≠
+   correctness**; shared fingerprint bundles as calibrated truth /
+   auto-act is trust theater). A GEPA training score is not auto-accept
+   ([sutro-sh/jev-align](https://github.com/sutro-sh/jev-align): quoted
+   **A higher training score never accepts a proposal automatically**;
+   hard-gating that score is soundness theater). There is **no public Jev reward-hack ROC**.
 
 ## Structural vs Jev (choose in this order)
 
@@ -498,6 +509,8 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Hermes skill selection under policy (never loads the skill; ack is not DLP): [hermes-switchyard](https://github.com/bgrablin/hermes-switchyard)
 - LangChain/Deep Agents middleware (four Nouls at 0.5 HELD; pattern first never looser; weakened-spec review; 27/27 not a ROC): [typesafe_agent_gates](https://github.com/ThiagaoBR/typesafe_agent_gates)
 - Paste confirm-gate (injection Noul; Confidence is a gate, not proof; fail-opens): [jev-pastepilot](https://github.com/buberlo/jev-pastepilot)
+- Decision ledger (cache hit ≠ correctness; shared fingerprint bundles as calibrated truth / auto-act is trust theater): [jevcache](https://github.com/hyperspaceai/jevcache)
+- GEPA human-align loop (never auto-accepts on training score; hard-gating that score is theater): [sutro-sh/jev-align](https://github.com/sutro-sh/jev-align)
 - Wire-compatible prompted JSON probs (not logits; evaluate calibration before consequential decisions): [localjev](https://github.com/githubnext/localjev)
 - Open System One head (0.85 still soft; Khmer 0.000 at 95.2% conf): [laya](https://github.com/NandhaKishorM/laya)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
