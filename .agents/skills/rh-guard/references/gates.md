@@ -45,11 +45,15 @@ a merge, and not a reward-hack detector.
 
 [omp-jev-extensions](https://github.com/luw2007/omp-jev-extensions) is an Oh My Pi / pi-coding-agent adapter: `jev_acceptance_gate` plus `jev_route`. Fail-open, never fail-catch. Gate-host adapter; do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
 
+[omp-greenlight](https://github.com/SemetricLabs/omp-greenlight) is a measured OMP approval-gate (default 0/94 unsafe). The operator owns the risk dial; the plugin never tunes its own threshold. Graded allow, not hard deny. Permission ≠ probability. Cousin, not this sidecar.
+
 [firehose-judge](https://github.com/ragelink/firehose-judge) is typed Jev on the Bluesky firehose (Durable Object). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Soft judgment is never the sole veto. Cousin, not this sidecar.
 
 [jav-email-cascade](https://github.com/skiingfalcon/jav-email-cascade) is decide → policy → LLM leftover. A Noul at 0.5 means "cannot tell" (never rounded). `injection_suspected` always force-review even with an LLM configured. Force-review is a real lane, not soundness theater. Cousin, not this sidecar.
 
 [waymode](https://github.com/mossburgh/waymode) lets the host keep permissions, validation, and handlers; Jev decides over typed actions on the live UI with retained evidence. Jev confidence grants no permission (sensor ≠ verdict). Cousin, not this sidecar.
+
+[skill-broker](https://github.com/adamjralph/skill-broker) keeps authority in deterministic code; Jev judges relevance only and never grants access. Anti-pattern: letting System One confidence expand the allowed skill set. Cousin, not this sidecar.
 
 [latch](https://github.com/CaseReed/latch) is a CI merge-gate cousin: code clusters, Jev labels, code owns `Gate: PASS` / `Gate: BLOCK`. `ignore_as_infra` needs an explicit network fingerprint; Jev cannot ignore on its own. Flaky-test gaming counter-pattern.
 
@@ -138,6 +142,11 @@ omp-jev-extensions (luw2007/omp-jev-extensions)
   jev_acceptance_gate + jev_route on Oh My Pi
   Fail-open, never fail-catch; do not merge into examples/pi-extension.ts
 
+omp-greenlight (SemetricLabs/omp-greenlight)
+  graded allow, not hard deny; default 0/94 unsafe
+  operator owns the risk dial; plugin never tunes its own threshold
+  permission ≠ probability
+
 firehose-judge (ragelink/firehose-judge)
   Bluesky firehose; Durable Object; uncertain → "needs a human"
   nsfw dropped server-side
@@ -150,6 +159,10 @@ jav-email-cascade (skiingfalcon/jav-email-cascade)
 waymode (mossburgh/waymode)
   host keeps permissions/validation; typed actions + retained evidence
   Jev confidence grants no permission (sensor ≠ verdict)
+
+skill-broker (adamjralph/skill-broker)
+  Jev judges relevance only; never grants access
+  anti-pattern: System One confidence expanding the allowed skill set
 
 jev-carryforward (Dharundp6/jev-carryforward)
   verbatim ledger; nothing summarised, nothing deleted

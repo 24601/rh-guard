@@ -98,17 +98,23 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [omp-jev-extensions](https://github.com/luw2007/omp-jev-extensions) is an Oh My Pi / pi-coding-agent adapter: `jev_acceptance_gate` before declaring done, plus `jev_route` subagent topology. Fail-open, never fail-catch (unavailable Jev allows the action at confidence 0). Gate-host adapter cousin of omp-auto-mode. Do not merge into `examples/pi-extension.ts`.
 
+[omp-greenlight](https://github.com/SemetricLabs/omp-greenlight) is a measured OMP approval-gate: presets trade prompt-removal vs unsafe auto-approve (default 0/94 unsafe). The operator owns the risk dial; the plugin never tunes its own threshold. Graded allow, not hard deny — composes with omp-jev-extensions fail-open. Permission ≠ probability. Cousin, not this sidecar.
+
 [firehose-judge](https://github.com/ragelink/firehose-judge) puts typed Jev judgment on the Bluesky firehose (Cloudflare Durable Objects). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Jev is a sensor, not a verdict.
 
 [jav-email-cascade](https://github.com/skiingfalcon/jav-email-cascade) is decide → policy → LLM leftover: Jev answers typed questions; Python policy routes `auto` / `review` / `llm`. A Noul at 0.5 means "cannot tell" (never rounded); a Score with confidence 0.0 is never acted on; `injection_suspected` always force-review even with an LLM configured. Force-review is a real lane, not soundness theater.
 
 [waymode](https://github.com/mossburgh/waymode) lets an app keep host permissions, validation, and handlers; Jev decides over typed actions on the live UI with retained evidence. Jev confidence grants no permission (sensor ≠ verdict). Cousin, not this sidecar.
 
+[skill-broker](https://github.com/adamjralph/skill-broker) is a Hermes skill-intervention outline: deterministic authority; Jev judges relevance only and never grants access. Anti-pattern: letting System One confidence expand the allowed skill set. Same permission boundary as waymode. Cousin, not this sidecar.
+
 [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b) is a LoRA distill of Jev memory-relevance onto Qwen2.5-0.5B. Distill agreement is not independent gold; a student is not the hard envelope. Card: `docs/eval-integrity.md`.
 
 [jev-triage](https://github.com/ThyFriendlyFox/jev-triage) routes unlabeled data by calibrated confidence and logs soft labels. If used as an eval filter: do not distill Jev as teacher of record — real outcome labels remain the training targets.
 
 [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark) is a 50-sample LMSYS toxic-chat safety eval: Jev precision 90.9% (1 FP) vs local PCD flooding FPs (16). Calibration is the eval-integrity angle; do not treat uncalibrated open PCD as a safety gate. Bounded fixture, not a rh-guard ROC.
+
+[dinostomp](https://github.com/collapseindex/dinostomp) audits eval instruments (data / scorer / runs / claims) before you trust the score. Pointer when people hard-gate on Jev scores inside reward/eval loops: check the instrument first. Harbor/jevals-adjacent; not a rh-guard peer.
 
 [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval) is a pre-registered Jev-vs-baselines eval with three same-day errata rounds after external review found overstated results (both experiments AMBIGUOUS; headline cascade sign flips at a tighter margin). Harbor/jevals lesson: independent review; do not promote first-publish numbers to labels.
 
@@ -267,6 +273,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Plain-English PR condition checks: [if-ai](https://github.com/Victor-Casado/if-ai)
 - oh-my-pi `safe`/`ask`/`unsafe` classifier: [omp-auto-mode](https://github.com/alexsatch/omp-auto-mode)
 - OMP/pi acceptance gating + subagent routing (fail-open): [omp-jev-extensions](https://github.com/luw2007/omp-jev-extensions)
+- Measured OMP approval-gate (graded allow; default 0/94 unsafe; operator owns the risk dial): [omp-greenlight](https://github.com/SemetricLabs/omp-greenlight)
 - Pre-execution tool-call gate (`allow` / `block` / `review`; fail-safe): [toolgate](https://github.com/fdemir/toolgate)
 - Attention-priority PR overlay (P0 expand; never "blocked as unsafe"): [jev-reviewer](https://github.com/egma-ai/jev-reviewer)
 - Static shell analysis with Jev (never executes): [safe-sh](https://github.com/EpicEric/safe-sh)
@@ -278,9 +285,11 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Firehose typed judgment (uncertain → "needs a human"): [firehose-judge](https://github.com/ragelink/firehose-judge)
 - decide → policy → LLM leftover (`injection_suspected` force-review): [jav-email-cascade](https://github.com/skiingfalcon/jav-email-cascade)
 - Host permissions + typed actions + retained evidence; Jev confidence grants no permission: [waymode](https://github.com/mossburgh/waymode)
+- Skill-routing as soft label, never grants access: [skill-broker](https://github.com/adamjralph/skill-broker)
 - LoRA distill of Jev memory-relevance (student is not the hard envelope): [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b)
 - Soft-label eval filter (do not distill Jev as teacher of record): [jev-triage](https://github.com/ThyFriendlyFox/jev-triage)
 - toxic-chat safety eval (Jev 90.9% precision / 1 FP; do not treat uncalibrated PCD as a safety gate): [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark)
+- Eval-instrument audit (check the instrument first): [dinostomp](https://github.com/collapseindex/dinostomp)
 - Pre-registered eval + same-day errata (claim vs evidence): [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval)
 - Verbatim fact ledger scored for relevance: [jev-carryforward](https://github.com/Dharundp6/jev-carryforward)
 - Measured negative result (no quality-equivalent Jev PDF payoff): [databricks-jev-pdf-lab](https://github.com/laurentfabre/databricks-jev-pdf-lab)
