@@ -59,11 +59,15 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 
 [jev-arena](https://github.com/meetr1912/jev-arena) measures native Jev probabilities (Brier/ECE). A live run is overconfident in the low bins. Do not treat native probabilities as truth without Harbor-style measurement. Not a reward-hack ROC.
 
+[slo-router](https://github.com/zeeshan8281/slo-router) puts Jev 1.13 semantic features on an OpenAI-compatible routing hot path, with fail-open to deterministic local features. A live OpenRouter run preserved the same routes and accuracy as `slo_no_jev` but raised p95 from 77.93 ms to 490.38 ms (~6.3×). An exactness signal raises the quality floor; it never overrides context or capability checks. Infeasible routing returns 503 instead of a silent contract violation. Not a rh-guard peer. Hunch: hard-gating latency-sensitive control on a decision model without a measured fallback is itself a reliability/eval failure mode — agents will learn to skip or stub the gate.
+
 [cmdc-auto-mode](https://github.com/mja00/cmdc-auto-mode) is a Command Code auto-permission gate: Jev screens every tool call at `beforeToolCall` (after the host permission check); policy `decide` in code (`allow` / `deny` / `escalate`). `within_scope ≤ 0.25` is out of scope (deny). Escalation always goes to a human, never back to the model. Default `auto-fail-closed` true. Tiny read-only prefilter. Do not merge into `examples/`. Cousin of omp-auto-mode, not this sidecar.
 
 [omp-jev-extensions](https://github.com/luw2007/omp-jev-extensions) is an Oh My Pi / pi-coding-agent adapter: `jev_acceptance_gate` before declaring done, plus `jev_route` subagent topology. Fail-open, never fail-catch (unavailable Jev allows the action at confidence 0). Gate-host adapter cousin of omp-auto-mode. Do not merge into `examples/pi-extension.ts`.
 
 [omp-greenlight](https://github.com/SemetricLabs/omp-greenlight) is a measured OMP approval-gate: presets trade prompt-removal vs unsafe auto-approve (default 0/94 unsafe). The operator owns the risk dial; the plugin never tunes its own threshold. Graded allow, not hard deny — composes with omp-jev-extensions fail-open. Permission ≠ probability. Cousin, not this sidecar.
+
+[construct-auto-classifier](https://github.com/godspede/construct-auto-classifier) is an effect-based OpenCode / Antigravity (`agy`) shell PreToolUse gate: structural fast-deny/fast-allow first, then Jev Choice plus nine independent risk Nouls (`data_loss`, `secrets`, `remote_code`, …). Allow only if the choice is `allow` at `jev.minConfidence` (0.6) and every risk is below `jev.riskThreshold` (0.7). Missing, low-confidence, high-risk, or a failed call all deny. Certified **0 dangerous** commands allowed for Jev (main 113 + blind 82, five passes, 975 decisions); chat LLMs all leaked. Operator owns minConfidence/riskThreshold (same dial as omp-greenlight). Privilege Is Not a Verdict (`sudo` is blast radius, not a deny). Pair with [dinostomp](https://github.com/collapseindex/dinostomp) before hard-gating on those scores. Do not merge into `examples/`. Cousin, not this sidecar. Hunch: keyword privilege filters are reward-hackable (`sudo` ≠ dangerous); effect semantics resist surface gaming.
 
 [firehose-judge](https://github.com/ragelink/firehose-judge) puts typed Jev judgment on the Bluesky firehose (Cloudflare Durable Objects). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Jev is a sensor, not a verdict.
 
@@ -72,6 +76,8 @@ This repository is public on GitHub: [24601/rh-guard](https://github.com/24601/r
 [waymode](https://github.com/mossburgh/waymode) lets an app keep host permissions, validation, and handlers; Jev decides over typed actions on the live UI with retained evidence. Jev confidence grants no permission (sensor ≠ verdict). Cousin, not this sidecar.
 
 [skill-broker](https://github.com/adamjralph/skill-broker) is a Hermes skill-intervention outline: deterministic authority; Jev judges relevance only and never grants access. Anti-pattern: letting System One confidence expand the allowed skill set. Same permission boundary as waymode. Cousin, not this sidecar.
+
+[jev-lens](https://github.com/rashedInt32/jev-lens) is an advisory Claude Stop hook that answers "do I need to look?": it never blocks, never edits, and never says green unless it is sure (`JEV_LENS_GREEN` 0.9). Shadow mode first. Attention/VOI, not authority — keep it separate from skill-broker / construct-auto-classifier when you need a gate. Cousin of jev-reviewer; not a merge. Hunch: collapsing attention and authority invites gaming the green light.
 
 [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b) is a LoRA distill of Jev memory-relevance onto Qwen2.5-0.5B. Distill agreement is not independent gold; a student is not the hard envelope. Card: [docs/eval-integrity.md](docs/eval-integrity.md).
 
