@@ -83,6 +83,14 @@ a merge, and not a reward-hack detector.
 
 [claude-jev-warden](https://github.com/connectedGraph/claude-jev-warden) is a Claude PreToolUse Art Director: quality ≥ 80% or exit 2. **attention≠verdict** / **warden-as-hard-gate**. Escalate taste/quality; block only eval-asset / structural. Do not merge `warden.js` into `examples/`. Cousin, not this sidecar.
 
+[jev-kit](https://github.com/jonathanavis96/jev-kit) is a Claude PreToolUse **Airlock**: code pre-filter first; Jev only for the ambiguous half; fail-open. Deny needs confidence ≥ 0.8 and margin ≥ 0.4. Quoted README: **"This is not a security control."** Gaming: `[airlock-ok:]` override; loop protection never denies the same call twice in ten minutes. Labelled-eval 100% / A/B zero denies are not a rh-guard ROC. Belay is anti-done-without-reading. Treating fail-open hygiene Jev as a hard safety envelope is confidence theater / hard-gating soft judgment as "safety." Do not merge into `examples/`. Cousin, not this sidecar.
+
+[agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) is a dual-gate MCP proxy plus Claude hooks: screen tool calls **before they run** and results **before the agent reads**. Shadow / enforce / strict; never auto-approves. InjecAgent AUC **0.976** is not a safety proof. A shape-mismatched replacement is **discarded without complaint** (advertised screened ≠ served payload; silent FALLBACK cousin). Do not merge into `examples/`. Cousin, not this sidecar.
+
+[opencode-intent-gate](https://github.com/hoshinodis/opencode-intent-gate) is an OpenCode `context` hook: four Nouls; `isWorkThreshold` 0.5 / `dimensionThreshold` 0.75 inject a system directive to ask and not start tool calls this turn. **The gate is a system directive, not a hard block.** Hope the model asks (jev-carryforward 0/4). Treating that soft inject as a safety veto is confidence theater. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[opencode-context-pruner](https://github.com/hoshinodis/opencode-context-pruner) is an OpenCode port of [fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) via the `context` hook. Keep/truncate/drop applies to the **request view**; persisted history is never modified. Default `keepThreshold` **0.15** vs upstream **0.5**. Measured `removedMessages` **282** is not a quality claim. Dropping results can erase eval evidence. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC.
@@ -334,6 +342,39 @@ claude-jev-warden (connectedGraph/claude-jev-warden)
   attention≠verdict / warden-as-hard-gate
   escalate taste/quality (reinspect); block only eval-asset / structural
   do not merge warden.js into examples/
+
+jev-kit (jonathanavis96/jev-kit)
+  Claude PreToolUse Airlock; code pre-filter then Jev; fail-open
+  deny needs conf ≥ 0.8 and margin ≥ 0.4
+  "This is not a security control" — cost/hygiene, not a safety envelope
+  [airlock-ok:] override; retry loop never denies twice in 10 min
+  labelled-eval 100% / A/B zero denies — not a rh-guard ROC
+  Belay: anti-done-without-reading
+  hard-gating soft judgment as "safety" is confidence theater
+  do not merge into examples/
+
+agent-chaperone (agent-chaperone/agent-chaperone)
+  dual-gate: tool calls before run AND results before the agent reads
+  shadow / enforce / strict; never auto-approves
+  InjecAgent AUC 0.976 is not a safety proof
+  replacement shape-mismatch discarded without complaint (silent FALLBACK)
+  advertised screened ≠ served payload
+  do not merge into examples/
+
+opencode-intent-gate (hoshinodis/opencode-intent-gate)
+  OpenCode context hook; four Nouls; inject system directive
+  isWorkThreshold 0.5 / dimensionThreshold 0.75
+  the gate is a system directive, not a hard block
+  hope the model asks; confidence theater if treated as a safety veto
+  do not merge into examples/
+
+opencode-context-pruner (hoshinodis/opencode-context-pruner)
+  OpenCode port of tamaratran/fast-jev-compaction via context hook
+  request view only; persisted history never modified
+  keepThreshold 0.15 vs upstream 0.5
+  530 msgs, removedMessages 282 — not a quality claim
+  evidence-erasure eval-integrity (constraints / hidden eval / injection traces)
+  do not merge into examples/
 
 localjev (githubnext/localjev)
   wire-compatible POST /v1/systemone; prompted JSON probs, not logits
