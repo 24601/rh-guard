@@ -80,7 +80,7 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [latch](https://github.com/CaseReed/latch) is a CI merge-gate: code clusters failures, Jev labels each cause, code owns `Gate: PASS` (infra) vs `Gate: BLOCK` (real). `ignore_as_infra` requires an explicit network fingerprint; Jev cannot ignore on its own. Eval-integrity cousin — treating real failures as noise is the gaming angle it counters. [clear-head](https://github.com/VladyslavHontar/clear-head) is a Claude Stop hook that checks claims against session evidence (`CONTRADICTED` / `UNSUPPORTED`); anti-done-without-reading.
 
-[jev-marshal](https://github.com/LightningK0ala/jev-marshal) is named PR policy rules enforced by Jev (empty public tree at capture). [if-ai](https://github.com/Victor-Casado/if-ai) is plain-English PR condition checks (Jev Choice + min-confidence; Action fails on false/low-confidence/error; required-check is optional). [wakegate](https://github.com/shitianfang/wakegate) is a fail-open wake gate (skip only when Jev answers and p < 0.2; error/no-key/unsure wake). Contrast pi-jev-approver fail-closed. [omp-auto-mode](https://github.com/alexsatch/omp-auto-mode) is an oh-my-pi `safe`/`ask`/`unsafe` classifier; classifier failure defers to omp approval (fail-open). Cousins, not runtime deps.
+[jev-marshal](https://github.com/LightningK0ala/jev-marshal) is named PR policy rules enforced by Jev (empty public tree at capture). [if-ai](https://github.com/Victor-Casado/if-ai) is plain-English PR condition checks (Jev Choice + min-confidence; Action fails on false/low-confidence/error; required-check is optional). Quoted README: **A passing if-ai check is advisory.** TypeSafe **67.8%** is four workflows, not PR review. [wakegate](https://github.com/shitianfang/wakegate) is a fail-open wake gate (skip only when Jev answers and p < 0.2; error/no-key/unsure wake). Contrast pi-jev-approver fail-closed. [omp-auto-mode](https://github.com/alexsatch/omp-auto-mode) is an oh-my-pi `safe`/`ask`/`unsafe` classifier; classifier failure defers to omp approval (fail-open). Cousins, not runtime deps.
 
 [toolgate](https://github.com/fdemir/toolgate) is a pre-execution tool-call gate (`allow` / `block` / `review`); guard error or timeout stops the call (fail-safe). Distinct from [ndolinschi/toolgate](https://github.com/ndolinschi/toolgate). AI SDK + LangGraph adapters and a `given → expected → actual` eval CLI (only `given` reaches Jev). Cousin, not this sidecar.
 
@@ -169,6 +169,16 @@ confidence; held-out discipline; compare only equivalent case sets.
 [jevbrain](https://github.com/Synxneuos/jevbrain) (`Jev Brain`) is a local <1ms decision daemon: confidence ≥ 0.80 → `AUTO_ACT`, else `REVIEW_QUEUE`. Attention firewall / coding-agent Warden (`GREEN` / `YELLOW` / `RED`). **Not TypeSafe Jev** — routing is n-gram / keyword-anchor overlap; the Warden is regex. Name collision with Jev. Uncalibrated 0.80 AUTO_ACT is confidence theater (same 0.8x recipe as laya 0.85). Silent-fallback risk if mis-calibrated: a high keyword-margin auto-acts without a human. Fold the attention-firewall / AUTO_ACT / silent-fallback angle only — not inbox / X / mobile-runner recipes. Whitepaper N=10k 95.2% token-cut is not a rh-guard ROC. Distinct from [claude-jev-warden](https://github.com/connectedGraph/claude-jev-warden). Do not merge into `examples/`. Cousin of jev-lens / slo-router / localjev, not this sidecar.
 
 [jev-crawlers](https://github.com/russfranky/jev-crawlers) puts judge then verify nodes on recursive bug-discovery crawlers (`crawl-judge` then `crawl-verify`). The verifier builds a falsifiable artifact and checks grounding. Anything that fails is an **unverified lead, never a bug**. v0 verification is grounding, not execution. Quoted README: **Jev probabilities are ranking signals, not calibrated bug confidence**; routing follows the risk score, never a raw boolean; the review queue is the primary sink. n=12 labelled fixture is a start, not proof. Cousin of [jev-align](https://github.com/caiovicentino/jev-align) (fabricated verification) / dinostomp / Harbor independent validator. Fold the verify-path / ranking-not-calibration / unverified-lead angle only. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[typed-gate](https://github.com/harshpuri84/typed-gate) is a pattern for using a System One model without throwing away the number it gives you. Code finds candidates; Jev returns a Choice and a Noul; **code decides** ACCEPT vs REVIEW (`typed_gate/gate.py`). Quoted README: a yes/no probability near 0.5 is the model **declining to answer**. It is not a weak yes. The 0.40–0.60 band is a refusal to commit. Synthetic 100 freight docs / 1,100 field decisions (19 Sep 2026): **Jev + gate** 0 wrong / 0 omitted (117 review) vs **argmax only** 0 wrong / 25 omitted. Quoted: **Correctness is a tie.** Distinct from [jev-gate](https://github.com/totally-tim/jev-gate) (PR-review Nouls). Anti-pattern: hard-argmax "safety theater" / treating 0.51 as a yes. Fold the probability≠argmax / band-as-refusal angle only. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[pi-jev-gate](https://github.com/fivethirty/pi-jev-gate) is Jev-gated auto mode for Pi: before `bash` / `write` / `edit` (and custom tools) execute, OpenRouter Decisions reviews the call. Local read-only allowlist (`read`) skips Jev. Block if `choice === "block"` **or** `p(block) ≥ 0.50`. Binary: it either runs or it doesn't. **Fail-open:** checker error or unreachable → the agent keeps running (`Jev gate error (failing open)`). `/checker` can disable the gate. Intent-aware: the current task is in `state`. Distinct from [jevgate](https://github.com/thevibeworks/jevgate), [jev-gate](https://github.com/totally-tim/jev-gate), [pi-jev-approver](https://github.com/phin-tech/pi-jev-approver) (fail-closed), [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard), and [pi-jev-control](https://github.com/goodruizhan/pi-jev-control). Contrast this sidecar (structural first; soft never the sole veto) and [jev-use](https://github.com/shitianfang/jev-use) (`jev_gate` fails open, only ever tightens). Treating `p(block) ≥ 0.50` as a hard safety envelope without the local allowlist is soundness theater. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[jev-oas-sentinel](https://github.com/ShuhanSun/jev-oas-sentinel) catches consumer-visible API changes hiding in **documentation-only** OpenAPI edits. Deterministic structural checks first; TypeSafe Jev evaluates bounded semantic questions on changed prose. Quoted README: **JEV never writes a review or changes a specification.** Advisory mode is the default. Enforce: a semantic break blocks only when both the `breaking` probability **and** promise-violation probability cross `--block-threshold` (default **0.90**). API errors fail closed in enforcement and request review in advisory. Quoted: do not enable enforcement until questions and thresholds have been evaluated on representative changes from your own APIs. CI/policy-integrity cousin of [if-ai](https://github.com/Victor-Casado/if-ai) / [latch](https://github.com/CaseReed/latch). Detection: treating a docs-only OpenAPI PR as harmless; hard-gating uncalibrated 0.90 as a merge veto. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[nanoprune](https://github.com/dmdjr1409/nanoprune) is a **2.8MB** local System One decision & RAG pruner (2-layer encoder distilled from **Laya** 421M). Not TypeSafe Jev. Cheap front gate before expensive System Two: prune / choice / score on CPU in ~1.3–2.4 ms. Quoted badges: **0.0% Hallucination Guaranteed**; table ECE 2.58%. That guarantee is soundness theater — a tiny distill is not a hallucination proof, and ECE on their bench is not a rh-guard ROC. Pair with [laya](https://github.com/NandhaKishorM/laya) (0.85 still soft; Khmer OOD 0.000 at 95.2% confidence) and [jev-ood-calibration](https://github.com/scienthoon/jev-ood-calibration). Distinct from [prune-review](https://github.com/shubhangi013/prune-review). Fold the cheap calibrated deny/allow-before-System-Two angle only — not the medical search app. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[hermes-switchyard](https://github.com/bgrablin/hermes-switchyard) is a Hermes plugin: Jev-powered advisory skill selection and policy-constrained mode switches. Quoted README: it **never loads the skill**, never silently changes the active model, and does not claim a recommendation is correct. Automatic hosted routing stays **fail-closed** unless the host supplies a typed per-turn egress envelope. Quoted: a persistent `public_or_sanitized_data_ack` **does not scan or redact data, grant permission to share it, or bypass other controls** — **not DLP** and not automatic authorization. Local token-overlap threshold **0.20** and Jev skill-choice / needs / winning-probability thresholds **0.80** are uncalibrated abstention policy (quoted routing.py: calibration for correctness is not independently established). Sibling of [skill-broker](https://github.com/adamjralph/skill-broker) (relevance never grants access). Distinct from [hermes-plugin-jev](https://github.com/robbyczgw-cla/hermes-plugin-jev). Fold the skill/policy / permission-integrity angle only — not CUA / computer-use. Anti-pattern: treating a skill recommendation or ack flag as a grant. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
 
@@ -358,7 +368,24 @@ deny so the bridge fails closed.
    are the held-out antidote. A judge Noul is not a verified bug
    ([jev-crawlers](https://github.com/russfranky/jev-crawlers):
    **unverified lead, never a bug**; **ranking signals**, not calibrated
-   confidence). There is **no public Jev reward-hack ROC**.
+   confidence). Argmax without reading the probability is soundness theater
+   ([typed-gate](https://github.com/harshpuri84/typed-gate): a yes/no near 0.5 is
+   **declining to answer**; the 0.40–0.60 band is a refusal, not a weak yes).
+   A fail-open pre-exec checker
+   ([pi-jev-gate](https://github.com/fivethirty/pi-jev-gate): block if
+   `choice === "block"` OR `p(block) ≥ 0.50`; **failing open**) is not this
+   sidecar. Documentation-only OpenAPI can hide consumer breaks
+   ([jev-oas-sentinel](https://github.com/ShuhanSun/jev-oas-sentinel):
+   **documentation-only**; enforce only when breaking AND promise-violation
+   ≥ 0.90). A passing CI condition is advisory
+   ([if-ai](https://github.com/Victor-Casado/if-ai): **A passing if-ai check is
+   advisory**; TypeSafe **67.8%** is four workflows, not PR review). A 2.8MB
+   Laya distill ([nanoprune](https://github.com/dmdjr1409/nanoprune): **0.0%
+   Hallucination Guaranteed** / ECE 2.58%) is not TypeSafe Jev and not a
+   rh-guard ROC. Skill recommendation is not a grant
+   ([hermes-switchyard](https://github.com/bgrablin/hermes-switchyard):
+   **never loads the skill**; ack is **not DLP** / not authorization; 0.20
+   local / 0.80 Jev uncalibrated). There is **no public Jev reward-hack ROC**.
 
 ## Structural vs Jev (choose in this order)
 
@@ -417,7 +444,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Stop-hook claims vs session evidence (`CONTRADICTED` / `UNSUPPORTED`): [clear-head](https://github.com/VladyslavHontar/clear-head)
 - PR policy rules enforced by Jev (watch): [jev-marshal](https://github.com/LightningK0ala/jev-marshal)
 - Fail-open wake gate (skip only if Jev answers and p < 0.2): [wakegate](https://github.com/shitianfang/wakegate)
-- Plain-English PR condition checks: [if-ai](https://github.com/Victor-Casado/if-ai)
+- Plain-English PR condition checks (passing is advisory; 67.8% is not PR review): [if-ai](https://github.com/Victor-Casado/if-ai)
 - oh-my-pi `safe`/`ask`/`unsafe` classifier: [omp-auto-mode](https://github.com/alexsatch/omp-auto-mode)
 - OMP/pi acceptance gating + subagent routing (fail-open): [omp-jev-extensions](https://github.com/luw2007/omp-jev-extensions)
 - Measured OMP approval-gate (graded allow; default 0/94 unsafe; operator owns the risk dial): [omp-greenlight](https://github.com/SemetricLabs/omp-greenlight)
@@ -450,6 +477,11 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Synthetic verify-criteria cases (planted defect withheld from criteria writers): [ybadragon/jev-proving-ground](https://github.com/ybadragon/jev-proving-ground)
 - Local n-gram attention firewall (AUTO_ACT at 0.80 else REVIEW_QUEUE; not TypeSafe Jev; silent-fallback if mis-calibrated): [jevbrain](https://github.com/Synxneuos/jevbrain)
 - Judge/verify crawler nodes (unverified lead, never a bug; ranking signals, not calibrated confidence): [jev-crawlers](https://github.com/russfranky/jev-crawlers)
+- Probability≠argmax field gate (0.40–0.60 band is refusal; argmax only omitted 25): [typed-gate](https://github.com/harshpuri84/typed-gate)
+- Pi fail-open pre-exec checker (block if choice===block OR p(block)≥0.50; failing open): [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate)
+- OpenAPI docs-only consumer-break sentinel (enforce at 0.90 breaking AND promise-violation): [jev-oas-sentinel](https://github.com/ShuhanSun/jev-oas-sentinel)
+- Cheap 2.8MB Laya-distill front gate (0.0% Hallucination Guaranteed theater; ECE 2.58%): [nanoprune](https://github.com/dmdjr1409/nanoprune)
+- Hermes skill selection under policy (never loads the skill; ack is not DLP): [hermes-switchyard](https://github.com/bgrablin/hermes-switchyard)
 - Wire-compatible prompted JSON probs (not logits; evaluate calibration before consequential decisions): [localjev](https://github.com/githubnext/localjev)
 - Open System One head (0.85 still soft; Khmer 0.000 at 95.2% conf): [laya](https://github.com/NandhaKishorM/laya)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
