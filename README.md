@@ -284,3 +284,7 @@ The lexical layer matches the GLiClass strings on the Hooks page. Fine-tune `kno
 The published ~14M encoder is not a drop-in action-only fallback: full-input AUROC 0.9467 drops to 0.6213 if you strip reasoning at inference.
 
 Open-weight SWE agents can add a DoM probe from [arXiv 2609.19101](https://arxiv.org/abs/2609.19101) on CoT activations. That is a second detector, not a replacement for the hook policy.
+
+## License
+
+MIT. Copyright (c) 2026 Basit Mustafa / 24601. See [LICENSE](LICENSE).

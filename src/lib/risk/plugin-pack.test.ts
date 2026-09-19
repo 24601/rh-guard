@@ -60,6 +60,7 @@ describe("hook pack stays aligned with examples/", () => {
 describe("discoverability copy", () => {
   const PUBLIC_COPY_PATHS = [
     "README.md",
+    "docs/index.md",
     "docs/hosts.md",
     "docs/install-plugin.md",
     "docs/shape.md",
@@ -604,6 +605,42 @@ describe("discoverability copy", () => {
       const text = readFileSync(join(root, rel), "utf8");
       expect(text, rel).not.toMatch(RESEARCH_OPS_CLUTTER);
     }
+  });
+
+  it("ships MIT LICENSE and a GitHub Pages landing", () => {
+    const license = readFileSync(join(root, "LICENSE"), "utf8");
+    expect(license).toMatch(/^MIT License\n/);
+    expect(license).toMatch(/Copyright \(c\) 2026 Basit Mustafa \/ 24601/);
+    expect(license).toMatch(
+      /Permission is hereby granted, free of charge, to any person obtaining a copy/
+    );
+    expect(license).toMatch(/THE SOFTWARE IS PROVIDED "AS IS"/);
+    expect(license).not.toMatch(/Hack Radar/);
+
+    const pkg = JSON.parse(
+      readFileSync(join(root, "package.json"), "utf8")
+    ) as { license: string };
+    expect(pkg.license).toBe("MIT");
+
+    const landing = readFileSync(join(root, "docs/index.md"), "utf8");
+    expect(landing).toMatch(/^# Reward Hack Guard/m);
+    expect(landing).toMatch(/RH Guard \(`rh-guard`\)/);
+    expect(landing).toMatch(/docs\/install-plugin\.md/);
+    expect(landing).toMatch(/npx skills add 24601\/rh-guard --skill rh-guard/);
+    expect(landing).toMatch(/claude plugin install rh-guard@rh-guard/);
+    expect(landing).toMatch(/\.agents\/skills\/rh-guard\/SKILL\.md/);
+    expect(landing).toMatch(/docs\/eval-integrity\.md/);
+    expect(landing).toMatch(/LICENSE/);
+    expect(landing).not.toMatch(/Hack Radar/);
+    expect(landing).not.toMatch(RESEARCH_OPS_CLUTTER);
+
+    const pagesWorkflow = readFileSync(
+      join(root, ".github/workflows/pages.yml"),
+      "utf8"
+    );
+    expect(pagesWorkflow).toMatch(/docs\/index\.md/);
+    expect(pagesWorkflow).toMatch(/actions\/jekyll-build-pages/);
+    expect(pagesWorkflow).toMatch(/actions\/deploy-pages/);
   });
 
   it("does not call the GitHub copy private", () => {

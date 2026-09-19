@@ -1,0 +1,12 @@
+title: Reward Hack Guard
+description: Live hazard gate on coding-agent tools
+url: https://24601.github.io
+baseurl: /rh-guard
+theme: jekyll-theme-primer
+exclude:
+  - sessions
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
