@@ -200,6 +200,8 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection defense eval (Chevy Tahoe $1 chatbot sandbox): 36 attacks + 38 benign; six defenses including **Real Jev API**. Quoted README: **~74 messages is a demonstration set, not a statistically powered benchmark.** Static attack list; quoted: adaptive attackers bypass even SOTA more than 85% of the time when they know the defense. FPR is the metric most demos skip. Cousin of [jev-agent-safety-arena](https://github.com/mjyoke1111/jev-agent-safety-arena) / [agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) / [jev-pastepilot](https://github.com/buberlo/jev-pastepilot). Fold injection-eval / honest-limitations only. Do not invent unpublished ASR as a rh-guard ROC. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi coding-agent extension (+ Claude Code / Codex hooks): TypeSafe Jev on (a) tool-call intent+risk before run, (b) tool-output injection before the agent reads, (c) reply harmful/relay-injection after. Quoted README: **Fails closed.** Errors / no key → ask you; **never auto-allows.** Code owns an **allow / ask / warn** ladder (soft judgment ≠ hard deny list). Secret scrub before Jev (pattern-based). Optional task pin so chat drift is not "on task". Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from pi-jev-approver / pi-jev-guard / [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard). Quoted: **Prompt injection is not solved.** Uncalibrated 0.3 / 1.3 / 0.8. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head (typed Choice / Score / Noul). Confidence-gating recipe at **0.85** (RLCD → "statistically meaningful") is still soft. Auto-act at that uncalibrated threshold is confidence theater, especially given Khmer OOD **0.000 at 95.2% confidence** — the model's own confidence gives no warning. Future backend, not a drop-in ROC replacement for this hook. Pair with jev-ood-calibration / capability-atlas.
@@ -442,7 +444,12 @@ deny so the bridge fails closed.
    not a rh-guard ROC. A 74-message injection demo
    ([one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe):
    **demonstration set, not a statistically powered** benchmark) is not a
-   safety proof. There is **no public Jev reward-hack ROC**.
+   safety proof. A fail-closed allow/ask/warn ladder is not a hard deny
+   list ([pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel):
+   quoted **never auto-allows**; secret scrub before Jev; optional task
+   pin; **Prompt injection is not solved**). Contrast fail-open pruners /
+   [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). There is
+   **no public Jev reward-hack ROC**.
 
 ## Structural vs Jev (choose in this order)
 
@@ -549,6 +556,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Multilingual 0–4 safety grading (the engine only measures; proves the pipeline, not the model): [tonedown](https://github.com/ziziphus-jujuba-zao/tonedown)
 - Productized moderation (fails open error_open; AUROC is a sanity benchmark, not a leaderboard): [jevmod](https://github.com/ohernandezdev/jevmod)
 - Prompt-injection defense eval (demonstration set, not a statistically powered benchmark; Real Jev API): [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe)
+- Pi fail-closed integrity gate (allow/ask/warn; never auto-allows; secret scrub; task pin; Prompt injection is not solved): [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel)
 - Wire-compatible prompted JSON probs (not logits; evaluate calibration before consequential decisions): [localjev](https://github.com/githubnext/localjev)
 - Open System One head (0.85 still soft; Khmer 0.000 at 95.2% conf): [laya](https://github.com/NandhaKishorM/laya)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
