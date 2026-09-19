@@ -190,6 +190,16 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [enzyme](https://github.com/byenzyme/enzyme) is a local-first compile step for Markdown knowledge bases: temporally grounded sampling → **catalysts** (questions as semantic routes). `enzyme compile` is an explicit OpenRouter Decisions op (`ENZYME_JEV_MODEL`, default `typesafe/jev-1.13`). Quoted README: `when asked` is **guidance compiled for your agent, not an enforced hook.** Not a PreToolUse wrap. **catalyst similarity** scores are ranking, not deny/allow — do not hard-gate them as a safety veto. Fold compiled-guidance ≠ hook / similarity≠deny only — not PKM recipes. Thin card. Do not merge into `examples/`. Cousin of [jevex](https://github.com/jimmyhealer/jevex) / [jev-sift](https://github.com/kbhuw/jev-sift), not this sidecar.
 
+[jevguard](https://github.com/seb4ez/jevguard) is a production integrity runtime around TypeSafe Jev: closed-world escape injection, certainty/margin calibration, volatile-field masking, zero-token SHA-256 cache, and episodic SQLite memory. Quoted README: categorical Choice without a fallback **forces a false positive**; the runtime injects `UNRESOLVED_OR_OTHER`. Quoted: top probability below 0.40 or first/second margin below 0.15 → `AMBIGUOUS_STATE`. Distinct from [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard), [pablozr/JevGuard](https://github.com/pablozr/JevGuard), and [leepokai/jev-guard](https://github.com/leepokai/jev-guard). Distinct from [jevcache](https://github.com/hyperspaceai/jevcache) (decision ledger) — this SHA-256 cache is still not a correctness proof. Pairs with [wellposed](https://github.com/suraj-phanindra/wellposed) (Choice with no "other" can be forced wrong at 1.0) and [typed-gate](https://github.com/harshpuri84/typed-gate) (argmax near 0.5 is declining to answer). Anti-pattern: closed-world false positives without an escape; argmax on a flat distribution without a margin check. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-ci-selector](https://github.com/guilhem/jev-ci-selector) is CI task selection: a pure policy engine (`always` / `force_paths` / dependencies) plus Jev on optional tasks. Quoted README: **Keep your workflows. Start in shadow mode. Measure before you skip.** Default `shadow`: every task still runs; the report records `proposed_run` vs `run`. Timeout, API problem, invalid response, fork PRs, and catalog/workflow changes keep all tasks. `enforce` is explicit opt-in. Initial `skip_below: 0.05` is an experiment, not an error-rate guarantee. Soft judgment must not hard-skip checks. Cousin of [latch](https://github.com/CaseReed/latch) / [if-ai](https://github.com/Victor-Casado/if-ai) / [jev-pr-review](https://github.com/ohernandezdev/jev-pr-review). Anti-pattern: treating a Jev skip plan as a safety envelope without shadow soak. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[tonedown](https://github.com/ziziphus-jujuba-zao/tonedown) is multilingual text safety grading 0–4 plus category probabilities; a moderation API and userscripts turn them into pass/review/block or show/blur/hide. Quoted README: **Platforms pick a policy, users pick a level, the engine only measures.** Golden set of 74 comments/danmaku in 11 languages (2026-09-19): **74 / 74** exact. Quoted: **A set this small proves the pipeline, not the model.** Offline lexicon fallback. Not a coding-agent hook pack. Cousin of [GLiGuard](https://github.com/fastino-ai/GLiGuard) / [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark) / [jevmod](https://github.com/ohernandezdev/jevmod). Treating 74/74 as a rh-guard ROC or hard-gating the 0–4 score as safety is confidence theater. Fold grading / policy-in-code only — not danmaku recipes. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jevmod](https://github.com/ohernandezdev/jevmod) is productized community moderation: category probabilities plus plain-English rules; the operator owns thresholds and actions. Flag-only by default. Quoted README: **Fails open:** if Jev is unreachable, messages are left alone (`reason="error_open"`). Self-harm is flag-only by design. BENCHMARK.md (2026-09-18, 2,531 messages): OpenAI eval AUROC harassment **0.930**, nsfw **0.982**, selfharm **0.992**, minors **0.977**. Quoted: **2,531 messages across three public sets is a sanity benchmark, not a leaderboard.** Quoted: a 0.6 is a maybe, not a 60%. Distinct from [ohernandezdev/jev-pr-review](https://github.com/ohernandezdev/jev-pr-review). **AUC ≠ ECE**. Treating those AUROCs as a hard safety envelope is soundness theater. Do not merge into `examples/`. Cousin of GLiGuard / system-one-benchmark / tonedown, not this sidecar.
+
+[one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection defense eval (Chevy Tahoe $1 chatbot sandbox): 36 attacks + 38 benign; six defenses including **Real Jev API**. Quoted README: **~74 messages is a demonstration set, not a statistically powered benchmark.** Static attack list; quoted: adaptive attackers bypass even SOTA more than 85% of the time when they know the defense. FPR is the metric most demos skip. Cousin of [jev-agent-safety-arena](https://github.com/mjyoke1111/jev-agent-safety-arena) / [agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) / [jev-pastepilot](https://github.com/buberlo/jev-pastepilot). Fold injection-eval / honest-limitations only. Do not invent unpublished ASR as a rh-guard ROC. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head (typed Choice / Score / Noul). Confidence-gating recipe at **0.85** (RLCD → "statistically meaningful") is still soft. Auto-act at that uncalibrated threshold is confidence theater, especially given Khmer OOD **0.000 at 95.2% confidence** — the model's own confidence gives no warning. Future backend, not a drop-in ROC replacement for this hook. Pair with jev-ood-calibration / capability-atlas.
@@ -416,7 +426,23 @@ deny so the bridge fails closed.
    guidance is not an enforced PreToolUse hook
    ([enzyme](https://github.com/byenzyme/enzyme): quoted
    **guidance compiled for your agent, not an enforced hook**;
-   **catalyst similarity** is ranking, not deny/allow). There is **no public Jev reward-hack ROC**.
+   **catalyst similarity** is ranking, not deny/allow). Closed-world Choice
+   without an escape is a forced false positive
+   ([seb4ez/jevguard](https://github.com/seb4ez/jevguard): inject
+   `UNRESOLVED_OR_OTHER`; flag `AMBIGUOUS_STATE` when top p < 0.40 or
+   margin < 0.15). Soft CI skip without shadow is hard-gating
+   ([guilhem/jev-ci-selector](https://github.com/guilhem/jev-ci-selector):
+   **Measure before you skip**; `proposed_run` vs `run`). A 0–4 safety
+   grade is a measurement, not a veto
+   ([tonedown](https://github.com/ziziphus-jujuba-zao/tonedown): **the
+   engine only measures**; 74/74 **proves the pipeline, not the model**).
+   Productized moderation that fails open
+   ([ohernandezdev/jevmod](https://github.com/ohernandezdev/jevmod):
+   `error_open`; AUROC is a **sanity benchmark, not a leaderboard**) is
+   not a rh-guard ROC. A 74-message injection demo
+   ([one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe):
+   **demonstration set, not a statistically powered** benchmark) is not a
+   safety proof. There is **no public Jev reward-hack ROC**.
 
 ## Structural vs Jev (choose in this order)
 
@@ -518,6 +544,11 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Decision ledger (cache hit ≠ correctness; shared fingerprint bundles as calibrated truth / auto-act is trust theater): [jevcache](https://github.com/hyperspaceai/jevcache)
 - GEPA human-align loop (never auto-accepts on training score; hard-gating that score is theater): [sutro-sh/jev-align](https://github.com/sutro-sh/jev-align)
 - Markdown knowledge compile (`when asked` compiled guidance, not an enforced hook; catalyst similarity is ranking, not deny/allow): [enzyme](https://github.com/byenzyme/enzyme)
+- Production integrity runtime (UNRESOLVED_OR_OTHER escape; AMBIGUOUS_STATE on flat margin; SHA-256 cache still not correctness): [jevguard](https://github.com/seb4ez/jevguard)
+- CI task selection (shadow default; Measure before you skip; proposed_run vs run; do not hard-skip): [jev-ci-selector](https://github.com/guilhem/jev-ci-selector)
+- Multilingual 0–4 safety grading (the engine only measures; proves the pipeline, not the model): [tonedown](https://github.com/ziziphus-jujuba-zao/tonedown)
+- Productized moderation (fails open error_open; AUROC is a sanity benchmark, not a leaderboard): [jevmod](https://github.com/ohernandezdev/jevmod)
+- Prompt-injection defense eval (demonstration set, not a statistically powered benchmark; Real Jev API): [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe)
 - Wire-compatible prompted JSON probs (not logits; evaluate calibration before consequential decisions): [localjev](https://github.com/githubnext/localjev)
 - Open System One head (0.85 still soft; Khmer 0.000 at 95.2% conf): [laya](https://github.com/NandhaKishorM/laya)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
