@@ -22,4 +22,6 @@ jobs:
       # The adapter tests spawn `npx tsx hooks/run.ts`, so the hook wrappers
       # are exercised end to end, not just the pure scoring functions.
       - run: npm test
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
       - run: npm run build

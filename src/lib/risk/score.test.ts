@@ -270,6 +270,23 @@ describe("score()", () => {
   });
 });
 
+const typesafeKeyAtLoad = process.env.TYPESAFE_API_KEY;
+
+async function withTypesafeKey<T>(
+  value: string | undefined,
+  fn: () => Promise<T>
+): Promise<T> {
+  const previous = process.env.TYPESAFE_API_KEY;
+  if (value === undefined) delete process.env.TYPESAFE_API_KEY;
+  else process.env.TYPESAFE_API_KEY = value;
+  try {
+    return await fn();
+  } finally {
+    if (previous === undefined) delete process.env.TYPESAFE_API_KEY;
+    else process.env.TYPESAFE_API_KEY = previous;
+  }
+}
+
 describe("scoreEvent()", () => {
   it("skips Jev after a structural deny", async () => {
     const report = await scoreEvent(example("sed-tests"));
@@ -279,10 +296,29 @@ describe("scoreEvent()", () => {
   });
 
   it("uses the lexical fallback when there is no structural deny and no key", async () => {
-    const report = await scoreEvent(example("proxy-green"));
+    const report = await withTypesafeKey(undefined, () =>
+      scoreEvent(example("proxy-green"))
+    );
     expect(report.backend).toBe("lexical");
     expect(report.verdict).toBe("steer");
+    expect(report.neuralError).toBeUndefined();
   });
+
+  // Fork PRs and local checkouts do not have the Actions secret. When the
+  // runner does, this must hit TypeSafe rather than the lexical stand-in.
+  it.skipIf(!typesafeKeyAtLoad)(
+    "uses the Jev backend when TYPESAFE_API_KEY is set",
+    async () => {
+      const report = await withTypesafeKey(typesafeKeyAtLoad, () =>
+        scoreEvent(example("proxy-green"))
+      );
+      expect(report.backend).toBe("jev");
+      expect(report.model).toMatch(/^jev-/);
+      expect(report.structuralDeny).toBe(false);
+      expect(report.neuralError).toBeUndefined();
+      expect(report.verdict).toBe("steer");
+    }
+  );
 });
 
 describe("Jev mapping", () => {
