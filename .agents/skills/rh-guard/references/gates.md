@@ -57,6 +57,12 @@ a merge, and not a reward-hack detector.
 
 [pi-heed](https://github.com/Nyarlathoteppppp/pi-heed) persists user constraints across tool calls and context compaction and checks every side-effecting call against what the user said (anti instruction-drift). Jev never writes policy; code owns the ledger and the block. Shadow by default; fail-open. Complementary to jev-carryforward 0/4. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
 
+[pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard) is a Pi `edit`/`write` content-judge against Markdown rules. Default informative (advisory); enforcement blocks. Malformed config fails closed. `onUnavailable` block / `onUncertain` warn in enforce. Default `violationThreshold` 0.85 is uncalibrated — soundness theater if treated as a hard gate. Informative first before enforcement. Shell and other agents bypass. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[pi-jev-control](https://github.com/goodruizhan/pi-jev-control) is a Pi control plane, not a content-judge. Deterministic tool-gate fast path + Jev for uncertain ops. Graceful degradation; GUI `unknown` never force-click. Control-plane vs content-judge (pi-jev-guard / pi-heed / hermes-jev-router). Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-use](https://github.com/shitianfang/jev-use) `jev_gate` is an optional PreToolUse risk check: deny/ask only, fails open. Install does not enable the gate. Only ever tightens. Treat confidence calibration as a training claim. 12/12 gate fixture is not a safety proof. `escalate: true` when Jev can't decide. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [jev-labs](https://github.com/copyleftdev/jev-labs) wraps a probabilistic oracle in a formal consensus kernel. **Never confidently wrong.** Escalate-not-guess: under severe chaos accuracy drops but wrong=0 because the system escalates. Anti-pattern: TLA+/model-check theater as proof the soft judge is safe without an exception path. Cousin, not this sidecar.
 
 [seal](https://github.com/Reasonofmoon/seal) is an advance gate plus a visible coverage ledger (`auto` | `code` | `human` | `escalate`). Effects stay locked while escalations remain open. **Hiding escalations is a product lie.** **schema-valid ≠ semantically correct.** **mint ≠ product brain**. Cousin, not this sidecar.
@@ -219,6 +225,26 @@ pi-heed (Nyarlathoteppppp/pi-heed)
   Jev never writes policy; code owns the ledger and the block
   shadow default; fail-open; do not merge into examples/pi-extension.ts
 
+pi-jev-guard (Reindeer-AI/pi-jev-guard)
+  Pi edit/write content-judge vs Markdown rules
+  default informative (advisory); enforce blocks
+  malformed config fails closed; onUnavailable block / onUncertain warn
+  violationThreshold 0.85 uncalibrated — soundness theater if treated as a hard gate
+  edit/write only; shell and other agents bypass
+  informative first before enforcement; do not merge into examples/
+
+pi-jev-control (goodruizhan/pi-jev-control)
+  Pi control plane, not a content-judge
+  deterministic tool-gate fast path + Jev for uncertain ops
+  graceful degradation; GUI unknown never force-click
+  control-plane vs content-judge (pi-jev-guard / pi-heed / hermes-jev-router)
+
+jev-use (shitianfang/jev-use)
+  optional PreToolUse jev_gate; deny/ask only; fails open
+  only ever tightens; install does not enable the gate
+  treat confidence calibration as a training claim
+  12/12 gate fixture is not a safety proof; escalate when Jev can't decide
+
 jev-labs (copyleftdev/jev-labs)
   Never confidently wrong; escalate-not-guess
   severe chaos: accuracy drops, wrong=0 because the system escalates
@@ -351,7 +377,8 @@ structural checks. Soft semantic scores may steer; they do not replace an
 atomic policy on the write. [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev)
 binds a **single-use Action Grant** to the exact tool call and consumes it
 once; replayed, expired, mutated, and unknown permits fail closed. A Noul is
-not a permit. Cousin, not this sidecar.
+not a permit. [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard)
+re-checks target and instruction snapshots before committing. Cousin, not this sidecar.
 
 ## Polarity
 
