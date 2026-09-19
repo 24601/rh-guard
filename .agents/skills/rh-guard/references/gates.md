@@ -109,6 +109,16 @@ a merge, and not a reward-hack detector.
 
 [jev-crawlers](https://github.com/russfranky/jev-crawlers) is judge then verify on bug-discovery crawlers. Failures are an **unverified lead, never a bug**. **ranking signals**, not calibrated confidence. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[typed-gate](https://github.com/harshpuri84/typed-gate) is probability≠argmax: code finds candidates; Jev Choice+Noul; Gate in code ACCEPT/REVIEW. A yes/no near 0.5 is **declining to answer**; the 0.40–0.60 band is a refusal, not a weak yes. **argmax only** omitted 25 of 1,100 fields; Jev+gate 0/0 (117 review). Distinct from [jev-gate](https://github.com/totally-tim/jev-gate). Do not merge into `examples/`. Cousin, not this sidecar.
+
+[pi-jev-gate](https://github.com/fivethirty/pi-jev-gate) is a Pi pre-exec checker (bash/write/edit + custom tools). Block if `choice === "block"` OR `p(block) ≥ 0.50`. **Fail-open** (`failing open`). `/checker` can disable. Distinct from [jevgate](https://github.com/thevibeworks/jevgate) / [jev-gate](https://github.com/totally-tim/jev-gate) / pi-jev-approver fail-closed. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[jev-oas-sentinel](https://github.com/ShuhanSun/jev-oas-sentinel) catches consumer-visible API changes hiding in **documentation-only** OpenAPI edits. Structural first, then Jev prose. Advisory default. Enforce only when breaking AND promise-violation ≥ 0.90. Fail closed in enforce. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[nanoprune](https://github.com/dmdjr1409/nanoprune) is a **2.8MB** Laya distill, not TypeSafe Jev. Cheap front gate before expensive System Two. **0.0% Hallucination Guaranteed** / ECE **2.58%** is soundness theater. Fold cheap-gate only. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[hermes-switchyard](https://github.com/bgrablin/hermes-switchyard) is Hermes skill selection under policy. Quoted: **never loads the skill**. Persistent ack is **not DLP** and not authorization. Hosted routing fail-closed without a host envelope. 0.20 local / 0.80 Jev uncalibrated. Sibling of skill-broker. Fold skill/policy only, not CUA. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC.
@@ -449,6 +459,37 @@ jev-crawlers (russfranky/jev-crawlers)
   crawl-judge then crawl-verify
   unverified lead, never a bug
   ranking signals, not calibrated bug confidence
+  do not merge into examples/
+
+typed-gate (harshpuri84/typed-gate)
+  probability≠argmax; Gate ACCEPT/REVIEW in code
+  declining to answer; 0.40–0.60 band is a refusal
+  argmax only omitted 25; Jev+gate 0/0 (117 review)
+  do not merge into examples/
+
+pi-jev-gate (fivethirty/pi-jev-gate)
+  Pi pre-exec; block if choice===block OR p(block) ≥ 0.50
+  fail-open (failing open); /checker can disable
+  distinct from jevgate / jev-gate / pi-jev-approver
+  do not merge into examples/pi-extension.ts
+
+jev-oas-sentinel (ShuhanSun/jev-oas-sentinel)
+  documentation-only OpenAPI consumer-break sentinel
+  structural first; enforce at 0.90 breaking AND promise-violation
+  advisory default; fail closed in enforce
+  do not merge into examples/
+
+nanoprune (dmdjr1409/nanoprune)
+  2.8MB Laya distill; cheap front gate; not TypeSafe Jev
+  0.0% Hallucination Guaranteed / ECE 2.58% theater
+  fold cheap-gate only
+  do not merge into examples/
+
+hermes-switchyard (bgrablin/hermes-switchyard)
+  skill selection under policy; never loads the skill
+  ack is not DLP / not authorization
+  0.20 local / 0.80 Jev uncalibrated; hosted fail-closed without envelope
+  fold skill/policy only, not CUA
   do not merge into examples/
 
 localjev (githubnext/localjev)
