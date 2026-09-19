@@ -203,11 +203,16 @@ describe("parseHookEvent host payloads", () => {
 
 describe("hooks/run.ts flavors", () => {
   function runFlavor(flavor: string, payload: unknown) {
+    // Host-adapter assertions are about JSON shape, not live Jev. Drop the
+    // key so CI does not change a clean command into a network score.
+    const env = { ...process.env };
+    delete env.TYPESAFE_API_KEY;
     return spawnSync("npx", ["tsx", "hooks/run.ts", flavor], {
       cwd: root,
       encoding: "utf8",
       input: `${JSON.stringify(payload)}\n`,
       timeout: 20_000,
+      env,
     });
   }
 
