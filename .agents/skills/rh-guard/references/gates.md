@@ -129,6 +129,16 @@ a merge, and not a reward-hack detector.
 
 [enzyme](https://github.com/byenzyme/enzyme) is a Markdown knowledge-compile step. Quoted: `when asked` is **guidance compiled for your agent, not an enforced hook.** Not PreToolUse. Do not hard-gate **catalyst similarity** as deny/allow. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[jevguard](https://github.com/seb4ez/jevguard) wraps Jev with closed-world escape (`UNRESOLVED_OR_OTHER`) and a certainty/margin calibrator (`AMBIGUOUS_STATE`). Distinct from alsoleg89/jev-guard / pablozr/JevGuard. SHA-256 cache is still not a correctness proof. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-ci-selector](https://github.com/guilhem/jev-ci-selector) is CI task selection. Quoted: **Measure before you skip.** Default shadow; report `proposed_run` vs `run`. Soft judgment must not hard-skip checks. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[tonedown](https://github.com/ziziphus-jujuba-zao/tonedown) grades 0–4. Quoted: **the engine only measures.** 74/74 **proves the pipeline, not the model.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jevmod](https://github.com/ohernandezdev/jevmod) is productized moderation. Fails open (`error_open`). AUROC is a **sanity benchmark, not a leaderboard.** Distinct from ohernandezdev/jev-pr-review. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC.
@@ -536,6 +546,33 @@ enzyme (byenzyme/enzyme)
   compile-time Jev; catalysts as semantic routes
   when asked is compiled guidance, not an enforced hook
   do not hard-gate catalyst similarity as deny/allow
+  do not merge into examples/
+
+jevguard (seb4ez/jevguard)
+  closed-world escape UNRESOLVED_OR_OTHER; AMBIGUOUS_STATE on flat margin
+  distinct from alsoleg89/jev-guard / pablozr/JevGuard
+  SHA-256 cache still not a correctness proof
+  do not merge into examples/
+
+jev-ci-selector (guilhem/jev-ci-selector)
+  shadow default; Measure before you skip
+  proposed_run vs run; do not hard-skip checks
+  do not merge into examples/
+
+tonedown (ziziphus-jujuba-zao/tonedown)
+  0–4 safety grade; the engine only measures
+  proves the pipeline, not the model
+  do not merge into examples/
+
+jevmod (ohernandezdev/jevmod)
+  category probs + plain-English rules; fails open error_open
+  sanity benchmark, not a leaderboard
+  distinct from ohernandezdev/jev-pr-review
+  do not merge into examples/
+
+one-dollar-tahoe (PavitarSinghArneja/one-dollar-tahoe)
+  prompt-injection eval including Real Jev API
+  demonstration set, not a statistically powered benchmark
   do not merge into examples/
 
 localjev (githubnext/localjev)
