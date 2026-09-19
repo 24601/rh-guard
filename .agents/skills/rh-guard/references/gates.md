@@ -53,6 +53,8 @@ a merge, and not a reward-hack detector.
 
 [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) is runtime tool-call authorization before side effects: deterministic policy owns `ALLOW` / `REVIEW` / `BLOCK`; Jev supplies evidence. **Jev supplies evidence. Code owns authority.** A positive model score never overrides a deterministic security failure. **Schema-valid ≠ intent-matched.** Early public MVP; current SDK is advisory. Compose with construct-auto-classifier and jev-lens. Cousin, not this sidecar.
 
+[turnstile](https://github.com/zyphr-labs/turnstile) is an agent action guardrail: deterministic policy then Jev, with receipts and threshold replay. **Jev never grants authority that policy denied.** Same doctrine as actiongate-jev. Observe-mode default; do not merge into `examples/`. Cousin, not this sidecar.
+
 [firehose-judge](https://github.com/ragelink/firehose-judge) is typed Jev on the Bluesky firehose (Durable Object). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Soft judgment is never the sole veto. Cousin, not this sidecar.
 
 [jav-email-cascade](https://github.com/skiingfalcon/jav-email-cascade) is decide → policy → LLM leftover. A Noul at 0.5 means "cannot tell" (never rounded). `injection_suspected` always force-review even with an LLM configured. Force-review is a real lane, not soundness theater. Cousin, not this sidecar.
@@ -66,6 +68,14 @@ a merge, and not a reward-hack detector.
 [jev-packs](https://github.com/dtduc-git/jev-packs) is an evidence-gated question-pack registry: verified only with recorded ECE/accuracy on a pinned Jev version; every Choice/Score must offer `unknown`. No numbers, no endorsement. Cousin, not this sidecar.
 
 [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) is a draft PR-triage spec (no README, no implementation). Jev via Vercel AI Gateway. Timeout → human-review, never silent auto-approve. No README claiming sole-authority. Watch: do not hard-gate merge on a Jev auto-approve.
+
+[jev-capability-atlas](https://github.com/Zaious/jev-capability-atlas) is a jagged hold-vs-break map with API receipts. **type-safe ≠ correct.** Eval-integrity cousin, not this sidecar.
+
+[jev-ood-calibration](https://github.com/scienthoon/jev-ood-calibration) measures OOD ECE vs its noise floor. **AUC ≠ ECE.** Pairs with does-jev-confidence-mean-anything. Not a rh-guard peer.
+
+[prune-review](https://github.com/shubhangi013/prune-review) is a cost-aware Jev gate before generative PR review; **safety escarpment** overrides Jev. Cousin, not this sidecar.
+
+[jev-intent-review](https://github.com/yottayoshida/jev-intent-review) is a draft spec: PR vs originating intent; the diff is a search hint. Watch.
 
 [latch](https://github.com/CaseReed/latch) is a CI merge-gate cousin: code clusters, Jev labels, code owns `Gate: PASS` / `Gate: BLOCK`. `ignore_as_infra` needs an explicit network fingerprint; Jev cannot ignore on its own. Flaky-test gaming counter-pattern.
 
@@ -175,6 +185,11 @@ actiongate-jev (omkarghugarkar007/actiongate-jev)
   ALLOW | REVIEW | BLOCK; positive score never overrides a deterministic fail
   Schema-valid ≠ intent-matched; early MVP; compose with construct / jev-lens
 
+turnstile (zyphr-labs/turnstile)
+  Jev never grants authority that policy denied
+  deterministic policy then Jev; receipts + threshold replay
+  observe-mode default; do not merge into examples/
+
 slo-router (zeeshan8281/slo-router)
   Jev on routing hot path; fail-open local features
   77.93 → 490.38 ms p95 (~6.3×); same routes/accuracy
@@ -209,6 +224,18 @@ jev-packs (dtduc-git/jev-packs)
 ci-gatekeeper-bot-jev (NemanjaManic/ci-gatekeeper-bot-jev)
   Jev via Vercel AI Gateway; draft spec; timeout → human-review
   no README claiming sole-authority; do not hard-gate merge on Jev auto-approve
+
+jev-capability-atlas (Zaious/jev-capability-atlas)
+  jagged hold-vs-break; type-safe ≠ correct; receipts first
+
+jev-ood-calibration (scienthoon/jev-ood-calibration)
+  OOD ECE vs noise floor; AUC ≠ ECE; do not threshold as a probability
+
+prune-review (shubhangi013/prune-review)
+  cost-aware Jev gate before generative PR review; safety escarpment
+
+jev-intent-review (yottayoshida/jev-intent-review)
+  spec-only; diff is a search hint; UNKNOWN over false VERIFIED
 
 jev-carryforward (Dharundp6/jev-carryforward)
   verbatim ledger; nothing summarised, nothing deleted
