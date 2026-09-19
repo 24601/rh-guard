@@ -71,6 +71,12 @@ a merge, and not a reward-hack detector.
 
 [jev-preflight](https://github.com/muse0509/jev-preflight) is a Claude Code Stop-hook: eight risk axes on a redacted turn diff; assist mode is one reinspect then finish. Fail-open. Default **0.85 threshold is uncalibrated**. escalate-attention ≠ hard block; can be gamed by ignoring the reinspect. Cousin of jev-lens; not this sidecar.
 
+[jev-security-scan](https://github.com/win4r/jev-security-scan) is a skill/MCP supply-chain scanner: static rules then Jev; policy in code (both Nouls ≥ 0.85, window ≥ 0.6, active ≥ 0.7). **Unflagged ≠ certified safe.** Does not execute the target. Direct sibling shape (structural + Jev), different job. Cousin of is-malicious / jevscan / safe-sh. Complementary to jev-preflight and jev-carryforward 0/4. Not this sidecar.
+
+[jev-decisions](https://github.com/bojansandhaus/jev-decisions) is a Hermes pre-tool review plugin. `JEV_ENABLE_HOOKS` opt-in; even then reviews stay advisory and do not block. **Jev review is advisory; Hermes policy remains authoritative.** A **failed review grants no permission**. Local human routing for destructive / credential / irreversible-external. Cousin of skill-broker / turnstile. Complementary to jev-preflight and jev-carryforward (hope the model looks). Not this sidecar.
+
+[jev-vs-llm-guardrails-intent-router](https://github.com/TeoMastro/jev-vs-llm-guardrails-intent-router) hard-gates soft scores (`jailbreak` / `prompt_injection` / `harmful` ≥ 0.70 or severity ≥ 2) on a 218-item LangGraph demo. Jev route acc **96.8%**. **Classify accuracy is not a safety proof.** Cousin, not this sidecar.
+
 [jev-packs](https://github.com/dtduc-git/jev-packs) is an evidence-gated question-pack registry: verified only with recorded ECE/accuracy on a pinned Jev version; every Choice/Score must offer `unknown`. No numbers, no endorsement. Cousin, not this sidecar.
 
 [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) is a PR-triage gate: Jev via Vercel AI Gateway asks `should_review` / `risk` / `route` / `touches_secrets`; thresholds route `auto-approve` | `human-review` | `block`. Timeout → human-review, never silent auto-approve. Eval-gaming surface: optimizing the four questions / thresholds instead of review quality. Do not hard-gate merge on a Jev auto-approve.
@@ -240,6 +246,23 @@ jev-preflight (muse0509/jev-preflight)
   Claude Stop-hook; eight risk axes; assist = one reinspect
   0.85 threshold is uncalibrated; fail-open
   escalate-attention ≠ hard block; can be gamed by ignoring the reinspect
+
+jev-security-scan (win4r/jev-security-scan)
+  static checks + Jev on skills/MCP; does not execute the target
+  high finding: both Nouls ≥ 0.85, window ≥ 0.6, active ≥ 0.7
+  Unflagged ≠ certified safe; two same-model passes ≠ independent verification
+  complementary to jev-preflight / jev-carryforward 0/4
+
+jev-decisions (bojansandhaus/jev-decisions)
+  Hermes pre_tool_call reviews; JEV_ENABLE_HOOKS opt-in
+  advisory; do not block; failed review grants no permission
+  Jev review is advisory; Hermes policy remains authoritative
+  local gateway: destructive/credential/irreversible-external → human
+
+jev-vs-llm-guardrails-intent-router (TeoMastro/jev-vs-llm-guardrails-intent-router)
+  LangGraph Jev vs LLM guardrails/intent; 218-item fixture
+  block if jailbreak/PI/harmful ≥ 0.70 or severity ≥ 2
+  96.8% route acc; classify accuracy is not a safety proof
 
 jev-packs (dtduc-git/jev-packs)
   evidence-gated packs; verified only with recorded ECE/accuracy
