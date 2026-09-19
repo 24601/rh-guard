@@ -248,6 +248,9 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/rashedInt32\/jev-lens/);
     expect(readme).toMatch(/never blocks/);
     expect(readme).toMatch(/never says green unless/);
+    expect(readme).toMatch(/muse0509\/jev-preflight/);
+    expect(readme).toMatch(/eight risk axes/);
+    expect(readme).toMatch(/0\.85 threshold is uncalibrated/);
     expect(readme).toMatch(/Hunch:/);
     expect(readme).toMatch(/SargeDev\/jev-gate-student-b/);
     expect(readme).toMatch(/student is not the hard envelope/);
@@ -256,6 +259,8 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/AMBIGUOUS/);
     expect(readme).toMatch(/Dharundp6\/jev-carryforward/);
     expect(readme).toMatch(/nothing summarised/);
+    expect(readme).toMatch(/0\/4/);
+    expect(readme).toMatch(/hope the model looks/);
     expect(readme).toMatch(/laurentfabre\/databricks-jev-pdf-lab/);
     expect(readme).toMatch(/no quality-equivalent/);
     expect(readme).toMatch(/suraj-phanindra\/wellposed/);
@@ -345,6 +350,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/actiongate-jev/);
     expect(pkg).not.toMatch(/slo-router/);
     expect(pkg).not.toMatch(/jev-lens/);
+    expect(pkg).not.toMatch(/jev-preflight/);
     expect(pkg).not.toMatch(/jev-compactor/);
     expect(pkg).not.toMatch(/jev-packs/);
     expect(pkg).not.toMatch(/ci-gatekeeper-bot-jev/);
@@ -396,6 +402,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/actiongate-jev/);
     expect(lock).not.toMatch(/slo-router/);
     expect(lock).not.toMatch(/jev-lens/);
+    expect(lock).not.toMatch(/jev-preflight/);
     expect(lock).not.toMatch(/jev-compactor/);
     expect(lock).not.toMatch(/jev-packs/);
     expect(lock).not.toMatch(/ci-gatekeeper-bot-jev/);
@@ -605,6 +612,9 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/rashedInt32\/jev-lens/);
     expect(skill).toMatch(/never blocks/);
     expect(skill).toMatch(/never says green unless/);
+    expect(skill).toMatch(/muse0509\/jev-preflight/);
+    expect(skill).toMatch(/eight risk axes/);
+    expect(skill).toMatch(/0\.85 threshold is uncalibrated/);
     expect(skill).toMatch(/Hunch:/);
     expect(skill).toMatch(/SargeDev\/jev-gate-student-b/);
     expect(skill).toMatch(/student is not the hard envelope/);
@@ -613,6 +623,8 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/AMBIGUOUS/);
     expect(skill).toMatch(/Dharundp6\/jev-carryforward/);
     expect(skill).toMatch(/nothing summarised/);
+    expect(skill).toMatch(/0\/4/);
+    expect(skill).toMatch(/hope the model looks/);
     expect(skill).toMatch(/laurentfabre\/databricks-jev-pdf-lab/);
     expect(skill).toMatch(/no quality-equivalent/);
     expect(skill).toMatch(/suraj-phanindra\/wellposed/);
@@ -795,11 +807,16 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/rashedInt32\/jev-lens/);
     expect(evalDoc).toMatch(/never says green unless/);
     expect(evalDoc).toMatch(/JEV_LENS_GREEN/);
+    expect(evalDoc).toMatch(/muse0509\/jev-preflight/);
+    expect(evalDoc).toMatch(/eight risk axes/);
+    expect(evalDoc).toMatch(/0\.85 threshold is uncalibrated/);
     expect(evalDoc).toMatch(/ickma2311\/jev-baselines-eval/);
     expect(evalDoc).toMatch(/[Tt]hree same-day errata/);
     expect(evalDoc).toMatch(/AMBIGUOUS/);
     expect(evalDoc).toMatch(/Dharundp6\/jev-carryforward/);
     expect(evalDoc).toMatch(/nothing summarised/);
+    expect(evalDoc).toMatch(/0\/4/);
+    expect(evalDoc).toMatch(/hope the model looks/);
     expect(evalDoc).toMatch(/laurentfabre\/databricks-jev-pdf-lab/);
     expect(evalDoc).toMatch(/no quality-equivalent/);
     expect(evalDoc).toMatch(/suraj-phanindra\/wellposed/);
@@ -875,6 +892,7 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/copyleftdev\/jev-labs/);
     expect(install).toMatch(/Reasonofmoon\/seal/);
     expect(install).toMatch(/adarc8\/how-sure-is-jev/);
+    expect(install).toMatch(/muse0509\/jev-preflight/);
     expect(install).toMatch(/Zaious\/jev-capability-atlas/);
     expect(install).toMatch(/scienthoon\/jev-ood-calibration/);
     expect(install).toMatch(/shubhangi013\/prune-review/);
@@ -953,6 +971,11 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/exactness/);
     expect(hosts).toMatch(/rashedInt32\/jev-lens/);
     expect(hosts).toMatch(/never says green unless/);
+    expect(hosts).toMatch(/muse0509\/jev-preflight/);
+    expect(hosts).toMatch(/eight risk axes/);
+    expect(hosts).toMatch(/0\.85 threshold is uncalibrated/);
+    expect(hosts).toMatch(/0\/4/);
+    expect(hosts).toMatch(/hope the model looks/);
     expect(hosts).toMatch(/m-newhauser\/gliner25-compaction/);
     expect(hosts).toMatch(/character-offset/);
     expect(hosts).toMatch(/keep_full/);
@@ -1048,6 +1071,9 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/never grants access/);
     expect(gates).toMatch(/rashedInt32\/jev-lens/);
     expect(gates).toMatch(/never says green unless/);
+    expect(gates).toMatch(/muse0509\/jev-preflight/);
+    expect(gates).toMatch(/eight risk axes/);
+    expect(gates).toMatch(/0\.85 threshold is uncalibrated/);
     expect(gates).toMatch(/fdemir\/toolgate/);
     expect(gates).toMatch(/ndolinschi\/toolgate/);
     expect(gates).toMatch(/given → expected → actual/);
@@ -1078,6 +1104,8 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Jev confidence grants no permission/);
     expect(gates).toMatch(/Dharundp6\/jev-carryforward/);
     expect(gates).toMatch(/nothing summarised/);
+    expect(gates).toMatch(/0\/4/);
+    expect(gates).toMatch(/hope the model looks/);
   });
 });
 

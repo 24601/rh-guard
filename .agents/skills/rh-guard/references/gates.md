@@ -69,6 +69,8 @@ a merge, and not a reward-hack detector.
 
 [jev-lens](https://github.com/rashedInt32/jev-lens) is an advisory Claude Stop hook: it never blocks, never edits, and never says green unless sure (`JEV_LENS_GREEN` 0.9). Attention/VOI, not authority — keep it separate from skill-broker / construct-auto-classifier. Cousin, not this sidecar.
 
+[jev-preflight](https://github.com/muse0509/jev-preflight) is a Claude Code Stop-hook: eight risk axes on a redacted turn diff; assist mode is one reinspect then finish. Fail-open. Default **0.85 threshold is uncalibrated**. escalate-attention ≠ hard block; can be gamed by ignoring the reinspect. Cousin of jev-lens; not this sidecar.
+
 [jev-packs](https://github.com/dtduc-git/jev-packs) is an evidence-gated question-pack registry: verified only with recorded ECE/accuracy on a pinned Jev version; every Choice/Score must offer `unknown`. No numbers, no endorsement. Cousin, not this sidecar.
 
 [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) is a PR-triage gate: Jev via Vercel AI Gateway asks `should_review` / `risk` / `route` / `touches_secrets`; thresholds route `auto-approve` | `human-review` | `block`. Timeout → human-review, never silent auto-approve. Eval-gaming surface: optimizing the four questions / thresholds instead of review quality. Do not hard-gate merge on a Jev auto-approve.
@@ -234,6 +236,11 @@ jev-lens (rashedInt32/jev-lens)
   advisory Stop hook; never blocks; never says green unless sure
   attention/VOI, not authority (pair skill-broker / construct)
 
+jev-preflight (muse0509/jev-preflight)
+  Claude Stop-hook; eight risk axes; assist = one reinspect
+  0.85 threshold is uncalibrated; fail-open
+  escalate-attention ≠ hard block; can be gamed by ignoring the reinspect
+
 jev-packs (dtduc-git/jev-packs)
   evidence-gated packs; verified only with recorded ECE/accuracy
   mandatory unknown abstention; no numbers, no endorsement
@@ -263,6 +270,7 @@ jev-intent-review (yottayoshida/jev-intent-review)
 jev-carryforward (Dharundp6/jev-carryforward)
   verbatim ledger; nothing summarised, nothing deleted
   no key → whole list (fail-open); cousin to extractive compaction
+  0/4 recall on force-push prohibition; hope the model looks
 ```
 
 Do not merge those hooks into `examples/`. [jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) is adjacent model+effort routing, not a rh-guard peer. [slo-router](https://github.com/zeeshan8281/slo-router) is the latency/fallback cousin of that routing surface: Jev on the hot path preserved accuracy but raised p95 from 77.93 ms to 490.38 ms; fail-open local features; exactness never overrides context/capability.
