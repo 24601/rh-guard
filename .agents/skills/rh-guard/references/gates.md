@@ -35,7 +35,7 @@ a merge, and not a reward-hack detector.
 
 [jev-reviewer](https://github.com/egma-ai/jev-reviewer) is a local PR overlay: Jev P0/P1/P2 attention (P0 expanded; P1/P2 collapsed). Attention is not a correctness verdict; never equate P0 with blocked as unsafe. Soft-judgment UX, not a merge gate. Cousin, not this sidecar.
 
-[safe-sh](https://github.com/EpicEric/safe-sh) is static shell analysis with Jev (tree-sitter bash chunks; never executes). Contrast toolgate fail-safe pre-exec. Same extract-then-Jev layering as jevscan. Gate-adjacent; not a reward-hack detector.
+[safe-sh](https://github.com/EpicEric/safe-sh) is static shell analysis with Jev (tree-sitter bash chunks; never executes). README: replace `sh`/`bash` with `safe-sh` (`curl … | safe-sh`); `--warn-on` / `--error-on` own the hard exit. Scores include credential/exfil-shaped questions — shell/secrets judgment **before** a hard deny, still not execution. Contrast yolo-shell (exec interceptor + local floor) and toolgate fail-safe pre-exec. Same extract-then-Jev layering as jevscan. Weakened-test review lives on [typesafe_agent_gates](https://github.com/ThiagaoBR/typesafe_agent_gates), not here. Gate-adjacent; not a reward-hack detector.
 
 [interlock](https://github.com/somoore/interlock) is a capability kernel: Jev is a sensor; policy in code decides allow / ask / block. Canaries + closed action space; secrets never enter the agent. Critique of post-hoc "is this dangerous?" firewalls with real secrets still in scope. 38-case regression suite (not a blind paper). Soft judgment is never the envelope. Cousin, not this sidecar.
 
@@ -118,6 +118,10 @@ a merge, and not a reward-hack detector.
 [nanoprune](https://github.com/dmdjr1409/nanoprune) is a **2.8MB** Laya distill, not TypeSafe Jev. Cheap front gate before expensive System Two. **0.0% Hallucination Guaranteed** / ECE 2.58% is soundness theater. Fold cheap-gate only. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [hermes-switchyard](https://github.com/bgrablin/hermes-switchyard) is Hermes skill selection under policy. Quoted: **never loads the skill**. Persistent ack is **not DLP** and not authorization. Hosted routing fail-closed without a host envelope. 0.20 local / 0.80 Jev uncalibrated. Sibling of skill-broker. Fold skill/policy only, not CUA. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[typesafe_agent_gates](https://github.com/ThiagaoBR/typesafe_agent_gates) is LangChain / Deep Agents middleware: four Nouls (`database_write` / `production` / `destructive` / `secrets`) on `execute`; one ≥ 0.5 → **HELD**. Quoted: **Closed when TypeSafe is unreachable** (`fail_closed=True`); only `{role, command}`. Pattern first, judgment **never looser**. `SpecReviewMiddleware`: inverted / retargeted / **weakened** / disabled. Quoted **27/27** / **31/31** synthetic — not a rh-guard ROC; **0.5 / 0.6 / 0.8 as starting points**; **second layer, not a boundary**. Distinct from fdemir/toolgate. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-pastepilot](https://github.com/buberlo/jev-pastepilot) is a paste-to-action launcher. Quoted: **Confirm is a gate, not a formality.** **Pasted text is untrusted data. It cannot grant new permissions.** Choice + injection Noul + emptiness Noul + fit Score; **code combines those answers**. **Confidence is a gate, not proof** (0.75 / 0.45). Missing key → **fail-opens**. Quoted: do not treat the README as a measured accuracy result. Fold paste/injection/confirm-gate only. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
@@ -230,7 +234,10 @@ jev-reviewer (egma-ai/jev-reviewer)
 
 safe-sh (EpicEric/safe-sh)
   tree-sitter bash chunks → Jev Scores; never executes
-  contrast toolgate fail-safe pre-exec
+  curl | safe-sh; --warn-on / --error-on own the hard exit
+  credential/exfil-shaped Scores before deny; not execution
+  contrast yolo-shell exec floor and toolgate fail-safe pre-exec
+  weakened-test review is typesafe_agent_gates, not here
 
 interlock (somoore/interlock)
   canaries + closed action space; secrets never enter the agent
@@ -490,6 +497,21 @@ hermes-switchyard (bgrablin/hermes-switchyard)
   ack is not DLP / not authorization
   0.20 local / 0.80 Jev uncalibrated; hosted fail-closed without envelope
   fold skill/policy only, not CUA
+  do not merge into examples/
+
+typesafe_agent_gates (ThiagaoBR/typesafe_agent_gates)
+  LangChain/Deep Agents middleware; four Nouls on execute
+  one ≥ 0.5 → HELD; fail_closed=True; only {role, command}
+  pattern first, judgment never looser
+  SpecReview: inverted / retargeted / weakened / disabled
+  27/27 and 31/31 synthetic; second layer, not a boundary
+  do not merge into examples/
+
+jev-pastepilot (buberlo/jev-pastepilot)
+  paste → allowlist → preview → Confirm
+  Confirm is a gate, not a formality
+  Confidence is a gate, not proof; fail-opens
+  fold paste/injection/confirm-gate only
   do not merge into examples/
 
 localjev (githubnext/localjev)

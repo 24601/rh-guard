@@ -316,6 +316,15 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/bgrablin\/hermes-switchyard/);
     expect(readme).toMatch(/never loads the skill/);
     expect(readme).toMatch(/not DLP/);
+    expect(readme).toMatch(/ThiagaoBR\/typesafe_agent_gates/);
+    expect(readme).toMatch(/second layer, not a boundary/);
+    expect(readme).toMatch(/never looser/);
+    expect(readme).toMatch(/27\/27/);
+    expect(readme).toMatch(/buberlo\/jev-pastepilot/);
+    expect(readme).toMatch(/Confirm is a gate/);
+    expect(readme).toMatch(/Confidence is a gate, not proof/);
+    expect(readme).toMatch(/fail-opens/);
+    expect(readme).toMatch(/--error-on/);
     expect(readme).toMatch(/githubnext\/localjev/);
     expect(readme).toMatch(/consequential decisions/);
     expect(readme).toMatch(/NandhaKishorM\/laya/);
@@ -491,6 +500,8 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/jev-oas-sentinel/);
     expect(pkg).not.toMatch(/nanoprune/);
     expect(pkg).not.toMatch(/hermes-switchyard/);
+    expect(pkg).not.toMatch(/typesafe_agent_gates/);
+    expect(pkg).not.toMatch(/jev-pastepilot/);
     expect(pkg).not.toMatch(/construct-auto-classifier/);
     expect(pkg).not.toMatch(/actiongate-jev/);
     expect(pkg).not.toMatch(/AgentGhost/);
@@ -527,6 +538,8 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ShuhanSun\/jev-oas-sentinel/);
     expect(pkg).not.toMatch(/dmdjr1409\/nanoprune/);
     expect(pkg).not.toMatch(/bgrablin\/hermes-switchyard/);
+    expect(pkg).not.toMatch(/ThiagaoBR\/typesafe_agent_gates/);
+    expect(pkg).not.toMatch(/buberlo\/jev-pastepilot/);
     expect(pkg).not.toMatch(/githubnext\/localjev/);
     expect(pkg).not.toMatch(/NandhaKishorM\/laya/);
     expect(pkg).not.toMatch(/jev-sift/);
@@ -606,6 +619,8 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/jev-oas-sentinel/);
     expect(lock).not.toMatch(/nanoprune/);
     expect(lock).not.toMatch(/hermes-switchyard/);
+    expect(lock).not.toMatch(/typesafe_agent_gates/);
+    expect(lock).not.toMatch(/jev-pastepilot/);
     expect(lock).not.toMatch(/construct-auto-classifier/);
     expect(lock).not.toMatch(/actiongate-jev/);
     expect(lock).not.toMatch(/AgentGhost/);
@@ -642,6 +657,8 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ShuhanSun\/jev-oas-sentinel/);
     expect(lock).not.toMatch(/dmdjr1409\/nanoprune/);
     expect(lock).not.toMatch(/bgrablin\/hermes-switchyard/);
+    expect(lock).not.toMatch(/ThiagaoBR\/typesafe_agent_gates/);
+    expect(lock).not.toMatch(/buberlo\/jev-pastepilot/);
     expect(lock).not.toMatch(/githubnext\/localjev/);
     expect(lock).not.toMatch(/NandhaKishorM\/laya/);
     expect(lock).not.toMatch(/jev-sift/);
@@ -965,6 +982,15 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/bgrablin\/hermes-switchyard/);
     expect(skill).toMatch(/never loads the skill/);
     expect(skill).toMatch(/not DLP/);
+    expect(skill).toMatch(/ThiagaoBR\/typesafe_agent_gates/);
+    expect(skill).toMatch(/second layer, not a boundary/);
+    expect(skill).toMatch(/never looser/);
+    expect(skill).toMatch(/27\/27/);
+    expect(skill).toMatch(/buberlo\/jev-pastepilot/);
+    expect(skill).toMatch(/Confirm is a gate/);
+    expect(skill).toMatch(/Confidence is a gate, not proof/);
+    expect(skill).toMatch(/fail-opens/);
+    expect(skill).toMatch(/--error-on/);
     expect(skill).toMatch(/githubnext\/localjev/);
     expect(skill).toMatch(/consequential decisions/);
     expect(skill).toMatch(/NandhaKishorM\/laya/);
@@ -1281,6 +1307,14 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/bgrablin\/hermes-switchyard/);
     expect(evalDoc).toMatch(/never loads the skill/);
     expect(evalDoc).toMatch(/not DLP/);
+    expect(evalDoc).toMatch(/ThiagaoBR\/typesafe_agent_gates/);
+    expect(evalDoc).toMatch(/second layer, not a boundary/);
+    expect(evalDoc).toMatch(/never looser/);
+    expect(evalDoc).toMatch(/27\/27/);
+    expect(evalDoc).toMatch(/buberlo\/jev-pastepilot/);
+    expect(evalDoc).toMatch(/Confirm is a gate/);
+    expect(evalDoc).toMatch(/Confidence is a gate, not proof/);
+    expect(evalDoc).toMatch(/fail-opens/);
     expect(evalDoc).toMatch(/githubnext\/localjev/);
     expect(evalDoc).toMatch(/consequential decisions/);
     expect(evalDoc).toMatch(/NandhaKishorM\/laya/);
@@ -1452,6 +1486,8 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/ShuhanSun\/jev-oas-sentinel/);
     expect(install).toMatch(/dmdjr1409\/nanoprune/);
     expect(install).toMatch(/bgrablin\/hermes-switchyard/);
+    expect(install).toMatch(/ThiagaoBR\/typesafe_agent_gates/);
+    expect(install).toMatch(/buberlo\/jev-pastepilot/);
     expect(install).toMatch(/githubnext\/localjev/);
     expect(install).toMatch(/NandhaKishorM\/laya/);
     expect(install).toMatch(/ThyFriendlyFox\/jev-curate/);
@@ -1530,6 +1566,14 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/bgrablin\/hermes-switchyard/);
     expect(shape).toMatch(/never loads the skill/);
     expect(shape).toMatch(/not DLP/);
+    expect(shape).toMatch(/ThiagaoBR\/typesafe_agent_gates/);
+    expect(shape).toMatch(/second layer, not a boundary/);
+    expect(shape).toMatch(/never looser/);
+    expect(shape).toMatch(/27\/27/);
+    expect(shape).toMatch(/buberlo\/jev-pastepilot/);
+    expect(shape).toMatch(/Confirm is a gate/);
+    expect(shape).toMatch(/Confidence is a gate, not proof/);
+    expect(shape).toMatch(/fail-opens/);
   });
 
   it("keeps jevgate as a sibling link on host docs, not a merged product", () => {
@@ -1653,6 +1697,15 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/bgrablin\/hermes-switchyard/);
     expect(hosts).toMatch(/never loads the skill/);
     expect(hosts).toMatch(/not DLP/);
+    expect(hosts).toMatch(/ThiagaoBR\/typesafe_agent_gates/);
+    expect(hosts).toMatch(/second layer, not a boundary/);
+    expect(hosts).toMatch(/never looser/);
+    expect(hosts).toMatch(/27\/27/);
+    expect(hosts).toMatch(/buberlo\/jev-pastepilot/);
+    expect(hosts).toMatch(/Confirm is a gate/);
+    expect(hosts).toMatch(/Confidence is a gate, not proof/);
+    expect(hosts).toMatch(/fail-opens/);
+    expect(hosts).toMatch(/--error-on/);
     expect(hosts).toMatch(/githubnext\/localjev/);
     expect(hosts).toMatch(/consequential decisions/);
     expect(hosts).toMatch(/NandhaKishorM\/laya/);
@@ -1836,6 +1889,15 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/bgrablin\/hermes-switchyard/);
     expect(gates).toMatch(/never loads the skill/);
     expect(gates).toMatch(/not DLP/);
+    expect(gates).toMatch(/ThiagaoBR\/typesafe_agent_gates/);
+    expect(gates).toMatch(/second layer, not a boundary/);
+    expect(gates).toMatch(/never looser/);
+    expect(gates).toMatch(/27\/27/);
+    expect(gates).toMatch(/buberlo\/jev-pastepilot/);
+    expect(gates).toMatch(/Confirm is a gate/);
+    expect(gates).toMatch(/Confidence is a gate, not proof/);
+    expect(gates).toMatch(/fail-opens/);
+    expect(gates).toMatch(/--error-on/);
     expect(gates).toMatch(/githubnext\/localjev/);
     expect(gates).toMatch(/consequential decisions/);
     expect(gates).toMatch(/NandhaKishorM\/laya/);
