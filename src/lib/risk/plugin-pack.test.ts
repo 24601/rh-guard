@@ -347,6 +347,9 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/sanity benchmark, not a leaderboard/);
     expect(readme).toMatch(/PavitarSinghArneja\/one-dollar-tahoe/);
     expect(readme).toMatch(/demonstration set, not a statistically powered/);
+    expect(readme).toMatch(/harshwasan\/pi-jev-sentinel/);
+    expect(readme).toMatch(/never auto-allows/);
+    expect(readme).toMatch(/Prompt injection is not solved/);
     expect(readme).toMatch(/--error-on/);
     expect(readme).toMatch(/githubnext\/localjev/);
     expect(readme).toMatch(/consequential decisions/);
@@ -520,6 +523,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/jev-crawlers/);
     expect(pkg).not.toMatch(/typed-gate/);
     expect(pkg).not.toMatch(/pi-jev-gate/);
+    expect(pkg).not.toMatch(/pi-jev-sentinel/);
     expect(pkg).not.toMatch(/jev-oas-sentinel/);
     expect(pkg).not.toMatch(/nanoprune/);
     expect(pkg).not.toMatch(/hermes-switchyard/);
@@ -577,6 +581,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ziziphus-jujuba-zao\/tonedown/);
     expect(pkg).not.toMatch(/ohernandezdev\/jevmod/);
     expect(pkg).not.toMatch(/PavitarSinghArneja\/one-dollar-tahoe/);
+    expect(pkg).not.toMatch(/harshwasan\/pi-jev-sentinel/);
     expect(pkg).not.toMatch(/githubnext\/localjev/);
     expect(pkg).not.toMatch(/NandhaKishorM\/laya/);
     expect(pkg).not.toMatch(/jev-sift/);
@@ -653,6 +658,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/jev-crawlers/);
     expect(lock).not.toMatch(/typed-gate/);
     expect(lock).not.toMatch(/pi-jev-gate/);
+    expect(lock).not.toMatch(/pi-jev-sentinel/);
     expect(lock).not.toMatch(/jev-oas-sentinel/);
     expect(lock).not.toMatch(/nanoprune/);
     expect(lock).not.toMatch(/hermes-switchyard/);
@@ -710,6 +716,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ziziphus-jujuba-zao\/tonedown/);
     expect(lock).not.toMatch(/ohernandezdev\/jevmod/);
     expect(lock).not.toMatch(/PavitarSinghArneja\/one-dollar-tahoe/);
+    expect(lock).not.toMatch(/harshwasan\/pi-jev-sentinel/);
     expect(lock).not.toMatch(/githubnext\/localjev/);
     expect(lock).not.toMatch(/NandhaKishorM\/laya/);
     expect(lock).not.toMatch(/jev-sift/);
@@ -1064,6 +1071,9 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/sanity benchmark, not a leaderboard/);
     expect(skill).toMatch(/PavitarSinghArneja\/one-dollar-tahoe/);
     expect(skill).toMatch(/demonstration set, not a statistically powered/);
+    expect(skill).toMatch(/harshwasan\/pi-jev-sentinel/);
+    expect(skill).toMatch(/never auto-allows/);
+    expect(skill).toMatch(/Prompt injection is not solved/);
     expect(skill).toMatch(/--error-on/);
     expect(skill).toMatch(/githubnext\/localjev/);
     expect(skill).toMatch(/consequential decisions/);
@@ -1412,6 +1422,9 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/sanity benchmark, not a leaderboard/);
     expect(evalDoc).toMatch(/PavitarSinghArneja\/one-dollar-tahoe/);
     expect(evalDoc).toMatch(/demonstration set, not a statistically powered/);
+    expect(evalDoc).toMatch(/harshwasan\/pi-jev-sentinel/);
+    expect(evalDoc).toMatch(/never auto-allows/);
+    expect(evalDoc).toMatch(/Prompt injection is not solved/);
     expect(evalDoc).toMatch(/githubnext\/localjev/);
     expect(evalDoc).toMatch(/consequential decisions/);
     expect(evalDoc).toMatch(/NandhaKishorM\/laya/);
@@ -1593,6 +1606,7 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/ziziphus-jujuba-zao\/tonedown/);
     expect(install).toMatch(/ohernandezdev\/jevmod/);
     expect(install).toMatch(/PavitarSinghArneja\/one-dollar-tahoe/);
+    expect(install).toMatch(/harshwasan\/pi-jev-sentinel/);
     expect(install).toMatch(/githubnext\/localjev/);
     expect(install).toMatch(/NandhaKishorM\/laya/);
     expect(install).toMatch(/ThyFriendlyFox\/jev-curate/);
@@ -1702,6 +1716,9 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/sanity benchmark, not a leaderboard/);
     expect(shape).toMatch(/PavitarSinghArneja\/one-dollar-tahoe/);
     expect(shape).toMatch(/demonstration set, not a statistically powered/);
+    expect(shape).toMatch(/harshwasan\/pi-jev-sentinel/);
+    expect(shape).toMatch(/never auto-allows/);
+    expect(shape).toMatch(/Prompt injection is not solved/);
   });
 
   it("keeps jevgate as a sibling link on host docs, not a merged product", () => {
@@ -1856,6 +1873,9 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/sanity benchmark, not a leaderboard/);
     expect(hosts).toMatch(/PavitarSinghArneja\/one-dollar-tahoe/);
     expect(hosts).toMatch(/demonstration set, not a statistically powered/);
+    expect(hosts).toMatch(/harshwasan\/pi-jev-sentinel/);
+    expect(hosts).toMatch(/never auto-allows/);
+    expect(hosts).toMatch(/Prompt injection is not solved/);
     expect(hosts).toMatch(/--error-on/);
     expect(hosts).toMatch(/githubnext\/localjev/);
     expect(hosts).toMatch(/consequential decisions/);
@@ -2071,6 +2091,9 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/sanity benchmark, not a leaderboard/);
     expect(gates).toMatch(/PavitarSinghArneja\/one-dollar-tahoe/);
     expect(gates).toMatch(/demonstration set, not a statistically powered/);
+    expect(gates).toMatch(/harshwasan\/pi-jev-sentinel/);
+    expect(gates).toMatch(/never auto-allows/);
+    expect(gates).toMatch(/Prompt injection is not solved/);
     expect(gates).toMatch(/--error-on/);
     expect(gates).toMatch(/githubnext\/localjev/);
     expect(gates).toMatch(/consequential decisions/);

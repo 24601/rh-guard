@@ -139,6 +139,8 @@ a merge, and not a reward-hack detector.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC.
@@ -574,6 +576,14 @@ one-dollar-tahoe (PavitarSinghArneja/one-dollar-tahoe)
   prompt-injection eval including Real Jev API
   demonstration set, not a statistically powered benchmark
   do not merge into examples/
+
+pi-jev-sentinel (harshwasan/pi-jev-sentinel)
+  Pi + Claude/Codex; call/output/reply Jev screens
+  fail-closed: never auto-allows; allow / ask / warn ladder
+  secret scrub before Jev; optional task pin vs chat drift
+  Prompt injection is not solved
+  contrast fail-open pruners / pi-jev-gate
+  do not merge into examples/pi-extension.ts
 
 localjev (githubnext/localjev)
   wire-compatible POST /v1/systemone; prompted JSON probs, not logits
