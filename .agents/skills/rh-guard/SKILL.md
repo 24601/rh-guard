@@ -86,6 +86,14 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [safe-sh](https://github.com/EpicEric/safe-sh) is static shell analysis with Jev (tree-sitter bash chunks; never executes). Contrast [toolgate](https://github.com/fdemir/toolgate) fail-safe pre-exec. Gate-adjacent; not a reward-hack detector.
 
+[interlock](https://github.com/somoore/interlock) is a capability kernel for untrusted agents: Jev is a sensor; policy in code decides `allow` / `ask` / `block`. Canaries + closed action space; secrets never enter the agent. Critique of post-hoc "is this dangerous?" firewalls with real secrets still in scope. 38-case regression suite (not a blind paper). Positive pattern: hard envelope first. Anti-pattern: soundness theater / soft judgment hard-gated as safety.
+
+[port-cleanup](https://github.com/epiphany-dynamics/port-cleanup) is a gate UX exemplar: evidence-backed, human-confirmed irreversible actions; shields override Jev; identity re-check before SIGTERM; app-owned explanation text, not model prose. Never auto-kills.
+
+[jev-dspy-control-plane](https://github.com/manikanda-kumar/jev-dspy-control-plane) routes into a closed ontology; fraud/security force a human path even when the classifier predicts routine. After the control plane fixes the action, the LLM cannot add routes or tools.
+
+[jev-arena](https://github.com/meetr1912/jev-arena) measures native Jev probabilities (Brier/ECE). A live run is overconfident in the low bins. Do not treat native probabilities as truth without Harbor-style measurement. Not a reward-hack ROC.
+
 [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval) is a pre-registered Jev-vs-baselines eval with three same-day errata rounds after external review found overstated results (both experiments AMBIGUOUS; headline cascade sign flips at a tighter margin). Harbor/jevals lesson: independent review; do not promote first-publish numbers to labels.
 
 [jev-carryforward](https://github.com/Dharundp6/jev-carryforward) is a verbatim fact ledger scored for relevance (nothing summarised, nothing deleted). Anti-summarization that erases evidence; cousin to extractive compaction and to clear-head claim/evidence checks. No key → whole list (fail-open). [databricks-jev-pdf-lab](https://github.com/laurentfabre/databricks-jev-pdf-lab) publishes a measured negative result (no quality-equivalent Jev PDF payoff). Anti-soundness-theater.
@@ -245,6 +253,10 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Pre-execution tool-call gate (`allow` / `block` / `review`; fail-safe): [toolgate](https://github.com/fdemir/toolgate)
 - Attention-priority PR overlay (P0 expand; never "blocked as unsafe"): [jev-reviewer](https://github.com/egma-ai/jev-reviewer)
 - Static shell analysis with Jev (never executes): [safe-sh](https://github.com/EpicEric/safe-sh)
+- Capability kernel (Jev sensor; policy in code; canaries; secrets never enter the agent): [interlock](https://github.com/somoore/interlock)
+- Gate UX (human-confirmed irreversible stop; shields; app-owned copy): [port-cleanup](https://github.com/epiphany-dynamics/port-cleanup)
+- Fraud/security force human path; LLM cannot add routes/tools after the plane: [jev-dspy-control-plane](https://github.com/manikanda-kumar/jev-dspy-control-plane)
+- Native-probability calibration (overconfident in low bins): [jev-arena](https://github.com/meetr1912/jev-arena)
 - Pre-registered eval + same-day errata (claim vs evidence): [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval)
 - Verbatim fact ledger scored for relevance: [jev-carryforward](https://github.com/Dharundp6/jev-carryforward)
 - Measured negative result (no quality-equivalent Jev PDF payoff): [databricks-jev-pdf-lab](https://github.com/laurentfabre/databricks-jev-pdf-lab)

@@ -35,6 +35,12 @@ a merge, and not a reward-hack detector.
 
 [safe-sh](https://github.com/EpicEric/safe-sh) is static shell analysis with Jev (tree-sitter bash chunks; never executes). Contrast toolgate fail-safe pre-exec. Same extract-then-Jev layering as jevscan. Gate-adjacent; not a reward-hack detector.
 
+[interlock](https://github.com/somoore/interlock) is a capability kernel: Jev is a sensor; policy in code decides allow / ask / block. Canaries + closed action space; secrets never enter the agent. Critique of post-hoc "is this dangerous?" firewalls with real secrets still in scope. 38-case regression suite (not a blind paper). Soft judgment is never the envelope. Cousin, not this sidecar.
+
+[port-cleanup](https://github.com/epiphany-dynamics/port-cleanup) is a gate UX exemplar: human confirms irreversible stop; shields override Jev; identity re-check before SIGTERM; app-owned explanation text, not model prose. Never auto-kills. Cousin, not this sidecar.
+
+[jev-dspy-control-plane](https://github.com/manikanda-kumar/jev-dspy-control-plane) is a typed control plane: fraud/security force a human path even when the classifier predicts routine; after the plane fixes the action, the LLM cannot add routes or tools. Same structural-first shape. Cousin, not this sidecar.
+
 [latch](https://github.com/CaseReed/latch) is a CI merge-gate cousin: code clusters, Jev labels, code owns `Gate: PASS` / `Gate: BLOCK`. `ignore_as_infra` needs an explicit network fingerprint; Jev cannot ignore on its own. Flaky-test gaming counter-pattern.
 
 [jevscan](https://github.com/alexykn/jevscan) composes tree-sitter extract (hard envelope; no execute) with independent Jev questions (soft judgment). Same layering; quality lint, not reward-hack.
@@ -98,6 +104,19 @@ jev-reviewer (egma-ai/jev-reviewer)
 safe-sh (EpicEric/safe-sh)
   tree-sitter bash chunks → Jev Scores; never executes
   contrast toolgate fail-safe pre-exec
+
+interlock (somoore/interlock)
+  canaries + closed action space; secrets never enter the agent
+  Jev sensor; policy in code allow|ask|block
+  anti-pattern: post-hoc "is this dangerous?" with real secrets in scope
+
+port-cleanup (epiphany-dynamics/port-cleanup)
+  human confirms irreversible stop; shields override Jev
+  identity re-check before SIGTERM; app-owned copy not model prose
+
+jev-dspy-control-plane (manikanda-kumar/jev-dspy-control-plane)
+  fraud/security → human even if classifier says routine
+  LLM cannot add routes/tools after control plane fixes action
 
 jev-carryforward (Dharundp6/jev-carryforward)
   verbatim ledger; nothing summarised, nothing deleted
