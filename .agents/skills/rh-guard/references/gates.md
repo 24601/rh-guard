@@ -55,19 +55,25 @@ a merge, and not a reward-hack detector.
 
 [turnstile](https://github.com/zyphr-labs/turnstile) is an agent action guardrail: deterministic policy then Jev, with receipts and threshold replay. **Jev never grants authority that policy denied.** Same doctrine as actiongate-jev. Observe-mode default; do not merge into `examples/`. Cousin, not this sidecar.
 
+[jev-labs](https://github.com/copyleftdev/jev-labs) wraps a probabilistic oracle in a formal consensus kernel. **Never confidently wrong.** Escalate-not-guess: under severe chaos accuracy drops but wrong=0 because the system escalates. Anti-pattern: TLA+/model-check theater as proof the soft judge is safe without an exception path. Cousin, not this sidecar.
+
+[seal](https://github.com/Reasonofmoon/seal) is an advance gate plus a visible coverage ledger (`auto` | `code` | `human` | `escalate`). Effects stay locked while escalations remain open. **Hiding escalations is a product lie.** **schema-valid ≠ semantically correct.** **mint ≠ product brain**. Cousin, not this sidecar.
+
 [firehose-judge](https://github.com/ragelink/firehose-judge) is typed Jev on the Bluesky firehose (Durable Object). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Soft judgment is never the sole veto. Cousin, not this sidecar.
 
 [jav-email-cascade](https://github.com/skiingfalcon/jav-email-cascade) is decide → policy → LLM leftover. A Noul at 0.5 means "cannot tell" (never rounded). `injection_suspected` always force-review even with an LLM configured. Force-review is a real lane, not soundness theater. Cousin, not this sidecar.
 
 [waymode](https://github.com/mossburgh/waymode) lets the host keep permissions, validation, and handlers; Jev decides over typed actions on the live UI with retained evidence. Jev confidence grants no permission (sensor ≠ verdict). Cousin, not this sidecar.
 
-[skill-broker](https://github.com/adamjralph/skill-broker) keeps authority in deterministic code; Jev judges relevance only and never grants access. Anti-pattern: letting System One confidence expand the allowed skill set. Cousin, not this sidecar.
+[skill-broker](https://github.com/adamjralph/skill-broker) keeps authority in deterministic code; Jev judges relevance only and never grants access. Jev relevance ≠ authority — the model never grants. Direct sibling to turnstile (evidence ≠ authority). Anti-pattern: letting System One confidence expand the allowed skill set. Cousin, not this sidecar.
 
 [jev-lens](https://github.com/rashedInt32/jev-lens) is an advisory Claude Stop hook: it never blocks, never edits, and never says green unless sure (`JEV_LENS_GREEN` 0.9). Attention/VOI, not authority — keep it separate from skill-broker / construct-auto-classifier. Cousin, not this sidecar.
 
 [jev-packs](https://github.com/dtduc-git/jev-packs) is an evidence-gated question-pack registry: verified only with recorded ECE/accuracy on a pinned Jev version; every Choice/Score must offer `unknown`. No numbers, no endorsement. Cousin, not this sidecar.
 
-[ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) is a draft PR-triage spec (no README, no implementation). Jev via Vercel AI Gateway. Timeout → human-review, never silent auto-approve. No README claiming sole-authority. Watch: do not hard-gate merge on a Jev auto-approve.
+[ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) is a PR-triage gate: Jev via Vercel AI Gateway asks `should_review` / `risk` / `route` / `touches_secrets`; thresholds route `auto-approve` | `human-review` | `block`. Timeout → human-review, never silent auto-approve. Eval-gaming surface: optimizing the four questions / thresholds instead of review quality. Do not hard-gate merge on a Jev auto-approve.
+
+[how-sure-is-jev](https://github.com/adarc8/how-sure-is-jev) maps probs to sureness bands CERTAIN / CONFIDENT / LEANING / TORN / CLUELESS. Gaming risk if agents optimize the sureness metric rather than task truth. Pair with jev-ood-calibration / ECE noise floor (contrast only).
 
 [jev-capability-atlas](https://github.com/Zaious/jev-capability-atlas) is a jagged hold-vs-break map with API receipts. **type-safe ≠ correct.** Eval-integrity cousin, not this sidecar.
 
@@ -190,6 +196,16 @@ turnstile (zyphr-labs/turnstile)
   deterministic policy then Jev; receipts + threshold replay
   observe-mode default; do not merge into examples/
 
+jev-labs (copyleftdev/jev-labs)
+  Never confidently wrong; escalate-not-guess
+  severe chaos: accuracy drops, wrong=0 because the system escalates
+  anti-pattern: TLA+ theater without an exception path
+
+seal (Reasonofmoon/seal)
+  advance gate + coverage ledger auto|code|human|escalate
+  Hiding escalations is a product lie
+  schema-valid ≠ semantically correct; mint ≠ product brain
+
 slo-router (zeeshan8281/slo-router)
   Jev on routing hot path; fail-open local features
   77.93 → 490.38 ms p95 (~6.3×); same routes/accuracy
@@ -211,6 +227,7 @@ waymode (mossburgh/waymode)
 
 skill-broker (adamjralph/skill-broker)
   Jev judges relevance only; never grants access
+  Jev relevance ≠ authority; sibling to turnstile (evidence ≠ authority)
   anti-pattern: System One confidence expanding the allowed skill set
 
 jev-lens (rashedInt32/jev-lens)
@@ -222,8 +239,14 @@ jev-packs (dtduc-git/jev-packs)
   mandatory unknown abstention; no numbers, no endorsement
 
 ci-gatekeeper-bot-jev (NemanjaManic/ci-gatekeeper-bot-jev)
-  Jev via Vercel AI Gateway; draft spec; timeout → human-review
-  no README claiming sole-authority; do not hard-gate merge on Jev auto-approve
+  Jev via Vercel AI Gateway; should_review / risk / route / touches_secrets
+  auto-approve | human-review | block; timeout → human-review
+  eval-gaming surface: optimizing the four questions / thresholds
+  do not hard-gate merge on Jev auto-approve
+
+how-sure-is-jev (adarc8/how-sure-is-jev)
+  sureness bands CERTAIN / CONFIDENT / LEANING / TORN / CLUELESS
+  gaming the sureness metric ≠ task truth; pair ood ECE noise floor
 
 jev-capability-atlas (Zaious/jev-capability-atlas)
   jagged hold-vs-break; type-safe ≠ correct; receipts first

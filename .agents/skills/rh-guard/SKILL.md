@@ -100,6 +100,8 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [jev-ood-calibration](https://github.com/scienthoon/jev-ood-calibration) measures OOD ECE against its noise floor. In-domain benches look calibrated; on an unknowable org-rule label, accuracy 44.7% with mean stated probability 0.74 (ECE 4.4× the noise floor). **AUC ≠ ECE** — ranking is not calibration; pairs with [does-jev-confidence-mean-anything](https://github.com/Adilmp/does-jev-confidence-mean-anything). Do not threshold Jev as a probability without a local ECE check.
 
+[how-sure-is-jev](https://github.com/adarc8/how-sure-is-jev) (`jevsure`) maps Jev probabilities to sureness bands CERTAIN / CONFIDENT / LEANING / TORN / CLUELESS. Choice confidence == max_prob (the most generous metric). Thresholds are opinions, not physics. Good abstention UX; gaming risk if agents optimize the sureness metric rather than task truth. Pair with jev-ood-calibration / ECE noise floor (contrast only). Cousin, not this sidecar.
+
 [slo-router](https://github.com/zeeshan8281/slo-router) puts Jev 1.13 semantic features on an OpenAI-compatible routing hot path, with fail-open to deterministic local features. A live OpenRouter run preserved the same routes and accuracy as `slo_no_jev` but raised p95 from 77.93 ms to 490.38 ms (~6.3×). An exactness signal raises the quality floor; it never overrides context or capability checks. Infeasible routing returns 503 instead of a silent contract violation. Not a rh-guard peer. Hunch: hard-gating latency-sensitive control on a decision model without a measured fallback is itself a reliability/eval failure mode — agents will learn to skip or stub the gate.
 
 [cmdc-auto-mode](https://github.com/mja00/cmdc-auto-mode) is a Command Code auto-permission gate: Jev screens every tool call at `beforeToolCall` (after the host permission check); policy `decide` in code (`allow` / `deny` / `escalate`). `within_scope ≤ 0.25` is out of scope (deny). Escalation always goes to a human, never back to the model. Default `auto-fail-closed` true. Tiny read-only prefilter. Do not merge into `examples/`. Cousin of omp-auto-mode, not this sidecar.
@@ -114,13 +116,17 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [turnstile](https://github.com/zyphr-labs/turnstile) is an agent action guardrail: deterministic policy + Jev semantic checks + receipts with threshold replay. Same doctrine as actiongate-jev: Jev supplies evidence; code owns `allow` / `review` / `deny`. **Jev never grants authority that policy denied.** Missing goal, disabled Jev, timeout, or invalid response → review. Experimental alpha; Claude observe-mode default; not an OS sandbox. Do not merge `turnstile-hooks.json` into `examples/`. Cousin, not this sidecar.
 
+[jev-labs](https://github.com/copyleftdev/jev-labs) wraps a probabilistic oracle in a formal consensus kernel (TLA+ → AsyncAPI → Rust). Pharmacy-sim golden 1,080 rounds: **wrong=0**; under severe chaos 314 correct / 46 escalated / **0 wrong** (accuracy 0.834–0.903). **Never confidently wrong.** The invariant is escalate-not-guess: the kernel may escalate, and it may never return a confident wrong verdict. A stability gate excludes votes whose margin sits inside the measured noise floor (identity 0.042). Anti-pattern: treating TLA+/model-check theater as proof the soft judge is safe without an exception path. TLC 1,049,750 states / 0 errors proves the protocol, not that the oracle is never wrong. Scope: synthetic pharmacy, not clinical. Limitation: underdetermined records escalated 86/120 and decided 34 split both ways — the stability gate is not an answerability check. Cousin, not this sidecar.
+
+[seal](https://github.com/Reasonofmoon/seal) is an advance gate plus a visible coverage ledger (`auto` | `code` | `human` | `escalate`). No seal, no advance. Effects stay locked while escalations remain open. **Hiding escalations is a product lie.** **schema-valid ≠ semantically correct** (pairs with jev-capability-atlas jaggedness / ActionGate Schema-valid ≠ intent-matched — contrast only). **mint ≠ product brain**. Zero runtime Python deps. Cousin, not this sidecar.
+
 [firehose-judge](https://github.com/ragelink/firehose-judge) puts typed Jev judgment on the Bluesky firehose (Cloudflare Durable Objects). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Jev is a sensor, not a verdict.
 
 [jav-email-cascade](https://github.com/skiingfalcon/jav-email-cascade) is decide → policy → LLM leftover: Jev answers typed questions; Python policy routes `auto` / `review` / `llm`. A Noul at 0.5 means "cannot tell" (never rounded); a Score with confidence 0.0 is never acted on; `injection_suspected` always force-review even with an LLM configured. Force-review is a real lane, not soundness theater.
 
 [waymode](https://github.com/mossburgh/waymode) lets an app keep host permissions, validation, and handlers; Jev decides over typed actions on the live UI with retained evidence. Jev confidence grants no permission (sensor ≠ verdict). Cousin, not this sidecar.
 
-[skill-broker](https://github.com/adamjralph/skill-broker) is a Hermes skill-intervention outline: deterministic authority; Jev judges relevance only and never grants access. Anti-pattern: letting System One confidence expand the allowed skill set. Same permission boundary as waymode. Cousin, not this sidecar.
+[skill-broker](https://github.com/adamjralph/skill-broker) is a Hermes skill-intervention outline: deterministic authority; Jev judges relevance only and never grants access. Jev relevance ≠ authority — the model never grants. Direct sibling to [turnstile](https://github.com/zyphr-labs/turnstile) (evidence ≠ authority). Anti-pattern: letting System One confidence expand the allowed skill set. Same permission boundary as waymode. Cousin, not this sidecar.
 
 [jev-lens](https://github.com/rashedInt32/jev-lens) is an advisory Claude Stop hook that answers "do I need to look?": it never blocks, never edits, and never says green unless it is sure (`JEV_LENS_GREEN` 0.9). Shadow mode first. Attention/VOI, not authority — keep it separate from skill-broker / construct-auto-classifier when you need a gate. Cousin of jev-reviewer; not a merge. Hunch: collapsing attention and authority invites gaming the green light.
 
@@ -134,7 +140,7 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [jev-packs](https://github.com/dtduc-git/jev-packs) is an evidence-gated registry of Jev question packs: a pack is `verified` only when accuracy / ECE / cost / latency are recorded on a pinned Jev version. Every Choice and Score must offer `unknown` (mandatory abstention). Anti-soundness-theater for gate criteria: no numbers, no endorsement.
 
-[ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) is a draft GitHub Action spec (no README, no implementation at capture): Jev via Vercel AI Gateway triages PRs to auto-approve / human-review / block. Timeout fails to human-review, never silent auto-approve. No README claiming sole-authority. Watch, not an endorsement — do not hard-gate merge on a Jev auto-approve without a deterministic path floor.
+[ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev) matured: README + `action.yml` + `src/` + committed `dist/`. Jev via Vercel AI Gateway asks four typed questions (`should_review`, `risk`, `route`, `touches_secrets`); configurable thresholds route to `auto-approve` | `human-review` | `block`. Conservative default `risk_threshold_for_review: cosmetic` escalated even trivial diffs Jev called `moderate`. Timeout/Jev-failure still → human-review, never silent auto-approve. Eval-gaming surface: optimizing the four Jev questions / thresholds instead of real review quality. Watch, not an endorsement — do not hard-gate merge on a Jev auto-approve without a deterministic path floor.
 
 [prune-review](https://github.com/shubhangi013/prune-review) is a cost-aware Jev gate before a generative PR reviewer: Jev scores hunks; a deterministic **safety escarpment** always keeps matching hunks whatever Jev says. Jev does not generate review comments. Cost results are not quality claims. Source preview. Cousin of jev-reviewer; not this sidecar.
 
@@ -302,6 +308,8 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Effect-based OpenCode/agy shell gate (Privilege Is Not a Verdict; 0 dangerous allowed for Jev): [construct-auto-classifier](https://github.com/godspede/construct-auto-classifier)
 - Runtime tool authorization (Jev supplies evidence. Code owns authority; Schema-valid ≠ intent-matched): [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
+- Formal consensus around a probabilistic oracle (Never confidently wrong; escalate-not-guess): [jev-labs](https://github.com/copyleftdev/jev-labs)
+- Advance gate + coverage ledger (Hiding escalations is a product lie; mint ≠ product brain): [seal](https://github.com/Reasonofmoon/seal)
 - Pre-execution tool-call gate (`allow` / `block` / `review`; fail-safe): [toolgate](https://github.com/fdemir/toolgate)
 - Attention-priority PR overlay (P0 expand; never "blocked as unsafe"): [jev-reviewer](https://github.com/egma-ai/jev-reviewer)
 - Static shell analysis with Jev (never executes): [safe-sh](https://github.com/EpicEric/safe-sh)
@@ -311,19 +319,20 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Native-probability calibration (overconfident in low bins): [jev-arena](https://github.com/meetr1912/jev-arena)
 - Jagged hold-vs-break map (type-safe ≠ correct; receipts first): [jev-capability-atlas](https://github.com/Zaious/jev-capability-atlas)
 - OOD ECE / noise floor (AUC ≠ ECE): [jev-ood-calibration](https://github.com/scienthoon/jev-ood-calibration)
+- Sureness bands from probs (CERTAIN…CLUELESS; gaming the sureness metric ≠ task truth): [how-sure-is-jev](https://github.com/adarc8/how-sure-is-jev)
 - Routing hot path (77.93→490.38 ms p95; exactness never overrides context/capability): [slo-router](https://github.com/zeeshan8281/slo-router)
 - Command Code auto-permission (`beforeToolCall`; out of scope deny; escalate to a human): [cmdc-auto-mode](https://github.com/mja00/cmdc-auto-mode)
 - Firehose typed judgment (uncertain → "needs a human"): [firehose-judge](https://github.com/ragelink/firehose-judge)
 - decide → policy → LLM leftover (`injection_suspected` force-review): [jav-email-cascade](https://github.com/skiingfalcon/jav-email-cascade)
 - Host permissions + typed actions + retained evidence; Jev confidence grants no permission: [waymode](https://github.com/mossburgh/waymode)
-- Skill-routing as soft label, never grants access: [skill-broker](https://github.com/adamjralph/skill-broker)
+- Skill-routing as soft label, never grants access; Jev relevance ≠ authority (sibling to turnstile): [skill-broker](https://github.com/adamjralph/skill-broker)
 - Advisory Stop hook (never blocks; never says green unless sure): [jev-lens](https://github.com/rashedInt32/jev-lens)
 - LoRA distill of Jev memory-relevance (student is not the hard envelope): [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b)
 - Soft-label eval filter (do not distill Jev as teacher of record): [jev-triage](https://github.com/ThyFriendlyFox/jev-triage)
 - toxic-chat safety eval (Jev 90.9% precision / 1 FP; do not treat uncalibrated PCD as a safety gate): [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark)
 - Eval-instrument audit (check the instrument first): [dinostomp](https://github.com/collapseindex/dinostomp)
 - Evidence-gated question packs (mandatory `unknown`; no numbers, no endorsement): [jev-packs](https://github.com/dtduc-git/jev-packs)
-- Draft CI PR-triage spec (Jev via Vercel AI Gateway; timeout → human-review; watch): [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev)
+- CI PR-triage gate (`should_review` / `risk` / `route` / `touches_secrets`; threshold gaming surface; watch): [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev)
 - Cost-aware Jev gate before generative PR review (safety escarpment): [prune-review](https://github.com/shubhangi013/prune-review)
 - PR vs originating intent (diff is a search hint; watch): [jev-intent-review](https://github.com/yottayoshida/jev-intent-review)
 - Pre-registered eval + same-day errata (claim vs evidence): [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval)
