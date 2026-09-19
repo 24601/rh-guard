@@ -155,6 +155,11 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/ndolinschi\/toolgate/);
     expect(readme).toMatch(/`allow` \/ `block` \/ `review`/);
     expect(readme).toMatch(/given → expected → actual/);
+    expect(readme).toMatch(/egma-ai\/jev-reviewer/);
+    expect(readme).toMatch(/attention priorities/);
+    expect(readme).toMatch(/blocked as unsafe/);
+    expect(readme).toMatch(/EpicEric\/safe-sh/);
+    expect(readme).toMatch(/static shell/);
     expect(readme).toMatch(/ickma2311\/jev-baselines-eval/);
     expect(readme).toMatch(/three same-day errata/);
     expect(readme).toMatch(/AMBIGUOUS/);
@@ -230,6 +235,8 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/if-ai/);
     expect(pkg).not.toMatch(/omp-auto-mode/);
     expect(pkg).not.toMatch(/toolgate/);
+    expect(pkg).not.toMatch(/jev-reviewer/);
+    expect(pkg).not.toMatch(/safe-sh/);
     expect(pkg).not.toMatch(/jev-baselines-eval/);
     expect(pkg).not.toMatch(/jev-carryforward/);
     expect(pkg).not.toMatch(/databricks-jev-pdf-lab/);
@@ -249,6 +256,8 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/if-ai/);
     expect(lock).not.toMatch(/omp-auto-mode/);
     expect(lock).not.toMatch(/toolgate/);
+    expect(lock).not.toMatch(/jev-reviewer/);
+    expect(lock).not.toMatch(/safe-sh/);
     expect(lock).not.toMatch(/jev-baselines-eval/);
     expect(lock).not.toMatch(/jev-carryforward/);
     expect(lock).not.toMatch(/databricks-jev-pdf-lab/);
@@ -352,6 +361,11 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/ndolinschi\/toolgate/);
     expect(skill).toMatch(/`allow` \/ `block` \/ `review`/);
     expect(skill).toMatch(/given → expected → actual/);
+    expect(skill).toMatch(/egma-ai\/jev-reviewer/);
+    expect(skill).toMatch(/attention priorities/);
+    expect(skill).toMatch(/blocked as unsafe/);
+    expect(skill).toMatch(/EpicEric\/safe-sh/);
+    expect(skill).toMatch(/static shell/);
     expect(skill).toMatch(/ickma2311\/jev-baselines-eval/);
     expect(skill).toMatch(/three same-day errata/);
     expect(skill).toMatch(/AMBIGUOUS/);
@@ -434,6 +448,13 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/ndolinschi\/toolgate/);
     expect(evalDoc).toMatch(/`allow` \/ `block` \/ `review`/);
     expect(evalDoc).toMatch(/given → expected → actual/);
+    expect(evalDoc).toMatch(/egma-ai\/jev-reviewer/);
+    expect(evalDoc).toMatch(/attention priorities/);
+    expect(evalDoc).toMatch(/blocked as unsafe/);
+    expect(evalDoc).toMatch(/alwaysReviewPaths/);
+    expect(evalDoc).toMatch(/EpicEric\/safe-sh/);
+    expect(evalDoc).toMatch(/static shell/);
+    expect(evalDoc).toMatch(/never executes/);
     expect(evalDoc).toMatch(/ickma2311\/jev-baselines-eval/);
     expect(evalDoc).toMatch(/[Tt]hree same-day errata/);
     expect(evalDoc).toMatch(/AMBIGUOUS/);
@@ -486,6 +507,8 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/Victor-Casado\/if-ai/);
     expect(install).toMatch(/alexsatch\/omp-auto-mode/);
     expect(install).toMatch(/fdemir\/toolgate/);
+    expect(install).toMatch(/egma-ai\/jev-reviewer/);
+    expect(install).toMatch(/EpicEric\/safe-sh/);
     expect(install).toMatch(/ickma2311\/jev-baselines-eval/);
     expect(install).toMatch(/Dharundp6\/jev-carryforward/);
     expect(install).toMatch(/laurentfabre\/databricks-jev-pdf-lab/);
@@ -519,6 +542,10 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/fdemir\/toolgate/);
     expect(hosts).toMatch(/ndolinschi\/toolgate/);
     expect(hosts).toMatch(/fail-safe/);
+    expect(hosts).toMatch(/egma-ai\/jev-reviewer/);
+    expect(hosts).toMatch(/blocked as unsafe/);
+    expect(hosts).toMatch(/EpicEric\/safe-sh/);
+    expect(hosts).toMatch(/never executes/);
     expect(hosts).toMatch(/m-newhauser\/gliner25-compaction/);
     expect(hosts).toMatch(/character-offset/);
     expect(hosts).toMatch(/keep_full/);
@@ -566,6 +593,10 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/ndolinschi\/toolgate/);
     expect(gates).toMatch(/given → expected → actual/);
     expect(gates).toMatch(/fail-safe/);
+    expect(gates).toMatch(/egma-ai\/jev-reviewer/);
+    expect(gates).toMatch(/blocked as unsafe/);
+    expect(gates).toMatch(/EpicEric\/safe-sh/);
+    expect(gates).toMatch(/never executes/);
     expect(gates).toMatch(/Dharundp6\/jev-carryforward/);
     expect(gates).toMatch(/nothing summarised/);
   });
