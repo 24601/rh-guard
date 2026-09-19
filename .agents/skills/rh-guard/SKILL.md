@@ -136,6 +136,16 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [jev-routing](https://github.com/nekowasabi/jev-routing) is a Go proxy for Claude Code / Codex / Grok Build / Cursor Agent / Devin: compact, then Jev next-tool Choice + done Noul, then rewrite `tools[]` to **1 schema** (zero if respond). Not MCP. Default `JEV_ROUTING_MODE=filter`; `forced` only when a verified real Jev answer exists — local scoring alone does not force. No key → on-device classifier. Host PreToolUse cannot strip the catalog (after the model has seen every schema). Advisory filter vs hard `forced` route. Cousin of slo-router / pi-jev-control. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[classifier-dev](https://github.com/mrmps/classifier-dev) is an eval-integrity cousin: a public classifier that now serves TypeSafe Jev, with LLM chains as fallback. Upstream delisted `inclusionai/ling-2.6-flash`; backup `ibm-granite/granite-4.0-h-micro` served for weeks at F1 **0.546** while docs advertised ~0.800 — "Nothing in the deployed numbers said so" (measured 2026-09-17, `eval/README.md`). The digest now marks `FALLBACK`; `eval/bench.py` scores a candidate offline before it ships. **advertised backend ≠ served backend.** **Undeclared fallback = eval integrity failure**; advertised score ≠ live model. Require digest/`FALLBACK` markers before quoting eval numbers; do not hard-gate on soft confidence from an undeclared fallback (same degraded-backend lesson as `backend: "lexical"` here). Heuristic: a quoted F1 without the served model id is soundness theater. Cousin of dinostomp / jev-baselines-eval. Not a rh-guard peer.
+
+[jev-gate](https://github.com/totally-tim/jev-gate) is a calibrated PR-review gate (GitHub Action + local CLI + OpenCode plugin) powered by TypeSafe Jev. Seven typed concern questions; gated Nouls default 0.60. Distinct from [jevgate](https://github.com/thevibeworks/jevgate) (allowlist) and [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b) (distill). README: defaults are starting points — calibrate on your diffs before trusting a gate; `--no-gate` keeps the exit code at 0. Risk: treating a calibrated soft Noul as a **hard merge gate** without workload calibration / human override = confidence theater. Card: **soft-score-as-hard-rank**; require calibration evidence + an escape hatch. Cousin of jev-pr-review (shadow until calibrated) / ci-gatekeeper / commitjev. Not [choxos/jev-reviewer](https://github.com/choxos/jev-reviewer) (human-verified quotes ≠ soft auto-accept) and not [egma-ai/jev-reviewer](https://github.com/egma-ai/jev-reviewer) (attention ≠ correctness). Do not merge into `examples/`. Cousin, not this sidecar.
+
+[claude-jev-warden](https://github.com/connectedGraph/claude-jev-warden) is a real-time quality gate / Art Director Warden for Claude Code via Jev 1.13. `PreToolUse` on Write/Edit/MultiEdit: quality ≥ 80% → exit 0; else exit 2 (hard process intercept) and inject diagnostics. Same family as agent PreToolUse hooks: **soft judgment hard-blocking agent actions**. Card: **attention≠verdict** / **warden-as-hard-gate**. Document when a warden should escalate vs block: taste/quality → reinspect (jev-lens / jev-preflight); eval-asset mutate → structural deny. Contrast rh-guard (structural first; soft never the sole veto) and hermes-plugin-jev (cannot grant permission). Do not merge `warden.js` into `examples/`. Cousin of claude-code-jev / jev-preflight / construct-auto-classifier, not this sidecar.
+
+[localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
+
+[laya](https://github.com/NandhaKishorM/laya) is an open System One head (typed Choice / Score / Noul). Confidence-gating recipe at **0.85** (RLCD → "statistically meaningful") is still soft. Auto-act at that uncalibrated threshold is confidence theater, especially given Khmer OOD **0.000 at 95.2% confidence** — the model's own confidence gives no warning. Future backend, not a drop-in ROC replacement for this hook. Pair with jev-ood-calibration / capability-atlas.
+
 [jev-labs](https://github.com/copyleftdev/jev-labs) wraps a probabilistic oracle in a formal consensus kernel (TLA+ → AsyncAPI → Rust). Pharmacy-sim golden 1,080 rounds: **wrong=0**; under severe chaos 314 correct / 46 escalated / **0 wrong** (accuracy 0.834–0.903). **Never confidently wrong.** The invariant is escalate-not-guess: the kernel may escalate, and it may never return a confident wrong verdict. A stability gate excludes votes whose margin sits inside the measured noise floor (identity 0.042). Anti-pattern: treating TLA+/model-check theater as proof the soft judge is safe without an exception path. TLC 1,049,750 states / 0 errors proves the protocol, not that the oracle is never wrong. Scope: synthetic pharmacy, not clinical. Limitation: underdetermined records escalated 86/120 and decided 34 split both ways — the stability gate is not an answerability check. Cousin, not this sidecar.
 
 [seal](https://github.com/Reasonofmoon/seal) is an advance gate plus a visible coverage ledger (`auto` | `code` | `human` | `escalate`). No seal, no advance. Effects stay locked while escalations remain open. **Hiding escalations is a product lie.** **schema-valid ≠ semantically correct** (pairs with jev-capability-atlas jaggedness / ActionGate Schema-valid ≠ intent-matched — contrast only). **mint ≠ product brain**. Zero runtime Python deps. Cousin, not this sidecar.
@@ -167,8 +177,6 @@ confidence; held-out discipline; compare only equivalent case sets.
 [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark) is a 50-sample LMSYS toxic-chat safety eval: Jev precision 90.9% (1 FP) vs local PCD flooding FPs (16). Calibration is the eval-integrity angle; do not treat uncalibrated open PCD as a safety gate. Bounded fixture, not a rh-guard ROC.
 
 [dinostomp](https://github.com/collapseindex/dinostomp) audits eval instruments (data / scorer / runs / claims) before you trust the score. Pointer when people hard-gate on Jev scores inside reward/eval loops: check the instrument first. Harbor/jevals-adjacent; not a rh-guard peer.
-
-[classifier.dev](https://github.com/mrmps/classifier-dev) lived an undeclared-fallback integrity failure: upstream delisted `inclusionai/ling-2.6-flash`; backup `granite-4.0-h-micro` served for weeks at F1 **0.546** while docs advertised ~**0.800**, with nothing saying so. Digest now marks `FALLBACK`; `eval/bench.py` scores a candidate offline before it ships. **Undeclared fallback = eval integrity failure**; advertised score ≠ live model. Cousin of soundness theater — the lie is which model answered. Not a new hook.
 
 [jev-packs](https://github.com/dtduc-git/jev-packs) is an evidence-gated registry of Jev question packs: a pack is `verified` only when accuracy / ECE / cost / latency are recorded on a pinned Jev version. Every Choice and Score must offer `unknown` (mandatory abstention). Anti-soundness-theater for gate criteria: no numbers, no endorsement.
 
@@ -280,10 +288,14 @@ deny so the bridge fails closed.
 7. **Lexical / GLiClass / open System One heads are not ROC-equivalent.**
    Without `TYPESAFE_API_KEY`, the lexical fallback is **degraded**, not risk
    zero. Shared `RiskKind` ids do not make probabilities interchangeable with
-   Jev. Open System One heads (for example Laya) are future backends, not
-   drop-in replacements. There is **no public Jev reward-hack ROC**. An
-   undeclared model swap is an eval-integrity failure (advertised score ≠
-   live model) — see [classifier.dev](https://github.com/mrmps/classifier-dev).
+   Jev. Open System One heads ([laya](https://github.com/NandhaKishorM/laya);
+   [localjev](https://github.com/githubnext/localjev) prompted JSON) are future
+   backends, not drop-in replacements — a 0.85 gate is still soft, and
+   wire-compatible probs are not calibrated logits. Quote a number only with
+   the served backend (`FALLBACK` / `backend: "lexical"`); advertised backend ≠
+   served backend ([classifier-dev](https://github.com/mrmps/classifier-dev)).
+   An undeclared model swap is an eval-integrity failure (advertised score ≠
+   live model). There is **no public Jev reward-hack ROC**.
 
 ## Structural vs Jev (choose in this order)
 
@@ -358,6 +370,11 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Pi verbatim compaction (keep-windows before Jev; fail-open to LLM summary; 0.5 uncalibrated): [pi-jev-compact](https://github.com/dev-willbird1936/pi-jev-compact)
 - Hermes host adapter (shadow default; cannot grant permission; contrast jev-decisions / hermes-jev-router): [hermes-plugin-jev](https://github.com/robbyczgw-cla/hermes-plugin-jev)
 - Multi-host Go routing proxy (filter vs forced; not MCP; 1 schema): [jev-routing](https://github.com/nekowasabi/jev-routing)
+- Silent FALLBACK model-swap (advertised backend ≠ served backend; F1 0.546 vs ~0.800): [classifier-dev](https://github.com/mrmps/classifier-dev)
+- Calibrated PR-review gate (Action + CLI + OpenCode; soft-score-as-hard-rank; need calibration + escape hatch): [jev-gate](https://github.com/totally-tim/jev-gate)
+- Claude PreToolUse Art Director (warden-as-hard-gate; attention≠verdict; escalate vs block): [claude-jev-warden](https://github.com/connectedGraph/claude-jev-warden)
+- Wire-compatible prompted JSON probs (not logits; evaluate calibration before consequential decisions): [localjev](https://github.com/githubnext/localjev)
+- Open System One head (0.85 still soft; Khmer 0.000 at 95.2% conf): [laya](https://github.com/NandhaKishorM/laya)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
 - Formal consensus around a probabilistic oracle (Never confidently wrong; escalate-not-guess): [jev-labs](https://github.com/copyleftdev/jev-labs)
 - Advance gate + coverage ledger (Hiding escalations is a product lie; mint ≠ product brain): [seal](https://github.com/Reasonofmoon/seal)
@@ -387,7 +404,6 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Corpus curation with Jev pass/fail gates (`curated.jsonl` / `rejected.jsonl`; eval-data integrity): [jev-curate](https://github.com/ThyFriendlyFox/jev-curate)
 - toxic-chat safety eval (Jev 90.9% precision / 1 FP; do not treat uncalibrated PCD as a safety gate): [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark)
 - Eval-instrument audit (check the instrument first): [dinostomp](https://github.com/collapseindex/dinostomp)
-- Silent model-swap serving (`FALLBACK` marker; advertised ~0.800 vs live granite F1 **0.546**): [classifier.dev](https://github.com/mrmps/classifier-dev)
 - Evidence-gated question packs (mandatory `unknown`; no numbers, no endorsement): [jev-packs](https://github.com/dtduc-git/jev-packs)
 - CI PR-triage gate (`should_review` / `risk` / `route` / `touches_secrets`; threshold gaming surface; watch): [ci-gatekeeper-bot-jev](https://github.com/NemanjaManic/ci-gatekeeper-bot-jev)
 - Changed-file Jev scores in CI (shadow-mode only until calibrated; calibration-first before automerge; soundness theater): [jev-pr-review](https://github.com/ohernandezdev/jev-pr-review)

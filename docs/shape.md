@@ -64,7 +64,7 @@ Averaging all Nouls or multiplying by Choice confidence. Parallel questions are 
 
 ## System One class
 
-The live head is TypeSafe Jev. Lexical / GLiClass-shaped labels are a degraded fallback when the key is missing or the call fails, not a calibrated substitute. Open System One heads (for example Laya) are future backends: same *class* (typed Choice / Score / Noul), not drop-in ROC replacements for this reward-hack hook. There is no public Jev reward-hack ROC. Do not cite support-ticket calibration as a SWE-hack claim.
+The live head is TypeSafe Jev. Lexical / GLiClass-shaped labels are a degraded fallback when the key is missing or the call fails, not a calibrated substitute. Open System One heads ([laya](https://github.com/NandhaKishorM/laya); [localjev](https://github.com/githubnext/localjev) prompted JSON) are future backends: same *class* (typed Choice / Score / Noul), not drop-in ROC replacements for this reward-hack hook — a 0.85 gate is still soft (Khmer OOD 0.000 at 95.2% confidence), and wire-compatible probs are not calibrated logits. Quote a number only with the served backend (`FALLBACK` / lexical); advertised backend ≠ served backend ([classifier-dev](https://github.com/mrmps/classifier-dev)). There is no public Jev reward-hack ROC. Do not cite support-ticket calibration as a SWE-hack claim.
 
 ## TOCTOU
 

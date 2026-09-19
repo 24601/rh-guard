@@ -75,7 +75,15 @@ a merge, and not a reward-hack detector.
 
 [jev-routing](https://github.com/nekowasabi/jev-routing) is a multi-host Go proxy: compact, then Jev Choice+Noul, then rewrite `tools[]` to 1 schema. Default `filter`; `forced` only with a verified real Jev answer. Not MCP. Advisory filter vs hard route. Cousin of slo-router / pi-jev-control. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[classifier.dev](https://github.com/mrmps/classifier-dev) is an eval-integrity cousin, not a gate: undeclared fallback serving. Upstream delisted `inclusionai/ling-2.6-flash`; `granite-4.0-h-micro` answered for weeks at F1 **0.546** while docs advertised ~**0.800**. Digest now marks `FALLBACK`; `eval/bench.py` measures a model offline before it ships. Surface which backend answered; advertised score ≠ live model. Not a rh-guard peer.
+[classifier-dev](https://github.com/mrmps/classifier-dev) is an eval-integrity cousin, not a gate: advertised backend ≠ served backend. Silent FALLBACK (`granite-4.0-h-micro` at F1 **0.546** vs advertised ~**0.800**). Digest now marks `FALLBACK`; `eval/bench.py` measures a model offline before it ships. Quote numbers only with digest/`FALLBACK` markers; do not hard-gate on undeclared-fallback confidence. **undeclared fallback = eval integrity failure**; advertised score ≠ live model. Not a rh-guard peer.
+
+[jev-gate](https://github.com/totally-tim/jev-gate) is a calibrated PR-review gate (Action + CLI + OpenCode). **soft-score-as-hard-rank**: require calibration evidence + `--no-gate` / human override before a hard merge. Distinct from thevibeworks/jevgate. Not choxos/jev-reviewer. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[claude-jev-warden](https://github.com/connectedGraph/claude-jev-warden) is a Claude PreToolUse Art Director: quality ≥ 80% or exit 2. **attention≠verdict** / **warden-as-hard-gate**. Escalate taste/quality; block only eval-asset / structural. Do not merge `warden.js` into `examples/`. Cousin, not this sidecar.
+
+[localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
+
+[laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC.
 
 [jev-labs](https://github.com/copyleftdev/jev-labs) wraps a probabilistic oracle in a formal consensus kernel. **Never confidently wrong.** Escalate-not-guess: under severe chaos accuracy drops but wrong=0 because the system escalates. Anti-pattern: TLA+/model-check theater as proof the soft judge is safe without an exception path. Cousin, not this sidecar.
 
@@ -297,6 +305,36 @@ jev-routing (nekowasabi/jev-routing)
   default filter; forced only with a verified real Jev answer
   PreToolUse cannot strip the catalog; advisory vs hard route
 
+classifier-dev (mrmps/classifier-dev)
+  advertised backend ≠ served backend
+  undeclared fallback = eval integrity failure
+  ling-2.6-flash delisted; granite-4.0-h-micro served weeks at F1 0.546 vs ~0.800
+  digest now marks FALLBACK; eval/bench.py before it ships
+  do not hard-gate on soft confidence from an undeclared fallback
+
+jev-gate (totally-tim/jev-gate)
+  GitHub Action + local CLI + OpenCode; seven typed concern questions
+  gated Nouls default 0.60; calibrate on your diffs; --no-gate escape hatch
+  soft-score-as-hard-rank; calibration evidence + escape hatch before merge
+  not thevibeworks/jevgate; not choxos/jev-reviewer; not egma-ai/jev-reviewer
+  do not merge into examples/
+
+claude-jev-warden (connectedGraph/claude-jev-warden)
+  Claude PreToolUse Art Director; Jev 1.13; quality ≥ 80% or exit 2
+  attention≠verdict / warden-as-hard-gate
+  escalate taste/quality (reinspect); block only eval-asset / structural
+  do not merge warden.js into examples/
+
+localjev (githubnext/localjev)
+  wire-compatible POST /v1/systemone; prompted JSON probs, not logits
+  evaluate calibration on your workload before consequential decisions
+  thin soundness-theater cousin; not a new hook pack
+
+laya (NandhaKishorM/laya)
+  open System One head; 0.85 RLCD gate is still soft
+  Khmer OOD 0.000 at 95.2% confidence; confidence gives no OOD warning
+  future backend, not a drop-in ROC
+
 jev-labs (copyleftdev/jev-labs)
   Never confidently wrong; escalate-not-guess
   severe chaos: accuracy drops, wrong=0 because the system escalates
@@ -312,11 +350,6 @@ slo-router (zeeshan8281/slo-router)
   77.93 → 490.38 ms p95 (~6.3×); same routes/accuracy
   exactness never overrides context/capability; 503 if infeasible
   not a rh-guard peer
-
-classifier-dev (mrmps/classifier-dev)
-  undeclared fallback = eval integrity failure
-  advertised ~0.800 vs live granite F1 0.546; digest FALLBACK
-  not a gate / not a new hook
 
 firehose-judge (ragelink/firehose-judge)
   Bluesky firehose; Durable Object; uncertain → "needs a human"
