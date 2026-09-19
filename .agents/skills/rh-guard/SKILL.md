@@ -136,7 +136,7 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [hermes-plugin-jev](https://github.com/robbyczgw-cla/hermes-plugin-jev) is a Hermes host adapter (plugin ID `jev-router`): turn classification, conservative tool shaping, risk_gate approvals, optional coding verification. Default `mode: shadow`. **It cannot grant permission**; `approve` means request a human; it never returns `allow`. Native Hermes blocks take precedence. Missing key/SDK: plugin inactive, Hermes unchanged. Timeouts/malformed: Jev abstains. Contrast [jev-decisions](https://github.com/bojansandhaus/jev-decisions) (advisory reviews; `JEV_ENABLE_HOOKS`) and hermes-jev-router (model-route / skip-main-model, not this risk gate). Same-named [Mrmimee/hermes-plugin-jev](https://github.com/Mrmimee/hermes-plugin-jev) is a tool plugin (Agnes Flash), not a hook adapter. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[jev-routing](https://github.com/nekowasabi/jev-routing) is a Go proxy for Claude Code / Codex / Grok Build / Cursor Agent / Devin: compact, then Jev next-tool Choice + done Noul, then rewrite `tools[]` to **1 schema** (zero if respond). Not MCP. Default `JEV_ROUTING_MODE=filter`; `forced` only when a verified real Jev answer exists — local scoring alone does not force. No key → on-device classifier. Host PreToolUse cannot strip the catalog (after the model has seen every schema). Advisory filter vs hard `forced` route. Cousin of slo-router / pi-jev-control. Do not merge into `examples/`. Cousin, not this sidecar.
+[jev-routing](https://github.com/nekowasabi/jev-routing) is a single Go binary harness (explicitly **not an MCP server**) for Claude Code / Codex / Grok Build / Cursor Agent CLI / Devin CLI. Request rewrite: (a) drop/truncate tool results like [fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) **without summarizing**, (b) ask Jev Choice(next tool)+Noul(done) in parallel, (c) shrink `tools[]` to **1 schema** (zero if respond), (d) strip thinking/reasoning. Integrity/control-plane pattern for agent loops: the catalog the model sees is rewritten *before* the call. Host PreToolUse cannot strip the catalog (after the model has seen every schema). Default `JEV_ROUTING_MODE=filter`; `forced` only when a verified real Jev answer exists — local scoring alone does not force. No key → on-device classifier (named degraded backend, same lesson as `backend: "lexical"`). `claude mcp add` leaves the catalog in place. Advisory filter vs hard `forced` route. Cousin of slo-router / [pi-jev-control](https://github.com/goodruizhan/pi-jev-control). Do not merge into `examples/`. Cousin, not this sidecar.
 
 [classifier-dev](https://github.com/mrmps/classifier-dev) is an eval-integrity cousin: a public classifier that now serves TypeSafe Jev, with LLM chains as fallback. Upstream delisted `inclusionai/ling-2.6-flash`; backup `ibm-granite/granite-4.0-h-micro` served for weeks at F1 **0.546** while docs advertised ~0.800 — "Nothing in the deployed numbers said so" (measured 2026-09-17, `eval/README.md`). The digest now marks `FALLBACK`; `eval/bench.py` scores a candidate offline before it ships. **advertised backend ≠ served backend.** **Undeclared fallback = eval integrity failure**; advertised score ≠ live model. Require digest/`FALLBACK` markers before quoting eval numbers; do not hard-gate on soft confidence from an undeclared fallback (same degraded-backend lesson as `backend: "lexical"` here). Heuristic: a quoted F1 without the served model id is soundness theater. Cousin of dinostomp / jev-baselines-eval. Not a rh-guard peer.
 
@@ -201,6 +201,12 @@ confidence; held-out discipline; compare only equivalent case sets.
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection defense eval (Chevy Tahoe $1 chatbot sandbox): 36 attacks + 38 benign; six defenses including **Real Jev API**. Quoted README: **~74 messages is a demonstration set, not a statistically powered benchmark.** Static attack list; quoted: adaptive attackers bypass even SOTA more than 85% of the time when they know the defense. FPR is the metric most demos skip. Cousin of [jev-agent-safety-arena](https://github.com/mjyoke1111/jev-agent-safety-arena) / [agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) / [jev-pastepilot](https://github.com/buberlo/jev-pastepilot). Fold injection-eval / honest-limitations only. Do not invent unpublished ASR as a rh-guard ROC. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi coding-agent extension (+ Claude Code / Codex hooks): TypeSafe Jev on (a) tool-call intent+risk before run, (b) tool-output injection before the agent reads, (c) reply harmful/relay-injection after. Quoted README: **Fails closed.** Errors / no key → ask you; **never auto-allows.** Code owns an **allow / ask / warn** ladder (soft judgment ≠ hard deny list). Secret scrub before Jev (pattern-based). Optional task pin so chat drift is not "on task". Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from pi-jev-approver / pi-jev-guard / [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard). Quoted: **Prompt injection is not solved.** Uncalibrated 0.3 / 1.3 / 0.8. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[hermes-jev-skills](https://github.com/kerpopule/hermes-jev-skills) is a Hermes (also Claude Code/Codex) skill pack: model routing, memory passage triage (incl. hidden-instruction check), compaction/handoffs, skill selection, message triage, computer/browser use gated by **safe action tables**, plus a routing dashboard (`on`/`shadow`/`off`). Quoted README: **Everything fails open** — no key / timeout / malformed / low confidence keeps the current model, returns the original list, drops nothing, suggests nothing, and computer use returns `reobserve`. Safety rails that do not depend on Jev being right: risk words never route to the cheapest tier; Jev can only ever return an action id you put in the table. Memory: **Never read, follow or quote `dropped_injection_ids`**; `unjudged_ids` are **unchecked**, not verified. Computer-use: quoted "The worst a wrong answer can do is pick another action you already judged safe"; a chosen id is not proof — observe again. Quoted enablement: **Shadow first, and mean it**; a quiet log proves nothing. Distinct from [hermes-plugin-jev](https://github.com/robbyczgw-cla/hermes-plugin-jev) (cannot grant permission), [hermes-switchyard](https://github.com/bgrablin/hermes-switchyard) (**never loads the skill**), [skill-broker](https://github.com/adamjralph/skill-broker). Fold integrity + fail-open + action-table + hidden-instruction + shadow/on/off only — not CUA recipes. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[hermes-skill-router](https://github.com/cdepuy/hermes-skill-router) is a local Laya skill gate: `pre_llm_call` classifies the task vs a skill index, injects top skills via the **user-message channel** (cache-safe; never mutates the system prompt). Quoted README: **Fail-open** — if Laya is unavailable, missing, or routing finds nothing, the hook injects nothing and Hermes behaves as stock. Default `floor` **0.25** is uncalibrated. Quoted: **Accuracy is ~good, not perfect**; it is never worse than stock (fail-open), but it can pick a plausible-but-not-ideal skill. Contrast [hermes-switchyard](https://github.com/bgrablin/hermes-switchyard) (**never loads the skill**) — this plugin *does* inject SKILL.md excerpts as "ACTIVE guidance". Local-econ fail-open cousin of API Jev routers ([jev-routing](https://github.com/nekowasabi/jev-routing) / [hermes-jev-skills](https://github.com/kerpopule/hermes-jev-skills)). Pair with [laya](https://github.com/NandhaKishorM/laya) (0.85 still soft; Khmer OOD). Treating a 0.25 inject as a grant or as a safety veto is confidence theater. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[dgp](https://github.com/numerous-com/dgp) (Decision Graph Protocol) is typed assessment then application-side **guarded commit/authorization** before effects; receipts. Quoted README: an agent assesses the choices while **application code retains control of permissions and effects**. Assessors do not execute side effects. Quoted TypeSafe note: **Speculative assessments cannot authorize effects**. Demo: the model's publication recommendation does not publish. Host retains authority regardless of the assessor. Primary protocol fold is in [Augustus](https://github.com/24601/Augustus); here capture the integrity boundary only (same shape as actiongate / turnstile: Jev supplies evidence, code owns authority). Not a coding-agent hook pack. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
 
@@ -337,9 +343,13 @@ deny so the bridge fails closed.
    paths, assertion `sed`, `--no-verify`, runtime hijacks) fire before any
    semantic call. After a structural deny, skip Jev. Jev cannot overrule a
    structural deny. Do not authorize a mutate on a stale soft Noul alone
-   (TOCTOU: check-then-act is not atomic). [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev)
+   (TOCTOU: check-then-act is not atomic).    [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev)
    binds a **single-use Action Grant** to the exact tool call and consumes it
    once (replayed/expired/mutated permits fail closed). A Noul is not a permit.
+   [dgp](https://github.com/numerous-com/dgp) names the same integrity
+   boundary: typed assessment then application-side guarded commit;
+   **Speculative assessments cannot authorize effects**; assessors do not
+   execute. Primary protocol fold is in Augustus; here capture the boundary.
    [AgentGhost](https://github.com/reddpy/AgentGhost) wraps execution so the
    model cannot opt out (`guard()` *is* the tool's execution function);
    ASK/DENY throw; default `failMode` closed. Contrast actiongate `wrapTool`
@@ -448,7 +458,20 @@ deny so the bridge fails closed.
    list ([pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel):
    quoted **never auto-allows**; secret scrub before Jev; optional task
    pin; **Prompt injection is not solved**). Contrast fail-open pruners /
-   [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). There is
+   [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Fail-open
+   skill/routing overlays
+   ([hermes-jev-skills](https://github.com/kerpopule/hermes-jev-skills):
+   quoted **Everything fails open**; Jev can only return an action id
+   from the table;
+   [hermes-skill-router](https://github.com/cdepuy/hermes-skill-router):
+   local Laya **Fail-open**; inject ≠ grant) are not this sidecar's
+   structural deny. Assessors do not execute
+   ([dgp](https://github.com/numerous-com/dgp): **application code
+   retains control**; **Speculative assessments cannot authorize
+   effects**). [Archer](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+   is still **promised-not-landed**. Do not treat
+   [Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B) as Archer.
+   There is
    **no public Jev reward-hack ROC**.
 
 ## Structural vs Jev (choose in this order)
@@ -524,7 +547,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Codex Jev proxy (LICENSE-only public tree at capture): [jev-runway](https://github.com/IPECTER/jev-runway)
 - Pi verbatim compaction (keep-windows before Jev; fail-open to LLM summary; 0.5 uncalibrated): [pi-jev-compact](https://github.com/dev-willbird1936/pi-jev-compact)
 - Hermes host adapter (shadow default; cannot grant permission; contrast jev-decisions / hermes-jev-router): [hermes-plugin-jev](https://github.com/robbyczgw-cla/hermes-plugin-jev)
-- Multi-host Go routing proxy (filter vs forced; not MCP; 1 schema): [jev-routing](https://github.com/nekowasabi/jev-routing)
+- Multi-host Go harness (not MCP; drop/truncate without summarizing; Choice+Noul; 1 schema; strip thinking): [jev-routing](https://github.com/nekowasabi/jev-routing)
 - Silent FALLBACK model-swap (advertised backend ≠ served backend; F1 0.546 vs ~0.800): [classifier-dev](https://github.com/mrmps/classifier-dev)
 - Calibrated PR-review gate (Action + CLI + OpenCode; soft-score-as-hard-rank; need calibration + escape hatch): [jev-gate](https://github.com/totally-tim/jev-gate)
 - Claude PreToolUse Art Director (warden-as-hard-gate; attention≠verdict; escalate vs block): [claude-jev-warden](https://github.com/connectedGraph/claude-jev-warden)
@@ -557,6 +580,9 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Productized moderation (fails open error_open; AUROC is a sanity benchmark, not a leaderboard): [jevmod](https://github.com/ohernandezdev/jevmod)
 - Prompt-injection defense eval (demonstration set, not a statistically powered benchmark; Real Jev API): [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe)
 - Pi fail-closed integrity gate (allow/ask/warn; never auto-allows; secret scrub; task pin; Prompt injection is not solved): [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel)
+- Hermes skill pack (Everything fails open; safe action tables; dropped_injection_ids; Shadow first): [hermes-jev-skills](https://github.com/kerpopule/hermes-jev-skills)
+- Local Laya skill inject (user-message channel; Fail-open; Accuracy is ~good, not perfect; inject ≠ grant): [hermes-skill-router](https://github.com/cdepuy/hermes-skill-router)
+- Guarded commit/authorization boundary (assessors do not execute; speculative assessments cannot authorize effects): [dgp](https://github.com/numerous-com/dgp)
 - Wire-compatible prompted JSON probs (not logits; evaluate calibration before consequential decisions): [localjev](https://github.com/githubnext/localjev)
 - Open System One head (0.85 still soft; Khmer 0.000 at 95.2% conf): [laya](https://github.com/NandhaKishorM/laya)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
