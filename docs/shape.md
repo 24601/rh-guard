@@ -68,7 +68,7 @@ The live head is TypeSafe Jev. Lexical / GLiClass-shaped labels are a degraded f
 
 ## TOCTOU
 
-A Noul is a score at one hook event, not a capability grant. Deny mutating tools with fresh structural checks on that event. Do not authorize a write, `sed`, or `--no-verify` because an earlier prompt-stage Noul was below threshold. Soft semantic scores may steer; they do not replace an atomic policy on the side effect. Check-then-act on a stale overlay is how a gate looks closed in logs and still loses the race. [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) binds a single-use Action Grant to the exact tool call and consumes it once (replayed/expired/mutated permits fail closed). A Noul is not a permit. Cousin, not this sidecar.
+A Noul is a score at one hook event, not a capability grant. Deny mutating tools with fresh structural checks on that event. Do not authorize a write, `sed`, or `--no-verify` because an earlier prompt-stage Noul was below threshold. Soft semantic scores may steer; they do not replace an atomic policy on the side effect. Check-then-act on a stale overlay is how a gate looks closed in logs and still loses the race. [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) binds a single-use Action Grant to the exact tool call and consumes it once (replayed/expired/mutated permits fail closed). A Noul is not a permit. [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard) re-checks target and instruction snapshots before committing the captured path (a changed instruction snapshot gets one fresh evaluation). Cousin, not this sidecar.
 
 ## Open questions and risks
 
