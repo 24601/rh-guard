@@ -130,6 +130,8 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [jev-lens](https://github.com/rashedInt32/jev-lens) is an advisory Claude Stop hook that answers "do I need to look?": it never blocks, never edits, and never says green unless it is sure (`JEV_LENS_GREEN` 0.9). Shadow mode first. Attention/VOI, not authority — keep it separate from skill-broker / construct-auto-classifier when you need a gate. Cousin of jev-reviewer; not a merge. Hunch: collapsing attention and authority invites gaming the green light.
 
+[jev-preflight](https://github.com/muse0509/jev-preflight) is a Claude Code Stop-hook: UserPromptSubmit snapshots a private Git baseline; Stop sends a redacted turn diff to Jev on eight risk axes. Assist mode: high risk asks at most one reinspect, then finishes. Fail-open (no key / timeout / invalid / oversized skip evaluation). Default **0.85 threshold is uncalibrated**. Scores direct attention, not proof of defects; not a merge blocker. Pattern: escalate-attention ≠ hard block. Soft gate that can be gamed by ignoring the reinspect. Do not merge into `examples/`. Cousin of jev-lens; not this sidecar.
+
 [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b) is a LoRA distill of Jev memory-relevance onto Qwen2.5-0.5B. Distill agreement is not independent gold; a student is not the hard envelope. Card: `docs/eval-integrity.md`.
 
 [jev-triage](https://github.com/ThyFriendlyFox/jev-triage) routes unlabeled data by calibrated confidence and logs soft labels. If used as an eval filter: do not distill Jev as teacher of record — real outcome labels remain the training targets.
@@ -148,7 +150,7 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval) is a pre-registered Jev-vs-baselines eval with three same-day errata rounds after external review found overstated results (both experiments AMBIGUOUS; headline cascade sign flips at a tighter margin). Harbor/jevals lesson: independent review; do not promote first-publish numbers to labels.
 
-[jev-carryforward](https://github.com/Dharundp6/jev-carryforward) is a verbatim fact ledger scored for relevance (nothing summarised, nothing deleted). Anti-summarization that erases evidence; cousin to extractive compaction and to clear-head claim/evidence checks. No key → whole list (fail-open). [databricks-jev-pdf-lab](https://github.com/laurentfabre/databricks-jev-pdf-lab) publishes a measured negative result (no quality-equivalent Jev PDF payoff). Anti-soundness-theater.
+[jev-carryforward](https://github.com/Dharundp6/jev-carryforward) is a verbatim fact ledger scored for relevance (nothing summarised, nothing deleted). Anti-summarization that erases evidence; cousin to extractive compaction and to clear-head claim/evidence checks. No key → whole list (fail-open). Eval suite: with MCP `recall` available, the agent called it **0/4** on a force-push prohibition task — an MCP tool sitting there is not enough. SessionStart/compaction hooks that inject constraints beat voluntary tool use. Anti-pattern: hope the model looks. [databricks-jev-pdf-lab](https://github.com/laurentfabre/databricks-jev-pdf-lab) publishes a measured negative result (no quality-equivalent Jev PDF payoff). Anti-soundness-theater.
 
 [Abide](https://github.com/coldteadotai/abide)'s `replay` plus independent
 review (flagged edits/turns confirmed or not; flags are not labels) is
@@ -327,6 +329,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Host permissions + typed actions + retained evidence; Jev confidence grants no permission: [waymode](https://github.com/mossburgh/waymode)
 - Skill-routing as soft label, never grants access; Jev relevance ≠ authority (sibling to turnstile): [skill-broker](https://github.com/adamjralph/skill-broker)
 - Advisory Stop hook (never blocks; never says green unless sure): [jev-lens](https://github.com/rashedInt32/jev-lens)
+- Claude Stop-hook (eight risk axes; one reinspect; 0.85 threshold is uncalibrated; escalate-attention ≠ hard block): [jev-preflight](https://github.com/muse0509/jev-preflight)
 - LoRA distill of Jev memory-relevance (student is not the hard envelope): [jev-gate-student-b](https://huggingface.co/SargeDev/jev-gate-student-b)
 - Soft-label eval filter (do not distill Jev as teacher of record): [jev-triage](https://github.com/ThyFriendlyFox/jev-triage)
 - toxic-chat safety eval (Jev 90.9% precision / 1 FP; do not treat uncalibrated PCD as a safety gate): [system-one-benchmark](https://github.com/mallahyari/system-one-benchmark)
@@ -336,6 +339,6 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Cost-aware Jev gate before generative PR review (safety escarpment): [prune-review](https://github.com/shubhangi013/prune-review)
 - PR vs originating intent (diff is a search hint; watch): [jev-intent-review](https://github.com/yottayoshida/jev-intent-review)
 - Pre-registered eval + same-day errata (claim vs evidence): [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval)
-- Verbatim fact ledger scored for relevance: [jev-carryforward](https://github.com/Dharundp6/jev-carryforward)
+- Verbatim fact ledger scored for relevance (0/4 recall; hope the model looks): [jev-carryforward](https://github.com/Dharundp6/jev-carryforward)
 - Measured negative result (no quality-equivalent Jev PDF payoff): [databricks-jev-pdf-lab](https://github.com/laurentfabre/databricks-jev-pdf-lab)
 - Official TypeSafe contracts: [typesafe-ai/skills](https://github.com/typesafe-ai/skills)
