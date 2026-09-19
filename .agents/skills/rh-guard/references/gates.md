@@ -53,6 +53,8 @@ a merge, and not a reward-hack detector.
 
 [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) is runtime tool-call authorization before side effects: deterministic policy owns `ALLOW` / `REVIEW` / `BLOCK`; Jev supplies evidence. **Jev supplies evidence. Code owns authority.** A positive model score never overrides a deterministic security failure. **Schema-valid ≠ intent-matched.** Enforced `ALLOW` issues a **single-use Action Grant** bound to the exact tool call; replayed, expired, mutated, and unknown permits fail closed. A Noul is not a permit. Early public MVP; current SDK `wrapTool` is advisory until a gateway. No Claude/Cursor hook pack — do not merge into `examples/`. Compose with construct-auto-classifier and jev-lens. Cousin, not this sidecar.
 
+[AgentGhost](https://github.com/reddpy/AgentGhost) (`@agentghost/sdk`) is intent-aware `ALLOW` / `ASK` / `DENY` wrap around tool execution. Deterministic rules first; Jev judge; `ASK`/`DENY` throw so an approval cannot be silently skipped; default `failMode: "closed"`. README: AgentGhost *is* the tool's execution function — the model cannot opt out. Contrast actiongate `wrapTool` (advisory until a gateway) and jev-use fail-open. Jev `ALLOW` is still soft. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [turnstile](https://github.com/zyphr-labs/turnstile) is an agent action guardrail: deterministic policy then Jev, with receipts and threshold replay. **Jev never grants authority that policy denied.** Same doctrine as actiongate-jev. Observe-mode default; do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-heed](https://github.com/Nyarlathoteppppp/pi-heed) persists user constraints across tool calls and context compaction and checks every side-effecting call against what the user said (anti instruction-drift). Jev never writes policy; code owns the ledger and the block. Shadow by default; fail-open. Complementary to jev-carryforward 0/4. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
@@ -235,6 +237,14 @@ actiongate-jev (omkarghugarkar007/actiongate-jev)
   single-use Action Grant bound to the exact tool call
   replayed / expired / mutated / unknown permits fail closed
   wrapTool ≠ hooks.json; do not merge into examples/
+
+AgentGhost (reddpy/AgentGhost)
+  npm @agentghost/sdk; ALLOW / ASK / DENY wrap around tool execution
+  deterministic rules first; Jev judge; ASK/DENY throw (silently skipped)
+  default failMode closed (denies when the judge errors)
+  AgentGhost is the tool's execution function — model cannot opt out
+  contrast actiongate wrapTool advisory; jev-use fail-open
+  Jev ALLOW is still soft; do not merge into examples/
 
 turnstile (zyphr-labs/turnstile)
   Jev never grants authority that policy denied
@@ -467,7 +477,10 @@ structural checks. Soft semantic scores may steer; they do not replace an
 atomic policy on the write. [actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev)
 binds a **single-use Action Grant** to the exact tool call and consumes it
 once; replayed, expired, mutated, and unknown permits fail closed. A Noul is
-not a permit. [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard)
+not a permit. [AgentGhost](https://github.com/reddpy/AgentGhost) wraps
+execution so the model cannot opt out (`guard()` *is* the tool's execution
+function); ASK/DENY throw; default `failMode` closed. Contrast actiongate
+`wrapTool` advisory until a gateway. [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard)
 re-checks target and instruction snapshots before committing. Cousin, not this sidecar.
 
 ## Polarity

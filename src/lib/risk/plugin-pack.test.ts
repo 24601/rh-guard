@@ -220,6 +220,11 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/single-use Action Grant/);
     expect(readme).toMatch(/replayed/);
     expect(readme).toMatch(/wrapTool/);
+    expect(readme).toMatch(/reddpy\/AgentGhost/);
+    expect(readme).toMatch(/@agentghost\/sdk/);
+    expect(readme).toMatch(/tool's execution function/);
+    expect(readme).toMatch(/silently skipped/);
+    expect(readme).toMatch(/failMode/);
     expect(readme).toMatch(/Nyarlathoteppppp\/pi-heed/);
     expect(readme).toMatch(/instruction-drift/);
     expect(readme).toMatch(/context compaction/);
@@ -412,6 +417,8 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/classifier-dev/);
     expect(pkg).not.toMatch(/construct-auto-classifier/);
     expect(pkg).not.toMatch(/actiongate-jev/);
+    expect(pkg).not.toMatch(/AgentGhost/);
+    expect(pkg).not.toMatch(/@agentghost\/sdk/);
     expect(pkg).not.toMatch(/pi-heed/);
     expect(pkg).not.toMatch(/pi-jev-guard/);
     expect(pkg).not.toMatch(/pi-jev-control/);
@@ -486,6 +493,8 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/classifier-dev/);
     expect(lock).not.toMatch(/construct-auto-classifier/);
     expect(lock).not.toMatch(/actiongate-jev/);
+    expect(lock).not.toMatch(/AgentGhost/);
+    expect(lock).not.toMatch(/@agentghost\/sdk/);
     expect(lock).not.toMatch(/pi-heed/);
     expect(lock).not.toMatch(/pi-jev-guard/);
     expect(lock).not.toMatch(/pi-jev-control/);
@@ -691,6 +700,11 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/single-use Action Grant/);
     expect(skill).toMatch(/replayed/);
     expect(skill).toMatch(/wrapTool/);
+    expect(skill).toMatch(/reddpy\/AgentGhost/);
+    expect(skill).toMatch(/@agentghost\/sdk/);
+    expect(skill).toMatch(/tool's execution function/);
+    expect(skill).toMatch(/silently skipped/);
+    expect(skill).toMatch(/failMode/);
     expect(skill).toMatch(/Nyarlathoteppppp\/pi-heed/);
     expect(skill).toMatch(/instruction-drift/);
     expect(skill).toMatch(/context compaction/);
@@ -945,6 +959,11 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Schema-valid ≠ intent-matched/);
     expect(evalDoc).toMatch(/single-use Action Grant/);
     expect(evalDoc).toMatch(/grants\/consume/);
+    expect(evalDoc).toMatch(/reddpy\/AgentGhost/);
+    expect(evalDoc).toMatch(/@agentghost\/sdk/);
+    expect(evalDoc).toMatch(/tool's execution function/);
+    expect(evalDoc).toMatch(/silently skipped/);
+    expect(evalDoc).toMatch(/failMode/);
     expect(evalDoc).toMatch(/Nyarlathoteppppp\/pi-heed/);
     expect(evalDoc).toMatch(/instruction-drift/);
     expect(evalDoc).toMatch(/Jev never writes policy/);
@@ -1119,6 +1138,7 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/mrmps\/classifier-dev/);
     expect(install).toMatch(/godspede\/construct-auto-classifier/);
     expect(install).toMatch(/omkarghugarkar007\/actiongate-jev/);
+    expect(install).toMatch(/reddpy\/AgentGhost/);
     expect(install).toMatch(/Nyarlathoteppppp\/pi-heed/);
     expect(install).toMatch(/Reindeer-AI\/pi-jev-guard/);
     expect(install).toMatch(/goodruizhan\/pi-jev-control/);
@@ -1214,6 +1234,11 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Schema-valid ≠ intent-matched/);
     expect(hosts).toMatch(/single-use Action Grant/);
     expect(hosts).toMatch(/wrapTool/);
+    expect(hosts).toMatch(/reddpy\/AgentGhost/);
+    expect(hosts).toMatch(/@agentghost\/sdk/);
+    expect(hosts).toMatch(/tool's execution function/);
+    expect(hosts).toMatch(/silently skipped/);
+    expect(hosts).toMatch(/failMode/);
     expect(hosts).toMatch(/Nyarlathoteppppp\/pi-heed/);
     expect(hosts).toMatch(/instruction-drift/);
     expect(hosts).toMatch(/Reindeer-AI\/pi-jev-guard/);
@@ -1332,6 +1357,11 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/never overrides/);
     expect(gates).toMatch(/Schema-valid ≠ intent-matched/);
     expect(gates).toMatch(/single-use Action Grant/);
+    expect(gates).toMatch(/reddpy\/AgentGhost/);
+    expect(gates).toMatch(/@agentghost\/sdk/);
+    expect(gates).toMatch(/tool's execution function/);
+    expect(gates).toMatch(/silently skipped/);
+    expect(gates).toMatch(/failMode/);
     expect(gates).toMatch(/Nyarlathoteppppp\/pi-heed/);
     expect(gates).toMatch(/instruction-drift/);
     expect(gates).toMatch(/Reindeer-AI\/pi-jev-guard/);
