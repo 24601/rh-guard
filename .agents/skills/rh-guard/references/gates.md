@@ -91,6 +91,14 @@ a merge, and not a reward-hack detector.
 
 [opencode-context-pruner](https://github.com/hoshinodis/opencode-context-pruner) is an OpenCode port of [fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) via the `context` hook. Keep/truncate/drop applies to the **request view**; persisted history is never modified. Default `keepThreshold` **0.15** vs upstream **0.5**. Measured `removedMessages` **282** is not a quality claim. Dropping results can erase eval evidence. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[yolo-shell](https://github.com/riz007/yolo-shell) is a destructive-shell interceptor: ~2ms local fast-path, then Jev with a 200ms deadline, then a 40-rule deterministic engine. **no silent fail-open when Jev is down.** Crash / unexpected exit still allows. `YOLO_BYPASS=1` and `yolo ` skip the gate. Treating the Jev `action` Choice as the sole veto without the local floor is soundness theater. Do not merge zsh/bash/fish hooks into `examples/`. Cousin, not this sidecar.
+
+[jev-home-assistant-sentinel](https://github.com/bojansandhaus/jev-home-assistant-sentinel) is HA gate + readback: Jev recommends; policy in code; **Command sent ≠ state confirmed**; **action ≠ verified outcome**. Review is shadow. Unavailable ≠ success. Attention ≠ verdict. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[herdr-jev](https://github.com/muthuishere/herdr-jev) is a Herdr prompt-path gate via openjev NLI. Soft permission/gate that **owns** the submit path. Quoted README: **Nothing here works yet.** Distinct from TypeSafe Jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[apa-agent-harness](https://github.com/AiPersonacademy/apa-agent-harness) is a rebrand of [jev-harness](https://github.com/AntonioCoppe/jev-harness) (`src/` SHA identical). README trajectory verification is **advertised capability ≠ shipped module**. Real pattern: **shadow vs live** (`shadow_noop` / `intendedAction`). Example 0.85 is uncalibrated. Fold gate/eval-integrity only. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC.
@@ -374,6 +382,31 @@ opencode-context-pruner (hoshinodis/opencode-context-pruner)
   keepThreshold 0.15 vs upstream 0.5
   530 msgs, removedMessages 282 — not a quality claim
   evidence-erasure eval-integrity (constraints / hidden eval / injection traces)
+  do not merge into examples/
+
+yolo-shell (riz007/yolo-shell)
+  ~2ms local fast-path then Jev (200ms deadline) then 40-rule floor
+  no silent fail-open when Jev is down; crash still allows
+  YOLO_BYPASS / yolo prefix skip the gate
+  do not merge zsh/bash/fish hooks into examples/
+
+jev-home-assistant-sentinel (bojansandhaus/jev-home-assistant-sentinel)
+  Jev recommends; policy; HA acts; state readback
+  Command sent ≠ state confirmed; action ≠ verified outcome
+  review is shadow; unavailable ≠ success; attention ≠ verdict
+  do not merge into examples/
+
+herdr-jev (muthuishere/herdr-jev)
+  openjev NLI prompt gate; owns the Herdr submit path
+  Status: design. Nothing here works yet
+  NLI cross-encoder ≠ TypeSafe Jev ROC; thin card
+  do not merge into examples/
+
+apa-agent-harness (AiPersonacademy/apa-agent-harness)
+  rebrand of AntonioCoppe/jev-harness; src/ SHA identical
+  advertised capability ≠ shipped module (trajectory)
+  shadow vs live: shadow_noop / intendedAction
+  confidenceThreshold 0.85 uncalibrated; fold gate/eval-integrity only
   do not merge into examples/
 
 localjev (githubnext/localjev)
