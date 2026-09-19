@@ -43,11 +43,13 @@ a merge, and not a reward-hack detector.
 
 [cmdc-auto-mode](https://github.com/mja00/cmdc-auto-mode) is a Command Code auto-permission gate: `beforeToolCall` after the host permission check; policy `decide` in code (`allow` / `deny` / `escalate`). `within_scope ≤ 0.25` is out of scope (deny). Escalation always goes to a human, never back to the model. Default `auto-fail-closed` true. Jev is a sensor; policy in code owns the verdict. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[omp-jev-extensions](https://github.com/luw2007/omp-jev-extensions) is an Oh My Pi / pi-coding-agent adapter: `jev_acceptance_gate` plus `jev_route`. Fail-open, never fail-catch. Gate-host adapter; do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
 [firehose-judge](https://github.com/ragelink/firehose-judge) is typed Jev on the Bluesky firehose (Durable Object). Uncertain answers route to a "needs a human" lane; nsfw is dropped server-side. Soft judgment is never the sole veto. Cousin, not this sidecar.
 
 [jav-email-cascade](https://github.com/skiingfalcon/jav-email-cascade) is decide → policy → LLM leftover. A Noul at 0.5 means "cannot tell" (never rounded). `injection_suspected` always force-review even with an LLM configured. Force-review is a real lane, not soundness theater. Cousin, not this sidecar.
 
-[waymode](https://github.com/mossburgh/waymode) is named as app-owned controls, typed actions, host permissions, and retained evidence (empty public tree at capture). Watch, not this sidecar.
+[waymode](https://github.com/mossburgh/waymode) lets the host keep permissions, validation, and handlers; Jev decides over typed actions on the live UI with retained evidence. Jev confidence grants no permission (sensor ≠ verdict). Cousin, not this sidecar.
 
 [latch](https://github.com/CaseReed/latch) is a CI merge-gate cousin: code clusters, Jev labels, code owns `Gate: PASS` / `Gate: BLOCK`. `ignore_as_infra` needs an explicit network fingerprint; Jev cannot ignore on its own. Flaky-test gaming counter-pattern.
 
@@ -132,6 +134,10 @@ cmdc-auto-mode (mja00/cmdc-auto-mode)
   escalate to a human never model; auto-fail-closed default true
   do not merge into examples/
 
+omp-jev-extensions (luw2007/omp-jev-extensions)
+  jev_acceptance_gate + jev_route on Oh My Pi
+  Fail-open, never fail-catch; do not merge into examples/pi-extension.ts
+
 firehose-judge (ragelink/firehose-judge)
   Bluesky firehose; Durable Object; uncertain → "needs a human"
   nsfw dropped server-side
@@ -142,8 +148,8 @@ jav-email-cascade (skiingfalcon/jav-email-cascade)
   injection_suspected force-review
 
 waymode (mossburgh/waymode)
-  app-owned controls + typed actions + retained evidence
-  empty public tree at capture (watch)
+  host keeps permissions/validation; typed actions + retained evidence
+  Jev confidence grants no permission (sensor ≠ verdict)
 
 jev-carryforward (Dharundp6/jev-carryforward)
   verbatim ledger; nothing summarised, nothing deleted
