@@ -63,6 +63,18 @@ a merge, and not a reward-hack detector.
 
 [jev-use](https://github.com/shitianfang/jev-use) `jev_gate` is an optional PreToolUse risk check: deny/ask only, fails open. Install does not enable the gate. Only ever tightens. Treat confidence calibration as a training claim. 12/12 gate fixture is not a safety proof. `escalate: true` when Jev can't decide. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[jevex](https://github.com/jimmyhealer/jevex) is MCP VOI admission (`codebase_investigate`): Jev ranks a shortlist of files to read. README does not document fail-open vs fail-closed on Jev error. Soft-score-as-hard-gate risk: treating the shortlist as the only files that exist. Cousin of jev-sift / jev-carryforward 0/4. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[commitjev](https://github.com/yodablocks/commitjev) is a Jev-gated commit-msg hook. Calibration-first (`calibrate.py`) before trusting thresholds. Hook blocks only on a warning; check failure is not a reason to refuse (fail-open). Middle band is "review", never rounded. Calibrate / shadow before a hard push block. Cousin of jev-pr-review. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-runway](https://github.com/IPECTER/jev-runway) is a Codex Jev proxy (GitHub description only; LICENSE-only public tree at capture). Host-adapter cousin of slo-router / jev-routing. Do not invent authorization mechanics. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[pi-jev-compact](https://github.com/dev-willbird1936/pi-jev-compact) is Pi verbatim compaction: keep-windows/pins before Jev; fail-open to the built-in LLM summarizer. Default `keepThreshold` 0.5 is uncalibrated; dropped calls are gone for good. Complementary to pi-heed / carryforward 0/4. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[hermes-plugin-jev](https://github.com/robbyczgw-cla/hermes-plugin-jev) is a Hermes host adapter. Shadow default. **It cannot grant permission.** Missing key: plugin inactive. Timeouts: Jev abstains. Contrast jev-decisions (advisory reviews) and hermes-jev-router (model-route / skip-main-model). Same-named Mrmimee tree is a tool plugin, not a hook adapter. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-routing](https://github.com/nekowasabi/jev-routing) is a multi-host Go proxy: compact, then Jev Choice+Noul, then rewrite `tools[]` to 1 schema. Default `filter`; `forced` only with a verified real Jev answer. Not MCP. Advisory filter vs hard route. Cousin of slo-router / pi-jev-control. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [jev-labs](https://github.com/copyleftdev/jev-labs) wraps a probabilistic oracle in a formal consensus kernel. **Never confidently wrong.** Escalate-not-guess: under severe chaos accuracy drops but wrong=0 because the system escalates. Anti-pattern: TLA+/model-check theater as proof the soft judge is safe without an exception path. Cousin, not this sidecar.
 
 [seal](https://github.com/Reasonofmoon/seal) is an advance gate plus a visible coverage ledger (`auto` | `code` | `human` | `escalate`). Effects stay locked while escalations remain open. **Hiding escalations is a product lie.** **schema-valid ≠ semantically correct.** **mint ≠ product brain**. Cousin, not this sidecar.
@@ -244,6 +256,44 @@ jev-use (shitianfang/jev-use)
   only ever tightens; install does not enable the gate
   treat confidence calibration as a training claim
   12/12 gate fixture is not a safety proof; escalate when Jev can't decide
+
+jevex (jimmyhealer/jevex)
+  MCP VOI admission: codebase_investigate; Jev ranks a shortlist
+  README: jevex only answers what to read; status sufficient is not a safety proof
+  fail-open vs fail-closed on Jev error is undocumented
+  soft-score-as-hard-gate: shortlist as the only files that exist
+  cousin of jev-sift / jev-carryforward 0/4; do not merge into examples/
+
+commitjev (yodablocks/commitjev)
+  Jev-gated commit-msg; calibrate.py before trusting thresholds
+  hook blocks only on a warning; check failure is not a reason to refuse
+  Noul 0.65; middle band is review, never rounded
+  calibrate / shadow before a hard push block
+
+jev-runway (IPECTER/jev-runway)
+  Codex Jev proxy; LICENSE-only public tree at capture
+  host-adapter cousin of slo-router / jev-routing
+  do not invent authorization mechanics
+
+pi-jev-compact (dev-willbird1936/pi-jev-compact)
+  Pi session_before_compact; Jev keep/drop; survivors verbatim
+  keep-windows and pins before Jev
+  fail-open to built-in LLM summarizer; keepThreshold 0.5 uncalibrated
+  complementary to pi-heed / carryforward 0/4
+  do not merge into examples/pi-extension.ts
+
+hermes-plugin-jev (robbyczgw-cla/hermes-plugin-jev)
+  Hermes host adapter (plugin ID jev-router); mode shadow default
+  cannot grant permission; approve means request a human; never allow
+  missing key: plugin inactive; timeout: Jev abstains
+  contrast jev-decisions (advisory) and hermes-jev-router (model-route)
+  Mrmimee/hermes-plugin-jev is a tool plugin, not a hook adapter
+
+jev-routing (nekowasabi/jev-routing)
+  Go proxy Claude/Codex/Grok/Cursor/Devin; not MCP
+  compact then Jev next-tool Choice + done Noul; tools[] → 1 schema
+  default filter; forced only with a verified real Jev answer
+  PreToolUse cannot strip the catalog; advisory vs hard route
 
 jev-labs (copyleftdev/jev-labs)
   Never confidently wrong; escalate-not-guess
