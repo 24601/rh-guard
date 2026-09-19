@@ -144,6 +144,14 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [claude-jev-warden](https://github.com/connectedGraph/claude-jev-warden) is a real-time quality gate / Art Director Warden for Claude Code via Jev 1.13. `PreToolUse` on Write/Edit/MultiEdit: quality ≥ 80% → exit 0; else exit 2 (hard process intercept) and inject diagnostics. Same family as agent PreToolUse hooks: **soft judgment hard-blocking agent actions**. Card: **attention≠verdict** / **warden-as-hard-gate**. Document when a warden should escalate vs block: taste/quality → reinspect (jev-lens / jev-preflight); eval-asset mutate → structural deny. Contrast rh-guard (structural first; soft never the sole veto) and hermes-plugin-jev (cannot grant permission). Do not merge `warden.js` into `examples/`. Cousin of claude-code-jev / jev-preflight / construct-auto-classifier, not this sidecar.
 
+[jev-kit](https://github.com/jonathanavis96/jev-kit) is a Claude Code PreToolUse **Airlock** (tool-call guard) plus optional Belay. Code pre-filter first; Jev only for the ambiguous half; fail-open on error / timeout / no key. Deny needs confidence ≥ 0.8 and margin ≥ 0.4. Shadow first, then enforce. Quoted README: **"This is not a security control."** Cost/hygiene guard that fails open by design — not a safety envelope. Distinct from [leepokai/jev-guard](https://github.com/leepokai/jev-guard). Gaming: `[airlock-ok: <reason>]` override stamp; loop protection never denies the same call twice in ten minutes. Measured 2026-09-19: deny-capable labelled eval **100%** / zero false denies; A/B **zero denies** over 30 sessions (backstop, not a tax) — not a rh-guard ROC. Belay: finished with no passing check → send back to verify (anti-done-without-reading / eval-gaming cousin of clear-head). Compaction installer is opt-in and sends unredacted tool I/O (~25k tokens); never auto-installed. Treating fail-open hygiene Jev as a hard safety envelope is confidence theater. Fold the tool-call guard + Belay angle only, not the rest of the kit. Do not merge into `examples/`. Cousin of claude-code-jev / cmdc-auto-mode / construct-auto-classifier, not this sidecar.
+
+[agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) is an MCP proxy plus Claude hooks that screens tool calls **before they run** and results **before the agent reads them** (dual-gate eval-integrity / injection cousin). Deterministic allow/deny + Jev; shadow default; enforce holds for a human `approve`; `strict` stops when a screen could not run. Never auto-approves. Not a sandbox; not a guarantee; adaptive attacks get through. Post-result withholds content that `instructs_reader`. InjecAgent AUC **0.976** (2026-09-19) is not a safety proof. Eval-integrity residual: a replacement that does not match the tool's output shape is **discarded without complaint** while the original reaches the model (advertised screened ≠ served payload; silent FALLBACK cousin). First advertised tool list is not screened for injection; user-inlined files skip hooks. Do not merge into `examples/`. Cousin of jev-agent-safety-arena / semantic-firewall / jev-security-scan / actiongate, not this sidecar.
+
+[opencode-intent-gate](https://github.com/hoshinodis/opencode-intent-gate) is an OpenCode `context` hook: four Nouls (`is_work_request` / `ambiguous` / `missing_user_info` / `scope_unclear`); code thresholds (`isWorkThreshold` 0.5 / `dimensionThreshold` 0.75) inject a system directive to ask 1–3 clarifying questions and **not start tool calls this turn**. Fail-open (timeout/error skip; 3 failures → 5 min pause). **The gate is a system directive, not a hard block** — pair with tool permissions for enforcement. Ask-before-act calibrated product pattern. Gaming: the agent can ignore the directive (hope the model looks / jev-carryforward 0/4). Treating that soft inject as a safety veto is confidence theater / hard-gating soft judgment. Do not merge into `examples/`. Cousin of jev-preflight / hermes-plugin-jev / jev-lens, not this sidecar.
+
+[opencode-context-pruner](https://github.com/hoshinodis/opencode-context-pruner) is an OpenCode port of [fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) via the `context` hook (OpenCode has no `session.compact`). Keep/truncate/drop applies to the **request view**; persisted history is never modified. Default `keepThreshold` **0.15** vs upstream **0.5** (0.5 drops nearly every unpinned call). Measured 2026-09-19 on a 530-message session: 257 judged, 257 `drop_call`, `removedMessages` **282**, 1,135 ms. Fail-open. Cached per `tool_use_id` for the session. Vendor-harness fan-out of compaction gates. Eval-integrity: dropping results can erase evidence (constraints, hidden eval, injection traces) — complementary to pi-heed / jev-carryforward 0/4. Treating 0.5 as "the right threshold" is confidence theater. Do not merge into `examples/`. Cousin of pi-jev-compact / gliner25-compaction / jev-compactor, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head (typed Choice / Score / Noul). Confidence-gating recipe at **0.85** (RLCD → "statistically meaningful") is still soft. Auto-act at that uncalibrated threshold is confidence theater, especially given Khmer OOD **0.000 at 95.2% confidence** — the model's own confidence gives no warning. Future backend, not a drop-in ROC replacement for this hook. Pair with jev-ood-calibration / capability-atlas.
@@ -301,7 +309,16 @@ deny so the bridge fails closed.
    the served backend (`FALLBACK` / `backend: "lexical"`); advertised backend ≠
    served backend ([classifier-dev](https://github.com/mrmps/classifier-dev)).
    An undeclared model swap is an eval-integrity failure (advertised score ≠
-   live model). There is **no public Jev reward-hack ROC**.
+   live model). Advertised screened ≠ served payload is the same failure
+   ([agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) discards a
+   shape-mismatched replacement without complaint). Fail-open hygiene
+   ([jev-kit](https://github.com/jonathanavis96/jev-kit) "This is not a security
+   control"), a system directive that is not a hard block
+   ([opencode-intent-gate](https://github.com/hoshinodis/opencode-intent-gate)),
+   and uncalibrated compaction keepThresholds
+   ([opencode-context-pruner](https://github.com/hoshinodis/opencode-context-pruner))
+   are not safety envelopes. AUC 0.976 and labelled-eval 100% are confidence
+   theater if quoted as a rh-guard ROC. There is **no public Jev reward-hack ROC**.
 
 ## Structural vs Jev (choose in this order)
 
@@ -325,7 +342,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
   (`verdict`, `hookVerdict`, `labels`, `structuralDeny`, `backend`).
 - `structuralDeny: true` → a code detector already decided; Jev was skipped.
 - `backend: "lexical"` → degraded; do not treat scores as Jev-calibrated.
-- Advertised scorer ≠ live model is an eval-integrity failure. This sidecar names `backend`; silent undeclared fallback is the [classifier.dev](https://github.com/mrmps/classifier-dev) lesson (`FALLBACK` digest marker).
+- Advertised scorer ≠ live model is an eval-integrity failure. This sidecar names `backend`; silent undeclared fallback is the [classifier.dev](https://github.com/mrmps/classifier-dev) lesson (`FALLBACK` digest marker). Advertised screened ≠ served payload is the [agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) silent replacement discard.
 - `backend: "jev"` plus a high deny-kind Noul → semantic overlay fired.
 - Prompt-stage steer without a tool deny → change the **eval**, not the
   agent's wording, unless the user asked to disable oversight.
@@ -380,6 +397,10 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Silent FALLBACK model-swap (advertised backend ≠ served backend; F1 0.546 vs ~0.800): [classifier-dev](https://github.com/mrmps/classifier-dev)
 - Calibrated PR-review gate (Action + CLI + OpenCode; soft-score-as-hard-rank; need calibration + escape hatch): [jev-gate](https://github.com/totally-tim/jev-gate)
 - Claude PreToolUse Art Director (warden-as-hard-gate; attention≠verdict; escalate vs block): [claude-jev-warden](https://github.com/connectedGraph/claude-jev-warden)
+- Claude PreToolUse Airlock (code first; fail-open hygiene; not a security control; `[airlock-ok:]` / retry loop): [jev-kit](https://github.com/jonathanavis96/jev-kit)
+- Dual-gate MCP/hook screen (calls before run AND results before the agent reads; silent replacement discard): [agent-chaperone](https://github.com/agent-chaperone/agent-chaperone)
+- OpenCode ask-before-act (system directive, not a hard block; hope the model asks): [opencode-intent-gate](https://github.com/hoshinodis/opencode-intent-gate)
+- OpenCode context-hook compaction (fast-jev-compaction port; keepThreshold 0.15 vs 0.5; request view only): [opencode-context-pruner](https://github.com/hoshinodis/opencode-context-pruner)
 - Wire-compatible prompted JSON probs (not logits; evaluate calibration before consequential decisions): [localjev](https://github.com/githubnext/localjev)
 - Open System One head (0.85 still soft; Khmer 0.000 at 95.2% conf): [laya](https://github.com/NandhaKishorM/laya)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
