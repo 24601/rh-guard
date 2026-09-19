@@ -329,6 +329,10 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/fingerprint bundles/);
     expect(readme).toMatch(/sutro-sh\/jev-align/);
     expect(readme).toMatch(/never accepts a proposal automatically/);
+    expect(readme).toMatch(/byenzyme\/enzyme/);
+    expect(readme).toMatch(/not an enforced hook/);
+    expect(readme).toMatch(/catalyst similarity/);
+    expect(readme).toMatch(/when asked/);
     expect(readme).toMatch(/--error-on/);
     expect(readme).toMatch(/githubnext\/localjev/);
     expect(readme).toMatch(/consequential decisions/);
@@ -548,6 +552,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/buberlo\/jev-pastepilot/);
     expect(pkg).not.toMatch(/hyperspaceai\/jevcache/);
     expect(pkg).not.toMatch(/sutro-sh\/jev-align/);
+    expect(pkg).not.toMatch(/byenzyme\/enzyme/);
     expect(pkg).not.toMatch(/githubnext\/localjev/);
     expect(pkg).not.toMatch(/NandhaKishorM\/laya/);
     expect(pkg).not.toMatch(/jev-sift/);
@@ -670,6 +675,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/buberlo\/jev-pastepilot/);
     expect(lock).not.toMatch(/hyperspaceai\/jevcache/);
     expect(lock).not.toMatch(/sutro-sh\/jev-align/);
+    expect(lock).not.toMatch(/byenzyme\/enzyme/);
     expect(lock).not.toMatch(/githubnext\/localjev/);
     expect(lock).not.toMatch(/NandhaKishorM\/laya/);
     expect(lock).not.toMatch(/jev-sift/);
@@ -1006,6 +1012,10 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/fingerprint bundles/);
     expect(skill).toMatch(/sutro-sh\/jev-align/);
     expect(skill).toMatch(/never accepts a proposal automatically/);
+    expect(skill).toMatch(/byenzyme\/enzyme/);
+    expect(skill).toMatch(/not an enforced hook/);
+    expect(skill).toMatch(/catalyst similarity/);
+    expect(skill).toMatch(/when asked/);
     expect(skill).toMatch(/--error-on/);
     expect(skill).toMatch(/githubnext\/localjev/);
     expect(skill).toMatch(/consequential decisions/);
@@ -1336,6 +1346,10 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/fingerprint bundles/);
     expect(evalDoc).toMatch(/sutro-sh\/jev-align/);
     expect(evalDoc).toMatch(/never accepts a proposal automatically/);
+    expect(evalDoc).toMatch(/byenzyme\/enzyme/);
+    expect(evalDoc).toMatch(/not an enforced hook/);
+    expect(evalDoc).toMatch(/catalyst similarity/);
+    expect(evalDoc).toMatch(/when asked/);
     expect(evalDoc).toMatch(/githubnext\/localjev/);
     expect(evalDoc).toMatch(/consequential decisions/);
     expect(evalDoc).toMatch(/NandhaKishorM\/laya/);
@@ -1511,6 +1525,7 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/buberlo\/jev-pastepilot/);
     expect(install).toMatch(/hyperspaceai\/jevcache/);
     expect(install).toMatch(/sutro-sh\/jev-align/);
+    expect(install).toMatch(/byenzyme\/enzyme/);
     expect(install).toMatch(/githubnext\/localjev/);
     expect(install).toMatch(/NandhaKishorM\/laya/);
     expect(install).toMatch(/ThyFriendlyFox\/jev-curate/);
@@ -1602,6 +1617,10 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/fingerprint bundles/);
     expect(shape).toMatch(/sutro-sh\/jev-align/);
     expect(shape).toMatch(/never accepts a proposal automatically/);
+    expect(shape).toMatch(/byenzyme\/enzyme/);
+    expect(shape).toMatch(/not an enforced hook/);
+    expect(shape).toMatch(/catalyst similarity/);
+    expect(shape).toMatch(/when asked/);
   });
 
   it("keeps jevgate as a sibling link on host docs, not a merged product", () => {
@@ -1738,6 +1757,10 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/fingerprint bundles/);
     expect(hosts).toMatch(/sutro-sh\/jev-align/);
     expect(hosts).toMatch(/never accepts a proposal automatically/);
+    expect(hosts).toMatch(/byenzyme\/enzyme/);
+    expect(hosts).toMatch(/not an enforced hook/);
+    expect(hosts).toMatch(/catalyst similarity/);
+    expect(hosts).toMatch(/when asked/);
     expect(hosts).toMatch(/--error-on/);
     expect(hosts).toMatch(/githubnext\/localjev/);
     expect(hosts).toMatch(/consequential decisions/);
@@ -1935,6 +1958,10 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/fingerprint bundles/);
     expect(gates).toMatch(/sutro-sh\/jev-align/);
     expect(gates).toMatch(/never accepts a proposal automatically/);
+    expect(gates).toMatch(/byenzyme\/enzyme/);
+    expect(gates).toMatch(/not an enforced hook/);
+    expect(gates).toMatch(/catalyst similarity/);
+    expect(gates).toMatch(/when asked/);
     expect(gates).toMatch(/--error-on/);
     expect(gates).toMatch(/githubnext\/localjev/);
     expect(gates).toMatch(/consequential decisions/);

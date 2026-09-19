@@ -127,6 +127,8 @@ a merge, and not a reward-hack detector.
 
 [sutro-sh/jev-align](https://github.com/sutro-sh/jev-align) is a GEPA loop aligning Jev with human labels. Quoted: **A higher training score never accepts a proposal automatically.** Distinct from caiovicentino/jev-align. Anti-pattern cousin if someone hard-gates on the GEPA score. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[enzyme](https://github.com/byenzyme/enzyme) is a Markdown knowledge-compile step. Quoted: `when asked` is **guidance compiled for your agent, not an enforced hook.** Not PreToolUse. Do not hard-gate **catalyst similarity** as deny/allow. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC.
@@ -528,6 +530,12 @@ sutro-sh/jev-align
   GEPA loop; human accept/reject/rewind
   A higher training score never accepts a proposal automatically
   distinct from caiovicentino/jev-align; hard-gating the GEPA score is theater
+  do not merge into examples/
+
+enzyme (byenzyme/enzyme)
+  compile-time Jev; catalysts as semantic routes
+  when asked is compiled guidance, not an enforced hook
+  do not hard-gate catalyst similarity as deny/allow
   do not merge into examples/
 
 localjev (githubnext/localjev)

@@ -188,6 +188,8 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [sutro-sh/jev-align](https://github.com/sutro-sh/jev-align) (`jeva`) is a GEPA loop that aligns TypeSafe Jev with human labels (uncertain rows + audit sample; human accept/reject/rewind). Distinct from [caiovicentino/jev-align](https://github.com/caiovicentino/jev-align) (policy verify before act). Quoted README: **A higher training score never accepts a proposal automatically.** Positive envelope. Anti-pattern cousin if someone hard-gates on the GEPA training score. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[enzyme](https://github.com/byenzyme/enzyme) is a local-first compile step for Markdown knowledge bases: temporally grounded sampling → **catalysts** (questions as semantic routes). `enzyme compile` is an explicit OpenRouter Decisions op (`ENZYME_JEV_MODEL`, default `typesafe/jev-1.13`). Quoted README: `when asked` is **guidance compiled for your agent, not an enforced hook.** Not a PreToolUse wrap. **catalyst similarity** scores are ranking, not deny/allow — do not hard-gate them as a safety veto. Fold compiled-guidance ≠ hook / similarity≠deny only — not PKM recipes. Thin card. Do not merge into `examples/`. Cousin of [jevex](https://github.com/jimmyhealer/jevex) / [jev-sift](https://github.com/kbhuw/jev-sift), not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head (typed Choice / Score / Noul). Confidence-gating recipe at **0.85** (RLCD → "statistically meaningful") is still soft. Auto-act at that uncalibrated threshold is confidence theater, especially given Khmer OOD **0.000 at 95.2% confidence** — the model's own confidence gives no warning. Future backend, not a drop-in ROC replacement for this hook. Pair with jev-ood-calibration / capability-atlas.
@@ -410,7 +412,11 @@ deny so the bridge fails closed.
    auto-act is trust theater). A GEPA training score is not auto-accept
    ([sutro-sh/jev-align](https://github.com/sutro-sh/jev-align): quoted
    **A higher training score never accepts a proposal automatically**;
-   hard-gating that score is soundness theater). There is **no public Jev reward-hack ROC**.
+   hard-gating that score is soundness theater). Compiled `when asked`
+   guidance is not an enforced PreToolUse hook
+   ([enzyme](https://github.com/byenzyme/enzyme): quoted
+   **guidance compiled for your agent, not an enforced hook**;
+   **catalyst similarity** is ranking, not deny/allow). There is **no public Jev reward-hack ROC**.
 
 ## Structural vs Jev (choose in this order)
 
@@ -511,6 +517,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Paste confirm-gate (injection Noul; Confidence is a gate, not proof; fail-opens): [jev-pastepilot](https://github.com/buberlo/jev-pastepilot)
 - Decision ledger (cache hit ≠ correctness; shared fingerprint bundles as calibrated truth / auto-act is trust theater): [jevcache](https://github.com/hyperspaceai/jevcache)
 - GEPA human-align loop (never auto-accepts on training score; hard-gating that score is theater): [sutro-sh/jev-align](https://github.com/sutro-sh/jev-align)
+- Markdown knowledge compile (`when asked` compiled guidance, not an enforced hook; catalyst similarity is ranking, not deny/allow): [enzyme](https://github.com/byenzyme/enzyme)
 - Wire-compatible prompted JSON probs (not logits; evaluate calibration before consequential decisions): [localjev](https://github.com/githubnext/localjev)
 - Open System One head (0.85 still soft; Khmer 0.000 at 95.2% conf): [laya](https://github.com/NandhaKishorM/laya)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
