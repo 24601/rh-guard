@@ -86,7 +86,7 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [jev-reviewer](https://github.com/egma-ai/jev-reviewer) is a local PR overlay: Jev assigns P0/P1/P2 attention priorities (P0 expanded; P1/P2 collapsed). Attention is not a correctness verdict; never equate P0 with "blocked as unsafe". Anti-soundness-theater / soft-judgment UX for gates.
 
-[safe-sh](https://github.com/EpicEric/safe-sh) is static shell analysis with Jev (tree-sitter bash chunks; never executes). Contrast [toolgate](https://github.com/fdemir/toolgate) fail-safe pre-exec. Gate-adjacent; not a reward-hack detector.
+[safe-sh](https://github.com/EpicEric/safe-sh) is static shell analysis with Jev (tree-sitter bash chunks; never executes). README: replace `sh`/`bash` with `safe-sh` (`curl … | safe-sh`); `--warn-on` / `--error-on` own the hard exit. Scores include credential/exfil-shaped questions; high score plus `--error-on` confidence exits 1 — shell/secrets judgment **before** a hard deny, still not execution. Contrast [yolo-shell](https://github.com/riz007/yolo-shell) (exec interceptor + local floor) and [toolgate](https://github.com/fdemir/toolgate) fail-safe pre-exec. Weakened-test review lives on [typesafe_agent_gates](https://github.com/ThiagaoBR/typesafe_agent_gates), not here. Gate-adjacent; not a reward-hack detector.
 
 [interlock](https://github.com/somoore/interlock) is a capability kernel for untrusted agents: Jev is a sensor; policy in code decides `allow` / `ask` / `block`. Canaries + closed action space; secrets never enter the agent. Critique of post-hoc "is this dangerous?" firewalls with real secrets still in scope. 38-case regression suite (not a blind paper). Positive pattern: hard envelope first. Anti-pattern: soundness theater / soft judgment hard-gated as safety.
 
@@ -179,6 +179,10 @@ confidence; held-out discipline; compare only equivalent case sets.
 [nanoprune](https://github.com/dmdjr1409/nanoprune) is a **2.8MB** local System One decision & RAG pruner (2-layer encoder distilled from **Laya** 421M). Not TypeSafe Jev. Cheap front gate before expensive System Two: prune / choice / score on CPU in ~1.3–2.4 ms. Quoted badges: **0.0% Hallucination Guaranteed**; table ECE 2.58%. That guarantee is soundness theater — a tiny distill is not a hallucination proof, and ECE on their bench is not a rh-guard ROC. Pair with [laya](https://github.com/NandhaKishorM/laya) (0.85 still soft; Khmer OOD 0.000 at 95.2% confidence) and [jev-ood-calibration](https://github.com/scienthoon/jev-ood-calibration). Distinct from [prune-review](https://github.com/shubhangi013/prune-review). Fold the cheap calibrated deny/allow-before-System-Two angle only — not the medical search app. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [hermes-switchyard](https://github.com/bgrablin/hermes-switchyard) is a Hermes plugin: Jev-powered advisory skill selection and policy-constrained mode switches. Quoted README: it **never loads the skill**, never silently changes the active model, and does not claim a recommendation is correct. Automatic hosted routing stays **fail-closed** unless the host supplies a typed per-turn egress envelope. Quoted: a persistent `public_or_sanitized_data_ack` **does not scan or redact data, grant permission to share it, or bypass other controls** — **not DLP** and not automatic authorization. Local token-overlap threshold **0.20** and Jev skill-choice / needs / winning-probability thresholds **0.80** are uncalibrated abstention policy (quoted routing.py: calibration for correctness is not independently established). Sibling of [skill-broker](https://github.com/adamjralph/skill-broker) (relevance never grants access). Distinct from [hermes-plugin-jev](https://github.com/robbyczgw-cla/hermes-plugin-jev). Fold the skill/policy / permission-integrity angle only — not CUA / computer-use. Anti-pattern: treating a skill recommendation or ack flag as a grant. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[typesafe_agent_gates](https://github.com/ThiagaoBR/typesafe_agent_gates) is LangChain / Deep Agents middleware: typed Jev judgments where a regex, word list, or prompt line was standing in for *reading*. `ToolGateMiddleware` wraps `execute` with four independent Nouls (`database_write`, `production`, `destructive`, `secrets`). One answer ≥ `threshold` (0.5) and the command does not run; the agent gets an error `ToolMessage` and must report the step as **HELD**. Quoted: **Closed when TypeSafe is unreachable** (`fail_closed=True`); only `{role, command}` is sent, never the conversation. Distinct from `langchain-typesafe` `AutoModeMiddleware` (last 30 messages; whether the *user* authorised the call). Quoted: **the pattern runs first and its answer stands; the judgment is asked about what the pattern let through** — **never looser**. `SpecReviewMiddleware` judges changed existing specs — assertion **inverted**, **retargeted**, **weakened**, test **disabled**. Quoted measured on `jev-1.13.0` (synthetic): toolgate probe **27/27**, judgments **31/31** — not a rh-guard ROC. Quoted: treat **0.5 / 0.6 / 0.8 as starting points**; **This is a second layer, not a boundary.** Soft-judgment gate middleware; do not treat 0.5 as a safety envelope. Distinct from [fdemir/toolgate](https://github.com/fdemir/toolgate). Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-pastepilot](https://github.com/buberlo/jev-pastepilot) (`PastePilot`) is a paste-to-action launcher: allowlisted tools, preview, then Confirm. Quoted README: **Confirm is a gate, not a formality.** **Pasted text is untrusted data. It cannot grant new permissions.** Optional live Jev: a Choice for the allowlisted action, a Noul for injection/suspicion, a Noul for emptiness/clarity, and a Score for fit; **code combines those answers**. Quoted: **Confidence is a gate, not proof** — high (default ≥ 0.75) may keep a select; low (default < 0.45) abstains to the manual tools. Missing key / timeout / 429 → **fail-opens**. Quoted: **Do not treat this README, a vendor claim, or a confidence score as a measured accuracy result.** Not an autonomous agent (no browsing, no shell, no silent writes). Fold paste/injection/confirm-gate only — not Share Sheet. Treating 0.75 as a safety proof is confidence theater. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
 
@@ -385,7 +389,17 @@ deny so the bridge fails closed.
    rh-guard ROC. Skill recommendation is not a grant
    ([hermes-switchyard](https://github.com/bgrablin/hermes-switchyard):
    **never loads the skill**; ack is **not DLP** / not authorization; 0.20
-   local / 0.80 Jev uncalibrated). There is **no public Jev reward-hack ROC**.
+   local / 0.80 Jev uncalibrated). Soft-judgment gate middleware that
+   hard-denies four Nouls at 0.5
+   ([typesafe_agent_gates](https://github.com/ThiagaoBR/typesafe_agent_gates):
+   **27/27** / **31/31** are synthetic probes, not a rh-guard ROC; **second
+   layer, not a boundary**; pattern first, judgment **never looser**; 0.5 /
+   0.6 / 0.8 are starting points). Static shell Scores at `--error-on`
+   ([safe-sh](https://github.com/EpicEric/safe-sh): `curl | safe-sh`;
+   **never executes**) are not yolo-shell's exec floor. Confirm-as-gate paste
+   routing ([jev-pastepilot](https://github.com/buberlo/jev-pastepilot):
+   **Confirm is a gate, not a formality**; **Confidence is a gate, not
+   proof**; **fail-opens**) is not a safety envelope. There is **no public Jev reward-hack ROC**.
 
 ## Structural vs Jev (choose in this order)
 
@@ -482,6 +496,8 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - OpenAPI docs-only consumer-break sentinel (enforce at 0.90 breaking AND promise-violation): [jev-oas-sentinel](https://github.com/ShuhanSun/jev-oas-sentinel)
 - Cheap 2.8MB Laya-distill front gate (0.0% Hallucination Guaranteed theater; ECE 2.58%): [nanoprune](https://github.com/dmdjr1409/nanoprune)
 - Hermes skill selection under policy (never loads the skill; ack is not DLP): [hermes-switchyard](https://github.com/bgrablin/hermes-switchyard)
+- LangChain/Deep Agents middleware (four Nouls at 0.5 HELD; pattern first never looser; weakened-spec review; 27/27 not a ROC): [typesafe_agent_gates](https://github.com/ThiagaoBR/typesafe_agent_gates)
+- Paste confirm-gate (injection Noul; Confidence is a gate, not proof; fail-opens): [jev-pastepilot](https://github.com/buberlo/jev-pastepilot)
 - Wire-compatible prompted JSON probs (not logits; evaluate calibration before consequential decisions): [localjev](https://github.com/githubnext/localjev)
 - Open System One head (0.85 still soft; Khmer 0.000 at 95.2% conf): [laya](https://github.com/NandhaKishorM/laya)
 - Agent action guardrail (Jev never grants authority that policy denied; threshold replay): [turnstile](https://github.com/zyphr-labs/turnstile)
@@ -489,7 +505,7 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Advance gate + coverage ledger (Hiding escalations is a product lie; mint ≠ product brain): [seal](https://github.com/Reasonofmoon/seal)
 - Pre-execution tool-call gate (`allow` / `block` / `review`; fail-safe): [toolgate](https://github.com/fdemir/toolgate)
 - Attention-priority PR overlay (P0 expand; never "blocked as unsafe"): [jev-reviewer](https://github.com/egma-ai/jev-reviewer)
-- Static shell analysis with Jev (never executes): [safe-sh](https://github.com/EpicEric/safe-sh)
+- Static shell analysis with Jev (`curl | safe-sh`; `--error-on`; never executes; secrets-shaped Scores): [safe-sh](https://github.com/EpicEric/safe-sh)
 - Capability kernel (Jev sensor; policy in code; canaries; secrets never enter the agent): [interlock](https://github.com/somoore/interlock)
 - Gate UX (human-confirmed irreversible stop; shields; app-owned copy): [port-cleanup](https://github.com/epiphany-dynamics/port-cleanup)
 - Fraud/security force human path; LLM cannot add routes/tools after the plane: [jev-dspy-control-plane](https://github.com/manikanda-kumar/jev-dspy-control-plane)
