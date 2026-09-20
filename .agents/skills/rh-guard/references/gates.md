@@ -171,6 +171,12 @@ a merge, and not a reward-hack detector.
 
 [rag-jev](https://github.com/Nixz0824/rag-jev) is local RAG with Jev rerank + self-check. Quoted: **Degradation is never silent.** noul < 0.5 **请以公告原文为准**; 20/20 **not a rh-guard ROC**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[mailverdict](https://github.com/pantos12/mailverdict) is a phishing-verdict MCP/REST service. Quoted: **Forward an email, get a calibrated phishing verdict.** Quoted: the explainer **never changes the label**. Quoted: **A classifier cannot be talked out of a probability.** Quoted: 24 fixtures **are not a benchmark.** Distinct from rspamd-jev / jev-call-screener. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[open-jev-approvals](https://github.com/alexj11324/open-jev-approvals) is a Codex / Claude Code **binary** allow/deny hook. Recapture: quoted **The degradation model changed from fail-closed to fail-open after user review.** Quoted: **A deny always requires positive evidence that the action is dangerous.** Quoted: **If Jev is unreachable or returns something unusable, the call is allowed.** Quoted: **There is no `review_required`**. 0.70 uncalibrated. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[beat-the-reviewer](https://github.com/Ash20pk/beat-the-reviewer) is a reviewer **game**: typed judgement rule answered by pinned `jev-1.13.0`. Quoted: **Taking the reviewer offline does not count as a pass.** Quoted: **An unavailable reviewer is not an approval.** Quoted: **Holds no key and reaches no model.** Quoted: **`on_unavailable: "block"`**. Puzzle, not a production merge gate. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
@@ -1044,6 +1050,30 @@ Nixz0824/rag-jev
   20/20 not a rh-guard ROC; jev-latest moving alias
   do not merge into examples/
 
+pantos12/mailverdict
+  phishing-verdict MCP/REST; Jev decides, LLM explains
+  Forward an email, get a calibrated phishing verdict
+  explainer never changes the label
+  A classifier cannot be talked out of a probability
+  24 fixtures are not a benchmark; jev-latest moving alias
+  do not merge into examples/
+
+alexj11324/open-jev-approvals
+  Codex / Claude Code binary allow/deny (codex-guardian-v1)
+  The degradation model changed from fail-closed to fail-open after user review
+  A deny always requires positive evidence that the action is dangerous
+  There is no review_required
+  0.70 uncalibrated; incomplete/no-key → allow incomplete:true
+  do not merge into examples/
+
+Ash20pk/beat-the-reviewer
+  reviewer game; typed judgement rule; pinned jev-1.13.0
+  Taking the reviewer offline does not count as a pass
+  An unavailable reviewer is not an approval
+  Holds no key and reaches no model
+  on_unavailable: block; puzzle, not a production merge gate
+  do not merge into examples/
+
 localjev (githubnext/localjev)
   wire-compatible POST /v1/systemone; prompted JSON probs, not logits
   evaluate calibration on your workload before consequential decisions
@@ -1247,7 +1277,7 @@ from [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard)): quoted
 [jkrup/jeveryword](https://github.com/jkrup/jeveryword): quoted **cannot make it produce
 words that are not in the source**; `text.slice(start, end) ===
 value`; distinct from WaynezProg `jev_extract`.
-[TickerDev/jevfanity-api](https://github.com/TickerDev/jevfanity-api): **code owns `flagged`**; **`flagged` is a policy bit, not a safety proof**; default **0.75**; missing key → 500. [vidux/iso-jevdit](https://github.com/vidux/iso-jevdit): quoted **the audit engine is not finished**; quoted **This is not a certification, and it is not a conformity assessment**; `failOn` **Accepted today, acted on when the audit engine lands**. [ashafizullah/jev-linkedin](https://github.com/ashafizullah/jev-linkedin): quoted **not real-world probabilities**; quoted **Treat them as an early signal, not a decision**; CV **sent** to `/v1/systemone`. [Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness): quoted **Filtering is a routing decision, never destruction**; quoted **Jev failures fail open**; 25/30 **not a rh-guard ROC**; distinct from AntonioCoppe/jev-harness. [Atikpui007/jev-sift](https://github.com/Atikpui007/jev-sift): quoted **Fails open**; quoted **This is a relevance filter, not a safety block**; hidden candidates never learned; distinct from kbhuw/jev-sift. [simonsez9510/jev-cite-check](https://github.com/simonsez9510/jev-cite-check): quoted **1회 관찰이며 성능 주장이 아닙니다**; Gloss: one-shot observation, not a performance claim; 97/100 **not a rh-guard ROC**. [JasonHZS/pi-jev-command-guard](https://github.com/JasonHZS/pi-jev-command-guard): quoted **do not provide a complete sandbox**; quoted **ambiguity must never silently become permission**; distinct from pi-jev-tool-guard. [finrod21/jev-transaction-guard](https://github.com/finrod21/jev-transaction-guard): quoted **IMMUNE TO BOTH** is **soundness theater**; Choice TRIP is not a freeze. [codebam/dsh-jev-guardrails](https://github.com/codebam/dsh-jev-guardrails): quoted **The library owns policy, not the model**; **A guardrail is not a sandbox**; plugin **policy layer, not a sandbox or an authorization system**; failMode default **open**; sibling of codebam/jev-guardrails.
+[TickerDev/jevfanity-api](https://github.com/TickerDev/jevfanity-api): **code owns `flagged`**; **`flagged` is a policy bit, not a safety proof**; default **0.75**; missing key → 500. [vidux/iso-jevdit](https://github.com/vidux/iso-jevdit): quoted **the audit engine is not finished**; quoted **This is not a certification, and it is not a conformity assessment**; `failOn` **Accepted today, acted on when the audit engine lands**. [ashafizullah/jev-linkedin](https://github.com/ashafizullah/jev-linkedin): quoted **not real-world probabilities**; quoted **Treat them as an early signal, not a decision**; CV **sent** to `/v1/systemone`. [Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness): quoted **Filtering is a routing decision, never destruction**; quoted **Jev failures fail open**; 25/30 **not a rh-guard ROC**; distinct from AntonioCoppe/jev-harness. [Atikpui007/jev-sift](https://github.com/Atikpui007/jev-sift): quoted **Fails open**; quoted **This is a relevance filter, not a safety block**; hidden candidates never learned; distinct from kbhuw/jev-sift. [simonsez9510/jev-cite-check](https://github.com/simonsez9510/jev-cite-check): quoted **1회 관찰이며 성능 주장이 아닙니다**; Gloss: one-shot observation, not a performance claim; 97/100 **not a rh-guard ROC**. [JasonHZS/pi-jev-command-guard](https://github.com/JasonHZS/pi-jev-command-guard): quoted **do not provide a complete sandbox**; quoted **ambiguity must never silently become permission**; distinct from pi-jev-tool-guard. [finrod21/jev-transaction-guard](https://github.com/finrod21/jev-transaction-guard): quoted **IMMUNE TO BOTH** is **soundness theater**; Choice TRIP is not a freeze. [codebam/dsh-jev-guardrails](https://github.com/codebam/dsh-jev-guardrails): quoted **The library owns policy, not the model**; **A guardrail is not a sandbox**; plugin **policy layer, not a sandbox or an authorization system**; failMode default **open**; sibling of codebam/jev-guardrails. [pantos12/mailverdict](https://github.com/pantos12/mailverdict): quoted **A classifier cannot be talked out of a probability**; the explainer **never changes the label**; 24 fixtures **are not a benchmark**. [alexj11324/open-jev-approvals](https://github.com/alexj11324/open-jev-approvals): stale authorization version while review is in flight → **deny**; quoted **Fail-open degradation**; incomplete / no-key → `allow` with `incomplete: true`. [Ash20pk/beat-the-reviewer](https://github.com/Ash20pk/beat-the-reviewer): quoted **An unavailable reviewer is not an approval**; `on_unavailable: "block"`.
 Cousin, not this sidecar.
 
 ## Polarity

@@ -504,6 +504,18 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Nixz0824\/rag-jev/);
     expect(readme).toMatch(/Degradation is never silent/);
     expect(readme).toMatch(/请以公告原文为准/);
+    expect(readme).toMatch(/pantos12\/mailverdict/);
+    expect(readme).toMatch(/Forward an email, get a calibrated phishing verdict/);
+    expect(readme).toMatch(/never changes the label/);
+    expect(readme).toMatch(/A classifier cannot be talked out of a probability/);
+    expect(readme).toMatch(/alexj11324\/open-jev-approvals/);
+    expect(readme).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
+    expect(readme).toMatch(/A deny always requires positive evidence that the action is dangerous/);
+    expect(readme).toMatch(/There is no `review_required`/);
+    expect(readme).toMatch(/Ash20pk\/beat-the-reviewer/);
+    expect(readme).toMatch(/Taking the reviewer offline does not count as a pass/);
+    expect(readme).toMatch(/An unavailable reviewer is not an approval/);
+    expect(readme).toMatch(/Holds no key and reaches no model/);
     expect(readme).toMatch(/Proxies isolate only when the upstream endpoint is not otherwise routable/);
     expect(readme).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(readme).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
@@ -783,6 +795,26 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0243 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/mailverdict is rspamd-jev/);
+      expect(text, rel).not.toMatch(/24 fixtures is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/the explainer changes the label/);
+      expect(text, rel).not.toMatch(/indicator weights feed the probability/);
+      expect(text, rel).not.toMatch(/LLM explanation is the verdict/);
+      expect(text, rel).not.toMatch(/open-jev-approvals is fail-closed/);
+      expect(text, rel).not.toMatch(/open-jev-approvals has review_required/);
+      expect(text, rel).not.toMatch(/0\.70 is a validated dataset/);
+      expect(text, rel).not.toMatch(/incomplete-allow is a safety envelope/);
+      expect(text, rel).not.toMatch(/Taking the reviewer offline counts as a pass/);
+      expect(text, rel).not.toMatch(/An unavailable reviewer is an approval/);
+      expect(text, rel).not.toMatch(/beat-the-reviewer is a production merge gate/);
+      expect(text, rel).not.toMatch(/beat-the-reviewer is fail-open/);
+      expect(text, rel).not.toMatch(/judge\.mjs holds a key/);
+    }
+  });
+
   it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
     const productPaths = [
       ...PUBLIC_COPY_PATHS,
@@ -884,6 +916,9 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ramasamysh\/context-evaluator/);
     expect(pkg).not.toMatch(/glud123\/jev-assist/);
     expect(pkg).not.toMatch(/Nixz0824\/rag-jev/);
+    expect(pkg).not.toMatch(/pantos12\/mailverdict/);
+    expect(pkg).not.toMatch(/alexj11324\/open-jev-approvals/);
+    expect(pkg).not.toMatch(/Ash20pk\/beat-the-reviewer/);
     expect(pkg).not.toMatch(/jevfanity-api/);
     expect(pkg).not.toMatch(/iso-jevdit/);
     expect(pkg).not.toMatch(/jev-linkedin/);
@@ -954,6 +989,9 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ramasamysh\/context-evaluator/);
     expect(pkg).not.toMatch(/glud123\/jev-assist/);
     expect(pkg).not.toMatch(/Nixz0824\/rag-jev/);
+    expect(pkg).not.toMatch(/pantos12\/mailverdict/);
+    expect(pkg).not.toMatch(/alexj11324\/open-jev-approvals/);
+    expect(pkg).not.toMatch(/Ash20pk\/beat-the-reviewer/);
     expect(pkg).not.toMatch(/jevfanity-api/);
     expect(pkg).not.toMatch(/iso-jevdit/);
     expect(pkg).not.toMatch(/jev-linkedin/);
@@ -1094,6 +1132,9 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ramasamysh\/context-evaluator/);
     expect(lock).not.toMatch(/glud123\/jev-assist/);
     expect(lock).not.toMatch(/Nixz0824\/rag-jev/);
+    expect(lock).not.toMatch(/pantos12\/mailverdict/);
+    expect(lock).not.toMatch(/alexj11324\/open-jev-approvals/);
+    expect(lock).not.toMatch(/Ash20pk\/beat-the-reviewer/);
     expect(lock).not.toMatch(/jevfanity-api/);
     expect(lock).not.toMatch(/iso-jevdit/);
     expect(lock).not.toMatch(/jev-linkedin/);
@@ -1164,6 +1205,9 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ramasamysh\/context-evaluator/);
     expect(lock).not.toMatch(/glud123\/jev-assist/);
     expect(lock).not.toMatch(/Nixz0824\/rag-jev/);
+    expect(lock).not.toMatch(/pantos12\/mailverdict/);
+    expect(lock).not.toMatch(/alexj11324\/open-jev-approvals/);
+    expect(lock).not.toMatch(/Ash20pk\/beat-the-reviewer/);
     expect(lock).not.toMatch(/jevfanity-api/);
     expect(lock).not.toMatch(/iso-jevdit/);
     expect(lock).not.toMatch(/jev-linkedin/);
@@ -1718,6 +1762,18 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Nixz0824\/rag-jev/);
     expect(skill).toMatch(/Degradation is never silent/);
     expect(skill).toMatch(/请以公告原文为准/);
+    expect(skill).toMatch(/pantos12\/mailverdict/);
+    expect(skill).toMatch(/Forward an email, get a calibrated phishing verdict/);
+    expect(skill).toMatch(/never changes the label/);
+    expect(skill).toMatch(/A classifier cannot be talked out of a probability/);
+    expect(skill).toMatch(/alexj11324\/open-jev-approvals/);
+    expect(skill).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
+    expect(skill).toMatch(/A deny always requires positive evidence that the action is dangerous/);
+    expect(skill).toMatch(/There is no `review_required`/);
+    expect(skill).toMatch(/Ash20pk\/beat-the-reviewer/);
+    expect(skill).toMatch(/Taking the reviewer offline does not count as a pass/);
+    expect(skill).toMatch(/An unavailable reviewer is not an approval/);
+    expect(skill).toMatch(/Holds no key and reaches no model/);
     expect(skill).toMatch(/Proxies isolate only when the upstream endpoint is not otherwise routable/);
     expect(skill).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(skill).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
@@ -2232,6 +2288,18 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Nixz0824\/rag-jev/);
     expect(evalDoc).toMatch(/Degradation is never silent/);
     expect(evalDoc).toMatch(/请以公告原文为准/);
+    expect(evalDoc).toMatch(/pantos12\/mailverdict/);
+    expect(evalDoc).toMatch(/Forward an email, get a calibrated phishing verdict/);
+    expect(evalDoc).toMatch(/never changes the label/);
+    expect(evalDoc).toMatch(/A classifier cannot be talked out of a probability/);
+    expect(evalDoc).toMatch(/alexj11324\/open-jev-approvals/);
+    expect(evalDoc).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
+    expect(evalDoc).toMatch(/A deny always requires positive evidence that the action is dangerous/);
+    expect(evalDoc).toMatch(/There is no `review_required`/);
+    expect(evalDoc).toMatch(/Ash20pk\/beat-the-reviewer/);
+    expect(evalDoc).toMatch(/Taking the reviewer offline does not count as a pass/);
+    expect(evalDoc).toMatch(/An unavailable reviewer is not an approval/);
+    expect(evalDoc).toMatch(/Holds no key and reaches no model/);
     expect(evalDoc).toMatch(/Proxies isolate only when the upstream endpoint is not otherwise routable/);
     expect(evalDoc).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(evalDoc).toMatch(/0 dangerous allowed\*\* on that (synthetic )?fixture/);
@@ -2473,6 +2541,9 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/ramasamysh\/context-evaluator/);
     expect(install).toMatch(/glud123\/jev-assist/);
     expect(install).toMatch(/Nixz0824\/rag-jev/);
+    expect(install).toMatch(/pantos12\/mailverdict/);
+    expect(install).toMatch(/alexj11324\/open-jev-approvals/);
+    expect(install).toMatch(/Ash20pk\/beat-the-reviewer/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -2710,6 +2781,18 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/Nixz0824\/rag-jev/);
     expect(shape).toMatch(/Degradation is never silent/);
     expect(shape).toMatch(/请以公告原文为准/);
+    expect(shape).toMatch(/pantos12\/mailverdict/);
+    expect(shape).toMatch(/Forward an email, get a calibrated phishing verdict/);
+    expect(shape).toMatch(/never changes the label/);
+    expect(shape).toMatch(/A classifier cannot be talked out of a probability/);
+    expect(shape).toMatch(/alexj11324\/open-jev-approvals/);
+    expect(shape).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
+    expect(shape).toMatch(/A deny always requires positive evidence that the action is dangerous/);
+    expect(shape).toMatch(/There is no `review_required`/);
+    expect(shape).toMatch(/Ash20pk\/beat-the-reviewer/);
+    expect(shape).toMatch(/Taking the reviewer offline does not count as a pass/);
+    expect(shape).toMatch(/An unavailable reviewer is not an approval/);
+    expect(shape).toMatch(/Holds no key and reaches no model/);
     expect(shape).toMatch(/Proxies isolate only when the upstream endpoint is not otherwise routable/);
     expect(shape).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(shape).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -3007,6 +3090,16 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Flags are prompts for a human look, never verdicts/);
     expect(hosts).toMatch(/Typed output guarantees the shape of an answer, not its correctness/);
     expect(hosts).toMatch(/Nixz0824\/rag-jev/);
+    expect(hosts).toMatch(/pantos12\/mailverdict/);
+    expect(hosts).toMatch(/Forward an email, get a calibrated phishing verdict/);
+    expect(hosts).toMatch(/never changes the label/);
+    expect(hosts).toMatch(/alexj11324\/open-jev-approvals/);
+    expect(hosts).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
+    expect(hosts).toMatch(/There is no `review_required`/);
+    expect(hosts).toMatch(/Ash20pk\/beat-the-reviewer/);
+    expect(hosts).toMatch(/Taking the reviewer offline does not count as a pass/);
+    expect(hosts).toMatch(/An unavailable reviewer is not an approval/);
+    expect(hosts).toMatch(/Holds no key and reaches no model/);
     expect(hosts).toMatch(/Degradation is never silent/);
     expect(hosts).toMatch(/请以公告原文为准/);
     expect(hosts).toMatch(/Proxies isolate only when the upstream endpoint is not otherwise routable/);
@@ -3381,6 +3474,18 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Nixz0824\/rag-jev/);
     expect(gates).toMatch(/Degradation is never silent/);
     expect(gates).toMatch(/请以公告原文为准/);
+    expect(gates).toMatch(/pantos12\/mailverdict/);
+    expect(gates).toMatch(/Forward an email, get a calibrated phishing verdict/);
+    expect(gates).toMatch(/never changes the label/);
+    expect(gates).toMatch(/A classifier cannot be talked out of a probability/);
+    expect(gates).toMatch(/alexj11324\/open-jev-approvals/);
+    expect(gates).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
+    expect(gates).toMatch(/A deny always requires positive evidence that the action is dangerous/);
+    expect(gates).toMatch(/There is no `review_required`/);
+    expect(gates).toMatch(/Ash20pk\/beat-the-reviewer/);
+    expect(gates).toMatch(/Taking the reviewer offline does not count as a pass/);
+    expect(gates).toMatch(/An unavailable reviewer is not an approval/);
+    expect(gates).toMatch(/Holds no key and reaches no model/);
     expect(gates).toMatch(/Proxies isolate only when the upstream endpoint is not otherwise routable/);
     expect(gates).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(gates).toMatch(/0 dangerous allowed on synthetic 18-case fixture/);
