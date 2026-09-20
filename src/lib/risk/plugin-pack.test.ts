@@ -668,6 +668,9 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/It never closes issues, adds labels, or posts comments/);
     expect(readme).toMatch(/MaxIvanyshen\/jev-review/);
     expect(readme).toMatch(/It never approves or rejects anything/);
+    expect(readme).toMatch(/NiazMorshed2007\/jcr/);
+    expect(readme).toMatch(/JCR returns documentation\. It does not execute commands/);
+    expect(readme).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
     expect(readme).toMatch(/56 of the 65 rules/);
     expect(readme).toMatch(/Gate at threshold 0\.5/);
     expect(readme).toMatch(/It never silently approves/);
@@ -1150,6 +1153,27 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0943 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/JCR executes commands/);
+      expect(text, rel).not.toMatch(/JCR is a merge grant/);
+      expect(text, rel).not.toMatch(/beam 0\.6 is a merge grant/);
+      expect(text, rel).not.toMatch(/ambiguity is a merge grant/);
+      expect(text, rel).not.toMatch(/no-match is a merge grant/);
+      expect(text, rel).not.toMatch(/capability context is attested approval to run/);
+      expect(text, rel).not.toMatch(
+        /NiazMorshed2007\/jcr is raniellimontagna\/jev-guard-mcp/,
+      );
+      expect(text, rel).not.toMatch(/NiazMorshed2007\/jcr is reallygood83\/jev-router/);
+      expect(text, rel).not.toMatch(
+        /NiazMorshed2007\/jcr is NiazMorshed2007\/jev-review/,
+      );
+      expect(text, rel).not.toMatch(/85% token cut is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/80 runs is a rh-guard ROC/);
+    }
+  });
+
   it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
     const productPaths = [
       ...PUBLIC_COPY_PATHS,
@@ -1320,6 +1344,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/sudeshkar\/jev-corrective-rag/);
     expect(pkg).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(pkg).not.toMatch(/MaxIvanyshen\/jev-review/);
+    expect(pkg).not.toMatch(/NiazMorshed2007\/jcr/);
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
     expect(pkg).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(pkg).not.toMatch(/jevfanity-api/);
@@ -1461,6 +1486,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/sudeshkar\/jev-corrective-rag/);
     expect(pkg).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(pkg).not.toMatch(/MaxIvanyshen\/jev-review/);
+    expect(pkg).not.toMatch(/NiazMorshed2007\/jcr/);
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
     expect(pkg).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(pkg).not.toMatch(/jevfanity-api/);
@@ -1672,6 +1698,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/sudeshkar\/jev-corrective-rag/);
     expect(lock).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(lock).not.toMatch(/MaxIvanyshen\/jev-review/);
+    expect(lock).not.toMatch(/NiazMorshed2007\/jcr/);
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
     expect(lock).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(lock).not.toMatch(/jevfanity-api/);
@@ -1813,6 +1840,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/sudeshkar\/jev-corrective-rag/);
     expect(lock).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(lock).not.toMatch(/MaxIvanyshen\/jev-review/);
+    expect(lock).not.toMatch(/NiazMorshed2007\/jcr/);
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
     expect(lock).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(lock).not.toMatch(/jevfanity-api/);
@@ -2533,6 +2561,9 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/It never closes issues, adds labels, or posts comments/);
     expect(skill).toMatch(/MaxIvanyshen\/jev-review/);
     expect(skill).toMatch(/It never approves or rejects anything/);
+    expect(skill).toMatch(/NiazMorshed2007\/jcr/);
+    expect(skill).toMatch(/JCR returns documentation\. It does not execute commands/);
+    expect(skill).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
     expect(skill).toMatch(/56 of the 65 rules/);
     expect(skill).toMatch(/Gate at threshold 0\.5/);
     expect(skill).toMatch(/It never silently approves/);
@@ -3217,6 +3248,9 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/It never closes issues, adds labels, or posts comments/);
     expect(evalDoc).toMatch(/MaxIvanyshen\/jev-review/);
     expect(evalDoc).toMatch(/It never approves or rejects anything/);
+    expect(evalDoc).toMatch(/NiazMorshed2007\/jcr/);
+    expect(evalDoc).toMatch(/JCR returns documentation\. It does not execute commands/);
+    expect(evalDoc).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
     expect(evalDoc).toMatch(/56 of the 65 rules/);
     expect(evalDoc).toMatch(/Gate at threshold 0\.5/);
     expect(evalDoc).toMatch(/It never silently approves/);
@@ -3529,6 +3563,7 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/sudeshkar\/jev-corrective-rag/);
     expect(install).toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(install).toMatch(/MaxIvanyshen\/jev-review/);
+    expect(install).toMatch(/NiazMorshed2007\/jcr/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -3917,6 +3952,9 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(shape).toMatch(/MaxIvanyshen\/jev-review/);
     expect(shape).toMatch(/It never approves or rejects anything/);
+    expect(shape).toMatch(/NiazMorshed2007\/jcr/);
+    expect(shape).toMatch(/JCR returns documentation\. It does not execute commands/);
+    expect(shape).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
     expect(shape).toMatch(/It never silently approves/);
     expect(shape).toMatch(/The workflow is shadow only/);
     expect(shape).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -4350,6 +4388,9 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/sudeshkar\/jev-corrective-rag/);
     expect(hosts).toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(hosts).toMatch(/MaxIvanyshen\/jev-review/);
+    expect(hosts).toMatch(/NiazMorshed2007\/jcr/);
+    expect(hosts).toMatch(/JCR returns documentation\. It does not execute commands/);
+    expect(hosts).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
     expect(hosts).toMatch(/It never silently approves/);
     expect(hosts).toMatch(/The workflow is shadow only/);
     expect(hosts).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -4890,6 +4931,9 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/It never closes issues, adds labels, or posts comments/);
     expect(gates).toMatch(/MaxIvanyshen\/jev-review/);
     expect(gates).toMatch(/It never approves or rejects anything/);
+    expect(gates).toMatch(/NiazMorshed2007\/jcr/);
+    expect(gates).toMatch(/JCR returns documentation\. It does not execute commands/);
+    expect(gates).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
     expect(gates).toMatch(/56\/65 at 1\.00 on 467 labelled defects/);
     expect(gates).toMatch(/It never silently approves/);
     expect(gates).toMatch(/The workflow is shadow only/);
