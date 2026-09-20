@@ -641,6 +641,17 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/replynodes\/jev-web-analyzer/);
     expect(readme).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(readme).toMatch(/not a general model ranking/);
+    expect(readme).toMatch(/sysadarsh\/zerosweep/);
+    expect(readme).toMatch(/CONFIDENCE_SAFETY_THRESHOLD/);
+    expect(readme).toMatch(/Zero Format Errors/);
+    expect(readme).toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(readme).toMatch(/−59\.9%/);
+    expect(readme).toMatch(/y0usaf\/pi-jev/);
+    expect(readme).toMatch(/The gate fails open by design/);
+    expect(readme).toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(readme).toMatch(/prune ≠ deny/);
+    expect(readme).toMatch(/56 of the 65 rules/);
+    expect(readme).toMatch(/Gate at threshold 0\.5/);
     expect(readme).toMatch(/It never silently approves/);
     expect(readme).toMatch(/The workflow is shadow only/);
     expect(readme).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -1077,6 +1088,27 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0743 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/zerosweep is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/0\.85 auto-trash is a safety envelope/);
+      expect(text, rel).not.toMatch(/Zero Format Errors is a safety proof/);
+      expect(text, rel).not.toMatch(/jev-codex-router is a permission/);
+      expect(text, rel).not.toMatch(/jev-codex-router is Jev-Auto-Router/);
+      expect(text, rel).not.toMatch(/0xNatoshi\/jev-codex-router is miniLV\/Jev-Auto-Router/);
+      expect(text, rel).not.toMatch(/−59\.9% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/jev-gate-student-b is Qwen3\.8-27B/);
+      expect(text, rel).not.toMatch(/jev-gate-student-b is Archer/);
+      expect(text, rel).not.toMatch(/n=60 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/y0usaf\/pi-jev is fivethirty\/pi-jev-gate/);
+      expect(text, rel).not.toMatch(/smoke calibration justifies enforce/);
+      expect(text, rel).not.toMatch(/pi-jev-prune is pi-jev-compact/);
+      expect(text, rel).not.toMatch(/0\.25 is a safety deny/);
+      expect(text, rel).not.toMatch(/56\/65 is a rh-guard ROC/);
+    }
+  });
+
   it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
     const productPaths = [
       ...PUBLIC_COPY_PATHS,
@@ -1235,6 +1267,10 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/miniLV\/Jev-Auto-Router/);
     expect(pkg).not.toMatch(/replynodes\/jev-web-analyzer/);
     expect(pkg).not.toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(pkg).not.toMatch(/sysadarsh\/zerosweep/);
+    expect(pkg).not.toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(pkg).not.toMatch(/y0usaf\/pi-jev/);
+    expect(pkg).not.toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(pkg).not.toMatch(/jevfanity-api/);
     expect(pkg).not.toMatch(/iso-jevdit/);
     expect(pkg).not.toMatch(/jev-linkedin/);
@@ -1362,6 +1398,10 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/miniLV\/Jev-Auto-Router/);
     expect(pkg).not.toMatch(/replynodes\/jev-web-analyzer/);
     expect(pkg).not.toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(pkg).not.toMatch(/sysadarsh\/zerosweep/);
+    expect(pkg).not.toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(pkg).not.toMatch(/y0usaf\/pi-jev/);
+    expect(pkg).not.toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(pkg).not.toMatch(/jevfanity-api/);
     expect(pkg).not.toMatch(/iso-jevdit/);
     expect(pkg).not.toMatch(/jev-linkedin/);
@@ -1559,6 +1599,10 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/miniLV\/Jev-Auto-Router/);
     expect(lock).not.toMatch(/replynodes\/jev-web-analyzer/);
     expect(lock).not.toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(lock).not.toMatch(/sysadarsh\/zerosweep/);
+    expect(lock).not.toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(lock).not.toMatch(/y0usaf\/pi-jev/);
+    expect(lock).not.toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(lock).not.toMatch(/jevfanity-api/);
     expect(lock).not.toMatch(/iso-jevdit/);
     expect(lock).not.toMatch(/jev-linkedin/);
@@ -1686,6 +1730,10 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/miniLV\/Jev-Auto-Router/);
     expect(lock).not.toMatch(/replynodes\/jev-web-analyzer/);
     expect(lock).not.toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(lock).not.toMatch(/sysadarsh\/zerosweep/);
+    expect(lock).not.toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(lock).not.toMatch(/y0usaf\/pi-jev/);
+    expect(lock).not.toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(lock).not.toMatch(/jevfanity-api/);
     expect(lock).not.toMatch(/iso-jevdit/);
     expect(lock).not.toMatch(/jev-linkedin/);
@@ -2377,6 +2425,17 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/replynodes\/jev-web-analyzer/);
     expect(skill).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(skill).toMatch(/not a general model ranking/);
+    expect(skill).toMatch(/sysadarsh\/zerosweep/);
+    expect(skill).toMatch(/CONFIDENCE_SAFETY_THRESHOLD/);
+    expect(skill).toMatch(/Zero Format Errors/);
+    expect(skill).toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(skill).toMatch(/−59\.9%/);
+    expect(skill).toMatch(/y0usaf\/pi-jev/);
+    expect(skill).toMatch(/The gate fails open by design/);
+    expect(skill).toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(skill).toMatch(/prune ≠ deny/);
+    expect(skill).toMatch(/56 of the 65 rules/);
+    expect(skill).toMatch(/Gate at threshold 0\.5/);
     expect(skill).toMatch(/It never silently approves/);
     expect(skill).toMatch(/The workflow is shadow only/);
     expect(skill).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -3032,6 +3091,17 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/replynodes\/jev-web-analyzer/);
     expect(evalDoc).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(evalDoc).toMatch(/not a general model ranking/);
+    expect(evalDoc).toMatch(/sysadarsh\/zerosweep/);
+    expect(evalDoc).toMatch(/CONFIDENCE_SAFETY_THRESHOLD/);
+    expect(evalDoc).toMatch(/Zero Format Errors/);
+    expect(evalDoc).toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(evalDoc).toMatch(/−59\.9%/);
+    expect(evalDoc).toMatch(/y0usaf\/pi-jev/);
+    expect(evalDoc).toMatch(/The gate fails open by design/);
+    expect(evalDoc).toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(evalDoc).toMatch(/prune ≠ deny/);
+    expect(evalDoc).toMatch(/56 of the 65 rules/);
+    expect(evalDoc).toMatch(/Gate at threshold 0\.5/);
     expect(evalDoc).toMatch(/It never silently approves/);
     expect(evalDoc).toMatch(/The workflow is shadow only/);
     expect(evalDoc).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -3330,6 +3400,10 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/miniLV\/Jev-Auto-Router/);
     expect(install).toMatch(/replynodes\/jev-web-analyzer/);
     expect(install).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(install).toMatch(/sysadarsh\/zerosweep/);
+    expect(install).toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(install).toMatch(/y0usaf\/pi-jev/);
+    expect(install).toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -3703,6 +3777,12 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/replynodes\/jev-web-analyzer/);
     expect(shape).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(shape).toMatch(/not a general model ranking/);
+    expect(shape).toMatch(/sysadarsh\/zerosweep/);
+    expect(shape).toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(shape).toMatch(/y0usaf\/pi-jev/);
+    expect(shape).toMatch(/The gate fails open by design/);
+    expect(shape).toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(shape).toMatch(/prune ≠ deny/);
     expect(shape).toMatch(/It never silently approves/);
     expect(shape).toMatch(/The workflow is shadow only/);
     expect(shape).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -4122,6 +4202,11 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/replynodes\/jev-web-analyzer/);
     expect(hosts).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(hosts).toMatch(/not a general model ranking/);
+    expect(hosts).toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(hosts).toMatch(/y0usaf\/pi-jev/);
+    expect(hosts).toMatch(/The gate fails open by design/);
+    expect(hosts).toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(hosts).toMatch(/prune ≠ deny/);
     expect(hosts).toMatch(/It never silently approves/);
     expect(hosts).toMatch(/The workflow is shadow only/);
     expect(hosts).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -4637,6 +4722,16 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/replynodes\/jev-web-analyzer/);
     expect(gates).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(gates).toMatch(/not a general model ranking/);
+    expect(gates).toMatch(/sysadarsh\/zerosweep/);
+    expect(gates).toMatch(/CONFIDENCE_SAFETY_THRESHOLD/);
+    expect(gates).toMatch(/Zero Format Errors/);
+    expect(gates).toMatch(/0xNatoshi\/jev-codex-router/);
+    expect(gates).toMatch(/−59\.9%/);
+    expect(gates).toMatch(/y0usaf\/pi-jev/);
+    expect(gates).toMatch(/The gate fails open by design/);
+    expect(gates).toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(gates).toMatch(/prune ≠ deny/);
+    expect(gates).toMatch(/56\/65 at 1\.00 on 467 labelled defects/);
     expect(gates).toMatch(/It never silently approves/);
     expect(gates).toMatch(/The workflow is shadow only/);
     expect(gates).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
