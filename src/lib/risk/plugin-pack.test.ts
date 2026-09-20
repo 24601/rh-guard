@@ -702,6 +702,20 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Research experiment, not investment advice/);
     expect(readme).toMatch(/nyattoh\/model-effort-router/);
     expect(readme).toMatch(/No benchmark claims/);
+    expect(readme).toMatch(/ArronHC\/windows2text/);
+    expect(readme).toMatch(/A Jev `confirm`, `escalate`, or `abort` gate never executes automatically/);
+    expect(readme).toMatch(/JohnsonRan\/pi-jev/);
+    expect(readme).toMatch(/This remains a permission aid, not a security boundary/);
+    expect(readme).toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(readme).toMatch(/Schema validity is not evidence that a diagnosis is correct/);
+    expect(readme).toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(readme).toMatch(/There is no omp source tree in this repository/);
+    expect(readme).toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(readme).toMatch(/untested at adequate power, not refuted/);
+    expect(readme).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(readme).toMatch(/morre95\/Laya-GuardRails-Harness/);
+    expect(readme).toMatch(/low confidence escalates, never allows/);
+
     expect(readme).toMatch(/56 of the 65 rules/);
     expect(readme).toMatch(/Gate at threshold 0\.5/);
     expect(readme).toMatch(/It never silently approves/);
@@ -1232,6 +1246,29 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1143 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/ArronHC\/windows2text is tacticocc\/Jevbridge/);
+      expect(text, rel).not.toMatch(/windows_step defaults to act=true/);
+      expect(text, rel).not.toMatch(/JohnsonRan\/pi-jev is y0usaf\/pi-jev/);
+      expect(text, rel).not.toMatch(/3\/10 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/classifier is a sandbox/);
+      expect(text, rel).not.toMatch(/PavelLizunov\/jev-sentinel is CompleteTech-LLC-AI-Research\/jev-sentinel/);
+      expect(text, rel).not.toMatch(/95\.0% is a measurement/);
+      expect(text, rel).not.toMatch(/require_confirmation is an implemented approval workflow/);
+      expect(text, rel).not.toMatch(/omapi-overlay is an omp source fork/);
+      expect(text, rel).not.toMatch(/empty findings are approval/);
+      expect(text, rel).not.toMatch(/abh2050\/jev-test-confidence-gate is jasonli0226\/jev-demo-triage/);
+      expect(text, rel).not.toMatch(/0 of 3 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/24 invented tickets is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/Twitter-keyword-shield is yonsakhan\/x-spam-filter-typesafe/);
+      expect(text, rel).not.toMatch(/0\.5 is calibrated/);
+      expect(text, rel).not.toMatch(/Laya-GuardRails-Harness is NandhaKishorM\/laya/);
+      expect(text, rel).not.toMatch(/BLOCK comes from a Laya label/);
+    }
+  });
+
   it("does not invent hourly 0947 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -1449,6 +1486,15 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/hraness\/sys1/);
     expect(pkg).not.toMatch(/matchstick-trading\/jev-regime-gate/);
     expect(pkg).not.toMatch(/nyattoh\/model-effort-router/);
+    expect(pkg).not.toMatch(/ArronHC\/windows2text/);
+    expect(pkg).not.toMatch(/JohnsonRan\/pi-jev/);
+    expect(pkg).not.toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(pkg).not.toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(pkg).not.toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(pkg).not.toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(pkg).not.toMatch(/morre95\/Laya-GuardRails-Harness/);
+    expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
+
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
     expect(pkg).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(pkg).not.toMatch(/jevfanity-api/);
@@ -1606,6 +1652,15 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/hraness\/sys1/);
     expect(pkg).not.toMatch(/matchstick-trading\/jev-regime-gate/);
     expect(pkg).not.toMatch(/nyattoh\/model-effort-router/);
+    expect(pkg).not.toMatch(/ArronHC\/windows2text/);
+    expect(pkg).not.toMatch(/JohnsonRan\/pi-jev/);
+    expect(pkg).not.toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(pkg).not.toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(pkg).not.toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(pkg).not.toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(pkg).not.toMatch(/morre95\/Laya-GuardRails-Harness/);
+    expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
+
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
     expect(pkg).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(pkg).not.toMatch(/jevfanity-api/);
@@ -1833,6 +1888,15 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/hraness\/sys1/);
     expect(lock).not.toMatch(/matchstick-trading\/jev-regime-gate/);
     expect(lock).not.toMatch(/nyattoh\/model-effort-router/);
+    expect(lock).not.toMatch(/ArronHC\/windows2text/);
+    expect(lock).not.toMatch(/JohnsonRan\/pi-jev/);
+    expect(lock).not.toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(lock).not.toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(lock).not.toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(lock).not.toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(lock).not.toMatch(/morre95\/Laya-GuardRails-Harness/);
+    expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
+
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
     expect(lock).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(lock).not.toMatch(/jevfanity-api/);
@@ -1990,6 +2054,15 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/hraness\/sys1/);
     expect(lock).not.toMatch(/matchstick-trading\/jev-regime-gate/);
     expect(lock).not.toMatch(/nyattoh\/model-effort-router/);
+    expect(lock).not.toMatch(/ArronHC\/windows2text/);
+    expect(lock).not.toMatch(/JohnsonRan\/pi-jev/);
+    expect(lock).not.toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(lock).not.toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(lock).not.toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(lock).not.toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(lock).not.toMatch(/morre95\/Laya-GuardRails-Harness/);
+    expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
+
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
     expect(lock).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(lock).not.toMatch(/jevfanity-api/);
@@ -2739,6 +2812,20 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/matchstick-trading\/jev-regime-gate/);
     expect(skill).toMatch(/nyattoh\/model-effort-router/);
     expect(skill).toMatch(/No benchmark claims/);
+    expect(skill).toMatch(/ArronHC\/windows2text/);
+    expect(skill).toMatch(/A Jev `confirm`, `escalate`, or `abort` gate never executes automatically/);
+    expect(skill).toMatch(/JohnsonRan\/pi-jev/);
+    expect(skill).toMatch(/This remains a permission aid, not a security boundary/);
+    expect(skill).toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(skill).toMatch(/Schema validity is not evidence that a diagnosis is correct/);
+    expect(skill).toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(skill).toMatch(/There is no omp source tree in this repository/);
+    expect(skill).toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(skill).toMatch(/untested at adequate power, not refuted/);
+    expect(skill).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(skill).toMatch(/morre95\/Laya-GuardRails-Harness/);
+    expect(skill).toMatch(/low confidence escalates, never allows/);
+
     expect(skill).toMatch(/56 of the 65 rules/);
     expect(skill).toMatch(/Gate at threshold 0\.5/);
     expect(skill).toMatch(/It never silently approves/);
@@ -3451,6 +3538,20 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/hraness\/sys1/);
     expect(evalDoc).toMatch(/matchstick-trading\/jev-regime-gate/);
     expect(evalDoc).toMatch(/nyattoh\/model-effort-router/);
+    expect(evalDoc).toMatch(/ArronHC\/windows2text/);
+    expect(evalDoc).toMatch(/A Jev `confirm`, `escalate`, or `abort` gate never executes automatically/);
+    expect(evalDoc).toMatch(/JohnsonRan\/pi-jev/);
+    expect(evalDoc).toMatch(/This remains a permission aid, not a security boundary/);
+    expect(evalDoc).toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(evalDoc).toMatch(/Schema validity is not evidence that a diagnosis is correct/);
+    expect(evalDoc).toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(evalDoc).toMatch(/There is no omp source tree in this repository/);
+    expect(evalDoc).toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(evalDoc).toMatch(/untested at adequate power, not refuted/);
+    expect(evalDoc).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(evalDoc).toMatch(/morre95\/Laya-GuardRails-Harness/);
+    expect(evalDoc).toMatch(/low confidence escalates, never allows/);
+
     expect(evalDoc).toMatch(/56 of the 65 rules/);
     expect(evalDoc).toMatch(/Gate at threshold 0\.5/);
     expect(evalDoc).toMatch(/It never silently approves/);
@@ -3779,6 +3880,14 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/hraness\/sys1/);
     expect(install).toMatch(/matchstick-trading\/jev-regime-gate/);
     expect(install).toMatch(/nyattoh\/model-effort-router/);
+    expect(install).toMatch(/ArronHC\/windows2text/);
+    expect(install).toMatch(/JohnsonRan\/pi-jev/);
+    expect(install).toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(install).toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(install).toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(install).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(install).toMatch(/morre95\/Laya-GuardRails-Harness/);
+
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -4192,6 +4301,20 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/hraness\/sys1/);
     expect(shape).toMatch(/matchstick-trading\/jev-regime-gate/);
     expect(shape).toMatch(/nyattoh\/model-effort-router/);
+    expect(shape).toMatch(/ArronHC\/windows2text/);
+    expect(shape).toMatch(/A Jev `confirm`, `escalate`, or `abort` gate never executes automatically/);
+    expect(shape).toMatch(/JohnsonRan\/pi-jev/);
+    expect(shape).toMatch(/This remains a permission aid, not a security boundary/);
+    expect(shape).toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(shape).toMatch(/Schema validity is not evidence that a diagnosis is correct/);
+    expect(shape).toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(shape).toMatch(/There is no omp source tree in this repository/);
+    expect(shape).toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(shape).toMatch(/untested at adequate power, not refuted/);
+    expect(shape).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(shape).toMatch(/morre95\/Laya-GuardRails-Harness/);
+    expect(shape).toMatch(/low confidence escalates, never allows/);
+
     expect(shape).toMatch(/It never silently approves/);
     expect(shape).toMatch(/The workflow is shadow only/);
     expect(shape).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -4653,6 +4776,20 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/hraness\/sys1/);
     expect(hosts).toMatch(/matchstick-trading\/jev-regime-gate/);
     expect(hosts).toMatch(/nyattoh\/model-effort-router/);
+    expect(hosts).toMatch(/ArronHC\/windows2text/);
+    expect(hosts).toMatch(/A Jev `confirm`, `escalate`, or `abort` gate never executes automatically/);
+    expect(hosts).toMatch(/JohnsonRan\/pi-jev/);
+    expect(hosts).toMatch(/This remains a permission aid, not a security boundary/);
+    expect(hosts).toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(hosts).toMatch(/Schema validity is not evidence that a diagnosis is correct/);
+    expect(hosts).toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(hosts).toMatch(/There is no omp source tree in this repository/);
+    expect(hosts).toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(hosts).toMatch(/untested at adequate power, not refuted/);
+    expect(hosts).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(hosts).toMatch(/morre95\/Laya-GuardRails-Harness/);
+    expect(hosts).toMatch(/low confidence escalates, never allows/);
+
     expect(hosts).toMatch(/It never silently approves/);
     expect(hosts).toMatch(/The workflow is shadow only/);
     expect(hosts).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -5221,6 +5358,20 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/hraness\/sys1/);
     expect(gates).toMatch(/matchstick-trading\/jev-regime-gate/);
     expect(gates).toMatch(/nyattoh\/model-effort-router/);
+    expect(gates).toMatch(/ArronHC\/windows2text/);
+    expect(gates).toMatch(/A Jev `confirm`, `escalate`, or `abort` gate never executes automatically/);
+    expect(gates).toMatch(/JohnsonRan\/pi-jev/);
+    expect(gates).toMatch(/This remains a permission aid, not a security boundary/);
+    expect(gates).toMatch(/PavelLizunov\/jev-sentinel/);
+    expect(gates).toMatch(/Schema validity is not evidence that a diagnosis is correct/);
+    expect(gates).toMatch(/VirtualMachinist\/omapi-overlay/);
+    expect(gates).toMatch(/There is no omp source tree in this repository/);
+    expect(gates).toMatch(/abh2050\/jev-test-confidence-gate/);
+    expect(gates).toMatch(/untested at adequate power, not refuted/);
+    expect(gates).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
+    expect(gates).toMatch(/morre95\/Laya-GuardRails-Harness/);
+    expect(gates).toMatch(/low confidence escalates, never allows/);
+
     expect(gates).toMatch(/56\/65 at 1\.00 on 467 labelled defects/);
     expect(gates).toMatch(/It never silently approves/);
     expect(gates).toMatch(/The workflow is shadow only/);

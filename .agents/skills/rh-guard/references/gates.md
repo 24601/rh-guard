@@ -325,6 +325,21 @@ a merge, and not a reward-hack detector.
 
 [model-effort-router](https://github.com/nyattoh/model-effort-router) DAG + effort routing. Quoted: **No benchmark claims.** dry-run without key; fail closed. **0.5** dispatch is not accuracy. Quoted: does not execute. Distinct Mandrilsquad1441/jev-model-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[windows2text](https://github.com/ArronHC/windows2text) UIA screen-to-text MCP + Jev computer-use. Quoted MCP.md: **A Jev `confirm`, `escalate`, or `abort` gate never executes automatically.** `windows_step` defaults `act=false`. Distinct tacticocc/Jevbridge. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[JohnsonRan/pi-jev](https://github.com/JohnsonRan/pi-jev) Pi auto-mode classifier. Quoted: **This is not a sandbox.** Quoted: **This remains a permission aid, not a security boundary.** ask ≥ **0.30** / deny ≥ **0.85**. **3/10 → 0/10** **not a rh-guard ROC**. Distinct y0usaf/pi-jev. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[PavelLizunov/jev-sentinel](https://github.com/PavelLizunov/jev-sentinel) Rust infra watchdog, not a coding-agent hook. Quoted: **not the truth of a diagnosis.** Quoted: **Schema validity is not evidence that a diagnosis is correct.** Self-healing logs only. **95.0%** / **0.12** **not a measurement**. Distinct CompleteTech jev-sentinel. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[omapi-overlay](https://github.com/VirtualMachinist/omapi-overlay) Nix overlay, not an omp source fork. Quoted: **There is no omp source tree in this repository.** Default shadow; **shadow never blocks**. Empty findings are **not** approval. Distinct omp-auto-mode. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[jev-test-confidence-gate](https://github.com/abh2050/jev-test-confidence-gate) 24-ticket confidence-gate bench. *Theirs*: **163 ms** / **87.5%** / **$0.06**. Gate **0 of 3**. Quoted: **24 invented tickets**. Quoted: **untested at adequate power, not refuted.** **not a rh-guard ROC**. Distinct jasonli0226/jev-demo-triage. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Twitter-keyword-shield](https://github.com/michelbrigante46-art/Twitter-keyword-shield) X userscript: local **0ms** then Jev. Default **0.5** uncalibrated. sub-100ms **not a rh-guard ROC**. Distinct yonsakhan/x-spam-filter-typesafe. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Laya-GuardRails-Harness](https://github.com/morre95/Laya-GuardRails-Harness) Claude PreToolUse/PostToolUse/Stop. Quoted: **`BLOCK` comes from rules or policy, never from a Laya label.** Default **shadow**. Quoted: **low confidence escalates, never allows.** Distinct NandhaKishorM/laya. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
@@ -1743,6 +1758,54 @@ nyattoh/model-effort-router
   0.5 dispatch is not accuracy
   selects a plan; does not execute
   distinct Mandrilsquad1441/jev-model-router
+  do not merge into examples/
+
+ArronHC/windows2text
+  UIA tree, not OCR; MCP windows_list/observe/snapshot/decide/act/step/run
+  confirm/escalate/abort never auto-exec; windows_step act=false default
+  Jevbridge visible/targets shape; distinct tacticocc/Jevbridge
+  do not merge into examples/
+
+JohnsonRan/pi-jev
+  Claude-style auto-mode classifier; not a sandbox; permission aid, not a security boundary
+  no key → mutating tools ask; 0.30 ask / 0.85 deny; beyond_request never denies
+  3/10 → 0/10 not a rh-guard ROC
+  distinct y0usaf/pi-jev / fivethirty/pi-jev-gate
+  do not merge into examples/pi-extension.ts
+
+PavelLizunov/jev-sentinel
+  Rust infra watchdog, not a coding-agent hook
+  schema validity is not a correct diagnosis; self-healing logs only
+  require_confirmation is not an implemented approval workflow
+  95.0%/0.12 not a measurement
+  distinct CompleteTech-LLC-AI-Research/jev-sentinel
+  do not merge into examples/
+
+VirtualMachinist/omapi-overlay
+  Nix overlay; no omp source tree; not an omp fork
+  JEV_MODE=shadow never blocks; JEV_BYPASS=1 skips router
+  empty findings are not approval
+  distinct omp-auto-mode / omp-jev-extensions
+  do not merge into examples/pi-extension.ts
+
+abh2050/jev-test-confidence-gate
+  24 invented tickets; theirs 163ms / 87.5% / $0.06
+  gate caught 0 of 3; confidence separation -0.010
+  untested at adequate power, not refuted; not a rh-guard ROC
+  distinct jasonli0226/jev-demo-triage
+  do not merge into examples/
+
+michelbrigante46-art/Twitter-keyword-shield
+  local 0ms then Jev; default 0.5 uncalibrated
+  sub-100ms not a rh-guard ROC
+  distinct yonsakhan/x-spam-filter-typesafe / bohutang/sift
+  do not merge into examples/
+
+morre95/Laya-GuardRails-Harness
+  Rules → Laya → Policy → Frontier/Human → Execution
+  BLOCK from rules or policy, never a Laya label
+  default shadow; low confidence escalates, never allows
+  distinct NandhaKishorM/laya
   do not merge into examples/
 
 localjev (githubnext/localjev)
