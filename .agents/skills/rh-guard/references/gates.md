@@ -305,6 +305,26 @@ a merge, and not a reward-hack detector.
 
 [jev-vault-gate](https://github.com/sohryuu101/jev-vault-gate) Claude plugin noul gate + topic Choice; verbatim capture. Quoted: **never blocks or alters the actual turn**. Quoted: **Nothing is ever deleted automatically**. Threshold **0.6**. `plugin.json` 0.3.0 ≠ package.json 0.1.0. Distinct jev-carryforward / jev-recall / invalidate. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[dsh-jev-tools](https://github.com/HorusJiang/dsh-jev-tools) DSH prune/screen/suggest + `jev_ask`/`jev_gate`. Quoted: **it ranks, it never thresholds**. Quoted: **With no key the plugin is completely inert**. `jev_gate` escalate; **8/8** **not a rh-guard ROC**. Distinct tr1v3r/dsh-jev / codebam / 7starsseeker. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[JEV-Prompt-Injection-Guardian](https://github.com/YuyaForest/JEV-Prompt-Injection-Guardian) quarantine dashboard. BLOCK/QUARANTINE/INSPECT/MONITOR/ALLOW; **80%+ BLOCK**. Score clamped to Choice. Heuristic fallback is not live Jev. Distinct Dual-Spectrum-Phishing-Guardian. BLOCK 80% as a safety envelope is theater. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-healthcare-support-router](https://github.com/bhaskarpraveen/jev-healthcare-support-router) Jev decides, TypeScript acts. urgency **≥ 0.8** / confidence **< 0.7** human. Quoted: **does not make medical diagnoses**. 0.8/0.7 is not clinical authority. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[prMonster](https://github.com/dillera/prMonster) FujiNet PR triage. Quoted: **It never touches a pull request on its own.** Quoted: **Merging is never offered.** CONFIRM+name; `ALLOW_GITHUB_WRITES` default off; `reviewer_directed_text` **0.7**. Distinct JevPR / jev-pr-review. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[dsh-jev](https://github.com/tr1v3r/dsh-jev) core degrade-never-throws; MCP; router shadow default. Quoted: **Never registers or modifies LLM routes.** Quoted: **Degrades, never breaks.** `name:` not `path:`. **35/35** mocked. Distinct HorusJiang / codebam / 7starsseeker. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[hermes-jev](https://github.com/keeltrace/hermes-jev) async nervous system. `gate_mode` default **off**; `min_confidence` **0.80**. Quoted: **Do not treat a Jev probability as proof of correctness.** Catalog **0.2.1.2** ≠ dev **0.2.2.dev4**. Live **$0.000095088** / **419.276 ms** **not a rh-guard ROC**. Distinct hermes-plugin-jev / hermes-jev-router / hermes-jev-skills / typesafe-jev-gate / hermes-jev-plugin. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[win4r/pi-jev-router](https://github.com/win4r/pi-jev-router) task-boundary Pi router. shadow default; exact hashes; pin `jev-1.13.0`. **15/16** **not a rh-guard ROC**. Quoted: **Production task quality and net savings have not been established.** Routing ≠ permission. Distinct philippdubach/pi-jev-router. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[sys1](https://github.com/hraness/sys1) System One gateway. Quoted: **Hosted Jev is disabled by default**. Qwen **32/72** / **44/72** **not a rh-guard ROC**. Quoted: **Do not reuse Jev probability thresholds for generic GGUF**. Loopback is not authentication. Cousin of localjev / laya / openjev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-regime-gate](https://github.com/matchstick-trading/jev-regime-gate) research, not advice. Code `viable < 0.4` / `changeLikely > 0.6` `stand_down`; `confidenceThreshold` **0.60** / `halfSizeThreshold` **0.45**. 0.4/0.6 is not investment advice. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[model-effort-router](https://github.com/nyattoh/model-effort-router) DAG + effort routing. Quoted: **No benchmark claims.** dry-run without key; fail closed. **0.5** dispatch is not accuracy. Quoted: does not execute. Distinct Mandrilsquad1441/jev-model-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
@@ -1639,6 +1659,90 @@ sohryuu101/jev-vault-gate
   plugin.json 0.3.0 ≠ package.json 0.1.0
   0.6 capture is not a safety grant; safe_to_delete is not auto-delete
   distinct Dharundp6/jev-carryforward / samdotmak/jev-recall / chopratejas/invalidate
+  do not merge into examples/
+
+HorusJiang/dsh-jev-tools
+  prune/screen/suggest + jev_ask/jev_gate; ranks, never thresholds
+  deterministic floors; fail-open except jev_gate escalate
+  no key inert; jev-latest moving alias
+  8/8 CJK smoke not a rh-guard ROC; shadow prune
+  distinct tr1v3r/dsh-jev / codebam/dsh-jev-guardrails / 7starsseeker/dsh-jev-guard
+  do not merge into examples/
+
+YuyaForest/JEV-Prompt-Injection-Guardian
+  BLOCK/QUARANTINE/INSPECT/MONITOR/ALLOW; 80%+ BLOCK
+  Jev then Gemini then heuristic; score clamped to Choice
+  heuristic fallback is not live Jev
+  distinct YuyaForest/JEV-Dual-Spectrum-Phishing-Guardian
+  BLOCK 80% is not a safety envelope
+  do not merge into examples/
+
+bhaskarpraveen/jev-healthcare-support-router
+  Jev decides, TypeScript acts
+  urgency >= 0.8 / confidence < 0.7 human
+  does not make medical diagnoses
+  0.8/0.7 is not clinical authority
+  do not merge into examples/
+
+dillera/prMonster
+  FujiNet PR triage; deterministic gates then Jev
+  READY/NEEDS REVIEW/BLOCKED
+  It never touches a pull request on its own
+  Merging is never offered
+  CONFIRM+name; ALLOW_GITHUB_WRITES default off
+  reviewer_directed_text 0.7 hard block; mock without key
+  confidenceFloor 0.5; probabilities not facts
+  distinct HexyeDEV/JevPR / ohernandezdev/jev-pr-review / MaxIvanyshen/jev-review
+  do not merge into examples/
+
+tr1v3r/dsh-jev
+  core degrade-never-throws; MCP jev_choice/score/noul
+  router shadow default; never registers routes
+  degrade keeps default; effort plugin
+  name: not path:; 35/35 mocked; fake-key 403 degrade
+  distinct HorusJiang/dsh-jev-tools / codebam / 7starsseeker
+  do not merge into examples/
+
+keeltrace/hermes-jev
+  async nervous system; gate_mode default off
+  selective; min_confidence 0.80
+  enforce → human not silent allow
+  Do not treat a Jev probability as proof of correctness
+  catalog 0.2.1.2 ≠ dev 0.2.2.dev4
+  live $0.000095088 / 419.276 ms theirs, not a rh-guard ROC
+  distinct hermes-plugin-jev / hermes-jev-router / hermes-jev-skills / typesafe-jev-gate / hermes-jev-plugin
+  do not merge into examples/
+
+win4r/pi-jev-router
+  task-boundary Pi router; shadow default; exact hashes
+  pin jev-1.13.0; 15/16 not a rh-guard ROC
+  production quality not established
+  auto holds when no model; shadow reports
+  routing ≠ permission
+  distinct philippdubach/pi-jev-router / rizafahmi / pi-jev-helm / pi-jev-control
+  do not merge into examples/pi-extension.ts
+
+hraness/sys1
+  System One gateway; hosted Jev disabled by default
+  Qwen 32/72 and 44/72 theirs, not a Jev ROC
+  do not reuse Jev thresholds for GGUF
+  local-only not authentication; wire-compatible ≠ identical
+  cousin localjev / laya / openjev
+  do not merge into examples/
+
+matchstick-trading/jev-regime-gate
+  research, not investment advice
+  viable < 0.4 / changeLikely > 0.6 stand_down
+  confidenceThreshold 0.60 / halfSizeThreshold 0.45 application policy
+  0.4/0.6 is not investment advice
+  do not merge into examples/
+
+nyattoh/model-effort-router
+  no benchmark claims; TypeSafe unofficial
+  dry-run without key; fail closed
+  0.5 dispatch is not accuracy
+  selects a plan; does not execute
+  distinct Mandrilsquad1441/jev-model-router
   do not merge into examples/
 
 localjev (githubnext/localjev)
