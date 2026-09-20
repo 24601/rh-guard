@@ -716,6 +716,25 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/morre95\/Laya-GuardRails-Harness/);
     expect(readme).toMatch(/low confidence escalates, never allows/);
 
+    expect(readme).toMatch(/Scope: approvals only/);
+    expect(readme).toMatch(/9\.8x faster, 4\.2x fewer interruptions/);
+    expect(readme).toMatch(/SouthernCrossAI\/scx-router/);
+    expect(readme).toMatch(/BlinkWrite\/pii-masker/);
+    expect(readme).toMatch(/It never returns the input unchanged as a fallback/);
+    expect(readme).toMatch(/BuilderChat\/PII-Redactor/);
+    expect(readme).toMatch(/PII_REDACTOR_USE_GLINER=false/);
+    expect(readme).toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(readme).toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(readme).toMatch(/se\.uu\.ub\.cora/);
+    expect(readme).toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(readme).toMatch(/stored routes are never applied automatically/);
+    expect(readme).toMatch(/tristan-kkim\/airlock/);
+    expect(readme).toMatch(/A model never gets to say "this is fine\."/);
+    expect(readme).toMatch(/david-cermak\/jevlike-esp32/);
+    expect(readme).toMatch(/This is intentionally a demo, not a production model/);
+    expect(readme).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+    expect(readme).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
+
     expect(readme).toMatch(/56 of the 65 rules/);
     expect(readme).toMatch(/Gate at threshold 0\.5/);
     expect(readme).toMatch(/It never silently approves/);
@@ -1269,6 +1288,32 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1248 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/8\.7x faster/);
+      expect(text, rel).not.toMatch(/anpicasso\/hermes-jev-approvals is a sandbox/);
+      expect(text, rel).not.toMatch(/9\.8x is a universal Jev speedup/);
+      expect(text, rel).not.toMatch(/SouthernCrossAI\/scx-router is TypeSafe/);
+      expect(text, rel).not.toMatch(/scx-router 0\.5 is a Jev gate/);
+      expect(text, rel).not.toMatch(/pii-masker returns the input unchanged as a fallback/);
+      expect(text, rel).not.toMatch(/fail-closed means catches everything/);
+      expect(text, rel).not.toMatch(/PII-Redactor defaults GLiNER/);
+      expect(text, rel).not.toMatch(/slm branch is Presidio \+ GLiNER \+ Ollama/);
+      expect(text, rel).not.toMatch(/180 ms is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/Harshal-Ug\/guardrails-demo is morre95\/Laya-GuardRails-Harness/);
+      expect(text, rel).not.toMatch(/lsu-ub-uu\/systemone-gatekeeper-war is TypeSafe/);
+      expect(text, rel).not.toMatch(/lsu-ub-uu\/systemone-gatekeeper-war is hraness\/sys1/);
+      expect(text, rel).not.toMatch(/raitoxlol\/hermes-slash-router is rsdkrasen\/hermes-jev-router/);
+      expect(text, rel).not.toMatch(/stored routes are applied automatically/);
+      expect(text, rel).not.toMatch(/7\.5% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/tristan-kkim\/airlock is jonathanavis96\/jev-kit/);
+      expect(text, rel).not.toMatch(/jevlike-esp32 is TypeSafe/);
+      expect(text, rel).not.toMatch(/jevlike-esp32 is a production model/);
+      expect(text, rel).not.toMatch(/typesafeai-dotnet-sdk is affiliated with TypeSafe AI/);
+    }
+  });
+
   it("does not invent hourly 0947 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -1493,6 +1538,16 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/abh2050\/jev-test-confidence-gate/);
     expect(pkg).not.toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
     expect(pkg).not.toMatch(/morre95\/Laya-GuardRails-Harness/);
+
+    expect(pkg).not.toMatch(/SouthernCrossAI\/scx-router/);
+    expect(pkg).not.toMatch(/BlinkWrite\/pii-masker/);
+    expect(pkg).not.toMatch(/BuilderChat\/PII-Redactor/);
+    expect(pkg).not.toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(pkg).not.toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(pkg).not.toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(pkg).not.toMatch(/tristan-kkim\/airlock/);
+    expect(pkg).not.toMatch(/david-cermak\/jevlike-esp32/);
+    expect(pkg).not.toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
@@ -1659,6 +1714,16 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/abh2050\/jev-test-confidence-gate/);
     expect(pkg).not.toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
     expect(pkg).not.toMatch(/morre95\/Laya-GuardRails-Harness/);
+
+    expect(pkg).not.toMatch(/SouthernCrossAI\/scx-router/);
+    expect(pkg).not.toMatch(/BlinkWrite\/pii-masker/);
+    expect(pkg).not.toMatch(/BuilderChat\/PII-Redactor/);
+    expect(pkg).not.toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(pkg).not.toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(pkg).not.toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(pkg).not.toMatch(/tristan-kkim\/airlock/);
+    expect(pkg).not.toMatch(/david-cermak\/jevlike-esp32/);
+    expect(pkg).not.toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
@@ -1895,6 +1960,16 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/abh2050\/jev-test-confidence-gate/);
     expect(lock).not.toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
     expect(lock).not.toMatch(/morre95\/Laya-GuardRails-Harness/);
+
+    expect(lock).not.toMatch(/SouthernCrossAI\/scx-router/);
+    expect(lock).not.toMatch(/BlinkWrite\/pii-masker/);
+    expect(lock).not.toMatch(/BuilderChat\/PII-Redactor/);
+    expect(lock).not.toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(lock).not.toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(lock).not.toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(lock).not.toMatch(/tristan-kkim\/airlock/);
+    expect(lock).not.toMatch(/david-cermak\/jevlike-esp32/);
+    expect(lock).not.toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
@@ -2061,6 +2136,16 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/abh2050\/jev-test-confidence-gate/);
     expect(lock).not.toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
     expect(lock).not.toMatch(/morre95\/Laya-GuardRails-Harness/);
+
+    expect(lock).not.toMatch(/SouthernCrossAI\/scx-router/);
+    expect(lock).not.toMatch(/BlinkWrite\/pii-masker/);
+    expect(lock).not.toMatch(/BuilderChat\/PII-Redactor/);
+    expect(lock).not.toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(lock).not.toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(lock).not.toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(lock).not.toMatch(/tristan-kkim\/airlock/);
+    expect(lock).not.toMatch(/david-cermak\/jevlike-esp32/);
+    expect(lock).not.toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
@@ -2826,6 +2911,25 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/morre95\/Laya-GuardRails-Harness/);
     expect(skill).toMatch(/low confidence escalates, never allows/);
 
+    expect(skill).toMatch(/Scope: approvals only/);
+    expect(skill).toMatch(/9\.8x faster, 4\.2x fewer interruptions/);
+    expect(skill).toMatch(/SouthernCrossAI\/scx-router/);
+    expect(skill).toMatch(/BlinkWrite\/pii-masker/);
+    expect(skill).toMatch(/It never returns the input unchanged as a fallback/);
+    expect(skill).toMatch(/BuilderChat\/PII-Redactor/);
+    expect(skill).toMatch(/PII_REDACTOR_USE_GLINER=false/);
+    expect(skill).toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(skill).toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(skill).toMatch(/se\.uu\.ub\.cora/);
+    expect(skill).toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(skill).toMatch(/stored routes are never applied automatically/);
+    expect(skill).toMatch(/tristan-kkim\/airlock/);
+    expect(skill).toMatch(/A model never gets to say "this is fine\."/);
+    expect(skill).toMatch(/david-cermak\/jevlike-esp32/);
+    expect(skill).toMatch(/This is intentionally a demo, not a production model/);
+    expect(skill).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+    expect(skill).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
+
     expect(skill).toMatch(/56 of the 65 rules/);
     expect(skill).toMatch(/Gate at threshold 0\.5/);
     expect(skill).toMatch(/It never silently approves/);
@@ -3552,6 +3656,25 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/morre95\/Laya-GuardRails-Harness/);
     expect(evalDoc).toMatch(/low confidence escalates, never allows/);
 
+    expect(evalDoc).toMatch(/Scope: approvals only/);
+    expect(evalDoc).toMatch(/9\.8x faster, 4\.2x fewer interruptions/);
+    expect(evalDoc).toMatch(/SouthernCrossAI\/scx-router/);
+    expect(evalDoc).toMatch(/BlinkWrite\/pii-masker/);
+    expect(evalDoc).toMatch(/It never returns the input unchanged as a fallback/);
+    expect(evalDoc).toMatch(/BuilderChat\/PII-Redactor/);
+    expect(evalDoc).toMatch(/PII_REDACTOR_USE_GLINER=false/);
+    expect(evalDoc).toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(evalDoc).toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(evalDoc).toMatch(/se\.uu\.ub\.cora/);
+    expect(evalDoc).toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(evalDoc).toMatch(/stored routes are never applied automatically/);
+    expect(evalDoc).toMatch(/tristan-kkim\/airlock/);
+    expect(evalDoc).toMatch(/A model never gets to say "this is fine\."/);
+    expect(evalDoc).toMatch(/david-cermak\/jevlike-esp32/);
+    expect(evalDoc).toMatch(/This is intentionally a demo, not a production model/);
+    expect(evalDoc).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+    expect(evalDoc).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
+
     expect(evalDoc).toMatch(/56 of the 65 rules/);
     expect(evalDoc).toMatch(/Gate at threshold 0\.5/);
     expect(evalDoc).toMatch(/It never silently approves/);
@@ -3887,6 +4010,16 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/abh2050\/jev-test-confidence-gate/);
     expect(install).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
     expect(install).toMatch(/morre95\/Laya-GuardRails-Harness/);
+
+    expect(install).toMatch(/SouthernCrossAI\/scx-router/);
+    expect(install).toMatch(/BlinkWrite\/pii-masker/);
+    expect(install).toMatch(/BuilderChat\/PII-Redactor/);
+    expect(install).toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(install).toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(install).toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(install).toMatch(/tristan-kkim\/airlock/);
+    expect(install).toMatch(/david-cermak\/jevlike-esp32/);
+    expect(install).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
@@ -4314,6 +4447,25 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
     expect(shape).toMatch(/morre95\/Laya-GuardRails-Harness/);
     expect(shape).toMatch(/low confidence escalates, never allows/);
+
+    expect(shape).toMatch(/Scope: approvals only/);
+    expect(shape).toMatch(/9\.8x faster, 4\.2x fewer interruptions/);
+    expect(shape).toMatch(/SouthernCrossAI\/scx-router/);
+    expect(shape).toMatch(/BlinkWrite\/pii-masker/);
+    expect(shape).toMatch(/It never returns the input unchanged as a fallback/);
+    expect(shape).toMatch(/BuilderChat\/PII-Redactor/);
+    expect(shape).toMatch(/PII_REDACTOR_USE_GLINER=false/);
+    expect(shape).toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(shape).toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(shape).toMatch(/se\.uu\.ub\.cora/);
+    expect(shape).toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(shape).toMatch(/stored routes are never applied automatically/);
+    expect(shape).toMatch(/tristan-kkim\/airlock/);
+    expect(shape).toMatch(/A model never gets to say "this is fine\."/);
+    expect(shape).toMatch(/david-cermak\/jevlike-esp32/);
+    expect(shape).toMatch(/This is intentionally a demo, not a production model/);
+    expect(shape).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+    expect(shape).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
 
     expect(shape).toMatch(/It never silently approves/);
     expect(shape).toMatch(/The workflow is shadow only/);
@@ -4789,6 +4941,25 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
     expect(hosts).toMatch(/morre95\/Laya-GuardRails-Harness/);
     expect(hosts).toMatch(/low confidence escalates, never allows/);
+
+    expect(hosts).toMatch(/Scope: approvals only/);
+    expect(hosts).toMatch(/9\.8x faster, 4\.2x fewer interruptions/);
+    expect(hosts).toMatch(/SouthernCrossAI\/scx-router/);
+    expect(hosts).toMatch(/BlinkWrite\/pii-masker/);
+    expect(hosts).toMatch(/It never returns the input unchanged as a fallback/);
+    expect(hosts).toMatch(/BuilderChat\/PII-Redactor/);
+    expect(hosts).toMatch(/PII_REDACTOR_USE_GLINER=false/);
+    expect(hosts).toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(hosts).toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(hosts).toMatch(/se\.uu\.ub\.cora/);
+    expect(hosts).toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(hosts).toMatch(/stored routes are never applied automatically/);
+    expect(hosts).toMatch(/tristan-kkim\/airlock/);
+    expect(hosts).toMatch(/A model never gets to say "this is fine\."/);
+    expect(hosts).toMatch(/david-cermak\/jevlike-esp32/);
+    expect(hosts).toMatch(/This is intentionally a demo, not a production model/);
+    expect(hosts).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+    expect(hosts).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
 
     expect(hosts).toMatch(/It never silently approves/);
     expect(hosts).toMatch(/The workflow is shadow only/);
@@ -5371,6 +5542,25 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/michelbrigante46-art\/Twitter-keyword-shield/);
     expect(gates).toMatch(/morre95\/Laya-GuardRails-Harness/);
     expect(gates).toMatch(/low confidence escalates, never allows/);
+
+    expect(gates).toMatch(/Scope: approvals only/);
+    expect(gates).toMatch(/9\.8x faster, 4\.2x fewer interruptions/);
+    expect(gates).toMatch(/SouthernCrossAI\/scx-router/);
+    expect(gates).toMatch(/BlinkWrite\/pii-masker/);
+    expect(gates).toMatch(/It never returns the input unchanged as a fallback/);
+    expect(gates).toMatch(/BuilderChat\/PII-Redactor/);
+    expect(gates).toMatch(/PII_REDACTOR_USE_GLINER=false/);
+    expect(gates).toMatch(/Harshal-Ug\/guardrails-demo/);
+    expect(gates).toMatch(/lsu-ub-uu\/systemone-gatekeeper-war/);
+    expect(gates).toMatch(/se\.uu\.ub\.cora/);
+    expect(gates).toMatch(/raitoxlol\/hermes-slash-router/);
+    expect(gates).toMatch(/stored routes are never applied automatically/);
+    expect(gates).toMatch(/tristan-kkim\/airlock/);
+    expect(gates).toMatch(/A model never gets to say "this is fine\."/);
+    expect(gates).toMatch(/david-cermak\/jevlike-esp32/);
+    expect(gates).toMatch(/This is intentionally a demo, not a production model/);
+    expect(gates).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+    expect(gates).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
 
     expect(gates).toMatch(/56\/65 at 1\.00 on 467 labelled defects/);
     expect(gates).toMatch(/It never silently approves/);
