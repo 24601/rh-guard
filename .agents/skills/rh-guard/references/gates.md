@@ -1031,7 +1031,7 @@ glud123/jev-assist
   Flags are prompts for a human look, never verdicts
   Typed output guarantees the shape of an answer, not its correctness
   Do not judge candidates you just generated
-  gate exits 1; recall@20 5/7 on one 705-file React app
+  gate exits 1; quoted recall@20 0.68 / recall@40 0.80 over 41 files on one 705-file React app
   not a rh-guard ROC
   do not merge into examples/
 

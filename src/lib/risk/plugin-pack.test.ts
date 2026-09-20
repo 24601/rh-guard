@@ -500,6 +500,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/glud123\/jev-assist/);
     expect(readme).toMatch(/Flags are prompts for a human look, never verdicts/);
     expect(readme).toMatch(/Typed output guarantees the shape of an answer, not its correctness/);
+    expect(readme).toMatch(/recall@20 0\.68/);
     expect(readme).toMatch(/Nixz0824\/rag-jev/);
     expect(readme).toMatch(/Degradation is never silent/);
     expect(readme).toMatch(/请以公告原文为准/);
@@ -774,6 +775,8 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/INCLUDE is a read grant/);
       expect(text, rel).not.toMatch(/Flags are verdicts/);
       expect(text, rel).not.toMatch(/Typed output guarantees correctness/);
+      expect(text, rel).not.toMatch(/recall@20 \*\*5\/7\*\*/);
+      expect(text, rel).not.toMatch(/recall@20 5\/7/);
       expect(text, rel).not.toMatch(/20\/20 is a rh-guard ROC/);
       expect(text, rel).not.toMatch(/self-check rewrites the answer/);
       expect(text, rel).not.toMatch(/Proxies isolate cryptographically/);
@@ -1711,6 +1714,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/glud123\/jev-assist/);
     expect(skill).toMatch(/Flags are prompts for a human look, never verdicts/);
     expect(skill).toMatch(/Typed output guarantees the shape of an answer, not its correctness/);
+    expect(skill).toMatch(/recall@20 0\.68/);
     expect(skill).toMatch(/Nixz0824\/rag-jev/);
     expect(skill).toMatch(/Degradation is never silent/);
     expect(skill).toMatch(/请以公告原文为准/);
@@ -2224,6 +2228,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/glud123\/jev-assist/);
     expect(evalDoc).toMatch(/Flags are prompts for a human look, never verdicts/);
     expect(evalDoc).toMatch(/Typed output guarantees the shape of an answer, not its correctness/);
+    expect(evalDoc).toMatch(/recall@20 0\.68/);
     expect(evalDoc).toMatch(/Nixz0824\/rag-jev/);
     expect(evalDoc).toMatch(/Degradation is never silent/);
     expect(evalDoc).toMatch(/请以公告原文为准/);
@@ -2701,6 +2706,7 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/glud123\/jev-assist/);
     expect(shape).toMatch(/Flags are prompts for a human look, never verdicts/);
     expect(shape).toMatch(/Typed output guarantees the shape of an answer, not its correctness/);
+    expect(shape).toMatch(/recall@20 0\.68/);
     expect(shape).toMatch(/Nixz0824\/rag-jev/);
     expect(shape).toMatch(/Degradation is never silent/);
     expect(shape).toMatch(/请以公告原文为准/);
@@ -3371,6 +3377,7 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/glud123\/jev-assist/);
     expect(gates).toMatch(/Flags are prompts for a human look, never verdicts/);
     expect(gates).toMatch(/Typed output guarantees the shape of an answer, not its correctness/);
+    expect(gates).toMatch(/recall@20 0\.68/);
     expect(gates).toMatch(/Nixz0824\/rag-jev/);
     expect(gates).toMatch(/Degradation is never silent/);
     expect(gates).toMatch(/请以公告原文为准/);
