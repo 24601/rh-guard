@@ -625,6 +625,22 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Kararı yine kod verir/);
     expect(readme).toMatch(/TennousuAthena\/Mailbox-Boy-With-Jev/);
     expect(readme).toMatch(/advertised mailbox ≠ shipped source/);
+
+    expect(readme).toMatch(/lgy1027\/jevshield/);
+    expect(readme).toMatch(/Sub-100ms, non-autoregressive runtime security gate/);
+    expect(readme).toMatch(/DevMortimer\/pi-warden/);
+    expect(readme).toMatch(/It is advisory, not a sandbox/);
+    expect(readme).toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(readme).toMatch(/Jev did not beat baseline on pass rate/);
+    expect(readme).toMatch(/manutej\/volumetric-intelligence/);
+    expect(readme).toMatch(/Jev is the typed gate/);
+    expect(readme).toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(readme).toMatch(/No evidence means no production delegation/);
+    expect(readme).toMatch(/off by default/);
+    expect(readme).toMatch(/UNVERIFIED/);
+    expect(readme).toMatch(/replynodes\/jev-web-analyzer/);
+    expect(readme).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(readme).toMatch(/not a general model ranking/);
     expect(readme).toMatch(/It never silently approves/);
     expect(readme).toMatch(/The workflow is shadow only/);
     expect(readme).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -1035,6 +1051,32 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0646 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/heuristic fallback is a security boundary/);
+      expect(text, rel).not.toMatch(/jevshield is jev-brig/);
+      expect(text, rel).not.toMatch(/jevshield is Not TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/pi-warden is a sandbox/);
+      expect(text, rel).not.toMatch(/13,952 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/pi-warden is claude-jev-warden/);
+      expect(text, rel).not.toMatch(/Jev beat baseline on pass rate/);
+      expect(text, rel).not.toMatch(/\/api\/walk is live Jev/);
+      expect(text, rel).not.toMatch(/volumetric walk is live Jev/);
+      expect(text, rel).not.toMatch(/Jev-Auto-Router grants authorization/);
+      expect(text, rel).not.toMatch(/Policy Guard ranks candidates/);
+      expect(text, rel).not.toMatch(/passing static tests constitute runtime qualification/);
+      expect(text, rel).not.toMatch(/PROFILE_UNQUALIFIED/);
+      expect(text, rel).not.toMatch(/still ship \*\*Codex Auto Router\*\* copy/);
+      expect(text, rel).not.toMatch(/Codex Auto Router copy \(no Jev\)/);
+      expect(text, rel).not.toMatch(/advertised README ≠ shipped Jev contract/);
+      expect(text, rel).not.toMatch(/jev-web-analyzer is an SEO score/);
+      expect(text, rel).not.toMatch(/jev-web-analyzer is an AI detector/);
+      expect(text, rel).not.toMatch(/ai-provider-triage-comparison is a general model ranking/);
+      expect(text, rel).not.toMatch(/measured Sub-100ms/);
+    }
+  });
+
   it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
     const productPaths = [
       ...PUBLIC_COPY_PATHS,
@@ -1186,6 +1228,13 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/fatelei\/yueli/);
     expect(pkg).not.toMatch(/ismailakdag\/typesafe-jev/);
     expect(pkg).not.toMatch(/TennousuAthena\/Mailbox-Boy-With-Jev/);
+    expect(pkg).not.toMatch(/lgy1027\/jevshield/);
+    expect(pkg).not.toMatch(/DevMortimer\/pi-warden/);
+    expect(pkg).not.toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(pkg).not.toMatch(/manutej\/volumetric-intelligence/);
+    expect(pkg).not.toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(pkg).not.toMatch(/replynodes\/jev-web-analyzer/);
+    expect(pkg).not.toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(pkg).not.toMatch(/jevfanity-api/);
     expect(pkg).not.toMatch(/iso-jevdit/);
     expect(pkg).not.toMatch(/jev-linkedin/);
@@ -1306,6 +1355,13 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/fatelei\/yueli/);
     expect(pkg).not.toMatch(/ismailakdag\/typesafe-jev/);
     expect(pkg).not.toMatch(/TennousuAthena\/Mailbox-Boy-With-Jev/);
+    expect(pkg).not.toMatch(/lgy1027\/jevshield/);
+    expect(pkg).not.toMatch(/DevMortimer\/pi-warden/);
+    expect(pkg).not.toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(pkg).not.toMatch(/manutej\/volumetric-intelligence/);
+    expect(pkg).not.toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(pkg).not.toMatch(/replynodes\/jev-web-analyzer/);
+    expect(pkg).not.toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(pkg).not.toMatch(/jevfanity-api/);
     expect(pkg).not.toMatch(/iso-jevdit/);
     expect(pkg).not.toMatch(/jev-linkedin/);
@@ -1496,6 +1552,13 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/fatelei\/yueli/);
     expect(lock).not.toMatch(/ismailakdag\/typesafe-jev/);
     expect(lock).not.toMatch(/TennousuAthena\/Mailbox-Boy-With-Jev/);
+    expect(lock).not.toMatch(/lgy1027\/jevshield/);
+    expect(lock).not.toMatch(/DevMortimer\/pi-warden/);
+    expect(lock).not.toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(lock).not.toMatch(/manutej\/volumetric-intelligence/);
+    expect(lock).not.toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(lock).not.toMatch(/replynodes\/jev-web-analyzer/);
+    expect(lock).not.toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(lock).not.toMatch(/jevfanity-api/);
     expect(lock).not.toMatch(/iso-jevdit/);
     expect(lock).not.toMatch(/jev-linkedin/);
@@ -1616,6 +1679,13 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/fatelei\/yueli/);
     expect(lock).not.toMatch(/ismailakdag\/typesafe-jev/);
     expect(lock).not.toMatch(/TennousuAthena\/Mailbox-Boy-With-Jev/);
+    expect(lock).not.toMatch(/lgy1027\/jevshield/);
+    expect(lock).not.toMatch(/DevMortimer\/pi-warden/);
+    expect(lock).not.toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(lock).not.toMatch(/manutej\/volumetric-intelligence/);
+    expect(lock).not.toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(lock).not.toMatch(/replynodes\/jev-web-analyzer/);
+    expect(lock).not.toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(lock).not.toMatch(/jevfanity-api/);
     expect(lock).not.toMatch(/iso-jevdit/);
     expect(lock).not.toMatch(/jev-linkedin/);
@@ -2291,6 +2361,22 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Kararı yine kod verir/);
     expect(skill).toMatch(/TennousuAthena\/Mailbox-Boy-With-Jev/);
     expect(skill).toMatch(/advertised mailbox ≠ shipped source/);
+
+    expect(skill).toMatch(/lgy1027\/jevshield/);
+    expect(skill).toMatch(/Sub-100ms, non-autoregressive runtime security gate/);
+    expect(skill).toMatch(/DevMortimer\/pi-warden/);
+    expect(skill).toMatch(/It is advisory, not a sandbox/);
+    expect(skill).toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(skill).toMatch(/Jev did not beat baseline on pass rate/);
+    expect(skill).toMatch(/manutej\/volumetric-intelligence/);
+    expect(skill).toMatch(/Jev is the typed gate/);
+    expect(skill).toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(skill).toMatch(/No evidence means no production delegation/);
+    expect(skill).toMatch(/off by default/);
+    expect(skill).toMatch(/UNVERIFIED/);
+    expect(skill).toMatch(/replynodes\/jev-web-analyzer/);
+    expect(skill).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(skill).toMatch(/not a general model ranking/);
     expect(skill).toMatch(/It never silently approves/);
     expect(skill).toMatch(/The workflow is shadow only/);
     expect(skill).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -2930,6 +3016,22 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Kararı yine kod verir/);
     expect(evalDoc).toMatch(/TennousuAthena\/Mailbox-Boy-With-Jev/);
     expect(evalDoc).toMatch(/advertised mailbox ≠ shipped source/);
+
+    expect(evalDoc).toMatch(/lgy1027\/jevshield/);
+    expect(evalDoc).toMatch(/Sub-100ms, non-autoregressive runtime security gate/);
+    expect(evalDoc).toMatch(/DevMortimer\/pi-warden/);
+    expect(evalDoc).toMatch(/It is advisory, not a sandbox/);
+    expect(evalDoc).toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(evalDoc).toMatch(/Jev did not beat baseline on pass rate/);
+    expect(evalDoc).toMatch(/manutej\/volumetric-intelligence/);
+    expect(evalDoc).toMatch(/Jev is the typed gate/);
+    expect(evalDoc).toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(evalDoc).toMatch(/No evidence means no production delegation/);
+    expect(evalDoc).toMatch(/off by default/);
+    expect(evalDoc).toMatch(/UNVERIFIED/);
+    expect(evalDoc).toMatch(/replynodes\/jev-web-analyzer/);
+    expect(evalDoc).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(evalDoc).toMatch(/not a general model ranking/);
     expect(evalDoc).toMatch(/It never silently approves/);
     expect(evalDoc).toMatch(/The workflow is shadow only/);
     expect(evalDoc).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -3221,6 +3323,13 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/fatelei\/yueli/);
     expect(install).toMatch(/ismailakdag\/typesafe-jev/);
     expect(install).toMatch(/TennousuAthena\/Mailbox-Boy-With-Jev/);
+    expect(install).toMatch(/lgy1027\/jevshield/);
+    expect(install).toMatch(/DevMortimer\/pi-warden/);
+    expect(install).toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(install).toMatch(/manutej\/volumetric-intelligence/);
+    expect(install).toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(install).toMatch(/replynodes\/jev-web-analyzer/);
+    expect(install).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -3578,6 +3687,22 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/Kararı yine kod verir/);
     expect(shape).toMatch(/TennousuAthena\/Mailbox-Boy-With-Jev/);
     expect(shape).toMatch(/advertised mailbox ≠ shipped source/);
+
+    expect(shape).toMatch(/lgy1027\/jevshield/);
+    expect(shape).toMatch(/Sub-100ms, non-autoregressive runtime security gate/);
+    expect(shape).toMatch(/DevMortimer\/pi-warden/);
+    expect(shape).toMatch(/It is advisory, not a sandbox/);
+    expect(shape).toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(shape).toMatch(/Jev did not beat baseline on pass rate/);
+    expect(shape).toMatch(/manutej\/volumetric-intelligence/);
+    expect(shape).toMatch(/Jev is the typed gate/);
+    expect(shape).toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(shape).toMatch(/No evidence means no production delegation/);
+    expect(shape).toMatch(/off by default/);
+    expect(shape).toMatch(/UNVERIFIED/);
+    expect(shape).toMatch(/replynodes\/jev-web-analyzer/);
+    expect(shape).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(shape).toMatch(/not a general model ranking/);
     expect(shape).toMatch(/It never silently approves/);
     expect(shape).toMatch(/The workflow is shadow only/);
     expect(shape).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -3982,6 +4107,21 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/no function in the safety layer accepts a model signal/);
     expect(hosts).toMatch(/logicrw\/ask-jev/);
     expect(hosts).toMatch(/never use a verdict to grant permissions/);
+    expect(hosts).toMatch(/lgy1027\/jevshield/);
+    expect(hosts).toMatch(/Sub-100ms, non-autoregressive runtime security gate/);
+    expect(hosts).toMatch(/DevMortimer\/pi-warden/);
+    expect(hosts).toMatch(/It is advisory, not a sandbox/);
+    expect(hosts).toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(hosts).toMatch(/Jev did not beat baseline on pass rate/);
+    expect(hosts).toMatch(/manutej\/volumetric-intelligence/);
+    expect(hosts).toMatch(/Jev is the typed gate/);
+    expect(hosts).toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(hosts).toMatch(/No evidence means no production delegation/);
+    expect(hosts).toMatch(/off by default/);
+    expect(hosts).toMatch(/UNVERIFIED/);
+    expect(hosts).toMatch(/replynodes\/jev-web-analyzer/);
+    expect(hosts).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(hosts).toMatch(/not a general model ranking/);
     expect(hosts).toMatch(/It never silently approves/);
     expect(hosts).toMatch(/The workflow is shadow only/);
     expect(hosts).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -4481,6 +4621,22 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Kararı yine kod verir/);
     expect(gates).toMatch(/TennousuAthena\/Mailbox-Boy-With-Jev/);
     expect(gates).toMatch(/advertised mailbox ≠ shipped source/);
+
+    expect(gates).toMatch(/lgy1027\/jevshield/);
+    expect(gates).toMatch(/Sub-100ms, non-autoregressive runtime security gate/);
+    expect(gates).toMatch(/DevMortimer\/pi-warden/);
+    expect(gates).toMatch(/It is advisory, not a sandbox/);
+    expect(gates).toMatch(/jasonli0226\/jev-demo-triage/);
+    expect(gates).toMatch(/Jev did not beat baseline on pass rate/);
+    expect(gates).toMatch(/manutej\/volumetric-intelligence/);
+    expect(gates).toMatch(/Jev is the typed gate/);
+    expect(gates).toMatch(/miniLV\/Jev-Auto-Router/);
+    expect(gates).toMatch(/No evidence means no production delegation/);
+    expect(gates).toMatch(/off by default/);
+    expect(gates).toMatch(/UNVERIFIED/);
+    expect(gates).toMatch(/replynodes\/jev-web-analyzer/);
+    expect(gates).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
+    expect(gates).toMatch(/not a general model ranking/);
     expect(gates).toMatch(/It never silently approves/);
     expect(gates).toMatch(/The workflow is shadow only/);
     expect(gates).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
