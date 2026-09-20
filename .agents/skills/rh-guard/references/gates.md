@@ -225,8 +225,9 @@ claude-code-jev (RahulBalakavi/claude-code-jev)
   human msgs + tool + cwd → OpenRouter typesafe/jev-1.13 → allow / block / ask
   low-confidence and network fail → human. Additive PreToolUse; Anthropic
   auto-mode is not replaceable via a supported API.
-  quoted 0 dangerous allowed on 18-case fixture (90 live decisions)
+  quoted 0 dangerous allowed on synthetic 18-case fixture (90 live decisions)
   quoted adds a 264 ms hop rather than removing one; 0.85 uncalibrated
+  do not claim the agent is 93% faster
   do not merge their examples/claude-settings.json into examples/
 
 gliner25-compaction (m-newhauser/gliner25-compaction)

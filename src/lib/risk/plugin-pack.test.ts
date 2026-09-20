@@ -393,7 +393,8 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/wobsoriano\/oxlint-plugin-jev/);
     expect(readme).toMatch(/ci: "fail"/);
     expect(readme).toMatch(/adds a 264 ms hop rather than removing one/);
-    expect(readme).toMatch(/0 dangerous allowed/);
+    expect(readme).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
+    expect(readme).toMatch(/0\.85 uncalibrated/);
     expect(readme).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(readme).toMatch(/named lexical skip/);
     expect(readme).toMatch(/skills\/jev-memory\/SKILL\.md/);
@@ -1218,7 +1219,8 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/17\/18/);
     expect(skill).toMatch(/wobsoriano\/oxlint-plugin-jev/);
     expect(skill).toMatch(/adds a 264 ms hop rather than removing one/);
-    expect(skill).toMatch(/0 dangerous allowed/);
+    expect(skill).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
+    expect(skill).toMatch(/0\.85 uncalibrated/);
     expect(skill).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(skill).toMatch(/named lexical skip/);
     expect(skill).toMatch(/skills\/jev-memory\/SKILL\.md/);
@@ -1620,7 +1622,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/17\/18/);
     expect(evalDoc).toMatch(/wobsoriano\/oxlint-plugin-jev/);
     expect(evalDoc).toMatch(/adds a 264 ms hop rather than removing one/);
-    expect(evalDoc).toMatch(/0 dangerous allowed/);
+    expect(evalDoc).toMatch(/0 dangerous allowed\*\* on that (synthetic )?fixture/);
     expect(evalDoc).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(evalDoc).toMatch(/named lexical skip/);
     expect(evalDoc).toMatch(/skills\/jev-memory\/SKILL\.md/);
@@ -2163,7 +2165,8 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/relevance, not resemblance/);
     expect(hosts).toMatch(/wobsoriano\/oxlint-plugin-jev/);
     expect(hosts).toMatch(/adds a 264 ms hop rather than removing one/);
-    expect(hosts).toMatch(/0 dangerous allowed/);
+    expect(hosts).toMatch(/0 dangerous allowed\*\* on that fixture/);
+    expect(hosts).toMatch(/0\.85 uncalibrated/);
     expect(hosts).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(hosts).toMatch(/named lexical skip/);
     expect(hosts).toMatch(/skills\/jev-memory\/SKILL\.md/);
@@ -2429,7 +2432,7 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/17\/18/);
     expect(gates).toMatch(/wobsoriano\/oxlint-plugin-jev/);
     expect(gates).toMatch(/adds a 264 ms hop rather than removing one/);
-    expect(gates).toMatch(/0 dangerous allowed/);
+    expect(gates).toMatch(/0 dangerous allowed on synthetic 18-case fixture/);
     expect(gates).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(gates).toMatch(/named lexical skip/);
     expect(gates).toMatch(/skills\/jev-memory\/SKILL\.md/);
