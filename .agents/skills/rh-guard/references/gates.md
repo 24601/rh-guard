@@ -147,6 +147,14 @@ a merge, and not a reward-hack detector.
 
 [dgp](https://github.com/numerous-com/dgp) is typed assessment then application-side **guarded commit**. Assessors do not execute. Quoted README: **application code retains control**. Quoted DGP `docs/TYPESAFE_JEV.md` (theirs, not TypeSafe): **Speculative assessments cannot authorize effects**; cache hit ≠ live Jev. Primary protocol fold is in Augustus; here the integrity boundary. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[typesafe-jev-gate](https://github.com/russleyshaw/typesafe-jev-gate) is a Hermes **fail-closed** tool-call policy gate. Quoted README: **not an autonomous permission slip.** Quoted: uncertain/unavailable → Hermes approval, not allow; **cannot override** Hermes hardline. Quoted: ambiguous multi-step → advisory `pre_llm_call` (not approval). Quoted: metadata-only audit. Distinct from thevibeworks/jevgate / totally-tim/jev-gate / hermes-plugin-jev (never returns `allow`). Cousin of hermes-jev-skills / hermes-skill-router / jev-routing. Do not dump plugin source. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[omo-jevlike-router](https://github.com/islee23520/omo-jevlike-router) is a local **jevlike** OmO skill router (frozen Qwen2.5-0.5B + option-attention; shrinks `<available_skills>`). Quoted: **fail-open**. Quoted measured: recall@24 **84.1%**, warm ~50–70 ms, ECE ~0.10. Quoted earlier 46.2%/95.5% was an **evaluation bug**. **soft router ≠ hard gate**. MIT. Do not dump model/weights. Distinct from TypeSafe Jev. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[llm-vs-jev](https://github.com/ishaannk/llm-vs-jev) is a controlled LLM-vs-Jev **guardrailing** bake-off. Quoted: **Nothing wins outright.** Quoted jev-1.13.0 strict accuracy **77.9%** / ECE **0.053**. Quoted steerability: opus 14.3% / jev 10.7%. Distinct from TeoMastro/jev-vs-llm-guardrails-intent-router. Do not invent RESULTS.md extras. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jeff](https://github.com/Gestalt-Lab/jeff) (Jeff 1) is a local open-weight Jev-compatible fact-check head. Quoted: **API compatibility does not imply identical judgments.** Quoted 9,730 examples: Jeff **0.8183** / ECE **0.0807** vs Jev **0.8283** / **0.0932**. Quoted: **Lower ECE does not guarantee** an individual prediction is correct. Light cross-note only (not a drop-in Jev ROC). Do not dump weights. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC.
@@ -619,6 +627,36 @@ dgp (numerous-com/dgp)
   primary protocol fold is in Augustus; here the integrity boundary
   do not merge into examples/
 
+typesafe-jev-gate (russleyshaw/typesafe-jev-gate)
+  Hermes fail-closed tool-call policy gate; not an autonomous permission slip
+  uncertain/unavailable → Hermes approval, not allow; cannot override hardline
+  ambiguous → advisory pre_llm_call, not approval; metadata-only audit
+  distinct from jevgate / jev-gate / hermes-plugin-jev
+  cousin of hermes-jev-skills / hermes-skill-router / jev-routing
+  do not dump plugin source; do not merge into examples/
+
+omo-jevlike-router (islee23520/omo-jevlike-router)
+  local jevlike OmO skill router; shrinks <available_skills>
+  fail-open; recall@24 84.1%; warm ~50–70 ms; ECE ~0.10
+  earlier 46.2%/95.5% was an evaluation bug
+  soft router ≠ hard gate; MIT; do not dump model/weights
+  do not merge into examples/
+
+llm-vs-jev (ishaannk/llm-vs-jev)
+  controlled LLM-vs-Jev guardrailing bake-off
+  Nothing wins outright; jev-1.13.0 77.9% / ECE 0.053
+  steerability opus 14.3% / jev 10.7%
+  distinct from TeoMastro/jev-vs-llm-guardrails-intent-router
+  do not invent RESULTS.md extras; do not merge into examples/
+
+jeff (Gestalt-Lab/jeff)
+  local open-weight Jev-compatible fact-check (Jeff 1)
+  API compatibility does not imply identical judgments
+  9,730 examples: Jeff 0.8183 / ECE 0.0807 vs Jev 0.8283 / 0.0932
+  Lower ECE does not guarantee an individual prediction is correct
+  light cross-note only; not a drop-in Jev ROC
+  do not dump weights; do not merge into examples/
+
 localjev (githubnext/localjev)
   wire-compatible POST /v1/systemone; prompted JSON probs, not logits
   evaluate calibration on your workload before consequential decisions
@@ -769,7 +807,9 @@ names the same integrity boundary: typed assessment then application-side
 guarded commit; quoted DGP `docs/TYPESAFE_JEV.md` (theirs, not TypeSafe):
 **Speculative assessments cannot authorize effects**; cache hit ≠ live Jev;
 assessors do not execute. Primary protocol fold is in Augustus; here the
-boundary. [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard)
+boundary. [typesafe-jev-gate](https://github.com/russleyshaw/typesafe-jev-gate)
+cannot override Hermes hardline; a Jev allow is not a grant; uncertain →
+approval, not allow. [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard)
 re-checks target and instruction snapshots before committing. Cousin, not this sidecar.
 
 ## Polarity
