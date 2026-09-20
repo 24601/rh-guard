@@ -364,12 +364,14 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/russleyshaw\/typesafe-jev-gate/);
     expect(readme).toMatch(/not an autonomous permission slip/);
     expect(readme).toMatch(/metadata-only/);
+    expect(readme).toMatch(/advisory route hint through `pre_llm_call`/);
     expect(readme).toMatch(/islee23520\/omo-jevlike-router/);
     expect(readme).toMatch(/recall@24/);
     expect(readme).toMatch(/84\.1%/);
     expect(readme).toMatch(/soft router ≠ hard gate/);
     expect(readme).toMatch(/ishaannk\/llm-vs-jev/);
     expect(readme).toMatch(/Nothing wins outright/);
+    expect(readme).toMatch(/beaten on accuracy/);
     expect(readme).toMatch(/Gestalt-Lab\/jeff/);
     expect(readme).toMatch(/API compatibility does not imply identical judgments/);
     expect(readme).toMatch(/9,730/);
@@ -469,6 +471,17 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Harbor scores product\/agent loops/);
     expect(readme).toMatch(/\*\*practices\*\*, not install dependencies/);
     expect(readme).not.toMatch(/research-prompt/i);
+  });
+
+  it("does not invent hourly 1843 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(
+        /ambiguous \/ uncertain \/ unavailable → Hermes existing approval/,
+      );
+      expect(text, rel).not.toMatch(/when typed judgments beat chat judges/);
+      expect(text, rel).not.toMatch(/Jev-omni/);
+    }
   });
 
   it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
@@ -1135,12 +1148,14 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/russleyshaw\/typesafe-jev-gate/);
     expect(skill).toMatch(/not an autonomous permission slip/);
     expect(skill).toMatch(/metadata-only/);
+    expect(skill).toMatch(/advisory route hint through `pre_llm_call`/);
     expect(skill).toMatch(/islee23520\/omo-jevlike-router/);
     expect(skill).toMatch(/recall@24/);
     expect(skill).toMatch(/84\.1%/);
     expect(skill).toMatch(/soft router ≠ hard gate/);
     expect(skill).toMatch(/ishaannk\/llm-vs-jev/);
     expect(skill).toMatch(/Nothing wins outright/);
+    expect(skill).toMatch(/beaten on accuracy/);
     expect(skill).toMatch(/Gestalt-Lab\/jeff/);
     expect(skill).toMatch(/API compatibility does not imply identical judgments/);
     expect(skill).toMatch(/9,730/);
@@ -1519,12 +1534,14 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/russleyshaw\/typesafe-jev-gate/);
     expect(evalDoc).toMatch(/not an autonomous permission slip/);
     expect(evalDoc).toMatch(/metadata-only/);
+    expect(evalDoc).toMatch(/advisory route hint through `pre_llm_call`/);
     expect(evalDoc).toMatch(/islee23520\/omo-jevlike-router/);
     expect(evalDoc).toMatch(/recall@24/);
     expect(evalDoc).toMatch(/84\.1%/);
     expect(evalDoc).toMatch(/soft router ≠ hard gate/);
     expect(evalDoc).toMatch(/ishaannk\/llm-vs-jev/);
     expect(evalDoc).toMatch(/Nothing wins outright/);
+    expect(evalDoc).toMatch(/beaten on accuracy/);
     expect(evalDoc).toMatch(/Gestalt-Lab\/jeff/);
     expect(evalDoc).toMatch(/API compatibility does not imply identical judgments/);
     expect(evalDoc).toMatch(/9,730/);
@@ -2284,6 +2301,7 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/russleyshaw\/typesafe-jev-gate/);
     expect(gates).toMatch(/not an autonomous permission slip/);
     expect(gates).toMatch(/metadata-only/);
+    expect(gates).toMatch(/advisory `pre_llm_call` \(not approval\)/);
     expect(gates).toMatch(/islee23520\/omo-jevlike-router/);
     expect(gates).toMatch(/recall@24/);
     expect(gates).toMatch(/84\.1%/);
