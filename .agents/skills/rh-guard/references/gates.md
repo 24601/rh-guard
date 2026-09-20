@@ -703,11 +703,15 @@ oxlint-plugin-jev (wobsoriano/oxlint-plugin-jev)
 
 rspamd-jev (rioriost/rspamd-jev)
   shadow-mode only TypeSafe Jev spam eval in Rspamd
-  initially disabled, no outbound; reject/score/Bayes not implemented
-  JEV_* score 0; unchanged score ≠ unchanged latency
-  agreement / baseline_vs_jev is not accuracy
-  Jev confidence is not an FPR guarantee; no auto-reject path is provided
-  pins jev-1.13.0; refuses jev-latest
+  quoted: disabled by default, no external requests, no filtering decisions
+  Jev observations have zero score; do not change delivery or Bayes flags
+  JEV_* registration scores and insertion weights of zero
+  quoted: the individual mail scan still waits for Jev
+  gloss: unchanged score ≠ unchanged latency
+  agreement is not accuracy
+  Confidence is not a false-positive-rate guarantee
+  no automatic enforcement; gloss: no auto-reject path is provided
+  pins jev-1.13.0; jev-latest and other moving aliases are rejected
   classification-as-guardrail: observation, not a hard reject
   do not merge into examples/
 
@@ -718,7 +722,7 @@ jev-guardrails (codebam/jev-guardrails)
   failMode explicit (open / review / closed)
   default 0.70 / 0.35 uncalibrated
   A guardrail is not a sandbox
-  jev-latest alias (contrast rspamd-jev refuses that alias)
+  jev-latest moving alias, not a pin (contrast rspamd-jev refuses that alias)
   distinct from alsoleg89/jev-guard, pablozr/JevGuard, leepokai/jev-guard, seb4ez/jevguard
   do not merge OpenCode/Hermes/DSH installers into examples/
 
@@ -760,9 +764,9 @@ jev-evaluation (willkelly/jev-evaluation)
   adversarial pre-registered Jev eval; plan before any request
   123,805 requests, 138 minutes, $12.69, five failures
   Twelve of twenty-five testable predictions held
-  Confidence does not track ignorance
-  confidence ≥ 0.95 still admits 47% unanswerable
-  act when confident, escalate when not has no reliable signal to threshold on
+  Confidence predicts whether an answer is right, but not whether the question could be answered
+  quoted PROMPTING.md: confidence ≥ 0.95 still admits 47% unanswerable (mostly fluent nonsense)
+  act when confident and escalate when not catches wrong answers and misses unanswerable inputs
   IGNORE THE QUESTION 0%; polite supervisor 65%
   distinct from ickma2311/jev-baselines-eval
   do not hard-gate confidence as fake safety
@@ -936,7 +940,8 @@ doesn't mean the code is fine**.
 never auto-acts**. [jevusher](https://github.com/cvsgireesh/jevusher):
 J7 **pass means nothing detected, never safe to obey**.
 [willkelly/jev-evaluation](https://github.com/willkelly/jev-evaluation):
-**Confidence does not track ignorance** — **do not hard-gate confidence
+quoted **Confidence predicts whether an answer is right, but not
+whether the question could be answered**; **do not hard-gate confidence
 as fake safety**. Cousin, not this sidecar.
 
 ## Polarity
