@@ -339,6 +339,25 @@ a merge, and not a reward-hack detector.
 
 [Laya-GuardRails-Harness](https://github.com/morre95/Laya-GuardRails-Harness) Claude PreToolUse/PostToolUse/Stop. Quoted: **`BLOCK` comes from rules or policy, never from a Laya label.** Default **shadow**. Quoted: **low confidence escalates, never allows.** Distinct NandhaKishorM/laya. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[hermes-jev-approvals](https://github.com/anpicasso/hermes-jev-approvals) Hermes smart-approval reviewer. Quoted: **Scope: approvals only.** Quoted: **Not a sandbox.** *Theirs*: **9.8x faster, 4.2x fewer interruptions** on 156 real commands; independent **1.24x**. Distinct rsdkrasen/hermes-jev-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[scx-router](https://github.com/SouthernCrossAI/scx-router) GLiClass model router. Threshold **0.5**. Not TypeSafe Jev. **0.5** is not a Jev gate. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[pii-masker](https://github.com/BlinkWrite/pii-masker) on-device reversible PII. Quoted: **Fail-closed.** Quoted: **It never returns the input unchanged as a fallback.** Distinct BuilderChat/PII-Redactor. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[PII-Redactor](https://github.com/BuilderChat/PII-Redactor) REST redact/rehydrate. Default fail-closed. SLM: `PII_REDACTOR_USE_GLINER=false` / `PII_REDACTOR_USE_PRESIDIO=false`. Shadow fail-open. Distinct BlinkWrite/pii-masker. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[guardrails-demo](https://github.com/Harshal-Ug/guardrails-demo) LangChain PII middleware. *Theirs*: **~180 ms**. Distinct Laya-GuardRails-Harness. **180 ms** not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[systemone-gatekeeper-war](https://github.com/lsu-ub-uu/systemone-gatekeeper-war) Uppsala Cora WAR (`se.uu.ub.cora`). Name collision only; not TypeSafe System One. Distinct hraness/sys1. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[hermes-slash-router](https://github.com/raitoxlol/hermes-slash-router) Hermes slash-token router. Quoted: **stored routes are never applied automatically.** **≥ 0.85**; no key fails closed. Distinct rsdkrasen/hermes-jev-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[airlock](https://github.com/tristan-kkim/airlock) local egress privacy airlock. Quoted: **A model never gets to say "this is fine."** Quoted: **Airlock fails closed.** *Theirs*: **7.5% ± 0.6** not held-out. Distinct jonathanavis96/jev-kit Airlock. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jevlike-esp32](https://github.com/david-cermak/jevlike-esp32) ESP32 jevlike demo. Quoted: **This is intentionally a demo, not a production model.** Not TypeSafe Jev. Distinct omo-jevlike-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[typesafeai-dotnet-sdk](https://github.com/saibimajdi/typesafeai-dotnet-sdk) community .NET System One client. Quoted: **This project is not affiliated with, sponsored by, or endorsed by TypeSafe AI.** Quoted: **Thresholds belong in your code.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -1806,6 +1825,65 @@ morre95/Laya-GuardRails-Harness
   BLOCK from rules or policy, never a Laya label
   default shadow; low confidence escalates, never allows
   distinct NandhaKishorM/laya
+  do not merge into examples/
+
+anpicasso/hermes-jev-approvals
+  Hermes smart-approval reviewer; approvals only; not a sandbox
+  theirs 9.8x / 4.2x on 156 real commands; independent 1.24x
+  regex-flags-only; policy in code; not a universal speedup
+  distinct rsdkrasen/hermes-jev-router
+  do not merge into examples/
+
+SouthernCrossAI/scx-router
+  GLiClass model router scx-admin/scx-router-v0.1; threshold 0.5
+  not TypeSafe Jev; 0.5 is not a Jev gate
+  do not merge into examples/
+
+BlinkWrite/pii-masker
+  on-device reversible PII; GLiNER ONNX INT8
+  fail-closed; never returns the input unchanged as a fallback
+  fail-closed is not complete recall
+  distinct BuilderChat/PII-Redactor
+  do not merge into examples/
+
+BuilderChat/PII-Redactor
+  REST redact/rehydrate; default fail-closed
+  SLM PII_REDACTOR_USE_GLINER=false / PII_REDACTOR_USE_PRESIDIO=false
+  shadow fail-open; Presidio+GLiNER+Ollama is the full-detector line, not the slm default
+  distinct BlinkWrite/pii-masker
+  do not merge into examples/
+
+Harshal-Ug/guardrails-demo
+  LangChain AgentMiddleware PII mask/restore
+  theirs ~180 ms; not a rh-guard ROC
+  distinct morre95/Laya-GuardRails-Harness
+  do not merge into examples/
+
+lsu-ub-uu/systemone-gatekeeper-war
+  Uppsala Cora WAR se.uu.ub.cora; name collision only
+  not TypeSafe System One; distinct hraness/sys1
+  do not merge into examples/
+
+raitoxlol/hermes-slash-router
+  stored routes are never applied automatically
+  >= 0.85; no key fails closed; routing != permission
+  distinct rsdkrasen/hermes-jev-router
+  do not merge into examples/
+
+tristan-kkim/airlock
+  local egress privacy airlock; model never says this is fine
+  fails closed; theirs 7.5% ± 0.6 not held-out
+  distinct jonathanavis96/jev-kit Airlock
+  do not merge into examples/
+
+david-cermak/jevlike-esp32
+  ESP32 jevlike demo; not a production model; not TypeSafe Jev
+  distinct islee23520/omo-jevlike-router
+  do not merge into examples/
+
+saibimajdi/typesafeai-dotnet-sdk
+  community .NET System One client; not affiliated with TypeSafe AI
+  thresholds belong in caller code
   do not merge into examples/
 
 localjev (githubnext/localjev)
