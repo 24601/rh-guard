@@ -801,6 +801,21 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Nothing is summarized or paraphrased/);
     expect(readme).toMatch(/Gtrkrsk\/laya/);
     expect(readme).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+    expect(readme).toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(readme).toMatch(/This is where safety lives/);
+    expect(readme).toMatch(/It does not execute tools/);
+    expect(readme).toMatch(/94\.4%/);
+    expect(readme).toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(readme).toMatch(/not measured here/);
+    expect(readme).toMatch(/0\.990/);
+    expect(readme).toMatch(/ECE \*\*0\.122\*\*/);
+    expect(readme).toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(readme).toMatch(/Jev judges the task, code owns the budget/);
+    expect(readme).toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(readme).toMatch(/The parent model is not switched/);
+    expect(readme).toMatch(/jjlecocq-v\/outbound-draft-gate/);
+    expect(readme).toMatch(/You always click send/);
+    expect(readme).toMatch(/Nothing auto-sends/);
 
     expect(readme).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -1466,6 +1481,34 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1643 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/JoacoMarc\/jev-harness-router is AntonioCoppe\/jev-harness/);
+      expect(text, rel).not.toMatch(/JoacoMarc\/jev-harness-router is Astro-Han\/jev-harness/);
+      expect(text, rel).not.toMatch(/JoacoMarc\/jev-harness-router is apa-agent-harness/);
+      expect(text, rel).not.toMatch(/JoacoMarc\/jev-harness-router is Mandrilsquad1441\/jev-model-router/);
+      expect(text, rel).not.toMatch(/94\.4% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/1\.9% too cheap is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/It executes tools/);
+      expect(text, rel).not.toMatch(/aniruddh-krovvidi\/switchboard is dev-hari-prasad\/switchboard/);
+      expect(text, rel).not.toMatch(/0\.990 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/ECE 0\.122 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/routing quality is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/da-vinci-noob\/pi-jev-model-router is Mandrilsquad1441\/jev-model-router/);
+      expect(text, rel).not.toMatch(/da-vinci-noob\/pi-jev-model-router is philippdubach\/pi-jev-router/);
+      expect(text, rel).not.toMatch(/da-vinci-noob\/pi-jev-model-router is dev-willbird1936\/pi-auto-model-router/);
+      expect(text, rel).not.toMatch(/budget caps block turns/);
+      expect(text, rel).not.toMatch(/pi-auto-model-router is da-vinci-noob\/pi-jev-model-router/);
+      expect(text, rel).not.toMatch(/pi-auto-model-router is pi-jev-compact/);
+      expect(text, rel).not.toMatch(/The parent model is switched/);
+      expect(text, rel).not.toMatch(/outbound-draft-gate auto-sends/);
+      expect(text, rel).not.toMatch(/outbound-draft-gate is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/outbound-draft-gate is ashafizullah\/jev-linkedin/);
+      expect(text, rel).not.toMatch(/You always click send is auto-send/);
+    }
+  });
+
   it("does not invent hourly 0947 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -1729,6 +1772,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/openlayer-ai\/jevals/);
     expect(pkg).not.toMatch(/DihRJ\/claude-code-jev-compaction/);
     expect(pkg).not.toMatch(/Gtrkrsk\/laya/);
+    expect(pkg).not.toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(pkg).not.toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(pkg).not.toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(pkg).not.toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(pkg).not.toMatch(/jjlecocq-v\/outbound-draft-gate/);
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -1935,6 +1983,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/openlayer-ai\/jevals/);
     expect(pkg).not.toMatch(/DihRJ\/claude-code-jev-compaction/);
     expect(pkg).not.toMatch(/Gtrkrsk\/laya/);
+    expect(pkg).not.toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(pkg).not.toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(pkg).not.toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(pkg).not.toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(pkg).not.toMatch(/jjlecocq-v\/outbound-draft-gate/);
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -2211,6 +2264,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/openlayer-ai\/jevals/);
     expect(lock).not.toMatch(/DihRJ\/claude-code-jev-compaction/);
     expect(lock).not.toMatch(/Gtrkrsk\/laya/);
+    expect(lock).not.toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(lock).not.toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(lock).not.toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(lock).not.toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(lock).not.toMatch(/jjlecocq-v\/outbound-draft-gate/);
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -2417,6 +2475,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/openlayer-ai\/jevals/);
     expect(lock).not.toMatch(/DihRJ\/claude-code-jev-compaction/);
     expect(lock).not.toMatch(/Gtrkrsk\/laya/);
+    expect(lock).not.toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(lock).not.toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(lock).not.toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(lock).not.toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(lock).not.toMatch(/jjlecocq-v\/outbound-draft-gate/);
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -3268,6 +3331,17 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Nothing is summarized or paraphrased/);
     expect(skill).toMatch(/Gtrkrsk\/laya/);
     expect(skill).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+    expect(skill).toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(skill).toMatch(/This is where safety lives/);
+    expect(skill).toMatch(/It does not execute tools/);
+    expect(skill).toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(skill).toMatch(/not measured here/);
+    expect(skill).toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(skill).toMatch(/Jev judges the task, code owns the budget/);
+    expect(skill).toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(skill).toMatch(/The parent model is not switched/);
+    expect(skill).toMatch(/jjlecocq-v\/outbound-draft-gate/);
+    expect(skill).toMatch(/You always click send/);
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -4082,6 +4156,18 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Nothing is summarized or paraphrased/);
     expect(evalDoc).toMatch(/Gtrkrsk\/laya/);
     expect(evalDoc).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+    expect(evalDoc).toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(evalDoc).toMatch(/This is where safety lives/);
+    expect(evalDoc).toMatch(/It does not execute tools/);
+    expect(evalDoc).toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(evalDoc).toMatch(/not measured here/);
+    expect(evalDoc).toMatch(/0\.990/);
+    expect(evalDoc).toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(evalDoc).toMatch(/Jev judges the task, code owns the budget/);
+    expect(evalDoc).toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(evalDoc).toMatch(/The parent model is not switched/);
+    expect(evalDoc).toMatch(/jjlecocq-v\/outbound-draft-gate/);
+    expect(evalDoc).toMatch(/You always click send/);
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -4460,6 +4546,11 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/openlayer-ai\/jevals/);
     expect(install).toMatch(/DihRJ\/claude-code-jev-compaction/);
     expect(install).toMatch(/Gtrkrsk\/laya/);
+    expect(install).toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(install).toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(install).toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(install).toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(install).toMatch(/jjlecocq-v\/outbound-draft-gate/);
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
@@ -4973,6 +5064,15 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/Nothing is summarized or paraphrased/);
     expect(shape).toMatch(/Gtrkrsk\/laya/);
     expect(shape).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+    expect(shape).toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(shape).toMatch(/It does not execute tools/);
+    expect(shape).toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(shape).toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(shape).toMatch(/Jev judges the task, code owns the budget/);
+    expect(shape).toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(shape).toMatch(/The parent model is not switched/);
+    expect(shape).toMatch(/outbound-draft-gate/);
+    expect(shape).toMatch(/You always click send/);
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -5536,6 +5636,16 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Nothing is summarized or paraphrased/);
     expect(hosts).toMatch(/Gtrkrsk\/laya/);
     expect(hosts).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+    expect(hosts).toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(hosts).toMatch(/This is where safety lives/);
+    expect(hosts).toMatch(/It does not execute tools/);
+    expect(hosts).toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(hosts).toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(hosts).toMatch(/Jev judges the task, code owns the budget/);
+    expect(hosts).toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(hosts).toMatch(/The parent model is not switched/);
+    expect(hosts).toMatch(/jjlecocq-v\/outbound-draft-gate/);
+    expect(hosts).toMatch(/You always click send/);
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -6206,6 +6316,17 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Nothing is summarized or paraphrased/);
     expect(gates).toMatch(/Gtrkrsk\/laya/);
     expect(gates).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+    expect(gates).toMatch(/JoacoMarc\/jev-harness-router/);
+    expect(gates).toMatch(/This is where safety lives/);
+    expect(gates).toMatch(/It does not execute tools/);
+    expect(gates).toMatch(/aniruddh-krovvidi\/switchboard/);
+    expect(gates).toMatch(/not measured here/);
+    expect(gates).toMatch(/da-vinci-noob\/pi-jev-model-router/);
+    expect(gates).toMatch(/Jev judges the task, code owns the budget/);
+    expect(gates).toMatch(/dev-willbird1936\/pi-auto-model-router/);
+    expect(gates).toMatch(/The parent model is not switched/);
+    expect(gates).toMatch(/jjlecocq-v\/outbound-draft-gate/);
+    expect(gates).toMatch(/You always click send/);
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
