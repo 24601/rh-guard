@@ -636,7 +636,8 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Jev is the typed gate/);
     expect(readme).toMatch(/miniLV\/Jev-Auto-Router/);
     expect(readme).toMatch(/No evidence means no production delegation/);
-    expect(readme).toMatch(/advertised README ≠ shipped Jev contract/);
+    expect(readme).toMatch(/off by default/);
+    expect(readme).toMatch(/UNVERIFIED/);
     expect(readme).toMatch(/replynodes\/jev-web-analyzer/);
     expect(readme).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(readme).toMatch(/not a general model ranking/);
@@ -1066,6 +1067,9 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/Policy Guard ranks candidates/);
       expect(text, rel).not.toMatch(/passing static tests constitute runtime qualification/);
       expect(text, rel).not.toMatch(/PROFILE_UNQUALIFIED/);
+      expect(text, rel).not.toMatch(/still ship \*\*Codex Auto Router\*\* copy/);
+      expect(text, rel).not.toMatch(/Codex Auto Router copy \(no Jev\)/);
+      expect(text, rel).not.toMatch(/advertised README ≠ shipped Jev contract/);
       expect(text, rel).not.toMatch(/jev-web-analyzer is an SEO score/);
       expect(text, rel).not.toMatch(/jev-web-analyzer is an AI detector/);
       expect(text, rel).not.toMatch(/ai-provider-triage-comparison is a general model ranking/);
@@ -2368,7 +2372,8 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Jev is the typed gate/);
     expect(skill).toMatch(/miniLV\/Jev-Auto-Router/);
     expect(skill).toMatch(/No evidence means no production delegation/);
-    expect(skill).toMatch(/advertised README ≠ shipped Jev contract/);
+    expect(skill).toMatch(/off by default/);
+    expect(skill).toMatch(/UNVERIFIED/);
     expect(skill).toMatch(/replynodes\/jev-web-analyzer/);
     expect(skill).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(skill).toMatch(/not a general model ranking/);
@@ -3022,7 +3027,8 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Jev is the typed gate/);
     expect(evalDoc).toMatch(/miniLV\/Jev-Auto-Router/);
     expect(evalDoc).toMatch(/No evidence means no production delegation/);
-    expect(evalDoc).toMatch(/advertised README ≠ shipped Jev contract/);
+    expect(evalDoc).toMatch(/off by default/);
+    expect(evalDoc).toMatch(/UNVERIFIED/);
     expect(evalDoc).toMatch(/replynodes\/jev-web-analyzer/);
     expect(evalDoc).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(evalDoc).toMatch(/not a general model ranking/);
@@ -3692,7 +3698,8 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/Jev is the typed gate/);
     expect(shape).toMatch(/miniLV\/Jev-Auto-Router/);
     expect(shape).toMatch(/No evidence means no production delegation/);
-    expect(shape).toMatch(/advertised README ≠ shipped Jev contract/);
+    expect(shape).toMatch(/off by default/);
+    expect(shape).toMatch(/UNVERIFIED/);
     expect(shape).toMatch(/replynodes\/jev-web-analyzer/);
     expect(shape).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(shape).toMatch(/not a general model ranking/);
@@ -4110,7 +4117,8 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Jev is the typed gate/);
     expect(hosts).toMatch(/miniLV\/Jev-Auto-Router/);
     expect(hosts).toMatch(/No evidence means no production delegation/);
-    expect(hosts).toMatch(/advertised README ≠ shipped Jev contract/);
+    expect(hosts).toMatch(/off by default/);
+    expect(hosts).toMatch(/UNVERIFIED/);
     expect(hosts).toMatch(/replynodes\/jev-web-analyzer/);
     expect(hosts).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(hosts).toMatch(/not a general model ranking/);
@@ -4624,7 +4632,8 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Jev is the typed gate/);
     expect(gates).toMatch(/miniLV\/Jev-Auto-Router/);
     expect(gates).toMatch(/No evidence means no production delegation/);
-    expect(gates).toMatch(/advertised README ≠ shipped Jev contract/);
+    expect(gates).toMatch(/off by default/);
+    expect(gates).toMatch(/UNVERIFIED/);
     expect(gates).toMatch(/replynodes\/jev-web-analyzer/);
     expect(gates).toMatch(/rmax-ai\/ai-provider-triage-comparison/);
     expect(gates).toMatch(/not a general model ranking/);
