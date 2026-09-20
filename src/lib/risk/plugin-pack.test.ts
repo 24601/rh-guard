@@ -691,6 +691,8 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/Astro-Han\/jev-harness is apa-agent-harness/);
       expect(text, rel).not.toMatch(/25\/30 is a rh-guard ROC/);
       expect(text, rel).not.toMatch(/iso-jevdit currently sends source code/);
+      expect(text, rel).not.toMatch(/Quoted: IP-based 20\/min rate limiting/);
+      expect(text, rel).not.toMatch(/Quoted: applications get both/);
     }
   });
 
