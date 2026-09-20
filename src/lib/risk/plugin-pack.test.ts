@@ -650,6 +650,24 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/The gate fails open by design/);
     expect(readme).toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(readme).toMatch(/prune ≠ deny/);
+
+    expect(readme).toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(readme).toMatch(/the server cannot independently attest human approval/);
+    expect(readme).toMatch(/reallygood83\/jev-router/);
+    expect(readme).toMatch(/Jev does not pick model ids/);
+    expect(readme).toMatch(/philippdubach\/pi-jev-router/);
+    expect(readme).toMatch(/Jev output is evidence, not truth/);
+    expect(readme).toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(readme).toMatch(/Vite\/Express \*\*phishing dual-spectrum\*\*/);
+    expect(readme).toMatch(/Section 4: Counter-Measures are exemplary and decoupled from individual verdicts/);
+    expect(readme).toMatch(/bornakapusta\/slop-guard/);
+    expect(readme).toMatch(/the reviewer never blocks/);
+    expect(readme).toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(readme).toMatch(/NOT a simulation of Jev's quality/);
+    expect(readme).toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(readme).toMatch(/It never closes issues, adds labels, or posts comments/);
+    expect(readme).toMatch(/MaxIvanyshen\/jev-review/);
+    expect(readme).toMatch(/It never approves or rejects anything/);
     expect(readme).toMatch(/56 of the 65 rules/);
     expect(readme).toMatch(/Gate at threshold 0\.5/);
     expect(readme).toMatch(/It never silently approves/);
@@ -1109,6 +1127,29 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0843 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/Malicious 61-100 is a safety envelope/);
+      expect(text, rel).not.toMatch(/preview token is attested human approval/);
+      expect(text, rel).not.toMatch(/reallygood83\/jev-router is justinhsu1477\/jev-router/);
+      expect(text, rel).not.toMatch(/fixture numbers are a live quality claim/);
+      expect(text, rel).not.toMatch(/advisory exit 0 is a merge grant/);
+      expect(text, rel).not.toMatch(/slop-guard is TypeSafe-equivalent to jev-brig/);
+      expect(text, rel).not.toMatch(/stubbed 4\.0× is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/0\.60 AUTO_ANSWER is a safety envelope/);
+      expect(text, rel).not.toMatch(/2\/4 is a close-issue grant/);
+      expect(text, rel).not.toMatch(/MaxIvanyshen\/jev-review is NiazMorshed2007\/jev-review/);
+      expect(text, rel).not.toMatch(/jev-review 0\.5 is a merge grant/);
+      expect(text, rel).not.toMatch(/philippdubach\/pi-jev-router is rizafahmi\/pi-jev-task-router/);
+      expect(text, rel).not.toMatch(/89% cheaper is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian is zerosweep/);
+      expect(text, rel).not.toMatch(
+        /JEV-Dual-Spectrum-Phishing-Guardian\) is a Next\/Express/
+      );
+    }
+  });
+
   it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
     const productPaths = [
       ...PUBLIC_COPY_PATHS,
@@ -1271,6 +1312,16 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/0xNatoshi\/jev-codex-router/);
     expect(pkg).not.toMatch(/y0usaf\/pi-jev/);
     expect(pkg).not.toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(pkg).not.toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(pkg).not.toMatch(/reallygood83\/jev-router/);
+    expect(pkg).not.toMatch(/philippdubach\/pi-jev-router/);
+    expect(pkg).not.toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(pkg).not.toMatch(/bornakapusta\/slop-guard/);
+    expect(pkg).not.toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(pkg).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(pkg).not.toMatch(/MaxIvanyshen\/jev-review/);
+    expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
+    expect(pkg).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(pkg).not.toMatch(/jevfanity-api/);
     expect(pkg).not.toMatch(/iso-jevdit/);
     expect(pkg).not.toMatch(/jev-linkedin/);
@@ -1402,6 +1453,16 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/0xNatoshi\/jev-codex-router/);
     expect(pkg).not.toMatch(/y0usaf\/pi-jev/);
     expect(pkg).not.toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(pkg).not.toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(pkg).not.toMatch(/reallygood83\/jev-router/);
+    expect(pkg).not.toMatch(/philippdubach\/pi-jev-router/);
+    expect(pkg).not.toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(pkg).not.toMatch(/bornakapusta\/slop-guard/);
+    expect(pkg).not.toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(pkg).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(pkg).not.toMatch(/MaxIvanyshen\/jev-review/);
+    expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
+    expect(pkg).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(pkg).not.toMatch(/jevfanity-api/);
     expect(pkg).not.toMatch(/iso-jevdit/);
     expect(pkg).not.toMatch(/jev-linkedin/);
@@ -1603,6 +1664,16 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/0xNatoshi\/jev-codex-router/);
     expect(lock).not.toMatch(/y0usaf\/pi-jev/);
     expect(lock).not.toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(lock).not.toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(lock).not.toMatch(/reallygood83\/jev-router/);
+    expect(lock).not.toMatch(/philippdubach\/pi-jev-router/);
+    expect(lock).not.toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(lock).not.toMatch(/bornakapusta\/slop-guard/);
+    expect(lock).not.toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(lock).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(lock).not.toMatch(/MaxIvanyshen\/jev-review/);
+    expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
+    expect(lock).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(lock).not.toMatch(/jevfanity-api/);
     expect(lock).not.toMatch(/iso-jevdit/);
     expect(lock).not.toMatch(/jev-linkedin/);
@@ -1734,6 +1805,16 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/0xNatoshi\/jev-codex-router/);
     expect(lock).not.toMatch(/y0usaf\/pi-jev/);
     expect(lock).not.toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(lock).not.toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(lock).not.toMatch(/reallygood83\/jev-router/);
+    expect(lock).not.toMatch(/philippdubach\/pi-jev-router/);
+    expect(lock).not.toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(lock).not.toMatch(/bornakapusta\/slop-guard/);
+    expect(lock).not.toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(lock).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(lock).not.toMatch(/MaxIvanyshen\/jev-review/);
+    expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
+    expect(lock).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(lock).not.toMatch(/jevfanity-api/);
     expect(lock).not.toMatch(/iso-jevdit/);
     expect(lock).not.toMatch(/jev-linkedin/);
@@ -2434,6 +2515,24 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/The gate fails open by design/);
     expect(skill).toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(skill).toMatch(/prune ≠ deny/);
+
+    expect(skill).toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(skill).toMatch(/the server cannot independently attest human approval/);
+    expect(skill).toMatch(/reallygood83\/jev-router/);
+    expect(skill).toMatch(/Jev does not pick model ids/);
+    expect(skill).toMatch(/philippdubach\/pi-jev-router/);
+    expect(skill).toMatch(/Jev output is evidence, not truth/);
+    expect(skill).toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(skill).toMatch(/Vite\/Express \*\*phishing dual-spectrum\*\*/);
+    expect(skill).toMatch(/Section 4: Counter-Measures are exemplary and decoupled from individual verdicts/);
+    expect(skill).toMatch(/bornakapusta\/slop-guard/);
+    expect(skill).toMatch(/the reviewer never blocks/);
+    expect(skill).toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(skill).toMatch(/NOT a simulation of Jev's quality/);
+    expect(skill).toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(skill).toMatch(/It never closes issues, adds labels, or posts comments/);
+    expect(skill).toMatch(/MaxIvanyshen\/jev-review/);
+    expect(skill).toMatch(/It never approves or rejects anything/);
     expect(skill).toMatch(/56 of the 65 rules/);
     expect(skill).toMatch(/Gate at threshold 0\.5/);
     expect(skill).toMatch(/It never silently approves/);
@@ -3100,6 +3199,24 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/The gate fails open by design/);
     expect(evalDoc).toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(evalDoc).toMatch(/prune ≠ deny/);
+
+    expect(evalDoc).toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(evalDoc).toMatch(/the server cannot independently attest human approval/);
+    expect(evalDoc).toMatch(/reallygood83\/jev-router/);
+    expect(evalDoc).toMatch(/Jev does not pick model ids/);
+    expect(evalDoc).toMatch(/philippdubach\/pi-jev-router/);
+    expect(evalDoc).toMatch(/Jev output is evidence, not truth/);
+    expect(evalDoc).toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(evalDoc).toMatch(/Vite\/Express \*\*phishing dual-spectrum\*\*/);
+    expect(evalDoc).toMatch(/Section 4: Counter-Measures are exemplary and decoupled from individual verdicts/);
+    expect(evalDoc).toMatch(/bornakapusta\/slop-guard/);
+    expect(evalDoc).toMatch(/the reviewer never blocks/);
+    expect(evalDoc).toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(evalDoc).toMatch(/NOT a simulation of Jev's quality/);
+    expect(evalDoc).toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(evalDoc).toMatch(/It never closes issues, adds labels, or posts comments/);
+    expect(evalDoc).toMatch(/MaxIvanyshen\/jev-review/);
+    expect(evalDoc).toMatch(/It never approves or rejects anything/);
     expect(evalDoc).toMatch(/56 of the 65 rules/);
     expect(evalDoc).toMatch(/Gate at threshold 0\.5/);
     expect(evalDoc).toMatch(/It never silently approves/);
@@ -3404,6 +3521,14 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/0xNatoshi\/jev-codex-router/);
     expect(install).toMatch(/y0usaf\/pi-jev/);
     expect(install).toMatch(/fsmiamoto\/pi-jev-prune/);
+    expect(install).toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(install).toMatch(/reallygood83\/jev-router/);
+    expect(install).toMatch(/philippdubach\/pi-jev-router/);
+    expect(install).toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(install).toMatch(/bornakapusta\/slop-guard/);
+    expect(install).toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(install).toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(install).toMatch(/MaxIvanyshen\/jev-review/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -3783,6 +3908,15 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/The gate fails open by design/);
     expect(shape).toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(shape).toMatch(/prune ≠ deny/);
+    expect(shape).toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(shape).toMatch(/reallygood83\/jev-router/);
+    expect(shape).toMatch(/philippdubach\/pi-jev-router/);
+    expect(shape).toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(shape).toMatch(/bornakapusta\/slop-guard/);
+    expect(shape).toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(shape).toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(shape).toMatch(/MaxIvanyshen\/jev-review/);
+    expect(shape).toMatch(/It never approves or rejects anything/);
     expect(shape).toMatch(/It never silently approves/);
     expect(shape).toMatch(/The workflow is shadow only/);
     expect(shape).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -4207,6 +4341,15 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/The gate fails open by design/);
     expect(hosts).toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(hosts).toMatch(/prune ≠ deny/);
+    expect(hosts).toMatch(/philippdubach\/pi-jev-router/);
+    expect(hosts).toMatch(/Jev output is evidence, not truth/);
+    expect(hosts).toMatch(/reallygood83\/jev-router/);
+    expect(hosts).toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(hosts).toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(hosts).toMatch(/bornakapusta\/slop-guard/);
+    expect(hosts).toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(hosts).toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(hosts).toMatch(/MaxIvanyshen\/jev-review/);
     expect(hosts).toMatch(/It never silently approves/);
     expect(hosts).toMatch(/The workflow is shadow only/);
     expect(hosts).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -4731,6 +4874,22 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/The gate fails open by design/);
     expect(gates).toMatch(/fsmiamoto\/pi-jev-prune/);
     expect(gates).toMatch(/prune ≠ deny/);
+    expect(gates).toMatch(/raniellimontagna\/jev-guard-mcp/);
+    expect(gates).toMatch(/the server cannot independently attest human approval/);
+    expect(gates).toMatch(/reallygood83\/jev-router/);
+    expect(gates).toMatch(/Jev does not pick model ids/);
+    expect(gates).toMatch(/philippdubach\/pi-jev-router/);
+    expect(gates).toMatch(/Jev output is evidence, not truth/);
+    expect(gates).toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(gates).toMatch(/Section 4: Counter-Measures are exemplary and decoupled from individual verdicts/);
+    expect(gates).toMatch(/bornakapusta\/slop-guard/);
+    expect(gates).toMatch(/the reviewer never blocks/);
+    expect(gates).toMatch(/sudeshkar\/jev-corrective-rag/);
+    expect(gates).toMatch(/NOT a simulation of Jev's quality/);
+    expect(gates).toMatch(/Patrick-SCH03\/jev-issue-radar/);
+    expect(gates).toMatch(/It never closes issues, adds labels, or posts comments/);
+    expect(gates).toMatch(/MaxIvanyshen\/jev-review/);
+    expect(gates).toMatch(/It never approves or rejects anything/);
     expect(gates).toMatch(/56\/65 at 1\.00 on 467 labelled defects/);
     expect(gates).toMatch(/It never silently approves/);
     expect(gates).toMatch(/The workflow is shadow only/);
