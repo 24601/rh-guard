@@ -417,6 +417,15 @@ a merge, and not a reward-hack detector.
 
 [Gtrkrsk/laya](https://huggingface.co/Gtrkrsk/laya) HF listing of the Laya family hub, not a new model. Quoted: Khmer **0.000 accuracy at 0.952 confidence**. **0.85** still soft. Pair NandhaKishorM/laya. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[JoacoMarc/jev-harness-router](https://github.com/JoacoMarc/jev-harness-router) per-turn harness router. Quoted: **This is where safety lives.** Quoted: **It does not execute tools.** *Theirs*: skill exact **94.4%**; **113** tests. Distinct AntonioCoppe/Astro-Han/apa-agent-harness. Routing ≠ permission. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[aniruddh-krovvidi/switchboard](https://github.com/aniruddh-krovvidi/switchboard) stdlib Python gateway. Code `BLOCK` **0.50** / `REVIEW` **0.10**. Quoted: **not measured here.** *Theirs*: ROC-AUC **0.990**, ECE **0.122**. Distinct dev-hari-prasad/switchboard. Soft-as-veto. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[da-vinci-noob/pi-jev-model-router](https://github.com/da-vinci-noob/pi-jev-model-router) Pi model router. Quoted: **Jev judges the task, code owns the budget.** Quoted: **Fails open.** Caps do not block turns. Distinct Mandrilsquad1441 / philippdubach / pi-auto-model-router. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[pi-auto-model-router](https://github.com/dev-willbird1936/pi-auto-model-router) Pi score-based auto router. Quoted: **The parent model is not switched.** Without `subagent`, routing does not dispatch. Distinct da-vinci-noob. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[jjlecocq-v/outbound-draft-gate](https://github.com/jjlecocq-v/outbound-draft-gate) draft-only LinkedIn demo. Quoted: **You always click send.** Quoted: **Code owns policy.** Jev-style evaluate, not TypeSafe Jev. Distinct jev-linkedin / Postmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
