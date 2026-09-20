@@ -227,6 +227,20 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [oxlint-plugin-jev](https://github.com/wobsoriano/oxlint-plugin-jev) is English oxlint rules → Jev cutoffs (`jev/ask`). Oxlint finds the node; Jev answers a yes/no; a cutoff reports. When Jev can't be asked: skip (warn) unless `ci: "fail"`. Quoted: keep `jev/ask` out of the editor config (keystroke = paid request). Distinct from huntedman/JevLint and mizchi/jev-lint. Treating an uncalibrated cutoff as a hard lint error is soundness theater. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[rspamd-jev](https://github.com/rioriost/rspamd-jev) is a **shadow-mode only** TypeSafe Jev spam-eval Lua plugin for Rspamd (classification gate in the mail path). Quoted README: initially **disabled, no outbound**; **reject, score add/subtract, and Bayes autolearn are not implemented**. `JEV_HAM` / `JEV_SPAM` / `JEV_PHISHING` / `JEV_UNCERTAIN` / `JEV_ERROR` have **score 0 and insert weight 0** — do not add them to composite / force_actions / learning. Quoted: **unchanged score ≠ unchanged latency**. `agreement` / `baseline_vs_jev` is **not accuracy**. Timeout 1.5s, no retry; **failures keep the existing verdict**. Quoted: **Jev confidence is not an FPR guarantee**; **no auto-reject path is provided**. Pins `jev-1.13.0` and refuses `jev-latest`. Classification-as-guardrail: observation, not a hard reject. Cousin of [jevmod](https://github.com/ohernandezdev/jevmod) / [tonedown](https://github.com/ziziphus-jujuba-zao/tonedown). Treating score-0 shadow symbols as a reject envelope is soundness theater. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-guardrails](https://github.com/codebam/jev-guardrails) (`@codebam/jev-guardrails`; README title `dsh-jev-guardrails`) is Jev-backed agent tool-call guardrails plus OpenCode / Hermes Agent / DeepSeek Harness hook installers. Quoted README: **The library owns policy, not the model.** Jev answers typed questions; code maps them to `allow` / `review` / `block` / `support`. Heuristics are fast paths; **a local decision never overrides Jev**. `failMode` is explicit (`open` → allow, `review`, `closed` → block). Default action/review thresholds **0.70 / 0.35** are uncalibrated product knobs. Quoted library README: **A guardrail is not a sandbox.** Default TypeSafe/OpenRouter aliases include `jev-latest` (pin; contrast [classifier-dev](https://github.com/mrmps/classifier-dev) advertised backend ≠ served backend and [rspamd-jev](https://github.com/rioriost/rspamd-jev) refusing that alias). Distinct from [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard), [pablozr/JevGuard](https://github.com/pablozr/JevGuard), [leepokai/jev-guard](https://github.com/leepokai/jev-guard), and [seb4ez/jevguard](https://github.com/seb4ez/jevguard). Cousin of claude-code-jev / construct-auto-classifier / AgentGhost / this sidecar's dsh adapter. Treating 0.70 as a safety envelope or merging their dsh/OpenCode/Hermes installers into `examples/` is confidence theater. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[moongate](https://github.com/brickfrog/moongate) is a semantic CI gate (MoonBit): TypeSafe Jev evaluates committed diffs against JSON rules (`violation` / `compliant` / `insufficient_evidence`). Policy and checkout come from the **base commit** so a PR cannot edit the rules that judge it. Quoted README: **A verdict is a model's answer, not a proof. Exit 0 doesn't mean the code is fine.** Confidence **doesn't tell you the answer is correct.** Advisory unless `"severity": "blocking"`. **An unevaluated rule never counts as a pass.** Forks and Dependabot are skipped rather than reported as a fake pass. Ten identical replays: label `violation` all ten times, but **4 counted as violation and 6 as review** at a 0.90/0.80 gate. Quoted: **Keep thresholds away from where a rule actually lands.** **The model is pinned. Changing it invalidates your thresholds.** Cousin of [jev-gate](https://github.com/totally-tim/jev-gate) / [jev-pr-review](https://github.com/ohernandezdev/jev-pr-review) / [if-ai](https://github.com/Victor-Casado/if-ai) / [latch](https://github.com/CaseReed/latch). Soft-score-as-hard-merge without calibration + escape hatch is soundness theater. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-logtriage](https://github.com/jyatesdotdev/jev-logtriage) is an SRE observability sentinel: Jev scores a collapsed log batch (six questions, one call); **code keeps the thresholds; nothing is executed.** Confidence-gated routing: below `--confidence-floor` (default 0.50) → `review`. Quoted README: **Low confidence never auto-acts.** `auto_remediate_candidate` is a **label**; the repo **does not restart pods, call webhooks, or page anyone**. Security is never an auto-remediation candidate. Demo numbers move; **the gates do not**. Cousin of [jev-home-assistant-sentinel](https://github.com/bojansandhaus/jev-home-assistant-sentinel) (action ≠ verified outcome) / [firehose-judge](https://github.com/ragelink/firehose-judge). Treating `auto_remediate_candidate` as execution is hard-gating soft judgment. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[bias-bench](https://github.com/natemoo-re/bias-bench) is a resume-screening **fairness/calibration audit** for decision models (pinned `jev-1.13.0`). Full factorial 76 names × 8 resumes × 3 reps = **1,824** independent evaluations (Bertrand & Mullainathan / Kline, Rose & Walters design). Quoted README headline: callback decisions are **perfectly determined by resume quality (zero binary-decision name differences)**; mean-probability name gaps are **~0.4–0.6pp** — statistically detectable because the model is near-deterministic, opposite in sign to the human audit-study direction, **operationally negligible**. Quoted: **read the magnitudes, not the p-values.** One domain, one prompt; not a claim about Jev in other framings. Fairness audit for guards — **not a rh-guard ROC**. Do not invent unpublished gaps as a safety proof. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jevusher](https://github.com/cvsgireesh/jevusher) is context-window **admission control** (token VOI gate before expensive models): J1 route, J2 skill gate, J3 memory usher, J4 tool-output filter, J5 compact, J6 stop, J7 injection screen. Quoted README failure posture: admission (J3/J4/J5) unsure → **let it in**; selection (J1/J2) unsure → **surface none**; safety (J7) unsure → **flag, never pass**. Quoted: J7 **`pass` means nothing detected, never safe to obey**; unreachable → `unavailable`, **never `pass`**. Provider outage degrades to **no lens installed, never to an empty context**. Quoted: **On small inputs these lenses lose money.** Cousin of [jevex](https://github.com/jimmyhealer/jevex) / [jev-sift](https://github.com/kbhuw/jev-sift) / [jev-routing](https://github.com/nekowasabi/jev-routing) / compaction gates. Treating a J2 catalog shrink or J7 `pass` as a hard safety envelope is confidence theater. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-evaluation](https://github.com/willkelly/jev-evaluation) is an **adversarial, pre-registered** Jev eval: plan written **before any request**; 28 predictions each with a falsifier; one run **123,805 requests, 138 minutes, $12.69, five failures**, all `jev-1.13.0`. Quoted README: **Twelve of twenty-five testable predictions held. Thirteen were wrong, which is the useful half.** Calibration holds in-domain (support-ticket ECE 0.075) and **fails completely outside it** (3-SAT: answers *satisfiable* for every formula). Quoted: **Confidence does not track ignorance** — gate on confidence ≥ **0.95** and you still admit **47%** of states that cannot be answered at all. Quoted: the vendor **act when confident, escalate when not** pattern **has no reliable signal to threshold on**. Crude `"IGNORE THE QUESTION"` moved the answer **0%**; a polite invented-supervisor sentence moved it **65%** (confidence 1.00 → 0.62). Ground truth from a solver or construction, **never from the model**. Distinct from [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval). Soft-judgment integrity sentinel: **do not hard-gate confidence as fake safety**. Do not invent unpublished extras as a rh-guard ROC. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head (typed Choice / Score / Noul). Confidence-gating recipe at **0.85** (RLCD → "statistically meaningful") is still soft. Auto-act at that uncalibrated threshold is confidence theater, especially given Khmer OOD **0.000 at 95.2% confidence** — the model's own confidence gives no warning. Future backend, not a drop-in ROC replacement for this hook. Pair with jev-ood-calibration / capability-atlas.
@@ -527,7 +541,41 @@ deny so the bridge fails closed.
    ([RahulBalakavi/claude-code-jev](https://github.com/RahulBalakavi/claude-code-jev):
    quoted **adds a 264 ms hop rather than removing one**; **0
    dangerous allowed** on a synthetic 18-case fixture; 0.85
-   uncalibrated) is not a drop-in for Anthropic auto-mode. Soft floors / AMBIGUOUS / p<0.5 are
+   uncalibrated) is not a drop-in for Anthropic auto-mode. A shadow-mode
+   mail classifier
+   ([rspamd-jev](https://github.com/rioriost/rspamd-jev): **score 0**;
+   **no auto-reject**; **unchanged score ≠ unchanged latency**;
+   agreement is **not accuracy**) is not a reject envelope. A
+   library-owned tool-call guardrail pack
+   ([codebam/jev-guardrails](https://github.com/codebam/jev-guardrails):
+   quoted **The library owns policy, not the model**; **A guardrail
+   is not a sandbox**; default 0.70/0.35 uncalibrated; `jev-latest`
+   alias; distinct from alsoleg89/jev-guard) is not this sidecar's
+   structural deny. A semantic CI gate that reads policy from the
+   base commit
+   ([brickfrog/moongate](https://github.com/brickfrog/moongate):
+   quoted **Exit 0 doesn't mean the code is fine**; **unevaluated
+   never counts as a pass**; 4/6 violation-vs-review on identical
+   replays) is not a hard merge envelope. Log-batch labels that
+   execute nothing
+   ([jev-logtriage](https://github.com/jyatesdotdev/jev-logtriage):
+   quoted **Low confidence never auto-acts**;
+   `auto_remediate_candidate` is a label) are not a page/restart
+   grant. A resume-screening fairness audit
+   ([bias-bench](https://github.com/natemoo-re/bias-bench): **1,824**
+   evals; **zero binary-decision name differences**; **~0.4–0.6pp**
+   mean noul; **read the magnitudes, not the p-values**) is not a
+   rh-guard ROC. Context-window admission
+   ([jevusher](https://github.com/cvsgireesh/jevusher): J7 **pass
+   means nothing detected, never safe to obey**; outage → **no lens,
+   never an empty context**) is not a safety envelope. Pre-registered
+   adversarial Jev eval
+   ([willkelly/jev-evaluation](https://github.com/willkelly/jev-evaluation):
+   **123,805** requests; confidence ≥ **0.95** still admits **47%**
+   unanswerable states; quoted **act when confident, escalate when
+   not** has **no reliable signal**; distinct from jev-baselines-eval)
+   is the soft-judgment integrity sentinel — **do not hard-gate
+   confidence as fake safety**. Soft floors / AMBIGUOUS / p<0.5 are
    **not** hard gates. [Archer](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
    is still **promised-not-landed**. Do not treat
    [Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B) as Archer.
@@ -612,6 +660,13 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Semantic contract linter (candidate, not a verdict; no shipped `severity: error`; distinct from huntedman/JevLint): [jev-lint](https://github.com/mizchi/jev-lint)
 - Memory include/exclude by relevance not resemblance (17/18 not a safety deny): [jev-recall](https://github.com/samdotmak/jev-recall)
 - English oxlint rules → Jev cutoffs (skip unless `ci: "fail"`): [oxlint-plugin-jev](https://github.com/wobsoriano/oxlint-plugin-jev)
+- Shadow-mode Rspamd spam eval (score 0; no auto-reject; agreement ≠ accuracy): [rspamd-jev](https://github.com/rioriost/rspamd-jev)
+- Jev-backed tool-call guardrails + OpenCode/Hermes/DSH hooks (library owns policy; not a sandbox; distinct from alsoleg89/jev-guard): [jev-guardrails](https://github.com/codebam/jev-guardrails)
+- Semantic CI gate (base-commit policy; unevaluated never pass; Exit 0 ≠ fine): [moongate](https://github.com/brickfrog/moongate)
+- Log-batch act/no-act (nothing executed; auto_remediate_candidate is a label): [jev-logtriage](https://github.com/jyatesdotdev/jev-logtriage)
+- Resume-screening fairness/calibration audit (1,824 evals; zero binary name gaps; read magnitudes): [bias-bench](https://github.com/natemoo-re/bias-bench)
+- Context-window admission (token VOI; J7 pass ≠ safe to obey; outage → no lens): [jevusher](https://github.com/cvsgireesh/jevusher)
+- Adversarial pre-registered Jev eval (123,805 requests; confidence ≥ 0.95 still admits 47% unanswerable): [jev-evaluation](https://github.com/willkelly/jev-evaluation)
 - Multi-host Go harness (not MCP; drop/truncate without summarizing; Choice+Noul; 1 schema; strip thinking; not jev-routing-mcp): [jev-routing](https://github.com/nekowasabi/jev-routing)
 - Silent FALLBACK model-swap (advertised backend ≠ served backend; F1 0.546 vs ~0.800): [classifier-dev](https://github.com/mrmps/classifier-dev)
 - Calibrated PR-review gate (Action + CLI + OpenCode; soft-score-as-hard-rank; need calibration + escape hatch): [jev-gate](https://github.com/totally-tim/jev-gate)
