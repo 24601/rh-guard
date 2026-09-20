@@ -454,6 +454,19 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/AUTO_BAN/);
     expect(readme).toMatch(/jkrup\/jeveryword/);
     expect(readme).toMatch(/cannot make it produce words that are not in the source/);
+    expect(readme).toMatch(/TickerDev\/jevfanity-api/);
+    expect(readme).toMatch(/flagged` is a policy bit, not a safety proof/);
+    expect(readme).toMatch(/vidux\/iso-jevdit/);
+    expect(readme).toMatch(/the audit engine is not finished/);
+    expect(readme).toMatch(/This is not a certification, and it is not a conformity assessment/);
+    expect(readme).toMatch(/policy, not physics/);
+    expect(readme).toMatch(/ashafizullah\/jev-linkedin/);
+    expect(readme).toMatch(/not real-world probabilities/);
+    expect(readme).toMatch(/Treat them as an early signal, not a decision/);
+    expect(readme).toMatch(/Astro-Han\/jev-harness/);
+    expect(readme).toMatch(/Filtering is a routing decision, never destruction/);
+    expect(readme).toMatch(/Jev failures fail open/);
+    expect(readme).toMatch(/Pass\/fail alone is not significant/);
     expect(readme).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(readme).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
     expect(readme).toMatch(/0\.85 uncalibrated/);
@@ -663,6 +676,26 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 2340 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/jevfanity-api is gg-friggin-ez/);
+      expect(text, rel).not.toMatch(/jevfanity-api is Jev-Examiner/);
+      expect(text, rel).not.toMatch(/iso-jevdit is a certification/);
+      expect(text, rel).not.toMatch(/failOn is a live CI merge gate/);
+      expect(text, rel).not.toMatch(
+        /thresholds\.report is Accepted today, acted on when the audit engine lands/,
+      );
+      expect(text, rel).not.toMatch(/jev-linkedin odds are real-world probabilities/);
+      expect(text, rel).not.toMatch(/Astro-Han\/jev-harness is AntonioCoppe/);
+      expect(text, rel).not.toMatch(/Astro-Han\/jev-harness is apa-agent-harness/);
+      expect(text, rel).not.toMatch(/25\/30 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/iso-jevdit currently sends source code/);
+      expect(text, rel).not.toMatch(/Quoted: IP-based 20\/min rate limiting/);
+      expect(text, rel).not.toMatch(/Quoted: applications get both/);
+    }
+  });
+
   it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
     const productPaths = [
       ...PUBLIC_COPY_PATHS,
@@ -747,6 +780,13 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/JularDepick\/Jev-Examiner/);
     expect(pkg).not.toMatch(/ItisShikhar\/gg-friggin-ez/);
     expect(pkg).not.toMatch(/jkrup\/jeveryword/);
+    expect(pkg).not.toMatch(/TickerDev\/jevfanity-api/);
+    expect(pkg).not.toMatch(/vidux\/iso-jevdit/);
+    expect(pkg).not.toMatch(/ashafizullah\/jev-linkedin/);
+    expect(pkg).not.toMatch(/Astro-Han\/jev-harness/);
+    expect(pkg).not.toMatch(/jevfanity-api/);
+    expect(pkg).not.toMatch(/iso-jevdit/);
+    expect(pkg).not.toMatch(/jev-linkedin/);
     expect(pkg).not.toMatch(/pablozr\/JevGuard/);
     expect(pkg).not.toMatch(/jev-proving-ground/);
     expect(pkg).not.toMatch(/jevbrain/);
@@ -797,6 +837,13 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/JularDepick\/Jev-Examiner/);
     expect(pkg).not.toMatch(/ItisShikhar\/gg-friggin-ez/);
     expect(pkg).not.toMatch(/jkrup\/jeveryword/);
+    expect(pkg).not.toMatch(/TickerDev\/jevfanity-api/);
+    expect(pkg).not.toMatch(/vidux\/iso-jevdit/);
+    expect(pkg).not.toMatch(/ashafizullah\/jev-linkedin/);
+    expect(pkg).not.toMatch(/Astro-Han\/jev-harness/);
+    expect(pkg).not.toMatch(/jevfanity-api/);
+    expect(pkg).not.toMatch(/iso-jevdit/);
+    expect(pkg).not.toMatch(/jev-linkedin/);
     expect(pkg).not.toMatch(/pablozr\/JevGuard/);
     expect(pkg).not.toMatch(/ybadragon\/jev-proving-ground/);
     expect(pkg).not.toMatch(/Synxneuos\/jevbrain/);
@@ -917,6 +964,13 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/JularDepick\/Jev-Examiner/);
     expect(lock).not.toMatch(/ItisShikhar\/gg-friggin-ez/);
     expect(lock).not.toMatch(/jkrup\/jeveryword/);
+    expect(lock).not.toMatch(/TickerDev\/jevfanity-api/);
+    expect(lock).not.toMatch(/vidux\/iso-jevdit/);
+    expect(lock).not.toMatch(/ashafizullah\/jev-linkedin/);
+    expect(lock).not.toMatch(/Astro-Han\/jev-harness/);
+    expect(lock).not.toMatch(/jevfanity-api/);
+    expect(lock).not.toMatch(/iso-jevdit/);
+    expect(lock).not.toMatch(/jev-linkedin/);
     expect(lock).not.toMatch(/pablozr\/JevGuard/);
     expect(lock).not.toMatch(/jev-proving-ground/);
     expect(lock).not.toMatch(/jevbrain/);
@@ -967,6 +1021,13 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/JularDepick\/Jev-Examiner/);
     expect(lock).not.toMatch(/ItisShikhar\/gg-friggin-ez/);
     expect(lock).not.toMatch(/jkrup\/jeveryword/);
+    expect(lock).not.toMatch(/TickerDev\/jevfanity-api/);
+    expect(lock).not.toMatch(/vidux\/iso-jevdit/);
+    expect(lock).not.toMatch(/ashafizullah\/jev-linkedin/);
+    expect(lock).not.toMatch(/Astro-Han\/jev-harness/);
+    expect(lock).not.toMatch(/jevfanity-api/);
+    expect(lock).not.toMatch(/iso-jevdit/);
+    expect(lock).not.toMatch(/jev-linkedin/);
     expect(lock).not.toMatch(/pablozr\/JevGuard/);
     expect(lock).not.toMatch(/ybadragon\/jev-proving-ground/);
     expect(lock).not.toMatch(/Synxneuos\/jevbrain/);
@@ -1468,6 +1529,19 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/AUTO_BAN/);
     expect(skill).toMatch(/jkrup\/jeveryword/);
     expect(skill).toMatch(/cannot make it produce words that are not in the source/);
+    expect(skill).toMatch(/TickerDev\/jevfanity-api/);
+    expect(skill).toMatch(/flagged` is a policy bit, not a safety proof/);
+    expect(skill).toMatch(/vidux\/iso-jevdit/);
+    expect(skill).toMatch(/the audit engine is not finished/);
+    expect(skill).toMatch(/This is not a certification, and it is not a conformity assessment/);
+    expect(skill).toMatch(/policy, not physics/);
+    expect(skill).toMatch(/ashafizullah\/jev-linkedin/);
+    expect(skill).toMatch(/not real-world probabilities/);
+    expect(skill).toMatch(/Treat them as an early signal, not a decision/);
+    expect(skill).toMatch(/Astro-Han\/jev-harness/);
+    expect(skill).toMatch(/Filtering is a routing decision, never destruction/);
+    expect(skill).toMatch(/Jev failures fail open/);
+    expect(skill).toMatch(/Pass\/fail alone is not significant/);
     expect(skill).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(skill).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
     expect(skill).toMatch(/0\.85 uncalibrated/);
@@ -1931,6 +2005,19 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/AUTO_BAN/);
     expect(evalDoc).toMatch(/jkrup\/jeveryword/);
     expect(evalDoc).toMatch(/cannot make it produce words that are not in the source/);
+    expect(evalDoc).toMatch(/TickerDev\/jevfanity-api/);
+    expect(evalDoc).toMatch(/flagged` is a policy bit, not a safety proof/);
+    expect(evalDoc).toMatch(/vidux\/iso-jevdit/);
+    expect(evalDoc).toMatch(/the audit engine is not finished/);
+    expect(evalDoc).toMatch(/This is not a certification, and it is not a conformity assessment/);
+    expect(evalDoc).toMatch(/policy, not physics/);
+    expect(evalDoc).toMatch(/ashafizullah\/jev-linkedin/);
+    expect(evalDoc).toMatch(/not real-world probabilities/);
+    expect(evalDoc).toMatch(/Treat them as an early signal, not a decision/);
+    expect(evalDoc).toMatch(/Astro-Han\/jev-harness/);
+    expect(evalDoc).toMatch(/Filtering is a routing decision, never destruction/);
+    expect(evalDoc).toMatch(/Jev failures fail open/);
+    expect(evalDoc).toMatch(/Pass\/fail alone is not significant/);
     expect(evalDoc).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(evalDoc).toMatch(/0 dangerous allowed\*\* on that (synthetic )?fixture/);
     expect(evalDoc).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -2154,6 +2241,10 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/alsoleg89\/jev-bouncer/);
     expect(install).toMatch(/ItisShikhar\/gg-friggin-ez/);
     expect(install).toMatch(/jkrup\/jeveryword/);
+    expect(install).toMatch(/TickerDev\/jevfanity-api/);
+    expect(install).toMatch(/vidux\/iso-jevdit/);
+    expect(install).toMatch(/ashafizullah\/jev-linkedin/);
+    expect(install).toMatch(/Astro-Han\/jev-harness/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -2347,6 +2438,17 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/AUTO_BAN/);
     expect(shape).toMatch(/jkrup\/jeveryword/);
     expect(shape).toMatch(/cannot make it produce words that are not in the source/);
+    expect(shape).toMatch(/TickerDev\/jevfanity-api/);
+    expect(shape).toMatch(/flagged` is a policy bit, not a safety proof/);
+    expect(shape).toMatch(/vidux\/iso-jevdit/);
+    expect(shape).toMatch(/the audit engine is not finished/);
+    expect(shape).toMatch(/This is not a certification, and it is not a conformity assessment/);
+    expect(shape).toMatch(/ashafizullah\/jev-linkedin/);
+    expect(shape).toMatch(/not real-world probabilities/);
+    expect(shape).toMatch(/Treat them as an early signal, not a decision/);
+    expect(shape).toMatch(/Astro-Han\/jev-harness/);
+    expect(shape).toMatch(/Filtering is a routing decision, never destruction/);
+    expect(shape).toMatch(/Jev failures fail open/);
     expect(shape).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(shape).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(shape).toMatch(/named lexical skip/);
@@ -2602,6 +2704,17 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/AUTO_BAN/);
     expect(hosts).toMatch(/jkrup\/jeveryword/);
     expect(hosts).toMatch(/cannot make it produce words that are not in the source/);
+    expect(hosts).toMatch(/TickerDev\/jevfanity-api/);
+    expect(hosts).toMatch(/flagged` is a policy bit, not a safety proof/);
+    expect(hosts).toMatch(/vidux\/iso-jevdit/);
+    expect(hosts).toMatch(/the audit engine is not finished/);
+    expect(hosts).toMatch(/This is not a certification, and it is not a conformity assessment/);
+    expect(hosts).toMatch(/ashafizullah\/jev-linkedin/);
+    expect(hosts).toMatch(/not real-world probabilities/);
+    expect(hosts).toMatch(/Treat them as an early signal, not a decision/);
+    expect(hosts).toMatch(/Astro-Han\/jev-harness/);
+    expect(hosts).toMatch(/Filtering is a routing decision, never destruction/);
+    expect(hosts).toMatch(/Jev failures fail open/);
     expect(hosts).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(hosts).toMatch(/0 dangerous allowed\*\* on that fixture/);
     expect(hosts).toMatch(/0\.85 uncalibrated/);
@@ -2927,6 +3040,18 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/AUTO_BAN/);
     expect(gates).toMatch(/jkrup\/jeveryword/);
     expect(gates).toMatch(/cannot make it produce words that are not in the source/);
+    expect(gates).toMatch(/TickerDev\/jevfanity-api/);
+    expect(gates).toMatch(/flagged` is a policy bit, not a safety proof/);
+    expect(gates).toMatch(/vidux\/iso-jevdit/);
+    expect(gates).toMatch(/the audit engine is not finished/);
+    expect(gates).toMatch(/This is not a certification, and it is not a conformity assessment/);
+    expect(gates).toMatch(/ashafizullah\/jev-linkedin/);
+    expect(gates).toMatch(/not real-world probabilities/);
+    expect(gates).toMatch(/Treat them as an early signal, not a decision/);
+    expect(gates).toMatch(/Astro-Han\/jev-harness/);
+    expect(gates).toMatch(/Filtering is a routing decision, never destruction/);
+    expect(gates).toMatch(/Jev failures fail open/);
+    expect(gates).toMatch(/Pass\/fail alone is not significant/);
     expect(gates).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(gates).toMatch(/0 dangerous allowed on synthetic 18-case fixture/);
     expect(gates).toMatch(/nekowasabi\/jev-routing-mcp/);
