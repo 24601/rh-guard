@@ -51,7 +51,7 @@ a merge, and not a reward-hack detector.
 
 [construct-auto-classifier](https://github.com/godspede/construct-auto-classifier) is an effect-based OpenCode / Antigravity (`agy`) shell PreToolUse gate: structural fast-deny/fast-allow first, then Jev Choice plus nine independent risk Nouls (`data_loss`, …). Allow only if choice is `allow` at `jev.minConfidence` (0.6) and every risk is below `jev.riskThreshold` (0.7). Certified **0 dangerous** commands allowed for Jev; chat LLMs all leaked. Operator owns the dial. Privilege Is Not a Verdict. Pair with dinostomp before hard-gating on those scores. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) is runtime tool-call authorization before side effects: deterministic policy owns `ALLOW` / `REVIEW` / `BLOCK`; Jev supplies evidence. **Jev supplies evidence. Code owns authority.** A positive model score never overrides a deterministic security failure. **Schema-valid ≠ intent-matched.** Enforced `ALLOW` issues a **single-use Action Grant** bound to the exact tool call; replayed, expired, mutated, and unknown permits fail closed. A Noul is not a permit. Early public MVP; current SDK `wrapTool` is advisory until a gateway. No Claude/Cursor hook pack — do not merge into `examples/`. Compose with construct-auto-classifier and jev-lens. Cousin, not this sidecar.
+[actiongate-jev](https://github.com/omkarghugarkar007/actiongate-jev) is runtime tool-call authorization before side effects: deterministic policy owns `ALLOW` / `REVIEW` / `BLOCK`; Jev supplies evidence. **Jev supplies evidence. Code owns authority.** A positive model score never overrides a deterministic security failure. **Schema-valid ≠ intent-matched.** Enforced `ALLOW` issues a **single-use Action Grant** bound to the exact tool call; replayed, expired, mutated, and unknown permits fail closed. A Noul is not a permit. Early public MVP; current SDK `wrapTool` is advisory until a gateway. Quoted threat model: **Proxies isolate only when the upstream endpoint is not otherwise routable, which is a network property and not a cryptographic one.** MCP/HTTP proxies exist as Isolate path; wrapTool remains advisory until that holds. No Claude/Cursor hook pack — do not merge into `examples/`. Compose with construct-auto-classifier and jev-lens. Cousin, not this sidecar.
 
 [AgentGhost](https://github.com/reddpy/AgentGhost) (`@agentghost/sdk`) is intent-aware `ALLOW` / `ASK` / `DENY` wrap around tool execution. Deterministic rules first; Jev judge; `ASK`/`DENY` throw so an approval cannot be silently skipped; default `failMode: "closed"`. README: AgentGhost *is* the tool's execution function — the model cannot opt out. Contrast actiongate `wrapTool` (advisory until a gateway) and jev-use fail-open. Jev `ALLOW` is still soft. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -154,6 +154,22 @@ a merge, and not a reward-hack detector.
 [jev-transaction-guard](https://github.com/finrod21/jev-transaction-guard) is a settlement circuit-breaker sim. Quoted **IMMUNE TO BOTH** / **last line of defense** is **soundness theater**. Quoted: comparison **does not show proof that Jev makes better classification choices**. Choice TRIP is not a freeze. 0.0% FPR **not a rh-guard ROC**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [dsh-jev-guardrails](https://github.com/codebam/dsh-jev-guardrails) is a dedicated DSH plugin monorepo (sibling of [codebam/jev-guardrails](https://github.com/codebam/jev-guardrails)). Quoted: **The library owns policy, not the model.** **A guardrail is not a sandbox.** Plugin **policy layer, not a sandbox or an authorization system.** `failMode` default **open**; 0.70/0.35 uncalibrated. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-auto-approve](https://github.com/metalbear-co/jev-auto-approve) is a GitHub Action: Jev Noul then code approves at `confidence-threshold` **0.9**. Quoted: **does not satisfy required-approval branch protection**. Quoted: **Failures are loud.** Quoted: **a gate, not a substitute for a human reviewer.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[hush](https://github.com/emreozyoruk/hush) is issue triage that stays quiet when unsure. Quoted: **Silence is the default behaviour, not the failure mode.** `apply` default **false**. Two gates 0.80 AND 0.60. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-call-screener](https://github.com/SuchintK/jev-call-screener) is a call-screening backend. Quoted: **JEV classifies; it does not generate dialogue or control the call.** Quoted: **The defaults are deliberately fail-open.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[unslopify](https://github.com/SwastikGorai/unslopify) is a Chrome quality filter. Quoted: **It is a quality filter, not an AI-authorship detector.** Quoted: **Keeps uncertain or failed classifications visible.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[no-hallucination](https://github.com/aryanchauhanoffical/no-hallucination) is RAG hallucination experiments. Quoted: **No effect.** Quoted: **Recall@k is the wrong thing to optimise.** 81.0% **not a rh-guard ROC**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[context-evaluator](https://github.com/ramasamysh/context-evaluator) is a Jev context INCLUDE/REVIEW/EXCLUDE gate. Quoted: **experiment metrics, not proof**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-assist](https://github.com/glud123/jev-assist) ranks files by task relevance before reading. Quoted: **Flags are prompts for a human look, never verdicts.** Quoted: **Typed output guarantees the shape of an answer, not its correctness.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[rag-jev](https://github.com/Nixz0824/rag-jev) is local RAG with Jev rerank + self-check. Quoted: **Degradation is never silent.** noul < 0.5 **请以公告原文为准**; 20/20 **not a rh-guard ROC**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -961,6 +977,71 @@ codebam/dsh-jev-guardrails
   A guardrail is not a sandbox
   plugin is a policy layer, not a sandbox or an authorization system
   failMode default open; 0.70/0.35 uncalibrated; jev-latest moving alias
+  do not merge into examples/
+
+metalbear-co/jev-auto-approve
+  GitHub Action: approve when confidence = 1 - p(human required) >= 0.9
+  does not satisfy required-approval branch protection (GITHUB_TOKEN)
+  Failures are loud
+  a gate, not a substitute for a human reviewer
+  jev-latest moving alias; 0.9 uncalibrated
+  cousin of ci-gatekeeper / jev-pr-review / jev-gate / moongate / if-ai / latch
+  do not merge into examples/
+
+emreozyoruk/hush
+  issue triage that stays quiet when unsure
+  Silence is the default behaviour, not the failure mode
+  apply default false
+  never creates / removes / overwrites human labels
+  two gates: p>=0.80 AND confidence>=0.60
+  spam 0.90 / needs-info 0.85 / duplicate 0.85
+  will not Close, lock, delete or edit anything
+  do not merge into examples/
+
+SuchintK/jev-call-screener
+  JEV classifies; it does not generate dialogue or control the call
+  The defaults are deliberately fail-open
+  promotional >=0.90 reject; wanted >=0.75 forward; else clarify then forward
+  jev-1.13.0 pinned; FORWARD_ON_ERROR true
+  do not merge into examples/
+
+SwastikGorai/unslopify
+  Chrome quality filter for AI slop / engagement bait
+  It is a quality filter, not an AI-authorship detector
+  Keeps uncertain or failed classifications visible
+  do not merge into examples/
+
+aryanchauhanoffical/no-hallucination
+  RAG hallucination experiments incl. TypeSafe Jev quote-checking
+  quote-forced string-check is The hallucination defence that worked
+  Jev as guard: No effect; agreed with 8 remaining errors 0.82-1.0
+  one clear win: retry triage 78.0% → 81.0%
+  Recall@k is the wrong thing to optimise
+  not a rh-guard ROC
+  do not merge into examples/
+
+ramasamysh/context-evaluator
+  Jev semantic decision gate over PetClinic files
+  INCLUDE DIRECT+HIGH+conf>=0.8; EXCLUDE NONE/LOW; else REVIEW
+  experiment metrics, not proof
+  do not merge into examples/
+
+glud123/jev-assist
+  rank every file by task relevance before reading
+  Flags are prompts for a human look, never verdicts
+  Typed output guarantees the shape of an answer, not its correctness
+  Do not judge candidates you just generated
+  gate exits 1; quoted recall@20 0.68 / recall@40 0.80 over 41 files on one 705-file React app
+  not a rh-guard ROC
+  do not merge into examples/
+
+Nixz0824/rag-jev
+  local RAG with Jev candidate rerank + answer self-check
+  numbers from structured extract, not generated
+  rerank gap <0.15 keeps retrieval order
+  Degradation is never silent
+  self-check noul<0.5 cautions 请以公告原文为准; does not rewrite
+  20/20 not a rh-guard ROC; jev-latest moving alias
   do not merge into examples/
 
 localjev (githubnext/localjev)
