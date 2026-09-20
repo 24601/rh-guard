@@ -701,6 +701,77 @@ oxlint-plugin-jev (wobsoriano/oxlint-plugin-jev)
   distinct from huntedman/JevLint and mizchi/jev-lint
   thin card; do not merge into examples/
 
+rspamd-jev (rioriost/rspamd-jev)
+  shadow-mode only TypeSafe Jev spam eval in Rspamd
+  quoted: disabled by default, no external requests, no filtering decisions
+  Jev observations have zero score; do not change delivery or Bayes flags
+  JEV_* registration scores and insertion weights of zero
+  quoted: the individual mail scan still waits for Jev
+  gloss: unchanged score ≠ unchanged latency
+  agreement is not accuracy
+  Confidence is not a false-positive-rate guarantee
+  no automatic enforcement; gloss: no auto-reject path is provided
+  pins jev-1.13.0; jev-latest and other moving aliases are rejected
+  classification-as-guardrail: observation, not a hard reject
+  do not merge into examples/
+
+jev-guardrails (codebam/jev-guardrails)
+  @codebam/jev-guardrails; README title dsh-jev-guardrails
+  The library owns policy, not the model
+  allow / review / block / support; a local decision never overrides Jev
+  failMode explicit (open / review / closed)
+  default 0.70 / 0.35 uncalibrated
+  A guardrail is not a sandbox
+  jev-latest moving alias, not a pin (contrast rspamd-jev refuses that alias)
+  distinct from alsoleg89/jev-guard, pablozr/JevGuard, leepokai/jev-guard, seb4ez/jevguard
+  do not merge OpenCode/Hermes/DSH installers into examples/
+
+moongate (brickfrog/moongate)
+  MoonBit semantic CI; policy from the base commit
+  A verdict is a model's answer, not a proof
+  Exit 0 doesn't mean the code is fine
+  unevaluated rule never counts as a pass
+  forks/dependabot skipped, not a fake pass
+  4 counted as violation and 6 as review at 0.90/0.80
+  Keep thresholds away from where a rule actually lands
+  The model is pinned. Changing it invalidates your thresholds
+  do not merge into examples/
+
+jev-logtriage (jyatesdotdev/jev-logtriage)
+  SRE observability sentinel; code keeps the thresholds; nothing is executed
+  Low confidence never auto-acts
+  auto_remediate_candidate is a label
+  does not restart pods, call webhooks, or page anyone
+  security never auto-remediate
+  do not merge into examples/
+
+bias-bench (natemoo-re/bias-bench)
+  resume-screening fairness/calibration audit; 1,824 evaluations
+  zero binary-decision name differences
+  ~0.4–0.6pp mean noul; read the magnitudes, not the p-values
+  not a rh-guard ROC
+  do not merge into examples/
+
+jevusher (cvsgireesh/jevusher)
+  context-window admission; token VOI before expensive models
+  J3/J4/J5 unsure → let it in; J1/J2 unsure → surface none; J7 unsure → flag, never pass
+  J7 pass means nothing detected, never safe to obey
+  outage → no lens installed, never to an empty context
+  On small inputs these lenses lose money
+  do not merge into examples/
+
+jev-evaluation (willkelly/jev-evaluation)
+  adversarial pre-registered Jev eval; plan before any request
+  123,805 requests, 138 minutes, $12.69, five failures
+  Twelve of twenty-five testable predictions held
+  Confidence predicts whether an answer is right, but not whether the question could be answered
+  quoted PROMPTING.md: confidence ≥ 0.95 still admits 47% unanswerable (mostly fluent nonsense)
+  act when confident and escalate when not catches wrong answers and misses unanswerable inputs
+  IGNORE THE QUESTION 0%; polite supervisor 65%
+  distinct from ickma2311/jev-baselines-eval
+  do not hard-gate confidence as fake safety
+  do not merge into examples/
+
 localjev (githubnext/localjev)
   wire-compatible POST /v1/systemone; prompted JSON probs, not logits
   evaluate calibration on your workload before consequential decisions
@@ -857,7 +928,21 @@ approval, not allow. [ajensenwaud/hermes-jev-plugin](https://github.com/ajensenw
 is tools the agent must call, not a fail-closed overlay.
 [chopratejas/invalidate](https://github.com/chopratejas/invalidate) retires
 stale memories in code after Jev votes; a lease is not a capability grant. [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard)
-re-checks target and instruction snapshots before committing. Cousin, not this sidecar.
+re-checks target and instruction snapshots before committing.
+[codebam/jev-guardrails](https://github.com/codebam/jev-guardrails):
+**The library owns policy, not the model**; a local decision never
+overrides Jev; **A guardrail is not a sandbox**.
+[brickfrog/moongate](https://github.com/brickfrog/moongate): policy from
+the **base commit**; **unevaluated never counts as a pass**; **Exit 0
+doesn't mean the code is fine**.
+[jev-logtriage](https://github.com/jyatesdotdev/jev-logtriage):
+`auto_remediate_candidate` is a label, not execution; **Low confidence
+never auto-acts**. [jevusher](https://github.com/cvsgireesh/jevusher):
+J7 **pass means nothing detected, never safe to obey**.
+[willkelly/jev-evaluation](https://github.com/willkelly/jev-evaluation):
+quoted **Confidence predicts whether an answer is right, but not
+whether the question could be answered**; **do not hard-gate confidence
+as fake safety**. Cousin, not this sidecar.
 
 ## Polarity
 

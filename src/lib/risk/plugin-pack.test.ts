@@ -392,6 +392,32 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/19\/20/);
     expect(readme).toMatch(/wobsoriano\/oxlint-plugin-jev/);
     expect(readme).toMatch(/ci: "fail"/);
+    expect(readme).toMatch(/rioriost\/rspamd-jev/);
+    expect(readme).toMatch(/no filtering decisions/);
+    expect(readme).toMatch(/no auto-reject path is provided/);
+    expect(readme).toMatch(/unchanged score ≠ unchanged latency/);
+    expect(readme).toMatch(/codebam\/jev-guardrails/);
+    expect(readme).toMatch(/The library owns policy, not the model/);
+    expect(readme).toMatch(/A guardrail is not a sandbox/);
+    expect(readme).toMatch(/moving alias, not a pin/);
+    expect(readme).toMatch(/brickfrog\/moongate/);
+    expect(readme).toMatch(/Exit 0 doesn't mean the code is fine/);
+    expect(readme).toMatch(/unevaluated rule never counts as a pass/);
+    expect(readme).toMatch(/jyatesdotdev\/jev-logtriage/);
+    expect(readme).toMatch(/Low confidence never auto-acts/);
+    expect(readme).toMatch(/auto_remediate_candidate/);
+    expect(readme).toMatch(/natemoo-re\/bias-bench/);
+    expect(readme).toMatch(/zero binary-decision name differences/);
+    expect(readme).toMatch(/read the magnitudes, not the p-values/);
+    expect(readme).toMatch(/cvsgireesh\/jevusher/);
+    expect(readme).toMatch(/never safe to obey/);
+    expect(readme).toMatch(/willkelly\/jev-evaluation/);
+    expect(readme).toMatch(/123,805/);
+    expect(readme).toMatch(/Confidence predicts whether an answer is right/);
+    expect(readme).toMatch(
+      /catches wrong answers and misses unanswerable inputs/,
+    );
+    expect(readme).toMatch(/do not hard-gate confidence as fake safety/);
     expect(readme).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(readme).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
     expect(readme).toMatch(/0\.85 uncalibrated/);
@@ -516,6 +542,30 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/jev-recall 17\/18 is a safety proof/);
       expect(text, rel).not.toMatch(/LongMemEval treatment number is /);
       expect(text, rel).not.toMatch(/shipped jev-lint rule fails the build/);
+    }
+  });
+
+  it("does not invent hourly 2041 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/rspamd-jev auto-rejects spam/);
+      expect(text, rel).not.toMatch(
+        /reject, score add\/subtract, and Bayes autolearn are not implemented/,
+      );
+      expect(text, rel).not.toMatch(/codebam\/jev-guardrails is alsoleg89\/jev-guard/);
+      expect(text, rel).not.toMatch(/jev-latest` \(pin/);
+      expect(text, rel).not.toMatch(/Exit 0 means the code is fine/);
+      expect(text, rel).not.toMatch(/auto_remediate_candidate restarts pods/);
+      expect(text, rel).not.toMatch(/bias-bench is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/J7 pass means safe to obey/);
+      expect(text, rel).not.toMatch(/Confidence does not track ignorance/);
+      expect(text, rel).not.toMatch(/has no reliable signal to threshold on/);
+      expect(text, rel).not.toMatch(
+        /confidence ≥ 0\.95 is a reliable act-when-confident signal/,
+      );
+      expect(text, rel).not.toMatch(
+        /willkelly\/jev-evaluation is ickma2311\/jev-baselines-eval/,
+      );
     }
   });
 
@@ -675,6 +725,13 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/mizchi\/jev-lint/);
     expect(pkg).not.toMatch(/samdotmak\/jev-recall/);
     expect(pkg).not.toMatch(/wobsoriano\/oxlint-plugin-jev/);
+    expect(pkg).not.toMatch(/rioriost\/rspamd-jev/);
+    expect(pkg).not.toMatch(/codebam\/jev-guardrails/);
+    expect(pkg).not.toMatch(/brickfrog\/moongate/);
+    expect(pkg).not.toMatch(/jyatesdotdev\/jev-logtriage/);
+    expect(pkg).not.toMatch(/natemoo-re\/bias-bench/);
+    expect(pkg).not.toMatch(/cvsgireesh\/jevusher/);
+    expect(pkg).not.toMatch(/willkelly\/jev-evaluation/);
     expect(pkg).not.toMatch(/githubnext\/localjev/);
     expect(pkg).not.toMatch(/NandhaKishorM\/laya/);
     expect(pkg).not.toMatch(/jev-sift/);
@@ -822,6 +879,13 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/mizchi\/jev-lint/);
     expect(lock).not.toMatch(/samdotmak\/jev-recall/);
     expect(lock).not.toMatch(/wobsoriano\/oxlint-plugin-jev/);
+    expect(lock).not.toMatch(/rioriost\/rspamd-jev/);
+    expect(lock).not.toMatch(/codebam\/jev-guardrails/);
+    expect(lock).not.toMatch(/brickfrog\/moongate/);
+    expect(lock).not.toMatch(/jyatesdotdev\/jev-logtriage/);
+    expect(lock).not.toMatch(/natemoo-re\/bias-bench/);
+    expect(lock).not.toMatch(/cvsgireesh\/jevusher/);
+    expect(lock).not.toMatch(/willkelly\/jev-evaluation/);
     expect(lock).not.toMatch(/githubnext\/localjev/);
     expect(lock).not.toMatch(/NandhaKishorM\/laya/);
     expect(lock).not.toMatch(/jev-sift/);
@@ -1218,6 +1282,30 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/relevance, not resemblance/);
     expect(skill).toMatch(/17\/18/);
     expect(skill).toMatch(/wobsoriano\/oxlint-plugin-jev/);
+    expect(skill).toMatch(/rioriost\/rspamd-jev/);
+    expect(skill).toMatch(/no filtering decisions/);
+    expect(skill).toMatch(/no auto-reject path is provided/);
+    expect(skill).toMatch(/codebam\/jev-guardrails/);
+    expect(skill).toMatch(/The library owns policy, not the model/);
+    expect(skill).toMatch(/A guardrail is not a sandbox/);
+    expect(skill).toMatch(/moving alias, not a pin/);
+    expect(skill).toMatch(/brickfrog\/moongate/);
+    expect(skill).toMatch(/Exit 0 doesn't mean the code is fine/);
+    expect(skill).toMatch(/unevaluated rule never counts as a pass/);
+    expect(skill).toMatch(/jyatesdotdev\/jev-logtriage/);
+    expect(skill).toMatch(/Low confidence never auto-acts/);
+    expect(skill).toMatch(/auto_remediate_candidate/);
+    expect(skill).toMatch(/natemoo-re\/bias-bench/);
+    expect(skill).toMatch(/zero binary-decision name differences/);
+    expect(skill).toMatch(/cvsgireesh\/jevusher/);
+    expect(skill).toMatch(/never safe to obey/);
+    expect(skill).toMatch(/willkelly\/jev-evaluation/);
+    expect(skill).toMatch(/123,805/);
+    expect(skill).toMatch(/Confidence predicts whether an answer is right/);
+    expect(skill).toMatch(
+      /catches wrong answers and misses unanswerable inputs/,
+    );
+    expect(skill).toMatch(/do not hard-gate confidence as fake safety/);
     expect(skill).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(skill).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
     expect(skill).toMatch(/0\.85 uncalibrated/);
@@ -1621,6 +1709,30 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/relevance, not resemblance/);
     expect(evalDoc).toMatch(/17\/18/);
     expect(evalDoc).toMatch(/wobsoriano\/oxlint-plugin-jev/);
+    expect(evalDoc).toMatch(/rioriost\/rspamd-jev/);
+    expect(evalDoc).toMatch(/no filtering decisions/);
+    expect(evalDoc).toMatch(/no auto-reject path is provided/);
+    expect(evalDoc).toMatch(/codebam\/jev-guardrails/);
+    expect(evalDoc).toMatch(/The library owns policy, not the model/);
+    expect(evalDoc).toMatch(/A guardrail is not a sandbox/);
+    expect(evalDoc).toMatch(/moving alias, not a pin/);
+    expect(evalDoc).toMatch(/brickfrog\/moongate/);
+    expect(evalDoc).toMatch(/Exit 0 doesn't mean the code is fine/);
+    expect(evalDoc).toMatch(/unevaluated rule never counts as a pass/);
+    expect(evalDoc).toMatch(/jyatesdotdev\/jev-logtriage/);
+    expect(evalDoc).toMatch(/Low confidence never auto-acts/);
+    expect(evalDoc).toMatch(/auto_remediate_candidate/);
+    expect(evalDoc).toMatch(/natemoo-re\/bias-bench/);
+    expect(evalDoc).toMatch(/zero binary-decision name differences/);
+    expect(evalDoc).toMatch(/cvsgireesh\/jevusher/);
+    expect(evalDoc).toMatch(/never safe to obey/);
+    expect(evalDoc).toMatch(/willkelly\/jev-evaluation/);
+    expect(evalDoc).toMatch(/123,805/);
+    expect(evalDoc).toMatch(/Confidence predicts whether an answer is right/);
+    expect(evalDoc).toMatch(
+      /catches wrong answers and misses unanswerable inputs/,
+    );
+    expect(evalDoc).toMatch(/do not hard-gate confidence as fake safety/);
     expect(evalDoc).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(evalDoc).toMatch(/0 dangerous allowed\*\* on that (synthetic )?fixture/);
     expect(evalDoc).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -1825,6 +1937,13 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/mizchi\/jev-lint/);
     expect(install).toMatch(/samdotmak\/jev-recall/);
     expect(install).toMatch(/wobsoriano\/oxlint-plugin-jev/);
+    expect(install).toMatch(/rioriost\/rspamd-jev/);
+    expect(install).toMatch(/codebam\/jev-guardrails/);
+    expect(install).toMatch(/brickfrog\/moongate/);
+    expect(install).toMatch(/jyatesdotdev\/jev-logtriage/);
+    expect(install).toMatch(/natemoo-re\/bias-bench/);
+    expect(install).toMatch(/cvsgireesh\/jevusher/);
+    expect(install).toMatch(/willkelly\/jev-evaluation/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -1962,6 +2081,27 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/samdotmak\/jev-recall/);
     expect(shape).toMatch(/17\/18/);
     expect(shape).toMatch(/wobsoriano\/oxlint-plugin-jev/);
+    expect(shape).toMatch(/rioriost\/rspamd-jev/);
+    expect(shape).toMatch(/codebam\/jev-guardrails/);
+    expect(shape).toMatch(/The library owns policy, not the model/);
+    expect(shape).toMatch(/A guardrail is not a sandbox/);
+    expect(shape).toMatch(/moving alias, not a pin/);
+    expect(shape).toMatch(/brickfrog\/moongate/);
+    expect(shape).toMatch(/Exit 0 doesn't mean the code is fine/);
+    expect(shape).toMatch(/unevaluated never counts as a pass/);
+    expect(shape).toMatch(/jyatesdotdev\/jev-logtriage/);
+    expect(shape).toMatch(/Low confidence never auto-acts/);
+    expect(shape).toMatch(/auto_remediate_candidate/);
+    expect(shape).toMatch(/natemoo-re\/bias-bench/);
+    expect(shape).toMatch(/cvsgireesh\/jevusher/);
+    expect(shape).toMatch(/never safe to obey/);
+    expect(shape).toMatch(/willkelly\/jev-evaluation/);
+    expect(shape).toMatch(/123,805/);
+    expect(shape).toMatch(/Confidence predicts whether an answer is right/);
+    expect(shape).toMatch(
+      /catches wrong answers and misses unanswerable inputs/,
+    );
+    expect(shape).toMatch(/do not hard-gate confidence as fake safety/);
     expect(shape).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(shape).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(shape).toMatch(/named lexical skip/);
@@ -2164,6 +2304,24 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/samdotmak\/jev-recall/);
     expect(hosts).toMatch(/relevance, not resemblance/);
     expect(hosts).toMatch(/wobsoriano\/oxlint-plugin-jev/);
+    expect(hosts).toMatch(/rioriost\/rspamd-jev/);
+    expect(hosts).toMatch(/codebam\/jev-guardrails/);
+    expect(hosts).toMatch(/The library owns policy, not the model/);
+    expect(hosts).toMatch(/A guardrail is not a sandbox/);
+    expect(hosts).toMatch(/moving alias, not a pin/);
+    expect(hosts).toMatch(/brickfrog\/moongate/);
+    expect(hosts).toMatch(/Exit 0 doesn't mean the code is fine/);
+    expect(hosts).toMatch(/unevaluated never counts as a pass/);
+    expect(hosts).toMatch(/jyatesdotdev\/jev-logtriage/);
+    expect(hosts).toMatch(/Low confidence never auto-acts/);
+    expect(hosts).toMatch(/auto_remediate_candidate/);
+    expect(hosts).toMatch(/natemoo-re\/bias-bench/);
+    expect(hosts).toMatch(/zero binary-decision name differences/);
+    expect(hosts).toMatch(/cvsgireesh\/jevusher/);
+    expect(hosts).toMatch(/never safe to obey/);
+    expect(hosts).toMatch(/willkelly\/jev-evaluation/);
+    expect(hosts).toMatch(/123,805/);
+    expect(hosts).toMatch(/do not hard-gate confidence as fake safety/);
     expect(hosts).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(hosts).toMatch(/0 dangerous allowed\*\* on that fixture/);
     expect(hosts).toMatch(/0\.85 uncalibrated/);
@@ -2431,6 +2589,29 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/relevance, not resemblance/);
     expect(gates).toMatch(/17\/18/);
     expect(gates).toMatch(/wobsoriano\/oxlint-plugin-jev/);
+    expect(gates).toMatch(/rioriost\/rspamd-jev/);
+    expect(gates).toMatch(/no auto-reject path is provided/);
+    expect(gates).toMatch(/codebam\/jev-guardrails/);
+    expect(gates).toMatch(/The library owns policy, not the model/);
+    expect(gates).toMatch(/A guardrail is not a sandbox/);
+    expect(gates).toMatch(/moving alias, not a pin/);
+    expect(gates).toMatch(/brickfrog\/moongate/);
+    expect(gates).toMatch(/Exit 0 doesn't mean the code is fine/);
+    expect(gates).toMatch(/unevaluated rule never counts as a pass/);
+    expect(gates).toMatch(/jyatesdotdev\/jev-logtriage/);
+    expect(gates).toMatch(/Low confidence never auto-acts/);
+    expect(gates).toMatch(/auto_remediate_candidate is a label/);
+    expect(gates).toMatch(/natemoo-re\/bias-bench/);
+    expect(gates).toMatch(/zero binary-decision name differences/);
+    expect(gates).toMatch(/cvsgireesh\/jevusher/);
+    expect(gates).toMatch(/never safe to obey/);
+    expect(gates).toMatch(/willkelly\/jev-evaluation/);
+    expect(gates).toMatch(/123,805/);
+    expect(gates).toMatch(/Confidence predicts whether an answer is right/);
+    expect(gates).toMatch(
+      /catches wrong answers and misses unanswerable inputs/,
+    );
+    expect(gates).toMatch(/do not hard-gate confidence as fake safety/);
     expect(gates).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(gates).toMatch(/0 dangerous allowed on synthetic 18-case fixture/);
     expect(gates).toMatch(/nekowasabi\/jev-routing-mcp/);
