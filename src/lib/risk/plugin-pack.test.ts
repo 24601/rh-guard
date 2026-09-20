@@ -424,14 +424,18 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Read the deltas, not the stars/);
     expect(readme).toMatch(/Ormus-Solutions\/aurum-gate/);
     expect(readme).toMatch(/Probability is not confidence/);
+    expect(readme).toMatch(/packaged export ≠ parallel gate\.ts/);
     expect(readme).toMatch(/Ormus-Solutions\/quicksilver-judge/);
     expect(readme).toMatch(/Code owns overrides/);
+    expect(readme).toMatch(/Gloss: \*\*PASS is not a merge grant/);
+    expect(readme).toMatch(/packaged heuristic ≠ live Jev/);
     expect(readme).toMatch(/Ormus-Solutions\/karat-filter/);
     expect(readme).toMatch(/Token overlap judge/);
     expect(readme).toMatch(/mock stand-in for a Jev Noul/);
     expect(readme).toMatch(/Ormus-Solutions\/gold-assay/);
     expect(readme).toMatch(/Screenshots lie until you assay them/);
-    expect(readme).toMatch(/GREEN ≠ verified UI/);
+    expect(readme).toMatch(/Gloss: \*\*GREEN ≠ verified UI/);
+    expect(readme).toMatch(/don't stamp GREEN on fool's gold/);
     expect(readme).toMatch(/WaynezProg\/jev-kit/);
     expect(readme).toMatch(/Confidence is not a correctness guarantee/);
     expect(readme).toMatch(/not an authorization boundary/);
@@ -605,6 +609,22 @@ describe("discoverability copy", () => {
       );
       expect(text, rel).not.toMatch(/quicksilver PASS is a merge grant/);
       expect(text, rel).not.toMatch(/token overlap is calibrated Jev/);
+      expect(text, rel).not.toMatch(
+        /Quoted source \(`src\/gate\.ts`\): \*\*Probability is not confidence\.\*\* Default `autoConfidence`/,
+      );
+      expect(text, rel).not.toMatch(/Quoted README: \*\*GREEN ≠ verified UI/);
+      expect(text, rel).not.toMatch(
+        /quoted \*\*Screenshots lie until you assay them\*\*; \*\*GREEN ≠ verified UI/,
+      );
+      expect(text, rel).not.toMatch(/packaged export is src\/gate\.ts/);
+      expect(text, rel).not.toMatch(/sketchRisks is live Jev/);
+      expect(text, rel).not.toMatch(/stages\.ts is the packaged export/);
+      if (/GREEN ≠\s*verified UI/.test(text)) {
+        expect(text, rel).toMatch(/Gloss: (?:\*\*)?GREEN ≠\s*verified UI/);
+      }
+      if (/PASS\s+is not a merge\s+grant/.test(text)) {
+        expect(text, rel).toMatch(/Gloss: (?:\*\*)?PASS\s+is not a merge\s+grant/);
+      }
     }
   });
 
@@ -1363,14 +1383,18 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Read the deltas, not the stars/);
     expect(skill).toMatch(/Ormus-Solutions\/aurum-gate/);
     expect(skill).toMatch(/Probability is not confidence/);
+    expect(skill).toMatch(/packaged export ≠ parallel gate\.ts/);
     expect(skill).toMatch(/Ormus-Solutions\/quicksilver-judge/);
     expect(skill).toMatch(/Code owns overrides/);
+    expect(skill).toMatch(/Gloss: \*\*PASS/);
+    expect(skill).toMatch(/packaged heuristic ≠ live Jev/);
     expect(skill).toMatch(/Ormus-Solutions\/karat-filter/);
     expect(skill).toMatch(/Token overlap judge/);
     expect(skill).toMatch(/mock stand-in for a Jev Noul/);
     expect(skill).toMatch(/Ormus-Solutions\/gold-assay/);
     expect(skill).toMatch(/Screenshots lie until you assay them/);
-    expect(skill).toMatch(/GREEN ≠ verified UI/);
+    expect(skill).toMatch(/Gloss: \*\*GREEN ≠ verified UI/);
+    expect(skill).toMatch(/don't stamp GREEN on fool's gold/);
     expect(skill).toMatch(/WaynezProg\/jev-kit/);
     expect(skill).toMatch(/Confidence is not a correctness guarantee/);
     expect(skill).toMatch(/not an authorization boundary/);
@@ -1807,14 +1831,18 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Read the deltas, not the stars/);
     expect(evalDoc).toMatch(/Ormus-Solutions\/aurum-gate/);
     expect(evalDoc).toMatch(/Probability is not confidence/);
+    expect(evalDoc).toMatch(/packaged export ≠ parallel gate\.ts/);
     expect(evalDoc).toMatch(/Ormus-Solutions\/quicksilver-judge/);
     expect(evalDoc).toMatch(/Code owns overrides/);
+    expect(evalDoc).toMatch(/Gloss: \*\*PASS is not a merge grant/);
+    expect(evalDoc).toMatch(/packaged heuristic ≠ live Jev/);
     expect(evalDoc).toMatch(/Ormus-Solutions\/karat-filter/);
     expect(evalDoc).toMatch(/Token overlap judge/);
     expect(evalDoc).toMatch(/mock stand-in for a Jev Noul/);
     expect(evalDoc).toMatch(/Ormus-Solutions\/gold-assay/);
     expect(evalDoc).toMatch(/Screenshots lie until you assay them/);
-    expect(evalDoc).toMatch(/GREEN ≠ verified UI/);
+    expect(evalDoc).toMatch(/Gloss: \*\*GREEN ≠ verified UI/);
+    expect(evalDoc).toMatch(/don't stamp GREEN on fool's gold/);
     expect(evalDoc).toMatch(/WaynezProg\/jev-kit/);
     expect(evalDoc).toMatch(/Confidence is not a correctness guarantee/);
     expect(evalDoc).toMatch(/not an authorization boundary/);
@@ -2199,14 +2227,17 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/Read the deltas, not the stars/);
     expect(shape).toMatch(/Ormus-Solutions\/aurum-gate/);
     expect(shape).toMatch(/Probability is not confidence/);
+    expect(shape).toMatch(/packaged `src\/index\.ts`/);
+    expect(shape).toMatch(/parallel `src\/gate\.ts`/);
     expect(shape).toMatch(/Ormus-Solutions\/quicksilver-judge/);
     expect(shape).toMatch(/Code owns overrides/);
+    expect(shape).toMatch(/Gloss: \*\*PASS is not a merge grant/);
     expect(shape).toMatch(/Ormus-Solutions\/karat-filter/);
     expect(shape).toMatch(/Token overlap judge/);
     expect(shape).toMatch(/mock stand-in for a Jev Noul/);
     expect(shape).toMatch(/Ormus-Solutions\/gold-assay/);
     expect(shape).toMatch(/Screenshots lie until you assay them/);
-    expect(shape).toMatch(/GREEN ≠ verified UI/);
+    expect(shape).toMatch(/Gloss: \*\*GREEN ≠ verified UI/);
     expect(shape).toMatch(/WaynezProg\/jev-kit/);
     expect(shape).toMatch(/Confidence is not a correctness guarantee/);
     expect(shape).toMatch(/not an authorization boundary/);
@@ -2436,14 +2467,17 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Read the deltas, not the stars/);
     expect(hosts).toMatch(/Ormus-Solutions\/aurum-gate/);
     expect(hosts).toMatch(/Probability is not confidence/);
+    expect(hosts).toMatch(/packaged `src\/index\.ts`/);
+    expect(hosts).toMatch(/parallel `src\/gate\.ts`/);
     expect(hosts).toMatch(/Ormus-Solutions\/quicksilver-judge/);
     expect(hosts).toMatch(/Code owns overrides/);
+    expect(hosts).toMatch(/Gloss: \*\*PASS is not a merge grant/);
     expect(hosts).toMatch(/Ormus-Solutions\/karat-filter/);
     expect(hosts).toMatch(/Token overlap judge/);
     expect(hosts).toMatch(/mock stand-in for a Jev Noul/);
     expect(hosts).toMatch(/Ormus-Solutions\/gold-assay/);
     expect(hosts).toMatch(/Screenshots lie until you assay them/);
-    expect(hosts).toMatch(/GREEN ≠ verified UI/);
+    expect(hosts).toMatch(/Gloss: \*\*GREEN ≠ verified UI/);
     expect(hosts).toMatch(/WaynezProg\/jev-kit/);
     expect(hosts).toMatch(/Confidence is not a correctness guarantee/);
     expect(hosts).toMatch(/not an authorization boundary/);
@@ -2743,14 +2777,17 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Read the deltas, not the stars/);
     expect(gates).toMatch(/Ormus-Solutions\/aurum-gate/);
     expect(gates).toMatch(/Probability is not confidence/);
+    expect(gates).toMatch(/packaged export ≠ parallel gate\.ts/);
     expect(gates).toMatch(/Ormus-Solutions\/quicksilver-judge/);
     expect(gates).toMatch(/Code owns overrides/);
+    expect(gates).toMatch(/Gloss: (?:\*\*)?PASS\s+is not a merge\s+grant/);
+    expect(gates).toMatch(/packaged heuristic ≠ live Jev/);
     expect(gates).toMatch(/Ormus-Solutions\/karat-filter/);
     expect(gates).toMatch(/Token overlap judge/);
     expect(gates).toMatch(/mock stand-in for a Jev Noul/);
     expect(gates).toMatch(/Ormus-Solutions\/gold-assay/);
     expect(gates).toMatch(/Screenshots lie until you assay them/);
-    expect(gates).toMatch(/GREEN ≠ verified UI/);
+    expect(gates).toMatch(/Gloss: (?:\*\*)?GREEN ≠\s*verified UI/);
     expect(gates).toMatch(/WaynezProg\/jev-kit/);
     expect(gates).toMatch(/Confidence is not a correctness guarantee/);
     expect(gates).toMatch(/not an authorization boundary/);

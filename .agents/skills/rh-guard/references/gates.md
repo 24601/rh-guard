@@ -784,19 +784,21 @@ jev-bias-bench (Fox-Islam/jev-bias-bench)
   do not merge into examples/
 
 aurum-gate (Ormus-Solutions/aurum-gate)
-  confidence-gated action router; auto | escalate | refuse
+  confidence-gated action router; packaged src/index.ts auto | escalate | refuse
   Probability opens the door — confidence decides
-  Probability is not confidence
   default autoConfidence 0.85 uncalibrated
   mocked — no live API
+  parallel src/gate.ts quoted: Probability is not confidence
+  packaged export ≠ parallel gate.ts
   do not merge into examples/
 
 quicksilver-judge (Ormus-Solutions/quicksilver-judge)
-  staged PR/code pre-filter; PASS | HOLD | FAIL
+  staged PR/code pre-filter; packaged src/index.ts PASS | HOLD | FAIL
   sketchRisks heuristic, not live Jev
-  Code owns overrides — Jev Choice is advisory when hard flags fire
+  Gloss: PASS is not a merge grant
+  parallel src/stages.ts quoted: Code owns overrides — Jev Choice is advisory when hard flags fire
   minConfidence 0.7 / 0.65
-  PASS is not a merge grant
+  packaged heuristic ≠ live Jev
   do not merge into examples/
 
 karat-filter (Ormus-Solutions/karat-filter)
@@ -810,7 +812,7 @@ gold-assay (Ormus-Solutions/gold-assay)
   UI proof assay; screenshot/OCR + DOM-as-state
   Screenshots lie until you assay them
   public assay() substring/regex GREEN | AMBER | RED; minGreen 0.75
-  GREEN ≠ verified UI
+  Gloss: GREEN ≠ verified UI
   assayQuestions is a separate Jev-shaped path, not the default
   do not merge into examples/
 
@@ -998,13 +1000,16 @@ as fake safety**. [Fox-Islam/jev-bias-bench](https://github.com/Fox-Islam/jev-bi
 **11,984** calls; **Do not test it by swapping names**; **Read the
 deltas, not the stars**; distinct from natemoo-re/bias-bench.
 [Ormus-Solutions/aurum-gate](https://github.com/Ormus-Solutions/aurum-gate):
-quoted **Probability is not confidence**; 0.85 auto is uncalibrated;
-mocked, no live API. [Ormus-Solutions/quicksilver-judge](https://github.com/Ormus-Solutions/quicksilver-judge):
-quoted **Code owns overrides**; `sketchRisks` not live Jev; PASS is not
-a merge grant. [Ormus-Solutions/karat-filter](https://github.com/Ormus-Solutions/karat-filter):
+packaged `src/index.ts` default autoConfidence **0.85**; parallel
+`src/gate.ts` quoted **Probability is not confidence**; mocked, no live
+API. [Ormus-Solutions/quicksilver-judge](https://github.com/Ormus-Solutions/quicksilver-judge):
+packaged `sketchRisks` not live Jev; Gloss: **PASS is not a merge
+grant**; parallel `src/stages.ts` quoted **Code owns overrides**.
+[Ormus-Solutions/karat-filter](https://github.com/Ormus-Solutions/karat-filter):
 quoted **Token overlap judge — mock stand-in for a Jev Noul**.
 [Ormus-Solutions/gold-assay](https://github.com/Ormus-Solutions/gold-assay):
-quoted **Screenshots lie until you assay them**; **GREEN ≠ verified UI**.
+quoted **Screenshots lie until you assay them**; Gloss: **GREEN ≠
+verified UI**.
 [WaynezProg/jev-kit](https://github.com/WaynezProg/jev-kit): quoted
 **Confidence is not a correctness guarantee**; SECURITY.md **not an
 authorization boundary**; distinct from jonathanavis96/jev-kit Airlock.
