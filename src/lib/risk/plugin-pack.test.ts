@@ -770,6 +770,38 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/never claim savings without a controlled A\/B run/);
     expect(readme).toMatch(/MarcoLoDico\/pi-jev-router/);
     expect(readme).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
+    expect(readme).toMatch(/harshwasan\/jev-sentinel/);
+    expect(readme).toMatch(/Koushik890\/jev-firewall/);
+    expect(readme).toMatch(/Rules can only tighten/);
+    expect(readme).toMatch(/jackbarunz\/jev-tool-router/);
+    expect(readme).toMatch(/The router narrows discovery; it does not permanently remove the fallback path/);
+    expect(readme).toMatch(/esinocchi\/jev-tool-router/);
+    expect(readme).toMatch(/not generate arguments, approve actions, or execute tools/);
+    expect(readme).toMatch(/devjtv\/jev-router/);
+    expect(readme).toMatch(/This is cost control, not a quality upgrade/);
+    expect(readme).toMatch(/A router must never break a turn/);
+    expect(readme).toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(readme).toMatch(/User authorisation and OMP permissions continue to govern actions/);
+    expect(readme).toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(readme).toMatch(/has not been compiled or exercised inside a running Codex instance/);
+    expect(readme).toMatch(/JxWayne890\/jev-control-plane/);
+    expect(readme).toMatch(/Prevents the decision model from weakening verified safety rules/);
+    expect(readme).toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(readme).toMatch(/Plugin never returns allow from TypeSafe confidence/);
+    expect(readme).toMatch(/This plugin is a semantic guardrail, not a security sandbox/);
+    expect(readme).toMatch(/4rays\/profanity-checker/);
+    expect(readme).toMatch(/threshold lives in your code/);
+    expect(readme).toMatch(/vzornjak\/typesafe-decision/);
+    expect(readme).toMatch(/Not a safety control, not an authorization mechanism/);
+    expect(readme).toMatch(/51\.7% may only be cited as an uncontrolled projection, never as a measurement/);
+    expect(readme).toMatch(/openlayer-ai\/jevals/);
+    expect(readme).toMatch(/don't let the classifier become the authorizer/);
+    expect(readme).toMatch(/estimates, not measurements/);
+    expect(readme).toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(readme).toMatch(/Nothing is summarized or paraphrased/);
+    expect(readme).toMatch(/Gtrkrsk\/laya/);
+    expect(readme).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+
     expect(readme).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(readme).toMatch(/56 of the 65 rules/);
@@ -1396,6 +1428,44 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1542 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/harshwasan\/jev-sentinel is CompleteTech-LLC-AI-Research\/jev-sentinel/);
+      expect(text, rel).not.toMatch(/106 unit tests is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/Koushik890\/jev-firewall is wmsing\/agent-firewall/);
+      expect(text, rel).not.toMatch(/104 tests is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/Rules can only loosen/);
+      expect(text, rel).not.toMatch(/jackbarunz\/jev-tool-router is esinocchi\/jev-tool-router/);
+      expect(text, rel).not.toMatch(/0\.90 is a safety envelope/);
+      expect(text, rel).not.toMatch(/76\/81 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/esinocchi\/jev-tool-router generates arguments, approve actions, or execute tools/);
+      expect(text, rel).not.toMatch(/devjtv\/jev-router is reallygood83\/jev-router/);
+      expect(text, rel).not.toMatch(/devjtv\/jev-router is a quality upgrade/);
+      expect(text, rel).not.toMatch(/0\.55 is a safety envelope/);
+      expect(text, rel).not.toMatch(/cyriusweng\/omp-jev-gate is luw2007\/omp-jev-extensions/);
+      expect(text, rel).not.toMatch(/0\.5 checkpoint is a safety envelope/);
+      expect(text, rel).not.toMatch(/jev-codex-approval native adapter has been compiled/);
+      expect(text, rel).not.toMatch(/shadow always returns allow/);
+      expect(text, rel).not.toMatch(/JxWayne890\/jev-control-plane is goodruizhan\/pi-jev-control/);
+      expect(text, rel).not.toMatch(/JEV can lower verified safety rules/);
+      expect(text, rel).not.toMatch(/33 tests is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/dr-dimitru\/claude-jev-plugin is RahulBalakavi\/claude-code-jev/);
+      expect(text, rel).not.toMatch(/Plugin returns allow from TypeSafe confidence/);
+      expect(text, rel).not.toMatch(/4rays\/profanity-checker is a coding-agent hook/);
+      expect(text, rel).not.toMatch(/0\.5 is a safety envelope/);
+      expect(text, rel).not.toMatch(/51\.7% is a measurement/);
+      expect(text, rel).not.toMatch(/typesafe-decision is a safety control/);
+      expect(text, rel).not.toMatch(/authorization is always true/);
+      expect(text, rel).not.toMatch(/openlayer-ai\/jevals is dayhaysoos\/jevals/);
+      expect(text, rel).not.toMatch(/the classifier is the authorizer/);
+      expect(text, rel).not.toMatch(/DihRJ\/claude-code-jev-compaction is tamaratran\/fast-jev-compaction/);
+      expect(text, rel).not.toMatch(/0\.2 is a safety deny/);
+      expect(text, rel).not.toMatch(/Gtrkrsk\/laya is a new model/);
+      expect(text, rel).not.toMatch(/Gtrkrsk\/laya is a drop-in ROC/);
+    }
+  });
+
   it("does not invent hourly 0947 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -1645,6 +1715,21 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/eugeniughelbur\/jev-gate/);
     expect(pkg).not.toMatch(/jorgehara\/gentle-browser-jev/);
     expect(pkg).not.toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(pkg).not.toMatch(/harshwasan\/jev-sentinel/);
+    expect(pkg).not.toMatch(/Koushik890\/jev-firewall/);
+    expect(pkg).not.toMatch(/jackbarunz\/jev-tool-router/);
+    expect(pkg).not.toMatch(/esinocchi\/jev-tool-router/);
+    expect(pkg).not.toMatch(/devjtv\/jev-router/);
+    expect(pkg).not.toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(pkg).not.toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(pkg).not.toMatch(/JxWayne890\/jev-control-plane/);
+    expect(pkg).not.toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(pkg).not.toMatch(/4rays\/profanity-checker/);
+    expect(pkg).not.toMatch(/vzornjak\/typesafe-decision/);
+    expect(pkg).not.toMatch(/openlayer-ai\/jevals/);
+    expect(pkg).not.toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(pkg).not.toMatch(/Gtrkrsk\/laya/);
+
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
@@ -1836,6 +1921,21 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/eugeniughelbur\/jev-gate/);
     expect(pkg).not.toMatch(/jorgehara\/gentle-browser-jev/);
     expect(pkg).not.toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(pkg).not.toMatch(/harshwasan\/jev-sentinel/);
+    expect(pkg).not.toMatch(/Koushik890\/jev-firewall/);
+    expect(pkg).not.toMatch(/jackbarunz\/jev-tool-router/);
+    expect(pkg).not.toMatch(/esinocchi\/jev-tool-router/);
+    expect(pkg).not.toMatch(/devjtv\/jev-router/);
+    expect(pkg).not.toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(pkg).not.toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(pkg).not.toMatch(/JxWayne890\/jev-control-plane/);
+    expect(pkg).not.toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(pkg).not.toMatch(/4rays\/profanity-checker/);
+    expect(pkg).not.toMatch(/vzornjak\/typesafe-decision/);
+    expect(pkg).not.toMatch(/openlayer-ai\/jevals/);
+    expect(pkg).not.toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(pkg).not.toMatch(/Gtrkrsk\/laya/);
+
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
@@ -2097,6 +2197,21 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/eugeniughelbur\/jev-gate/);
     expect(lock).not.toMatch(/jorgehara\/gentle-browser-jev/);
     expect(lock).not.toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(lock).not.toMatch(/harshwasan\/jev-sentinel/);
+    expect(lock).not.toMatch(/Koushik890\/jev-firewall/);
+    expect(lock).not.toMatch(/jackbarunz\/jev-tool-router/);
+    expect(lock).not.toMatch(/esinocchi\/jev-tool-router/);
+    expect(lock).not.toMatch(/devjtv\/jev-router/);
+    expect(lock).not.toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(lock).not.toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(lock).not.toMatch(/JxWayne890\/jev-control-plane/);
+    expect(lock).not.toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(lock).not.toMatch(/4rays\/profanity-checker/);
+    expect(lock).not.toMatch(/vzornjak\/typesafe-decision/);
+    expect(lock).not.toMatch(/openlayer-ai\/jevals/);
+    expect(lock).not.toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(lock).not.toMatch(/Gtrkrsk\/laya/);
+
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
@@ -2288,6 +2403,21 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/eugeniughelbur\/jev-gate/);
     expect(lock).not.toMatch(/jorgehara\/gentle-browser-jev/);
     expect(lock).not.toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(lock).not.toMatch(/harshwasan\/jev-sentinel/);
+    expect(lock).not.toMatch(/Koushik890\/jev-firewall/);
+    expect(lock).not.toMatch(/jackbarunz\/jev-tool-router/);
+    expect(lock).not.toMatch(/esinocchi\/jev-tool-router/);
+    expect(lock).not.toMatch(/devjtv\/jev-router/);
+    expect(lock).not.toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(lock).not.toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(lock).not.toMatch(/JxWayne890\/jev-control-plane/);
+    expect(lock).not.toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(lock).not.toMatch(/4rays\/profanity-checker/);
+    expect(lock).not.toMatch(/vzornjak\/typesafe-decision/);
+    expect(lock).not.toMatch(/openlayer-ai\/jevals/);
+    expect(lock).not.toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(lock).not.toMatch(/Gtrkrsk\/laya/);
+
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
@@ -3107,6 +3237,38 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/never claim savings without a controlled A\/B run/);
     expect(skill).toMatch(/MarcoLoDico\/pi-jev-router/);
     expect(skill).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
+    expect(skill).toMatch(/harshwasan\/jev-sentinel/);
+    expect(skill).toMatch(/Koushik890\/jev-firewall/);
+    expect(skill).toMatch(/Rules can only tighten/);
+    expect(skill).toMatch(/jackbarunz\/jev-tool-router/);
+    expect(skill).toMatch(/The router narrows discovery; it does not permanently remove the fallback path/);
+    expect(skill).toMatch(/esinocchi\/jev-tool-router/);
+    expect(skill).toMatch(/not generate arguments, approve actions, or execute tools/);
+    expect(skill).toMatch(/devjtv\/jev-router/);
+    expect(skill).toMatch(/This is cost control, not a quality upgrade/);
+    expect(skill).toMatch(/A router must never break a turn/);
+    expect(skill).toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(skill).toMatch(/User authorisation and OMP permissions continue to govern actions/);
+    expect(skill).toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(skill).toMatch(/has not been compiled or exercised inside a running Codex instance/);
+    expect(skill).toMatch(/JxWayne890\/jev-control-plane/);
+    expect(skill).toMatch(/Prevents the decision model from weakening verified safety rules/);
+    expect(skill).toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(skill).toMatch(/Plugin never returns allow from TypeSafe confidence/);
+    expect(skill).toMatch(/This plugin is a semantic guardrail, not a security sandbox/);
+    expect(skill).toMatch(/4rays\/profanity-checker/);
+    expect(skill).toMatch(/threshold lives in your code/);
+    expect(skill).toMatch(/vzornjak\/typesafe-decision/);
+    expect(skill).toMatch(/Not a safety control, not an authorization mechanism/);
+    expect(skill).toMatch(/51\.7% may only be cited as an uncontrolled projection, never as a measurement/);
+    expect(skill).toMatch(/openlayer-ai\/jevals/);
+    expect(skill).toMatch(/don't let the classifier become the authorizer/);
+    expect(skill).toMatch(/estimates, not measurements/);
+    expect(skill).toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(skill).toMatch(/Nothing is summarized or paraphrased/);
+    expect(skill).toMatch(/Gtrkrsk\/laya/);
+    expect(skill).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(skill).toMatch(/56 of the 65 rules/);
@@ -3889,6 +4051,38 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/never claim savings without a controlled A\/B run/);
     expect(evalDoc).toMatch(/MarcoLoDico\/pi-jev-router/);
     expect(evalDoc).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
+    expect(evalDoc).toMatch(/harshwasan\/jev-sentinel/);
+    expect(evalDoc).toMatch(/Koushik890\/jev-firewall/);
+    expect(evalDoc).toMatch(/Rules can only tighten/);
+    expect(evalDoc).toMatch(/jackbarunz\/jev-tool-router/);
+    expect(evalDoc).toMatch(/The router narrows discovery; it does not permanently remove the fallback path/);
+    expect(evalDoc).toMatch(/esinocchi\/jev-tool-router/);
+    expect(evalDoc).toMatch(/not generate arguments, approve actions, or execute tools/);
+    expect(evalDoc).toMatch(/devjtv\/jev-router/);
+    expect(evalDoc).toMatch(/This is cost control, not a quality upgrade/);
+    expect(evalDoc).toMatch(/A router must never break a turn/);
+    expect(evalDoc).toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(evalDoc).toMatch(/User authorisation and OMP permissions continue to govern actions/);
+    expect(evalDoc).toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(evalDoc).toMatch(/has not been compiled or exercised inside a running Codex instance/);
+    expect(evalDoc).toMatch(/JxWayne890\/jev-control-plane/);
+    expect(evalDoc).toMatch(/Prevents the decision model from weakening verified safety rules/);
+    expect(evalDoc).toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(evalDoc).toMatch(/Plugin never returns allow from TypeSafe confidence/);
+    expect(evalDoc).toMatch(/This plugin is a semantic guardrail, not a security sandbox/);
+    expect(evalDoc).toMatch(/4rays\/profanity-checker/);
+    expect(evalDoc).toMatch(/threshold lives in your code/);
+    expect(evalDoc).toMatch(/vzornjak\/typesafe-decision/);
+    expect(evalDoc).toMatch(/Not a safety control, not an authorization mechanism/);
+    expect(evalDoc).toMatch(/51\.7% may only be cited as an uncontrolled projection, never as a measurement/);
+    expect(evalDoc).toMatch(/openlayer-ai\/jevals/);
+    expect(evalDoc).toMatch(/don't let the classifier become the authorizer/);
+    expect(evalDoc).toMatch(/estimates, not measurements/);
+    expect(evalDoc).toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(evalDoc).toMatch(/Nothing is summarized or paraphrased/);
+    expect(evalDoc).toMatch(/Gtrkrsk\/laya/);
+    expect(evalDoc).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(evalDoc).toMatch(/56 of the 65 rules/);
@@ -4252,6 +4446,20 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/eugeniughelbur\/jev-gate/);
     expect(install).toMatch(/jorgehara\/gentle-browser-jev/);
     expect(install).toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(install).toMatch(/harshwasan\/jev-sentinel/);
+    expect(install).toMatch(/Koushik890\/jev-firewall/);
+    expect(install).toMatch(/jackbarunz\/jev-tool-router/);
+    expect(install).toMatch(/esinocchi\/jev-tool-router/);
+    expect(install).toMatch(/devjtv\/jev-router/);
+    expect(install).toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(install).toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(install).toMatch(/JxWayne890\/jev-control-plane/);
+    expect(install).toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(install).toMatch(/4rays\/profanity-checker/);
+    expect(install).toMatch(/vzornjak\/typesafe-decision/);
+    expect(install).toMatch(/openlayer-ai\/jevals/);
+    expect(install).toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(install).toMatch(/Gtrkrsk\/laya/);
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
@@ -4734,6 +4942,38 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/never claim savings without a controlled A\/B run/);
     expect(shape).toMatch(/MarcoLoDico\/pi-jev-router/);
     expect(shape).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
+    expect(shape).toMatch(/harshwasan\/jev-sentinel/);
+    expect(shape).toMatch(/Koushik890\/jev-firewall/);
+    expect(shape).toMatch(/Rules can only tighten/);
+    expect(shape).toMatch(/jackbarunz\/jev-tool-router/);
+    expect(shape).toMatch(/The router narrows discovery; it does not permanently remove the fallback path/);
+    expect(shape).toMatch(/esinocchi\/jev-tool-router/);
+    expect(shape).toMatch(/not generate arguments, approve actions, or execute tools/);
+    expect(shape).toMatch(/devjtv\/jev-router/);
+    expect(shape).toMatch(/This is cost control, not a quality upgrade/);
+    expect(shape).toMatch(/A router must never break a turn/);
+    expect(shape).toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(shape).toMatch(/User authorisation and OMP permissions continue to govern actions/);
+    expect(shape).toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(shape).toMatch(/has not been compiled or exercised inside a running Codex instance/);
+    expect(shape).toMatch(/JxWayne890\/jev-control-plane/);
+    expect(shape).toMatch(/Prevents the decision model from weakening verified safety rules/);
+    expect(shape).toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(shape).toMatch(/Plugin never returns allow from TypeSafe confidence/);
+    expect(shape).toMatch(/This plugin is a semantic guardrail, not a security sandbox/);
+    expect(shape).toMatch(/4rays\/profanity-checker/);
+    expect(shape).toMatch(/threshold lives in your code/);
+    expect(shape).toMatch(/vzornjak\/typesafe-decision/);
+    expect(shape).toMatch(/Not a safety control, not an authorization mechanism/);
+    expect(shape).toMatch(/51\.7% may only be cited as an uncontrolled projection, never as a measurement/);
+    expect(shape).toMatch(/openlayer-ai\/jevals/);
+    expect(shape).toMatch(/don't let the classifier become the authorizer/);
+    expect(shape).toMatch(/estimates, not measurements/);
+    expect(shape).toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(shape).toMatch(/Nothing is summarized or paraphrased/);
+    expect(shape).toMatch(/Gtrkrsk\/laya/);
+    expect(shape).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(shape).toMatch(/It never silently approves/);
@@ -5265,6 +5505,38 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/never claim savings without a controlled A\/B run/);
     expect(hosts).toMatch(/MarcoLoDico\/pi-jev-router/);
     expect(hosts).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
+    expect(hosts).toMatch(/harshwasan\/jev-sentinel/);
+    expect(hosts).toMatch(/Koushik890\/jev-firewall/);
+    expect(hosts).toMatch(/Rules can only tighten/);
+    expect(hosts).toMatch(/jackbarunz\/jev-tool-router/);
+    expect(hosts).toMatch(/The router narrows discovery; it does not permanently remove the fallback path/);
+    expect(hosts).toMatch(/esinocchi\/jev-tool-router/);
+    expect(hosts).toMatch(/not generate arguments, approve actions, or execute tools/);
+    expect(hosts).toMatch(/devjtv\/jev-router/);
+    expect(hosts).toMatch(/This is cost control, not a quality upgrade/);
+    expect(hosts).toMatch(/A router must never break a turn/);
+    expect(hosts).toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(hosts).toMatch(/User authorisation and OMP permissions continue to govern actions/);
+    expect(hosts).toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(hosts).toMatch(/has not been compiled or exercised inside a running Codex instance/);
+    expect(hosts).toMatch(/JxWayne890\/jev-control-plane/);
+    expect(hosts).toMatch(/Prevents the decision model from weakening verified safety rules/);
+    expect(hosts).toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(hosts).toMatch(/Plugin never returns allow from TypeSafe confidence/);
+    expect(hosts).toMatch(/This plugin is a semantic guardrail, not a security sandbox/);
+    expect(hosts).toMatch(/4rays\/profanity-checker/);
+    expect(hosts).toMatch(/threshold lives in your code/);
+    expect(hosts).toMatch(/vzornjak\/typesafe-decision/);
+    expect(hosts).toMatch(/Not a safety control, not an authorization mechanism/);
+    expect(hosts).toMatch(/51\.7% may only be cited as an uncontrolled projection, never as a measurement/);
+    expect(hosts).toMatch(/openlayer-ai\/jevals/);
+    expect(hosts).toMatch(/don't let the classifier become the authorizer/);
+    expect(hosts).toMatch(/estimates, not measurements/);
+    expect(hosts).toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(hosts).toMatch(/Nothing is summarized or paraphrased/);
+    expect(hosts).toMatch(/Gtrkrsk\/laya/);
+    expect(hosts).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(hosts).toMatch(/It never silently approves/);
@@ -5903,6 +6175,38 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/never claim savings without a controlled A\/B run/);
     expect(gates).toMatch(/MarcoLoDico\/pi-jev-router/);
     expect(gates).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
+    expect(gates).toMatch(/harshwasan\/jev-sentinel/);
+    expect(gates).toMatch(/Koushik890\/jev-firewall/);
+    expect(gates).toMatch(/Rules can only tighten/);
+    expect(gates).toMatch(/jackbarunz\/jev-tool-router/);
+    expect(gates).toMatch(/The router narrows discovery; it does not permanently remove the fallback path/);
+    expect(gates).toMatch(/esinocchi\/jev-tool-router/);
+    expect(gates).toMatch(/not generate arguments, approve actions, or execute tools/);
+    expect(gates).toMatch(/devjtv\/jev-router/);
+    expect(gates).toMatch(/This is cost control, not a quality upgrade/);
+    expect(gates).toMatch(/A router must never break a turn/);
+    expect(gates).toMatch(/cyriusweng\/omp-jev-gate/);
+    expect(gates).toMatch(/User authorisation and OMP permissions continue to govern actions/);
+    expect(gates).toMatch(/CompleteTech-LLC-AI-Research\/jev-codex-approval/);
+    expect(gates).toMatch(/has not been compiled or exercised inside a running Codex instance/);
+    expect(gates).toMatch(/JxWayne890\/jev-control-plane/);
+    expect(gates).toMatch(/Prevents the decision model from weakening verified safety rules/);
+    expect(gates).toMatch(/dr-dimitru\/claude-jev-plugin/);
+    expect(gates).toMatch(/Plugin never returns allow from TypeSafe confidence/);
+    expect(gates).toMatch(/This plugin is a semantic guardrail, not a security sandbox/);
+    expect(gates).toMatch(/4rays\/profanity-checker/);
+    expect(gates).toMatch(/threshold lives in your code/);
+    expect(gates).toMatch(/vzornjak\/typesafe-decision/);
+    expect(gates).toMatch(/Not a safety control, not an authorization mechanism/);
+    expect(gates).toMatch(/51\.7% may only be cited as an uncontrolled projection, never as a measurement/);
+    expect(gates).toMatch(/openlayer-ai\/jevals/);
+    expect(gates).toMatch(/don't let the classifier become the authorizer/);
+    expect(gates).toMatch(/estimates, not measurements/);
+    expect(gates).toMatch(/DihRJ\/claude-code-jev-compaction/);
+    expect(gates).toMatch(/Nothing is summarized or paraphrased/);
+    expect(gates).toMatch(/Gtrkrsk\/laya/);
+    expect(gates).toMatch(/0\.000 accuracy at 0\.952 confidence/);
+
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(gates).toMatch(/56\/65 at 1\.00 on 467 labelled defects/);

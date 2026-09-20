@@ -179,7 +179,7 @@ a merge, and not a reward-hack detector.
 
 [dsh-jev-guard](https://github.com/7starsseeker/dsh-jev-guard) is a DSH `tools/pre-execute` accident net: `allow` / `revise` / `block` / `escalate`. Quoted: **It is an accident net, not a security boundary**. Quoted: **degrades loudly instead of silently**. D3 timeout **fail-open**. D9 402/401 **l0-only**. Quoted: **L0 的 deny 类硬规则不受此开关影响**. Distinct from codebam/dsh-jev-guardrails. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[jev-sentinel](https://github.com/CompleteTech-LLC-AI-Research/jev-sentinel) is a multi-harness sensor/veto. Quoted: **This is a defense-in-depth sensor and veto layer, not a complete reference monitor**. Quoted: **DEFER means only no additional veto**. Quoted: **Judgments are not grants**. Quoted: **provisional review/block thresholds 0.35/0.80 are policy starting points**. Pin `jev-1.13.0`. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+[jev-sentinel](https://github.com/CompleteTech-LLC-AI-Research/jev-sentinel) is a multi-harness sensor/veto. Quoted: **This is a defense-in-depth sensor and veto layer, not a complete reference monitor**. Quoted: **DEFER means only no additional veto**. Quoted: **Judgments are not grants**. Quoted: **provisional review/block thresholds 0.35/0.80 are policy starting points**. Pin `jev-1.13.0`. Distinct harshwasan/jev-sentinel. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [diff-risk-sentinel](https://github.com/heliowap/diff-risk-sentinel) is CRAP + optional Jev triage. Quoted: **It is a prioritization aid, not a bug detector**. Quoted: earlier **96% accuracy / 100% bug recall** **are superseded**. Rule 6 badge `ACCEPTABLE_LOW_RISK` (strategy: **Low risk. Safe to merge.**) is not a grant. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -389,9 +389,38 @@ a merge, and not a reward-hack detector.
 
 [MarcoLoDico/pi-jev-router](https://github.com/MarcoLoDico/pi-jev-router) Pi `/model` picker. Quoted: **unvalidated starting policy, not a 95% accuracy guarantee.** Distinct philippdubach/pi-jev-router. Routing ≠ permission. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
 
+[harshwasan/jev-sentinel](https://github.com/harshwasan/jev-sentinel) current listing of the Pi/Claude/Codex integrity gate previously [harshwasan/pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel). Quoted: **never auto-allows.** Quoted: **Prompt injection is not solved.** Uncalibrated **0.3 / 1.3 / 0.8**. *Theirs*: **106** unit tests. Distinct CompleteTech jev-sentinel. Keep both slugs. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[Koushik890/jev-firewall](https://github.com/Koushik890/jev-firewall) Claude/Codex PreToolUse. Quoted: **Fail closed.** Quoted: **Rules can only tighten.** `ask_below` **0.7**. *Theirs*: **104** tests. Distinct wmsing/agent-firewall. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jackbarunz/jev-tool-router](https://github.com/jackbarunz/jev-tool-router) Codex MCP routing. Threshold **0.90**. `none_of_the_above`. Quoted: **The router narrows discovery; it does not permanently remove the fallback path.** Routing ≠ permission. Distinct esinocchi. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[esinocchi/jev-tool-router](https://github.com/esinocchi/jev-tool-router) experimental SDK. Quoted: not generate arguments, approve actions, or execute tools. Quoted: **not an agent framework or a security boundary.** *Theirs*: **76/81** versus **77/81**, not a ROC. Distinct jackbarunz. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[devjtv/jev-router](https://github.com/devjtv/jev-router) OMP model+thinking picker. Quoted: **This is cost control, not a quality upgrade.** Quoted: **A router must never break a turn.** Fail-open **keep the current model**. Distinct gowtham980 / reallygood83 / justinhsu1477. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[cyriusweng/omp-jev-gate](https://github.com/cyriusweng/omp-jev-gate) OMP plugin. Quoted: **User authorisation and OMP permissions continue to govern actions.** **0.5** checkpoint uncalibrated. Distinct luw2007/omp-jev-extensions. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[CompleteTech-LLC-AI-Research/jev-codex-approval](https://github.com/CompleteTech-LLC-AI-Research/jev-codex-approval) experimental Codex preflight. Quoted: **Codex retains responsibility for permission enforcement.** Quoted: native adapter **has not been compiled or exercised inside a running Codex instance**. Shadow always `defer`. Distinct their jev-sentinel. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[JxWayne890/jev-control-plane](https://github.com/JxWayne890/jev-control-plane) Codex runtime router. Quoted: **Prevents the decision model from weakening verified safety rules.** Labeled local fallback. *Theirs*: **33** tests. Distinct jev-dspy-control-plane / pi-jev-control. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[dr-dimitru/claude-jev-plugin](https://github.com/dr-dimitru/claude-jev-plugin) Claude Pre/PostToolUse. Quoted: **This plugin is a semantic guardrail, not a security sandbox.** Quoted: **Plugin never returns allow from TypeSafe confidence.** Fails open. Distinct RahulBalakavi/claude-code-jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[4rays/profanity-checker](https://github.com/4rays/profanity-checker) Cloudflare Worker. Quoted: **threshold lives in your code** (**0.5**). Not a coding-agent hook. Cousin jevmod / tonedown / jevfanity-api. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[vzornjak/typesafe-decision](https://github.com/vzornjak/typesafe-decision) Minis advisory layer. Quoted: **Not a safety control, not an authorization mechanism.** Quoted: **authorization is always false.** Quoted: **51.7% may only be cited as an uncontrolled projection, never as a measurement** (*theirs* retraction). Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[openlayer-ai/jevals](https://github.com/openlayer-ai/jevals) evals+gates. Quoted: **don't let the classifier become the authorizer.** Quoted: **lets the call through by default.** Quoted: **estimates, not measurements**. Distinct dayhaysoos/jevals. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[DihRJ/claude-code-jev-compaction](https://github.com/DihRJ/claude-code-jev-compaction) LiteLLM tutorial. Quoted: **Nothing is summarized or paraphrased.** Quoted: **It fails open by default.** Threshold **0.2**. Distinct fast-jev-compaction / jev-compactor. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Gtrkrsk/laya](https://huggingface.co/Gtrkrsk/laya) HF listing of the Laya family hub, not a new model. Quoted: Khmer **0.000 accuracy at 0.952 confidence**. **0.85** still soft. Pair NandhaKishorM/laya. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+[pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) (current listing [harshwasan/jev-sentinel](https://github.com/harshwasan/jev-sentinel); keep both slugs) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
 
 [hermes-jev-skills](https://github.com/kerpopule/hermes-jev-skills) is a Hermes skill pack: routing / memory (hidden-instruction) / compaction / skill select / triage / computer-use gated by **safe action tables**; dashboard `on`/`shadow`/`off`. Quoted README: **Everything fails open**. Named lexical skip, not live Jev (acknowledgements). Quoted `skills/jev-memory/SKILL.md`: **Never read `dropped_injection_ids`**. Quoted enablement: **Shadow first, and mean it**. Distinct from [rsdkrasen/hermes-jev-router](https://github.com/rsdkrasen/hermes-jev-router) and [cdepuy/hermes-skill-router](https://github.com/cdepuy/hermes-skill-router); in-repo `jevkit/` ≠ [jonathanavis96/jev-kit](https://github.com/jonathanavis96/jev-kit). Fold integrity only, not CUA recipes. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -409,7 +438,7 @@ a merge, and not a reward-hack detector.
 
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
-[laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC.
+[laya](https://github.com/NandhaKishorM/laya) is an open System One head. 0.85 RLCD gate is still soft; Khmer OOD 0.000 at 95.2% confidence. Future backend, not a drop-in ROC. HF family listing [Gtrkrsk/laya](https://huggingface.co/Gtrkrsk/laya) is the same hub, not a new model.
 
 [jev-labs](https://github.com/copyleftdev/jev-labs) wraps a probabilistic oracle in a formal consensus kernel. **Never confidently wrong.** Escalate-not-guess: under severe chaos accuracy drops but wrong=0 because the system escalates. Anti-pattern: TLA+/model-check theater as proof the soft judge is safe without an exception path. Cousin, not this sidecar.
 
