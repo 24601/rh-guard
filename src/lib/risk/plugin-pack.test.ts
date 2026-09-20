@@ -467,6 +467,20 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Filtering is a routing decision, never destruction/);
     expect(readme).toMatch(/Jev failures fail open/);
     expect(readme).toMatch(/Pass\/fail alone is not significant/);
+    expect(readme).toMatch(/Atikpui007\/jev-sift/);
+    expect(readme).toMatch(/This is a relevance filter, not a safety block/);
+    expect(readme).toMatch(/JEV_FILTER_DROP_THRESHOLD/);
+    expect(readme).toMatch(/simonsez9510\/jev-cite-check/);
+    expect(readme).toMatch(/1회 관찰이며 성능 주장이 아닙니다/);
+    expect(readme).toMatch(/분포 집중도이지 정확도가 아닙니다/);
+    expect(readme).toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(readme).toMatch(/ambiguity must never silently become permission/);
+    expect(readme).toMatch(/do not provide a complete sandbox/);
+    expect(readme).toMatch(/finrod21\/jev-transaction-guard/);
+    expect(readme).toMatch(/IMMUNE TO BOTH/);
+    expect(readme).toMatch(/does not show proof that Jev makes better classification choices/);
+    expect(readme).toMatch(/codebam\/dsh-jev-guardrails/);
+    expect(readme).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(readme).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(readme).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
     expect(readme).toMatch(/0\.85 uncalibrated/);
@@ -696,6 +710,29 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0042 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/Atikpui007\/jev-sift is kbhuw\/jev-sift/);
+      expect(text, rel).not.toMatch(/Atikpui007\/jev-sift is Astro-Han/);
+      expect(text, rel).not.toMatch(/relevance filter is a safety block/);
+      expect(text, rel).not.toMatch(/97\/100 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/97\/100 is legal proof/);
+      expect(text, rel).not.toMatch(/pi-jev-command-guard is pi-jev-tool-guard/);
+      expect(text, rel).not.toMatch(/pi-jev-command-guard is pi-jev-gate/);
+      expect(text, rel).not.toMatch(/pi-jev-command-guard is a complete sandbox/);
+      expect(text, rel).not.toMatch(/0\.75 auto-allow is a sandbox/);
+      expect(text, rel).not.toMatch(/IMMUNE TO BOTH is a safety proof/);
+      expect(text, rel).not.toMatch(/last line of defense is a freeze/);
+      expect(text, rel).not.toMatch(/Choice TRIP is a freeze/);
+      expect(text, rel).not.toMatch(/0\.0% FPR is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/codebam\/dsh-jev-guardrails is codebam\/jev-guardrails$/m);
+      expect(text, rel).not.toMatch(/dsh-jev-guardrails is a sandbox/);
+      expect(text, rel).not.toMatch(/failMode default closed/);
+      expect(text, rel).not.toMatch(/JEV_FILTER_THRESHOLD keep candidates with noul/);
+    }
+  });
+
   it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
     const productPaths = [
       ...PUBLIC_COPY_PATHS,
@@ -784,6 +821,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/vidux\/iso-jevdit/);
     expect(pkg).not.toMatch(/ashafizullah\/jev-linkedin/);
     expect(pkg).not.toMatch(/Astro-Han\/jev-harness/);
+    expect(pkg).not.toMatch(/Atikpui007\/jev-sift/);
+    expect(pkg).not.toMatch(/simonsez9510\/jev-cite-check/);
+    expect(pkg).not.toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(pkg).not.toMatch(/finrod21\/jev-transaction-guard/);
+    expect(pkg).not.toMatch(/codebam\/dsh-jev-guardrails/);
     expect(pkg).not.toMatch(/jevfanity-api/);
     expect(pkg).not.toMatch(/iso-jevdit/);
     expect(pkg).not.toMatch(/jev-linkedin/);
@@ -841,6 +883,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/vidux\/iso-jevdit/);
     expect(pkg).not.toMatch(/ashafizullah\/jev-linkedin/);
     expect(pkg).not.toMatch(/Astro-Han\/jev-harness/);
+    expect(pkg).not.toMatch(/Atikpui007\/jev-sift/);
+    expect(pkg).not.toMatch(/simonsez9510\/jev-cite-check/);
+    expect(pkg).not.toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(pkg).not.toMatch(/finrod21\/jev-transaction-guard/);
+    expect(pkg).not.toMatch(/codebam\/dsh-jev-guardrails/);
     expect(pkg).not.toMatch(/jevfanity-api/);
     expect(pkg).not.toMatch(/iso-jevdit/);
     expect(pkg).not.toMatch(/jev-linkedin/);
@@ -968,6 +1015,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/vidux\/iso-jevdit/);
     expect(lock).not.toMatch(/ashafizullah\/jev-linkedin/);
     expect(lock).not.toMatch(/Astro-Han\/jev-harness/);
+    expect(lock).not.toMatch(/Atikpui007\/jev-sift/);
+    expect(lock).not.toMatch(/simonsez9510\/jev-cite-check/);
+    expect(lock).not.toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(lock).not.toMatch(/finrod21\/jev-transaction-guard/);
+    expect(lock).not.toMatch(/codebam\/dsh-jev-guardrails/);
     expect(lock).not.toMatch(/jevfanity-api/);
     expect(lock).not.toMatch(/iso-jevdit/);
     expect(lock).not.toMatch(/jev-linkedin/);
@@ -1025,6 +1077,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/vidux\/iso-jevdit/);
     expect(lock).not.toMatch(/ashafizullah\/jev-linkedin/);
     expect(lock).not.toMatch(/Astro-Han\/jev-harness/);
+    expect(lock).not.toMatch(/Atikpui007\/jev-sift/);
+    expect(lock).not.toMatch(/simonsez9510\/jev-cite-check/);
+    expect(lock).not.toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(lock).not.toMatch(/finrod21\/jev-transaction-guard/);
+    expect(lock).not.toMatch(/codebam\/dsh-jev-guardrails/);
     expect(lock).not.toMatch(/jevfanity-api/);
     expect(lock).not.toMatch(/iso-jevdit/);
     expect(lock).not.toMatch(/jev-linkedin/);
@@ -1542,6 +1599,20 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Filtering is a routing decision, never destruction/);
     expect(skill).toMatch(/Jev failures fail open/);
     expect(skill).toMatch(/Pass\/fail alone is not significant/);
+    expect(skill).toMatch(/Atikpui007\/jev-sift/);
+    expect(skill).toMatch(/This is a relevance filter, not a safety block/);
+    expect(skill).toMatch(/JEV_FILTER_DROP_THRESHOLD/);
+    expect(skill).toMatch(/simonsez9510\/jev-cite-check/);
+    expect(skill).toMatch(/1회 관찰이며 성능 주장이 아닙니다/);
+    expect(skill).toMatch(/분포 집중도이지 정확도가 아닙니다/);
+    expect(skill).toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(skill).toMatch(/ambiguity must never silently become permission/);
+    expect(skill).toMatch(/do not provide a complete sandbox/);
+    expect(skill).toMatch(/finrod21\/jev-transaction-guard/);
+    expect(skill).toMatch(/IMMUNE TO BOTH/);
+    expect(skill).toMatch(/does not show proof that Jev makes better classification choices/);
+    expect(skill).toMatch(/codebam\/dsh-jev-guardrails/);
+    expect(skill).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(skill).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(skill).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
     expect(skill).toMatch(/0\.85 uncalibrated/);
@@ -2018,6 +2089,20 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Filtering is a routing decision, never destruction/);
     expect(evalDoc).toMatch(/Jev failures fail open/);
     expect(evalDoc).toMatch(/Pass\/fail alone is not significant/);
+    expect(evalDoc).toMatch(/Atikpui007\/jev-sift/);
+    expect(evalDoc).toMatch(/This is a relevance filter, not a safety block/);
+    expect(evalDoc).toMatch(/JEV_FILTER_DROP_THRESHOLD/);
+    expect(evalDoc).toMatch(/simonsez9510\/jev-cite-check/);
+    expect(evalDoc).toMatch(/1회 관찰이며 성능 주장이 아닙니다/);
+    expect(evalDoc).toMatch(/분포 집중도이지 정확도가 아닙니다/);
+    expect(evalDoc).toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(evalDoc).toMatch(/ambiguity must never silently become permission/);
+    expect(evalDoc).toMatch(/do not provide a complete sandbox/);
+    expect(evalDoc).toMatch(/finrod21\/jev-transaction-guard/);
+    expect(evalDoc).toMatch(/IMMUNE TO BOTH/);
+    expect(evalDoc).toMatch(/does not show proof that Jev makes better classification choices/);
+    expect(evalDoc).toMatch(/codebam\/dsh-jev-guardrails/);
+    expect(evalDoc).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(evalDoc).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(evalDoc).toMatch(/0 dangerous allowed\*\* on that (synthetic )?fixture/);
     expect(evalDoc).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -2245,6 +2330,11 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/vidux\/iso-jevdit/);
     expect(install).toMatch(/ashafizullah\/jev-linkedin/);
     expect(install).toMatch(/Astro-Han\/jev-harness/);
+    expect(install).toMatch(/Atikpui007\/jev-sift/);
+    expect(install).toMatch(/simonsez9510\/jev-cite-check/);
+    expect(install).toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(install).toMatch(/finrod21\/jev-transaction-guard/);
+    expect(install).toMatch(/codebam\/dsh-jev-guardrails/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -2449,6 +2539,16 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/Astro-Han\/jev-harness/);
     expect(shape).toMatch(/Filtering is a routing decision, never destruction/);
     expect(shape).toMatch(/Jev failures fail open/);
+    expect(shape).toMatch(/Atikpui007\/jev-sift/);
+    expect(shape).toMatch(/This is a relevance filter, not a safety block/);
+    expect(shape).toMatch(/simonsez9510\/jev-cite-check/);
+    expect(shape).toMatch(/1회 관찰이며 성능 주장이 아닙니다/);
+    expect(shape).toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(shape).toMatch(/do not provide a complete sandbox/);
+    expect(shape).toMatch(/finrod21\/jev-transaction-guard/);
+    expect(shape).toMatch(/IMMUNE TO BOTH/);
+    expect(shape).toMatch(/codebam\/dsh-jev-guardrails/);
+    expect(shape).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(shape).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(shape).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(shape).toMatch(/named lexical skip/);
@@ -2715,6 +2815,16 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Astro-Han\/jev-harness/);
     expect(hosts).toMatch(/Filtering is a routing decision, never destruction/);
     expect(hosts).toMatch(/Jev failures fail open/);
+    expect(hosts).toMatch(/Atikpui007\/jev-sift/);
+    expect(hosts).toMatch(/This is a relevance filter, not a safety block/);
+    expect(hosts).toMatch(/simonsez9510\/jev-cite-check/);
+    expect(hosts).toMatch(/1회 관찰이며 성능 주장이 아닙니다/);
+    expect(hosts).toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(hosts).toMatch(/do not provide a complete sandbox/);
+    expect(hosts).toMatch(/finrod21\/jev-transaction-guard/);
+    expect(hosts).toMatch(/IMMUNE TO BOTH/);
+    expect(hosts).toMatch(/codebam\/dsh-jev-guardrails/);
+    expect(hosts).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(hosts).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(hosts).toMatch(/0 dangerous allowed\*\* on that fixture/);
     expect(hosts).toMatch(/0\.85 uncalibrated/);
@@ -3052,6 +3162,17 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Filtering is a routing decision, never destruction/);
     expect(gates).toMatch(/Jev failures fail open/);
     expect(gates).toMatch(/Pass\/fail alone is not significant/);
+    expect(gates).toMatch(/Atikpui007\/jev-sift/);
+    expect(gates).toMatch(/This is a relevance filter, not a safety block/);
+    expect(gates).toMatch(/JEV_FILTER_DROP_THRESHOLD/);
+    expect(gates).toMatch(/simonsez9510\/jev-cite-check/);
+    expect(gates).toMatch(/1회 관찰이며 성능 주장이 아닙니다/);
+    expect(gates).toMatch(/JasonHZS\/pi-jev-command-guard/);
+    expect(gates).toMatch(/do not provide a complete sandbox/);
+    expect(gates).toMatch(/finrod21\/jev-transaction-guard/);
+    expect(gates).toMatch(/IMMUNE TO BOTH/);
+    expect(gates).toMatch(/codebam\/dsh-jev-guardrails/);
+    expect(gates).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(gates).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(gates).toMatch(/0 dangerous allowed on synthetic 18-case fixture/);
     expect(gates).toMatch(/nekowasabi\/jev-routing-mcp/);
