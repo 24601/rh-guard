@@ -99,7 +99,7 @@ a merge, and not a reward-hack detector.
 
 [apa-agent-harness](https://github.com/AiPersonacademy/apa-agent-harness) is a rebrand of [jev-harness](https://github.com/AntonioCoppe/jev-harness) (`src/` SHA identical). README trajectory verification is **advertised capability ≠ shipped module**. Real pattern: **shadow vs live** (`shadow_noop` / `intendedAction`). Example 0.85 is uncalibrated. Fold gate/eval-integrity only. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[alsoleg89/jev-bouncer](https://github.com/alsoleg89/jev-bouncer) (renamed from [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard)) is a Claude PreToolUse **three-judge** (shell / edits / MCP) + PostToolUse injection sentinel. **Tripwires never deny** (only block auto-allow). Fail-open (no key / timeout → silent; `fail=ask` never fail-to-allow). Quoted README: **Your rules win.** Quoted SECURITY.md: **Not a security boundary.** `on` skips auto-mode classifier (use `guard`). Pin `jev-1.13.0`. Author-labelled **0/148** dangerous shell auto-allowed — not a rh-guard ROC. Distinct from [leepokai/jev-guard](https://github.com/leepokai/jev-guard) and [pablozr/JevGuard](https://github.com/pablozr/JevGuard). Contrast yolo-shell named floor. Do not merge `bouncer.py` into `examples/`. Cousin, not this sidecar.
+[alsoleg89/jev-bouncer](https://github.com/alsoleg89/jev-bouncer) (renamed from [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard)) is a Claude PreToolUse **four-judge** (shell / edits / MCP / Web URLs) + PostToolUse injection sentinel. Web URLs: deterministic; a hit is a **deny**. **Tripwires never deny** (only block auto-allow). Fail-open (no key / timeout → silent; `fail=ask` never fail-to-allow). Quoted README: **Your rules win.** Quoted SECURITY.md: **Not a security boundary.** `on` skips auto-mode classifier (use `guard`). Pin `jev-1.13.0`. Author-labelled **0/148** dangerous shell auto-allowed — not a rh-guard ROC. Distinct from [leepokai/jev-guard](https://github.com/leepokai/jev-guard) and [pablozr/JevGuard](https://github.com/pablozr/JevGuard). Contrast yolo-shell named floor. Do not merge `bouncer.py` into `examples/`. Cousin, not this sidecar.
 
 [pablozr/JevGuard](https://github.com/pablozr/JevGuard) is a semantic policy engine: attributed turn + Jev + local gate → PASS/WARN/FAIL. Incomplete evidence → `UNAVAILABLE` (never a reassuring verdict). Observe-only V0.1. **advertised monorepo ≠ shipped packages**. Policy-integrity cousin of Abide, not reward-hack. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -475,7 +475,7 @@ apa-agent-harness (AiPersonacademy/apa-agent-harness)
   do not merge into examples/
 
 alsoleg89/jev-bouncer (renamed from alsoleg89/jev-guard)
-  Claude PreToolUse three judges (shell / edits / MCP) + PostToolUse injection sentinel
+  Claude PreToolUse four judges (shell / edits / MCP / Web URLs) + PostToolUse injection sentinel
   Tripwires never deny (only block auto-allow); fail-open; fail=ask never fail-to-allow
   Your rules win; Not a security boundary; on skips auto-mode classifier (use guard)
   pin jev-1.13.0; author-labelled 0/148 not a rh-guard ROC
@@ -828,8 +828,9 @@ WaynezProg/jev-kit
   do not merge host installers into examples/
 
 Jev-Examiner (JularDepick/Jev-Examiner)
-  GitHub description: AI content moderation workflow powered by the Jev model
-  empty public tree at capture (created 2026-09-20T04:30:19Z; 409 on main)
+  GitHub description: An AI content moderation workflow powered by the TypeSafe/Jev model
+  empty public tree at capture (created 2026-09-20T04:30:19Z)
+  later README/LICENSE-only; README advertises src/docs not present (advertised tree ≠ shipped source)
   watch; do not invent a shipped moderator
   cousin of gg-friggin-ez / jevmod / GLiGuard / tonedown
   do not merge into examples/
@@ -857,7 +858,7 @@ jeveryword (jkrup/jeveryword)
   text.slice(start, end) === value
   Experimental; too small to support an accuracy claim
   labels must include none; confirm p<0.8
-  cannot invent words that are not in the source
+  cannot make it produce words that are not in the source
   distinct from WaynezProg/jev-kit jev_extract; not PreToolUse
   do not merge into examples/
 
@@ -1049,8 +1050,9 @@ verified UI**.
 **Confidence is not a correctness guarantee**; SECURITY.md **not an
 authorization boundary**; distinct from jonathanavis96/jev-kit Airlock.
  [Jev-Examiner](https://github.com/JularDepick/Jev-Examiner):
-GitHub description only; **empty public tree at capture**; do not invent
-a shipped moderator.
+GitHub description only; **empty public tree at capture**; later README
+advertises `src`/`docs` not in the tree — **advertised tree ≠ shipped source**;
+do not invent a shipped moderator.
 [BubbatheVTOG/pi-jev-tool-guard](https://github.com/BubbatheVTOG/pi-jev-tool-guard):
 quoted **confirmation guard, not an operating-system sandbox**; fail-open
 `evaluatorFailure: "allow"`; rules deterministic over Jev.
@@ -1060,8 +1062,8 @@ from [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard)): quoted
 **Tripwires never deny**.
 [ItisShikhar/gg-friggin-ez](https://github.com/ItisShikhar/gg-friggin-ez):
 41/42 **not a rh-guard ROC**; `AUTO_BAN` is not a safety proof.
-[jkrup/jeveryword](https://github.com/jkrup/jeveryword): quoted **cannot
-invent words that are not in the source**; `text.slice(start, end) ===
+[jkrup/jeveryword](https://github.com/jkrup/jeveryword): quoted **cannot make it produce
+words that are not in the source**; `text.slice(start, end) ===
 value`; distinct from WaynezProg `jev_extract`.
 Cousin, not this sidecar.
 

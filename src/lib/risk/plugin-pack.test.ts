@@ -442,7 +442,8 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/not an authorization boundary/);
 
     expect(readme).toMatch(/JularDepick\/Jev-Examiner/);
-    expect(readme).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(readme).toMatch(/AI content moderation workflow powered by the TypeSafe\/Jev model/);
+    expect(readme).toMatch(/advertised tree ≠ shipped source/);
     expect(readme).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
     expect(readme).toMatch(/confirmation guard, not an operating-system sandbox/);
     expect(readme).toMatch(/alsoleg89\/jev-bouncer/);
@@ -452,7 +453,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/41\/42/);
     expect(readme).toMatch(/AUTO_BAN/);
     expect(readme).toMatch(/jkrup\/jeveryword/);
-    expect(readme).toMatch(/cannot invent words that are not in the source/);
+    expect(readme).toMatch(/cannot make it produce words that are not in the source/);
     expect(readme).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(readme).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
     expect(readme).toMatch(/0\.85 uncalibrated/);
@@ -650,10 +651,13 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/alsoleg89\/jev-bouncer is pablozr\/JevGuard/);
       expect(text, rel).not.toMatch(/pi-jev-tool-guard is pi-jev-gate/);
       expect(text, rel).not.toMatch(/pi-jev-tool-guard is pi-jev-guard/);
+      expect(text, rel).not.toMatch(/pi-jev-tool-guard is pi-jev-approver/);
+      expect(text, rel).not.toMatch(/pi-jev-tool-guard is pi-jev-sentinel/);
       expect(text, rel).not.toMatch(/gg-friggin-ez 41\/42 is a rh-guard ROC/);
       expect(text, rel).not.toMatch(/AUTO_BAN is a safety proof/);
       expect(text, rel).not.toMatch(/jeveryword is WaynezProg/);
       expect(text, rel).not.toMatch(/Jev-Examiner is a shipped moderator/);
+      expect(text, rel).not.toMatch(/p50 \*\*936 ms\*\*/);
       expect(text, rel).not.toMatch(/JEV_GUARD_MODE=on/);
       expect(text, rel).not.toMatch(/Do not merge `guard\.py`/);
     }
@@ -1452,7 +1456,8 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/not an authorization boundary/);
 
     expect(skill).toMatch(/JularDepick\/Jev-Examiner/);
-    expect(skill).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(skill).toMatch(/AI content moderation workflow powered by the TypeSafe\/Jev model/);
+    expect(skill).toMatch(/advertised tree ≠ shipped source/);
     expect(skill).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
     expect(skill).toMatch(/confirmation guard, not an operating-system sandbox/);
     expect(skill).toMatch(/alsoleg89\/jev-bouncer/);
@@ -1462,7 +1467,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/41\/42/);
     expect(skill).toMatch(/AUTO_BAN/);
     expect(skill).toMatch(/jkrup\/jeveryword/);
-    expect(skill).toMatch(/cannot invent words that are not in the source/);
+    expect(skill).toMatch(/cannot make it produce words that are not in the source/);
     expect(skill).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(skill).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
     expect(skill).toMatch(/0\.85 uncalibrated/);
@@ -1914,7 +1919,8 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/not an authorization boundary/);
 
     expect(evalDoc).toMatch(/JularDepick\/Jev-Examiner/);
-    expect(evalDoc).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(evalDoc).toMatch(/AI content moderation workflow powered by the TypeSafe\/Jev model/);
+    expect(evalDoc).toMatch(/advertised tree ≠ shipped source/);
     expect(evalDoc).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
     expect(evalDoc).toMatch(/confirmation guard, not an operating-system sandbox/);
     expect(evalDoc).toMatch(/alsoleg89\/jev-bouncer/);
@@ -1924,7 +1930,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/41\/42/);
     expect(evalDoc).toMatch(/AUTO_BAN/);
     expect(evalDoc).toMatch(/jkrup\/jeveryword/);
-    expect(evalDoc).toMatch(/cannot invent words that are not in the source/);
+    expect(evalDoc).toMatch(/cannot make it produce words that are not in the source/);
     expect(evalDoc).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(evalDoc).toMatch(/0 dangerous allowed\*\* on that (synthetic )?fixture/);
     expect(evalDoc).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -2329,7 +2335,8 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/not an authorization boundary/);
 
     expect(shape).toMatch(/JularDepick\/Jev-Examiner/);
-    expect(shape).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(shape).toMatch(/AI content moderation workflow powered by the TypeSafe\/Jev model/);
+    expect(shape).toMatch(/advertised tree ≠ shipped source/);
     expect(shape).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
     expect(shape).toMatch(/confirmation guard, not an operating-system sandbox/);
     expect(shape).toMatch(/alsoleg89\/jev-bouncer/);
@@ -2339,7 +2346,7 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/41\/42/);
     expect(shape).toMatch(/AUTO_BAN/);
     expect(shape).toMatch(/jkrup\/jeveryword/);
-    expect(shape).toMatch(/cannot invent words that are not in the source/);
+    expect(shape).toMatch(/cannot make it produce words that are not in the source/);
     expect(shape).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(shape).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(shape).toMatch(/named lexical skip/);
@@ -2583,7 +2590,8 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/not an authorization boundary/);
 
     expect(hosts).toMatch(/JularDepick\/Jev-Examiner/);
-    expect(hosts).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(hosts).toMatch(/AI content moderation workflow powered by the TypeSafe\/Jev model/);
+    expect(hosts).toMatch(/advertised tree ≠ shipped source/);
     expect(hosts).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
     expect(hosts).toMatch(/confirmation guard, not an operating-system sandbox/);
     expect(hosts).toMatch(/alsoleg89\/jev-bouncer/);
@@ -2593,7 +2601,7 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/41\/42/);
     expect(hosts).toMatch(/AUTO_BAN/);
     expect(hosts).toMatch(/jkrup\/jeveryword/);
-    expect(hosts).toMatch(/cannot invent words that are not in the source/);
+    expect(hosts).toMatch(/cannot make it produce words that are not in the source/);
     expect(hosts).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(hosts).toMatch(/0 dangerous allowed\*\* on that fixture/);
     expect(hosts).toMatch(/0\.85 uncalibrated/);
@@ -2907,7 +2915,8 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/not an authorization boundary/);
 
     expect(gates).toMatch(/JularDepick\/Jev-Examiner/);
-    expect(gates).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(gates).toMatch(/AI content moderation workflow powered by the TypeSafe\/Jev model/);
+    expect(gates).toMatch(/advertised tree ≠ shipped source/);
     expect(gates).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
     expect(gates).toMatch(/confirmation guard, not an operating-system sandbox/);
     expect(gates).toMatch(/alsoleg89\/jev-bouncer/);
@@ -2917,7 +2926,7 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/41\/42/);
     expect(gates).toMatch(/AUTO_BAN/);
     expect(gates).toMatch(/jkrup\/jeveryword/);
-    expect(gates).toMatch(/cannot invent words that are not in the source/);
+    expect(gates).toMatch(/cannot make it produce words that are not in the source/);
     expect(gates).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(gates).toMatch(/0 dangerous allowed on synthetic 18-case fixture/);
     expect(gates).toMatch(/nekowasabi\/jev-routing-mcp/);
