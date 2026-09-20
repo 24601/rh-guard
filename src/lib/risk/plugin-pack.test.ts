@@ -570,6 +570,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/iluvblender\/yolo-jev-scene-filter/);
     expect(readme).toMatch(/YOLO-World detects; TypeSafe Jev keep\/skips boxes/);
     expect(readme).toMatch(/Jev only filters what YOLO already found/);
+    expect(readme).toMatch(/not hide-never-learned/);
     expect(readme).toMatch(/kurihada\/pi-jev-permit/);
     expect(readme).toMatch(/silence is never consent/);
     expect(readme).toMatch(/A failed judgment is never treated as approval/);
@@ -582,9 +583,11 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/javimp2003\/claude-code-jev-guardrails/);
     expect(readme).toMatch(/Claude thinks\. Jev reacts\. Code decides/);
     expect(readme).toMatch(/advertised ASK_USER ≠ engine emit/);
+    expect(readme).toMatch(/JEV_MODE=mock/);
     expect(readme).toMatch(/vrazraz\/jev-voice-gate/);
     expect(readme).toMatch(/Это не гарантированная замена wake word/);
     expect(readme).toMatch(/pksorensen\/alp-pr-review/);
+    expect(readme).toMatch(/Den får aldrig PR-titel/);
     expect(readme).toMatch(/Ikke en erstatning for branch protection/);
     expect(readme).toMatch(/arashari\/youtube-judol-userscript-jev/);
     expect(readme).toMatch(/silky-x0\/Postmark/);
@@ -955,6 +958,9 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/youtube-judol is rspamd-jev/);
       expect(text, rel).not.toMatch(/YOLO keep is a safety deny/);
       expect(text, rel).not.toMatch(/Jev finds boxes YOLO missed/);
+      expect(text, rel).not.toMatch(/Hide-never-learned cousin/);
+      expect(text, rel).not.toMatch(/Quoted: Jev \*\*får aldrig/);
+      expect(text, rel).not.toMatch(/claude-code no-key is fail-open/);
     }
   });
 
@@ -2099,6 +2105,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/iluvblender\/yolo-jev-scene-filter/);
     expect(skill).toMatch(/YOLO-World detects; TypeSafe Jev keep\/skips boxes/);
     expect(skill).toMatch(/Jev only filters what YOLO already found/);
+    expect(skill).toMatch(/not hide-never-learned/);
     expect(skill).toMatch(/kurihada\/pi-jev-permit/);
     expect(skill).toMatch(/silence is never consent/);
     expect(skill).toMatch(/A failed judgment is never treated as approval/);
@@ -2111,9 +2118,11 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/javimp2003\/claude-code-jev-guardrails/);
     expect(skill).toMatch(/Claude thinks\. Jev reacts\. Code decides/);
     expect(skill).toMatch(/advertised ASK_USER ≠ engine emit/);
+    expect(skill).toMatch(/JEV_MODE=mock/);
     expect(skill).toMatch(/vrazraz\/jev-voice-gate/);
     expect(skill).toMatch(/Это не гарантированная замена wake word/);
     expect(skill).toMatch(/pksorensen\/alp-pr-review/);
+    expect(skill).toMatch(/Den får aldrig PR-titel/);
     expect(skill).toMatch(/Ikke en erstatning for branch protection/);
     expect(skill).toMatch(/arashari\/youtube-judol-userscript-jev/);
     expect(skill).toMatch(/silky-x0\/Postmark/);
@@ -2702,6 +2711,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/iluvblender\/yolo-jev-scene-filter/);
     expect(evalDoc).toMatch(/YOLO-World detects; TypeSafe Jev keep\/skips boxes/);
     expect(evalDoc).toMatch(/Jev only filters what YOLO already found/);
+    expect(evalDoc).toMatch(/not hide-never-learned/);
     expect(evalDoc).toMatch(/kurihada\/pi-jev-permit/);
     expect(evalDoc).toMatch(/silence is never consent/);
     expect(evalDoc).toMatch(/A failed judgment is never treated as approval/);
@@ -2714,9 +2724,11 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/javimp2003\/claude-code-jev-guardrails/);
     expect(evalDoc).toMatch(/Claude thinks\. Jev reacts\. Code decides/);
     expect(evalDoc).toMatch(/advertised ASK_USER ≠ engine emit/);
+    expect(evalDoc).toMatch(/JEV_MODE=mock/);
     expect(evalDoc).toMatch(/vrazraz\/jev-voice-gate/);
     expect(evalDoc).toMatch(/Это не гарантированная замена wake word/);
     expect(evalDoc).toMatch(/pksorensen\/alp-pr-review/);
+    expect(evalDoc).toMatch(/Den får aldrig PR-titel/);
     expect(evalDoc).toMatch(/Ikke en erstatning for branch protection/);
     expect(evalDoc).toMatch(/arashari\/youtube-judol-userscript-jev/);
     expect(evalDoc).toMatch(/silky-x0\/Postmark/);
@@ -3300,6 +3312,7 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/iluvblender\/yolo-jev-scene-filter/);
     expect(shape).toMatch(/YOLO-World detects; TypeSafe Jev keep\/skips boxes/);
     expect(shape).toMatch(/Jev only filters what YOLO already found/);
+    expect(shape).toMatch(/not hide-never-learned/);
     expect(shape).toMatch(/kurihada\/pi-jev-permit/);
     expect(shape).toMatch(/silence is never consent/);
     expect(shape).toMatch(/A failed judgment is never treated as approval/);
@@ -3312,9 +3325,11 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/javimp2003\/claude-code-jev-guardrails/);
     expect(shape).toMatch(/Claude thinks\. Jev reacts\. Code decides/);
     expect(shape).toMatch(/advertised ASK_USER ≠ engine emit/);
+    expect(shape).toMatch(/JEV_MODE=mock/);
     expect(shape).toMatch(/vrazraz\/jev-voice-gate/);
     expect(shape).toMatch(/Это не гарантированная замена wake word/);
     expect(shape).toMatch(/pksorensen\/alp-pr-review/);
+    expect(shape).toMatch(/Den får aldrig PR-titel/);
     expect(shape).toMatch(/Ikke en erstatning for branch protection/);
     expect(shape).toMatch(/arashari\/youtube-judol-userscript-jev/);
     expect(shape).toMatch(/silky-x0\/Postmark/);
@@ -3683,6 +3698,7 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/iluvblender\/yolo-jev-scene-filter/);
     expect(hosts).toMatch(/YOLO-World detects; TypeSafe Jev keep\/skips boxes/);
     expect(hosts).toMatch(/Jev only filters what YOLO already found/);
+    expect(hosts).toMatch(/not hide-never-learned/);
     expect(hosts).toMatch(/kurihada\/pi-jev-permit/);
     expect(hosts).toMatch(/silence is never consent/);
     expect(hosts).toMatch(/A failed judgment is never treated as approval/);
@@ -3695,9 +3711,11 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/javimp2003\/claude-code-jev-guardrails/);
     expect(hosts).toMatch(/Claude thinks\. Jev reacts\. Code decides/);
     expect(hosts).toMatch(/advertised ASK_USER ≠ engine emit/);
+    expect(hosts).toMatch(/JEV_MODE=mock/);
     expect(hosts).toMatch(/vrazraz\/jev-voice-gate/);
     expect(hosts).toMatch(/Это не гарантированная замена wake word/);
     expect(hosts).toMatch(/pksorensen\/alp-pr-review/);
+    expect(hosts).toMatch(/Den får aldrig PR-titel/);
     expect(hosts).toMatch(/Ikke en erstatning for branch protection/);
     expect(hosts).toMatch(/arashari\/youtube-judol-userscript-jev/);
     expect(hosts).toMatch(/silky-x0\/Postmark/);
@@ -4146,6 +4164,7 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/iluvblender\/yolo-jev-scene-filter/);
     expect(gates).toMatch(/YOLO-World detects; TypeSafe Jev keep\/skips boxes/);
     expect(gates).toMatch(/Jev only filters what YOLO already found/);
+    expect(gates).toMatch(/not hide-never-learned/);
     expect(gates).toMatch(/kurihada\/pi-jev-permit/);
     expect(gates).toMatch(/silence is never consent/);
     expect(gates).toMatch(/A failed judgment is never treated as approval/);
@@ -4158,9 +4177,11 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/javimp2003\/claude-code-jev-guardrails/);
     expect(gates).toMatch(/Claude thinks\. Jev reacts\. Code decides/);
     expect(gates).toMatch(/advertised ASK_USER ≠ engine emit/);
+    expect(gates).toMatch(/JEV_MODE=mock/);
     expect(gates).toMatch(/vrazraz\/jev-voice-gate/);
     expect(gates).toMatch(/Это не гарантированная замена wake word/);
     expect(gates).toMatch(/pksorensen\/alp-pr-review/);
+    expect(gates).toMatch(/Den får aldrig PR-titel/);
     expect(gates).toMatch(/Ikke en erstatning for branch protection/);
     expect(gates).toMatch(/arashari\/youtube-judol-userscript-jev/);
     expect(gates).toMatch(/silky-x0\/Postmark/);
