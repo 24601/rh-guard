@@ -658,6 +658,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/philippdubach\/pi-jev-router/);
     expect(readme).toMatch(/Jev output is evidence, not truth/);
     expect(readme).toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(readme).toMatch(/Vite\/Express \*\*phishing dual-spectrum\*\*/);
     expect(readme).toMatch(/Section 4: Counter-Measures are exemplary and decoupled from individual verdicts/);
     expect(readme).toMatch(/bornakapusta\/slop-guard/);
     expect(readme).toMatch(/the reviewer never blocks/);
@@ -1143,6 +1144,9 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/philippdubach\/pi-jev-router is rizafahmi\/pi-jev-task-router/);
       expect(text, rel).not.toMatch(/89% cheaper is a rh-guard ROC/);
       expect(text, rel).not.toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian is zerosweep/);
+      expect(text, rel).not.toMatch(
+        /JEV-Dual-Spectrum-Phishing-Guardian\) is a Next\/Express/
+      );
     }
   });
 
@@ -2519,6 +2523,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/philippdubach\/pi-jev-router/);
     expect(skill).toMatch(/Jev output is evidence, not truth/);
     expect(skill).toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(skill).toMatch(/Vite\/Express \*\*phishing dual-spectrum\*\*/);
     expect(skill).toMatch(/Section 4: Counter-Measures are exemplary and decoupled from individual verdicts/);
     expect(skill).toMatch(/bornakapusta\/slop-guard/);
     expect(skill).toMatch(/the reviewer never blocks/);
@@ -3202,6 +3207,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/philippdubach\/pi-jev-router/);
     expect(evalDoc).toMatch(/Jev output is evidence, not truth/);
     expect(evalDoc).toMatch(/YuyaForest\/JEV-Dual-Spectrum-Phishing-Guardian/);
+    expect(evalDoc).toMatch(/Vite\/Express \*\*phishing dual-spectrum\*\*/);
     expect(evalDoc).toMatch(/Section 4: Counter-Measures are exemplary and decoupled from individual verdicts/);
     expect(evalDoc).toMatch(/bornakapusta\/slop-guard/);
     expect(evalDoc).toMatch(/the reviewer never blocks/);
