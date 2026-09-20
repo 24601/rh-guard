@@ -295,6 +295,16 @@ a merge, and not a reward-hack detector.
 
 [jcr](https://github.com/NiazMorshed2007/jcr) (**Jev Capability Resolver**) MCP `resolve_capabilities`. Quoted: **JCR returns documentation. It does not execute commands.** Quoted: **The included harnesses also stop at explaining the steps needed to carry out a task.** Beam **0.6** / width **3** / depth **16**. Ambiguous / no-match / depth-limit are resolver outcomes, not merge grants. Routing ≠ permission. Treating capability context as attested approval to run is theater. Distinct jev-guard-mcp / jev-router / NiazMorshed2007/jev-review. 80-run 85%/23% **not a rh-guard ROC**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[JevPR](https://github.com/HexyeDEV/JevPR) GitHub App PR router. LOW if composite **< 3.5** → YAML `approve` → GitHub `APPROVE`. Quoted: **Jev is an AI model, and can make mistakes.** `payload["files"]` is not the standard PR files list. LOW auto-APPROVE as a merge grant is shipit-gate theater. Distinct ohernandezdev/jev-pr-review / metalbear-co/jev-auto-approve / MaxIvanyshen/jev-review. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[model-switch](https://github.com/aesgalexis/model-switch) Codex local router. Quoted: **Experimental. Start in `observe` mode.** Quoted: **Fail open**. `minConfidence` **0.65**. No key → passthrough. Routing ≠ permission. 0.65 route as a safety envelope is theater. Distinct jev-model-router / jev-codex-router / Jev-Auto-Router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[typesafe-pi](https://github.com/gvkhosla/typesafe-pi) consent-gated Pi `typesafe_judge`. Disabled by default; `/typesafe enable`. Quoted: **Results are model judgments—not proof or authorization.** Quoted: **never as permission to perform an action.** Fold consent/gate only. Distinct DevMortimer/pi-typesafe / twilwa/pi-typesafe / nardinmarcus/pi-jev-typesafe. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[the-jev-enator](https://github.com/jakenbear/the-jev-enator) Claude hooks: danger gate / failure notice / completion check. Quoted: **all three fail open**. Quoted: **The completion check does not block anything by default.** 0.80/0.90 uncalibrated. **23/23** **not a rh-guard ROC**. Enforcing uncalibrated floors is safety theater. Distinct jevgate / jev-gate / claude-code-jev / jev-kit / jev-bouncer. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-vault-gate](https://github.com/sohryuu101/jev-vault-gate) Claude plugin noul gate + topic Choice; verbatim capture. Quoted: **never blocks or alters the actual turn**. Quoted: **Nothing is ever deleted automatically**. Threshold **0.6**. `plugin.json` 0.3.0 ≠ package.json 0.1.0. Distinct jev-carryforward / jev-recall / invalidate. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
@@ -1586,6 +1596,49 @@ NiazMorshed2007/jcr
   routing ≠ permission; treating capability context as attested approval to run is theater
   80-run 85%/23% not a rh-guard ROC; jev-latest moving alias
   distinct raniellimontagna/jev-guard-mcp / reallygood83/jev-router / NiazMorshed2007/jev-review
+  do not merge into examples/
+
+HexyeDEV/JevPR
+  GitHub App; typesafe-sdk>=0.7.0; Nouls + Score 0–9; composite 0.45/0.35/0.20
+  LOW if score < 3.5; YAML LOW: action: approve → GitHub APPROVE
+  Jev is an AI model, and can make mistakes
+  payload["files"] is not the standard GitHub PR event files list
+  LOW auto-APPROVE is not a merge grant; hard-gating soft judgment / shipit-gate theater
+  distinct ohernandezdev/jev-pr-review / metalbear-co/jev-auto-approve / MaxIvanyshen/jev-review
+  do not merge into examples/
+
+aesgalexis/model-switch
+  Codex local model/reasoning router; observe default; fail open
+  minConfidence 0.65; luna/terra/sol; Astra excluded; no key → passthrough
+  routing ≠ permission; 0.65 route is not a safety envelope
+  distinct Mandrilsquad1441/jev-model-router / 0xNatoshi/jev-codex-router / miniLV/Jev-Auto-Router
+  do not merge into examples/
+
+gvkhosla/typesafe-pi
+  consent-gated typesafe_judge; disabled by default; /typesafe enable
+  Results are model judgments—not proof or authorization
+  never as permission to perform an action
+  fold consent/gate only; skip workflow skill
+  distinct DevMortimer/pi-typesafe / twilwa/pi-typesafe / nardinmarcus/pi-jev-typesafe
+  pfuller/Typesafe-Pi is a 2011 Scala tutorial, not TypeSafe Jev
+  do not merge into examples/pi-extension.ts
+
+jakenbear/the-jev-enator
+  danger gate PreToolUse enforcing; failure notice PostToolUse inject; completion check Stop log-only
+  all three fail open; The completion check does not block anything by default
+  jev-latest moving alias; 0.80/0.90 uncalibrated
+  23/23, 19/19, 12 fixtures not a rh-guard ROC
+  enforcing uncalibrated floors is hard-gating soft judgment / safety theater
+  distinct thevibeworks/jevgate / totally-tim/jev-gate / claude-code-jev / jev-kit / jev-bouncer
+  do not merge into examples/
+
+sohryuu101/jev-vault-gate
+  noul gate + topic Choice; verbatim capture; never blocks
+  Nothing is ever deleted automatically
+  threshold 0.6; jev-latest moving alias
+  plugin.json 0.3.0 ≠ package.json 0.1.0
+  0.6 capture is not a safety grant; safe_to_delete is not auto-delete
+  distinct Dharundp6/jev-carryforward / samdotmak/jev-recall / chopratejas/invalidate
   do not merge into examples/
 
 localjev (githubnext/localjev)
