@@ -288,6 +288,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/shadow vs live/);
     expect(readme).toMatch(/shadow_noop/);
     expect(readme).toMatch(/alsoleg89\/jev-guard/);
+    expect(readme).toMatch(/alsoleg89\/jev-bouncer/);
     expect(readme).toMatch(/Tripwires never deny/);
     expect(readme).toMatch(/pablozr\/JevGuard/);
     expect(readme).toMatch(/never turns incomplete evidence/);
@@ -439,6 +440,19 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/WaynezProg\/jev-kit/);
     expect(readme).toMatch(/Confidence is not a correctness guarantee/);
     expect(readme).toMatch(/not an authorization boundary/);
+
+    expect(readme).toMatch(/JularDepick\/Jev-Examiner/);
+    expect(readme).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(readme).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(readme).toMatch(/confirmation guard, not an operating-system sandbox/);
+    expect(readme).toMatch(/alsoleg89\/jev-bouncer/);
+    expect(readme).toMatch(/Your rules win/);
+    expect(readme).toMatch(/Not a security boundary/);
+    expect(readme).toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(readme).toMatch(/41\/42/);
+    expect(readme).toMatch(/AUTO_BAN/);
+    expect(readme).toMatch(/jkrup\/jeveryword/);
+    expect(readme).toMatch(/cannot invent words that are not in the source/);
     expect(readme).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(readme).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
     expect(readme).toMatch(/0\.85 uncalibrated/);
@@ -628,6 +642,23 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 2246 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/allow bypasses host deny/);
+      expect(text, rel).not.toMatch(/alsoleg89\/jev-bouncer is leepokai\/jev-guard/);
+      expect(text, rel).not.toMatch(/alsoleg89\/jev-bouncer is pablozr\/JevGuard/);
+      expect(text, rel).not.toMatch(/pi-jev-tool-guard is pi-jev-gate/);
+      expect(text, rel).not.toMatch(/pi-jev-tool-guard is pi-jev-guard/);
+      expect(text, rel).not.toMatch(/gg-friggin-ez 41\/42 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/AUTO_BAN is a safety proof/);
+      expect(text, rel).not.toMatch(/jeveryword is WaynezProg/);
+      expect(text, rel).not.toMatch(/Jev-Examiner is a shipped moderator/);
+      expect(text, rel).not.toMatch(/JEV_GUARD_MODE=on/);
+      expect(text, rel).not.toMatch(/Do not merge `guard\.py`/);
+    }
+  });
+
   it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
     const productPaths = [
       ...PUBLIC_COPY_PATHS,
@@ -707,6 +738,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/apa-agent-harness/);
     expect(pkg).not.toMatch(/@aipersona\/agent-harness/);
     expect(pkg).not.toMatch(/alsoleg89\/jev-guard/);
+    expect(pkg).not.toMatch(/alsoleg89\/jev-bouncer/);
+    expect(pkg).not.toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(pkg).not.toMatch(/JularDepick\/Jev-Examiner/);
+    expect(pkg).not.toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(pkg).not.toMatch(/jkrup\/jeveryword/);
     expect(pkg).not.toMatch(/pablozr\/JevGuard/);
     expect(pkg).not.toMatch(/jev-proving-ground/);
     expect(pkg).not.toMatch(/jevbrain/);
@@ -752,6 +788,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/muthuishere\/herdr-jev/);
     expect(pkg).not.toMatch(/AiPersonacademy\/apa-agent-harness/);
     expect(pkg).not.toMatch(/alsoleg89\/jev-guard/);
+    expect(pkg).not.toMatch(/alsoleg89\/jev-bouncer/);
+    expect(pkg).not.toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(pkg).not.toMatch(/JularDepick\/Jev-Examiner/);
+    expect(pkg).not.toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(pkg).not.toMatch(/jkrup\/jeveryword/);
     expect(pkg).not.toMatch(/pablozr\/JevGuard/);
     expect(pkg).not.toMatch(/ybadragon\/jev-proving-ground/);
     expect(pkg).not.toMatch(/Synxneuos\/jevbrain/);
@@ -867,6 +908,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/apa-agent-harness/);
     expect(lock).not.toMatch(/@aipersona\/agent-harness/);
     expect(lock).not.toMatch(/alsoleg89\/jev-guard/);
+    expect(lock).not.toMatch(/alsoleg89\/jev-bouncer/);
+    expect(lock).not.toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(lock).not.toMatch(/JularDepick\/Jev-Examiner/);
+    expect(lock).not.toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(lock).not.toMatch(/jkrup\/jeveryword/);
     expect(lock).not.toMatch(/pablozr\/JevGuard/);
     expect(lock).not.toMatch(/jev-proving-ground/);
     expect(lock).not.toMatch(/jevbrain/);
@@ -912,6 +958,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/muthuishere\/herdr-jev/);
     expect(lock).not.toMatch(/AiPersonacademy\/apa-agent-harness/);
     expect(lock).not.toMatch(/alsoleg89\/jev-guard/);
+    expect(lock).not.toMatch(/alsoleg89\/jev-bouncer/);
+    expect(lock).not.toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(lock).not.toMatch(/JularDepick\/Jev-Examiner/);
+    expect(lock).not.toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(lock).not.toMatch(/jkrup\/jeveryword/);
     expect(lock).not.toMatch(/pablozr\/JevGuard/);
     expect(lock).not.toMatch(/ybadragon\/jev-proving-ground/);
     expect(lock).not.toMatch(/Synxneuos\/jevbrain/);
@@ -1252,6 +1303,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/shadow vs live/);
     expect(skill).toMatch(/shadow_noop/);
     expect(skill).toMatch(/alsoleg89\/jev-guard/);
+    expect(skill).toMatch(/alsoleg89\/jev-bouncer/);
     expect(skill).toMatch(/Tripwires never deny/);
     expect(skill).toMatch(/pablozr\/JevGuard/);
     expect(skill).toMatch(/never turns incomplete evidence/);
@@ -1398,6 +1450,19 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/WaynezProg\/jev-kit/);
     expect(skill).toMatch(/Confidence is not a correctness guarantee/);
     expect(skill).toMatch(/not an authorization boundary/);
+
+    expect(skill).toMatch(/JularDepick\/Jev-Examiner/);
+    expect(skill).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(skill).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(skill).toMatch(/confirmation guard, not an operating-system sandbox/);
+    expect(skill).toMatch(/alsoleg89\/jev-bouncer/);
+    expect(skill).toMatch(/Your rules win/);
+    expect(skill).toMatch(/Not a security boundary/);
+    expect(skill).toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(skill).toMatch(/41\/42/);
+    expect(skill).toMatch(/AUTO_BAN/);
+    expect(skill).toMatch(/jkrup\/jeveryword/);
+    expect(skill).toMatch(/cannot invent words that are not in the source/);
     expect(skill).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(skill).toMatch(/0 dangerous allowed\*\* on (that fixture|a synthetic 18-case fixture)/);
     expect(skill).toMatch(/0\.85 uncalibrated/);
@@ -1700,6 +1765,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/shadow vs live/);
     expect(evalDoc).toMatch(/shadow_noop/);
     expect(evalDoc).toMatch(/alsoleg89\/jev-guard/);
+    expect(evalDoc).toMatch(/alsoleg89\/jev-bouncer/);
     expect(evalDoc).toMatch(/Tripwires never deny/);
     expect(evalDoc).toMatch(/pablozr\/JevGuard/);
     expect(evalDoc).toMatch(/never turns incomplete evidence/);
@@ -1846,6 +1912,19 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/WaynezProg\/jev-kit/);
     expect(evalDoc).toMatch(/Confidence is not a correctness guarantee/);
     expect(evalDoc).toMatch(/not an authorization boundary/);
+
+    expect(evalDoc).toMatch(/JularDepick\/Jev-Examiner/);
+    expect(evalDoc).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(evalDoc).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(evalDoc).toMatch(/confirmation guard, not an operating-system sandbox/);
+    expect(evalDoc).toMatch(/alsoleg89\/jev-bouncer/);
+    expect(evalDoc).toMatch(/Your rules win/);
+    expect(evalDoc).toMatch(/Not a security boundary/);
+    expect(evalDoc).toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(evalDoc).toMatch(/41\/42/);
+    expect(evalDoc).toMatch(/AUTO_BAN/);
+    expect(evalDoc).toMatch(/jkrup\/jeveryword/);
+    expect(evalDoc).toMatch(/cannot invent words that are not in the source/);
     expect(evalDoc).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(evalDoc).toMatch(/0 dangerous allowed\*\* on that (synthetic )?fixture/);
     expect(evalDoc).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -2063,6 +2142,12 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/Ormus-Solutions\/karat-filter/);
     expect(install).toMatch(/Ormus-Solutions\/gold-assay/);
     expect(install).toMatch(/WaynezProg\/jev-kit/);
+
+    expect(install).toMatch(/JularDepick\/Jev-Examiner/);
+    expect(install).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(install).toMatch(/alsoleg89\/jev-bouncer/);
+    expect(install).toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(install).toMatch(/jkrup\/jeveryword/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -2117,6 +2202,7 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/advertised capability ≠ shipped module/);
     expect(shape).toMatch(/shadow vs live/);
     expect(shape).toMatch(/alsoleg89\/jev-guard/);
+    expect(shape).toMatch(/alsoleg89\/jev-bouncer/);
     expect(shape).toMatch(/Tripwires never deny/);
     expect(shape).toMatch(/pablozr\/JevGuard/);
     expect(shape).toMatch(/advertised monorepo ≠ shipped packages/);
@@ -2241,6 +2327,19 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/WaynezProg\/jev-kit/);
     expect(shape).toMatch(/Confidence is not a correctness guarantee/);
     expect(shape).toMatch(/not an authorization boundary/);
+
+    expect(shape).toMatch(/JularDepick\/Jev-Examiner/);
+    expect(shape).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(shape).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(shape).toMatch(/confirmation guard, not an operating-system sandbox/);
+    expect(shape).toMatch(/alsoleg89\/jev-bouncer/);
+    expect(shape).toMatch(/Your rules win/);
+    expect(shape).toMatch(/Not a security boundary/);
+    expect(shape).toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(shape).toMatch(/41\/42/);
+    expect(shape).toMatch(/AUTO_BAN/);
+    expect(shape).toMatch(/jkrup\/jeveryword/);
+    expect(shape).toMatch(/cannot invent words that are not in the source/);
     expect(shape).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(shape).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(shape).toMatch(/named lexical skip/);
@@ -2350,6 +2449,7 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/shadow vs live/);
     expect(hosts).toMatch(/shadow_noop/);
     expect(hosts).toMatch(/alsoleg89\/jev-guard/);
+    expect(hosts).toMatch(/alsoleg89\/jev-bouncer/);
     expect(hosts).toMatch(/Tripwires never deny/);
     expect(hosts).toMatch(/pablozr\/JevGuard/);
     expect(hosts).toMatch(/advertised monorepo ≠ shipped packages/);
@@ -2481,6 +2581,19 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/WaynezProg\/jev-kit/);
     expect(hosts).toMatch(/Confidence is not a correctness guarantee/);
     expect(hosts).toMatch(/not an authorization boundary/);
+
+    expect(hosts).toMatch(/JularDepick\/Jev-Examiner/);
+    expect(hosts).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(hosts).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(hosts).toMatch(/confirmation guard, not an operating-system sandbox/);
+    expect(hosts).toMatch(/alsoleg89\/jev-bouncer/);
+    expect(hosts).toMatch(/Your rules win/);
+    expect(hosts).toMatch(/Not a security boundary/);
+    expect(hosts).toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(hosts).toMatch(/41\/42/);
+    expect(hosts).toMatch(/AUTO_BAN/);
+    expect(hosts).toMatch(/jkrup\/jeveryword/);
+    expect(hosts).toMatch(/cannot invent words that are not in the source/);
     expect(hosts).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(hosts).toMatch(/0 dangerous allowed\*\* on that fixture/);
     expect(hosts).toMatch(/0\.85 uncalibrated/);
@@ -2651,6 +2764,7 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/shadow vs live/);
     expect(gates).toMatch(/shadow_noop/);
     expect(gates).toMatch(/alsoleg89\/jev-guard/);
+    expect(gates).toMatch(/alsoleg89\/jev-bouncer/);
     expect(gates).toMatch(/Tripwires never deny/);
     expect(gates).toMatch(/pablozr\/JevGuard/);
     expect(gates).toMatch(/advertised monorepo ≠ shipped packages/);
@@ -2791,6 +2905,19 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/WaynezProg\/jev-kit/);
     expect(gates).toMatch(/Confidence is not a correctness guarantee/);
     expect(gates).toMatch(/not an authorization boundary/);
+
+    expect(gates).toMatch(/JularDepick\/Jev-Examiner/);
+    expect(gates).toMatch(/AI content moderation workflow powered by the Jev model/);
+    expect(gates).toMatch(/BubbatheVTOG\/pi-jev-tool-guard/);
+    expect(gates).toMatch(/confirmation guard, not an operating-system sandbox/);
+    expect(gates).toMatch(/alsoleg89\/jev-bouncer/);
+    expect(gates).toMatch(/Your rules win/);
+    expect(gates).toMatch(/Not a security boundary/);
+    expect(gates).toMatch(/ItisShikhar\/gg-friggin-ez/);
+    expect(gates).toMatch(/41\/42/);
+    expect(gates).toMatch(/AUTO_BAN/);
+    expect(gates).toMatch(/jkrup\/jeveryword/);
+    expect(gates).toMatch(/cannot invent words that are not in the source/);
     expect(gates).toMatch(/adds a 264 ms hop rather than removing one/);
     expect(gates).toMatch(/0 dangerous allowed on synthetic 18-case fixture/);
     expect(gates).toMatch(/nekowasabi\/jev-routing-mcp/);
