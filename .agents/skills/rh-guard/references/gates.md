@@ -85,7 +85,7 @@ a merge, and not a reward-hack detector.
 
 [jev-kit](https://github.com/jonathanavis96/jev-kit) is a Claude PreToolUse **Airlock**: code pre-filter first; Jev only for the ambiguous half; fail-open. Deny needs confidence ≥ 0.8 and margin ≥ 0.4. Quoted README: **"This is not a security control."** Gaming: `[airlock-ok:]` override; loop protection never denies the same call twice in ten minutes. Labelled-eval 100% / A/B zero denies are not a rh-guard ROC. Belay is anti-done-without-reading. Treating fail-open hygiene Jev as a hard safety envelope is confidence theater / hard-gating soft judgment as "safety." Do not merge into `examples/`. Cousin, not this sidecar.
 
-[agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) is a dual-gate MCP proxy plus Claude hooks: screen tool calls **before they run** and results **before the agent reads**. Shadow / enforce / strict; never auto-approves. InjecAgent AUC **0.976** is not a safety proof. A shape-mismatched replacement is **discarded without complaint** (advertised screened ≠ served payload; silent FALLBACK cousin). Do not merge into `examples/`. Cousin, not this sidecar.
+[agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) is a dual-gate MCP proxy plus Claude hooks: screen tool calls **before they run** and results **before the agent reads**. Shadow / enforce / strict; never auto-approves. InjecAgent AUC **0.976** is not a safety proof. A shape-mismatched replacement is **discarded without complaint** (advertised screened ≠ served payload; silent FALLBACK cousin). Distinct from [Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness) (quoted **Filtering is a routing decision, never destruction**; quoted **Jev failures fail open**). Do not merge into `examples/`. Cousin, not this sidecar.
 
 [opencode-intent-gate](https://github.com/hoshinodis/opencode-intent-gate) is an OpenCode `context` hook: four Nouls; `isWorkThreshold` 0.5 / `dimensionThreshold` 0.75 inject a system directive to ask and not start tool calls this turn. **The gate is a system directive, not a hard block.** Hope the model asks (jev-carryforward 0/4). Treating that soft inject as a safety veto is confidence theater. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -97,7 +97,7 @@ a merge, and not a reward-hack detector.
 
 [herdr-jev](https://github.com/muthuishere/herdr-jev) is a Herdr prompt-path gate via openjev NLI. Soft permission/gate that **owns** the submit path. Quoted README: **Nothing here works yet.** Distinct from TypeSafe Jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[apa-agent-harness](https://github.com/AiPersonacademy/apa-agent-harness) is a rebrand of [jev-harness](https://github.com/AntonioCoppe/jev-harness) (`src/` SHA identical). README trajectory verification is **advertised capability ≠ shipped module**. Real pattern: **shadow vs live** (`shadow_noop` / `intendedAction`). Example 0.85 is uncalibrated. Fold gate/eval-integrity only. Do not merge into `examples/`. Cousin, not this sidecar.
+[apa-agent-harness](https://github.com/AiPersonacademy/apa-agent-harness) is a rebrand of [jev-harness](https://github.com/AntonioCoppe/jev-harness) (`src/` SHA identical). README trajectory verification is **advertised capability ≠ shipped module**. Real pattern: **shadow vs live** (`shadow_noop` / `intendedAction`). Example 0.85 is uncalibrated. Distinct from [Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness) (pre-model tool-result filter). Fold gate/eval-integrity only. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [alsoleg89/jev-bouncer](https://github.com/alsoleg89/jev-bouncer) (renamed from [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard)) is a Claude PreToolUse **four-judge** (shell / edits / MCP / Web URLs) + PostToolUse injection sentinel. Web URLs: deterministic; a hit is a **deny**. **Tripwires never deny** (only block auto-allow). Fail-open (no key / timeout → silent; `fail=ask` never fail-to-allow). Quoted README: **Your rules win.** Quoted SECURITY.md: **Not a security boundary.** `on` skips auto-mode classifier (use `guard`). Pin `jev-1.13.0`. Author-labelled **0/148** dangerous shell auto-allowed — not a rh-guard ROC. Distinct from [leepokai/jev-guard](https://github.com/leepokai/jev-guard) and [pablozr/JevGuard](https://github.com/pablozr/JevGuard). Contrast yolo-shell named floor. Do not merge `bouncer.py` into `examples/`. Cousin, not this sidecar.
 
@@ -136,6 +136,14 @@ a merge, and not a reward-hack detector.
 [tonedown](https://github.com/ziziphus-jujuba-zao/tonedown) grades 0–4. Quoted: **the engine only measures.** 74/74 **proves the pipeline, not the model.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [jevmod](https://github.com/ohernandezdev/jevmod) is productized moderation. Fails open (`error_open`). AUROC is a **sanity benchmark, not a leaderboard.** Distinct from ohernandezdev/jev-pr-review. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jevfanity-api](https://github.com/TickerDev/jevfanity-api) is a Cloudflare Worker moderation API. **code owns `flagged`** at default **0.75**. **`flagged` is a policy bit, not a safety proof.** Missing key → 500, not a named lexical fallback. Quoted: **CORS is open by default.** Distinct from gg-friggin-ez / Jev-Examiner. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[iso-jevdit](https://github.com/vidux/iso-jevdit) is an ISO/IEC 27001:2022 Annex A CLI. Quoted: **the audit engine is not finished.** **3 of ~36** checks; report **Not yet**. Quoted: **This is not a certification, and it is not a conformity assessment.** `failOn` is **Accepted today, acted on when the audit engine lands**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-linkedin](https://github.com/ashafizullah/jev-linkedin) scores LinkedIn job↔CV fit. Quoted: **not real-world probabilities.** Quoted: **Treat them as an early signal, not a decision.** CV is **sent** to `/v1/systemone` (PII). Distinct from bias-bench. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness) filters tool results through Jev **before the main model sees it**. Distinct from [AntonioCoppe/jev-harness](https://github.com/AntonioCoppe/jev-harness). Quoted: **Filtering is a routing decision, never destruction.** Quoted: **Jev failures fail open.** 25/30 **not a rh-guard ROC**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -862,6 +870,42 @@ jeveryword (jkrup/jeveryword)
   distinct from WaynezProg/jev-kit jev_extract; not PreToolUse
   do not merge into examples/
 
+jevfanity-api (TickerDev/jevfanity-api)
+  Cloudflare Worker POST /v1/moderate; code owns flagged
+  default threshold 0.75 / level medium; jev-latest moving alias
+  max across chunks (FP-heavy); missing key → 500 not lexical fallback
+  flagged is a policy bit, not a safety proof
+  CORS open by default; posted text leaves to TypeSafe (PII)
+  distinct from gg-friggin-ez / Jev-Examiner
+  do not merge into examples/
+
+iso-jevdit (vidux/iso-jevdit)
+  ISO/IEC 27001:2022 Annex A CLI; audit engine is not finished
+  3 of ~36 checks; report Not yet
+  not a certification / not a conformity assessment
+  failOn Accepted today, acted on when the audit engine lands
+  README describes violation-label mass (not confidence); not shipped until engine lands
+  today only network call is verifying a key; source is sent when engine lands
+  do not merge into examples/
+
+jev-linkedin (ashafizullah/jev-linkedin)
+  Chrome MV3 job↔CV fit; code computes match % from the distribution
+  odds are the model's judgement, not real-world probabilities
+  Treat them as an early signal, not a decision
+  CV sent to /v1/systemone (PII); opportunity_signals not sent at all if unread
+  distinct from bias-bench / jev-bias-bench
+  not a rh-guard ROC
+  do not merge into examples/
+
+Astro-Han/jev-harness
+  filter tool results before the main model sees them
+  distinct from AntonioCoppe/jev-harness and apa-agent-harness
+  Filtering is a routing decision, never destruction
+  Jev failures fail open; keep at p > 0.5
+  25/30 not a rh-guard ROC; Pass/fail alone is not significant
+  cousin of agent-chaperone / jev-routing
+  do not merge into examples/
+
 localjev (githubnext/localjev)
   wire-compatible POST /v1/systemone; prompted JSON probs, not logits
   evaluate calibration on your workload before consequential decisions
@@ -1065,6 +1109,7 @@ from [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard)): quoted
 [jkrup/jeveryword](https://github.com/jkrup/jeveryword): quoted **cannot make it produce
 words that are not in the source**; `text.slice(start, end) ===
 value`; distinct from WaynezProg `jev_extract`.
+[TickerDev/jevfanity-api](https://github.com/TickerDev/jevfanity-api): **code owns `flagged`**; **`flagged` is a policy bit, not a safety proof**; default **0.75**; missing key → 500. [vidux/iso-jevdit](https://github.com/vidux/iso-jevdit): quoted **the audit engine is not finished**; quoted **This is not a certification, and it is not a conformity assessment**; `failOn` **Accepted today, acted on when the audit engine lands**. [ashafizullah/jev-linkedin](https://github.com/ashafizullah/jev-linkedin): quoted **not real-world probabilities**; quoted **Treat them as an early signal, not a decision**; CV **sent** to `/v1/systemone`. [Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness): quoted **Filtering is a routing decision, never destruction**; quoted **Jev failures fail open**; 25/30 **not a rh-guard ROC**; distinct from AntonioCoppe/jev-harness.
 Cousin, not this sidecar.
 
 ## Polarity
