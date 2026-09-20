@@ -75,7 +75,7 @@ a merge, and not a reward-hack detector.
 
 [hermes-plugin-jev](https://github.com/robbyczgw-cla/hermes-plugin-jev) is a Hermes host adapter. Shadow default. **It cannot grant permission.** Missing key: plugin inactive. Timeouts: Jev abstains. Contrast jev-decisions (advisory reviews) and hermes-jev-router (model-route / skip-main-model). Same-named Mrmimee tree is a tool plugin, not a hook adapter. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[jev-routing](https://github.com/nekowasabi/jev-routing) is a single Go binary harness (explicitly **not an MCP server**): drop/truncate tool results **without summarizing**, then Jev Choice(next tool)+Noul(done) in parallel, then rewrite `tools[]` to 1 schema, then strip thinking. Default `filter`; `forced` only with a verified real Jev answer. No key → on-device classifier. Advisory filter vs hard route. Cousin of slo-router / pi-jev-control. Do not merge into `examples/`. Cousin, not this sidecar.
+[jev-routing](https://github.com/nekowasabi/jev-routing) is a single Go binary harness (explicitly **not an MCP server**): drop/truncate tool results **without summarizing**, then Jev Choice(next tool)+Noul(done) in parallel, then rewrite `tools[]` to 1 schema, then strip thinking. Default `filter`; `forced` only with a verified real Jev answer. No key → on-device classifier. Distinct from [nekowasabi/jev-routing-mcp](https://github.com/nekowasabi/jev-routing-mcp). Advisory filter vs hard route. Cousin of slo-router / pi-jev-control. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [classifier-dev](https://github.com/mrmps/classifier-dev) is an eval-integrity cousin, not a gate: advertised backend ≠ served backend. Silent FALLBACK (`granite-4.0-h-micro` at F1 **0.546** vs advertised ~**0.800**). Digest now marks `FALLBACK`; `eval/bench.py` measures a model offline before it ships. Quote numbers only with digest/`FALLBACK` markers; do not hard-gate on undeclared-fallback confidence. **undeclared fallback = eval integrity failure**; advertised score ≠ live model. Not a rh-guard peer.
 
@@ -141,11 +141,11 @@ a merge, and not a reward-hack detector.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
 
-[hermes-jev-skills](https://github.com/kerpopule/hermes-jev-skills) is a Hermes skill pack: routing / memory (hidden-instruction) / compaction / skill select / triage / computer-use gated by **safe action tables**; dashboard `on`/`shadow`/`off`. Quoted: **Everything fails open**. Jev can only return an action id from the table. **Never read `dropped_injection_ids`**. **Shadow first, and mean it**. Fold integrity only, not CUA recipes. Do not merge into `examples/`. Cousin, not this sidecar.
+[hermes-jev-skills](https://github.com/kerpopule/hermes-jev-skills) is a Hermes skill pack: routing / memory (hidden-instruction) / compaction / skill select / triage / computer-use gated by **safe action tables**; dashboard `on`/`shadow`/`off`. Quoted README: **Everything fails open**. Named lexical skip, not live Jev (acknowledgements). Quoted `skills/jev-memory/SKILL.md`: **Never read `dropped_injection_ids`**. Quoted enablement: **Shadow first, and mean it**. Distinct from [rsdkrasen/hermes-jev-router](https://github.com/rsdkrasen/hermes-jev-router) and [cdepuy/hermes-skill-router](https://github.com/cdepuy/hermes-skill-router); in-repo `jevkit/` ≠ [jonathanavis96/jev-kit](https://github.com/jonathanavis96/jev-kit). Fold integrity only, not CUA recipes. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[hermes-skill-router](https://github.com/cdepuy/hermes-skill-router) is a local Laya skill inject via the **user-message channel**. Quoted: **Fail-open** if Laya is down. Quoted: **Accuracy is ~good, not perfect**. Contrast hermes-switchyard (**never loads the skill**) — this plugin *does* inject. Inject ≠ grant. Do not merge into `examples/`. Cousin, not this sidecar.
+[hermes-skill-router](https://github.com/cdepuy/hermes-skill-router) is a local Laya skill inject via the **user-message channel**. Quoted: **Fail-open** if Laya is down. Quoted: **Accuracy is ~good, not perfect**. Contrast hermes-switchyard (**never loads the skill**) — this plugin *does* inject. Inject ≠ grant. Same-named [xXLODXx/hermes-skill-router](https://github.com/xXLODXx/hermes-skill-router) / [LLM-Architects/hermes-skill-router](https://github.com/LLM-Architects/hermes-skill-router) / [bkutasi/hermes-skill-router](https://github.com/bkutasi/hermes-skill-router) / [MKI13/hermes-skill-router](https://github.com/MKI13/hermes-skill-router) — this card is cdepuy. Hermes prompt-cache, not jevcache. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[dgp](https://github.com/numerous-com/dgp) is typed assessment then application-side **guarded commit**. Assessors do not execute. Quoted: **application code retains control**; **Speculative assessments cannot authorize effects**. Primary protocol fold is in Augustus; here the integrity boundary. Do not merge into `examples/`. Cousin, not this sidecar.
+[dgp](https://github.com/numerous-com/dgp) is typed assessment then application-side **guarded commit**. Assessors do not execute. Quoted README: **application code retains control**. Quoted DGP `docs/TYPESAFE_JEV.md` (theirs, not TypeSafe): **Speculative assessments cannot authorize effects**; cache hit ≠ live Jev. Primary protocol fold is in Augustus; here the integrity boundary. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: wire-compatible prompted JSON probs, not logits. Evaluate calibration on your workload before consequential decisions. Not a new hook pack.
 
@@ -380,6 +380,7 @@ jev-routing (nekowasabi/jev-routing)
   Go harness Claude/Codex/Grok/Cursor/Devin; not an MCP server
   drop/truncate without summarizing; Choice+Noul in parallel; tools[] → 1 schema; strip thinking
   default filter; forced only with a verified real Jev answer
+  distinct from nekowasabi/jev-routing-mcp (MCP add leaves tools[])
   PreToolUse cannot strip the catalog; advisory vs hard route
 
 classifier-dev (mrmps/classifier-dev)
@@ -594,7 +595,11 @@ pi-jev-sentinel (harshwasan/pi-jev-sentinel)
 hermes-jev-skills (kerpopule/hermes-jev-skills)
   routing / memory hidden-instruction / compaction / skill / triage / action tables
   Everything fails open; Jev can only return an action id from the table
-  Never read dropped_injection_ids; Shadow first, and mean it
+  named lexical skip, not live Jev (acknowledgements)
+  Quoted skills/jev-memory/SKILL.md: Never read dropped_injection_ids
+  Quoted enablement: Shadow first, and mean it
+  distinct from rsdkrasen/hermes-jev-router and cdepuy/hermes-skill-router
+  in-repo jevkit/ ≠ jonathanavis96/jev-kit
   fold integrity only, not CUA recipes
   do not merge into examples/
 
@@ -602,12 +607,15 @@ hermes-skill-router (cdepuy/hermes-skill-router)
   local Laya pre_llm_call; user-message channel (cache-safe)
   Fail-open if Laya down; Accuracy is ~good, not perfect
   inject ≠ grant (contrast switchyard never loads the skill)
+  same-named xXLODXx / LLM-Architects / bkutasi / MKI13 — this card is cdepuy
+  Hermes prompt-cache, not jevcache
   do not merge into examples/
 
 dgp (numerous-com/dgp)
   typed assessment then application-side guarded commit
   assessors do not execute; application code retains control
-  Speculative assessments cannot authorize effects
+  Quoted DGP docs/TYPESAFE_JEV.md (theirs, not TypeSafe)
+  Speculative assessments cannot authorize effects; cache hit ≠ live Jev
   primary protocol fold is in Augustus; here the integrity boundary
   do not merge into examples/
 
@@ -758,7 +766,8 @@ execution so the model cannot opt out (`guard()` *is* the tool's execution
 function); ASK/DENY throw; default `failMode` closed. Contrast actiongate
 `wrapTool` advisory until a gateway. [dgp](https://github.com/numerous-com/dgp)
 names the same integrity boundary: typed assessment then application-side
-guarded commit; **Speculative assessments cannot authorize effects**;
+guarded commit; quoted DGP `docs/TYPESAFE_JEV.md` (theirs, not TypeSafe):
+**Speculative assessments cannot authorize effects**; cache hit ≠ live Jev;
 assessors do not execute. Primary protocol fold is in Augustus; here the
 boundary. [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard)
 re-checks target and instruction snapshots before committing. Cousin, not this sidecar.
