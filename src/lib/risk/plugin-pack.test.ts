@@ -757,6 +757,19 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
     expect(readme).toMatch(/anonde-io\/anonde/);
     expect(readme).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(readme).toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(readme).toMatch(/The guard never executes anything itself/);
+    expect(readme).toMatch(/Judgment proposals only/);
+    expect(readme).toMatch(/NeOMakinG\/kev-model-router/);
+    expect(readme).toMatch(/The router never blocks traffic/);
+    expect(readme).toMatch(/kev being down never blocks traffic/);
+    expect(readme).toMatch(/eugeniughelbur\/jev-gate/);
+    expect(readme).toMatch(/It catches mistakes, not attackers/);
+    expect(readme).toMatch(/git stash clear/);
+    expect(readme).toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(readme).toMatch(/never claim savings without a controlled A\/B run/);
+    expect(readme).toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(readme).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
     expect(readme).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(readme).toMatch(/56 of the 65 rules/);
@@ -1361,6 +1374,28 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1441 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/decision-kernel 10\/10 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/The guard executes the action itself/);
+      expect(text, rel).not.toMatch(/Judgment proposals are execute grants/);
+      expect(text, rel).not.toMatch(/NeOMakinG\/kev-model-router is Mandrilsquad1441\/jev-model-router/);
+      expect(text, rel).not.toMatch(/kev being down blocks traffic/);
+      expect(text, rel).not.toMatch(/The router blocks traffic/);
+      expect(text, rel).not.toMatch(/kev-model-router 10\/10 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/eugeniughelbur\/jev-gate is totally-tim\/jev-gate/);
+      expect(text, rel).not.toMatch(/It catches attackers, not mistakes/);
+      expect(text, rel).not.toMatch(/300-call injection test is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/git stash clear is not a hard-rule/);
+      expect(text, rel).not.toMatch(/gentle-browser-jev is a shipped production hook/);
+      expect(text, rel).not.toMatch(/0\.75 click_search is a safety envelope/);
+      expect(text, rel).not.toMatch(/MarcoLoDico\/pi-jev-router is philippdubach\/pi-jev-router/);
+      expect(text, rel).not.toMatch(/0\.95 is a 95% accuracy guarantee/);
+      expect(text, rel).not.toMatch(/observe default is enforce/);
+    }
+  });
+
   it("does not invent hourly 0947 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -1605,6 +1640,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/gowtham980\/jev-router/);
     expect(pkg).not.toMatch(/Jhiynn\/PrivaParse/);
     expect(pkg).not.toMatch(/anonde-io\/anonde/);
+    expect(pkg).not.toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(pkg).not.toMatch(/NeOMakinG\/kev-model-router/);
+    expect(pkg).not.toMatch(/eugeniughelbur\/jev-gate/);
+    expect(pkg).not.toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(pkg).not.toMatch(/MarcoLoDico\/pi-jev-router/);
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
@@ -1791,6 +1831,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/gowtham980\/jev-router/);
     expect(pkg).not.toMatch(/Jhiynn\/PrivaParse/);
     expect(pkg).not.toMatch(/anonde-io\/anonde/);
+    expect(pkg).not.toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(pkg).not.toMatch(/NeOMakinG\/kev-model-router/);
+    expect(pkg).not.toMatch(/eugeniughelbur\/jev-gate/);
+    expect(pkg).not.toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(pkg).not.toMatch(/MarcoLoDico\/pi-jev-router/);
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
@@ -2047,6 +2092,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/gowtham980\/jev-router/);
     expect(lock).not.toMatch(/Jhiynn\/PrivaParse/);
     expect(lock).not.toMatch(/anonde-io\/anonde/);
+    expect(lock).not.toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(lock).not.toMatch(/NeOMakinG\/kev-model-router/);
+    expect(lock).not.toMatch(/eugeniughelbur\/jev-gate/);
+    expect(lock).not.toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(lock).not.toMatch(/MarcoLoDico\/pi-jev-router/);
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
@@ -2233,6 +2283,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/gowtham980\/jev-router/);
     expect(lock).not.toMatch(/Jhiynn\/PrivaParse/);
     expect(lock).not.toMatch(/anonde-io\/anonde/);
+    expect(lock).not.toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(lock).not.toMatch(/NeOMakinG\/kev-model-router/);
+    expect(lock).not.toMatch(/eugeniughelbur\/jev-gate/);
+    expect(lock).not.toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(lock).not.toMatch(/MarcoLoDico\/pi-jev-router/);
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
@@ -3039,6 +3094,19 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
     expect(skill).toMatch(/anonde-io\/anonde/);
     expect(skill).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(skill).toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(skill).toMatch(/The guard never executes anything itself/);
+    expect(skill).toMatch(/Judgment proposals only/);
+    expect(skill).toMatch(/NeOMakinG\/kev-model-router/);
+    expect(skill).toMatch(/The router never blocks traffic/);
+    expect(skill).toMatch(/kev being down never blocks traffic/);
+    expect(skill).toMatch(/eugeniughelbur\/jev-gate/);
+    expect(skill).toMatch(/It catches mistakes, not attackers/);
+    expect(skill).toMatch(/git stash clear/);
+    expect(skill).toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(skill).toMatch(/never claim savings without a controlled A\/B run/);
+    expect(skill).toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(skill).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(skill).toMatch(/56 of the 65 rules/);
@@ -3808,6 +3876,19 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
     expect(evalDoc).toMatch(/anonde-io\/anonde/);
     expect(evalDoc).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(evalDoc).toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(evalDoc).toMatch(/The guard never executes anything itself/);
+    expect(evalDoc).toMatch(/Judgment proposals only/);
+    expect(evalDoc).toMatch(/NeOMakinG\/kev-model-router/);
+    expect(evalDoc).toMatch(/The router never blocks traffic/);
+    expect(evalDoc).toMatch(/kev being down never blocks traffic/);
+    expect(evalDoc).toMatch(/eugeniughelbur\/jev-gate/);
+    expect(evalDoc).toMatch(/It catches mistakes, not attackers/);
+    expect(evalDoc).toMatch(/git stash clear/);
+    expect(evalDoc).toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(evalDoc).toMatch(/never claim savings without a controlled A\/B run/);
+    expect(evalDoc).toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(evalDoc).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(evalDoc).toMatch(/56 of the 65 rules/);
@@ -4166,6 +4247,11 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/gowtham980\/jev-router/);
     expect(install).toMatch(/Jhiynn\/PrivaParse/);
     expect(install).toMatch(/anonde-io\/anonde/);
+    expect(install).toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(install).toMatch(/NeOMakinG\/kev-model-router/);
+    expect(install).toMatch(/eugeniughelbur\/jev-gate/);
+    expect(install).toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(install).toMatch(/MarcoLoDico\/pi-jev-router/);
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
@@ -4635,6 +4721,19 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
     expect(shape).toMatch(/anonde-io\/anonde/);
     expect(shape).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(shape).toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(shape).toMatch(/The guard never executes anything itself/);
+    expect(shape).toMatch(/Judgment proposals only/);
+    expect(shape).toMatch(/NeOMakinG\/kev-model-router/);
+    expect(shape).toMatch(/The router never blocks traffic/);
+    expect(shape).toMatch(/kev being down never blocks traffic/);
+    expect(shape).toMatch(/eugeniughelbur\/jev-gate/);
+    expect(shape).toMatch(/It catches mistakes, not attackers/);
+    expect(shape).toMatch(/git stash clear/);
+    expect(shape).toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(shape).toMatch(/never claim savings without a controlled A\/B run/);
+    expect(shape).toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(shape).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(shape).toMatch(/It never silently approves/);
@@ -5153,6 +5252,19 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
     expect(hosts).toMatch(/anonde-io\/anonde/);
     expect(hosts).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(hosts).toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(hosts).toMatch(/The guard never executes anything itself/);
+    expect(hosts).toMatch(/Judgment proposals only/);
+    expect(hosts).toMatch(/NeOMakinG\/kev-model-router/);
+    expect(hosts).toMatch(/The router never blocks traffic/);
+    expect(hosts).toMatch(/kev being down never blocks traffic/);
+    expect(hosts).toMatch(/eugeniughelbur\/jev-gate/);
+    expect(hosts).toMatch(/It catches mistakes, not attackers/);
+    expect(hosts).toMatch(/git stash clear/);
+    expect(hosts).toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(hosts).toMatch(/never claim savings without a controlled A\/B run/);
+    expect(hosts).toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(hosts).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(hosts).toMatch(/It never silently approves/);
@@ -5778,6 +5890,19 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
     expect(gates).toMatch(/anonde-io\/anonde/);
     expect(gates).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(gates).toMatch(/Agentic-Guides\/decision-kernel/);
+    expect(gates).toMatch(/The guard never executes anything itself/);
+    expect(gates).toMatch(/Judgment proposals only/);
+    expect(gates).toMatch(/NeOMakinG\/kev-model-router/);
+    expect(gates).toMatch(/The router never blocks traffic/);
+    expect(gates).toMatch(/kev being down never blocks traffic/);
+    expect(gates).toMatch(/eugeniughelbur\/jev-gate/);
+    expect(gates).toMatch(/It catches mistakes, not attackers/);
+    expect(gates).toMatch(/git stash clear/);
+    expect(gates).toMatch(/jorgehara\/gentle-browser-jev/);
+    expect(gates).toMatch(/never claim savings without a controlled A\/B run/);
+    expect(gates).toMatch(/MarcoLoDico\/pi-jev-router/);
+    expect(gates).toMatch(/unvalidated starting policy, not a 95% accuracy guarantee/);
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(gates).toMatch(/56\/65 at 1\.00 on 467 labelled defects/);
