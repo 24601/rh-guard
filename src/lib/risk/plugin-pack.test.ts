@@ -482,7 +482,9 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/codebam\/dsh-jev-guardrails/);
     expect(readme).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(readme).toMatch(/metalbear-co\/jev-auto-approve/);
-    expect(readme).toMatch(/advertised description ≠ shipped source/);
+    expect(readme).toMatch(/does not satisfy required-approval branch protection/);
+    expect(readme).toMatch(/Failures are loud/);
+    expect(readme).toMatch(/a gate, not a substitute for a human reviewer/);
     expect(readme).toMatch(/emreozyoruk\/hush/);
     expect(readme).toMatch(/Silence is the default behaviour, not the failure mode/);
     expect(readme).toMatch(/SuchintK\/jev-call-screener/);
@@ -758,6 +760,9 @@ describe("discoverability copy", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
       expect(text, rel).not.toMatch(/jev-auto-approve is a shipped merge gate/);
+      expect(text, rel).not.toMatch(/Git tree 404/);
+      expect(text, rel).not.toMatch(/advertised description ≠ shipped source/);
+      expect(text, rel).not.toMatch(/do not invent auto-approve mechanics/);
       expect(text, rel).not.toMatch(/hush apply default true/);
       expect(text, rel).not.toMatch(/Silence is the failure mode/);
       expect(text, rel).not.toMatch(/jev-call-screener generates dialogue/);
@@ -1688,7 +1693,9 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/codebam\/dsh-jev-guardrails/);
     expect(skill).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(skill).toMatch(/metalbear-co\/jev-auto-approve/);
-    expect(skill).toMatch(/advertised description ≠ shipped source/);
+    expect(skill).toMatch(/does not satisfy required-approval branch protection/);
+    expect(skill).toMatch(/Failures are loud/);
+    expect(skill).toMatch(/a gate, not a substitute for a human reviewer/);
     expect(skill).toMatch(/emreozyoruk\/hush/);
     expect(skill).toMatch(/Silence is the default behaviour, not the failure mode/);
     expect(skill).toMatch(/SuchintK\/jev-call-screener/);
@@ -2199,7 +2206,9 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/codebam\/dsh-jev-guardrails/);
     expect(evalDoc).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(evalDoc).toMatch(/metalbear-co\/jev-auto-approve/);
-    expect(evalDoc).toMatch(/advertised description ≠ shipped source/);
+    expect(evalDoc).toMatch(/does not satisfy required-approval branch protection/);
+    expect(evalDoc).toMatch(/Failures are loud/);
+    expect(evalDoc).toMatch(/a gate, not a substitute for a human reviewer/);
     expect(evalDoc).toMatch(/emreozyoruk\/hush/);
     expect(evalDoc).toMatch(/Silence is the default behaviour, not the failure mode/);
     expect(evalDoc).toMatch(/SuchintK\/jev-call-screener/);
@@ -2674,7 +2683,9 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/codebam\/dsh-jev-guardrails/);
     expect(shape).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(shape).toMatch(/metalbear-co\/jev-auto-approve/);
-    expect(shape).toMatch(/advertised description ≠ shipped source/);
+    expect(shape).toMatch(/does not satisfy required-approval branch protection/);
+    expect(shape).toMatch(/Failures are loud/);
+    expect(shape).toMatch(/a gate, not a substitute for a human reviewer/);
     expect(shape).toMatch(/emreozyoruk\/hush/);
     expect(shape).toMatch(/Silence is the default behaviour, not the failure mode/);
     expect(shape).toMatch(/SuchintK\/jev-call-screener/);
@@ -2971,7 +2982,9 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/codebam\/dsh-jev-guardrails/);
     expect(hosts).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(hosts).toMatch(/metalbear-co\/jev-auto-approve/);
-    expect(hosts).toMatch(/advertised description ≠ shipped source/);
+    expect(hosts).toMatch(/does not satisfy required-approval branch protection/);
+    expect(hosts).toMatch(/Failures are loud/);
+    expect(hosts).toMatch(/a gate, not a substitute for a human reviewer/);
     expect(hosts).toMatch(/emreozyoruk\/hush/);
     expect(hosts).toMatch(/Silence is the default behaviour, not the failure mode/);
     expect(hosts).toMatch(/SuchintK\/jev-call-screener/);
@@ -3340,7 +3353,9 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/codebam\/dsh-jev-guardrails/);
     expect(gates).toMatch(/policy layer, not a sandbox or an authorization system/);
     expect(gates).toMatch(/metalbear-co\/jev-auto-approve/);
-    expect(gates).toMatch(/advertised description ≠ shipped source/);
+    expect(gates).toMatch(/does not satisfy required-approval branch protection/);
+    expect(gates).toMatch(/Failures are loud/);
+    expect(gates).toMatch(/a gate, not a substitute for a human reviewer/);
     expect(gates).toMatch(/emreozyoruk\/hush/);
     expect(gates).toMatch(/Silence is the default behaviour, not the failure mode/);
     expect(gates).toMatch(/SuchintK\/jev-call-screener/);

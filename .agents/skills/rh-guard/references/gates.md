@@ -155,7 +155,7 @@ a merge, and not a reward-hack detector.
 
 [dsh-jev-guardrails](https://github.com/codebam/dsh-jev-guardrails) is a dedicated DSH plugin monorepo (sibling of [codebam/jev-guardrails](https://github.com/codebam/jev-guardrails)). Quoted: **The library owns policy, not the model.** **A guardrail is not a sandbox.** Plugin **policy layer, not a sandbox or an authorization system.** `failMode` default **open**; 0.70/0.35 uncalibrated. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[jev-auto-approve](https://github.com/metalbear-co/jev-auto-approve) is listed as "Jev PR auto approver." Empty public tree at capture. **advertised description ≠ shipped source**. Do not invent auto-approve mechanics. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+[jev-auto-approve](https://github.com/metalbear-co/jev-auto-approve) is a GitHub Action: Jev Noul then code approves at `confidence-threshold` **0.9**. Quoted: **does not satisfy required-approval branch protection**. Quoted: **Failures are loud.** Quoted: **a gate, not a substitute for a human reviewer.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [hush](https://github.com/emreozyoruk/hush) is issue triage that stays quiet when unsure. Quoted: **Silence is the default behaviour, not the failure mode.** `apply` default **false**. Two gates 0.80 AND 0.60. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -980,12 +980,12 @@ codebam/dsh-jev-guardrails
   do not merge into examples/
 
 metalbear-co/jev-auto-approve
-  GitHub description: Jev PR auto approver
-  empty public tree at capture (created 2026-09-20T07:47:57Z)
-  advertised description ≠ shipped source
-  categorization-as-merge-gate advertised
-  watch; do not invent auto-approve mechanics
-  cousin of ci-gatekeeper / jev-pr-review / jev-gate / moongate / if-ai / latch / Jev-Examiner
+  GitHub Action: approve when confidence = 1 - p(human required) >= 0.9
+  does not satisfy required-approval branch protection (GITHUB_TOKEN)
+  Failures are loud
+  a gate, not a substitute for a human reviewer
+  jev-latest moving alias; 0.9 uncalibrated
+  cousin of ci-gatekeeper / jev-pr-review / jev-gate / moongate / if-ai / latch
   do not merge into examples/
 
 emreozyoruk/hush
