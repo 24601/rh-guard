@@ -143,7 +143,17 @@ a merge, and not a reward-hack detector.
 
 [jev-linkedin](https://github.com/ashafizullah/jev-linkedin) scores LinkedIn job↔CV fit. Quoted: **not real-world probabilities.** Quoted: **Treat them as an early signal, not a decision.** CV is **sent** to `/v1/systemone` (PII). Distinct from bias-bench. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness) filters tool results through Jev **before the main model sees it**. Distinct from [AntonioCoppe/jev-harness](https://github.com/AntonioCoppe/jev-harness). Quoted: **Filtering is a routing decision, never destruction.** Quoted: **Jev failures fail open.** 25/30 **not a rh-guard ROC**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+[Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness) filters tool results through Jev **before the main model sees it**. Distinct from [AntonioCoppe/jev-harness](https://github.com/AntonioCoppe/jev-harness) and [Atikpui007/jev-sift](https://github.com/Atikpui007/jev-sift). Quoted: **Filtering is a routing decision, never destruction.** Quoted: **Jev failures fail open.** 25/30 **not a rh-guard ROC**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Atikpui007/jev-sift](https://github.com/Atikpui007/jev-sift) is a Claude `PostToolUse` relevance filter. Distinct from [kbhuw/jev-sift](https://github.com/kbhuw/jev-sift) and [Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness). Quoted: **Fails open**. Quoted: **This is a relevance filter, not a safety block.** Hidden candidates **never** learned. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-cite-check](https://github.com/simonsez9510/jev-cite-check) is a Korean ordinance citation-grounding experiment (not a hook). Quoted: **97/100**; 모순 **31/31**; **0** false-allow of 지지. Quoted: **1회 관찰이며 성능 주장이 아닙니다.** Gloss: one-shot observation, not a performance claim. `confidence` is **분포 집중도이지 정확도가 아닙니다**. 97/100 **not a rh-guard ROC**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[pi-jev-command-guard](https://github.com/JasonHZS/pi-jev-command-guard) is a Pi bash/powershell approval gate. Local critical always `ask`. Auto-allow only `allow` + **0.75** / **0.25** / **0.10**. Quoted: **ambiguity must never silently become permission.** Quoted: **do not provide a complete sandbox.** Distinct from pi-jev-tool-guard / gate / approver / sentinel. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[jev-transaction-guard](https://github.com/finrod21/jev-transaction-guard) is a settlement circuit-breaker sim. Quoted **IMMUNE TO BOTH** / **last line of defense** is **soundness theater**. Quoted: comparison **does not show proof that Jev makes better classification choices**. Choice TRIP is not a freeze. 0.0% FPR **not a rh-guard ROC**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[dsh-jev-guardrails](https://github.com/codebam/dsh-jev-guardrails) is a dedicated DSH plugin monorepo (sibling of [codebam/jev-guardrails](https://github.com/codebam/jev-guardrails)). Quoted: **The library owns policy, not the model.** **A guardrail is not a sandbox.** Plugin **policy layer, not a sandbox or an authorization system.** `failMode` default **open**; 0.70/0.35 uncalibrated. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -899,11 +909,58 @@ jev-linkedin (ashafizullah/jev-linkedin)
 
 Astro-Han/jev-harness
   filter tool results before the main model sees them
-  distinct from AntonioCoppe/jev-harness and apa-agent-harness
+  distinct from AntonioCoppe/jev-harness and apa-agent-harness and Atikpui007/jev-sift
   Filtering is a routing decision, never destruction
   Jev failures fail open; keep at p > 0.5
   25/30 not a rh-guard ROC; Pass/fail alone is not significant
   cousin of agent-chaperone / jev-routing
+  do not merge into examples/
+
+Atikpui007/jev-sift
+  Claude PostToolUse relevance filter before Claude sees tool results
+  distinct from kbhuw/jev-sift and Astro-Han/jev-harness
+  Fails open; hide when hide >= DROP_THRESHOLD 0.5 (JEV_FILTER_DROP_THRESHOLD; quote the code)
+  This is a relevance filter, not a safety block
+  hidden_candidates never learned
+  jev-latest moving alias
+  do not merge into examples/
+
+simonsez9510/jev-cite-check
+  Korean ordinance citation-grounding experiment (not a hook)
+  20/20 then 97/100; 모순 31/31; 0 false-allow of 지지
+  1회 관찰이며 성능 주장이 아닙니다 (one-shot observation, not a performance claim)
+  grounded < 0.5 → human review; confidence is 분포 집중도이지 정확도가 아닙니다
+  TypeSafe direct key not supported; Vercel typesafe-ai/jev
+  97/100 not a rh-guard ROC
+  do not merge into examples/
+
+JasonHZS/pi-jev-command-guard
+  Pi bash/powershell command approval
+  local CRITICAL_PATTERNS always ask
+  auto-allow only allow + conf>=0.75 + ask<0.25 + deny<0.10
+  ambiguity must never silently become permission
+  API fail → ask; no UI → block
+  do not provide a complete sandbox
+  distinct from pi-jev-tool-guard / gate / approver / sentinel / guard / control
+  do not merge into examples/pi-extension.ts
+
+finrod21/jev-transaction-guard
+  settlement circuit-breaker sim
+  IMMUNE TO BOTH / last line of defense is soundness theater
+  comparison does not show proof that Jev makes better classification choices
+  mock uses labeled features in state
+  0.0% FPR not a rh-guard ROC
+  Choice TRIP is not a freeze
+  do not merge into examples/
+
+codebam/dsh-jev-guardrails
+  dedicated DSH plugin monorepo (@codebam/jev-guardrails + @codebam/dsh-jev-guardrails)
+  sibling of already-folded codebam/jev-guardrails
+  The library owns policy, not the model
+  A heuristic never overrides a Jev block
+  A guardrail is not a sandbox
+  plugin is a policy layer, not a sandbox or an authorization system
+  failMode default open; 0.70/0.35 uncalibrated; jev-latest moving alias
   do not merge into examples/
 
 localjev (githubnext/localjev)
@@ -1109,7 +1166,7 @@ from [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard)): quoted
 [jkrup/jeveryword](https://github.com/jkrup/jeveryword): quoted **cannot make it produce
 words that are not in the source**; `text.slice(start, end) ===
 value`; distinct from WaynezProg `jev_extract`.
-[TickerDev/jevfanity-api](https://github.com/TickerDev/jevfanity-api): **code owns `flagged`**; **`flagged` is a policy bit, not a safety proof**; default **0.75**; missing key → 500. [vidux/iso-jevdit](https://github.com/vidux/iso-jevdit): quoted **the audit engine is not finished**; quoted **This is not a certification, and it is not a conformity assessment**; `failOn` **Accepted today, acted on when the audit engine lands**. [ashafizullah/jev-linkedin](https://github.com/ashafizullah/jev-linkedin): quoted **not real-world probabilities**; quoted **Treat them as an early signal, not a decision**; CV **sent** to `/v1/systemone`. [Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness): quoted **Filtering is a routing decision, never destruction**; quoted **Jev failures fail open**; 25/30 **not a rh-guard ROC**; distinct from AntonioCoppe/jev-harness.
+[TickerDev/jevfanity-api](https://github.com/TickerDev/jevfanity-api): **code owns `flagged`**; **`flagged` is a policy bit, not a safety proof**; default **0.75**; missing key → 500. [vidux/iso-jevdit](https://github.com/vidux/iso-jevdit): quoted **the audit engine is not finished**; quoted **This is not a certification, and it is not a conformity assessment**; `failOn` **Accepted today, acted on when the audit engine lands**. [ashafizullah/jev-linkedin](https://github.com/ashafizullah/jev-linkedin): quoted **not real-world probabilities**; quoted **Treat them as an early signal, not a decision**; CV **sent** to `/v1/systemone`. [Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness): quoted **Filtering is a routing decision, never destruction**; quoted **Jev failures fail open**; 25/30 **not a rh-guard ROC**; distinct from AntonioCoppe/jev-harness. [Atikpui007/jev-sift](https://github.com/Atikpui007/jev-sift): quoted **Fails open**; quoted **This is a relevance filter, not a safety block**; hidden candidates never learned; distinct from kbhuw/jev-sift. [simonsez9510/jev-cite-check](https://github.com/simonsez9510/jev-cite-check): quoted **1회 관찰이며 성능 주장이 아닙니다**; Gloss: one-shot observation, not a performance claim; 97/100 **not a rh-guard ROC**. [JasonHZS/pi-jev-command-guard](https://github.com/JasonHZS/pi-jev-command-guard): quoted **do not provide a complete sandbox**; quoted **ambiguity must never silently become permission**; distinct from pi-jev-tool-guard. [finrod21/jev-transaction-guard](https://github.com/finrod21/jev-transaction-guard): quoted **IMMUNE TO BOTH** is **soundness theater**; Choice TRIP is not a freeze. [codebam/dsh-jev-guardrails](https://github.com/codebam/dsh-jev-guardrails): quoted **The library owns policy, not the model**; **A guardrail is not a sandbox**; plugin **policy layer, not a sandbox or an authorization system**; failMode default **open**; sibling of codebam/jev-guardrails.
 Cousin, not this sidecar.
 
 ## Polarity
