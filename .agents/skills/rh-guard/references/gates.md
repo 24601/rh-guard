@@ -205,6 +205,27 @@ a merge, and not a reward-hack detector.
 
 [jev-prune-kit](https://github.com/CompleteTech-LLC-AI-Research/jev-prune-kit) Quoted: **Not a universal `/prune`**. Quoted: **Not live-tested**. Quoted: **122 passing local tests are not 122 live harness or model tests**. Quoted: **88 passing local tests are not 88 live harness or model tests**. Pin `jev-1.13.0`. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[yolo-jev-scene-filter](https://huggingface.co/spaces/iluvblender/yolo-jev-scene-filter) Quoted: **YOLO-World detects; TypeSafe Jev keep/skips boxes**. Quoted: **Jev only filters what YOLO already found.** UI keep floor **0.55**; `jev-latest`; missing key raises. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[pi-jev-permit](https://github.com/kurihada/pi-jev-permit) **bash / write / edit**, not every tool. Quoted: **silence is never consent.** p ≥ **0.6**. Quoted: **A failed judgment is never treated as approval.** No key: read-only local else blocked. `degraded`: L1–2 pass, L3 block. Distinct pi-jev-approver/gate/guard/sentinel/tool-guard/command-guard/control. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[jevgate-action](https://github.com/ktsu2i/jevgate-action) advertised Action; README title only; no `action.yml`; **advertised Action ≠ shipped workflow.** Distinct thevibeworks/jevgate and totally-tim/jev-gate. Watch. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[boldbug1/jev-triage](https://github.com/boldbug1/jev-triage) Go CLI. Distinct ThyFriendlyFox/jev-triage. Choice/Score 0–3/Noul frustrated; `-threshold` **0.8**; `jev-latest`; keep `other`. Vendor 193.6x/444.6x: test on own data. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[contact-cleaner](https://github.com/rubenhassid1/contact-cleaner) Google Other contacts Keep/Review/Remove. Quoted: **Buckets are code, not the model.** Quoted: **Deterministic first.** `KIND_CONFIDENCE_FLOOR` **0.5**; `jev-latest`; PII name+email. Distinct jev-linkedin. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[claude-code-jev-guardrails](https://github.com/javimp2003/claude-code-jev-guardrails) Quoted: **Claude thinks. Jev reacts. Code decides.** `Math.max` floors never overridden. Fail-open judgment; fail-closed hard cases. `REFLEX_MODE=shadow`. Quoted: **Treat this as a working prototype, not a hardened production guardrail.** **advertised ASK_USER ≠ engine emit**. Distinct RahulBalakavi/claude-code-jev and codebam/jev-guardrails. Thin card. Do not merge `.claude/settings.json` into `examples/`. Cousin, not this sidecar.
+
+[jev-voice-gate](https://github.com/vrazraz/jev-voice-gate) OpenJev NLI, not TypeSafe. Quoted: **Это не гарантированная замена wake word.** OpenJev оценивает **текст после распознавания**. 0.40/0.22 **не калиброванные вероятности**. After accept **без инструментов**. Не включайте `--yolo`. Distinct herdr-jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[alp-pr-review](https://github.com/pksorensen/alp-pr-review) Review → Jev-routing → squash-merge or Godkend merge portal. Quoted: Jev **får aldrig PR-titel, -beskrivelse eller diff.** Quoted: **ikke kan tale sig selv til automerge.** Quoted: lukker **sikkert**. Quoted: **Ikke en erstatning for branch protection.** Tærsklerne **er ikke tunede** (0.25 / 2 / 0.6). Distinct jev-pr-review and jev-auto-approve. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[youtube-judol-userscript-jev](https://github.com/arashari/youtube-judol-userscript-jev) Tampermonkey judol via classifier.dev `jev` no key. `confidenceThreshold` **0.6** unsure. discussing gambling ≠ promotion. Distinct rspamd-jev/jevmod/x-spam-filter-typesafe. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Postmark](https://github.com/silky-x0/Postmark) tone/virality/cringe; code stamps **0.6** / **2.2**. GitHub description LinkedIn; README never mentions LinkedIn — **advertised description ≠ shipped UI**. `jev-latest`; missing key → 500. Distinct jev-linkedin. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
@@ -1186,6 +1207,78 @@ CompleteTech-LLC-AI-Research/jev-prune-kit
   pin jev-1.13.0; jev-bus with jev-context-fabric
   do not merge into examples/
 
+iluvblender/yolo-jev-scene-filter
+  YOLO-World detects; TypeSafe Jev keep/skips boxes
+  Jev only filters what YOLO already found
+  UI keep floor 0.55; jev-latest; missing key raises
+  do not merge into examples/
+
+kurihada/pi-jev-permit
+  bash / write / edit, not every tool
+  silence is never consent; p >= 0.6
+  A failed judgment is never treated as approval
+  no key: read-only local else blocked; degraded L1-2 pass L3 block
+  do not merge into examples/pi-extension.ts
+
+ktsu2i/jevgate-action
+  advertised Action; README title only; no action.yml
+  advertised Action ≠ shipped workflow
+  distinct thevibeworks/jevgate and totally-tim/jev-gate
+  watch; do not invent mechanics
+  do not merge into examples/
+
+boldbug1/jev-triage
+  Go CLI; Distinct ThyFriendlyFox/jev-triage
+  Choice/Score 0-3/Noul frustrated; -threshold 0.8; jev-latest; keep other
+  vendor 193.6x/444.6x: test on own data
+  do not merge into examples/
+
+rubenhassid1/contact-cleaner
+  Google Other contacts Keep/Review/Remove
+  Buckets are code, not the model; Deterministic first
+  KIND_CONFIDENCE_FLOOR 0.5; jev-latest; PII name+email
+  distinct ashafizullah/jev-linkedin
+  do not merge into examples/
+
+javimp2003/claude-code-jev-guardrails
+  Claude thinks. Jev reacts. Code decides.
+  Math.max floors never overridden; fail-open judgment; fail-closed hard cases
+  REFLEX_MODE=shadow; Treat this as a working prototype, not a hardened production guardrail
+  advertised ASK_USER ≠ engine emit
+  distinct RahulBalakavi/claude-code-jev and codebam/jev-guardrails
+  do not merge .claude/settings.json into examples/
+
+vrazraz/jev-voice-gate
+  OpenJev NLI, not TypeSafe Jev
+  Это не гарантированная замена wake word
+  текст после распознавания; 0.40/0.22 не калиброванные вероятности
+  after accept без инструментов; Не включайте --yolo
+  distinct herdr-jev
+  do not merge into examples/
+
+pksorensen/alp-pr-review
+  Review → Jev-routing → squash-merge or Godkend merge portal
+  får aldrig PR-titel, -beskrivelse eller diff
+  ikke kan tale sig selv til automerge; lukker sikkert
+  Ikke en erstatning for branch protection
+  tærsklerne er ikke tunede (0.25 / 2 / 0.6)
+  distinct ohernandezdev/jev-pr-review and metalbear-co/jev-auto-approve
+  do not merge into examples/
+
+arashari/youtube-judol-userscript-jev
+  Tampermonkey judol via classifier.dev jev; no API key
+  confidenceThreshold 0.6 unsure; discussing gambling ≠ promotion
+  distinct rspamd-jev / jevmod / x-spam-filter-typesafe
+  do not merge into examples/
+
+silky-x0/Postmark
+  tone/virality/cringe; code stamps 0.6 / 2.2
+  advertised description ≠ shipped UI (LinkedIn vs social draft)
+  jev-latest; missing key → 500
+  distinct ashafizullah/jev-linkedin
+  do not merge into examples/
+
+
 localjev (githubnext/localjev)
   wire-compatible POST /v1/systemone; prompted JSON probs, not logits
   evaluate calibration on your workload before consequential decisions
@@ -1392,7 +1485,7 @@ from [alsoleg89/jev-guard](https://github.com/alsoleg89/jev-guard)): quoted
 [jkrup/jeveryword](https://github.com/jkrup/jeveryword): quoted **cannot make it produce
 words that are not in the source**; `text.slice(start, end) ===
 value`; distinct from WaynezProg `jev_extract`.
-[TickerDev/jevfanity-api](https://github.com/TickerDev/jevfanity-api): **code owns `flagged`**; **`flagged` is a policy bit, not a safety proof**; default **0.75**; missing key → 500. [vidux/iso-jevdit](https://github.com/vidux/iso-jevdit): quoted **the audit engine is not finished**; quoted **This is not a certification, and it is not a conformity assessment**; `failOn` **Accepted today, acted on when the audit engine lands**. [ashafizullah/jev-linkedin](https://github.com/ashafizullah/jev-linkedin): quoted **not real-world probabilities**; quoted **Treat them as an early signal, not a decision**; CV **sent** to `/v1/systemone`. [Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness): quoted **Filtering is a routing decision, never destruction**; quoted **Jev failures fail open**; 25/30 **not a rh-guard ROC**; distinct from AntonioCoppe/jev-harness. [Atikpui007/jev-sift](https://github.com/Atikpui007/jev-sift): quoted **Fails open**; quoted **This is a relevance filter, not a safety block**; hidden candidates never learned; distinct from kbhuw/jev-sift. [simonsez9510/jev-cite-check](https://github.com/simonsez9510/jev-cite-check): quoted **1회 관찰이며 성능 주장이 아닙니다**; Gloss: one-shot observation, not a performance claim; 97/100 **not a rh-guard ROC**. [JasonHZS/pi-jev-command-guard](https://github.com/JasonHZS/pi-jev-command-guard): quoted **do not provide a complete sandbox**; quoted **ambiguity must never silently become permission**; distinct from pi-jev-tool-guard. [finrod21/jev-transaction-guard](https://github.com/finrod21/jev-transaction-guard): quoted **IMMUNE TO BOTH** is **soundness theater**; Choice TRIP is not a freeze. [codebam/dsh-jev-guardrails](https://github.com/codebam/dsh-jev-guardrails): quoted **The library owns policy, not the model**; **A guardrail is not a sandbox**; plugin **policy layer, not a sandbox or an authorization system**; failMode default **open**; sibling of codebam/jev-guardrails. [pantos12/mailverdict](https://github.com/pantos12/mailverdict): quoted **A classifier cannot be talked out of a probability**; the explainer **never changes the label**; 24 fixtures **are not a benchmark**; distinct from [mailverdict/mailverdict](https://github.com/mailverdict/mailverdict) quoted **Advisory signals, not verdicts**. [alexj11324/open-jev-approvals](https://github.com/alexj11324/open-jev-approvals): stale authorization version while review is in flight → **deny**; quoted **Fail-open degradation**; incomplete / no-key → `allow` with `incomplete: true`. [Ash20pk/beat-the-reviewer](https://github.com/Ash20pk/beat-the-reviewer): quoted **An unavailable reviewer is not an approval**; `on_unavailable: "block"`. [7starsseeker/dsh-jev-guard](https://github.com/7starsseeker/dsh-jev-guard): quoted **It is an accident net, not a security boundary**; quoted **degrades loudly instead of silently**; D3 **fail-open**; D9 **l0-only**; quoted **L0 的 deny 类硬规则不受此开关影响**. [CompleteTech-LLC-AI-Research/jev-sentinel](https://github.com/CompleteTech-LLC-AI-Research/jev-sentinel): quoted **This is a defense-in-depth sensor and veto layer, not a complete reference monitor**; quoted **DEFER means only no additional veto**; quoted **Judgments are not grants**; quoted **provisional review/block thresholds 0.35/0.80 are policy starting points**. [heliowap/diff-risk-sentinel](https://github.com/heliowap/diff-risk-sentinel): quoted **It is a prioritization aid, not a bug detector**; **96% accuracy / 100% bug recall** **are superseded**; Rule 6 badge `ACCEPTABLE_LOW_RISK` (strategy: **Low risk. Safe to merge.**) is a badge. [wmsing/agent-firewall](https://github.com/wmsing/agent-firewall): quoted **fail-closed if checks do not pass**; Layer 2 **Mock**; quoted **Score ≥ 0.8** → **BLOCK**; quoted **git pull is intentionally excluded**. [acoyfellow/edit](https://github.com/acoyfellow/edit): quoted **Nothing changes until you approve the exact request**; quoted **If the provider is unavailable, `/edit` stops instead of pretending that a review happened**; quoted **Four runs of one tiny task** **is not a benchmark**. [adamnroman/slop-filter](https://github.com/adamnroman/slop-filter): quoted **hides AI-generated posts**; quoted **Scores every post in your feed for how likely it is to be AI-written**. [bohutang/sift](https://github.com/bohutang/sift): **Substance · Humor · Chit-chat · Promo · Junk**. [ThinkyMiner/Winnow](https://github.com/ThinkyMiner/Winnow): quoted **every word on the card is a template filled from typed answers**; quoted **The goldens are still unreviewed**. [yonsakhan/x-spam-filter-typesafe](https://github.com/yonsakhan/x-spam-filter-typesafe): **放行不隐藏**. [vynnlee/jev-mail](https://github.com/vynnlee/jev-mail): **Autonomous 24/7 Zero-Inbox**; [muhammedilyasy/jev-mail](https://github.com/muhammedilyasy/jev-mail): quoted **Read-only: it never sends, deletes, labels or archives anything**. [ordepas/system1-fraud-interceptor-demo](https://github.com/ordepas/system1-fraud-interceptor-demo): quoted **Es una demo de experimentación personal, no un benchmark**; quoted **no está pensada para producción**. [hfmsio/jev-wiki-watch](https://github.com/hfmsio/jev-wiki-watch): FLAG ≥ **80%**. [Umbylicus/umby-jev-stack](https://github.com/Umbylicus/umby-jev-stack): quoted **Never drop a finding**; quoted **Jev only classifies**; **rejected 543 as false positives**. [CompleteTech-LLC-AI-Research/jev-prune-kit](https://github.com/CompleteTech-LLC-AI-Research/jev-prune-kit): quoted **Not a universal `/prune`**; quoted **Not live-tested**; quoted **122 passing local tests are not 122 live harness or model tests**; quoted **88 passing local tests are not 88 live harness or model tests**. [bojansandhaus/jev-decisions](https://github.com/bojansandhaus/jev-decisions): quoted **It never silently approves**; quoted **The workflow is shadow only**; quoted **Installation does not select the provider, change `approvals.mode`**.
+[TickerDev/jevfanity-api](https://github.com/TickerDev/jevfanity-api): **code owns `flagged`**; **`flagged` is a policy bit, not a safety proof**; default **0.75**; missing key → 500. [vidux/iso-jevdit](https://github.com/vidux/iso-jevdit): quoted **the audit engine is not finished**; quoted **This is not a certification, and it is not a conformity assessment**; `failOn` **Accepted today, acted on when the audit engine lands**. [ashafizullah/jev-linkedin](https://github.com/ashafizullah/jev-linkedin): quoted **not real-world probabilities**; quoted **Treat them as an early signal, not a decision**; CV **sent** to `/v1/systemone`. [Astro-Han/jev-harness](https://github.com/Astro-Han/jev-harness): quoted **Filtering is a routing decision, never destruction**; quoted **Jev failures fail open**; 25/30 **not a rh-guard ROC**; distinct from AntonioCoppe/jev-harness. [Atikpui007/jev-sift](https://github.com/Atikpui007/jev-sift): quoted **Fails open**; quoted **This is a relevance filter, not a safety block**; hidden candidates never learned; distinct from kbhuw/jev-sift. [simonsez9510/jev-cite-check](https://github.com/simonsez9510/jev-cite-check): quoted **1회 관찰이며 성능 주장이 아닙니다**; Gloss: one-shot observation, not a performance claim; 97/100 **not a rh-guard ROC**. [JasonHZS/pi-jev-command-guard](https://github.com/JasonHZS/pi-jev-command-guard): quoted **do not provide a complete sandbox**; quoted **ambiguity must never silently become permission**; distinct from pi-jev-tool-guard. [finrod21/jev-transaction-guard](https://github.com/finrod21/jev-transaction-guard): quoted **IMMUNE TO BOTH** is **soundness theater**; Choice TRIP is not a freeze. [codebam/dsh-jev-guardrails](https://github.com/codebam/dsh-jev-guardrails): quoted **The library owns policy, not the model**; **A guardrail is not a sandbox**; plugin **policy layer, not a sandbox or an authorization system**; failMode default **open**; sibling of codebam/jev-guardrails. [pantos12/mailverdict](https://github.com/pantos12/mailverdict): quoted **A classifier cannot be talked out of a probability**; the explainer **never changes the label**; 24 fixtures **are not a benchmark**; distinct from [mailverdict/mailverdict](https://github.com/mailverdict/mailverdict) quoted **Advisory signals, not verdicts**. [alexj11324/open-jev-approvals](https://github.com/alexj11324/open-jev-approvals): stale authorization version while review is in flight → **deny**; quoted **Fail-open degradation**; incomplete / no-key → `allow` with `incomplete: true`. [Ash20pk/beat-the-reviewer](https://github.com/Ash20pk/beat-the-reviewer): quoted **An unavailable reviewer is not an approval**; `on_unavailable: "block"`. [7starsseeker/dsh-jev-guard](https://github.com/7starsseeker/dsh-jev-guard): quoted **It is an accident net, not a security boundary**; quoted **degrades loudly instead of silently**; D3 **fail-open**; D9 **l0-only**; quoted **L0 的 deny 类硬规则不受此开关影响**. [CompleteTech-LLC-AI-Research/jev-sentinel](https://github.com/CompleteTech-LLC-AI-Research/jev-sentinel): quoted **This is a defense-in-depth sensor and veto layer, not a complete reference monitor**; quoted **DEFER means only no additional veto**; quoted **Judgments are not grants**; quoted **provisional review/block thresholds 0.35/0.80 are policy starting points**. [heliowap/diff-risk-sentinel](https://github.com/heliowap/diff-risk-sentinel): quoted **It is a prioritization aid, not a bug detector**; **96% accuracy / 100% bug recall** **are superseded**; Rule 6 badge `ACCEPTABLE_LOW_RISK` (strategy: **Low risk. Safe to merge.**) is a badge. [wmsing/agent-firewall](https://github.com/wmsing/agent-firewall): quoted **fail-closed if checks do not pass**; Layer 2 **Mock**; quoted **Score ≥ 0.8** → **BLOCK**; quoted **git pull is intentionally excluded**. [acoyfellow/edit](https://github.com/acoyfellow/edit): quoted **Nothing changes until you approve the exact request**; quoted **If the provider is unavailable, `/edit` stops instead of pretending that a review happened**; quoted **Four runs of one tiny task** **is not a benchmark**. [adamnroman/slop-filter](https://github.com/adamnroman/slop-filter): quoted **hides AI-generated posts**; quoted **Scores every post in your feed for how likely it is to be AI-written**. [bohutang/sift](https://github.com/bohutang/sift): **Substance · Humor · Chit-chat · Promo · Junk**. [ThinkyMiner/Winnow](https://github.com/ThinkyMiner/Winnow): quoted **every word on the card is a template filled from typed answers**; quoted **The goldens are still unreviewed**. [yonsakhan/x-spam-filter-typesafe](https://github.com/yonsakhan/x-spam-filter-typesafe): **放行不隐藏**. [vynnlee/jev-mail](https://github.com/vynnlee/jev-mail): **Autonomous 24/7 Zero-Inbox**; [muhammedilyasy/jev-mail](https://github.com/muhammedilyasy/jev-mail): quoted **Read-only: it never sends, deletes, labels or archives anything**. [ordepas/system1-fraud-interceptor-demo](https://github.com/ordepas/system1-fraud-interceptor-demo): quoted **Es una demo de experimentación personal, no un benchmark**; quoted **no está pensada para producción**. [hfmsio/jev-wiki-watch](https://github.com/hfmsio/jev-wiki-watch): FLAG ≥ **80%**. [Umbylicus/umby-jev-stack](https://github.com/Umbylicus/umby-jev-stack): quoted **Never drop a finding**; quoted **Jev only classifies**; **rejected 543 as false positives**. [CompleteTech-LLC-AI-Research/jev-prune-kit](https://github.com/CompleteTech-LLC-AI-Research/jev-prune-kit): quoted **Not a universal `/prune`**; quoted **Not live-tested**; quoted **122 passing local tests are not 122 live harness or model tests**; quoted **88 passing local tests are not 88 live harness or model tests**. [iluvblender/yolo-jev-scene-filter](https://huggingface.co/spaces/iluvblender/yolo-jev-scene-filter): quoted **Jev only filters what YOLO already found.**. [kurihada/pi-jev-permit](https://github.com/kurihada/pi-jev-permit): quoted **silence is never consent.**; quoted **A failed judgment is never treated as approval.**. [ktsu2i/jevgate-action](https://github.com/ktsu2i/jevgate-action): **advertised Action ≠ shipped workflow**. [boldbug1/jev-triage](https://github.com/boldbug1/jev-triage): Distinct ThyFriendlyFox/jev-triage. [rubenhassid1/contact-cleaner](https://github.com/rubenhassid1/contact-cleaner): quoted **Buckets are code, not the model.**. [javimp2003/claude-code-jev-guardrails](https://github.com/javimp2003/claude-code-jev-guardrails): quoted **Claude thinks. Jev reacts. Code decides.**; **advertised ASK_USER ≠ engine emit**. [vrazraz/jev-voice-gate](https://github.com/vrazraz/jev-voice-gate): quoted **Это не гарантированная замена wake word.**. [pksorensen/alp-pr-review](https://github.com/pksorensen/alp-pr-review): quoted **Ikke en erstatning for branch protection.**. [arashari/youtube-judol-userscript-jev](https://github.com/arashari/youtube-judol-userscript-jev): `confidenceThreshold` **0.6**. [silky-x0/Postmark](https://github.com/silky-x0/Postmark): **advertised description ≠ shipped UI**. [bojansandhaus/jev-decisions](https://github.com/bojansandhaus/jev-decisions): quoted **It never silently approves**; quoted **The workflow is shadow only**; quoted **Installation does not select the provider, change `approvals.mode`**.
 Cousin, not this sidecar.
 
 ## Polarity
