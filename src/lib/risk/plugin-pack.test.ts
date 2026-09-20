@@ -531,6 +531,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/heliowap\/diff-risk-sentinel/);
     expect(readme).toMatch(/It is a prioritization aid, not a bug detector/);
     expect(readme).toMatch(/96% accuracy \/ 100% bug recall/);
+    expect(readme).toMatch(/ACCEPTABLE_LOW_RISK/);
     expect(readme).toMatch(/wmsing\/agent-firewall/);
     expect(readme).toMatch(/fail-closed if checks do not pass/);
     expect(readme).toMatch(/git pull is intentionally excluded/);
@@ -559,6 +560,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/hfmsio\/jev-wiki-watch/);
     expect(readme).toMatch(/Umbylicus\/umby-jev-stack/);
     expect(readme).toMatch(/Never drop a finding/);
+    expect(readme).toMatch(/Jev only classifies/);
     expect(readme).toMatch(/rejected 543 as false positives/);
     expect(readme).toMatch(/CompleteTech-LLC-AI-Research\/jev-prune-kit/);
     expect(readme).toMatch(/Not a universal `\/prune`/);
@@ -882,6 +884,8 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/0\.35\/0\.80 are calibrated production/);
       expect(text, rel).not.toMatch(/96% accuracy \/ 100% bug recall is current/);
       expect(text, rel).not.toMatch(/Safe to merge is a grant/);
+      expect(text, rel).not.toMatch(/Jev classifies only/);
+      expect(text, rel).not.toMatch(/Rule 6 badge \*\*Safe to merge\*\*/);
       expect(text, rel).not.toMatch(/agent-firewall is an MCP sandbox/);
       expect(text, rel).not.toMatch(/agent-firewall git pull is blocked/);
       expect(text, rel).not.toMatch(/Layer 2 Mock is TypeSafe Jev/);
@@ -1968,6 +1972,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/heliowap\/diff-risk-sentinel/);
     expect(skill).toMatch(/It is a prioritization aid, not a bug detector/);
     expect(skill).toMatch(/96% accuracy \/ 100% bug recall/);
+    expect(skill).toMatch(/ACCEPTABLE_LOW_RISK/);
     expect(skill).toMatch(/wmsing\/agent-firewall/);
     expect(skill).toMatch(/fail-closed if checks do not pass/);
     expect(skill).toMatch(/git pull is intentionally excluded/);
@@ -1996,6 +2001,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/hfmsio\/jev-wiki-watch/);
     expect(skill).toMatch(/Umbylicus\/umby-jev-stack/);
     expect(skill).toMatch(/Never drop a finding/);
+    expect(skill).toMatch(/Jev only classifies/);
     expect(skill).toMatch(/rejected 543 as false positives/);
     expect(skill).toMatch(/CompleteTech-LLC-AI-Research\/jev-prune-kit/);
     expect(skill).toMatch(/Not a universal `\/prune`/);
@@ -2547,6 +2553,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/heliowap\/diff-risk-sentinel/);
     expect(evalDoc).toMatch(/It is a prioritization aid, not a bug detector/);
     expect(evalDoc).toMatch(/96% accuracy \/ 100% bug recall/);
+    expect(evalDoc).toMatch(/ACCEPTABLE_LOW_RISK/);
     expect(evalDoc).toMatch(/wmsing\/agent-firewall/);
     expect(evalDoc).toMatch(/fail-closed if checks do not pass/);
     expect(evalDoc).toMatch(/git pull is intentionally excluded/);
@@ -2575,6 +2582,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/hfmsio\/jev-wiki-watch/);
     expect(evalDoc).toMatch(/Umbylicus\/umby-jev-stack/);
     expect(evalDoc).toMatch(/Never drop a finding/);
+    expect(evalDoc).toMatch(/Jev only classifies/);
     expect(evalDoc).toMatch(/rejected 543 as false positives/);
     expect(evalDoc).toMatch(/CompleteTech-LLC-AI-Research\/jev-prune-kit/);
     expect(evalDoc).toMatch(/Not a universal `\/prune`/);
@@ -3111,6 +3119,7 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/heliowap\/diff-risk-sentinel/);
     expect(shape).toMatch(/It is a prioritization aid, not a bug detector/);
     expect(shape).toMatch(/96% accuracy \/ 100% bug recall/);
+    expect(shape).toMatch(/ACCEPTABLE_LOW_RISK/);
     expect(shape).toMatch(/wmsing\/agent-firewall/);
     expect(shape).toMatch(/fail-closed if checks do not pass/);
     expect(shape).toMatch(/git pull is intentionally excluded/);
@@ -3139,6 +3148,7 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/hfmsio\/jev-wiki-watch/);
     expect(shape).toMatch(/Umbylicus\/umby-jev-stack/);
     expect(shape).toMatch(/Never drop a finding/);
+    expect(shape).toMatch(/Jev only classifies/);
     expect(shape).toMatch(/rejected 543 as false positives/);
     expect(shape).toMatch(/CompleteTech-LLC-AI-Research\/jev-prune-kit/);
     expect(shape).toMatch(/Not a universal `\/prune`/);
@@ -3470,6 +3480,7 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/heliowap\/diff-risk-sentinel/);
     expect(hosts).toMatch(/It is a prioritization aid, not a bug detector/);
     expect(hosts).toMatch(/96% accuracy \/ 100% bug recall/);
+    expect(hosts).toMatch(/ACCEPTABLE_LOW_RISK/);
     expect(hosts).toMatch(/wmsing\/agent-firewall/);
     expect(hosts).toMatch(/fail-closed if checks do not pass/);
     expect(hosts).toMatch(/git pull is intentionally excluded/);
@@ -3498,6 +3509,7 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/hfmsio\/jev-wiki-watch/);
     expect(hosts).toMatch(/Umbylicus\/umby-jev-stack/);
     expect(hosts).toMatch(/Never drop a finding/);
+    expect(hosts).toMatch(/Jev only classifies/);
     expect(hosts).toMatch(/rejected 543 as false positives/);
     expect(hosts).toMatch(/CompleteTech-LLC-AI-Research\/jev-prune-kit/);
     expect(hosts).toMatch(/Not a universal `\/prune`/);
@@ -3909,6 +3921,7 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/heliowap\/diff-risk-sentinel/);
     expect(gates).toMatch(/It is a prioritization aid, not a bug detector/);
     expect(gates).toMatch(/96% accuracy \/ 100% bug recall/);
+    expect(gates).toMatch(/ACCEPTABLE_LOW_RISK/);
     expect(gates).toMatch(/wmsing\/agent-firewall/);
     expect(gates).toMatch(/fail-closed if checks do not pass/);
     expect(gates).toMatch(/git pull is intentionally excluded/);
@@ -3937,6 +3950,7 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/hfmsio\/jev-wiki-watch/);
     expect(gates).toMatch(/Umbylicus\/umby-jev-stack/);
     expect(gates).toMatch(/Never drop a finding/);
+    expect(gates).toMatch(/Jev only classifies/);
     expect(gates).toMatch(/rejected 543 as false positives/);
     expect(gates).toMatch(/CompleteTech-LLC-AI-Research\/jev-prune-kit/);
     expect(gates).toMatch(/Not a universal `\/prune`/);
