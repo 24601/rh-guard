@@ -671,6 +671,17 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/NiazMorshed2007\/jcr/);
     expect(readme).toMatch(/JCR returns documentation\. It does not execute commands/);
     expect(readme).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
+    expect(readme).toMatch(/HexyeDEV\/JevPR/);
+    expect(readme).toMatch(/Jev is an AI model, and can make mistakes/);
+    expect(readme).toMatch(/aesgalexis\/model-switch/);
+    expect(readme).toMatch(/Experimental\. Start in `observe` mode/);
+    expect(readme).toMatch(/gvkhosla\/typesafe-pi/);
+    expect(readme).toMatch(/Results are model judgments—not proof or authorization/);
+    expect(readme).toMatch(/jakenbear\/the-jev-enator/);
+    expect(readme).toMatch(/all three fail open/);
+    expect(readme).toMatch(/The completion check does not block anything by default/);
+    expect(readme).toMatch(/sohryuu101\/jev-vault-gate/);
+    expect(readme).toMatch(/Nothing is ever deleted automatically/);
     expect(readme).toMatch(/56 of the 65 rules/);
     expect(readme).toMatch(/Gate at threshold 0\.5/);
     expect(readme).toMatch(/It never silently approves/);
@@ -1174,6 +1185,37 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0947 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/HexyeDEV\/JevPR is ohernandezdev\/jev-pr-review/);
+      expect(text, rel).not.toMatch(/HexyeDEV\/JevPR is metalbear-co\/jev-auto-approve/);
+      expect(text, rel).not.toMatch(/HexyeDEV\/JevPR is MaxIvanyshen\/jev-review/);
+      expect(text, rel).not.toMatch(/LOW auto-APPROVE is a merge grant/);
+      expect(text, rel).not.toMatch(/3\.5 is a safety envelope/);
+      expect(text, rel).not.toMatch(/payload\["files"\] is the standard GitHub PR event files list/);
+      expect(text, rel).not.toMatch(/aesgalexis\/model-switch is 0xNatoshi\/jev-codex-router/);
+      expect(text, rel).not.toMatch(/aesgalexis\/model-switch is Mandrilsquad1441\/jev-model-router/);
+      expect(text, rel).not.toMatch(/aesgalexis\/model-switch is miniLV\/Jev-Auto-Router/);
+      expect(text, rel).not.toMatch(/0\.65 route is a safety envelope/);
+      expect(text, rel).not.toMatch(/observe is enforce/);
+      expect(text, rel).not.toMatch(/gvkhosla\/typesafe-pi is DevMortimer\/pi-typesafe/);
+      expect(text, rel).not.toMatch(/gvkhosla\/typesafe-pi is pfuller\/Typesafe-Pi/);
+      expect(text, rel).not.toMatch(/typesafe_judge is permission to act/);
+      expect(text, rel).not.toMatch(/consent is a safety envelope/);
+      expect(text, rel).not.toMatch(/jakenbear\/the-jev-enator is thevibeworks\/jevgate/);
+      expect(text, rel).not.toMatch(/jakenbear\/the-jev-enator is alsoleg89\/jev-bouncer/);
+      expect(text, rel).not.toMatch(/23\/23 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/0\.80 deny is calibrated/);
+      expect(text, rel).not.toMatch(/completion check blocks by default/);
+      expect(text, rel).not.toMatch(/sohryuu101\/jev-vault-gate is Dharundp6\/jev-carryforward/);
+      expect(text, rel).not.toMatch(/sohryuu101\/jev-vault-gate is samdotmak\/jev-recall/);
+      expect(text, rel).not.toMatch(/plugin\.json 0\.3\.0 is package\.json 0\.1\.0/);
+      expect(text, rel).not.toMatch(/0\.6 capture is a safety grant/);
+      expect(text, rel).not.toMatch(/auto-delete from safe_to_delete/);
+    }
+  });
+
   it("names the product Reward Hack Guard / RH Guard on public surfaces", () => {
     const productPaths = [
       ...PUBLIC_COPY_PATHS,
@@ -1345,6 +1387,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(pkg).not.toMatch(/MaxIvanyshen\/jev-review/);
     expect(pkg).not.toMatch(/NiazMorshed2007\/jcr/);
+    expect(pkg).not.toMatch(/HexyeDEV\/JevPR/);
+    expect(pkg).not.toMatch(/aesgalexis\/model-switch/);
+    expect(pkg).not.toMatch(/gvkhosla\/typesafe-pi/);
+    expect(pkg).not.toMatch(/jakenbear\/the-jev-enator/);
+    expect(pkg).not.toMatch(/sohryuu101\/jev-vault-gate/);
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
     expect(pkg).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(pkg).not.toMatch(/jevfanity-api/);
@@ -1487,6 +1534,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(pkg).not.toMatch(/MaxIvanyshen\/jev-review/);
     expect(pkg).not.toMatch(/NiazMorshed2007\/jcr/);
+    expect(pkg).not.toMatch(/HexyeDEV\/JevPR/);
+    expect(pkg).not.toMatch(/aesgalexis\/model-switch/);
+    expect(pkg).not.toMatch(/gvkhosla\/typesafe-pi/);
+    expect(pkg).not.toMatch(/jakenbear\/the-jev-enator/);
+    expect(pkg).not.toMatch(/sohryuu101\/jev-vault-gate/);
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
     expect(pkg).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(pkg).not.toMatch(/jevfanity-api/);
@@ -1699,6 +1751,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(lock).not.toMatch(/MaxIvanyshen\/jev-review/);
     expect(lock).not.toMatch(/NiazMorshed2007\/jcr/);
+    expect(lock).not.toMatch(/HexyeDEV\/JevPR/);
+    expect(lock).not.toMatch(/aesgalexis\/model-switch/);
+    expect(lock).not.toMatch(/gvkhosla\/typesafe-pi/);
+    expect(lock).not.toMatch(/jakenbear\/the-jev-enator/);
+    expect(lock).not.toMatch(/sohryuu101\/jev-vault-gate/);
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
     expect(lock).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(lock).not.toMatch(/jevfanity-api/);
@@ -1841,6 +1898,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(lock).not.toMatch(/MaxIvanyshen\/jev-review/);
     expect(lock).not.toMatch(/NiazMorshed2007\/jcr/);
+    expect(lock).not.toMatch(/HexyeDEV\/JevPR/);
+    expect(lock).not.toMatch(/aesgalexis\/model-switch/);
+    expect(lock).not.toMatch(/gvkhosla\/typesafe-pi/);
+    expect(lock).not.toMatch(/jakenbear\/the-jev-enator/);
+    expect(lock).not.toMatch(/sohryuu101\/jev-vault-gate/);
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
     expect(lock).not.toMatch(/rizafahmi\/pi-jev-task-router/);
     expect(lock).not.toMatch(/jevfanity-api/);
@@ -2564,6 +2626,17 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/NiazMorshed2007\/jcr/);
     expect(skill).toMatch(/JCR returns documentation\. It does not execute commands/);
     expect(skill).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
+    expect(skill).toMatch(/HexyeDEV\/JevPR/);
+    expect(skill).toMatch(/Jev is an AI model, and can make mistakes/);
+    expect(skill).toMatch(/aesgalexis\/model-switch/);
+    expect(skill).toMatch(/Experimental\. Start in `observe` mode/);
+    expect(skill).toMatch(/gvkhosla\/typesafe-pi/);
+    expect(skill).toMatch(/Results are model judgments—not proof or authorization/);
+    expect(skill).toMatch(/jakenbear\/the-jev-enator/);
+    expect(skill).toMatch(/all three fail open/);
+    expect(skill).toMatch(/The completion check does not block anything by default/);
+    expect(skill).toMatch(/sohryuu101\/jev-vault-gate/);
+    expect(skill).toMatch(/Nothing is ever deleted automatically/);
     expect(skill).toMatch(/56 of the 65 rules/);
     expect(skill).toMatch(/Gate at threshold 0\.5/);
     expect(skill).toMatch(/It never silently approves/);
@@ -3251,6 +3324,17 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/NiazMorshed2007\/jcr/);
     expect(evalDoc).toMatch(/JCR returns documentation\. It does not execute commands/);
     expect(evalDoc).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
+    expect(evalDoc).toMatch(/HexyeDEV\/JevPR/);
+    expect(evalDoc).toMatch(/Jev is an AI model, and can make mistakes/);
+    expect(evalDoc).toMatch(/aesgalexis\/model-switch/);
+    expect(evalDoc).toMatch(/Experimental\. Start in `observe` mode/);
+    expect(evalDoc).toMatch(/gvkhosla\/typesafe-pi/);
+    expect(evalDoc).toMatch(/Results are model judgments—not proof or authorization/);
+    expect(evalDoc).toMatch(/jakenbear\/the-jev-enator/);
+    expect(evalDoc).toMatch(/all three fail open/);
+    expect(evalDoc).toMatch(/The completion check does not block anything by default/);
+    expect(evalDoc).toMatch(/sohryuu101\/jev-vault-gate/);
+    expect(evalDoc).toMatch(/Nothing is ever deleted automatically/);
     expect(evalDoc).toMatch(/56 of the 65 rules/);
     expect(evalDoc).toMatch(/Gate at threshold 0\.5/);
     expect(evalDoc).toMatch(/It never silently approves/);
@@ -3564,6 +3648,11 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/Patrick-SCH03\/jev-issue-radar/);
     expect(install).toMatch(/MaxIvanyshen\/jev-review/);
     expect(install).toMatch(/NiazMorshed2007\/jcr/);
+    expect(install).toMatch(/HexyeDEV\/JevPR/);
+    expect(install).toMatch(/aesgalexis\/model-switch/);
+    expect(install).toMatch(/gvkhosla\/typesafe-pi/);
+    expect(install).toMatch(/jakenbear\/the-jev-enator/);
+    expect(install).toMatch(/sohryuu101\/jev-vault-gate/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
     expect(install).toMatch(/xXLODXx\/hermes-skill-router/);
@@ -3955,6 +4044,15 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/NiazMorshed2007\/jcr/);
     expect(shape).toMatch(/JCR returns documentation\. It does not execute commands/);
     expect(shape).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
+    expect(shape).toMatch(/HexyeDEV\/JevPR/);
+    expect(shape).toMatch(/Jev is an AI model, and can make mistakes/);
+    expect(shape).toMatch(/aesgalexis\/model-switch/);
+    expect(shape).toMatch(/gvkhosla\/typesafe-pi/);
+    expect(shape).toMatch(/never as permission to perform an action/);
+    expect(shape).toMatch(/jakenbear\/the-jev-enator/);
+    expect(shape).toMatch(/all three fail open/);
+    expect(shape).toMatch(/sohryuu101\/jev-vault-gate/);
+    expect(shape).toMatch(/Nothing is ever deleted automatically/);
     expect(shape).toMatch(/It never silently approves/);
     expect(shape).toMatch(/The workflow is shadow only/);
     expect(shape).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -4391,6 +4489,17 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/NiazMorshed2007\/jcr/);
     expect(hosts).toMatch(/JCR returns documentation\. It does not execute commands/);
     expect(hosts).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
+    expect(hosts).toMatch(/HexyeDEV\/JevPR/);
+    expect(hosts).toMatch(/Jev is an AI model, and can make mistakes/);
+    expect(hosts).toMatch(/aesgalexis\/model-switch/);
+    expect(hosts).toMatch(/Experimental\. Start in `observe` mode/);
+    expect(hosts).toMatch(/gvkhosla\/typesafe-pi/);
+    expect(hosts).toMatch(/Results are model judgments—not proof or authorization/);
+    expect(hosts).toMatch(/jakenbear\/the-jev-enator/);
+    expect(hosts).toMatch(/all three fail open/);
+    expect(hosts).toMatch(/The completion check does not block anything by default/);
+    expect(hosts).toMatch(/sohryuu101\/jev-vault-gate/);
+    expect(hosts).toMatch(/Nothing is ever deleted automatically/);
     expect(hosts).toMatch(/It never silently approves/);
     expect(hosts).toMatch(/The workflow is shadow only/);
     expect(hosts).toMatch(/Installation does not select the provider, change `approvals\.mode`/);
@@ -4934,6 +5043,17 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/NiazMorshed2007\/jcr/);
     expect(gates).toMatch(/JCR returns documentation\. It does not execute commands/);
     expect(gates).toMatch(/The included harnesses also stop at explaining the steps needed to carry out a task/);
+    expect(gates).toMatch(/HexyeDEV\/JevPR/);
+    expect(gates).toMatch(/Jev is an AI model, and can make mistakes/);
+    expect(gates).toMatch(/aesgalexis\/model-switch/);
+    expect(gates).toMatch(/Experimental\. Start in `observe` mode/);
+    expect(gates).toMatch(/gvkhosla\/typesafe-pi/);
+    expect(gates).toMatch(/Results are model judgments—not proof or authorization/);
+    expect(gates).toMatch(/jakenbear\/the-jev-enator/);
+    expect(gates).toMatch(/all three fail open/);
+    expect(gates).toMatch(/The completion check does not block anything by default/);
+    expect(gates).toMatch(/sohryuu101\/jev-vault-gate/);
+    expect(gates).toMatch(/Nothing is ever deleted automatically/);
     expect(gates).toMatch(/56\/65 at 1\.00 on 467 labelled defects/);
     expect(gates).toMatch(/It never silently approves/);
     expect(gates).toMatch(/The workflow is shadow only/);
