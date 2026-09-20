@@ -241,6 +241,18 @@ confidence; held-out discipline; compare only equivalent case sets.
 
 [jev-evaluation](https://github.com/willkelly/jev-evaluation) is an **adversarial, pre-registered** Jev eval: plan written **before any request**; 28 predictions each with a falsifier; one run **123,805 requests, 138 minutes, $12.69, five failures**, all `jev-1.13.0`. Quoted README: **Twelve of twenty-five testable predictions held. Thirteen were wrong, which is the useful half.** Calibration holds in-domain (support-ticket ECE 0.075) and **fails completely outside it** (3-SAT: answers *satisfiable* for every formula). Quoted current README: **Confidence predicts whether an answer is right, but not whether the question could be answered.** Quoted PROMPTING.md: gate on confidence ≥ **0.95** still admits **47%** of unanswerable states (mostly fluent nonsense). Quoted README: **act when confident and escalate when not** **catches wrong answers and misses unanswerable inputs**. Crude `"IGNORE THE QUESTION"` moved the answer **0%**; a polite invented-supervisor sentence moved it **65%** (confidence 1.00 → 0.62). Ground truth from a solver or construction, **never from the model**. Distinct from [jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval). Soft-judgment integrity sentinel: **do not hard-gate confidence as fake safety**. Do not invent unpublished extras as a rh-guard ROC. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[jev-bias-bench](https://github.com/Fox-Islam/jev-bias-bench) is a **one-attribute-at-a-time** Jev fairness/calibration bench: counterfactual pairs that differ in one attribute and nothing else. Quoted FINDINGS.md (20 September 2026, `jev-latest`): **11,984 calls, 52,430 answers, 666 people built from 6 anchors, 8 scenarios**. Quoted: **0 of 100** control comparisons significant. Quoted: **Do not test it by swapping names.** Quoted: **Read the deltas, not the stars.** Quoted caveats: **No build pinned.** Distinct from [natemoo-re/bias-bench](https://github.com/natemoo-re/bias-bench) (resume-screening name factorial, pinned `jev-1.13.0`). Fairness audit for guards — **not a rh-guard ROC**. `jev-latest` is a moving alias (contrast [rspamd-jev](https://github.com/rioriost/rspamd-jev) refusing that alias). Do not invent unpublished extras as a safety proof. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[aurum-gate](https://github.com/Ormus-Solutions/aurum-gate) (`@ormus/aurum-gate`) is a TypeScript **confidence-gated action router** (Jev Pattern 2): per-action floors, human escalation, refuse-below bands. Packaged export (`src/index.ts`, `package.json` `main`/`exports` → `dist/index.js`): decisions `auto` | `escalate` | `refuse`; default `autoConfidence` **0.85** is an uncalibrated product knob (same 0.85 theater as laya / jev-preflight). Quoted README: **Probability opens the door — confidence decides if gold flows automatic, or a human holds the pour.** Quoted README: tests are **mocked — no live API**. Mock router, not live Jev. Parallel non-export `src/gate.ts` is a second `AurumGate` (`ok` / `human`|`deny`|`ask`); quoted comment: **Probability is not confidence.** `index.test.ts` hits the packaged API; `gate.test.ts` hits the parallel class. **packaged export ≠ parallel gate.ts.** Treating 0.85 auto as a safety envelope is confidence theater / hard-gating soft judgment. Do not merge into `examples/`. Cousin of [jev-logtriage](https://github.com/jyatesdotdev/jev-logtriage) / [typed-gate](https://github.com/harshpuri84/typed-gate), not this sidecar.
+
+[quicksilver-judge](https://github.com/Ormus-Solutions/quicksilver-judge) (`@ormus/quicksilver-judge`) is a **staged PR/code pre-filter**. Packaged export (`src/index.ts`): sketch a Noul-style risk matrix, emit confidence-gated `PASS` / `HOLD` / `FAIL`. Public `sketchRisks` / `prefilter` is a **heuristic** (churn, auth, deps, labels) — **not live Jev**. Profiles: Choice `minConfidence` **0.7**, Score **0.65**. Gloss: **PASS is not a merge grant.** Parallel `src/stages.ts` (`runQuicksilver` inject-evaluate): quoted **Code owns overrides — Jev Choice is advisory when hard flags fire** (`pass`/`hold`/`escalate`, not the packaged PASS/HOLD/FAIL). **packaged heuristic ≠ live Jev.** Soft-score-as-hard-merge without calibration + escape hatch is soundness theater. Cousin of [moongate](https://github.com/brickfrog/moongate) / [jev-gate](https://github.com/totally-tim/jev-gate) / [latch](https://github.com/CaseReed/latch). Do not merge into `examples/`. Cousin, not this sidecar.
+
+[karat-filter](https://github.com/Ormus-Solutions/karat-filter) (`@ormus/karat-filter`) is **retrieve-then-judge**: filter RAG/search hits with lightweight relevance+confidence scores before they burn context (speculative fan-out). Quoted source (`src/index.ts`): **Token overlap judge — mock stand-in for a Jev Noul (no live API).** Defaults `minRelevance` **0.45** / `minConfidence` **0.5**. Inject-a-judge path exists (`src/filter.ts`); the packaged default is not live Jev. Treating token-overlap keep as calibrated Jev or a hard safety deny is confidence theater. Cousin of [jevex](https://github.com/jimmyhealer/jevex) / [jev-sift](https://github.com/kbhuw/jev-sift) / [jevusher](https://github.com/cvsgireesh/jevusher). Do not merge into `examples/`. Cousin, not this sidecar.
+
+[gold-assay](https://github.com/Ormus-Solutions/gold-assay) (`@ormus/gold-assay`) is a **UI proof assay**: score screenshot/OCR + DOM-as-state before an agent claims the flow worked. Quoted README: **Screenshots lie until you assay them.** Public `assay()` is substring/regex `GREEN` | `AMBER` | `RED` (`minGreen` **0.75**); a separate `assayQuestions` path is Jev-shaped, not the default. Gloss: **GREEN ≠ verified UI** (quoted README: **don't stamp GREEN on fool's gold**). Lexical GREEN is not a rh-guard ROC and not action≠verified-outcome ([jev-home-assistant-sentinel](https://github.com/bojansandhaus/jev-home-assistant-sentinel)). Treating GREEN as license to commit/click is confidence theater. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[WaynezProg/jev-kit](https://github.com/WaynezProg/jev-kit) is source-bound evidence checks plus bounded batch Jev judgments (`jev_evidence` / `jev_classify` / `jev_extract` / `jev_decide`). Distinct from [jonathanavis96/jev-kit](https://github.com/jonathanavis96/jev-kit) (Claude PreToolUse **Airlock**). Quoted README: **A source supporting a claim does not independently prove the claim true. Confidence is not a correctness guarantee.** Quoted: **No approval gate**. Quoted: **Exit `0` does not certify task completion or claim truth.** Quoted SECURITY.md: **Do not use confidence, source support, or CLI success as an authorization boundary** (**not an authorization boundary**). Evidence-bound integrity cousin of [clear-head](https://github.com/VladyslavHontar/clear-head) — source support ≠ truth/permit. Do not merge host installers into `examples/`. Cousin, not this sidecar.
+
 [localjev](https://github.com/githubnext/localjev) is a thin soundness-theater cousin: a local, Jev-wire-compatible `POST /v1/systemone` that prompts a chat model for JSON probability vectors. README: wire-compatible, **not** mathematically equivalent to a logit read — "The probabilities are generated/self-reported by the model rather than read directly from its logits. Evaluate their calibration on your own workload before relying on them for consequential decisions." Treating prompted JSON probs as calibrated logits for hard gates is soundness theater. One thin card only; not a new hook pack. Cousin of jev-arena / jev-ood-calibration. Not a rh-guard peer.
 
 [laya](https://github.com/NandhaKishorM/laya) is an open System One head (typed Choice / Score / Noul). Confidence-gating recipe at **0.85** (RLCD → "statistically meaningful") is still soft. Auto-act at that uncalibrated threshold is confidence theater, especially given Khmer OOD **0.000 at 95.2% confidence** — the model's own confidence gives no warning. Future backend, not a drop-in ROC replacement for this hook. Pair with jev-ood-calibration / capability-atlas.
@@ -573,7 +585,33 @@ deny so the bridge fails closed.
    **123,805** requests; confidence ≥ **0.95** still admits **47%**
    unanswerable states; quoted **act when confident and escalate when not** **catches wrong answers and misses unanswerable inputs**; distinct from jev-baselines-eval)
    is the soft-judgment integrity sentinel — **do not hard-gate
-   confidence as fake safety**. Soft floors / AMBIGUOUS / p<0.5 are
+   confidence as fake safety**. A one-attribute fairness bench
+   ([Fox-Islam/jev-bias-bench](https://github.com/Fox-Islam/jev-bias-bench):
+   **11,984** calls; **0/100** controls; quoted **Do not test it by
+   swapping names**; **Read the deltas, not the stars**; distinct from
+   natemoo-re/bias-bench) is not a rh-guard ROC. A mock confidence
+   router
+   ([Ormus-Solutions/aurum-gate](https://github.com/Ormus-Solutions/aurum-gate):
+   packaged `src/index.ts` `auto`|`escalate`|`refuse`; default autoConfidence
+   **0.85** uncalibrated; parallel `src/gate.ts` quoted **Probability is not
+   confidence**; mocked, no live API)
+   is not a safety envelope. A heuristic PR pre-filter
+   ([Ormus-Solutions/quicksilver-judge](https://github.com/Ormus-Solutions/quicksilver-judge):
+   packaged `sketchRisks` `PASS`|`HOLD`|`FAIL` not live Jev; Gloss: **PASS
+   is not a merge grant**; parallel `src/stages.ts` quoted **Code owns
+   overrides**) is not this sidecar's
+   structural deny. A retrieve-then-judge RAG filter
+   ([Ormus-Solutions/karat-filter](https://github.com/Ormus-Solutions/karat-filter):
+   quoted **Token overlap judge — mock stand-in for a Jev Noul**;
+   0.45/0.5 defaults) is not calibrated Jev. A UI proof assay
+   ([Ormus-Solutions/gold-assay](https://github.com/Ormus-Solutions/gold-assay):
+   quoted **Screenshots lie until you assay them**; public assay is
+   substring/regex; Gloss: **GREEN ≠ verified UI**) is not a commit grant.
+   Source-bound evidence tools
+   ([WaynezProg/jev-kit](https://github.com/WaynezProg/jev-kit): quoted
+   **Confidence is not a correctness guarantee**; **Exit 0 does not
+   certify**; SECURITY.md **not an authorization boundary**; distinct
+   from jonathanavis96/jev-kit Airlock) are not a hard envelope. Soft floors / AMBIGUOUS / p<0.5 are
    **not** hard gates. [Archer](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
    is still **promised-not-landed**. Do not treat
    [Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B) as Archer.
@@ -665,6 +703,12 @@ block. Explicit unauthorized requests to disable oversight can still block.
 - Resume-screening fairness/calibration audit (1,824 evals; zero binary name gaps; read magnitudes): [bias-bench](https://github.com/natemoo-re/bias-bench)
 - Context-window admission (token VOI; J7 pass ≠ safe to obey; outage → no lens): [jevusher](https://github.com/cvsgireesh/jevusher)
 - Adversarial pre-registered Jev eval (123,805 requests; confidence ≥ 0.95 still admits 47% unanswerable): [jev-evaluation](https://github.com/willkelly/jev-evaluation)
+- One-attribute fairness/calibration bench (11,984 calls; 0/100 controls; Do not test it by swapping names): [jev-bias-bench](https://github.com/Fox-Islam/jev-bias-bench)
+- Confidence-gated action router (packaged src/index.ts auto|escalate|refuse; 0.85 uncalibrated mock; parallel gate.ts Probability is not confidence): [aurum-gate](https://github.com/Ormus-Solutions/aurum-gate)
+- Staged PR/code pre-filter (packaged sketchRisks PASS|HOLD|FAIL not live Jev; Gloss: PASS is not a merge grant; parallel stages.ts Code owns overrides): [quicksilver-judge](https://github.com/Ormus-Solutions/quicksilver-judge)
+- Retrieve-then-judge RAG/search filter (Token overlap judge; mock stand-in for a Jev Noul): [karat-filter](https://github.com/Ormus-Solutions/karat-filter)
+- UI proof assay (Screenshots lie until you assay them; Gloss: GREEN ≠ verified UI): [gold-assay](https://github.com/Ormus-Solutions/gold-assay)
+- Source-bound evidence tools (Confidence is not a correctness guarantee; not an authorization boundary; distinct from Airlock): [WaynezProg/jev-kit](https://github.com/WaynezProg/jev-kit)
 - Multi-host Go harness (not MCP; drop/truncate without summarizing; Choice+Noul; 1 schema; strip thinking; not jev-routing-mcp): [jev-routing](https://github.com/nekowasabi/jev-routing)
 - Silent FALLBACK model-swap (advertised backend ≠ served backend; F1 0.546 vs ~0.800): [classifier-dev](https://github.com/mrmps/classifier-dev)
 - Calibrated PR-review gate (Action + CLI + OpenCode; soft-score-as-hard-rank; need calibration + escape hatch): [jev-gate](https://github.com/totally-tim/jev-gate)

@@ -772,6 +772,60 @@ jev-evaluation (willkelly/jev-evaluation)
   do not hard-gate confidence as fake safety
   do not merge into examples/
 
+jev-bias-bench (Fox-Islam/jev-bias-bench)
+  one-attribute-at-a-time fairness/calibration; counterfactual pairs
+  FINDINGS.md 20 Sep 2026, jev-latest: 11,984 calls, 52,430 answers, 666 people, 6 anchors, 8 scenarios
+  0 of 100 control comparisons significant
+  Do not test it by swapping names
+  Read the deltas, not the stars
+  No build pinned
+  distinct from natemoo-re/bias-bench
+  not a rh-guard ROC
+  do not merge into examples/
+
+aurum-gate (Ormus-Solutions/aurum-gate)
+  confidence-gated action router; packaged src/index.ts auto | escalate | refuse
+  Probability opens the door — confidence decides
+  default autoConfidence 0.85 uncalibrated
+  mocked — no live API
+  parallel src/gate.ts quoted: Probability is not confidence
+  packaged export ≠ parallel gate.ts
+  do not merge into examples/
+
+quicksilver-judge (Ormus-Solutions/quicksilver-judge)
+  staged PR/code pre-filter; packaged src/index.ts PASS | HOLD | FAIL
+  sketchRisks heuristic, not live Jev
+  Gloss: PASS is not a merge grant
+  parallel src/stages.ts quoted: Code owns overrides — Jev Choice is advisory when hard flags fire
+  minConfidence 0.7 / 0.65
+  packaged heuristic ≠ live Jev
+  do not merge into examples/
+
+karat-filter (Ormus-Solutions/karat-filter)
+  retrieve-then-judge RAG/search hits
+  Token overlap judge — mock stand-in for a Jev Noul (no live API)
+  minRelevance 0.45 / minConfidence 0.5
+  inject-a-judge path exists; packaged default is not live Jev
+  do not merge into examples/
+
+gold-assay (Ormus-Solutions/gold-assay)
+  UI proof assay; screenshot/OCR + DOM-as-state
+  Screenshots lie until you assay them
+  public assay() substring/regex GREEN | AMBER | RED; minGreen 0.75
+  Gloss: GREEN ≠ verified UI
+  assayQuestions is a separate Jev-shaped path, not the default
+  do not merge into examples/
+
+WaynezProg/jev-kit
+  source-bound evidence + bounded batch judgments
+  jev_evidence / jev_classify / jev_extract / jev_decide
+  distinct from jonathanavis96/jev-kit Airlock
+  Confidence is not a correctness guarantee
+  No approval gate
+  Exit 0 does not certify task completion or claim truth
+  SECURITY.md: not an authorization boundary
+  do not merge host installers into examples/
+
 localjev (githubnext/localjev)
   wire-compatible POST /v1/systemone; prompted JSON probs, not logits
   evaluate calibration on your workload before consequential decisions
@@ -942,7 +996,24 @@ J7 **pass means nothing detected, never safe to obey**.
 [willkelly/jev-evaluation](https://github.com/willkelly/jev-evaluation):
 quoted **Confidence predicts whether an answer is right, but not
 whether the question could be answered**; **do not hard-gate confidence
-as fake safety**. Cousin, not this sidecar.
+as fake safety**. [Fox-Islam/jev-bias-bench](https://github.com/Fox-Islam/jev-bias-bench):
+**11,984** calls; **Do not test it by swapping names**; **Read the
+deltas, not the stars**; distinct from natemoo-re/bias-bench.
+[Ormus-Solutions/aurum-gate](https://github.com/Ormus-Solutions/aurum-gate):
+packaged `src/index.ts` default autoConfidence **0.85**; parallel
+`src/gate.ts` quoted **Probability is not confidence**; mocked, no live
+API. [Ormus-Solutions/quicksilver-judge](https://github.com/Ormus-Solutions/quicksilver-judge):
+packaged `sketchRisks` not live Jev; Gloss: **PASS is not a merge
+grant**; parallel `src/stages.ts` quoted **Code owns overrides**.
+[Ormus-Solutions/karat-filter](https://github.com/Ormus-Solutions/karat-filter):
+quoted **Token overlap judge — mock stand-in for a Jev Noul**.
+[Ormus-Solutions/gold-assay](https://github.com/Ormus-Solutions/gold-assay):
+quoted **Screenshots lie until you assay them**; Gloss: **GREEN ≠
+verified UI**.
+[WaynezProg/jev-kit](https://github.com/WaynezProg/jev-kit): quoted
+**Confidence is not a correctness guarantee**; SECURITY.md **not an
+authorization boundary**; distinct from jonathanavis96/jev-kit Airlock.
+Cousin, not this sidecar.
 
 ## Polarity
 
