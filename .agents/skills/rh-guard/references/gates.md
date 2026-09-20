@@ -379,6 +379,16 @@ a merge, and not a reward-hack detector.
 
 [anonde](https://github.com/anonde-io/anonde) local-first Go PII. Quoted: **no outbound HuggingFace traffic at request time**. Reveal gated by `actor` + `purpose`. *Theirs* lowest leak_rate on **29** corpora, not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[Agentic-Guides/decision-kernel](https://github.com/Agentic-Guides/decision-kernel) Cloudflare Worker `/classify` + `/guard`. Quoted: **Judgment proposals only**. Quoted: **The guard never executes anything itself.** Missing key → 503. *Theirs* **10/10** / **0** false-block not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[NeOMakinG/kev-model-router](https://github.com/NeOMakinG/kev-model-router) local kev, not TypeSafe Jev. Quoted: **The router never blocks traffic.** Quoted: **kev being down never blocks traffic**. Routing ≠ permission. Distinct Mandrilsquad1441/jev-model-router. *Theirs* **10/10** not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[eugeniughelbur/jev-gate](https://github.com/eugeniughelbur/jev-gate) Claude PreToolUse. Quoted: **It catches mistakes, not attackers**. Quoted: **Fails open.** Observe default. MCP wrap is hope-the-model-looks. Distinct totally-tim/jev-gate. *Theirs* 300-call; `git stash clear` hard-rule. Soft p>=0.90 can deny. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jorgehara/gentle-browser-jev](https://github.com/jorgehara/gentle-browser-jev) Gentle/JEV/browser lab. Quoted: **never claim savings without a controlled A/B run.** local-fallback. Real browser/device not enabled. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[MarcoLoDico/pi-jev-router](https://github.com/MarcoLoDico/pi-jev-router) Pi `/model` picker. Quoted: **unvalidated starting policy, not a 95% accuracy guarantee.** Distinct philippdubach/pi-jev-router. Routing ≠ permission. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
