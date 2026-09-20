@@ -225,6 +225,9 @@ claude-code-jev (RahulBalakavi/claude-code-jev)
   human msgs + tool + cwd → OpenRouter typesafe/jev-1.13 → allow / block / ask
   low-confidence and network fail → human. Additive PreToolUse; Anthropic
   auto-mode is not replaceable via a supported API.
+  quoted 0 dangerous allowed on 18-case fixture (90 live decisions)
+  quoted adds a 264 ms hop rather than removing one; 0.85 uncalibrated
+  do not merge their examples/claude-settings.json into examples/
 
 gliner25-compaction (m-newhauser/gliner25-compaction)
   GLiNER2.5 Choice keep_full | keep_evidence | keep_call_only | drop
@@ -383,6 +386,7 @@ hermes-plugin-jev (robbyczgw-cla/hermes-plugin-jev)
   missing key: plugin inactive; timeout: Jev abstains
   contrast jev-decisions (advisory) and hermes-jev-router (model-route)
   Mrmimee/hermes-plugin-jev is a tool plugin, not a hook adapter
+  distinct from ajensenwaud/hermes-jev-plugin (typed decision tools)
 
 jev-routing (nekowasabi/jev-routing)
   Go harness Claude/Codex/Grok/Cursor/Devin; not an MCP server
@@ -657,6 +661,45 @@ jeff (Gestalt-Lab/jeff)
   light cross-note only; not a drop-in Jev ROC
   do not dump weights; do not merge into examples/
 
+invalidate (chopratejas/invalidate)
+  memory lease/invalidation; six Jev votes then policy in code
+  The memory text is never edited; questions/plans/instructions change nothing
+  When unsure, it asks a human; similarity top-k is never the judge
+  157 cases shipped v4: 89.2% strict / 97.5% lenient / 0 false invalidations
+  tuned on that set; 0/157 is not a rh-guard ROC
+  a kill takes two votes; LongMemEval treatment pending
+  not a memory store; cousin of jev-carryforward / jev-recall
+  do not merge into examples/
+
+hermes-jev-plugin (ajensenwaud/hermes-jev-plugin)
+  Hermes tool plugin: jev_check / jev_route / jev_score / jev_evaluate
+  not a PreToolUse hook; not a fail-closed permission overlay
+  distinct from robbyczgw-cla/hermes-plugin-jev and Mrmimee/hermes-plugin-jev
+  hope the model looks (jev-carryforward 0/4)
+  p ≥ 0.70 clear-cut noul; malformed → hermes exit 0
+  do not dump plugin source; do not merge into examples/
+
+jev-lint (mizchi/jev-lint)
+  semantic contract linter: name / comment / test truth
+  distinct from huntedman/JevLint and wobsoriano/oxlint-plugin-jev
+  candidate for a human to judge, not a verdict
+  No shipped rule has severity: error
+  20/23 at 1.00 on 197 labelled defects is not a rh-guard ROC
+  do not merge into examples/
+
+jev-recall (samdotmak/jev-recall)
+  relevance, not resemblance; include/exclude not top-k
+  17/18 requests / 19/20 key memories / $0.00044 / 0.35s
+  18 fictional requests is not a safety deny
+  distinct from jev-carryforward 0/4 and jev-gate-student-b
+  do not merge into examples/
+
+oxlint-plugin-jev (wobsoriano/oxlint-plugin-jev)
+  English oxlint rules → Jev cutoffs (jev/ask)
+  skip unless ci: "fail"; keep out of the editor
+  distinct from huntedman/JevLint and mizchi/jev-lint
+  thin card; do not merge into examples/
+
 localjev (githubnext/localjev)
   wire-compatible POST /v1/systemone; prompted JSON probs, not logits
   evaluate calibration on your workload before consequential decisions
@@ -809,7 +852,10 @@ guarded commit; quoted DGP `docs/TYPESAFE_JEV.md` (theirs, not TypeSafe):
 assessors do not execute. Primary protocol fold is in Augustus; here the
 boundary. [typesafe-jev-gate](https://github.com/russleyshaw/typesafe-jev-gate)
 cannot override Hermes hardline; a Jev allow is not a grant; uncertain →
-approval, not allow. [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard)
+approval, not allow. [ajensenwaud/hermes-jev-plugin](https://github.com/ajensenwaud/hermes-jev-plugin)
+is tools the agent must call, not a fail-closed overlay.
+[chopratejas/invalidate](https://github.com/chopratejas/invalidate) retires
+stale memories in code after Jev votes; a lease is not a capability grant. [pi-jev-guard](https://github.com/Reindeer-AI/pi-jev-guard)
 re-checks target and instruction snapshots before committing. Cousin, not this sidecar.
 
 ## Polarity
