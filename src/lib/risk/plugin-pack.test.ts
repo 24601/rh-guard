@@ -508,6 +508,9 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Forward an email, get a calibrated phishing verdict/);
     expect(readme).toMatch(/never changes the label/);
     expect(readme).toMatch(/A classifier cannot be talked out of a probability/);
+    expect(readme).toMatch(/mailverdict\/mailverdict/);
+    expect(readme).toMatch(/Advisory signals, not verdicts/);
+    expect(readme).toMatch(/jaiswalism\/mailverdict/);
     expect(readme).toMatch(/alexj11324\/open-jev-approvals/);
     expect(readme).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
     expect(readme).toMatch(/A deny always requires positive evidence that the action is dangerous/);
@@ -799,6 +802,8 @@ describe("discoverability copy", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
       expect(text, rel).not.toMatch(/mailverdict is rspamd-jev/);
+      expect(text, rel).not.toMatch(/pantos12\/mailverdict is mailverdict\/mailverdict/);
+      expect(text, rel).not.toMatch(/pantos12\/mailverdict is jaiswalism\/mailverdict/);
       expect(text, rel).not.toMatch(/24 fixtures is a rh-guard ROC/);
       expect(text, rel).not.toMatch(/the explainer changes the label/);
       expect(text, rel).not.toMatch(/indicator weights feed the probability/);
@@ -917,6 +922,8 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/glud123\/jev-assist/);
     expect(pkg).not.toMatch(/Nixz0824\/rag-jev/);
     expect(pkg).not.toMatch(/pantos12\/mailverdict/);
+    expect(pkg).not.toMatch(/mailverdict\/mailverdict/);
+    expect(pkg).not.toMatch(/jaiswalism\/mailverdict/);
     expect(pkg).not.toMatch(/alexj11324\/open-jev-approvals/);
     expect(pkg).not.toMatch(/Ash20pk\/beat-the-reviewer/);
     expect(pkg).not.toMatch(/jevfanity-api/);
@@ -990,6 +997,8 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/glud123\/jev-assist/);
     expect(pkg).not.toMatch(/Nixz0824\/rag-jev/);
     expect(pkg).not.toMatch(/pantos12\/mailverdict/);
+    expect(pkg).not.toMatch(/mailverdict\/mailverdict/);
+    expect(pkg).not.toMatch(/jaiswalism\/mailverdict/);
     expect(pkg).not.toMatch(/alexj11324\/open-jev-approvals/);
     expect(pkg).not.toMatch(/Ash20pk\/beat-the-reviewer/);
     expect(pkg).not.toMatch(/jevfanity-api/);
@@ -1133,6 +1142,8 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/glud123\/jev-assist/);
     expect(lock).not.toMatch(/Nixz0824\/rag-jev/);
     expect(lock).not.toMatch(/pantos12\/mailverdict/);
+    expect(lock).not.toMatch(/mailverdict\/mailverdict/);
+    expect(lock).not.toMatch(/jaiswalism\/mailverdict/);
     expect(lock).not.toMatch(/alexj11324\/open-jev-approvals/);
     expect(lock).not.toMatch(/Ash20pk\/beat-the-reviewer/);
     expect(lock).not.toMatch(/jevfanity-api/);
@@ -1206,6 +1217,8 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/glud123\/jev-assist/);
     expect(lock).not.toMatch(/Nixz0824\/rag-jev/);
     expect(lock).not.toMatch(/pantos12\/mailverdict/);
+    expect(lock).not.toMatch(/mailverdict\/mailverdict/);
+    expect(lock).not.toMatch(/jaiswalism\/mailverdict/);
     expect(lock).not.toMatch(/alexj11324\/open-jev-approvals/);
     expect(lock).not.toMatch(/Ash20pk\/beat-the-reviewer/);
     expect(lock).not.toMatch(/jevfanity-api/);
@@ -1766,6 +1779,9 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Forward an email, get a calibrated phishing verdict/);
     expect(skill).toMatch(/never changes the label/);
     expect(skill).toMatch(/A classifier cannot be talked out of a probability/);
+    expect(skill).toMatch(/mailverdict\/mailverdict/);
+    expect(skill).toMatch(/Advisory signals, not verdicts/);
+    expect(skill).toMatch(/jaiswalism\/mailverdict/);
     expect(skill).toMatch(/alexj11324\/open-jev-approvals/);
     expect(skill).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
     expect(skill).toMatch(/A deny always requires positive evidence that the action is dangerous/);
@@ -2292,6 +2308,9 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Forward an email, get a calibrated phishing verdict/);
     expect(evalDoc).toMatch(/never changes the label/);
     expect(evalDoc).toMatch(/A classifier cannot be talked out of a probability/);
+    expect(evalDoc).toMatch(/mailverdict\/mailverdict/);
+    expect(evalDoc).toMatch(/Advisory signals, not verdicts/);
+    expect(evalDoc).toMatch(/jaiswalism\/mailverdict/);
     expect(evalDoc).toMatch(/alexj11324\/open-jev-approvals/);
     expect(evalDoc).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
     expect(evalDoc).toMatch(/A deny always requires positive evidence that the action is dangerous/);
@@ -2542,6 +2561,8 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/glud123\/jev-assist/);
     expect(install).toMatch(/Nixz0824\/rag-jev/);
     expect(install).toMatch(/pantos12\/mailverdict/);
+    expect(install).toMatch(/mailverdict\/mailverdict/);
+    expect(install).toMatch(/jaiswalism\/mailverdict/);
     expect(install).toMatch(/alexj11324\/open-jev-approvals/);
     expect(install).toMatch(/Ash20pk\/beat-the-reviewer/);
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -2785,6 +2806,9 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/Forward an email, get a calibrated phishing verdict/);
     expect(shape).toMatch(/never changes the label/);
     expect(shape).toMatch(/A classifier cannot be talked out of a probability/);
+    expect(shape).toMatch(/mailverdict\/mailverdict/);
+    expect(shape).toMatch(/Advisory signals, not verdicts/);
+    expect(shape).toMatch(/jaiswalism\/mailverdict/);
     expect(shape).toMatch(/alexj11324\/open-jev-approvals/);
     expect(shape).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
     expect(shape).toMatch(/A deny always requires positive evidence that the action is dangerous/);
@@ -3093,6 +3117,8 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/pantos12\/mailverdict/);
     expect(hosts).toMatch(/Forward an email, get a calibrated phishing verdict/);
     expect(hosts).toMatch(/never changes the label/);
+    expect(hosts).toMatch(/mailverdict\/mailverdict/);
+    expect(hosts).toMatch(/Advisory signals, not verdicts/);
     expect(hosts).toMatch(/alexj11324\/open-jev-approvals/);
     expect(hosts).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
     expect(hosts).toMatch(/There is no `review_required`/);
@@ -3478,6 +3504,9 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Forward an email, get a calibrated phishing verdict/);
     expect(gates).toMatch(/never changes the label/);
     expect(gates).toMatch(/A classifier cannot be talked out of a probability/);
+    expect(gates).toMatch(/mailverdict\/mailverdict/);
+    expect(gates).toMatch(/Advisory signals, not verdicts/);
+    expect(gates).toMatch(/jaiswalism\/mailverdict/);
     expect(gates).toMatch(/alexj11324\/open-jev-approvals/);
     expect(gates).toMatch(/The degradation model changed from fail-closed to fail-open after user review/);
     expect(gates).toMatch(/A deny always requires positive evidence that the action is dangerous/);
