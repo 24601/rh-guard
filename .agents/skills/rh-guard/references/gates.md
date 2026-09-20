@@ -359,6 +359,26 @@ a merge, and not a reward-hack detector.
 
 [typesafeai-dotnet-sdk](https://github.com/saibimajdi/typesafeai-dotnet-sdk) community .NET System One client. Quoted: **This project is not affiliated with, sponsored by, or endorsed by TypeSafe AI.** Quoted: **Thresholds belong in your code.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[RiskAverseTech/toolgate](https://github.com/RiskAverseTech/toolgate) (`@riskaverse/toolgate`) Claude PreToolUse + MCP proxy. Quoted: **Static rules run first**. Quoted: **defense in depth, not a sandbox**. `allow` is advisory. Policy only `~/.toolgate`. *Theirs* **20/20** / **19/20** / **40% ask** not a rh-guard ROC. Distinct fdemir/toolgate. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[ailerix](https://github.com/tylerjharden/ailerix) type-safe model router. Quoted: Jev classifies **task families** only. `ailerix/auto` is not a permission. Distinct slo-router / jev-model-router / reallygood83/jev-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-github-quality-gate](https://github.com/Bnymn1306/jev-github-quality-gate) (Q-GATE) `auto_approved` / `needs_review` / `blocked`. Quoted: **Supports shadow mode**. Heuristic fallback. `auto_approved` is not a merge grant. Distinct totally-tim/jev-gate / HexyeDEV/JevPR. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[win-cu-router](https://github.com/JkRheezy/win-cu-router) Windows Jev-first computer-use. Quoted: planner cannot increase operation permissions. Quoted: HTTP bridge is **not an operating-system sandbox**. *Theirs* E01 through E05. Distinct windows2text / Jevbridge. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[herdr-jev-router](https://github.com/boriscardano/herdr-jev-router) mandatory `agent.spawn` routing. Quoted: **Treat the enforcement claims as unproven.** Fail closed. Quoted: **The caller still cannot choose one.** Distinct muthuishere/herdr-jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[grok-jev-router](https://github.com/colinmcdermott/grok-jev-router) Grok Bot router. Quoted: **The router is advice; those rules are the boundary.** Quoted: **instruction-following, not enforcement.** Shadow first. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[braess-router](https://github.com/copyleftdev/braess-router) Jev handler + Poise endpoint. Quoted: **Alpha · single server · loopback only.** Quoted: **This project is independent of TypeSafe.** No workload accuracy guarantee. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[gowtham980/jev-router](https://github.com/gowtham980/jev-router) OpenClaw plugin. Quoted: **This is NOT a universal automatic model-and-thinking switcher.** Quoted: **Classifier failures retain the current model.** Distinct reallygood83/jev-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[PrivaParse](https://github.com/Jhiynn/PrivaParse) local PII + OpenAI-compatible gateway. *Theirs*: PERSON F1 **0.964**; **LICENSE_NUMBER and ROUTING_NUMBER measured 0.000 recall**. Not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[anonde](https://github.com/anonde-io/anonde) local-first Go PII. Quoted: **no outbound HuggingFace traffic at request time**. Reveal gated by `actor` + `purpose`. *Theirs* lowest leak_rate on **29** corpora, not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
@@ -391,7 +411,7 @@ a merge, and not a reward-hack detector.
 
 [waymode](https://github.com/mossburgh/waymode) lets the host keep permissions, validation, and handlers; Jev decides over typed actions on the live UI with retained evidence. Jev confidence grants no permission (sensor ≠ verdict). Cousin, not this sidecar.
 
-[skill-broker](https://github.com/adamjralph/skill-broker) keeps authority in deterministic code; Jev judges relevance only and never grants access. Jev relevance ≠ authority — the model never grants. Direct sibling to turnstile (evidence ≠ authority). Anti-pattern: letting System One confidence expand the allowed skill set. Cousin, not this sidecar.
+[skill-broker](https://github.com/adamjralph/skill-broker) Hermes skill-intervention layer. Quoted: **Stages 1–4 are built and one Consumer is live.** Quoted: Jev **never grants access.** Stages 5-6 next. Do not treat a live Consumer as Hermes enforce. Direct sibling to turnstile (evidence ≠ authority). Anti-pattern: letting System One confidence expand the allowed skill set. Cousin, not this sidecar.
 
 [jev-lens](https://github.com/rashedInt32/jev-lens) is an advisory Claude Stop hook: it never blocks, never edits, and never says green unless sure (`JEV_LENS_GREEN` 0.9). Attention/VOI, not authority — keep it separate from skill-broker / construct-auto-classifier. Cousin, not this sidecar.
 
@@ -1886,6 +1906,62 @@ saibimajdi/typesafeai-dotnet-sdk
   thresholds belong in caller code
   do not merge into examples/
 
+RiskAverseTech/toolgate
+  Claude PreToolUse + MCP proxy; static rules first; not a sandbox
+  allow is advisory; policy only ~/.toolgate; distinct fdemir/toolgate
+  theirs 20/20 and 19/20 not a rh-guard ROC
+  do not merge into examples/
+
+tylerjharden/ailerix
+  Jev classifies task families only; ailerix/auto is not a permission
+  distinct slo-router / jev-model-router / reallygood83/jev-router
+  do not merge into examples/
+
+Bnymn1306/jev-github-quality-gate
+  Q-GATE auto_approved / needs_review / blocked; shadow mode
+  auto_approved is not a merge grant; heuristic fallback
+  distinct totally-tim/jev-gate / HexyeDEV/JevPR
+  do not merge into examples/
+
+JkRheezy/win-cu-router
+  Windows Jev-first computer-use; planner cannot increase permissions
+  HTTP bridge is not an operating-system sandbox; theirs E01-E05
+  distinct ArronHC/windows2text / tacticocc/Jevbridge
+  do not merge into examples/
+
+boriscardano/herdr-jev-router
+  mandatory agent.spawn routing; enforcement claims unproven
+  fail closed; caller still cannot choose one
+  distinct muthuishere/herdr-jev
+  do not merge into examples/
+
+colinmcdermott/grok-jev-router
+  router is advice; Auto-review rules are the boundary
+  instruction-following, not enforcement; shadow first
+  do not merge into examples/
+
+copyleftdev/braess-router
+  Jev handler + Poise endpoint; alpha loopback only
+  independent of TypeSafe; no workload accuracy guarantee
+  do not merge into examples/
+
+gowtham980/jev-router
+  OpenClaw plugin; NOT a universal automatic model-and-thinking switcher
+  classifier failures retain the current model
+  distinct reallygood83/jev-router / justinhsu1477/jev-router
+  do not merge into examples/
+
+Jhiynn/PrivaParse
+  local PII + OpenAI-compatible gateway; nothing leaves the machine
+  theirs PERSON F1 0.964; LICENSE_NUMBER/ROUTING_NUMBER 0.000 recall
+  not a rh-guard ROC
+  do not merge into examples/
+
+anonde-io/anonde
+  local-first Go PII; no outbound HuggingFace at request time
+  reveal gated by actor+purpose; theirs 29-corpus leak_rate not a ROC
+  do not merge into examples/
+
 localjev (githubnext/localjev)
   wire-compatible POST /v1/systemone; prompted JSON probs, not logits
   evaluate calibration on your workload before consequential decisions
@@ -1926,7 +2002,8 @@ waymode (mossburgh/waymode)
   Jev confidence grants no permission (sensor ≠ verdict)
 
 skill-broker (adamjralph/skill-broker)
-  Jev judges relevance only; never grants access
+  Stages 1-4 built; one Consumer live; Jev never grants access
+  Stages 5-6 next; do not treat a live Consumer as Hermes enforce
   Jev relevance ≠ authority; sibling to turnstile (evidence ≠ authority)
   anti-pattern: System One confidence expanding the allowed skill set
 

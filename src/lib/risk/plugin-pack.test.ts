@@ -735,6 +735,30 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
     expect(readme).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
 
+    expect(readme).toMatch(/RiskAverseTech\/toolgate/);
+    expect(readme).toMatch(/defense in depth, not a sandbox/);
+    expect(readme).toMatch(/tylerjharden\/ailerix/);
+    expect(readme).toMatch(/task families/);
+    expect(readme).toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(readme).toMatch(/auto_approved/);
+    expect(readme).toMatch(/JkRheezy\/win-cu-router/);
+    expect(readme).toMatch(/not an operating-system sandbox/);
+    expect(readme).toMatch(/boriscardano\/herdr-jev-router/);
+    expect(readme).toMatch(/Treat the enforcement claims as unproven/);
+    expect(readme).toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(readme).toMatch(/The router is advice/);
+    expect(readme).toMatch(/instruction-following, not enforcement/);
+    expect(readme).toMatch(/copyleftdev\/braess-router/);
+    expect(readme).toMatch(/independent of TypeSafe/);
+    expect(readme).toMatch(/gowtham980\/jev-router/);
+    expect(readme).toMatch(/NOT a universal automatic model-and-thinking switcher/);
+    expect(readme).toMatch(/Classifier failures retain the current model/);
+    expect(readme).toMatch(/Jhiynn\/PrivaParse/);
+    expect(readme).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
+    expect(readme).toMatch(/anonde-io\/anonde/);
+    expect(readme).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(readme).toMatch(/Stages 1.4 are built and one Consumer is live/);
+
     expect(readme).toMatch(/56 of the 65 rules/);
     expect(readme).toMatch(/Gate at threshold 0\.5/);
     expect(readme).toMatch(/It never silently approves/);
@@ -1314,6 +1338,29 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1340 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/RiskAverseTech\/toolgate is a sandbox/);
+      expect(text, rel).not.toMatch(/RiskAverseTech\/toolgate is fdemir\/toolgate/);
+      expect(text, rel).not.toMatch(/20\/20 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/ailerix\/auto is a permission grant/);
+      expect(text, rel).not.toMatch(/auto_approved is a merge grant/);
+      expect(text, rel).not.toMatch(/win-cu-router HTTP bridge is an operating-system sandbox/);
+      expect(text, rel).not.toMatch(/planner\(checkpoint\) can increase operation permissions/);
+      expect(text, rel).not.toMatch(/boriscardano\/herdr-jev-router is muthuishere\/herdr-jev/);
+      expect(text, rel).not.toMatch(/Treat the enforcement claims as proven/);
+      expect(text, rel).not.toMatch(/The router is the boundary/);
+      expect(text, rel).not.toMatch(/gowtham980\/jev-router is reallygood83\/jev-router/);
+      expect(text, rel).not.toMatch(/gowtham980\/jev-router is a universal automatic model-and-thinking switcher/);
+      expect(text, rel).not.toMatch(/0\.964 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/anonde leak_rate is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/skill-broker Jev grants access/);
+      expect(text, rel).not.toMatch(/Stages 5-6 are built/);
+      expect(text, rel).not.toMatch(/braess-router has a workload accuracy guarantee/);
+    }
+  });
+
   it("does not invent hourly 0947 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -1548,6 +1595,16 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/tristan-kkim\/airlock/);
     expect(pkg).not.toMatch(/david-cermak\/jevlike-esp32/);
     expect(pkg).not.toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+    expect(pkg).not.toMatch(/RiskAverseTech\/toolgate/);
+    expect(pkg).not.toMatch(/tylerjharden\/ailerix/);
+    expect(pkg).not.toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(pkg).not.toMatch(/JkRheezy\/win-cu-router/);
+    expect(pkg).not.toMatch(/boriscardano\/herdr-jev-router/);
+    expect(pkg).not.toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(pkg).not.toMatch(/copyleftdev\/braess-router/);
+    expect(pkg).not.toMatch(/gowtham980\/jev-router/);
+    expect(pkg).not.toMatch(/Jhiynn\/PrivaParse/);
+    expect(pkg).not.toMatch(/anonde-io\/anonde/);
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
@@ -1724,6 +1781,16 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/tristan-kkim\/airlock/);
     expect(pkg).not.toMatch(/david-cermak\/jevlike-esp32/);
     expect(pkg).not.toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+    expect(pkg).not.toMatch(/RiskAverseTech\/toolgate/);
+    expect(pkg).not.toMatch(/tylerjharden\/ailerix/);
+    expect(pkg).not.toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(pkg).not.toMatch(/JkRheezy\/win-cu-router/);
+    expect(pkg).not.toMatch(/boriscardano\/herdr-jev-router/);
+    expect(pkg).not.toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(pkg).not.toMatch(/copyleftdev\/braess-router/);
+    expect(pkg).not.toMatch(/gowtham980\/jev-router/);
+    expect(pkg).not.toMatch(/Jhiynn\/PrivaParse/);
+    expect(pkg).not.toMatch(/anonde-io\/anonde/);
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(pkg).not.toMatch(/justinhsu1477\/jev-router/);
@@ -1970,6 +2037,16 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/tristan-kkim\/airlock/);
     expect(lock).not.toMatch(/david-cermak\/jevlike-esp32/);
     expect(lock).not.toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+    expect(lock).not.toMatch(/RiskAverseTech\/toolgate/);
+    expect(lock).not.toMatch(/tylerjharden\/ailerix/);
+    expect(lock).not.toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(lock).not.toMatch(/JkRheezy\/win-cu-router/);
+    expect(lock).not.toMatch(/boriscardano\/herdr-jev-router/);
+    expect(lock).not.toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(lock).not.toMatch(/copyleftdev\/braess-router/);
+    expect(lock).not.toMatch(/gowtham980\/jev-router/);
+    expect(lock).not.toMatch(/Jhiynn\/PrivaParse/);
+    expect(lock).not.toMatch(/anonde-io\/anonde/);
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
@@ -2146,6 +2223,16 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/tristan-kkim\/airlock/);
     expect(lock).not.toMatch(/david-cermak\/jevlike-esp32/);
     expect(lock).not.toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+    expect(lock).not.toMatch(/RiskAverseTech\/toolgate/);
+    expect(lock).not.toMatch(/tylerjharden\/ailerix/);
+    expect(lock).not.toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(lock).not.toMatch(/JkRheezy\/win-cu-router/);
+    expect(lock).not.toMatch(/boriscardano\/herdr-jev-router/);
+    expect(lock).not.toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(lock).not.toMatch(/copyleftdev\/braess-router/);
+    expect(lock).not.toMatch(/gowtham980\/jev-router/);
+    expect(lock).not.toMatch(/Jhiynn\/PrivaParse/);
+    expect(lock).not.toMatch(/anonde-io\/anonde/);
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
     expect(lock).not.toMatch(/justinhsu1477\/jev-router/);
@@ -2930,6 +3017,30 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
     expect(skill).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
 
+    expect(skill).toMatch(/RiskAverseTech\/toolgate/);
+    expect(skill).toMatch(/defense in depth, not a sandbox/);
+    expect(skill).toMatch(/tylerjharden\/ailerix/);
+    expect(skill).toMatch(/task families/);
+    expect(skill).toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(skill).toMatch(/auto_approved/);
+    expect(skill).toMatch(/JkRheezy\/win-cu-router/);
+    expect(skill).toMatch(/not an operating-system sandbox/);
+    expect(skill).toMatch(/boriscardano\/herdr-jev-router/);
+    expect(skill).toMatch(/Treat the enforcement claims as unproven/);
+    expect(skill).toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(skill).toMatch(/The router is advice/);
+    expect(skill).toMatch(/instruction-following, not enforcement/);
+    expect(skill).toMatch(/copyleftdev\/braess-router/);
+    expect(skill).toMatch(/independent of TypeSafe/);
+    expect(skill).toMatch(/gowtham980\/jev-router/);
+    expect(skill).toMatch(/NOT a universal automatic model-and-thinking switcher/);
+    expect(skill).toMatch(/Classifier failures retain the current model/);
+    expect(skill).toMatch(/Jhiynn\/PrivaParse/);
+    expect(skill).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
+    expect(skill).toMatch(/anonde-io\/anonde/);
+    expect(skill).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
+
     expect(skill).toMatch(/56 of the 65 rules/);
     expect(skill).toMatch(/Gate at threshold 0\.5/);
     expect(skill).toMatch(/It never silently approves/);
@@ -3675,6 +3786,30 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
     expect(evalDoc).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
 
+    expect(evalDoc).toMatch(/RiskAverseTech\/toolgate/);
+    expect(evalDoc).toMatch(/defense in depth, not a sandbox/);
+    expect(evalDoc).toMatch(/tylerjharden\/ailerix/);
+    expect(evalDoc).toMatch(/task families/);
+    expect(evalDoc).toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(evalDoc).toMatch(/auto_approved/);
+    expect(evalDoc).toMatch(/JkRheezy\/win-cu-router/);
+    expect(evalDoc).toMatch(/not an operating-system sandbox/);
+    expect(evalDoc).toMatch(/boriscardano\/herdr-jev-router/);
+    expect(evalDoc).toMatch(/Treat the enforcement claims as unproven/);
+    expect(evalDoc).toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(evalDoc).toMatch(/The router is advice/);
+    expect(evalDoc).toMatch(/instruction-following, not enforcement/);
+    expect(evalDoc).toMatch(/copyleftdev\/braess-router/);
+    expect(evalDoc).toMatch(/independent of TypeSafe/);
+    expect(evalDoc).toMatch(/gowtham980\/jev-router/);
+    expect(evalDoc).toMatch(/NOT a universal automatic model-and-thinking switcher/);
+    expect(evalDoc).toMatch(/Classifier failures retain the current model/);
+    expect(evalDoc).toMatch(/Jhiynn\/PrivaParse/);
+    expect(evalDoc).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
+    expect(evalDoc).toMatch(/anonde-io\/anonde/);
+    expect(evalDoc).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
+
     expect(evalDoc).toMatch(/56 of the 65 rules/);
     expect(evalDoc).toMatch(/Gate at threshold 0\.5/);
     expect(evalDoc).toMatch(/It never silently approves/);
@@ -4020,6 +4155,17 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/tristan-kkim\/airlock/);
     expect(install).toMatch(/david-cermak\/jevlike-esp32/);
     expect(install).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
+
+    expect(install).toMatch(/RiskAverseTech\/toolgate/);
+    expect(install).toMatch(/tylerjharden\/ailerix/);
+    expect(install).toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(install).toMatch(/JkRheezy\/win-cu-router/);
+    expect(install).toMatch(/boriscardano\/herdr-jev-router/);
+    expect(install).toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(install).toMatch(/copyleftdev\/braess-router/);
+    expect(install).toMatch(/gowtham980\/jev-router/);
+    expect(install).toMatch(/Jhiynn\/PrivaParse/);
+    expect(install).toMatch(/anonde-io\/anonde/);
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
@@ -4466,6 +4612,30 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/This is intentionally a demo, not a production model/);
     expect(shape).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
     expect(shape).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
+
+    expect(shape).toMatch(/RiskAverseTech\/toolgate/);
+    expect(shape).toMatch(/defense in depth, not a sandbox/);
+    expect(shape).toMatch(/tylerjharden\/ailerix/);
+    expect(shape).toMatch(/task families/);
+    expect(shape).toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(shape).toMatch(/auto_approved/);
+    expect(shape).toMatch(/JkRheezy\/win-cu-router/);
+    expect(shape).toMatch(/not an operating-system sandbox/);
+    expect(shape).toMatch(/boriscardano\/herdr-jev-router/);
+    expect(shape).toMatch(/Treat the enforcement claims as unproven/);
+    expect(shape).toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(shape).toMatch(/The router is advice/);
+    expect(shape).toMatch(/instruction-following, not enforcement/);
+    expect(shape).toMatch(/copyleftdev\/braess-router/);
+    expect(shape).toMatch(/independent of TypeSafe/);
+    expect(shape).toMatch(/gowtham980\/jev-router/);
+    expect(shape).toMatch(/NOT a universal automatic model-and-thinking switcher/);
+    expect(shape).toMatch(/Classifier failures retain the current model/);
+    expect(shape).toMatch(/Jhiynn\/PrivaParse/);
+    expect(shape).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
+    expect(shape).toMatch(/anonde-io\/anonde/);
+    expect(shape).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(shape).toMatch(/It never silently approves/);
     expect(shape).toMatch(/The workflow is shadow only/);
@@ -4960,6 +5130,30 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/This is intentionally a demo, not a production model/);
     expect(hosts).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
     expect(hosts).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
+
+    expect(hosts).toMatch(/RiskAverseTech\/toolgate/);
+    expect(hosts).toMatch(/defense in depth, not a sandbox/);
+    expect(hosts).toMatch(/tylerjharden\/ailerix/);
+    expect(hosts).toMatch(/task families/);
+    expect(hosts).toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(hosts).toMatch(/auto_approved/);
+    expect(hosts).toMatch(/JkRheezy\/win-cu-router/);
+    expect(hosts).toMatch(/not an operating-system sandbox/);
+    expect(hosts).toMatch(/boriscardano\/herdr-jev-router/);
+    expect(hosts).toMatch(/Treat the enforcement claims as unproven/);
+    expect(hosts).toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(hosts).toMatch(/The router is advice/);
+    expect(hosts).toMatch(/instruction-following, not enforcement/);
+    expect(hosts).toMatch(/copyleftdev\/braess-router/);
+    expect(hosts).toMatch(/independent of TypeSafe/);
+    expect(hosts).toMatch(/gowtham980\/jev-router/);
+    expect(hosts).toMatch(/NOT a universal automatic model-and-thinking switcher/);
+    expect(hosts).toMatch(/Classifier failures retain the current model/);
+    expect(hosts).toMatch(/Jhiynn\/PrivaParse/);
+    expect(hosts).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
+    expect(hosts).toMatch(/anonde-io\/anonde/);
+    expect(hosts).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(hosts).toMatch(/It never silently approves/);
     expect(hosts).toMatch(/The workflow is shadow only/);
@@ -5561,6 +5755,30 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/This is intentionally a demo, not a production model/);
     expect(gates).toMatch(/saibimajdi\/typesafeai-dotnet-sdk/);
     expect(gates).toMatch(/not affiliated with, sponsored by, or endorsed by TypeSafe AI/);
+
+    expect(gates).toMatch(/RiskAverseTech\/toolgate/);
+    expect(gates).toMatch(/defense in depth, not a sandbox/);
+    expect(gates).toMatch(/tylerjharden\/ailerix/);
+    expect(gates).toMatch(/task families/);
+    expect(gates).toMatch(/Bnymn1306\/jev-github-quality-gate/);
+    expect(gates).toMatch(/auto_approved/);
+    expect(gates).toMatch(/JkRheezy\/win-cu-router/);
+    expect(gates).toMatch(/not an operating-system sandbox/);
+    expect(gates).toMatch(/boriscardano\/herdr-jev-router/);
+    expect(gates).toMatch(/Treat the enforcement claims as unproven/);
+    expect(gates).toMatch(/colinmcdermott\/grok-jev-router/);
+    expect(gates).toMatch(/The router is advice/);
+    expect(gates).toMatch(/instruction-following, not enforcement/);
+    expect(gates).toMatch(/copyleftdev\/braess-router/);
+    expect(gates).toMatch(/independent of TypeSafe/);
+    expect(gates).toMatch(/gowtham980\/jev-router/);
+    expect(gates).toMatch(/NOT a universal automatic model-and-thinking switcher/);
+    expect(gates).toMatch(/Classifier failures retain the current model/);
+    expect(gates).toMatch(/Jhiynn\/PrivaParse/);
+    expect(gates).toMatch(/LICENSE_NUMBER and ROUTING_NUMBER measured 0\.000 recall/);
+    expect(gates).toMatch(/anonde-io\/anonde/);
+    expect(gates).toMatch(/no outbound HuggingFace traffic at request time/);
+    expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
     expect(gates).toMatch(/56\/65 at 1\.00 on 467 labelled defects/);
     expect(gates).toMatch(/It never silently approves/);
