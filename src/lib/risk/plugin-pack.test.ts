@@ -816,6 +816,23 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/jjlecocq-v\/outbound-draft-gate/);
     expect(readme).toMatch(/You always click send/);
     expect(readme).toMatch(/Nothing auto-sends/);
+    expect(readme).toMatch(/notque\/vexjoy-agent/);
+    expect(readme).toMatch(/falls back to `\/do`/);
+    expect(readme).toMatch(/exit gate requires test output/);
+    expect(readme).toMatch(/qkal\/Canny/);
+    expect(readme).toMatch(/Only facts can block/);
+    expect(readme).toMatch(/Jev can only relax the block/);
+    expect(readme).toMatch(/seb4ez\/jevguard-mcp/);
+    expect(readme).toMatch(/UNRESOLVED_OR_OTHER/);
+    expect(readme).toMatch(/sathariels\/jevtriage/);
+    expect(readme).toMatch(/ready` only exits 0 when confidence/);
+    expect(readme).toMatch(/jamubc\/opencode-langsearch/);
+    expect(readme).toMatch(/Treat it as a mitigation, not a security boundary/);
+    expect(readme).toMatch(/bramtechs\/Focus/);
+    expect(readme).toMatch(/P\(distracting\) >= threshold/);
+    expect(readme).toMatch(/RefoundAI\/jev-editor-skill/);
+    expect(readme).toMatch(/to-do list with a number on it, not a grade/);
+
 
     expect(readme).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -1509,6 +1526,33 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1746 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/notque\/vexjoy-agent is JoacoMarc\/jev-harness-router/);
+      expect(text, rel).not.toMatch(/notque\/vexjoy-agent is cdepuy\/hermes-skill-router/);
+      expect(text, rel).not.toMatch(/269 cases is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/\/d is a safety envelope/);
+      expect(text, rel).not.toMatch(/qkal\/Canny is VladyslavHontar\/clear-head/);
+      expect(text, rel).not.toMatch(/qkal\/Canny is DevMortimer\/pi-warden/);
+      expect(text, rel).not.toMatch(/claims_done is the hard Stop/);
+      expect(text, rel).not.toMatch(/seb4ez\/jevguard-mcp is raniellimontagna\/jev-guard-mcp/);
+      expect(text, rel).not.toMatch(/jevguard-mcp is TypeSafe official/);
+      expect(text, rel).not.toMatch(/7,400x is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/sathariels\/jevtriage is ThyFriendlyFox\/jev-triage/);
+      expect(text, rel).not.toMatch(/sathariels\/jevtriage is HexyeDEV\/JevPR/);
+      expect(text, rel).not.toMatch(/ready is a merge grant/);
+      expect(text, rel).not.toMatch(/jamubc\/opencode-langsearch is Astro-Han\/jev-harness/);
+      expect(text, rel).not.toMatch(/jamubc\/opencode-langsearch is Atikpui007\/jev-sift/);
+      expect(text, rel).not.toMatch(/79% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/bramtechs\/Focus is jorgehara\/gentle-browser-jev/);
+      expect(text, rel).not.toMatch(/0\.6 is a safety envelope/);
+      expect(text, rel).not.toMatch(/RefoundAI\/jev-editor-skill is connectedGraph\/claude-jev-warden/);
+      expect(text, rel).not.toMatch(/70\/60 is a publish grant/);
+    }
+  });
+
+
   it("does not invent hourly 0947 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -1777,6 +1821,14 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/da-vinci-noob\/pi-jev-model-router/);
     expect(pkg).not.toMatch(/dev-willbird1936\/pi-auto-model-router/);
     expect(pkg).not.toMatch(/jjlecocq-v\/outbound-draft-gate/);
+    expect(pkg).not.toMatch(/notque\/vexjoy-agent/);
+    expect(pkg).not.toMatch(/qkal\/Canny/);
+    expect(pkg).not.toMatch(/seb4ez\/jevguard-mcp/);
+    expect(pkg).not.toMatch(/sathariels\/jevtriage/);
+    expect(pkg).not.toMatch(/jamubc\/opencode-langsearch/);
+    expect(pkg).not.toMatch(/bramtechs\/Focus/);
+    expect(pkg).not.toMatch(/RefoundAI\/jev-editor-skill/);
+
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -1988,6 +2040,14 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/da-vinci-noob\/pi-jev-model-router/);
     expect(pkg).not.toMatch(/dev-willbird1936\/pi-auto-model-router/);
     expect(pkg).not.toMatch(/jjlecocq-v\/outbound-draft-gate/);
+    expect(pkg).not.toMatch(/notque\/vexjoy-agent/);
+    expect(pkg).not.toMatch(/qkal\/Canny/);
+    expect(pkg).not.toMatch(/seb4ez\/jevguard-mcp/);
+    expect(pkg).not.toMatch(/sathariels\/jevtriage/);
+    expect(pkg).not.toMatch(/jamubc\/opencode-langsearch/);
+    expect(pkg).not.toMatch(/bramtechs\/Focus/);
+    expect(pkg).not.toMatch(/RefoundAI\/jev-editor-skill/);
+
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -2269,6 +2329,14 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/da-vinci-noob\/pi-jev-model-router/);
     expect(lock).not.toMatch(/dev-willbird1936\/pi-auto-model-router/);
     expect(lock).not.toMatch(/jjlecocq-v\/outbound-draft-gate/);
+    expect(lock).not.toMatch(/notque\/vexjoy-agent/);
+    expect(lock).not.toMatch(/qkal\/Canny/);
+    expect(lock).not.toMatch(/seb4ez\/jevguard-mcp/);
+    expect(lock).not.toMatch(/sathariels\/jevtriage/);
+    expect(lock).not.toMatch(/jamubc\/opencode-langsearch/);
+    expect(lock).not.toMatch(/bramtechs\/Focus/);
+    expect(lock).not.toMatch(/RefoundAI\/jev-editor-skill/);
+
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -2480,6 +2548,14 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/da-vinci-noob\/pi-jev-model-router/);
     expect(lock).not.toMatch(/dev-willbird1936\/pi-auto-model-router/);
     expect(lock).not.toMatch(/jjlecocq-v\/outbound-draft-gate/);
+    expect(lock).not.toMatch(/notque\/vexjoy-agent/);
+    expect(lock).not.toMatch(/qkal\/Canny/);
+    expect(lock).not.toMatch(/seb4ez\/jevguard-mcp/);
+    expect(lock).not.toMatch(/sathariels\/jevtriage/);
+    expect(lock).not.toMatch(/jamubc\/opencode-langsearch/);
+    expect(lock).not.toMatch(/bramtechs\/Focus/);
+    expect(lock).not.toMatch(/RefoundAI\/jev-editor-skill/);
+
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -3342,6 +3418,17 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/The parent model is not switched/);
     expect(skill).toMatch(/jjlecocq-v\/outbound-draft-gate/);
     expect(skill).toMatch(/You always click send/);
+    expect(skill).toMatch(/notque\/vexjoy-agent/);
+    expect(skill).toMatch(/falls back to `\/do`/);
+    expect(skill).toMatch(/qkal\/Canny/);
+    expect(skill).toMatch(/Only facts can block/);
+    expect(skill).toMatch(/seb4ez\/jevguard-mcp/);
+    expect(skill).toMatch(/sathariels\/jevtriage/);
+    expect(skill).toMatch(/jamubc\/opencode-langsearch/);
+    expect(skill).toMatch(/Treat it as a mitigation, not a security boundary/);
+    expect(skill).toMatch(/bramtechs\/Focus/);
+    expect(skill).toMatch(/RefoundAI\/jev-editor-skill/);
+
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -4168,6 +4255,15 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/The parent model is not switched/);
     expect(evalDoc).toMatch(/jjlecocq-v\/outbound-draft-gate/);
     expect(evalDoc).toMatch(/You always click send/);
+    expect(evalDoc).toMatch(/notque\/vexjoy-agent/);
+    expect(evalDoc).toMatch(/qkal\/Canny/);
+    expect(evalDoc).toMatch(/Only facts can block/);
+    expect(evalDoc).toMatch(/seb4ez\/jevguard-mcp/);
+    expect(evalDoc).toMatch(/sathariels\/jevtriage/);
+    expect(evalDoc).toMatch(/jamubc\/opencode-langsearch/);
+    expect(evalDoc).toMatch(/bramtechs\/Focus/);
+    expect(evalDoc).toMatch(/RefoundAI\/jev-editor-skill/);
+
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -4551,6 +4647,14 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/da-vinci-noob\/pi-jev-model-router/);
     expect(install).toMatch(/dev-willbird1936\/pi-auto-model-router/);
     expect(install).toMatch(/jjlecocq-v\/outbound-draft-gate/);
+    expect(install).toMatch(/notque\/vexjoy-agent/);
+    expect(install).toMatch(/qkal\/Canny/);
+    expect(install).toMatch(/seb4ez\/jevguard-mcp/);
+    expect(install).toMatch(/sathariels\/jevtriage/);
+    expect(install).toMatch(/jamubc\/opencode-langsearch/);
+    expect(install).toMatch(/bramtechs\/Focus/);
+    expect(install).toMatch(/RefoundAI\/jev-editor-skill/);
+
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
     expect(install).toMatch(/rsdkrasen\/hermes-jev-router/);
@@ -5073,6 +5177,15 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/The parent model is not switched/);
     expect(shape).toMatch(/outbound-draft-gate/);
     expect(shape).toMatch(/You always click send/);
+    expect(shape).toMatch(/notque\/vexjoy-agent/);
+    expect(shape).toMatch(/qkal\/Canny/);
+    expect(shape).toMatch(/Only facts can block/);
+    expect(shape).toMatch(/seb4ez\/jevguard-mcp/);
+    expect(shape).toMatch(/sathariels\/jevtriage/);
+    expect(shape).toMatch(/jamubc\/opencode-langsearch/);
+    expect(shape).toMatch(/bramtechs\/Focus/);
+    expect(shape).toMatch(/jev-editor-skill/);
+
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -5646,6 +5759,15 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/The parent model is not switched/);
     expect(hosts).toMatch(/jjlecocq-v\/outbound-draft-gate/);
     expect(hosts).toMatch(/You always click send/);
+    expect(hosts).toMatch(/notque\/vexjoy-agent/);
+    expect(hosts).toMatch(/qkal\/Canny/);
+    expect(hosts).toMatch(/Only facts can block/);
+    expect(hosts).toMatch(/seb4ez\/jevguard-mcp/);
+    expect(hosts).toMatch(/sathariels\/jevtriage/);
+    expect(hosts).toMatch(/jamubc\/opencode-langsearch/);
+    expect(hosts).toMatch(/bramtechs\/Focus/);
+    expect(hosts).toMatch(/RefoundAI\/jev-editor-skill/);
+
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -6327,6 +6449,15 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/The parent model is not switched/);
     expect(gates).toMatch(/jjlecocq-v\/outbound-draft-gate/);
     expect(gates).toMatch(/You always click send/);
+    expect(gates).toMatch(/notque\/vexjoy-agent/);
+    expect(gates).toMatch(/qkal\/Canny/);
+    expect(gates).toMatch(/Only facts can block/);
+    expect(gates).toMatch(/seb4ez\/jevguard-mcp/);
+    expect(gates).toMatch(/sathariels\/jevtriage/);
+    expect(gates).toMatch(/jamubc\/opencode-langsearch/);
+    expect(gates).toMatch(/bramtechs\/Focus/);
+    expect(gates).toMatch(/RefoundAI\/jev-editor-skill/);
+
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
