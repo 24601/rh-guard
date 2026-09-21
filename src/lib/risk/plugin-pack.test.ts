@@ -938,11 +938,37 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/ba2slk\/jev-command-gate/);
     expect(readme).toMatch(/andrei10k\/claude-jev-model-router/);
     expect(readme).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(readme).toMatch(/Akashdb5\/jev-router/);
+    expect(readme).toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(readme).toMatch(/daviddl9\/jev-router/);
+    expect(readme).toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(readme).toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(readme).toMatch(/Iskandeur\/system1-system2/);
+    expect(readme).toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(readme).toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(readme).toMatch(/grapefruit0205\/jev-save/);
+    expect(readme).toMatch(/Joker666\/Reflex/);
+    expect(readme).toMatch(/DowLucas\/browser-jev/);
+    expect(readme).toMatch(/AltSlate-Labs\/certo/);
+    expect(readme).toMatch(/gbesse\/agent-mandates/);
+    expect(readme).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
     expect(readme).toMatch(/Routing is fail-open/);
     expect(readme).toMatch(/Jev owns the decision probabilities/);
     expect(readme).toMatch(/classified only, not executed/);
     expect(readme).toMatch(/The router can only help, never hurt/);
     expect(readme).toMatch(/never an automatic action/);
+    expect(readme).toMatch(/GateUnavailable/);
+    expect(readme).toMatch(/check_segment/);
+    expect(readme).toMatch(/Fresh context is not a sandbox/);
+    expect(readme).toMatch(/CLI exit success alone is not quality verification/);
+    expect(readme).toMatch(/never blocks an efficiency judgment/);
+    expect(readme).toMatch(/boilerplate purposes gave confidence 0\.26/);
+    expect(readme).toMatch(/failConfidence/);
+    expect(readme).toMatch(/not affiliated with TypeSafe/);
+    expect(readme).toMatch(/authorizationGranted: false/);
+    expect(readme).toMatch(/Nothing fails open/);
+    expect(readme).toMatch(/advertised Jev routing/);
+    expect(readme).toMatch(/advertised demo/);
     expect(readme).toMatch(/your code prepares the data and owns every decision/);
     expect(readme).toMatch(/Tight, not bitwise/);
     expect(readme).toMatch(/nothing it produces is executed/);
@@ -1855,6 +1881,32 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0151 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/Akashdb5\/jev-router is reallygood83\/jev-router/);
+      expect(text, rel).not.toMatch(/Akashdb5\/jev-router is gargpratyush\/jev-router/);
+      expect(text, rel).not.toMatch(/Akashdb5\/jev-router is daviddl9\/jev-router/);
+      expect(text, rel).not.toMatch(/86\.2% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/GateUnavailable is fail-open/);
+      expect(text, rel).not.toMatch(/daviddl9\/jev-router is gargpratyush\/jev-router/);
+      expect(text, rel).not.toMatch(/Fresh context is a sandbox/);
+      expect(text, rel).not.toMatch(/skip is deny/);
+      expect(text, rel).not.toMatch(/0\.50 is a safety deny/);
+      expect(text, rel).not.toMatch(/Iskandeur\/system1-system2 is a shipped gate/);
+      expect(text, rel).not.toMatch(/EricsenSemedo\/t3code-jev ships Jev routing/);
+      expect(text, rel).not.toMatch(/advertised Jev routing is shipped source/);
+      expect(text, rel).not.toMatch(/CLI exit success is quality verification/);
+      expect(text, rel).not.toMatch(/grapefruit0205\/jev-save is leepokai\/jev-guard/);
+      expect(text, rel).not.toMatch(/Joker666\/Reflex is jagsan-cyber\/reflex-gate/);
+      expect(text, rel).not.toMatch(/0\.9 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/AltSlate-Labs\/certo is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/authorizationGranted: false is a grant/);
+      expect(text, rel).not.toMatch(/Review is fail-open/);
+      expect(text, rel).not.toMatch(/81% is a rh-guard ROC/);
+    }
+  });
+
   it("does not invent hourly 2347 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -2220,6 +2272,20 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ba2slk\/jev-command-gate/);
     expect(pkg).not.toMatch(/andrei10k\/claude-jev-model-router/);
     expect(pkg).not.toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(pkg).not.toMatch(/Akashdb5\/jev-router/);
+    expect(pkg).not.toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(pkg).not.toMatch(/daviddl9\/jev-router/);
+    expect(pkg).not.toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(pkg).not.toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(pkg).not.toMatch(/Iskandeur\/system1-system2/);
+    expect(pkg).not.toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(pkg).not.toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(pkg).not.toMatch(/grapefruit0205\/jev-save/);
+    expect(pkg).not.toMatch(/Joker666\/Reflex/);
+    expect(pkg).not.toMatch(/DowLucas\/browser-jev/);
+    expect(pkg).not.toMatch(/AltSlate-Labs\/certo/);
+    expect(pkg).not.toMatch(/gbesse\/agent-mandates/);
+    expect(pkg).not.toMatch(/taifoon-io\/n8n-nodes-typesafe/);
     expect(pkg).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -2503,6 +2569,20 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ba2slk\/jev-command-gate/);
     expect(pkg).not.toMatch(/andrei10k\/claude-jev-model-router/);
     expect(pkg).not.toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(pkg).not.toMatch(/Akashdb5\/jev-router/);
+    expect(pkg).not.toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(pkg).not.toMatch(/daviddl9\/jev-router/);
+    expect(pkg).not.toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(pkg).not.toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(pkg).not.toMatch(/Iskandeur\/system1-system2/);
+    expect(pkg).not.toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(pkg).not.toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(pkg).not.toMatch(/grapefruit0205\/jev-save/);
+    expect(pkg).not.toMatch(/Joker666\/Reflex/);
+    expect(pkg).not.toMatch(/DowLucas\/browser-jev/);
+    expect(pkg).not.toMatch(/AltSlate-Labs\/certo/);
+    expect(pkg).not.toMatch(/gbesse\/agent-mandates/);
+    expect(pkg).not.toMatch(/taifoon-io\/n8n-nodes-typesafe/);
     expect(pkg).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -2856,6 +2936,20 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ba2slk\/jev-command-gate/);
     expect(lock).not.toMatch(/andrei10k\/claude-jev-model-router/);
     expect(lock).not.toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(lock).not.toMatch(/Akashdb5\/jev-router/);
+    expect(lock).not.toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(lock).not.toMatch(/daviddl9\/jev-router/);
+    expect(lock).not.toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(lock).not.toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(lock).not.toMatch(/Iskandeur\/system1-system2/);
+    expect(lock).not.toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(lock).not.toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(lock).not.toMatch(/grapefruit0205\/jev-save/);
+    expect(lock).not.toMatch(/Joker666\/Reflex/);
+    expect(lock).not.toMatch(/DowLucas\/browser-jev/);
+    expect(lock).not.toMatch(/AltSlate-Labs\/certo/);
+    expect(lock).not.toMatch(/gbesse\/agent-mandates/);
+    expect(lock).not.toMatch(/taifoon-io\/n8n-nodes-typesafe/);
     expect(lock).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -3139,6 +3233,20 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ba2slk\/jev-command-gate/);
     expect(lock).not.toMatch(/andrei10k\/claude-jev-model-router/);
     expect(lock).not.toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(lock).not.toMatch(/Akashdb5\/jev-router/);
+    expect(lock).not.toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(lock).not.toMatch(/daviddl9\/jev-router/);
+    expect(lock).not.toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(lock).not.toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(lock).not.toMatch(/Iskandeur\/system1-system2/);
+    expect(lock).not.toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(lock).not.toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(lock).not.toMatch(/grapefruit0205\/jev-save/);
+    expect(lock).not.toMatch(/Joker666\/Reflex/);
+    expect(lock).not.toMatch(/DowLucas\/browser-jev/);
+    expect(lock).not.toMatch(/AltSlate-Labs\/certo/);
+    expect(lock).not.toMatch(/gbesse\/agent-mandates/);
+    expect(lock).not.toMatch(/taifoon-io\/n8n-nodes-typesafe/);
     expect(lock).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -4082,6 +4190,20 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/ba2slk\/jev-command-gate/);
     expect(skill).toMatch(/andrei10k\/claude-jev-model-router/);
     expect(skill).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(skill).toMatch(/Akashdb5\/jev-router/);
+    expect(skill).toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(skill).toMatch(/daviddl9\/jev-router/);
+    expect(skill).toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(skill).toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(skill).toMatch(/Iskandeur\/system1-system2/);
+    expect(skill).toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(skill).toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(skill).toMatch(/grapefruit0205\/jev-save/);
+    expect(skill).toMatch(/Joker666\/Reflex/);
+    expect(skill).toMatch(/DowLucas\/browser-jev/);
+    expect(skill).toMatch(/AltSlate-Labs\/certo/);
+    expect(skill).toMatch(/gbesse\/agent-mandates/);
+    expect(skill).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
 
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -4979,6 +5101,20 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/ba2slk\/jev-command-gate/);
     expect(evalDoc).toMatch(/andrei10k\/claude-jev-model-router/);
     expect(evalDoc).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(evalDoc).toMatch(/Akashdb5\/jev-router/);
+    expect(evalDoc).toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(evalDoc).toMatch(/daviddl9\/jev-router/);
+    expect(evalDoc).toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(evalDoc).toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(evalDoc).toMatch(/Iskandeur\/system1-system2/);
+    expect(evalDoc).toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(evalDoc).toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(evalDoc).toMatch(/grapefruit0205\/jev-save/);
+    expect(evalDoc).toMatch(/Joker666\/Reflex/);
+    expect(evalDoc).toMatch(/DowLucas\/browser-jev/);
+    expect(evalDoc).toMatch(/AltSlate-Labs\/certo/);
+    expect(evalDoc).toMatch(/gbesse\/agent-mandates/);
+    expect(evalDoc).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
 
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5432,6 +5568,20 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/ba2slk\/jev-command-gate/);
     expect(install).toMatch(/andrei10k\/claude-jev-model-router/);
     expect(install).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(install).toMatch(/Akashdb5\/jev-router/);
+    expect(install).toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(install).toMatch(/daviddl9\/jev-router/);
+    expect(install).toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(install).toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(install).toMatch(/Iskandeur\/system1-system2/);
+    expect(install).toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(install).toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(install).toMatch(/grapefruit0205\/jev-save/);
+    expect(install).toMatch(/Joker666\/Reflex/);
+    expect(install).toMatch(/DowLucas\/browser-jev/);
+    expect(install).toMatch(/AltSlate-Labs\/certo/);
+    expect(install).toMatch(/gbesse\/agent-mandates/);
+    expect(install).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -6025,6 +6175,20 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/ba2slk\/jev-command-gate/);
     expect(shape).toMatch(/andrei10k\/claude-jev-model-router/);
     expect(shape).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(shape).toMatch(/Akashdb5\/jev-router/);
+    expect(shape).toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(shape).toMatch(/daviddl9\/jev-router/);
+    expect(shape).toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(shape).toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(shape).toMatch(/Iskandeur\/system1-system2/);
+    expect(shape).toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(shape).toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(shape).toMatch(/grapefruit0205\/jev-save/);
+    expect(shape).toMatch(/Joker666\/Reflex/);
+    expect(shape).toMatch(/DowLucas\/browser-jev/);
+    expect(shape).toMatch(/AltSlate-Labs\/certo/);
+    expect(shape).toMatch(/gbesse\/agent-mandates/);
+    expect(shape).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -6669,6 +6833,20 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/ba2slk\/jev-command-gate/);
     expect(hosts).toMatch(/andrei10k\/claude-jev-model-router/);
     expect(hosts).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(hosts).toMatch(/Akashdb5\/jev-router/);
+    expect(hosts).toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(hosts).toMatch(/daviddl9\/jev-router/);
+    expect(hosts).toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(hosts).toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(hosts).toMatch(/Iskandeur\/system1-system2/);
+    expect(hosts).toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(hosts).toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(hosts).toMatch(/grapefruit0205\/jev-save/);
+    expect(hosts).toMatch(/Joker666\/Reflex/);
+    expect(hosts).toMatch(/DowLucas\/browser-jev/);
+    expect(hosts).toMatch(/AltSlate-Labs\/certo/);
+    expect(hosts).toMatch(/gbesse\/agent-mandates/);
+    expect(hosts).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -7421,6 +7599,20 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/ba2slk\/jev-command-gate/);
     expect(gates).toMatch(/andrei10k\/claude-jev-model-router/);
     expect(gates).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(gates).toMatch(/Akashdb5\/jev-router/);
+    expect(gates).toMatch(/jimmyliao\/jev-storyboard-lab/);
+    expect(gates).toMatch(/daviddl9\/jev-router/);
+    expect(gates).toMatch(/1105623876\/qwenpaw-jev-memory-gate/);
+    expect(gates).toMatch(/kyle-chalmers\/typesafe-jev-incident-router/);
+    expect(gates).toMatch(/Iskandeur\/system1-system2/);
+    expect(gates).toMatch(/EricsenSemedo\/t3code-jev/);
+    expect(gates).toMatch(/yjsplay2002\/jev-router-dashboard/);
+    expect(gates).toMatch(/grapefruit0205\/jev-save/);
+    expect(gates).toMatch(/Joker666\/Reflex/);
+    expect(gates).toMatch(/DowLucas\/browser-jev/);
+    expect(gates).toMatch(/AltSlate-Labs\/certo/);
+    expect(gates).toMatch(/gbesse\/agent-mandates/);
+    expect(gates).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
