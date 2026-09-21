@@ -960,6 +960,15 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/phamhongviet\/pi-ext-model-router/);
     expect(readme).toMatch(/ruban-24\/switchboard/);
     expect(readme).toMatch(/vuckuola619\/reflex/);
+    expect(readme).toMatch(/luhayes\/jev-agent-router/);
+    expect(readme).toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(readme).toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(readme).toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(readme).toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(readme).toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(readme).toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(readme).toMatch(/microchipgnu\/jev-hooks/);
+    expect(readme).toMatch(/wylu1037\/pi-jev-checkpoints/);
     expect(readme).toMatch(/Routing is fail-open/);
     expect(readme).toMatch(/Jev owns the decision probabilities/);
     expect(readme).toMatch(/classified only, not executed/);
@@ -1950,6 +1959,36 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0348 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/luhayes\/jev-agent-router is ljy8072\/jev-agent-router/);
+      expect(text, rel).not.toMatch(/luhayes\/jev-agent-router is Pinutss\/jev-agent-router/);
+      expect(text, rel).not.toMatch(/luhayes\/jev-agent-router executes the selected tool/);
+      expect(text, rel).not.toMatch(/0\.8 is a safety envelope/);
+      expect(text, rel).not.toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool is lgy1027\/jevshield/);
+      expect(text, rel).not.toMatch(/advertised Scan API is shipped HTTP/);
+      expect(text, rel).not.toMatch(/OmarAlaaeldein\/jev-verifier-skill fabricates a Jev answer/);
+      expect(text, rel).not.toMatch(/0\.80 is a calibrated production threshold/);
+      expect(text, rel).not.toMatch(/advance-lion\/dsh-jev-hook is zhangxaochen\/dsh-jev/);
+      expect(text, rel).not.toMatch(/fallbackToLLM is fail-closed/);
+      expect(text, rel).not.toMatch(/tool prune scores each tool with Choice/);
+      expect(text, rel).not.toMatch(/advance-lion\/dsh-jev-hooks is advance-lion\/dsh-jev-hook shipped source/);
+      expect(text, rel).not.toMatch(/advertised hooks is shipped source/);
+      expect(text, rel).not.toMatch(/0\.899 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/openjev-router-healthcare is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/G_pharmacy FPR is a clinical proof/);
+      expect(text, rel).not.toMatch(/hiro1202\/jev-review-gate-poc is totally-tim\/jev-gate/);
+      expect(text, rel).not.toMatch(/advertised review gate is shipped source/);
+      expect(text, rel).not.toMatch(/0\.8 is a transaction gate/);
+      expect(text, rel).not.toMatch(/microchipgnu\/jev-hooks is a sandbox/);
+      expect(text, rel).not.toMatch(/microchipgnu\/jev-hooks is onlyjq04\/jev-agent-hooks/);
+      expect(text, rel).not.toMatch(/pi-jev-checkpoints is a model weight snapshot/);
+      expect(text, rel).not.toMatch(/wylu1037\/pi-jev-checkpoints is ashishakkumar\/Jev-Checkpoint/);
+      expect(text, rel).not.toMatch(/0\.8\/0\.4 is a safety deny/);
+    }
+  });
+
   it("does not invent hourly 2347 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -2337,6 +2376,15 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ruban-24\/switchboard/);
     expect(pkg).not.toMatch(/vuckuola619\/reflex/);
     expect(pkg).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
+    expect(pkg).not.toMatch(/luhayes\/jev-agent-router/);
+    expect(pkg).not.toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(pkg).not.toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(pkg).not.toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(pkg).not.toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(pkg).not.toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(pkg).not.toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(pkg).not.toMatch(/microchipgnu\/jev-hooks/);
+    expect(pkg).not.toMatch(/wylu1037\/pi-jev-checkpoints/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -2641,6 +2689,15 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ruban-24\/switchboard/);
     expect(pkg).not.toMatch(/vuckuola619\/reflex/);
     expect(pkg).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
+    expect(pkg).not.toMatch(/luhayes\/jev-agent-router/);
+    expect(pkg).not.toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(pkg).not.toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(pkg).not.toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(pkg).not.toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(pkg).not.toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(pkg).not.toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(pkg).not.toMatch(/microchipgnu\/jev-hooks/);
+    expect(pkg).not.toMatch(/wylu1037\/pi-jev-checkpoints/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3015,6 +3072,15 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ruban-24\/switchboard/);
     expect(lock).not.toMatch(/vuckuola619\/reflex/);
     expect(lock).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
+    expect(lock).not.toMatch(/luhayes\/jev-agent-router/);
+    expect(lock).not.toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(lock).not.toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(lock).not.toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(lock).not.toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(lock).not.toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(lock).not.toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(lock).not.toMatch(/microchipgnu\/jev-hooks/);
+    expect(lock).not.toMatch(/wylu1037\/pi-jev-checkpoints/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3319,6 +3385,15 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ruban-24\/switchboard/);
     expect(lock).not.toMatch(/vuckuola619\/reflex/);
     expect(lock).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
+    expect(lock).not.toMatch(/luhayes\/jev-agent-router/);
+    expect(lock).not.toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(lock).not.toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(lock).not.toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(lock).not.toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(lock).not.toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(lock).not.toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(lock).not.toMatch(/microchipgnu\/jev-hooks/);
+    expect(lock).not.toMatch(/wylu1037\/pi-jev-checkpoints/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4283,6 +4358,15 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/phamhongviet\/pi-ext-model-router/);
     expect(skill).toMatch(/ruban-24\/switchboard/);
     expect(skill).toMatch(/vuckuola619\/reflex/);
+    expect(skill).toMatch(/luhayes\/jev-agent-router/);
+    expect(skill).toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(skill).toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(skill).toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(skill).toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(skill).toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(skill).toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(skill).toMatch(/microchipgnu\/jev-hooks/);
+    expect(skill).toMatch(/wylu1037\/pi-jev-checkpoints/);
 
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5202,6 +5286,15 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/phamhongviet\/pi-ext-model-router/);
     expect(evalDoc).toMatch(/ruban-24\/switchboard/);
     expect(evalDoc).toMatch(/vuckuola619\/reflex/);
+    expect(evalDoc).toMatch(/luhayes\/jev-agent-router/);
+    expect(evalDoc).toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(evalDoc).toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(evalDoc).toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(evalDoc).toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(evalDoc).toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(evalDoc).toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(evalDoc).toMatch(/microchipgnu\/jev-hooks/);
+    expect(evalDoc).toMatch(/wylu1037\/pi-jev-checkpoints/);
 
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5677,6 +5770,15 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/phamhongviet\/pi-ext-model-router/);
     expect(install).toMatch(/ruban-24\/switchboard/);
     expect(install).toMatch(/vuckuola619\/reflex/);
+    expect(install).toMatch(/luhayes\/jev-agent-router/);
+    expect(install).toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(install).toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(install).toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(install).toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(install).toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(install).toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(install).toMatch(/microchipgnu\/jev-hooks/);
+    expect(install).toMatch(/wylu1037\/pi-jev-checkpoints/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -6292,6 +6394,15 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/phamhongviet\/pi-ext-model-router/);
     expect(shape).toMatch(/ruban-24\/switchboard/);
     expect(shape).toMatch(/vuckuola619\/reflex/);
+    expect(shape).toMatch(/luhayes\/jev-agent-router/);
+    expect(shape).toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(shape).toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(shape).toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(shape).toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(shape).toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(shape).toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(shape).toMatch(/microchipgnu\/jev-hooks/);
+    expect(shape).toMatch(/wylu1037\/pi-jev-checkpoints/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -6958,6 +7069,15 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/phamhongviet\/pi-ext-model-router/);
     expect(hosts).toMatch(/ruban-24\/switchboard/);
     expect(hosts).toMatch(/vuckuola619\/reflex/);
+    expect(hosts).toMatch(/luhayes\/jev-agent-router/);
+    expect(hosts).toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(hosts).toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(hosts).toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(hosts).toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(hosts).toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(hosts).toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(hosts).toMatch(/microchipgnu\/jev-hooks/);
+    expect(hosts).toMatch(/wylu1037\/pi-jev-checkpoints/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -7732,6 +7852,15 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/phamhongviet\/pi-ext-model-router/);
     expect(gates).toMatch(/ruban-24\/switchboard/);
     expect(gates).toMatch(/vuckuola619\/reflex/);
+    expect(gates).toMatch(/luhayes\/jev-agent-router/);
+    expect(gates).toMatch(/Mazukriez\/Jev-AI-Model-Security-protection-tool/);
+    expect(gates).toMatch(/OmarAlaaeldein\/jev-verifier-skill/);
+    expect(gates).toMatch(/advance-lion\/dsh-jev-hook/);
+    expect(gates).toMatch(/advance-lion\/dsh-jev-hooks/);
+    expect(gates).toMatch(/s1lv3rj1nx\/openjev-router-healthcare/);
+    expect(gates).toMatch(/hiro1202\/jev-review-gate-poc/);
+    expect(gates).toMatch(/microchipgnu\/jev-hooks/);
+    expect(gates).toMatch(/wylu1037\/pi-jev-checkpoints/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
