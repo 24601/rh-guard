@@ -441,6 +441,38 @@ a merge, and not a reward-hack detector.
 
 [RefoundAI/jev-editor-skill](https://github.com/RefoundAI/jev-editor-skill) editorial gate skill. Code lint first; pass at **70** / voice **60**. Quoted: to-do list, not a grade. Hope the model looks. Distinct claude-jev-warden. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[jeffloo886/jev-notion](https://github.com/jeffloo886/jev-notion) Notion property fill. Quoted: **Uncertain entries go to a review queue**. Quoted: **≥ 60%**. `scan` is read-only. *Theirs* **269** tests. Distinct mailverdict / vynnlee/jev-mail. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[simota/tenbin](https://github.com/simota/tenbin) design-time MCP plus skill. Quoted: production **never depends on the MCP**. Quoted: thresholds **provisional until measured**. Distinct wellposed. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[brnyxx/jev-ra](https://github.com/brnyxx/jev-ra) browser MCP; Jev picks op and target. Quoted: **No second LLM runs inside the loop.** Quoted: **never guesses a credential**. *Theirs* **25 of 25**. Distinct jevnav. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[1npo/jev-gmail-labeler](https://github.com/1npo/jev-gmail-labeler) Gmail classify. Quoted: **work in progress.** `label` still TODO. Distinct vynnlee/jev-mail. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[SuperInstance/jev-quilt](https://github.com/SuperInstance/jev-quilt) cell substrate. Quoted: **The decider never renders; the renderer never decides.** Quoted: **Not yet: plugin binaries**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[ThePFMind/jev-mcp](https://github.com/ThePFMind/jev-mcp) stdio `jev_evaluate` / `jev_route`. Quoted: **`api.typesafe.ai` rejects `sk_jev-ai_` keys**. Distinct seb4ez/jevguard-mcp. Hope-the-model-looks. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[asmirrr/DriftLab](https://github.com/asmirrr/DriftLab) momentum-research CLI. Quoted: **Jev cannot modify a run**. Quoted: **methodology aid, not a market forecast**. Distinct jev-hft. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[bouncerguy/jevwrapper](https://github.com/bouncerguy/jevwrapper) LLM-to-JEV middleware. Quoted: **never sends mail, transfers funds, or executes downstream actions.** Quoted: **0.7** demonstration policy. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[cristiancolon/jev-hft](https://github.com/cristiancolon/jev-hft) paper-trading news/market pipeline. Quoted: **It never places real trades**. Quoted: **doesn't beat a one-line rule.** Distinct DriftLab. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[dtduc-git/jevnav](https://github.com/dtduc-git/jevnav) replayable browser automation. Quoted: **`done` is a claim, not evidence.** Quoted: **What keeps the loop safe is deterministic.** Distinct jev-ra. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[hawkyre/jevx](https://github.com/hawkyre/jevx) X feed/draft scorer. Quoted: **not a validated prediction of views.** Distinct x-spam-filter-typesafe. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[frankyy03/laya-pt-es-nli](https://huggingface.co/frankyy03/laya-pt-es-nli) Laya PT/ES NLI. Quoted: **does not establish superiority**. Quoted: **Refit temperature**. Not TypeSafe Jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jourdanlabs/assay-001](https://github.com/jourdanlabs/assay-001) pre-registered Jev assay. Quoted: CLINC150 ECE **0.0204**; Banking77 **0.0936**. Quoted: **not a statement about Jev on any other task**. Distinct gold-assay. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[nanami-0713/dsh-jev-decide](https://github.com/nanami-0713/dsh-jev-decide) DSH `jev_decide` tool. Quoted: **only** registers the tool. Distinct codebam/dsh-jev-guardrails. Hope-the-model-looks. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[treycausey/semantic-find](https://github.com/treycausey/semantic-find) local search plus optional Jev rank. Quoted: **never sends the whole filesystem.** Quoted: **`local-lexical-fallback`**. Distinct jevex. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[ttlequals0/MinusPodJev](https://github.com/ttlequals0/MinusPodJev) MinusPod Jev proxy. Quoted: **POC shim. It does not change the MinusPod runtime that controls holds, autoapproval**. Distinct jev-runway. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) (current listing [harshwasan/jev-sentinel](https://github.com/harshwasan/jev-sentinel); keep both slugs) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
