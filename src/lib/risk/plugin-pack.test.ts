@@ -972,6 +972,16 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/ryanzen9\/XFlow/);
     expect(readme).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(readme).toMatch(/nk412\/judgements/);
+    expect(readme).toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(readme).toMatch(/jiawei686\/jev-review-mcp/);
+    expect(readme).toMatch(/yamadashy\/jev-labeler-action/);
+    expect(readme).toMatch(/hyspacex\/jev-router/);
+    expect(readme).toMatch(/alexei-led\/pi-model-router/);
+    expect(readme).toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(readme).toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(readme).toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(readme).toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(readme).toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
     expect(readme).toMatch(/Routing is fail-open/);
     expect(readme).toMatch(/Jev owns the decision probabilities/);
     expect(readme).toMatch(/classified only, not executed/);
@@ -1992,6 +2002,34 @@ describe("discoverability copy", () => {
     }
   });
 
+
+  it("does not invent hourly 0551 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/jiawei686\/jev-screen-mcp is gg-friggin-ez/);
+      expect(text, rel).not.toMatch(/jiawei686\/jev-screen-mcp is TickerDev\/jevfanity-api/);
+      expect(text, rel).not.toMatch(/action=block is a safety envelope/);
+      expect(text, rel).not.toMatch(/jiawei686\/jev-review-mcp is metalbear-co\/jev-auto-approve/);
+      expect(text, rel).not.toMatch(/auto_merge is a merge grant/);
+      expect(text, rel).not.toMatch(/jev-labeler-action closes issues/);
+      expect(text, rel).not.toMatch(/0\.8 label is a close-issue grant/);
+      expect(text, rel).not.toMatch(/hyspacex\/jev-router is reallygood83\/jev-router/);
+      expect(text, rel).not.toMatch(/hyspacex\/jev-router is justinhsu1477\/jev-router/);
+      expect(text, rel).not.toMatch(/session bind is a permission/);
+      expect(text, rel).not.toMatch(/alexei-led\/pi-model-router is da-vinci-noob\/pi-jev-model-router/);
+      expect(text, rel).not.toMatch(/0\.65 is a safety envelope/);
+      expect(text, rel).not.toMatch(/0\.25 noul is a jailbreak proof/);
+      expect(text, rel).not.toMatch(/cmd-siri-bot\/llm-gateway fail-open/);
+      expect(text, rel).not.toMatch(/82\.4% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/PhilPentatonic\/hermes-model-routing is rsdkrasen\/hermes-jev-router/);
+      expect(text, rel).not.toMatch(/0\.5 keep is a safety deny/);
+      expect(text, rel).not.toMatch(/advertised triage is shipped gate/);
+      expect(text, rel).not.toMatch(/spark-jev-email-triage is a shipped mail gate/);
+      expect(text, rel).not.toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension is BillionsBobby\/JevRouter/);
+      expect(text, rel).not.toMatch(/jevrouter-prompt-tier-extension clicks the model picker/);
+    }
+  });
+
   it("does not invent hourly 0445 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -2409,6 +2447,16 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ryanzen9\/XFlow/);
     expect(pkg).not.toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(pkg).not.toMatch(/nk412\/judgements/);
+    expect(pkg).not.toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(pkg).not.toMatch(/jiawei686\/jev-review-mcp/);
+    expect(pkg).not.toMatch(/yamadashy\/jev-labeler-action/);
+    expect(pkg).not.toMatch(/hyspacex\/jev-router/);
+    expect(pkg).not.toMatch(/alexei-led\/pi-model-router/);
+    expect(pkg).not.toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(pkg).not.toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(pkg).not.toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(pkg).not.toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(pkg).not.toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -2725,6 +2773,16 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ryanzen9\/XFlow/);
     expect(pkg).not.toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(pkg).not.toMatch(/nk412\/judgements/);
+    expect(pkg).not.toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(pkg).not.toMatch(/jiawei686\/jev-review-mcp/);
+    expect(pkg).not.toMatch(/yamadashy\/jev-labeler-action/);
+    expect(pkg).not.toMatch(/hyspacex\/jev-router/);
+    expect(pkg).not.toMatch(/alexei-led\/pi-model-router/);
+    expect(pkg).not.toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(pkg).not.toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(pkg).not.toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(pkg).not.toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(pkg).not.toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3111,6 +3169,16 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ryanzen9\/XFlow/);
     expect(lock).not.toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(lock).not.toMatch(/nk412\/judgements/);
+    expect(lock).not.toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(lock).not.toMatch(/jiawei686\/jev-review-mcp/);
+    expect(lock).not.toMatch(/yamadashy\/jev-labeler-action/);
+    expect(lock).not.toMatch(/hyspacex\/jev-router/);
+    expect(lock).not.toMatch(/alexei-led\/pi-model-router/);
+    expect(lock).not.toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(lock).not.toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(lock).not.toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(lock).not.toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(lock).not.toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3427,6 +3495,16 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ryanzen9\/XFlow/);
     expect(lock).not.toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(lock).not.toMatch(/nk412\/judgements/);
+    expect(lock).not.toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(lock).not.toMatch(/jiawei686\/jev-review-mcp/);
+    expect(lock).not.toMatch(/yamadashy\/jev-labeler-action/);
+    expect(lock).not.toMatch(/hyspacex\/jev-router/);
+    expect(lock).not.toMatch(/alexei-led\/pi-model-router/);
+    expect(lock).not.toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(lock).not.toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(lock).not.toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(lock).not.toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(lock).not.toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4403,6 +4481,16 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/ryanzen9\/XFlow/);
     expect(skill).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(skill).toMatch(/nk412\/judgements/);
+    expect(skill).toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(skill).toMatch(/jiawei686\/jev-review-mcp/);
+    expect(skill).toMatch(/yamadashy\/jev-labeler-action/);
+    expect(skill).toMatch(/hyspacex\/jev-router/);
+    expect(skill).toMatch(/alexei-led\/pi-model-router/);
+    expect(skill).toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(skill).toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(skill).toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(skill).toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(skill).toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
 
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5334,6 +5422,16 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/ryanzen9\/XFlow/);
     expect(evalDoc).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(evalDoc).toMatch(/nk412\/judgements/);
+    expect(evalDoc).toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(evalDoc).toMatch(/jiawei686\/jev-review-mcp/);
+    expect(evalDoc).toMatch(/yamadashy\/jev-labeler-action/);
+    expect(evalDoc).toMatch(/hyspacex\/jev-router/);
+    expect(evalDoc).toMatch(/alexei-led\/pi-model-router/);
+    expect(evalDoc).toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(evalDoc).toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(evalDoc).toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(evalDoc).toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(evalDoc).toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
 
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5821,6 +5919,16 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/ryanzen9\/XFlow/);
     expect(install).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(install).toMatch(/nk412\/judgements/);
+    expect(install).toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(install).toMatch(/jiawei686\/jev-review-mcp/);
+    expect(install).toMatch(/yamadashy\/jev-labeler-action/);
+    expect(install).toMatch(/hyspacex\/jev-router/);
+    expect(install).toMatch(/alexei-led\/pi-model-router/);
+    expect(install).toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(install).toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(install).toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(install).toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(install).toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -6448,6 +6556,16 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/ryanzen9\/XFlow/);
     expect(shape).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(shape).toMatch(/nk412\/judgements/);
+    expect(shape).toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(shape).toMatch(/jiawei686\/jev-review-mcp/);
+    expect(shape).toMatch(/yamadashy\/jev-labeler-action/);
+    expect(shape).toMatch(/hyspacex\/jev-router/);
+    expect(shape).toMatch(/alexei-led\/pi-model-router/);
+    expect(shape).toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(shape).toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(shape).toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(shape).toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(shape).toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -7126,6 +7244,16 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/ryanzen9\/XFlow/);
     expect(hosts).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(hosts).toMatch(/nk412\/judgements/);
+    expect(hosts).toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(hosts).toMatch(/jiawei686\/jev-review-mcp/);
+    expect(hosts).toMatch(/yamadashy\/jev-labeler-action/);
+    expect(hosts).toMatch(/hyspacex\/jev-router/);
+    expect(hosts).toMatch(/alexei-led\/pi-model-router/);
+    expect(hosts).toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(hosts).toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(hosts).toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(hosts).toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(hosts).toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -7912,6 +8040,16 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/ryanzen9\/XFlow/);
     expect(gates).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
     expect(gates).toMatch(/nk412\/judgements/);
+    expect(gates).toMatch(/jiawei686\/jev-screen-mcp/);
+    expect(gates).toMatch(/jiawei686\/jev-review-mcp/);
+    expect(gates).toMatch(/yamadashy\/jev-labeler-action/);
+    expect(gates).toMatch(/hyspacex\/jev-router/);
+    expect(gates).toMatch(/alexei-led\/pi-model-router/);
+    expect(gates).toMatch(/cmd-siri-bot\/llm-gateway/);
+    expect(gates).toMatch(/PhilPentatonic\/hermes-model-routing/);
+    expect(gates).toMatch(/jackygu2006\/reasonix-jev-compaction/);
+    expect(gates).toMatch(/WesleySmits\/spark-jev-email-triage/);
+    expect(gates).toMatch(/Charlie-Qi394\/jevrouter-prompt-tier-extension/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
