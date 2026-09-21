@@ -1075,6 +1075,15 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/ruslanlap\/jev-gate/);
     expect(readme).toMatch(/theglitcharchitect\/muse-skills/);
     expect(readme).toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(readme).toMatch(/revsmoke\/promptrejectormcp/);
+    expect(readme).toMatch(/sirkirby\/routr/);
+    expect(readme).toMatch(/Debasishhh\/jevguard/);
+    expect(readme).toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(readme).toMatch(/krisitown\/jev-router/);
+    expect(readme).toMatch(/lldois\/dsh-jev/);
+    expect(readme).toMatch(/navidkashani\/jev-guard/);
+    expect(readme).toMatch(/sonson0910\/jev-router/);
+    expect(readme).toMatch(/vishalbitit\/jev-prior-auth-triage/);
     expect(readme).toMatch(/never sends policy data to a model/);
     expect(readme).toMatch(/Gate mobility/);
     expect(readme).toMatch(/The stock Codex plugin supplements normal compaction/);
@@ -1096,6 +1105,15 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/Thresholds live in one place/);
     expect(readme).toMatch(/Page truth, not pixels/);
     expect(readme).toMatch(/0\.612 against 0\.740/);
+    expect(readme).toMatch(/A low Jev score does not let a prompt skip reasoning/);
+    expect(readme).toMatch(/Advice, never an override/);
+    expect(readme).toMatch(/BLOCK_NOUL/);
+    expect(readme).toMatch(/Uninitialized engine returns 503/);
+    expect(readme).toMatch(/Fallback is off by default/);
+    expect(readme).toMatch(/local keyword heuristic shortlists/);
+    expect(readme).toMatch(/The plugin never approves a comment on its own/);
+    expect(readme).toMatch(/never uses Jev to lower risk or bypass a gate/);
+    expect(readme).toMatch(/advertised prior-auth triage/);
     expect(readme).toMatch(/OpenJev is an independent project/);
     expect(readme).toMatch(/Routing is fail-open/);
     expect(readme).toMatch(/Jev owns the decision probabilities/);
@@ -2229,6 +2247,42 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1256 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/promptrejectormcp automatically intercepts tool calls/);
+      expect(text, rel).not.toMatch(/178 contract checks are a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/57 suites measure live detection/);
+      expect(text, rel).not.toMatch(/14\/15 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/sirkirby\/routr is boriscardano\/herdr-jev-router/);
+      expect(text, rel).not.toMatch(/sirkirby\/routr is muthuishere\/herdr-jev/);
+      expect(text, rel).not.toMatch(/61 of 68 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/routr names the worker model/);
+      expect(text, rel).not.toMatch(/Debasishhh\/jevguard is seb4ez\/jevguard/);
+      expect(text, rel).not.toMatch(/Debasishhh\/jevguard is navidkashani\/jev-guard/);
+      expect(text, rel).not.toMatch(/83% catch is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/3\.3% is the n=200 false-positive rate/);
+      expect(text, rel).not.toMatch(/jevguard flag is allow/);
+      expect(text, rel).not.toMatch(/laya-routing-and-descision-making is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/laya-routing-and-descision-making is NandhaKishorM\/laya/);
+      expect(text, rel).not.toMatch(/krisitown\/jev-router is sonson0910\/jev-router/);
+      expect(text, rel).not.toMatch(/Fallback is on by default/);
+      expect(text, rel).not.toMatch(/previous_response_id is auto-routed/);
+      expect(text, rel).not.toMatch(/lldois\/dsh-jev is tr1v3r\/dsh-jev/);
+      expect(text, rel).not.toMatch(/0\.85 branch is the shipped gate default/);
+      expect(text, rel).not.toMatch(/fail-open is the jev-gate default/);
+      expect(text, rel).not.toMatch(/heuristic shortlist probability is a Jev logit/);
+      expect(text, rel).not.toMatch(/navidkashani\/jev-guard is leepokai\/jev-guard/);
+      expect(text, rel).not.toMatch(/The plugin approves a comment/);
+      expect(text, rel).not.toMatch(/spam 0\.85 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/sonson0910\/jev-router is krisitown\/jev-router/);
+      expect(text, rel).not.toMatch(/sonson0910\/jev-router fail-closed/);
+      expect(text, rel).not.toMatch(/uncertain fields are grants/);
+      expect(text, rel).not.toMatch(/advertised prior-auth triage is shipped source/);
+      expect(text, rel).not.toMatch(/vishalbitit\/jev-prior-auth-triage is bhaskarpraveen\/jev-healthcare-support-router/);
+    }
+  });
+
   it("does not invent hourly 0923 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -2861,6 +2915,15 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ruslanlap\/jev-gate/);
     expect(pkg).not.toMatch(/theglitcharchitect\/muse-skills/);
     expect(pkg).not.toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(pkg).not.toMatch(/revsmoke\/promptrejectormcp/);
+    expect(pkg).not.toMatch(/sirkirby\/routr/);
+    expect(pkg).not.toMatch(/Debasishhh\/jevguard/);
+    expect(pkg).not.toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(pkg).not.toMatch(/krisitown\/jev-router/);
+    expect(pkg).not.toMatch(/lldois\/dsh-jev/);
+    expect(pkg).not.toMatch(/navidkashani\/jev-guard/);
+    expect(pkg).not.toMatch(/sonson0910\/jev-router/);
+    expect(pkg).not.toMatch(/vishalbitit\/jev-prior-auth-triage/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3280,6 +3343,15 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ruslanlap\/jev-gate/);
     expect(pkg).not.toMatch(/theglitcharchitect\/muse-skills/);
     expect(pkg).not.toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(pkg).not.toMatch(/revsmoke\/promptrejectormcp/);
+    expect(pkg).not.toMatch(/sirkirby\/routr/);
+    expect(pkg).not.toMatch(/Debasishhh\/jevguard/);
+    expect(pkg).not.toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(pkg).not.toMatch(/krisitown\/jev-router/);
+    expect(pkg).not.toMatch(/lldois\/dsh-jev/);
+    expect(pkg).not.toMatch(/navidkashani\/jev-guard/);
+    expect(pkg).not.toMatch(/sonson0910\/jev-router/);
+    expect(pkg).not.toMatch(/vishalbitit\/jev-prior-auth-triage/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3769,6 +3841,15 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ruslanlap\/jev-gate/);
     expect(lock).not.toMatch(/theglitcharchitect\/muse-skills/);
     expect(lock).not.toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(lock).not.toMatch(/revsmoke\/promptrejectormcp/);
+    expect(lock).not.toMatch(/sirkirby\/routr/);
+    expect(lock).not.toMatch(/Debasishhh\/jevguard/);
+    expect(lock).not.toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(lock).not.toMatch(/krisitown\/jev-router/);
+    expect(lock).not.toMatch(/lldois\/dsh-jev/);
+    expect(lock).not.toMatch(/navidkashani\/jev-guard/);
+    expect(lock).not.toMatch(/sonson0910\/jev-router/);
+    expect(lock).not.toMatch(/vishalbitit\/jev-prior-auth-triage/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4188,6 +4269,15 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ruslanlap\/jev-gate/);
     expect(lock).not.toMatch(/theglitcharchitect\/muse-skills/);
     expect(lock).not.toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(lock).not.toMatch(/revsmoke\/promptrejectormcp/);
+    expect(lock).not.toMatch(/sirkirby\/routr/);
+    expect(lock).not.toMatch(/Debasishhh\/jevguard/);
+    expect(lock).not.toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(lock).not.toMatch(/krisitown\/jev-router/);
+    expect(lock).not.toMatch(/lldois\/dsh-jev/);
+    expect(lock).not.toMatch(/navidkashani\/jev-guard/);
+    expect(lock).not.toMatch(/sonson0910\/jev-router/);
+    expect(lock).not.toMatch(/vishalbitit\/jev-prior-auth-triage/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -5267,6 +5357,15 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/ruslanlap\/jev-gate/);
     expect(skill).toMatch(/theglitcharchitect\/muse-skills/);
     expect(skill).toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(skill).toMatch(/revsmoke\/promptrejectormcp/);
+    expect(skill).toMatch(/sirkirby\/routr/);
+    expect(skill).toMatch(/Debasishhh\/jevguard/);
+    expect(skill).toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(skill).toMatch(/krisitown\/jev-router/);
+    expect(skill).toMatch(/lldois\/dsh-jev/);
+    expect(skill).toMatch(/navidkashani\/jev-guard/);
+    expect(skill).toMatch(/sonson0910\/jev-router/);
+    expect(skill).toMatch(/vishalbitit\/jev-prior-auth-triage/);
     expect(skill).toMatch(/never sends policy data to a model/);
     expect(skill).toMatch(/Gate mobility/);
     expect(skill).toMatch(/The stock Codex plugin supplements normal compaction/);
@@ -5288,6 +5387,15 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Thresholds live in one place/);
     expect(skill).toMatch(/Page truth, not pixels/);
     expect(skill).toMatch(/0\.612 against 0\.740/);
+    expect(skill).toMatch(/A low Jev score does not let a prompt skip reasoning/);
+    expect(skill).toMatch(/Advice, never an override/);
+    expect(skill).toMatch(/BLOCK_NOUL/);
+    expect(skill).toMatch(/Uninitialized engine returns 503/);
+    expect(skill).toMatch(/Fallback is off by default/);
+    expect(skill).toMatch(/local keyword heuristic shortlists/);
+    expect(skill).toMatch(/The plugin never approves a comment on its own/);
+    expect(skill).toMatch(/never uses Jev to lower risk or bypass a gate/);
+    expect(skill).toMatch(/advertised prior-auth triage/);
     expect(skill).toMatch(/OpenJev is an independent project/);
 
 
@@ -6323,6 +6431,15 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/ruslanlap\/jev-gate/);
     expect(evalDoc).toMatch(/theglitcharchitect\/muse-skills/);
     expect(evalDoc).toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(evalDoc).toMatch(/revsmoke\/promptrejectormcp/);
+    expect(evalDoc).toMatch(/sirkirby\/routr/);
+    expect(evalDoc).toMatch(/Debasishhh\/jevguard/);
+    expect(evalDoc).toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(evalDoc).toMatch(/krisitown\/jev-router/);
+    expect(evalDoc).toMatch(/lldois\/dsh-jev/);
+    expect(evalDoc).toMatch(/navidkashani\/jev-guard/);
+    expect(evalDoc).toMatch(/sonson0910\/jev-router/);
+    expect(evalDoc).toMatch(/vishalbitit\/jev-prior-auth-triage/);
     expect(evalDoc).toMatch(/never sends policy data to a model/);
     expect(evalDoc).toMatch(/Gate mobility/);
     expect(evalDoc).toMatch(/The stock Codex plugin supplements normal compaction/);
@@ -6344,6 +6461,15 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/Thresholds live in one place/);
     expect(evalDoc).toMatch(/Page truth, not pixels/);
     expect(evalDoc).toMatch(/0\.612 against 0\.740/);
+    expect(evalDoc).toMatch(/A low Jev score does not let a prompt skip reasoning/);
+    expect(evalDoc).toMatch(/Advice, never an override/);
+    expect(evalDoc).toMatch(/BLOCK_NOUL/);
+    expect(evalDoc).toMatch(/Uninitialized engine returns 503/);
+    expect(evalDoc).toMatch(/Fallback is off by default/);
+    expect(evalDoc).toMatch(/local keyword heuristic shortlists/);
+    expect(evalDoc).toMatch(/The plugin never approves a comment on its own/);
+    expect(evalDoc).toMatch(/never uses Jev to lower risk or bypass a gate/);
+    expect(evalDoc).toMatch(/advertised prior-auth triage/);
     expect(evalDoc).toMatch(/OpenJev is an independent project/);
 
 
@@ -6935,6 +7061,15 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/ruslanlap\/jev-gate/);
     expect(install).toMatch(/theglitcharchitect\/muse-skills/);
     expect(install).toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(install).toMatch(/revsmoke\/promptrejectormcp/);
+    expect(install).toMatch(/sirkirby\/routr/);
+    expect(install).toMatch(/Debasishhh\/jevguard/);
+    expect(install).toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(install).toMatch(/krisitown\/jev-router/);
+    expect(install).toMatch(/lldois\/dsh-jev/);
+    expect(install).toMatch(/navidkashani\/jev-guard/);
+    expect(install).toMatch(/sonson0910\/jev-router/);
+    expect(install).toMatch(/vishalbitit\/jev-prior-auth-triage/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -7666,6 +7801,15 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/ruslanlap\/jev-gate/);
     expect(shape).toMatch(/theglitcharchitect\/muse-skills/);
     expect(shape).toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(shape).toMatch(/revsmoke\/promptrejectormcp/);
+    expect(shape).toMatch(/sirkirby\/routr/);
+    expect(shape).toMatch(/Debasishhh\/jevguard/);
+    expect(shape).toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(shape).toMatch(/krisitown\/jev-router/);
+    expect(shape).toMatch(/lldois\/dsh-jev/);
+    expect(shape).toMatch(/navidkashani\/jev-guard/);
+    expect(shape).toMatch(/sonson0910\/jev-router/);
+    expect(shape).toMatch(/vishalbitit\/jev-prior-auth-triage/);
     expect(shape).toMatch(/never sends policy data to a model/);
     expect(shape).toMatch(/Gate mobility/);
     expect(shape).toMatch(/The stock Codex plugin supplements normal compaction/);
@@ -7687,6 +7831,15 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/Thresholds live in one place/);
     expect(shape).toMatch(/Page truth, not pixels/);
     expect(shape).toMatch(/0\.612 against 0\.740/);
+    expect(shape).toMatch(/A low Jev score does not let a prompt skip reasoning/);
+    expect(shape).toMatch(/Advice, never an override/);
+    expect(shape).toMatch(/BLOCK_NOUL/);
+    expect(shape).toMatch(/Uninitialized engine returns 503/);
+    expect(shape).toMatch(/Fallback is off by default/);
+    expect(shape).toMatch(/local keyword heuristic shortlists/);
+    expect(shape).toMatch(/The plugin never approves a comment on its own/);
+    expect(shape).toMatch(/never uses Jev to lower risk or bypass a gate/);
+    expect(shape).toMatch(/advertised prior-auth triage/);
     expect(shape).toMatch(/OpenJev is an independent project/);
 
 
@@ -8470,6 +8623,15 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/ruslanlap\/jev-gate/);
     expect(hosts).toMatch(/theglitcharchitect\/muse-skills/);
     expect(hosts).toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(hosts).toMatch(/revsmoke\/promptrejectormcp/);
+    expect(hosts).toMatch(/sirkirby\/routr/);
+    expect(hosts).toMatch(/Debasishhh\/jevguard/);
+    expect(hosts).toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(hosts).toMatch(/krisitown\/jev-router/);
+    expect(hosts).toMatch(/lldois\/dsh-jev/);
+    expect(hosts).toMatch(/navidkashani\/jev-guard/);
+    expect(hosts).toMatch(/sonson0910\/jev-router/);
+    expect(hosts).toMatch(/vishalbitit\/jev-prior-auth-triage/);
     expect(hosts).toMatch(/never sends policy data to a model/);
     expect(hosts).toMatch(/Gate mobility/);
     expect(hosts).toMatch(/The stock Codex plugin supplements normal compaction/);
@@ -8491,6 +8653,15 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/Thresholds live in one place/);
     expect(hosts).toMatch(/Page truth, not pixels/);
     expect(hosts).toMatch(/0\.612 against 0\.740/);
+    expect(hosts).toMatch(/A low Jev score does not let a prompt skip reasoning/);
+    expect(hosts).toMatch(/Advice, never an override/);
+    expect(hosts).toMatch(/BLOCK_NOUL/);
+    expect(hosts).toMatch(/Uninitialized engine returns 503/);
+    expect(hosts).toMatch(/Fallback is off by default/);
+    expect(hosts).toMatch(/local keyword heuristic shortlists/);
+    expect(hosts).toMatch(/The plugin never approves a comment on its own/);
+    expect(hosts).toMatch(/never uses Jev to lower risk or bypass a gate/);
+    expect(hosts).toMatch(/advertised prior-auth triage/);
     expect(hosts).toMatch(/OpenJev is an independent project/);
 
 
@@ -9381,6 +9552,15 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/ruslanlap\/jev-gate/);
     expect(gates).toMatch(/theglitcharchitect\/muse-skills/);
     expect(gates).toMatch(/AkashPriyadarshii\/jev-seo/);
+    expect(gates).toMatch(/revsmoke\/promptrejectormcp/);
+    expect(gates).toMatch(/sirkirby\/routr/);
+    expect(gates).toMatch(/Debasishhh\/jevguard/);
+    expect(gates).toMatch(/khursheed33\/laya-routing-and-descision-making/);
+    expect(gates).toMatch(/krisitown\/jev-router/);
+    expect(gates).toMatch(/lldois\/dsh-jev/);
+    expect(gates).toMatch(/navidkashani\/jev-guard/);
+    expect(gates).toMatch(/sonson0910\/jev-router/);
+    expect(gates).toMatch(/vishalbitit\/jev-prior-auth-triage/);
     expect(gates).toMatch(/never sends policy data to a model/);
     expect(gates).toMatch(/Gate mobility/);
     expect(gates).toMatch(/The stock Codex plugin supplements normal compaction/);
@@ -9402,6 +9582,15 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/Thresholds live in one place/);
     expect(gates).toMatch(/Page truth, not pixels/);
     expect(gates).toMatch(/0\.612 against 0\.740/);
+    expect(gates).toMatch(/A low Jev score does not let a prompt skip reasoning/);
+    expect(gates).toMatch(/Advice, never an override/);
+    expect(gates).toMatch(/BLOCK_NOUL/);
+    expect(gates).toMatch(/Uninitialized engine returns 503/);
+    expect(gates).toMatch(/Fallback is off by default/);
+    expect(gates).toMatch(/local keyword heuristic shortlists/);
+    expect(gates).toMatch(/The plugin never approves a comment on its own/);
+    expect(gates).toMatch(/never uses Jev to lower risk or bypass a gate/);
+    expect(gates).toMatch(/advertised prior-auth triage/);
     expect(gates).toMatch(/OpenJev is an independent project/);
 
 
