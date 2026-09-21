@@ -1047,6 +1047,28 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(readme).toMatch(/smixs\/code-quality-skill/);
     expect(readme).toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(readme).toMatch(/iamvatsalpatel\/tiershift/);
+    expect(readme).toMatch(/sungatetop\/Jev-robot/);
+    expect(readme).toMatch(/NoNFake\/job-classifier-search/);
+    expect(readme).toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(readme).toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(readme).toMatch(/diluteoxygen\/JevPalette/);
+    expect(readme).toMatch(/fstandhartinger\/decision-desk/);
+    expect(readme).toMatch(/fstandhartinger\/jev-router/);
+    expect(readme).toMatch(/gbesse\/jev-proxy/);
+    expect(readme).toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(readme).toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(readme).toMatch(/prakash7474\/Jev_guard/);
+    expect(readme).toMatch(/rdutra\/laya-mcp/);
+    expect(readme).toMatch(/turenlabs\/jast/);
+    expect(readme).toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
+    expect(readme).toMatch(/never sends policy data to a model/);
+    expect(readme).toMatch(/Gate mobility/);
+    expect(readme).toMatch(/The stock Codex plugin supplements normal compaction/);
+    expect(readme).toMatch(/Laya decisions are probabilistic signals, not authorization/);
+    expect(readme).toMatch(/Findings are candidate signals, not verdicts/);
+    expect(readme).toMatch(/advertised pre-compaction/);
+    expect(readme).toMatch(/OpenJev is an independent project/);
     expect(readme).toMatch(/Routing is fail-open/);
     expect(readme).toMatch(/Jev owns the decision probabilities/);
     expect(readme).toMatch(/classified only, not executed/);
@@ -2071,6 +2093,34 @@ describe("discoverability copy", () => {
 
 
 
+
+  it("does not invent hourly 1019 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/tiershift is a permission grant/);
+      expect(text, rel).not.toMatch(/40 percent is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/Jev-robot idle is a safety envelope/);
+      expect(text, rel).not.toMatch(/Laya percent is a hire/);
+      expect(text, rel).not.toMatch(/fast-jev-codex is tamaratran\/fast-jev-compaction/);
+      expect(text, rel).not.toMatch(/14\/14 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/JevPalette color Choice is a safety envelope/);
+      expect(text, rel).not.toMatch(/closed beta is Jev/);
+      expect(text, rel).not.toMatch(/decision-desk is a permission grant/);
+      expect(text, rel).not.toMatch(/fstandhartinger\/jev-router is reallygood83\/jev-router/);
+      expect(text, rel).not.toMatch(/fstandhartinger\/jev-router is gargpratyush\/jev-router/);
+      expect(text, rel).not.toMatch(/jev-proxy sends policy to a model/);
+      expect(text, rel).not.toMatch(/jev-proxy is gbesse\/agent-mandates/);
+      expect(text, rel).not.toMatch(/openjev-mlx-demo is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/11% gate mobility is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/prakash7474\/Jev_guard is leepokai\/jev-guard/);
+      expect(text, rel).not.toMatch(/Jev_guard kills processes/);
+      expect(text, rel).not.toMatch(/rdutra\/laya-mcp is PerryLink\/laya-mcp/);
+      expect(text, rel).not.toMatch(/80% Youden is what JAST achieves today/);
+      expect(text, rel).not.toMatch(/advertised pre-compaction is shipped source/);
+      expect(text, rel).not.toMatch(/wjw66 is bojansandhaus\/jev-lcm-dsh-compaction/);
+    }
+  });
+
   it("does not invent hourly 0923 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -2675,6 +2725,21 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(pkg).not.toMatch(/smixs\/code-quality-skill/);
     expect(pkg).not.toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(pkg).not.toMatch(/iamvatsalpatel\/tiershift/);
+    expect(pkg).not.toMatch(/sungatetop\/Jev-robot/);
+    expect(pkg).not.toMatch(/NoNFake\/job-classifier-search/);
+    expect(pkg).not.toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(pkg).not.toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(pkg).not.toMatch(/diluteoxygen\/JevPalette/);
+    expect(pkg).not.toMatch(/fstandhartinger\/decision-desk/);
+    expect(pkg).not.toMatch(/fstandhartinger\/jev-router/);
+    expect(pkg).not.toMatch(/gbesse\/jev-proxy/);
+    expect(pkg).not.toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(pkg).not.toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(pkg).not.toMatch(/prakash7474\/Jev_guard/);
+    expect(pkg).not.toMatch(/rdutra\/laya-mcp/);
+    expect(pkg).not.toMatch(/turenlabs\/jast/);
+    expect(pkg).not.toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3066,6 +3131,21 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(pkg).not.toMatch(/smixs\/code-quality-skill/);
     expect(pkg).not.toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(pkg).not.toMatch(/iamvatsalpatel\/tiershift/);
+    expect(pkg).not.toMatch(/sungatetop\/Jev-robot/);
+    expect(pkg).not.toMatch(/NoNFake\/job-classifier-search/);
+    expect(pkg).not.toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(pkg).not.toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(pkg).not.toMatch(/diluteoxygen\/JevPalette/);
+    expect(pkg).not.toMatch(/fstandhartinger\/decision-desk/);
+    expect(pkg).not.toMatch(/fstandhartinger\/jev-router/);
+    expect(pkg).not.toMatch(/gbesse\/jev-proxy/);
+    expect(pkg).not.toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(pkg).not.toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(pkg).not.toMatch(/prakash7474\/Jev_guard/);
+    expect(pkg).not.toMatch(/rdutra\/laya-mcp/);
+    expect(pkg).not.toMatch(/turenlabs\/jast/);
+    expect(pkg).not.toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3527,6 +3607,21 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(lock).not.toMatch(/smixs\/code-quality-skill/);
     expect(lock).not.toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(lock).not.toMatch(/iamvatsalpatel\/tiershift/);
+    expect(lock).not.toMatch(/sungatetop\/Jev-robot/);
+    expect(lock).not.toMatch(/NoNFake\/job-classifier-search/);
+    expect(lock).not.toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(lock).not.toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(lock).not.toMatch(/diluteoxygen\/JevPalette/);
+    expect(lock).not.toMatch(/fstandhartinger\/decision-desk/);
+    expect(lock).not.toMatch(/fstandhartinger\/jev-router/);
+    expect(lock).not.toMatch(/gbesse\/jev-proxy/);
+    expect(lock).not.toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(lock).not.toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(lock).not.toMatch(/prakash7474\/Jev_guard/);
+    expect(lock).not.toMatch(/rdutra\/laya-mcp/);
+    expect(lock).not.toMatch(/turenlabs\/jast/);
+    expect(lock).not.toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3918,6 +4013,21 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(lock).not.toMatch(/smixs\/code-quality-skill/);
     expect(lock).not.toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(lock).not.toMatch(/iamvatsalpatel\/tiershift/);
+    expect(lock).not.toMatch(/sungatetop\/Jev-robot/);
+    expect(lock).not.toMatch(/NoNFake\/job-classifier-search/);
+    expect(lock).not.toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(lock).not.toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(lock).not.toMatch(/diluteoxygen\/JevPalette/);
+    expect(lock).not.toMatch(/fstandhartinger\/decision-desk/);
+    expect(lock).not.toMatch(/fstandhartinger\/jev-router/);
+    expect(lock).not.toMatch(/gbesse\/jev-proxy/);
+    expect(lock).not.toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(lock).not.toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(lock).not.toMatch(/prakash7474\/Jev_guard/);
+    expect(lock).not.toMatch(/rdutra\/laya-mcp/);
+    expect(lock).not.toMatch(/turenlabs\/jast/);
+    expect(lock).not.toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4969,6 +5079,28 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(skill).toMatch(/smixs\/code-quality-skill/);
     expect(skill).toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(skill).toMatch(/iamvatsalpatel\/tiershift/);
+    expect(skill).toMatch(/sungatetop\/Jev-robot/);
+    expect(skill).toMatch(/NoNFake\/job-classifier-search/);
+    expect(skill).toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(skill).toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(skill).toMatch(/diluteoxygen\/JevPalette/);
+    expect(skill).toMatch(/fstandhartinger\/decision-desk/);
+    expect(skill).toMatch(/fstandhartinger\/jev-router/);
+    expect(skill).toMatch(/gbesse\/jev-proxy/);
+    expect(skill).toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(skill).toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(skill).toMatch(/prakash7474\/Jev_guard/);
+    expect(skill).toMatch(/rdutra\/laya-mcp/);
+    expect(skill).toMatch(/turenlabs\/jast/);
+    expect(skill).toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
+    expect(skill).toMatch(/never sends policy data to a model/);
+    expect(skill).toMatch(/Gate mobility/);
+    expect(skill).toMatch(/The stock Codex plugin supplements normal compaction/);
+    expect(skill).toMatch(/Laya decisions are probabilistic signals, not authorization/);
+    expect(skill).toMatch(/Findings are candidate signals, not verdicts/);
+    expect(skill).toMatch(/advertised pre-compaction/);
+    expect(skill).toMatch(/OpenJev is an independent project/);
 
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5975,6 +6107,28 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(evalDoc).toMatch(/smixs\/code-quality-skill/);
     expect(evalDoc).toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(evalDoc).toMatch(/iamvatsalpatel\/tiershift/);
+    expect(evalDoc).toMatch(/sungatetop\/Jev-robot/);
+    expect(evalDoc).toMatch(/NoNFake\/job-classifier-search/);
+    expect(evalDoc).toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(evalDoc).toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(evalDoc).toMatch(/diluteoxygen\/JevPalette/);
+    expect(evalDoc).toMatch(/fstandhartinger\/decision-desk/);
+    expect(evalDoc).toMatch(/fstandhartinger\/jev-router/);
+    expect(evalDoc).toMatch(/gbesse\/jev-proxy/);
+    expect(evalDoc).toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(evalDoc).toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(evalDoc).toMatch(/prakash7474\/Jev_guard/);
+    expect(evalDoc).toMatch(/rdutra\/laya-mcp/);
+    expect(evalDoc).toMatch(/turenlabs\/jast/);
+    expect(evalDoc).toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
+    expect(evalDoc).toMatch(/never sends policy data to a model/);
+    expect(evalDoc).toMatch(/Gate mobility/);
+    expect(evalDoc).toMatch(/The stock Codex plugin supplements normal compaction/);
+    expect(evalDoc).toMatch(/Laya decisions are probabilistic signals, not authorization/);
+    expect(evalDoc).toMatch(/Findings are candidate signals, not verdicts/);
+    expect(evalDoc).toMatch(/advertised pre-compaction/);
+    expect(evalDoc).toMatch(/OpenJev is an independent project/);
 
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -6537,6 +6691,21 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(install).toMatch(/smixs\/code-quality-skill/);
     expect(install).toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(install).toMatch(/iamvatsalpatel\/tiershift/);
+    expect(install).toMatch(/sungatetop\/Jev-robot/);
+    expect(install).toMatch(/NoNFake\/job-classifier-search/);
+    expect(install).toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(install).toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(install).toMatch(/diluteoxygen\/JevPalette/);
+    expect(install).toMatch(/fstandhartinger\/decision-desk/);
+    expect(install).toMatch(/fstandhartinger\/jev-router/);
+    expect(install).toMatch(/gbesse\/jev-proxy/);
+    expect(install).toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(install).toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(install).toMatch(/prakash7474\/Jev_guard/);
+    expect(install).toMatch(/rdutra\/laya-mcp/);
+    expect(install).toMatch(/turenlabs\/jast/);
+    expect(install).toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -7240,6 +7409,28 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(shape).toMatch(/smixs\/code-quality-skill/);
     expect(shape).toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(shape).toMatch(/iamvatsalpatel\/tiershift/);
+    expect(shape).toMatch(/sungatetop\/Jev-robot/);
+    expect(shape).toMatch(/NoNFake\/job-classifier-search/);
+    expect(shape).toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(shape).toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(shape).toMatch(/diluteoxygen\/JevPalette/);
+    expect(shape).toMatch(/fstandhartinger\/decision-desk/);
+    expect(shape).toMatch(/fstandhartinger\/jev-router/);
+    expect(shape).toMatch(/gbesse\/jev-proxy/);
+    expect(shape).toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(shape).toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(shape).toMatch(/prakash7474\/Jev_guard/);
+    expect(shape).toMatch(/rdutra\/laya-mcp/);
+    expect(shape).toMatch(/turenlabs\/jast/);
+    expect(shape).toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
+    expect(shape).toMatch(/never sends policy data to a model/);
+    expect(shape).toMatch(/Gate mobility/);
+    expect(shape).toMatch(/The stock Codex plugin supplements normal compaction/);
+    expect(shape).toMatch(/Laya decisions are probabilistic signals, not authorization/);
+    expect(shape).toMatch(/Findings are candidate signals, not verdicts/);
+    expect(shape).toMatch(/advertised pre-compaction/);
+    expect(shape).toMatch(/OpenJev is an independent project/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -7994,6 +8185,28 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(hosts).toMatch(/smixs\/code-quality-skill/);
     expect(hosts).toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(hosts).toMatch(/iamvatsalpatel\/tiershift/);
+    expect(hosts).toMatch(/sungatetop\/Jev-robot/);
+    expect(hosts).toMatch(/NoNFake\/job-classifier-search/);
+    expect(hosts).toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(hosts).toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(hosts).toMatch(/diluteoxygen\/JevPalette/);
+    expect(hosts).toMatch(/fstandhartinger\/decision-desk/);
+    expect(hosts).toMatch(/fstandhartinger\/jev-router/);
+    expect(hosts).toMatch(/gbesse\/jev-proxy/);
+    expect(hosts).toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(hosts).toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(hosts).toMatch(/prakash7474\/Jev_guard/);
+    expect(hosts).toMatch(/rdutra\/laya-mcp/);
+    expect(hosts).toMatch(/turenlabs\/jast/);
+    expect(hosts).toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
+    expect(hosts).toMatch(/never sends policy data to a model/);
+    expect(hosts).toMatch(/Gate mobility/);
+    expect(hosts).toMatch(/The stock Codex plugin supplements normal compaction/);
+    expect(hosts).toMatch(/Laya decisions are probabilistic signals, not authorization/);
+    expect(hosts).toMatch(/Findings are candidate signals, not verdicts/);
+    expect(hosts).toMatch(/advertised pre-compaction/);
+    expect(hosts).toMatch(/OpenJev is an independent project/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -8855,6 +9068,28 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/ricardochen1996\/dsh-laya-router/);
     expect(gates).toMatch(/smixs\/code-quality-skill/);
     expect(gates).toMatch(/vinodjagwani\/jev-claude-demo/);
+    expect(gates).toMatch(/iamvatsalpatel\/tiershift/);
+    expect(gates).toMatch(/sungatetop\/Jev-robot/);
+    expect(gates).toMatch(/NoNFake\/job-classifier-search/);
+    expect(gates).toMatch(/Uri-cyber\/typesafe-agent/);
+    expect(gates).toMatch(/chrismathew3\/fast-jev-codex/);
+    expect(gates).toMatch(/diluteoxygen\/JevPalette/);
+    expect(gates).toMatch(/fstandhartinger\/decision-desk/);
+    expect(gates).toMatch(/fstandhartinger\/jev-router/);
+    expect(gates).toMatch(/gbesse\/jev-proxy/);
+    expect(gates).toMatch(/chanoian\/openjev-mlx-demo/);
+    expect(gates).toMatch(/clduab11\/jev-calibration-statistics/);
+    expect(gates).toMatch(/prakash7474\/Jev_guard/);
+    expect(gates).toMatch(/rdutra\/laya-mcp/);
+    expect(gates).toMatch(/turenlabs\/jast/);
+    expect(gates).toMatch(/wjw66\/deepseek-harness-jev-pre-compaction/);
+    expect(gates).toMatch(/never sends policy data to a model/);
+    expect(gates).toMatch(/Gate mobility/);
+    expect(gates).toMatch(/The stock Codex plugin supplements normal compaction/);
+    expect(gates).toMatch(/Laya decisions are probabilistic signals, not authorization/);
+    expect(gates).toMatch(/Findings are candidate signals, not verdicts/);
+    expect(gates).toMatch(/advertised pre-compaction/);
+    expect(gates).toMatch(/OpenJev is an independent project/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
