@@ -1114,6 +1114,11 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/The plugin never approves a comment on its own/);
     expect(readme).toMatch(/never uses Jev to lower risk or bypass a gate/);
     expect(readme).toMatch(/advertised prior-auth triage/);
+    expect(readme).toMatch(/Jev never denies anything/);
+    expect(readme).toMatch(/`auto_approve` is not a hard grant/);
+    expect(readme).toMatch(/An SEO pass rate is not a merge grant/);
+    expect(readme).toMatch(/0\.3 \+ score \* 0\.1/);
+    expect(readme).toMatch(/0\.4 \+ score \* 0\.1/);
     expect(readme).toMatch(/OpenJev is an independent project/);
     expect(readme).toMatch(/Routing is fail-open/);
     expect(readme).toMatch(/Jev owns the decision probabilities/);
@@ -2278,7 +2283,11 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/sonson0910\/jev-router is krisitown\/jev-router/);
       expect(text, rel).not.toMatch(/sonson0910\/jev-router fail-closed/);
       expect(text, rel).not.toMatch(/uncertain fields are grants/);
-      expect(text, rel).not.toMatch(/advertised prior-auth triage is shipped source/);
+      expect(text, rel).not.toMatch(/No README, no license, no triage source/);
+      expect(text, rel).not.toMatch(/advertised prior-auth triage ≠ shipped source/);
+      expect(text, rel).not.toMatch(/`auto_approve` is a hard grant/);
+      expect(text, rel).not.toMatch(/0 of 47 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/That shortlist writes a fabricated probability/);
       expect(text, rel).not.toMatch(/vishalbitit\/jev-prior-auth-triage is bhaskarpraveen\/jev-healthcare-support-router/);
     }
   });
@@ -5396,6 +5405,11 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/The plugin never approves a comment on its own/);
     expect(skill).toMatch(/never uses Jev to lower risk or bypass a gate/);
     expect(skill).toMatch(/advertised prior-auth triage/);
+    expect(skill).toMatch(/Jev never denies anything/);
+    expect(skill).toMatch(/`auto_approve` is not a hard grant/);
+    expect(skill).toMatch(/An SEO pass rate is not a merge grant/);
+    expect(skill).toMatch(/0\.3 \+ score \* 0\.1/);
+    expect(skill).toMatch(/0\.4 \+ score \* 0\.1/);
     expect(skill).toMatch(/OpenJev is an independent project/);
 
 
@@ -6470,6 +6484,11 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/The plugin never approves a comment on its own/);
     expect(evalDoc).toMatch(/never uses Jev to lower risk or bypass a gate/);
     expect(evalDoc).toMatch(/advertised prior-auth triage/);
+    expect(evalDoc).toMatch(/Jev never denies anything/);
+    expect(evalDoc).toMatch(/`auto_approve` is not a hard grant/);
+    expect(evalDoc).toMatch(/An SEO pass rate is not a merge grant/);
+    expect(evalDoc).toMatch(/0\.3 \+ score \* 0\.1/);
+    expect(evalDoc).toMatch(/0\.4 \+ score \* 0\.1/);
     expect(evalDoc).toMatch(/OpenJev is an independent project/);
 
 
@@ -7840,6 +7859,8 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/The plugin never approves a comment on its own/);
     expect(shape).toMatch(/never uses Jev to lower risk or bypass a gate/);
     expect(shape).toMatch(/advertised prior-auth triage/);
+    expect(shape).toMatch(/Jev never denies anything/);
+    expect(shape).toMatch(/`auto_approve` is not a hard grant/);
     expect(shape).toMatch(/OpenJev is an independent project/);
 
 
@@ -8662,6 +8683,8 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/The plugin never approves a comment on its own/);
     expect(hosts).toMatch(/never uses Jev to lower risk or bypass a gate/);
     expect(hosts).toMatch(/advertised prior-auth triage/);
+    expect(hosts).toMatch(/Jev never denies anything/);
+    expect(hosts).toMatch(/`auto_approve` is not a hard grant/);
     expect(hosts).toMatch(/OpenJev is an independent project/);
 
 
@@ -9591,6 +9614,8 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/The plugin never approves a comment on its own/);
     expect(gates).toMatch(/never uses Jev to lower risk or bypass a gate/);
     expect(gates).toMatch(/advertised prior-auth triage/);
+    expect(gates).toMatch(/Jev never denies anything/);
+    expect(gates).toMatch(/`auto_approve` is not a hard grant/);
     expect(gates).toMatch(/OpenJev is an independent project/);
 
 
