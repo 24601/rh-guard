@@ -857,7 +857,7 @@ a merge, and not a reward-hack detector.
 
 [naiersaidane/jev-demos](https://github.com/naiersaidane/jev-demos) Quoted **l'agent ne parle jamais en premier.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[piyushsonawane07/trueKeep](https://github.com/piyushsonawane07/trueKeep) Quoted **it can never block your session.** Prune ≠ deny. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+[piyushsonawane07/trueKeep-jev](https://github.com/piyushsonawane07/trueKeep-jev) Quoted **it can never block your session.** Prune ≠ deny. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [prakash5284/jev-vs-llm-resume-jd-eval](https://github.com/prakash5284/jev-vs-llm-resume-jd-eval) Quoted **not a general leaderboard.** *Theirs* cost table. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 

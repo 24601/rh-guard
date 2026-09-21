@@ -1070,7 +1070,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/hfnissum-byte\/jevmerge/);
     expect(readme).toMatch(/jordilopez\/pi-smart-router/);
     expect(readme).toMatch(/naiersaidane\/jev-demos/);
-    expect(readme).toMatch(/piyushsonawane07\/trueKeep/);
+    expect(readme).toMatch(/piyushsonawane07\/trueKeep-jev/);
     expect(readme).toMatch(/prakash5284\/jev-vs-llm-resume-jd-eval/);
     expect(readme).toMatch(/ruslanlap\/jev-gate/);
     expect(readme).toMatch(/theglitcharchitect\/muse-skills/);
@@ -5262,7 +5262,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/hfnissum-byte\/jevmerge/);
     expect(skill).toMatch(/jordilopez\/pi-smart-router/);
     expect(skill).toMatch(/naiersaidane\/jev-demos/);
-    expect(skill).toMatch(/piyushsonawane07\/trueKeep/);
+    expect(skill).toMatch(/piyushsonawane07\/trueKeep-jev/);
     expect(skill).toMatch(/prakash5284\/jev-vs-llm-resume-jd-eval/);
     expect(skill).toMatch(/ruslanlap\/jev-gate/);
     expect(skill).toMatch(/theglitcharchitect\/muse-skills/);
@@ -6318,7 +6318,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/hfnissum-byte\/jevmerge/);
     expect(evalDoc).toMatch(/jordilopez\/pi-smart-router/);
     expect(evalDoc).toMatch(/naiersaidane\/jev-demos/);
-    expect(evalDoc).toMatch(/piyushsonawane07\/trueKeep/);
+    expect(evalDoc).toMatch(/piyushsonawane07\/trueKeep-jev/);
     expect(evalDoc).toMatch(/prakash5284\/jev-vs-llm-resume-jd-eval/);
     expect(evalDoc).toMatch(/ruslanlap\/jev-gate/);
     expect(evalDoc).toMatch(/theglitcharchitect\/muse-skills/);
@@ -6930,7 +6930,7 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/hfnissum-byte\/jevmerge/);
     expect(install).toMatch(/jordilopez\/pi-smart-router/);
     expect(install).toMatch(/naiersaidane\/jev-demos/);
-    expect(install).toMatch(/piyushsonawane07\/trueKeep/);
+    expect(install).toMatch(/piyushsonawane07\/trueKeep-jev/);
     expect(install).toMatch(/prakash5284\/jev-vs-llm-resume-jd-eval/);
     expect(install).toMatch(/ruslanlap\/jev-gate/);
     expect(install).toMatch(/theglitcharchitect\/muse-skills/);
@@ -7661,7 +7661,7 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/hfnissum-byte\/jevmerge/);
     expect(shape).toMatch(/jordilopez\/pi-smart-router/);
     expect(shape).toMatch(/naiersaidane\/jev-demos/);
-    expect(shape).toMatch(/piyushsonawane07\/trueKeep/);
+    expect(shape).toMatch(/piyushsonawane07\/trueKeep-jev/);
     expect(shape).toMatch(/prakash5284\/jev-vs-llm-resume-jd-eval/);
     expect(shape).toMatch(/ruslanlap\/jev-gate/);
     expect(shape).toMatch(/theglitcharchitect\/muse-skills/);
@@ -8465,7 +8465,7 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/hfnissum-byte\/jevmerge/);
     expect(hosts).toMatch(/jordilopez\/pi-smart-router/);
     expect(hosts).toMatch(/naiersaidane\/jev-demos/);
-    expect(hosts).toMatch(/piyushsonawane07\/trueKeep/);
+    expect(hosts).toMatch(/piyushsonawane07\/trueKeep-jev/);
     expect(hosts).toMatch(/prakash5284\/jev-vs-llm-resume-jd-eval/);
     expect(hosts).toMatch(/ruslanlap\/jev-gate/);
     expect(hosts).toMatch(/theglitcharchitect\/muse-skills/);
@@ -9376,7 +9376,7 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/hfnissum-byte\/jevmerge/);
     expect(gates).toMatch(/jordilopez\/pi-smart-router/);
     expect(gates).toMatch(/naiersaidane\/jev-demos/);
-    expect(gates).toMatch(/piyushsonawane07\/trueKeep/);
+    expect(gates).toMatch(/piyushsonawane07\/trueKeep-jev/);
     expect(gates).toMatch(/prakash5284\/jev-vs-llm-resume-jd-eval/);
     expect(gates).toMatch(/ruslanlap\/jev-gate/);
     expect(gates).toMatch(/theglitcharchitect\/muse-skills/);
