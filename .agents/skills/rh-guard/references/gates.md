@@ -782,6 +782,36 @@ a merge, and not a reward-hack detector.
 
 [vinodjagwani/jev-claude-demo](https://github.com/vinodjagwani/jev-claude-demo) Spring Boot; **Jev decides, Claude writes**; treating **0.8** as a rh-guard ROC is theater. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[iamvatsalpatel/tiershift](https://github.com/iamvatsalpatel/tiershift) TypeSafe Jev tier routing; Routing ≠ permission; treating 40 percent as a safety envelope is theater. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[sungatetop/Jev-robot](https://github.com/sungatetop/Jev-robot) System One/Two 3D demo; treating idle fallback as a safety envelope is theater. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[NoNFake/job-classifier-search](https://github.com/NoNFake/job-classifier-search) Laya rank after keyword gate; treating a Laya percent as a hire is theater. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Uri-cyber/typesafe-agent](https://github.com/Uri-cyber/typesafe-agent) min-confidence tool caller; **0.6** starting point; Distinct ThiagaoBR. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[chrismathew3/fast-jev-codex](https://github.com/chrismathew3/fast-jev-codex) Quoted **The stock Codex plugin supplements normal compaction**; prune ≠ deny; **14/14** not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[diluteoxygen/JevPalette](https://github.com/diluteoxygen/JevPalette) 16-color Choice plus Closed Beta Gate; access codes are structural, not Jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[fstandhartinger/decision-desk](https://github.com/fstandhartinger/decision-desk) support-triage demo; treating a demo triage as a permission grant is theater. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[fstandhartinger/jev-router](https://github.com/fstandhartinger/jev-router) Quoted **never selects a model from a benchmark score**; Routing ≠ permission; Distinct reallygood83 / gargpratyush. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[gbesse/jev-proxy](https://github.com/gbesse/jev-proxy) Quoted **never sends policy data to a model**; structural first; Distinct agent-mandates. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[chanoian/openjev-mlx-demo](https://huggingface.co/spaces/chanoian/openjev-mlx-demo) Quoted **OpenJev is an independent project**; advertised MLX ≠ served FP8; Not TypeSafe Jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[clduab11/jev-calibration-statistics](https://huggingface.co/datasets/clduab11/jev-calibration-statistics) Quoted **Gate mobility**; **11%** vs **99%**; pin `jev-1.13.0`. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[prakash7474/Jev_guard](https://github.com/prakash7474/Jev_guard) Quoted **it never kills a process**; Distinct leepokai. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[rdutra/laya-mcp](https://github.com/rdutra/laya-mcp) Quoted **Laya decisions are probabilistic signals, not authorization**; Distinct PerryLink/laya-mcp. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[turenlabs/jast](https://github.com/turenlabs/jast) Quoted **Findings are candidate signals, not verdicts**; 80% Youden is not what the app achieves today. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[wjw66/deepseek-harness-jev-pre-compaction](https://github.com/wjw66/deepseek-harness-jev-pre-compaction) **advertised pre-compaction ≠ shipped source**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) (current listing [harshwasan/jev-sentinel](https://github.com/harshwasan/jev-sentinel); keep both slugs) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
