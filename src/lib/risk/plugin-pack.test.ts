@@ -833,6 +833,38 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/RefoundAI\/jev-editor-skill/);
     expect(readme).toMatch(/to-do list with a number on it, not a grade/);
 
+    expect(readme).toMatch(/jeffloo886\/jev-notion/);
+    expect(readme).toMatch(/Uncertain entries go to a review queue/);
+    expect(readme).toMatch(/simota\/tenbin/);
+    expect(readme).toMatch(/never depends on the MCP/);
+    expect(readme).toMatch(/brnyxx\/jev-ra/);
+    expect(readme).toMatch(/No second LLM runs inside the loop/);
+    expect(readme).toMatch(/1npo\/jev-gmail-labeler/);
+    expect(readme).toMatch(/This is a work in progress/);
+    expect(readme).toMatch(/SuperInstance\/jev-quilt/);
+    expect(readme).toMatch(/The decider never renders; the renderer never decides/);
+    expect(readme).toMatch(/ThePFMind\/jev-mcp/);
+    expect(readme).toMatch(/api\.typesafe\.ai` rejects `sk_jev-ai_` keys/);
+    expect(readme).toMatch(/asmirrr\/DriftLab/);
+    expect(readme).toMatch(/Jev cannot modify a run/);
+    expect(readme).toMatch(/bouncerguy\/jevwrapper/);
+    expect(readme).toMatch(/never sends mail, transfers funds, or executes downstream actions/);
+    expect(readme).toMatch(/cristiancolon\/jev-hft/);
+    expect(readme).toMatch(/It never places real trades/);
+    expect(readme).toMatch(/dtduc-git\/jevnav/);
+    expect(readme).toMatch(/done` is a claim, not evidence/);
+    expect(readme).toMatch(/hawkyre\/jevx/);
+    expect(readme).toMatch(/not a validated prediction of views/);
+    expect(readme).toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(readme).toMatch(/does not establish superiority/);
+    expect(readme).toMatch(/jourdanlabs\/assay-001/);
+    expect(readme).toMatch(/not a statement about Jev on any other task/);
+    expect(readme).toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(readme).toMatch(/treycausey\/semantic-find/);
+    expect(readme).toMatch(/local-lexical-fallback/);
+    expect(readme).toMatch(/ttlequals0\/MinusPodJev/);
+    expect(readme).toMatch(/does not change the MinusPod runtime that controls holds, autoapproval/);
+
 
     expect(readme).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -1552,6 +1584,51 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1843 2026-09-20 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/jeffloo886\/jev-notion is pantos12\/mailverdict/);
+      expect(text, rel).not.toMatch(/jeffloo886\/jev-notion is vynnlee\/jev-mail/);
+      expect(text, rel).not.toMatch(/269 tests is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/60% is a safety envelope/);
+      expect(text, rel).not.toMatch(/simota\/tenbin is suraj-phanindra\/wellposed/);
+      expect(text, rel).not.toMatch(/production depends on the MCP/);
+      expect(text, rel).not.toMatch(/brnyxx\/jev-ra is dtduc-git\/jevnav/);
+      expect(text, rel).not.toMatch(/25 of 25 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/jev-ra invents credentials/);
+      expect(text, rel).not.toMatch(/1npo\/jev-gmail-labeler is vynnlee\/jev-mail/);
+      expect(text, rel).not.toMatch(/label command is shipped/);
+      expect(text, rel).not.toMatch(/SuperInstance\/jev-quilt is browser-use\/jev-ultrafast/);
+      expect(text, rel).not.toMatch(/spreadsheet plugins are shipped/);
+      expect(text, rel).not.toMatch(/ThePFMind\/jev-mcp is seb4ez\/jevguard-mcp/);
+      expect(text, rel).not.toMatch(/jev-ai\.pro is api\.typesafe\.ai/);
+      expect(text, rel).not.toMatch(/jev_route is a PreToolUse deny/);
+      expect(text, rel).not.toMatch(/asmirrr\/DriftLab is cristiancolon\/jev-hft/);
+      expect(text, rel).not.toMatch(/Jev modifies the DriftLab run/);
+      expect(text, rel).not.toMatch(/bouncerguy\/jevwrapper is TypeSafe official/);
+      expect(text, rel).not.toMatch(/0\.7 is an empirically calibrated operating recommendation/);
+      expect(text, rel).not.toMatch(/jevwrapper executes downstream actions/);
+      expect(text, rel).not.toMatch(/cristiancolon\/jev-hft places real trades/);
+      expect(text, rel).not.toMatch(/66% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/dtduc-git\/jevnav is brnyxx\/jev-ra/);
+      expect(text, rel).not.toMatch(/8\/8 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/done is evidence/);
+      expect(text, rel).not.toMatch(/hawkyre\/jevx is yonsakhan\/x-spam-filter-typesafe/);
+      expect(text, rel).not.toMatch(/is a validated prediction of views/);
+      expect(text, rel).not.toMatch(/frankyy03\/laya-pt-es-nli is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/0\.8670 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/jourdanlabs\/assay-001 is Ormus-Solutions\/gold-assay/);
+      expect(text, rel).not.toMatch(/type-safe means calibrated/);
+      expect(text, rel).not.toMatch(/nanami-0713\/dsh-jev-decide is codebam\/dsh-jev-guardrails/);
+      expect(text, rel).not.toMatch(/jev_decide is a DSH hard deny/);
+      expect(text, rel).not.toMatch(/treycausey\/semantic-find is jimmyhealer\/jevex/);
+      expect(text, rel).not.toMatch(/semantic-find sends the whole filesystem/);
+      expect(text, rel).not.toMatch(/ttlequals0\/MinusPodJev is IPECTER\/jev-runway/);
+      expect(text, rel).not.toMatch(/changes the MinusPod runtime that controls holds/);
+      expect(text, rel).not.toMatch(/84 models is a rh-guard ROC/);
+    }
+  });
+
 
   it("does not invent hourly 0947 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
@@ -1829,6 +1906,23 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/bramtechs\/Focus/);
     expect(pkg).not.toMatch(/RefoundAI\/jev-editor-skill/);
 
+    expect(pkg).not.toMatch(/jeffloo886\/jev-notion/);
+    expect(pkg).not.toMatch(/simota\/tenbin/);
+    expect(pkg).not.toMatch(/brnyxx\/jev-ra/);
+    expect(pkg).not.toMatch(/1npo\/jev-gmail-labeler/);
+    expect(pkg).not.toMatch(/SuperInstance\/jev-quilt/);
+    expect(pkg).not.toMatch(/ThePFMind\/jev-mcp/);
+    expect(pkg).not.toMatch(/asmirrr\/DriftLab/);
+    expect(pkg).not.toMatch(/bouncerguy\/jevwrapper/);
+    expect(pkg).not.toMatch(/cristiancolon\/jev-hft/);
+    expect(pkg).not.toMatch(/dtduc-git\/jevnav/);
+    expect(pkg).not.toMatch(/hawkyre\/jevx/);
+    expect(pkg).not.toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(pkg).not.toMatch(/jourdanlabs\/assay-001/);
+    expect(pkg).not.toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(pkg).not.toMatch(/treycausey\/semantic-find/);
+    expect(pkg).not.toMatch(/ttlequals0\/MinusPodJev/);
+
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -2047,6 +2141,23 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/jamubc\/opencode-langsearch/);
     expect(pkg).not.toMatch(/bramtechs\/Focus/);
     expect(pkg).not.toMatch(/RefoundAI\/jev-editor-skill/);
+
+    expect(pkg).not.toMatch(/jeffloo886\/jev-notion/);
+    expect(pkg).not.toMatch(/simota\/tenbin/);
+    expect(pkg).not.toMatch(/brnyxx\/jev-ra/);
+    expect(pkg).not.toMatch(/1npo\/jev-gmail-labeler/);
+    expect(pkg).not.toMatch(/SuperInstance\/jev-quilt/);
+    expect(pkg).not.toMatch(/ThePFMind\/jev-mcp/);
+    expect(pkg).not.toMatch(/asmirrr\/DriftLab/);
+    expect(pkg).not.toMatch(/bouncerguy\/jevwrapper/);
+    expect(pkg).not.toMatch(/cristiancolon\/jev-hft/);
+    expect(pkg).not.toMatch(/dtduc-git\/jevnav/);
+    expect(pkg).not.toMatch(/hawkyre\/jevx/);
+    expect(pkg).not.toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(pkg).not.toMatch(/jourdanlabs\/assay-001/);
+    expect(pkg).not.toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(pkg).not.toMatch(/treycausey\/semantic-find/);
+    expect(pkg).not.toMatch(/ttlequals0\/MinusPodJev/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -2337,6 +2448,23 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/bramtechs\/Focus/);
     expect(lock).not.toMatch(/RefoundAI\/jev-editor-skill/);
 
+    expect(lock).not.toMatch(/jeffloo886\/jev-notion/);
+    expect(lock).not.toMatch(/simota\/tenbin/);
+    expect(lock).not.toMatch(/brnyxx\/jev-ra/);
+    expect(lock).not.toMatch(/1npo\/jev-gmail-labeler/);
+    expect(lock).not.toMatch(/SuperInstance\/jev-quilt/);
+    expect(lock).not.toMatch(/ThePFMind\/jev-mcp/);
+    expect(lock).not.toMatch(/asmirrr\/DriftLab/);
+    expect(lock).not.toMatch(/bouncerguy\/jevwrapper/);
+    expect(lock).not.toMatch(/cristiancolon\/jev-hft/);
+    expect(lock).not.toMatch(/dtduc-git\/jevnav/);
+    expect(lock).not.toMatch(/hawkyre\/jevx/);
+    expect(lock).not.toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(lock).not.toMatch(/jourdanlabs\/assay-001/);
+    expect(lock).not.toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(lock).not.toMatch(/treycausey\/semantic-find/);
+    expect(lock).not.toMatch(/ttlequals0\/MinusPodJev/);
+
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -2555,6 +2683,23 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/jamubc\/opencode-langsearch/);
     expect(lock).not.toMatch(/bramtechs\/Focus/);
     expect(lock).not.toMatch(/RefoundAI\/jev-editor-skill/);
+
+    expect(lock).not.toMatch(/jeffloo886\/jev-notion/);
+    expect(lock).not.toMatch(/simota\/tenbin/);
+    expect(lock).not.toMatch(/brnyxx\/jev-ra/);
+    expect(lock).not.toMatch(/1npo\/jev-gmail-labeler/);
+    expect(lock).not.toMatch(/SuperInstance\/jev-quilt/);
+    expect(lock).not.toMatch(/ThePFMind\/jev-mcp/);
+    expect(lock).not.toMatch(/asmirrr\/DriftLab/);
+    expect(lock).not.toMatch(/bouncerguy\/jevwrapper/);
+    expect(lock).not.toMatch(/cristiancolon\/jev-hft/);
+    expect(lock).not.toMatch(/dtduc-git\/jevnav/);
+    expect(lock).not.toMatch(/hawkyre\/jevx/);
+    expect(lock).not.toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(lock).not.toMatch(/jourdanlabs\/assay-001/);
+    expect(lock).not.toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(lock).not.toMatch(/treycausey\/semantic-find/);
+    expect(lock).not.toMatch(/ttlequals0\/MinusPodJev/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3428,6 +3573,29 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/Treat it as a mitigation, not a security boundary/);
     expect(skill).toMatch(/bramtechs\/Focus/);
     expect(skill).toMatch(/RefoundAI\/jev-editor-skill/);
+    expect(skill).toMatch(/jeffloo886\/jev-notion/);
+    expect(skill).toMatch(/simota\/tenbin/);
+    expect(skill).toMatch(/never depends on the MCP/);
+    expect(skill).toMatch(/brnyxx\/jev-ra/);
+    expect(skill).toMatch(/No second LLM runs inside the loop/);
+    expect(skill).toMatch(/1npo\/jev-gmail-labeler/);
+    expect(skill).toMatch(/SuperInstance\/jev-quilt/);
+    expect(skill).toMatch(/The decider never renders; the renderer never decides/);
+    expect(skill).toMatch(/ThePFMind\/jev-mcp/);
+    expect(skill).toMatch(/api\.typesafe\.ai` rejects `sk_jev-ai_` keys/);
+    expect(skill).toMatch(/asmirrr\/DriftLab/);
+    expect(skill).toMatch(/Jev cannot modify a run/);
+    expect(skill).toMatch(/bouncerguy\/jevwrapper/);
+    expect(skill).toMatch(/cristiancolon\/jev-hft/);
+    expect(skill).toMatch(/It never places real trades/);
+    expect(skill).toMatch(/dtduc-git\/jevnav/);
+    expect(skill).toMatch(/done` is a claim, not evidence/);
+    expect(skill).toMatch(/hawkyre\/jevx/);
+    expect(skill).toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(skill).toMatch(/jourdanlabs\/assay-001/);
+    expect(skill).toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(skill).toMatch(/treycausey\/semantic-find/);
+    expect(skill).toMatch(/ttlequals0\/MinusPodJev/);
 
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -4263,6 +4431,22 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/jamubc\/opencode-langsearch/);
     expect(evalDoc).toMatch(/bramtechs\/Focus/);
     expect(evalDoc).toMatch(/RefoundAI\/jev-editor-skill/);
+    expect(evalDoc).toMatch(/jeffloo886\/jev-notion/);
+    expect(evalDoc).toMatch(/simota\/tenbin/);
+    expect(evalDoc).toMatch(/brnyxx\/jev-ra/);
+    expect(evalDoc).toMatch(/1npo\/jev-gmail-labeler/);
+    expect(evalDoc).toMatch(/SuperInstance\/jev-quilt/);
+    expect(evalDoc).toMatch(/ThePFMind\/jev-mcp/);
+    expect(evalDoc).toMatch(/asmirrr\/DriftLab/);
+    expect(evalDoc).toMatch(/bouncerguy\/jevwrapper/);
+    expect(evalDoc).toMatch(/cristiancolon\/jev-hft/);
+    expect(evalDoc).toMatch(/dtduc-git\/jevnav/);
+    expect(evalDoc).toMatch(/hawkyre\/jevx/);
+    expect(evalDoc).toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(evalDoc).toMatch(/jourdanlabs\/assay-001/);
+    expect(evalDoc).toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(evalDoc).toMatch(/treycausey\/semantic-find/);
+    expect(evalDoc).toMatch(/ttlequals0\/MinusPodJev/);
 
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -4654,6 +4838,22 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/jamubc\/opencode-langsearch/);
     expect(install).toMatch(/bramtechs\/Focus/);
     expect(install).toMatch(/RefoundAI\/jev-editor-skill/);
+    expect(install).toMatch(/jeffloo886\/jev-notion/);
+    expect(install).toMatch(/simota\/tenbin/);
+    expect(install).toMatch(/brnyxx\/jev-ra/);
+    expect(install).toMatch(/1npo\/jev-gmail-labeler/);
+    expect(install).toMatch(/SuperInstance\/jev-quilt/);
+    expect(install).toMatch(/ThePFMind\/jev-mcp/);
+    expect(install).toMatch(/asmirrr\/DriftLab/);
+    expect(install).toMatch(/bouncerguy\/jevwrapper/);
+    expect(install).toMatch(/cristiancolon\/jev-hft/);
+    expect(install).toMatch(/dtduc-git\/jevnav/);
+    expect(install).toMatch(/hawkyre\/jevx/);
+    expect(install).toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(install).toMatch(/jourdanlabs\/assay-001/);
+    expect(install).toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(install).toMatch(/treycausey\/semantic-find/);
+    expect(install).toMatch(/ttlequals0\/MinusPodJev/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -5185,6 +5385,22 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/jamubc\/opencode-langsearch/);
     expect(shape).toMatch(/bramtechs\/Focus/);
     expect(shape).toMatch(/jev-editor-skill/);
+    expect(shape).toMatch(/jeffloo886\/jev-notion/);
+    expect(shape).toMatch(/simota\/tenbin/);
+    expect(shape).toMatch(/brnyxx\/jev-ra/);
+    expect(shape).toMatch(/1npo\/jev-gmail-labeler/);
+    expect(shape).toMatch(/SuperInstance\/jev-quilt/);
+    expect(shape).toMatch(/ThePFMind\/jev-mcp/);
+    expect(shape).toMatch(/asmirrr\/DriftLab/);
+    expect(shape).toMatch(/bouncerguy\/jevwrapper/);
+    expect(shape).toMatch(/cristiancolon\/jev-hft/);
+    expect(shape).toMatch(/dtduc-git\/jevnav/);
+    expect(shape).toMatch(/hawkyre\/jevx/);
+    expect(shape).toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(shape).toMatch(/jourdanlabs\/assay-001/);
+    expect(shape).toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(shape).toMatch(/treycausey\/semantic-find/);
+    expect(shape).toMatch(/ttlequals0\/MinusPodJev/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5767,6 +5983,22 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/jamubc\/opencode-langsearch/);
     expect(hosts).toMatch(/bramtechs\/Focus/);
     expect(hosts).toMatch(/RefoundAI\/jev-editor-skill/);
+    expect(hosts).toMatch(/jeffloo886\/jev-notion/);
+    expect(hosts).toMatch(/simota\/tenbin/);
+    expect(hosts).toMatch(/brnyxx\/jev-ra/);
+    expect(hosts).toMatch(/1npo\/jev-gmail-labeler/);
+    expect(hosts).toMatch(/SuperInstance\/jev-quilt/);
+    expect(hosts).toMatch(/ThePFMind\/jev-mcp/);
+    expect(hosts).toMatch(/asmirrr\/DriftLab/);
+    expect(hosts).toMatch(/bouncerguy\/jevwrapper/);
+    expect(hosts).toMatch(/cristiancolon\/jev-hft/);
+    expect(hosts).toMatch(/dtduc-git\/jevnav/);
+    expect(hosts).toMatch(/hawkyre\/jevx/);
+    expect(hosts).toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(hosts).toMatch(/jourdanlabs\/assay-001/);
+    expect(hosts).toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(hosts).toMatch(/treycausey\/semantic-find/);
+    expect(hosts).toMatch(/ttlequals0\/MinusPodJev/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -6457,6 +6689,22 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/jamubc\/opencode-langsearch/);
     expect(gates).toMatch(/bramtechs\/Focus/);
     expect(gates).toMatch(/RefoundAI\/jev-editor-skill/);
+    expect(gates).toMatch(/jeffloo886\/jev-notion/);
+    expect(gates).toMatch(/simota\/tenbin/);
+    expect(gates).toMatch(/brnyxx\/jev-ra/);
+    expect(gates).toMatch(/1npo\/jev-gmail-labeler/);
+    expect(gates).toMatch(/SuperInstance\/jev-quilt/);
+    expect(gates).toMatch(/ThePFMind\/jev-mcp/);
+    expect(gates).toMatch(/asmirrr\/DriftLab/);
+    expect(gates).toMatch(/bouncerguy\/jevwrapper/);
+    expect(gates).toMatch(/cristiancolon\/jev-hft/);
+    expect(gates).toMatch(/dtduc-git\/jevnav/);
+    expect(gates).toMatch(/hawkyre\/jevx/);
+    expect(gates).toMatch(/frankyy03\/laya-pt-es-nli/);
+    expect(gates).toMatch(/jourdanlabs\/assay-001/);
+    expect(gates).toMatch(/nanami-0713\/dsh-jev-decide/);
+    expect(gates).toMatch(/treycausey\/semantic-find/);
+    expect(gates).toMatch(/ttlequals0\/MinusPodJev/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
