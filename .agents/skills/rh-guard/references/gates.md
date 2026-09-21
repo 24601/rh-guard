@@ -885,6 +885,26 @@ a merge, and not a reward-hack detector.
 
 [vishalbitit/jev-prior-auth-triage](https://github.com/vishalbitit/jev-prior-auth-triage) advertised prior-auth triage ships `README.md`, `pipeline/triage.py`, `policy/policies.py`, `data/*`, and `analysis/*`. No license. Quoted **Jev never denies anything.** Routes are `auto_approve`, `pend_clinical_review`, and `peer_to_peer_required`. `auto_approve` is a route, not a permission. `auto_approve` is not a hard grant. Soft judgment is never the sole veto. Distinct from [bhaskarpraveen/jev-healthcare-support-router](https://github.com/bhaskarpraveen/jev-healthcare-support-router). Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[benjamincanac/tia](https://github.com/benjamincanac/tia) Quoted **It never closes, transfers or converts an issue.** **Providers without a distribution count as certain.** `dryRun` defaults true. A label is not a close. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[satiricalguru/Fast-Jev-Agents](https://github.com/satiricalguru/Fast-Jev-Agents) Quoted **Default 'throw' for strict mode.** Hook fail-open to built-in compaction. 50/50 passing is not a rh-guard ROC. Prune is not deny. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Alberto-Codes/judgevet](https://github.com/Alberto-Codes/judgevet) Quoted **The response shape is verified.** Tools `ask_noul`, `ask_choice`, `ask_score`. If the agent never calls the tools, no gate runs. The 90% coverage floor is not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Ivanovskyi/typesafe-ai-gateway](https://github.com/Ivanovskyi/typesafe-ai-gateway) Threshold 0.75. `executeMockService` is not a live dispatch. Routing is not permission. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[SAITS-Swiss-AI-Tech-Services/jev-mcp](https://github.com/SAITS-Swiss-AI-Tech-Services/jev-mcp) Quoted **There is no blocklist.** The domain lock is code. Distinct from emlama/jev-mcp. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[aleksvega/jev-skill-router](https://github.com/aleksvega/jev-skill-router) Quoted **A broken router never blocks your agent.** The advertised exit 2 is not the served exit. Distinct from shimo4228/jev-skill-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[anchorshell/relay](https://github.com/anchorshell/relay) Quoted **The built-in AnchorShell Classifier remains the default.** **Private, bounded Laya adapter.** anchorshell/relay is not TypeSafe Jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[canok07/jev-router](https://github.com/canok07/jev-router) advertised jev-router ≠ shipped source. canok07/jev-router is not a shipped router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[nautahakk/jev-codex-router](https://github.com/nautahakk/jev-codex-router) Quoted **No model available within the configured maximum.** **Jev is unavailable; continuing with** a route inside the cap. Distinct from 0xNatoshi/jev-codex-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[qasimhammad1/applyguard](https://github.com/qasimhammad1/applyguard) Quoted **Only the human can consent and submit.** Five nouls at 0.5. The public demo never submits an application. A demo BLOCK is not a hire. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
