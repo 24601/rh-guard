@@ -1010,6 +1010,7 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/jamarius-fortson\/model-router/);
     expect(readme).toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(readme).toMatch(/ndolinschi\/pulselane/);
+    expect(readme).toMatch(/Das-rebel\/a3m-router/);
     expect(readme).toMatch(/Routing is fail-open/);
     expect(readme).toMatch(/Jev owns the decision probabilities/);
     expect(readme).toMatch(/classified only, not executed/);
@@ -2032,6 +2033,24 @@ describe("discoverability copy", () => {
 
 
 
+
+  it("does not invent hourly 0823 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/Das-rebel\/a3m-router is zeeshan8281\/slo-router/);
+      expect(text, rel).not.toMatch(/Das-rebel\/a3m-router is Mandrilsquad1441\/jev-model-router/);
+      expect(text, rel).not.toMatch(/Das-rebel\/a3m-router is NeOMakinG\/kev-model-router/);
+      expect(text, rel).not.toMatch(/Das-rebel\/a3m-router is jamarius-fortson\/model-router/);
+      expect(text, rel).not.toMatch(/Das-rebel\/a3m-router is islee23520\/omo-jevlike-router/);
+      expect(text, rel).not.toMatch(/a3m-router local-weights is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/MIN_CONFIDENCE 0\.22 is a safety envelope/);
+      expect(text, rel).not.toMatch(/97\.8% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/90% bill cut is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/a3m_route executes providers/);
+      expect(text, rel).not.toMatch(/pheromone-trail is a permission grant/);
+    }
+  });
+
   it("does not invent hourly 0707 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -2546,6 +2565,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/jamarius-fortson\/model-router/);
     expect(pkg).not.toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(pkg).not.toMatch(/ndolinschi\/pulselane/);
+    expect(pkg).not.toMatch(/Das-rebel\/a3m-router/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -2900,6 +2920,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/jamarius-fortson\/model-router/);
     expect(pkg).not.toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(pkg).not.toMatch(/ndolinschi\/pulselane/);
+    expect(pkg).not.toMatch(/Das-rebel\/a3m-router/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3324,6 +3345,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/jamarius-fortson\/model-router/);
     expect(lock).not.toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(lock).not.toMatch(/ndolinschi\/pulselane/);
+    expect(lock).not.toMatch(/Das-rebel\/a3m-router/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3678,6 +3700,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/jamarius-fortson\/model-router/);
     expect(lock).not.toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(lock).not.toMatch(/ndolinschi\/pulselane/);
+    expect(lock).not.toMatch(/Das-rebel\/a3m-router/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4692,6 +4715,7 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/jamarius-fortson\/model-router/);
     expect(skill).toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(skill).toMatch(/ndolinschi\/pulselane/);
+    expect(skill).toMatch(/Das-rebel\/a3m-router/);
 
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5661,6 +5685,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/jamarius-fortson\/model-router/);
     expect(evalDoc).toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(evalDoc).toMatch(/ndolinschi\/pulselane/);
+    expect(evalDoc).toMatch(/Das-rebel\/a3m-router/);
 
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -6186,6 +6211,7 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/jamarius-fortson\/model-router/);
     expect(install).toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(install).toMatch(/ndolinschi\/pulselane/);
+    expect(install).toMatch(/Das-rebel\/a3m-router/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -6852,6 +6878,7 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/jamarius-fortson\/model-router/);
     expect(shape).toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(shape).toMatch(/ndolinschi\/pulselane/);
+    expect(shape).toMatch(/Das-rebel\/a3m-router/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -7569,6 +7596,7 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/jamarius-fortson\/model-router/);
     expect(hosts).toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(hosts).toMatch(/ndolinschi\/pulselane/);
+    expect(hosts).toMatch(/Das-rebel\/a3m-router/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -8393,6 +8421,7 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/jamarius-fortson\/model-router/);
     expect(gates).toMatch(/kuldeepsinh19\/jev-decision-gateway/);
     expect(gates).toMatch(/ndolinschi\/pulselane/);
+    expect(gates).toMatch(/Das-rebel\/a3m-router/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);

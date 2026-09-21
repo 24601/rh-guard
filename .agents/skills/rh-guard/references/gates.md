@@ -708,6 +708,8 @@ a merge, and not a reward-hack detector.
 
 [ndolinschi/pulselane](https://github.com/ndolinschi/pulselane) **0.1.0**; quoted **Without a key, demo heuristics return the same answer shape**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[Das-rebel/a3m-router](https://github.com/Das-rebel/a3m-router) `adaptive-memory-multi-model-router` **2.16.4**; `model="jev-auto"` local option-attention; `MIN_CONFIDENCE` **0.22** falls to heuristic; optional `A3M_JEV_URL`. Routing ≠ permission. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) (current listing [harshwasan/jev-sentinel](https://github.com/harshwasan/jev-sentinel); keep both slugs) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
