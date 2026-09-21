@@ -933,6 +933,16 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/shimo4228\/jev-skill-router/);
     expect(readme).toMatch(/vlasvar\/jev-research/);
     expect(readme).toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(readme).toMatch(/gargpratyush\/jev-router/);
+    expect(readme).toMatch(/BillionsBobby\/JevRouter/);
+    expect(readme).toMatch(/ba2slk\/jev-command-gate/);
+    expect(readme).toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(readme).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
+    expect(readme).toMatch(/Routing is fail-open/);
+    expect(readme).toMatch(/Jev owns the decision probabilities/);
+    expect(readme).toMatch(/classified only, not executed/);
+    expect(readme).toMatch(/The router can only help, never hurt/);
+    expect(readme).toMatch(/never an automatic action/);
     expect(readme).toMatch(/your code prepares the data and owns every decision/);
     expect(readme).toMatch(/Tight, not bitwise/);
     expect(readme).toMatch(/nothing it produces is executed/);
@@ -1827,6 +1837,24 @@ describe("discoverability copy", () => {
   });
 
 
+  it("does not invent hourly 0049 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/gargpratyush\/jev-router is reallygood83\/jev-router/);
+      expect(text, rel).not.toMatch(/gargpratyush\/jev-router is justinhsu1477\/jev-router/);
+      expect(text, rel).not.toMatch(/gargpratyush\/jev-router is a permission/);
+      expect(text, rel).not.toMatch(/44% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/38% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/BillionsBobby\/JevRouter executes implicitly/);
+      expect(text, rel).not.toMatch(/ba2slk\/jev-command-gate executes commands/);
+      expect(text, rel).not.toMatch(/0\.60 is a safety envelope/);
+      expect(text, rel).not.toMatch(/andrei10k\/claude-jev-model-router is Mandrilsquad1441\/jev-model-router/);
+      expect(text, rel).not.toMatch(/4 to 5x is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/a recommendation is a grant/);
+      expect(text, rel).not.toMatch(/Ryder-MHumble\/Awsome-Jev-Router is shimo4228\/jev-skill-router/);
+    }
+  });
+
   it("does not invent hourly 2347 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -2187,6 +2215,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/shimo4228\/jev-skill-router/);
     expect(pkg).not.toMatch(/vlasvar\/jev-research/);
     expect(pkg).not.toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(pkg).not.toMatch(/gargpratyush\/jev-router/);
+    expect(pkg).not.toMatch(/BillionsBobby\/JevRouter/);
+    expect(pkg).not.toMatch(/ba2slk\/jev-command-gate/);
+    expect(pkg).not.toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(pkg).not.toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
     expect(pkg).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -2465,6 +2498,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/shimo4228\/jev-skill-router/);
     expect(pkg).not.toMatch(/vlasvar\/jev-research/);
     expect(pkg).not.toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(pkg).not.toMatch(/gargpratyush\/jev-router/);
+    expect(pkg).not.toMatch(/BillionsBobby\/JevRouter/);
+    expect(pkg).not.toMatch(/ba2slk\/jev-command-gate/);
+    expect(pkg).not.toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(pkg).not.toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
     expect(pkg).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -2813,6 +2851,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/shimo4228\/jev-skill-router/);
     expect(lock).not.toMatch(/vlasvar\/jev-research/);
     expect(lock).not.toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(lock).not.toMatch(/gargpratyush\/jev-router/);
+    expect(lock).not.toMatch(/BillionsBobby\/JevRouter/);
+    expect(lock).not.toMatch(/ba2slk\/jev-command-gate/);
+    expect(lock).not.toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(lock).not.toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
     expect(lock).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -3091,6 +3134,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/shimo4228\/jev-skill-router/);
     expect(lock).not.toMatch(/vlasvar\/jev-research/);
     expect(lock).not.toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(lock).not.toMatch(/gargpratyush\/jev-router/);
+    expect(lock).not.toMatch(/BillionsBobby\/JevRouter/);
+    expect(lock).not.toMatch(/ba2slk\/jev-command-gate/);
+    expect(lock).not.toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(lock).not.toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
     expect(lock).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -4029,6 +4077,11 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/shimo4228\/jev-skill-router/);
     expect(skill).toMatch(/vlasvar\/jev-research/);
     expect(skill).toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(skill).toMatch(/gargpratyush\/jev-router/);
+    expect(skill).toMatch(/BillionsBobby\/JevRouter/);
+    expect(skill).toMatch(/ba2slk\/jev-command-gate/);
+    expect(skill).toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(skill).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
 
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -4921,6 +4974,11 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/shimo4228\/jev-skill-router/);
     expect(evalDoc).toMatch(/vlasvar\/jev-research/);
     expect(evalDoc).toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(evalDoc).toMatch(/gargpratyush\/jev-router/);
+    expect(evalDoc).toMatch(/BillionsBobby\/JevRouter/);
+    expect(evalDoc).toMatch(/ba2slk\/jev-command-gate/);
+    expect(evalDoc).toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(evalDoc).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
 
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5369,6 +5427,11 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/shimo4228\/jev-skill-router/);
     expect(install).toMatch(/vlasvar\/jev-research/);
     expect(install).toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(install).toMatch(/gargpratyush\/jev-router/);
+    expect(install).toMatch(/BillionsBobby\/JevRouter/);
+    expect(install).toMatch(/ba2slk\/jev-command-gate/);
+    expect(install).toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(install).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -5957,6 +6020,11 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/shimo4228\/jev-skill-router/);
     expect(shape).toMatch(/vlasvar\/jev-research/);
     expect(shape).toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(shape).toMatch(/gargpratyush\/jev-router/);
+    expect(shape).toMatch(/BillionsBobby\/JevRouter/);
+    expect(shape).toMatch(/ba2slk\/jev-command-gate/);
+    expect(shape).toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(shape).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -6596,6 +6664,11 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/shimo4228\/jev-skill-router/);
     expect(hosts).toMatch(/vlasvar\/jev-research/);
     expect(hosts).toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(hosts).toMatch(/gargpratyush\/jev-router/);
+    expect(hosts).toMatch(/BillionsBobby\/JevRouter/);
+    expect(hosts).toMatch(/ba2slk\/jev-command-gate/);
+    expect(hosts).toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(hosts).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -7343,6 +7416,11 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/shimo4228\/jev-skill-router/);
     expect(gates).toMatch(/vlasvar\/jev-research/);
     expect(gates).toMatch(/wangmiaozero\/laya-router-skill/);
+    expect(gates).toMatch(/gargpratyush\/jev-router/);
+    expect(gates).toMatch(/BillionsBobby\/JevRouter/);
+    expect(gates).toMatch(/ba2slk\/jev-command-gate/);
+    expect(gates).toMatch(/andrei10k\/claude-jev-model-router/);
+    expect(gates).toMatch(/Ryder-MHumble\/Awsome-Jev-Router/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
