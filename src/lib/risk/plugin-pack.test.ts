@@ -865,6 +865,20 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/ttlequals0\/MinusPodJev/);
     expect(readme).toMatch(/does not change the MinusPod runtime that controls holds, autoapproval/);
 
+    expect(readme).toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(readme).toMatch(/Rewrites only the outgoing request/);
+    expect(readme).toMatch(/sable-inc\/jev-linter-action/);
+    expect(readme).toMatch(/The model can be wrong, and static lint does not measure/);
+    expect(readme).toMatch(/Dreydrey9000\/jev-relay/);
+    expect(readme).toMatch(/requires_review` is always true/);
+    expect(readme).toMatch(/Never use confidence as permission/);
+    expect(readme).toMatch(/ashafizullah\/jev-triage/);
+    expect(readme).toMatch(/Uncorrected predictions count as correct/);
+    expect(readme).toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(readme).toMatch(/dual LGTM ≠ merge/);
+    expect(readme).toMatch(/olivdx\/jev-mcp/);
+    expect(readme).toMatch(/advertised MCP ≠ shipped source/);
+
 
     expect(readme).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -1629,6 +1643,26 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1946 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/nrdz-labs\/fast-jev-opencode is hoshinodis\/opencode-context-pruner/);
+      expect(text, rel).not.toMatch(/nrdz-labs\/fast-jev-opencode is tamaratran\/fast-jev-compaction/);
+      expect(text, rel).not.toMatch(/72–92% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/sable-inc\/jev-linter-action is huntedman\/JevLint/);
+      expect(text, rel).not.toMatch(/sable-inc\/jev-linter-action is mizchi\/jev-lint/);
+      expect(text, rel).not.toMatch(/Dreydrey9000\/jev-relay is robbyczgw-cla\/hermes-plugin-jev/);
+      expect(text, rel).not.toMatch(/requires_review is a permission grant/);
+      expect(text, rel).not.toMatch(/ashafizullah\/jev-triage is ThyFriendlyFox\/jev-triage/);
+      expect(text, rel).not.toMatch(/Uncorrected predictions are gold labels/);
+      expect(text, rel).not.toMatch(/caohy1988\/jev-guard-smoke is leepokai\/jev-guard/);
+      expect(text, rel).not.toMatch(/Dual LGTM is a merge grant/);
+      expect(text, rel).not.toMatch(/9-row smoke is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/olivdx\/jev-mcp is ThePFMind\/jev-mcp/);
+      expect(text, rel).not.toMatch(/advertised continue\/fix\/retry is shipped/);
+    }
+  });
+
 
   it("does not invent hourly 0947 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
@@ -1923,6 +1957,13 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/treycausey\/semantic-find/);
     expect(pkg).not.toMatch(/ttlequals0\/MinusPodJev/);
 
+    expect(pkg).not.toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(pkg).not.toMatch(/sable-inc\/jev-linter-action/);
+    expect(pkg).not.toMatch(/Dreydrey9000\/jev-relay/);
+    expect(pkg).not.toMatch(/ashafizullah\/jev-triage/);
+    expect(pkg).not.toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(pkg).not.toMatch(/olivdx\/jev-mcp/);
+
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -2158,6 +2199,13 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/nanami-0713\/dsh-jev-decide/);
     expect(pkg).not.toMatch(/treycausey\/semantic-find/);
     expect(pkg).not.toMatch(/ttlequals0\/MinusPodJev/);
+
+    expect(pkg).not.toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(pkg).not.toMatch(/sable-inc\/jev-linter-action/);
+    expect(pkg).not.toMatch(/Dreydrey9000\/jev-relay/);
+    expect(pkg).not.toMatch(/ashafizullah\/jev-triage/);
+    expect(pkg).not.toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(pkg).not.toMatch(/olivdx\/jev-mcp/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -2465,6 +2513,13 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/treycausey\/semantic-find/);
     expect(lock).not.toMatch(/ttlequals0\/MinusPodJev/);
 
+    expect(lock).not.toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(lock).not.toMatch(/sable-inc\/jev-linter-action/);
+    expect(lock).not.toMatch(/Dreydrey9000\/jev-relay/);
+    expect(lock).not.toMatch(/ashafizullah\/jev-triage/);
+    expect(lock).not.toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(lock).not.toMatch(/olivdx\/jev-mcp/);
+
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
 
@@ -2700,6 +2755,13 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/nanami-0713\/dsh-jev-decide/);
     expect(lock).not.toMatch(/treycausey\/semantic-find/);
     expect(lock).not.toMatch(/ttlequals0\/MinusPodJev/);
+
+    expect(lock).not.toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(lock).not.toMatch(/sable-inc\/jev-linter-action/);
+    expect(lock).not.toMatch(/Dreydrey9000\/jev-relay/);
+    expect(lock).not.toMatch(/ashafizullah\/jev-triage/);
+    expect(lock).not.toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(lock).not.toMatch(/olivdx\/jev-mcp/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3597,6 +3659,13 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/treycausey\/semantic-find/);
     expect(skill).toMatch(/ttlequals0\/MinusPodJev/);
 
+    expect(skill).toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(skill).toMatch(/sable-inc\/jev-linter-action/);
+    expect(skill).toMatch(/Dreydrey9000\/jev-relay/);
+    expect(skill).toMatch(/ashafizullah\/jev-triage/);
+    expect(skill).toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(skill).toMatch(/olivdx\/jev-mcp/);
+
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -4448,6 +4517,13 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/treycausey\/semantic-find/);
     expect(evalDoc).toMatch(/ttlequals0\/MinusPodJev/);
 
+    expect(evalDoc).toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(evalDoc).toMatch(/sable-inc\/jev-linter-action/);
+    expect(evalDoc).toMatch(/Dreydrey9000\/jev-relay/);
+    expect(evalDoc).toMatch(/ashafizullah\/jev-triage/);
+    expect(evalDoc).toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(evalDoc).toMatch(/olivdx\/jev-mcp/);
+
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -4854,6 +4930,13 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/nanami-0713\/dsh-jev-decide/);
     expect(install).toMatch(/treycausey\/semantic-find/);
     expect(install).toMatch(/ttlequals0\/MinusPodJev/);
+
+    expect(install).toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(install).toMatch(/sable-inc\/jev-linter-action/);
+    expect(install).toMatch(/Dreydrey9000\/jev-relay/);
+    expect(install).toMatch(/ashafizullah\/jev-triage/);
+    expect(install).toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(install).toMatch(/olivdx\/jev-mcp/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -5401,6 +5484,13 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/nanami-0713\/dsh-jev-decide/);
     expect(shape).toMatch(/treycausey\/semantic-find/);
     expect(shape).toMatch(/ttlequals0\/MinusPodJev/);
+
+    expect(shape).toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(shape).toMatch(/sable-inc\/jev-linter-action/);
+    expect(shape).toMatch(/Dreydrey9000\/jev-relay/);
+    expect(shape).toMatch(/ashafizullah\/jev-triage/);
+    expect(shape).toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(shape).toMatch(/olivdx\/jev-mcp/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5999,6 +6089,13 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/nanami-0713\/dsh-jev-decide/);
     expect(hosts).toMatch(/treycausey\/semantic-find/);
     expect(hosts).toMatch(/ttlequals0\/MinusPodJev/);
+
+    expect(hosts).toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(hosts).toMatch(/sable-inc\/jev-linter-action/);
+    expect(hosts).toMatch(/Dreydrey9000\/jev-relay/);
+    expect(hosts).toMatch(/ashafizullah\/jev-triage/);
+    expect(hosts).toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(hosts).toMatch(/olivdx\/jev-mcp/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -6705,6 +6802,13 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/nanami-0713\/dsh-jev-decide/);
     expect(gates).toMatch(/treycausey\/semantic-find/);
     expect(gates).toMatch(/ttlequals0\/MinusPodJev/);
+
+    expect(gates).toMatch(/nrdz-labs\/fast-jev-opencode/);
+    expect(gates).toMatch(/sable-inc\/jev-linter-action/);
+    expect(gates).toMatch(/Dreydrey9000\/jev-relay/);
+    expect(gates).toMatch(/ashafizullah\/jev-triage/);
+    expect(gates).toMatch(/caohy1988\/jev-guard-smoke/);
+    expect(gates).toMatch(/olivdx\/jev-mcp/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
