@@ -650,10 +650,63 @@ a merge, and not a reward-hack detector.
 
 [Charlie-Qi394/jevrouter-prompt-tier-extension](https://github.com/Charlie-Qi394/jevrouter-prompt-tier-extension) **1.1.0** MIT; quoted **not an official TypeSafe product**; **0.60**; Analyze click; not a picker. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[itsmostafa/typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp) one-tool `evaluate`; 16 MiB rejected never truncated; TYPESAFE wins; hope-the-model-looks. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[burnigtm/jev-mcp](https://github.com/burnigtm/jev-mcp) **0.1.0** MIT; quoted **Incomplete context never permits `auto`**; quoted **Jev never invents arguments or executes tools**; mock not production. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[leepokai/jev-guard](https://github.com/leepokai/jev-guard) **0.3.1** MIT; deny `from_untrusted ≥ 0.7` or `risk ≥ 2.5`; quoted **never lifts a deny**; fail-open default. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[mejiasd3v/pi-jev-router](https://github.com/mejiasd3v/pi-jev-router) **0.4.0** MIT; quoted **Choose once. Stay pinned.**; quoted **Failure retains current effort**; routing ≠ permission. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
 
+[joelhooks/pi-fast-jev-compaction](https://github.com/joelhooks/pi-fast-jev-compaction) **0.1.0** MIT; quoted **never rewrites the JSONL**; **0.5**; fails open. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[Mandrilsquad1441/jev-model-router](https://github.com/Mandrilsquad1441/jev-model-router) **1.0.0** MIT; no key → offline keyword; quoted **Not affiliated**; routing ≠ permission. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[freepik-company/jev-mcp](https://github.com/freepik-company/jev-mcp) quoted **never leaks your credential**; incomplete answers fail the call; not affiliated. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[PerryLink/laya-mcp](https://github.com/PerryLink/laya-mcp) **0.1.0**; quoted **confidence is not accuracy**; Khmer **0.000** at **0.952**; **Not TypeSafe Jev**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[hugo-alves/jev-router-playground](https://github.com/hugo-alves/jev-router-playground) sessionStorage keys; quoted **never paste a key**; CORS proxy. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[TokenTrim/jev-routing-experiment](https://github.com/TokenTrim/jev-routing-experiment) *theirs* **62.4%** vs **60.3%**; quoted **no-Jev ablation matches it**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[kitze/skillbox](https://github.com/kitze/skillbox) **0.1.0** MIT; quoted **never executes uploaded skill code**; recs additive; uncalibrated 0–4. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[iammrduncan/typesafe-ai-benchmark](https://github.com/iammrduncan/typesafe-ai-benchmark) advertised gateway ≠ shipped gateway; *theirs* 475/476 vs 479/480; not a ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[shiftynick/jev-axi](https://github.com/shiftynick/jev-axi) **0.7.0**; quoted Jev **never writes text**; guard exit **3**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Brainwires/jevwire](https://github.com/Brainwires/jevwire) **0.6.0**; pin `jev-1.13.0`; **0.85**/**0.6**; quoted **never prompt you**; no key → judgment hooks inactive. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[docxology/daf-jev](https://github.com/docxology/daf-jev) **0.3.0**; `confidence_gate` **0.6**; fail open to deterministic fallback. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[rashedInt32/jev-mcp](https://github.com/rashedInt32/jev-mcp) **0.5.0**; quoted file contents **never enter the agent's context**; Distinct jev-lens. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[m0rphtail/triagedy](https://github.com/m0rphtail/triagedy) **0.1.0** Rust; quoted **never a silent default**; **0.6** review_required. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[PerryLink/layacore](https://github.com/PerryLink/layacore) quoted **nothing here is installable yet**; advertised sidecar ≠ shipped package. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[PerryLink/layacore-mcp](https://github.com/PerryLink/layacore-mcp) quoted **no server to run**; advertised MCP ≠ shipped server. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Robertzu43/system-one-security-triage](https://github.com/Robertzu43/system-one-security-triage) **0.1.0**; 1,500 synthetic decisions; quoted **not a statistically powered benchmark**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[adibirzu/llm-router-axi](https://github.com/adibirzu/llm-router-axi) **0.1.0**; policy schema live; routing ≠ permission. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[codaaiteam/jev-mcp](https://github.com/codaaiteam/jev-mcp) **1.0.0**; `jev_gate` allow/confirm/block; quoted **Not affiliated**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[gastonmira/typesafe-triage-demo](https://github.com/gastonmira/typesafe-triage-demo) noul ≥ **0.5** AND conf ≥ **0.75**; quoted Noul **no tiene `confidence`**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[geronimo-deploy-cloud/typesafe-tpm-mcp](https://github.com/geronimo-deploy-cloud/typesafe-tpm-mcp) **0.1.0**; quoted **Hard gates ignore confidence**; quoted **Fails closed.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[s1lv3rj1nx/openjev-healthcare-router](https://huggingface.co/datasets/s1lv3rj1nx/openjev-healthcare-router) dataset not encoder; quoted **Not for clinical use**; Distinct openjev-router-healthcare. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[s1lv3rj1nx/openjev-router-lora](https://huggingface.co/s1lv3rj1nx/openjev-router-lora) LoRA **not TypeSafe Jev**; quoted **Not a medical device**; FPR **0.826**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jamarius-fortson/model-router](https://github.com/jamarius-fortson/model-router) **0.1.0**; budget **before** the call; `BudgetExceeded`; no Jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[kuldeepsinh19/jev-decision-gateway](https://github.com/kuldeepsinh19/jev-decision-gateway) **0.0.1**; quoted **fails open by design**; `minConfidence: 0`. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[ndolinschi/pulselane](https://github.com/ndolinschi/pulselane) **0.1.0**; quoted **Without a key, demo heuristics return the same answer shape**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
