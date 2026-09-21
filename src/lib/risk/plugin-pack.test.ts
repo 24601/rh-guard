@@ -1163,6 +1163,16 @@ describe("discoverability copy", () => {
     expect(readme).toContain("Jev never makes the final decision");
     expect(readme).toContain("not a validated clinical or coverage decision system");
     expect(readme).toContain("synthetic PHI-free");
+    expect(readme).toContain("rawwerks/one-system");
+    expect(readme).toContain("Privacy Demo is not a privacy filter");
+    expect(readme).toContain("does not inspect the input for sensitive data");
+    expect(readme).toContain("skips model-based selection, even if that backend is hosted");
+    expect(readme).toContain("One representable destination: selection cannot change the outcome");
+    expect(readme).toContain("editable examples");
+    expect(readme).toContain("Hard constraints apply first");
+    expect(readme).toContain("default to look at, not a recommendation");
+    expect(readme).toContain("This gateway is not this sidecar");
+    expect(readme).toContain("Routing selection is not permission");
 
     expect(readme).toMatch(/does not write the file/);
     expect(readme).toMatch(/Only the human can consent and submit/);
@@ -2455,6 +2465,21 @@ describe("discoverability copy", () => {
     }
   });
 
+
+  it("does not invent one-system privacy-demo claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("Privacy Demo is a privacy filter");
+      expect(text, rel).not.toContain("does inspect the input for sensitive data");
+      expect(text, rel).not.toContain("0.5 is a recommendation");
+      expect(text, rel).not.toContain("one eligible backend still runs selection");
+      expect(text, rel).not.toContain("rawwerks/one-system is this sidecar");
+      expect(text, rel).not.toContain("rawwerks/one-system is fstandhartinger/jev-router");
+      expect(text, rel).not.toContain("routing selection is permission");
+      expect(text, rel).not.toContain("soft preferences veto hard constraints");
+    }
+  });
+
   it("does not invent hourly 1454 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -3162,6 +3187,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toContain("mingleiw/jev-oncall");
     expect(pkg).not.toContain("nikkoxgonzales/jev-certify");
     expect(pkg).not.toContain("prestonkakukdev/Agent-Defense");
+    expect(pkg).not.toContain("rawwerks/one-system");
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3625,6 +3651,7 @@ describe("discoverability copy", () => {
     expect(pkg).not.toContain("mingleiw/jev-oncall");
     expect(pkg).not.toContain("nikkoxgonzales/jev-certify");
     expect(pkg).not.toContain("prestonkakukdev/Agent-Defense");
+    expect(pkg).not.toContain("rawwerks/one-system");
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4158,6 +4185,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toContain("mingleiw/jev-oncall");
     expect(lock).not.toContain("nikkoxgonzales/jev-certify");
     expect(lock).not.toContain("prestonkakukdev/Agent-Defense");
+    expect(lock).not.toContain("rawwerks/one-system");
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4621,6 +4649,7 @@ describe("discoverability copy", () => {
     expect(lock).not.toContain("mingleiw/jev-oncall");
     expect(lock).not.toContain("nikkoxgonzales/jev-certify");
     expect(lock).not.toContain("prestonkakukdev/Agent-Defense");
+    expect(lock).not.toContain("rawwerks/one-system");
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -5788,6 +5817,16 @@ describe("discoverability copy", () => {
     expect(skill).toContain("Jev never makes the final decision");
     expect(skill).toContain("not a validated clinical or coverage decision system");
     expect(skill).toContain("synthetic PHI-free");
+    expect(skill).toContain("rawwerks/one-system");
+    expect(skill).toContain("Privacy Demo is not a privacy filter");
+    expect(skill).toContain("does not inspect the input for sensitive data");
+    expect(skill).toContain("skips model-based selection, even if that backend is hosted");
+    expect(skill).toContain("One representable destination: selection cannot change the outcome");
+    expect(skill).toContain("editable examples");
+    expect(skill).toContain("Hard constraints apply first");
+    expect(skill).toContain("default to look at, not a recommendation");
+    expect(skill).toContain("This gateway is not this sidecar");
+    expect(skill).toContain("Routing selection is not permission");
 
     expect(skill).toMatch(/does not write the file/);
     expect(skill).toMatch(/Only the human can consent and submit/);
@@ -6953,6 +6992,16 @@ describe("discoverability copy", () => {
     expect(evalDoc).toContain("Jev never makes the final decision");
     expect(evalDoc).toContain("not a validated clinical or coverage decision system");
     expect(evalDoc).toContain("synthetic PHI-free");
+    expect(evalDoc).toContain("rawwerks/one-system");
+    expect(evalDoc).toContain("Privacy Demo is not a privacy filter");
+    expect(evalDoc).toContain("does not inspect the input for sensitive data");
+    expect(evalDoc).toContain("skips model-based selection, even if that backend is hosted");
+    expect(evalDoc).toContain("One representable destination: selection cannot change the outcome");
+    expect(evalDoc).toContain("editable examples");
+    expect(evalDoc).toContain("Hard constraints apply first");
+    expect(evalDoc).toContain("default to look at, not a recommendation");
+    expect(evalDoc).toContain("This gateway is not this sidecar");
+    expect(evalDoc).toContain("Routing selection is not permission");
 
     expect(evalDoc).toMatch(/does not write the file/);
     expect(evalDoc).toMatch(/Only the human can consent and submit/);
@@ -7674,6 +7723,16 @@ describe("discoverability copy", () => {
     expect(install).toContain("Jev never makes the final decision");
     expect(install).toContain("not a validated clinical or coverage decision system");
     expect(install).toContain("synthetic PHI-free");
+    expect(install).toContain("rawwerks/one-system");
+    expect(install).toContain("Privacy Demo is not a privacy filter");
+    expect(install).toContain("does not inspect the input for sensitive data");
+    expect(install).toContain("skips model-based selection, even if that backend is hosted");
+    expect(install).toContain("One representable destination: selection cannot change the outcome");
+    expect(install).toContain("editable examples");
+    expect(install).toContain("Hard constraints apply first");
+    expect(install).toContain("default to look at, not a recommendation");
+    expect(install).toContain("This gateway is not this sidecar");
+    expect(install).toContain("Routing selection is not permission");
 
     expect(install).toMatch(/does not write the file/);
     expect(install).toMatch(/Only the human can consent and submit/);
@@ -8506,6 +8565,16 @@ describe("discoverability copy", () => {
     expect(shape).toContain("Jev never makes the final decision");
     expect(shape).toContain("not a validated clinical or coverage decision system");
     expect(shape).toContain("synthetic PHI-free");
+    expect(shape).toContain("rawwerks/one-system");
+    expect(shape).toContain("Privacy Demo is not a privacy filter");
+    expect(shape).toContain("does not inspect the input for sensitive data");
+    expect(shape).toContain("skips model-based selection, even if that backend is hosted");
+    expect(shape).toContain("One representable destination: selection cannot change the outcome");
+    expect(shape).toContain("editable examples");
+    expect(shape).toContain("Hard constraints apply first");
+    expect(shape).toContain("default to look at, not a recommendation");
+    expect(shape).toContain("This gateway is not this sidecar");
+    expect(shape).toContain("Routing selection is not permission");
 
     expect(shape).toMatch(/does not write the file/);
     expect(shape).toMatch(/Only the human can consent and submit/);
@@ -9415,6 +9484,16 @@ describe("discoverability copy", () => {
     expect(hosts).toContain("Jev never makes the final decision");
     expect(hosts).toContain("not a validated clinical or coverage decision system");
     expect(hosts).toContain("synthetic PHI-free");
+    expect(hosts).toContain("rawwerks/one-system");
+    expect(hosts).toContain("Privacy Demo is not a privacy filter");
+    expect(hosts).toContain("does not inspect the input for sensitive data");
+    expect(hosts).toContain("skips model-based selection, even if that backend is hosted");
+    expect(hosts).toContain("One representable destination: selection cannot change the outcome");
+    expect(hosts).toContain("editable examples");
+    expect(hosts).toContain("Hard constraints apply first");
+    expect(hosts).toContain("default to look at, not a recommendation");
+    expect(hosts).toContain("This gateway is not this sidecar");
+    expect(hosts).toContain("Routing selection is not permission");
 
     expect(hosts).toMatch(/does not write the file/);
     expect(hosts).toMatch(/Only the human can consent and submit/);
@@ -10431,6 +10510,16 @@ describe("discoverability copy", () => {
     expect(gates).toContain("Jev never makes the final decision");
     expect(gates).toContain("not a validated clinical or coverage decision system");
     expect(gates).toContain("synthetic PHI-free");
+    expect(gates).toContain("rawwerks/one-system");
+    expect(gates).toContain("Privacy Demo is not a privacy filter");
+    expect(gates).toContain("does not inspect the input for sensitive data");
+    expect(gates).toContain("skips model-based selection, even if that backend is hosted");
+    expect(gates).toContain("One representable destination: selection cannot change the outcome");
+    expect(gates).toContain("editable examples");
+    expect(gates).toContain("Hard constraints apply first");
+    expect(gates).toContain("default to look at, not a recommendation");
+    expect(gates).toContain("This gateway is not this sidecar");
+    expect(gates).toContain("Routing selection is not permission");
 
     expect(gates).toMatch(/does not write the file/);
     expect(gates).toMatch(/Only the human can consent and submit/);
