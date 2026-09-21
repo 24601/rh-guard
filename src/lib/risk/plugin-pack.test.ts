@@ -1116,6 +1116,10 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/advertised prior-auth triage/);
     expect(readme).toMatch(/Jev never denies anything/);
     expect(readme).toMatch(/`auto_approve` is not a hard grant/);
+    expect(readme).toMatch(/pend_clinical_review/);
+    expect(readme).toMatch(/peer_to_peer_required/);
+    expect(readme).toMatch(/policy\/policies\.py/);
+    expect(readme).toMatch(/muthuishere\/jevd/);
     expect(readme).toMatch(/An SEO pass rate is not a merge grant/);
     expect(readme).toMatch(/0\.3 \+ score \* 0\.1/);
     expect(readme).toMatch(/0\.4 \+ score \* 0\.1/);
@@ -5407,6 +5411,10 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/advertised prior-auth triage/);
     expect(skill).toMatch(/Jev never denies anything/);
     expect(skill).toMatch(/`auto_approve` is not a hard grant/);
+    expect(skill).toMatch(/pend_clinical_review/);
+    expect(skill).toMatch(/peer_to_peer_required/);
+    expect(skill).toMatch(/policy\/policies\.py/);
+    expect(skill).toMatch(/muthuishere\/jevd/);
     expect(skill).toMatch(/An SEO pass rate is not a merge grant/);
     expect(skill).toMatch(/0\.3 \+ score \* 0\.1/);
     expect(skill).toMatch(/0\.4 \+ score \* 0\.1/);
@@ -6486,6 +6494,10 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/advertised prior-auth triage/);
     expect(evalDoc).toMatch(/Jev never denies anything/);
     expect(evalDoc).toMatch(/`auto_approve` is not a hard grant/);
+    expect(evalDoc).toMatch(/pend_clinical_review/);
+    expect(evalDoc).toMatch(/peer_to_peer_required/);
+    expect(evalDoc).toMatch(/policy\/policies\.py/);
+    expect(evalDoc).toMatch(/muthuishere\/jevd/);
     expect(evalDoc).toMatch(/An SEO pass rate is not a merge grant/);
     expect(evalDoc).toMatch(/0\.3 \+ score \* 0\.1/);
     expect(evalDoc).toMatch(/0\.4 \+ score \* 0\.1/);
@@ -7089,6 +7101,16 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/navidkashani\/jev-guard/);
     expect(install).toMatch(/sonson0910\/jev-router/);
     expect(install).toMatch(/vishalbitit\/jev-prior-auth-triage/);
+    expect(install).toMatch(/advertised prior-auth triage/);
+    expect(install).toMatch(/Jev never denies anything/);
+    expect(install).toMatch(/pend_clinical_review/);
+    expect(install).toMatch(/peer_to_peer_required/);
+    expect(install).toMatch(/policy\/policies\.py/);
+    expect(install).toMatch(/data\/\*/);
+    expect(install).toMatch(/analysis\/\*/);
+    expect(install).toMatch(/`auto_approve` is a route, not a permission/);
+    expect(install).toMatch(/`auto_approve` is not a hard grant/);
+    expect(install).toMatch(/No license/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -7861,6 +7883,9 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/advertised prior-auth triage/);
     expect(shape).toMatch(/Jev never denies anything/);
     expect(shape).toMatch(/`auto_approve` is not a hard grant/);
+    expect(shape).toMatch(/pend_clinical_review/);
+    expect(shape).toMatch(/peer_to_peer_required/);
+    expect(shape).toMatch(/policy\/policies\.py/);
     expect(shape).toMatch(/OpenJev is an independent project/);
 
 
@@ -8685,6 +8710,9 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/advertised prior-auth triage/);
     expect(hosts).toMatch(/Jev never denies anything/);
     expect(hosts).toMatch(/`auto_approve` is not a hard grant/);
+    expect(hosts).toMatch(/pend_clinical_review/);
+    expect(hosts).toMatch(/peer_to_peer_required/);
+    expect(hosts).toMatch(/policy\/policies\.py/);
     expect(hosts).toMatch(/OpenJev is an independent project/);
 
 
@@ -9616,6 +9644,9 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/advertised prior-auth triage/);
     expect(gates).toMatch(/Jev never denies anything/);
     expect(gates).toMatch(/`auto_approve` is not a hard grant/);
+    expect(gates).toMatch(/pend_clinical_review/);
+    expect(gates).toMatch(/peer_to_peer_required/);
+    expect(gates).toMatch(/policy\/policies\.py/);
     expect(gates).toMatch(/OpenJev is an independent project/);
 
 

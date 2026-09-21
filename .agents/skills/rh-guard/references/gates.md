@@ -883,7 +883,7 @@ a merge, and not a reward-hack detector.
 
 [sonson0910/jev-router](https://github.com/sonson0910/jev-router) Quoted **never uses Jev to lower risk or bypass a gate.** Fail-open. Distinct krisitown. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[vishalbitit/jev-prior-auth-triage](https://github.com/vishalbitit/jev-prior-auth-triage) advertised prior-auth triage ships `README.md` and `pipeline/triage.py`. Quoted **Jev never denies anything.** Routes include `auto_approve`. `auto_approve` is not a hard grant. No license. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+[vishalbitit/jev-prior-auth-triage](https://github.com/vishalbitit/jev-prior-auth-triage) advertised prior-auth triage ships `README.md`, `pipeline/triage.py`, `policy/policies.py`, `data/*`, and `analysis/*`. No license. Quoted **Jev never denies anything.** Routes are `auto_approve`, `pend_clinical_review`, and `peer_to_peer_required`. `auto_approve` is a route, not a permission. `auto_approve` is not a hard grant. Soft judgment is never the sole veto. Distinct from [bhaskarpraveen/jev-healthcare-support-router](https://github.com/bhaskarpraveen/jev-healthcare-support-router). Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
