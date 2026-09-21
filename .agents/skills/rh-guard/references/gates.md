@@ -473,6 +473,18 @@ a merge, and not a reward-hack detector.
 
 [ttlequals0/MinusPodJev](https://github.com/ttlequals0/MinusPodJev) MinusPod Jev proxy. Quoted: **POC shim. It does not change the MinusPod runtime that controls holds, autoapproval**. Distinct jev-runway. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[nrdz-labs/fast-jev-opencode](https://github.com/nrdz-labs/fast-jev-opencode) OpenCode V2 `context` hook prune. Quoted: **Fails open**. Quoted: rewrites **only the outgoing request**. keepThreshold **0.5** (upstream; not hoshinodis 0.15). **prune ≠ deny**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[sable-inc/jev-linter-action](https://github.com/sable-inc/jev-linter-action) Action plus CLI semantic CI. Quoted: expect yes ≥ **0.8**; **0.5 fails**. Quoted: **The model can be wrong, and static lint does not measure how an agent behaves in a call.** Fail closed. Distinct JevLint / mizchi/jev-lint. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Dreydrey9000/jev-relay](https://github.com/Dreydrey9000/jev-relay) local-first advisory router. Quoted: **`requires_review` is always true.** Quoted: **Never use confidence as permission**. Frontier is a handoff. Hope-the-model-looks. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[ashafizullah/jev-triage](https://github.com/ashafizullah/jev-triage) Probot issue/PR triage. Quoted: **Uncorrected predictions count as correct**. `allowAutoClose` default **false**. Distinct ThyFriendlyFox/jev-triage. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[caohy1988/jev-guard-smoke](https://github.com/caohy1988/jev-guard-smoke) lab smoke for leepokai/jev-guard 0.3.1. Quoted: **dual LGTM ≠ merge**. Advertised backend ≠ served. Nine-row table is not a ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[olivdx/jev-mcp](https://github.com/olivdx/jev-mcp) empty public tree (size 0; Git 409). **advertised MCP ≠ shipped source.** Distinct ThePFMind/jev-mcp. Watch; do not invent continue/fix/retry. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) (current listing [harshwasan/jev-sentinel](https://github.com/harshwasan/jev-sentinel); keep both slugs) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
