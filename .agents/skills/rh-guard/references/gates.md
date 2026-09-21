@@ -684,9 +684,9 @@ a merge, and not a reward-hack detector.
 
 [m0rphtail/triagedy](https://github.com/m0rphtail/triagedy) **0.1.0** Rust; quoted **never a silent default**; **0.6** review_required. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[PerryLink/layacore](https://github.com/PerryLink/layacore) quoted **nothing here is installable yet**; advertised sidecar ≠ shipped package. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+[PerryLink/layacore](https://github.com/PerryLink/layacore) GitHub description retired name reservation now laya-mcp; README still quoted **nothing here is installable yet**; GitHub rename ≠ remaining README. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[PerryLink/layacore-mcp](https://github.com/PerryLink/layacore-mcp) quoted **no server to run**; advertised MCP ≠ shipped server. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+[PerryLink/layacore-mcp](https://github.com/PerryLink/layacore-mcp) GitHub description retired name reservation now laya-mcp; README still quoted **no server to run**; GitHub rename ≠ remaining README. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [Robertzu43/system-one-security-triage](https://github.com/Robertzu43/system-one-security-triage) **0.1.0**; 1,500 synthetic decisions; quoted **not a statistically powered benchmark**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -709,6 +709,78 @@ a merge, and not a reward-hack detector.
 [ndolinschi/pulselane](https://github.com/ndolinschi/pulselane) **0.1.0**; quoted **Without a key, demo heuristics return the same answer shape**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [Das-rebel/a3m-router](https://github.com/Das-rebel/a3m-router) `adaptive-memory-multi-model-router` **2.16.4**; `model="jev-auto"` local option-attention; `MIN_CONFIDENCE` **0.22** falls to heuristic; optional `A3M_JEV_URL`. Routing ≠ permission. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[ClemensSchartmueller/jev-guard](https://github.com/ClemensSchartmueller/jev-guard) Go MIT; `enforcing`/`audit`; Jev down → ASK; Distinct leepokai/alsoleg89/pablozr/seb4ez. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[AABBAASS1/jev-router](https://github.com/AABBAASS1/jev-router) noul > **0.7** optional approval; Routing ≠ permission. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[E-FL/typesafe-as-a-judge](https://github.com/E-FL/typesafe-as-a-judge) **0.1.0**; quoted **not an autonomous authority layer**; Distinct itsmostafa. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[aryasaatvik/pagegraph](https://github.com/aryasaatvik/pagegraph) **0.8.3**; Vite fails undeclared pages; editorial non-failing. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[herval/openclaw-jev-plugin](https://github.com/herval/openclaw-jev-plugin) `openclaw-jev-gate` **0.1.0**; unsure → standard never light; `failOpen` true. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[mooooorty/jev-openworld](https://github.com/mooooorty/jev-openworld) **0.1.0**; quoted **not live Jev measurements**; **0.80** experimental. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[st1ne/jev-gem-scan](https://github.com/st1ne/jev-gem-scan) mocked Jev; shadow default; never real trades. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[0x1f/pi-jev-multi-provider](https://github.com/0x1f/pi-jev-multi-provider) **0.5.1**; auto does not fail over; toolGuard **0.85** fail-open. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[AdelysAlberto/pi-laya-router](https://github.com/AdelysAlberto/pi-laya-router) **0.1.0**; **250ms** fail-open; Routing ≠ permission. Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[F0Rextasy/omp-laya-judge](https://github.com/F0Rextasy/omp-laya-judge) **0.1.0**; *theirs* **8/12**; not wired into `judge()`. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[HuXioAn/jev-telegram-channel-router](https://github.com/HuXioAn/jev-telegram-channel-router) quoted **Jev is the router**; not a coding-agent hook. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Locaryn/morph-browser](https://github.com/Locaryn/morph-browser) Laya aide not garantie; lexical without Laya. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[PerryLink/laya-mcp-npm](https://github.com/PerryLink/laya-mcp-npm) launcher not implementation; confidence is not accuracy. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[PerryLink/layacore-install](https://github.com/PerryLink/layacore-install) retired name reservation; README still not installable. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Renwang-Huang/typesafe-mcp](https://github.com/Renwang-Huang/typesafe-mcp) gate/review never authorize; Distinct itsmostafa. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[RiwRiwara/jev-computer](https://github.com/RiwRiwara/jev-computer) toy NAND; not a gate. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Sidharth1743/IndicPHI](https://github.com/Sidharth1743/IndicPHI) fail-closed audit pipeline; not a coding-agent hook. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[applex250/jev-skill-laya](https://github.com/applex250/jev-skill-laya) L-only fork; never presented as TypeSafe calibration. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[ccai40359-wq/jev-triage](https://github.com/ccai40359-wq/jev-triage) RETRY/FIX_CODE/FIX_ENV; *theirs* **16/16** not a field claim; Distinct ThyFriendlyFox. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[dbssman/jev-minesweeper](https://github.com/dbssman/jev-minesweeper) quoted **The model judges, code decides.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[gbesse/decision-hub](https://github.com/gbesse/decision-hub) **0.1.0**; errors remain failed rows. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[gbesse/jev-marches](https://github.com/gbesse/jev-marches) **0.1.0**; pin `jev-1.13.0`; callers own actions. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[gustavofullstack/macrix](https://github.com/gustavofullstack/macrix) **v0.24.0**; 7 Jev tools; quota never silences. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[hemanth/pkg-gate](https://github.com/hemanth/pkg-gate) **0.2.0**; `isSafe()` boolean; no key → simulator. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[piratehack009/laya-cn-flash-triage](https://huggingface.co/piratehack009/laya-cn-flash-triage) no card; advertised triage ≠ shipped card. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[i3u8/jev-skill-selection](https://github.com/i3u8/jev-skill-selection) **0.1.0**; threshold **0.45**; catalog shrink ≠ deny. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[inematds/laya](https://github.com/inematds/laya) **v0.4.4**; *theirs* **13/16**; **0.85** review reason; Distinct NandhaKishorM/laya. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jeonck/jev-local-sample](https://github.com/jeonck/jev-local-sample) open-jev; conf < **0.6**; not TypeSafe by default. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jiawei686/jev-paper-review-mcp](https://github.com/jiawei686/jev-paper-review-mcp) **0.1.0**; advisory only; Distinct jev-screen-mcp. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[lBroth/nullpii](https://github.com/lBroth/nullpii) hobby PII; OOD F1 **0.7784** not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[lhviet/jev-bridge](https://github.com/lhviet/jev-bridge) **0.2.0**; cache hit ≠ correctness; Distinct tacticocc/Jevbridge. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[pkj3002/arxiv-economics-for-chat-users](https://github.com/pkj3002/arxiv-economics-for-chat-users) 3058 papers; not a live gate. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[rafaelbatistazz/jev-openrouter-runbook](https://github.com/rafaelbatistazz/jev-openrouter-runbook) runbook not a gate; Distinct tamaratran/fast-jev-compaction. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[ricardochen1996/dsh-laya-router](https://github.com/ricardochen1996/dsh-laya-router) **0.1.0**; quoted **Advisory, never coercive**; Distinct codebam. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[smixs/code-quality-skill](https://github.com/smixs/code-quality-skill) deterministic tamper/CRAP gate; 0 false blocks not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[vinodjagwani/jev-claude-demo](https://github.com/vinodjagwani/jev-claude-demo) advertised demo ≠ shipped source. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
