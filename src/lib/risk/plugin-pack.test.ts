@@ -1106,6 +1106,24 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/No model available within the configured maximum/);
     expect(readme).toMatch(/Jev is unavailable; continuing with/);
     expect(readme).toMatch(/qasimhammad1\/applyguard/);
+
+    expect(readme).toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(readme).toMatch(/so agents see the warning and decide whether to proceed/);
+    expect(readme).toMatch(/advertised verbatim extract/);
+    expect(readme).toMatch(/gnapse\/jev/);
+    expect(readme).toMatch(/the caller decides what action to take/);
+    expect(readme).toMatch(/it does not activate them/);
+    expect(readme).toMatch(/haystackeditor\/stop-rules/);
+    expect(readme).toMatch(/a quiet hook is not a clean codebase/);
+    expect(readme).toMatch(/an exit code alone does not tell you whether the turn was clean/);
+    expect(readme).toMatch(/jonkthomas\/jev-shadow/);
+    expect(readme).toMatch(/Nothing is launched; it is a shadow/);
+    expect(readme).toMatch(/it never overrides them/);
+    expect(readme).toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(readme).toMatch(/it always starts OFF/);
+    expect(readme).toMatch(/ppradyoth\/jev-guard/);
+    expect(readme).toMatch(/heuristic linter, not a prover/);
+    expect(readme).toMatch(/does not write the file/);
     expect(readme).toMatch(/Only the human can consent and submit/);
     expect(readme).toMatch(/never sends policy data to a model/);
     expect(readme).toMatch(/Gate mobility/);
@@ -2344,6 +2362,38 @@ describe("discoverability copy", () => {
     }
   });
 
+
+  it("does not invent hourly 1454 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/--init writes AGENTS\.md/);
+      expect(text, rel).not.toMatch(/--init writes CLAUDE\.md/);
+      expect(text, rel).not.toMatch(/package name is @echohello\/jevmcp/);
+      expect(text, rel).not.toMatch(/fail_on blocks the host tool/);
+      expect(text, rel).not.toMatch(/0\.94 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/gnapse\/jev is echohello-dev\/jev-mcp-server/);
+      expect(text, rel).not.toMatch(/gnapse\/jev is Alberto-Codes\/judgevet/);
+      expect(text, rel).not.toMatch(/installing @gnapse\/jev activates the skill/);
+      expect(text, rel).not.toMatch(/56 of 62 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/a quiet hook is a clean codebase/);
+      expect(text, rel).not.toMatch(/an exit code alone tells you the turn was clean/);
+      expect(text, rel).not.toMatch(/Cursor exits 2 when a rule is broken/);
+      expect(text, rel).not.toMatch(/0\.6 is a recommendation/);
+      expect(text, rel).not.toMatch(/jev-shadow launches a worker/);
+      expect(text, rel).not.toMatch(/demo numbers measure Jev/);
+      expect(text, rel).not.toMatch(/0\.95 is a measured role accuracy/);
+      expect(text, rel).not.toMatch(/confidence overrides a declared role/);
+      expect(text, rel).not.toMatch(/gmail-jev-guard hides mail/);
+      expect(text, rel).not.toMatch(/gmail-jev-guard deletes mail/);
+      expect(text, rel).not.toMatch(/Analisi attiva starts ON/);
+      expect(text, rel).not.toMatch(/ppradyoth\/jev-guard is leepokai\/jev-guard/);
+      expect(text, rel).not.toMatch(/ppradyoth\/jev-guard is a runtime guardrail/);
+      expect(text, rel).not.toMatch(/ppradyoth\/jev-guard calls the model/);
+      expect(text, rel).not.toMatch(/213 skills is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/jev_extract returns a verbatim span/);
+    }
+  });
+
   it("does not invent hourly 0923 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -2995,6 +3045,12 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/canok07\/jev-router/);
     expect(pkg).not.toMatch(/nautahakk\/jev-codex-router/);
     expect(pkg).not.toMatch(/qasimhammad1\/applyguard/);
+    expect(pkg).not.toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(pkg).not.toMatch(/gnapse\/jev/);
+    expect(pkg).not.toMatch(/haystackeditor\/stop-rules/);
+    expect(pkg).not.toMatch(/jonkthomas\/jev-shadow/);
+    expect(pkg).not.toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(pkg).not.toMatch(/ppradyoth\/jev-guard/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3433,6 +3489,12 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/canok07\/jev-router/);
     expect(pkg).not.toMatch(/nautahakk\/jev-codex-router/);
     expect(pkg).not.toMatch(/qasimhammad1\/applyguard/);
+    expect(pkg).not.toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(pkg).not.toMatch(/gnapse\/jev/);
+    expect(pkg).not.toMatch(/haystackeditor\/stop-rules/);
+    expect(pkg).not.toMatch(/jonkthomas\/jev-shadow/);
+    expect(pkg).not.toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(pkg).not.toMatch(/ppradyoth\/jev-guard/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3941,6 +4003,12 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/canok07\/jev-router/);
     expect(lock).not.toMatch(/nautahakk\/jev-codex-router/);
     expect(lock).not.toMatch(/qasimhammad1\/applyguard/);
+    expect(lock).not.toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(lock).not.toMatch(/gnapse\/jev/);
+    expect(lock).not.toMatch(/haystackeditor\/stop-rules/);
+    expect(lock).not.toMatch(/jonkthomas\/jev-shadow/);
+    expect(lock).not.toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(lock).not.toMatch(/ppradyoth\/jev-guard/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4379,6 +4447,12 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/canok07\/jev-router/);
     expect(lock).not.toMatch(/nautahakk\/jev-codex-router/);
     expect(lock).not.toMatch(/qasimhammad1\/applyguard/);
+    expect(lock).not.toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(lock).not.toMatch(/gnapse\/jev/);
+    expect(lock).not.toMatch(/haystackeditor\/stop-rules/);
+    expect(lock).not.toMatch(/jonkthomas\/jev-shadow/);
+    expect(lock).not.toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(lock).not.toMatch(/ppradyoth\/jev-guard/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -5489,6 +5563,24 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/No model available within the configured maximum/);
     expect(skill).toMatch(/Jev is unavailable; continuing with/);
     expect(skill).toMatch(/qasimhammad1\/applyguard/);
+
+    expect(skill).toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(skill).toMatch(/so agents see the warning and decide whether to proceed/);
+    expect(skill).toMatch(/advertised verbatim extract/);
+    expect(skill).toMatch(/gnapse\/jev/);
+    expect(skill).toMatch(/the caller decides what action to take/);
+    expect(skill).toMatch(/it does not activate them/);
+    expect(skill).toMatch(/haystackeditor\/stop-rules/);
+    expect(skill).toMatch(/a quiet hook is not a clean codebase/);
+    expect(skill).toMatch(/an exit code alone does not tell you whether the turn was clean/);
+    expect(skill).toMatch(/jonkthomas\/jev-shadow/);
+    expect(skill).toMatch(/Nothing is launched; it is a shadow/);
+    expect(skill).toMatch(/it never overrides them/);
+    expect(skill).toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(skill).toMatch(/it always starts OFF/);
+    expect(skill).toMatch(/ppradyoth\/jev-guard/);
+    expect(skill).toMatch(/heuristic linter, not a prover/);
+    expect(skill).toMatch(/does not write the file/);
     expect(skill).toMatch(/Only the human can consent and submit/);
     expect(skill).toMatch(/never sends policy data to a model/);
     expect(skill).toMatch(/Gate mobility/);
@@ -6595,6 +6687,24 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/No model available within the configured maximum/);
     expect(evalDoc).toMatch(/Jev is unavailable; continuing with/);
     expect(evalDoc).toMatch(/qasimhammad1\/applyguard/);
+
+    expect(evalDoc).toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(evalDoc).toMatch(/so agents see the warning and decide whether to proceed/);
+    expect(evalDoc).toMatch(/advertised verbatim extract/);
+    expect(evalDoc).toMatch(/gnapse\/jev/);
+    expect(evalDoc).toMatch(/the caller decides what action to take/);
+    expect(evalDoc).toMatch(/it does not activate them/);
+    expect(evalDoc).toMatch(/haystackeditor\/stop-rules/);
+    expect(evalDoc).toMatch(/a quiet hook is not a clean codebase/);
+    expect(evalDoc).toMatch(/an exit code alone does not tell you whether the turn was clean/);
+    expect(evalDoc).toMatch(/jonkthomas\/jev-shadow/);
+    expect(evalDoc).toMatch(/Nothing is launched; it is a shadow/);
+    expect(evalDoc).toMatch(/it never overrides them/);
+    expect(evalDoc).toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(evalDoc).toMatch(/it always starts OFF/);
+    expect(evalDoc).toMatch(/ppradyoth\/jev-guard/);
+    expect(evalDoc).toMatch(/heuristic linter, not a prover/);
+    expect(evalDoc).toMatch(/does not write the file/);
     expect(evalDoc).toMatch(/Only the human can consent and submit/);
     expect(evalDoc).toMatch(/never sends policy data to a model/);
     expect(evalDoc).toMatch(/Gate mobility/);
@@ -7257,6 +7367,24 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/No model available within the configured maximum/);
     expect(install).toMatch(/Jev is unavailable; continuing with/);
     expect(install).toMatch(/qasimhammad1\/applyguard/);
+
+    expect(install).toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(install).toMatch(/so agents see the warning and decide whether to proceed/);
+    expect(install).toMatch(/advertised verbatim extract/);
+    expect(install).toMatch(/gnapse\/jev/);
+    expect(install).toMatch(/the caller decides what action to take/);
+    expect(install).toMatch(/it does not activate them/);
+    expect(install).toMatch(/haystackeditor\/stop-rules/);
+    expect(install).toMatch(/a quiet hook is not a clean codebase/);
+    expect(install).toMatch(/an exit code alone does not tell you whether the turn was clean/);
+    expect(install).toMatch(/jonkthomas\/jev-shadow/);
+    expect(install).toMatch(/Nothing is launched; it is a shadow/);
+    expect(install).toMatch(/it never overrides them/);
+    expect(install).toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(install).toMatch(/it always starts OFF/);
+    expect(install).toMatch(/ppradyoth\/jev-guard/);
+    expect(install).toMatch(/heuristic linter, not a prover/);
+    expect(install).toMatch(/does not write the file/);
     expect(install).toMatch(/Only the human can consent and submit/);
     expect(install).toMatch(/advertised prior-auth triage/);
     expect(install).toMatch(/Jev never denies anything/);
@@ -8030,6 +8158,24 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/No model available within the configured maximum/);
     expect(shape).toMatch(/Jev is unavailable; continuing with/);
     expect(shape).toMatch(/qasimhammad1\/applyguard/);
+
+    expect(shape).toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(shape).toMatch(/so agents see the warning and decide whether to proceed/);
+    expect(shape).toMatch(/advertised verbatim extract/);
+    expect(shape).toMatch(/gnapse\/jev/);
+    expect(shape).toMatch(/the caller decides what action to take/);
+    expect(shape).toMatch(/it does not activate them/);
+    expect(shape).toMatch(/haystackeditor\/stop-rules/);
+    expect(shape).toMatch(/a quiet hook is not a clean codebase/);
+    expect(shape).toMatch(/an exit code alone does not tell you whether the turn was clean/);
+    expect(shape).toMatch(/jonkthomas\/jev-shadow/);
+    expect(shape).toMatch(/Nothing is launched; it is a shadow/);
+    expect(shape).toMatch(/it never overrides them/);
+    expect(shape).toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(shape).toMatch(/it always starts OFF/);
+    expect(shape).toMatch(/ppradyoth\/jev-guard/);
+    expect(shape).toMatch(/heuristic linter, not a prover/);
+    expect(shape).toMatch(/does not write the file/);
     expect(shape).toMatch(/Only the human can consent and submit/);
     expect(shape).toMatch(/never sends policy data to a model/);
     expect(shape).toMatch(/Gate mobility/);
@@ -8880,6 +9026,24 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/No model available within the configured maximum/);
     expect(hosts).toMatch(/Jev is unavailable; continuing with/);
     expect(hosts).toMatch(/qasimhammad1\/applyguard/);
+
+    expect(hosts).toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(hosts).toMatch(/so agents see the warning and decide whether to proceed/);
+    expect(hosts).toMatch(/advertised verbatim extract/);
+    expect(hosts).toMatch(/gnapse\/jev/);
+    expect(hosts).toMatch(/the caller decides what action to take/);
+    expect(hosts).toMatch(/it does not activate them/);
+    expect(hosts).toMatch(/haystackeditor\/stop-rules/);
+    expect(hosts).toMatch(/a quiet hook is not a clean codebase/);
+    expect(hosts).toMatch(/an exit code alone does not tell you whether the turn was clean/);
+    expect(hosts).toMatch(/jonkthomas\/jev-shadow/);
+    expect(hosts).toMatch(/Nothing is launched; it is a shadow/);
+    expect(hosts).toMatch(/it never overrides them/);
+    expect(hosts).toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(hosts).toMatch(/it always starts OFF/);
+    expect(hosts).toMatch(/ppradyoth\/jev-guard/);
+    expect(hosts).toMatch(/heuristic linter, not a prover/);
+    expect(hosts).toMatch(/does not write the file/);
     expect(hosts).toMatch(/Only the human can consent and submit/);
     expect(hosts).toMatch(/never sends policy data to a model/);
     expect(hosts).toMatch(/Gate mobility/);
@@ -9837,6 +10001,24 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/No model available within the configured maximum/);
     expect(gates).toMatch(/Jev is unavailable; continuing with/);
     expect(gates).toMatch(/qasimhammad1\/applyguard/);
+
+    expect(gates).toMatch(/echohello-dev\/jev-mcp-server/);
+    expect(gates).toMatch(/so agents see the warning and decide whether to proceed/);
+    expect(gates).toMatch(/advertised verbatim extract/);
+    expect(gates).toMatch(/gnapse\/jev/);
+    expect(gates).toMatch(/the caller decides what action to take/);
+    expect(gates).toMatch(/it does not activate them/);
+    expect(gates).toMatch(/haystackeditor\/stop-rules/);
+    expect(gates).toMatch(/a quiet hook is not a clean codebase/);
+    expect(gates).toMatch(/an exit code alone does not tell you whether the turn was clean/);
+    expect(gates).toMatch(/jonkthomas\/jev-shadow/);
+    expect(gates).toMatch(/Nothing is launched; it is a shadow/);
+    expect(gates).toMatch(/it never overrides them/);
+    expect(gates).toMatch(/maxvaega\/gmail-jev-guard/);
+    expect(gates).toMatch(/it always starts OFF/);
+    expect(gates).toMatch(/ppradyoth\/jev-guard/);
+    expect(gates).toMatch(/heuristic linter, not a prover/);
+    expect(gates).toMatch(/does not write the file/);
     expect(gates).toMatch(/Only the human can consent and submit/);
     expect(gates).toMatch(/never sends policy data to a model/);
     expect(gates).toMatch(/Gate mobility/);

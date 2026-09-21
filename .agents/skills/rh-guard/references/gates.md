@@ -895,7 +895,7 @@ a merge, and not a reward-hack detector.
 
 [SAITS-Swiss-AI-Tech-Services/jev-mcp](https://github.com/SAITS-Swiss-AI-Tech-Services/jev-mcp) Quoted **There is no blocklist.** The domain lock is code. Distinct from emlama/jev-mcp. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[aleksvega/jev-skill-router](https://github.com/aleksvega/jev-skill-router) Quoted **A broken router never blocks your agent.** The advertised exit 2 is not the served exit. Distinct from shimo4228/jev-skill-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+[aleksvega/jev-skill-router](https://github.com/aleksvega/jev-skill-router) Quoted **A broken router never blocks your agent.** The advertised exit 2 is not the served exit. `--init` prints the paste rule and does not write the file. Choice over at most 60 skills. Distinct from shimo4228/jev-skill-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [anchorshell/relay](https://github.com/anchorshell/relay) Quoted **The built-in AnchorShell Classifier remains the default.** **Private, bounded Laya adapter.** anchorshell/relay is not TypeSafe Jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
@@ -904,6 +904,18 @@ a merge, and not a reward-hack detector.
 [nautahakk/jev-codex-router](https://github.com/nautahakk/jev-codex-router) Quoted **No model available within the configured maximum.** **Jev is unavailable; continuing with** a route inside the cap. Distinct from 0xNatoshi/jev-codex-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [qasimhammad1/applyguard](https://github.com/qasimhammad1/applyguard) Quoted **Only the human can consent and submit.** Five nouls at 0.5. The public demo never submits an application. A demo BLOCK is not a hire. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[echohello-dev/jev-mcp-server](https://github.com/echohello-dev/jev-mcp-server) Quoted **so agents see the warning and decide whether to proceed.** advertised verbatim extract ≠ shipped presence noul. `fail_on` is not a host deny. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[gnapse/jev](https://github.com/gnapse/jev) Quoted **the caller decides what action to take.** **it does not activate them or modify agent settings.** If the agent never calls the tools, no gate runs. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[haystackeditor/stop-rules](https://github.com/haystackeditor/stop-rules) Quoted **a quiet hook is not a clean codebase.** **an exit code alone does not tell you whether the turn was clean.** Threshold **0.6** is a default to look at, not a recommendation. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jonkthomas/jev-shadow](https://github.com/jonkthomas/jev-shadow) Quoted **Nothing is launched; it is a shadow.** **it never overrides them.** Demo numbers say nothing about Jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[maxvaega/gmail-jev-guard](https://github.com/maxvaega/gmail-jev-guard) Quoted **it always starts OFF.** The bar does not hide, delete, or block mail. No license file. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[ppradyoth/jev-guard](https://github.com/ppradyoth/jev-guard) Quoted **heuristic linter, not a prover.** **not a guardrail.** It does not call the model. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
