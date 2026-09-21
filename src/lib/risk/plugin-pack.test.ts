@@ -2082,6 +2082,7 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/herval\/openclaw-jev-plugin routes unsure to light/);
       expect(text, rel).not.toMatch(/AdelysAlberto\/pi-laya-router is a permission grant/);
       expect(text, rel).not.toMatch(/PerryLink\/laya-mcp-npm is the Python implementation/);
+      expect(text, rel).not.toMatch(/laya-mcp` \*\*0\.1\.2\*\*/);
       expect(text, rel).not.toMatch(/GitHub rename makes layacore installable/);
       expect(text, rel).not.toMatch(/Renwang-Huang\/typesafe-mcp is itsmostafa\/typesafe-mcp/);
       expect(text, rel).not.toMatch(/Renwang-Huang gate authorizes actions/);
@@ -2091,6 +2092,9 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/ricardochen1996\/dsh-laya-router is codebam\/dsh-jev-guardrails/);
       expect(text, rel).not.toMatch(/jiawei686\/jev-paper-review-mcp is jiawei686\/jev-screen-mcp/);
       expect(text, rel).not.toMatch(/vinodjagwani\/jev-claude-demo ships source beyond the README/);
+      expect(text, rel).not.toMatch(/vinodjagwani\/jev-claude-demo[\s\S]{0,160}README only/);
+      expect(text, rel).not.toMatch(/abuse > 0\.8 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/GitHub description: \*\*2,102 NAND gates\*\*/);
       expect(text, rel).not.toMatch(/RiwRiwara\/jev-computer is a coding-agent gate/);
       expect(text, rel).not.toMatch(/inematds\/laya is NandhaKishorM\/laya/);
       expect(text, rel).not.toMatch(/lhviet\/jev-bridge is tacticocc\/Jevbridge/);

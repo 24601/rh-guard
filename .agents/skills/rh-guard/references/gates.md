@@ -780,7 +780,7 @@ a merge, and not a reward-hack detector.
 
 [smixs/code-quality-skill](https://github.com/smixs/code-quality-skill) deterministic tamper/CRAP gate; 0 false blocks not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[vinodjagwani/jev-claude-demo](https://github.com/vinodjagwani/jev-claude-demo) advertised demo ≠ shipped source. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+[vinodjagwani/jev-claude-demo](https://github.com/vinodjagwani/jev-claude-demo) Spring Boot; **Jev decides, Claude writes**; treating **0.8** as a rh-guard ROC is theater. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
