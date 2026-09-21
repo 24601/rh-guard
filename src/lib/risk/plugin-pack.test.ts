@@ -879,6 +879,20 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/olivdx\/jev-mcp/);
     expect(readme).toMatch(/advertised MCP ≠ shipped source/);
 
+    expect(readme).toMatch(/smlayero\/jev-debtgate/);
+    expect(readme).toMatch(/It does not rewrite your codebase/);
+    expect(readme).toMatch(/Do not ship on argmax alone/);
+    expect(readme).toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(readme).toMatch(/last-mile text redactor, not a complete sandbox or secret manager/);
+    expect(readme).toMatch(/abgregs\/jev-experiments/);
+    expect(readme).toMatch(/Calibrate on labeled data; not universal/);
+    expect(readme).toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(readme).toMatch(/offline heuristic fallback/);
+    expect(readme).toMatch(/pyaichatbot\/s1p/);
+    expect(readme).toMatch(/A caller must not interpret a recommendation as an authorization/);
+    expect(readme).toMatch(/qs-lll\/twitter-jev-guard/);
+    expect(readme).toMatch(/不是事实核查工具，也不是平台审核系统/);
+
 
     expect(readme).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -1664,6 +1678,44 @@ describe("discoverability copy", () => {
   });
 
 
+  it("does not invent hourly 2049 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/smlayero\/jev-debtgate is huntedman\/JevLint/);
+      expect(text, rel).not.toMatch(/smlayero\/jev-debtgate is CaseReed\/latch/);
+      expect(text, rel).not.toMatch(/smlayero\/jev-debtgate is sable-inc\/jev-linter-action/);
+      expect(text, rel).not.toMatch(/0\.85 AUTO is a safety envelope/);
+      expect(text, rel).not.toMatch(/argmax is enough to ship/);
+      expect(text, rel).not.toMatch(/collect-only is a verdict/);
+      expect(text, rel).not.toMatch(/BubbatheVTOG\/pi-jev-redact is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/BubbatheVTOG\/pi-jev-redact is BubbatheVTOG\/pi-jev-tool-guard/);
+      expect(text, rel).not.toMatch(/pi-jev-redact is a sandbox/);
+      expect(text, rel).not.toMatch(/empty payload is fail-open/);
+      expect(text, rel).not.toMatch(/abgregs\/jev-experiments is dabit3\/jev-experiments/);
+      expect(text, rel).not.toMatch(/abgregs\/jev-experiments is cdepuy\/hermes-skill-router/);
+      expect(text, rel).not.toMatch(/0\.9 is a grant/);
+      expect(text, rel).not.toMatch(/mock judge is Jev quality/);
+      expect(text, rel).not.toMatch(/kevinlupera\/jev-log-sentinel is jyatesdotdev\/jev-logtriage/);
+      expect(text, rel).not.toMatch(/kevinlupera\/jev-log-sentinel is CompleteTech-LLC-AI-Research\/jev-sentinel/);
+      expect(text, rel).not.toMatch(/kevinlupera\/jev-log-sentinel is harshwasan\/jev-sentinel/);
+      expect(text, rel).not.toMatch(/kevinlupera\/jev-log-sentinel is PavelLizunov\/jev-sentinel/);
+      expect(text, rel).not.toMatch(/offline heuristic fallback is live Jev/);
+      expect(text, rel).not.toMatch(/pyaichatbot\/s1p is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/pyaichatbot\/s1p is zeeshan8281\/slo-router/);
+      expect(text, rel).not.toMatch(/pyaichatbot\/s1p is hraness\/sys1/);
+      expect(text, rel).not.toMatch(/recommendation is authorization/);
+      expect(text, rel).not.toMatch(/unimplemented spec is shipped/);
+      expect(text, rel).not.toMatch(/qs-lll\/twitter-jev-guard is SwastikGorai\/unslopify/);
+      expect(text, rel).not.toMatch(/qs-lll\/twitter-jev-guard is adamnroman\/slop-filter/);
+      expect(text, rel).not.toMatch(/qs-lll\/twitter-jev-guard is yonsakhan\/x-spam-filter-typesafe/);
+      expect(text, rel).not.toMatch(/0\.75 is calibrated/);
+      expect(text, rel).not.toMatch(/STOP watermark is a hide/);
+      expect(text, rel).not.toMatch(/STOP watermark is a deny/);
+    }
+  });
+
+
+
   it("does not invent hourly 0947 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -1963,6 +2015,12 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ashafizullah\/jev-triage/);
     expect(pkg).not.toMatch(/caohy1988\/jev-guard-smoke/);
     expect(pkg).not.toMatch(/olivdx\/jev-mcp/);
+    expect(pkg).not.toMatch(/smlayero\/jev-debtgate/);
+    expect(pkg).not.toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(pkg).not.toMatch(/abgregs\/jev-experiments/);
+    expect(pkg).not.toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(pkg).not.toMatch(/pyaichatbot\/s1p/);
+    expect(pkg).not.toMatch(/qs-lll\/twitter-jev-guard/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -2206,6 +2264,12 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/ashafizullah\/jev-triage/);
     expect(pkg).not.toMatch(/caohy1988\/jev-guard-smoke/);
     expect(pkg).not.toMatch(/olivdx\/jev-mcp/);
+    expect(pkg).not.toMatch(/smlayero\/jev-debtgate/);
+    expect(pkg).not.toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(pkg).not.toMatch(/abgregs\/jev-experiments/);
+    expect(pkg).not.toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(pkg).not.toMatch(/pyaichatbot\/s1p/);
+    expect(pkg).not.toMatch(/qs-lll\/twitter-jev-guard/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -2519,6 +2583,12 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ashafizullah\/jev-triage/);
     expect(lock).not.toMatch(/caohy1988\/jev-guard-smoke/);
     expect(lock).not.toMatch(/olivdx\/jev-mcp/);
+    expect(lock).not.toMatch(/smlayero\/jev-debtgate/);
+    expect(lock).not.toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(lock).not.toMatch(/abgregs\/jev-experiments/);
+    expect(lock).not.toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(lock).not.toMatch(/pyaichatbot\/s1p/);
+    expect(lock).not.toMatch(/qs-lll\/twitter-jev-guard/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -2762,6 +2832,12 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/ashafizullah\/jev-triage/);
     expect(lock).not.toMatch(/caohy1988\/jev-guard-smoke/);
     expect(lock).not.toMatch(/olivdx\/jev-mcp/);
+    expect(lock).not.toMatch(/smlayero\/jev-debtgate/);
+    expect(lock).not.toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(lock).not.toMatch(/abgregs\/jev-experiments/);
+    expect(lock).not.toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(lock).not.toMatch(/pyaichatbot\/s1p/);
+    expect(lock).not.toMatch(/qs-lll\/twitter-jev-guard/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3665,6 +3741,12 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/ashafizullah\/jev-triage/);
     expect(skill).toMatch(/caohy1988\/jev-guard-smoke/);
     expect(skill).toMatch(/olivdx\/jev-mcp/);
+    expect(skill).toMatch(/smlayero\/jev-debtgate/);
+    expect(skill).toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(skill).toMatch(/abgregs\/jev-experiments/);
+    expect(skill).toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(skill).toMatch(/pyaichatbot\/s1p/);
+    expect(skill).toMatch(/qs-lll\/twitter-jev-guard/);
 
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -4523,6 +4605,12 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/ashafizullah\/jev-triage/);
     expect(evalDoc).toMatch(/caohy1988\/jev-guard-smoke/);
     expect(evalDoc).toMatch(/olivdx\/jev-mcp/);
+    expect(evalDoc).toMatch(/smlayero\/jev-debtgate/);
+    expect(evalDoc).toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(evalDoc).toMatch(/abgregs\/jev-experiments/);
+    expect(evalDoc).toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(evalDoc).toMatch(/pyaichatbot\/s1p/);
+    expect(evalDoc).toMatch(/qs-lll\/twitter-jev-guard/);
 
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -4937,6 +5025,12 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/ashafizullah\/jev-triage/);
     expect(install).toMatch(/caohy1988\/jev-guard-smoke/);
     expect(install).toMatch(/olivdx\/jev-mcp/);
+    expect(install).toMatch(/smlayero\/jev-debtgate/);
+    expect(install).toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(install).toMatch(/abgregs\/jev-experiments/);
+    expect(install).toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(install).toMatch(/pyaichatbot\/s1p/);
+    expect(install).toMatch(/qs-lll\/twitter-jev-guard/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -5491,6 +5585,12 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/ashafizullah\/jev-triage/);
     expect(shape).toMatch(/caohy1988\/jev-guard-smoke/);
     expect(shape).toMatch(/olivdx\/jev-mcp/);
+    expect(shape).toMatch(/smlayero\/jev-debtgate/);
+    expect(shape).toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(shape).toMatch(/abgregs\/jev-experiments/);
+    expect(shape).toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(shape).toMatch(/pyaichatbot\/s1p/);
+    expect(shape).toMatch(/qs-lll\/twitter-jev-guard/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -6096,6 +6196,12 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/ashafizullah\/jev-triage/);
     expect(hosts).toMatch(/caohy1988\/jev-guard-smoke/);
     expect(hosts).toMatch(/olivdx\/jev-mcp/);
+    expect(hosts).toMatch(/smlayero\/jev-debtgate/);
+    expect(hosts).toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(hosts).toMatch(/abgregs\/jev-experiments/);
+    expect(hosts).toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(hosts).toMatch(/pyaichatbot\/s1p/);
+    expect(hosts).toMatch(/qs-lll\/twitter-jev-guard/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -6809,6 +6915,12 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/ashafizullah\/jev-triage/);
     expect(gates).toMatch(/caohy1988\/jev-guard-smoke/);
     expect(gates).toMatch(/olivdx\/jev-mcp/);
+    expect(gates).toMatch(/smlayero\/jev-debtgate/);
+    expect(gates).toMatch(/BubbatheVTOG\/pi-jev-redact/);
+    expect(gates).toMatch(/abgregs\/jev-experiments/);
+    expect(gates).toMatch(/kevinlupera\/jev-log-sentinel/);
+    expect(gates).toMatch(/pyaichatbot\/s1p/);
+    expect(gates).toMatch(/qs-lll\/twitter-jev-guard/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
