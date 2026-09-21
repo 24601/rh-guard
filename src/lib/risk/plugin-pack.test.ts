@@ -952,6 +952,14 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/AltSlate-Labs\/certo/);
     expect(readme).toMatch(/gbesse\/agent-mandates/);
     expect(readme).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
+
+    expect(readme).toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(readme).toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(readme).toMatch(/eyenpi\/actionreflex/);
+    expect(readme).toMatch(/nedzen\/decision-gate/);
+    expect(readme).toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(readme).toMatch(/ruban-24\/switchboard/);
+    expect(readme).toMatch(/vuckuola619\/reflex/);
     expect(readme).toMatch(/Routing is fail-open/);
     expect(readme).toMatch(/Jev owns the decision probabilities/);
     expect(readme).toMatch(/classified only, not executed/);
@@ -967,6 +975,14 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/not affiliated with TypeSafe/);
     expect(readme).toMatch(/authorizationGranted: false/);
     expect(readme).toMatch(/Nothing fails open/);
+
+    expect(readme).toMatch(/It never performs the selected action/);
+    expect(readme).toMatch(/airoweb\.multica\.typesafe/);
+    expect(readme).toMatch(/starting points, not calibrated values/);
+    expect(readme).toMatch(/The unsure band/);
+    expect(readme).toMatch(/Request was not sent/);
+    expect(readme).toMatch(/a confident classification does not guarantee a correct answer/);
+    expect(readme).toMatch(/Probabilistic providers never override deterministic hard policy/);
     expect(readme).toMatch(/advertised Jev routing/);
     expect(readme).toMatch(/advertised demo/);
     expect(readme).toMatch(/your code prepares the data and owns every decision/);
@@ -1907,6 +1923,33 @@ describe("discoverability copy", () => {
     }
   });
 
+
+  it("does not invent hourly 0248 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/ashishakkumar\/Jev-Checkpoint executes the selected action/);
+      expect(text, rel).not.toMatch(/Jev-Checkpoint is an approval mechanism/);
+      expect(text, rel).not.toMatch(/0\.95 is a safety envelope/);
+      expect(text, rel).not.toMatch(/bhzdcz\/multica-typed-decision-router is affiliated with TypeSafe/);
+      expect(text, rel).not.toMatch(/a Jev answer is a grant/);
+      expect(text, rel).not.toMatch(/89\.3 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/eyenpi\/actionreflex is omkarghugarkar007\/actiongate-jev/);
+      expect(text, rel).not.toMatch(/actionreflex default on_error is fail-open/);
+      expect(text, rel).not.toMatch(/97\/277 is a safety deny/);
+      expect(text, rel).not.toMatch(/nedzen\/decision-gate ships Laya/);
+      expect(text, rel).not.toMatch(/Laya is shipped in decision-gate/);
+      expect(text, rel).not.toMatch(/phamhongviet\/pi-ext-model-router is da-vinci-noob\/pi-jev-model-router/);
+      expect(text, rel).not.toMatch(/Request was not sent is a structural deny/);
+      expect(text, rel).not.toMatch(/ruban-24\/switchboard is dev-hari-prasad\/switchboard/);
+      expect(text, rel).not.toMatch(/ruban-24\/switchboard is aniruddh-krovvidi\/switchboard/);
+      expect(text, rel).not.toMatch(/0\.70 is a safety envelope/);
+      expect(text, rel).not.toMatch(/vuckuola619\/reflex is Joker666\/Reflex/);
+      expect(text, rel).not.toMatch(/vuckuola619\/reflex is jagsan-cyber\/reflex-gate/);
+      expect(text, rel).not.toMatch(/17\/17 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/Probabilistic providers override deterministic hard policy/);
+    }
+  });
+
   it("does not invent hourly 2347 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -2286,6 +2329,13 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/AltSlate-Labs\/certo/);
     expect(pkg).not.toMatch(/gbesse\/agent-mandates/);
     expect(pkg).not.toMatch(/taifoon-io\/n8n-nodes-typesafe/);
+    expect(pkg).not.toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(pkg).not.toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(pkg).not.toMatch(/eyenpi\/actionreflex/);
+    expect(pkg).not.toMatch(/nedzen\/decision-gate/);
+    expect(pkg).not.toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(pkg).not.toMatch(/ruban-24\/switchboard/);
+    expect(pkg).not.toMatch(/vuckuola619\/reflex/);
     expect(pkg).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -2583,6 +2633,13 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/AltSlate-Labs\/certo/);
     expect(pkg).not.toMatch(/gbesse\/agent-mandates/);
     expect(pkg).not.toMatch(/taifoon-io\/n8n-nodes-typesafe/);
+    expect(pkg).not.toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(pkg).not.toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(pkg).not.toMatch(/eyenpi\/actionreflex/);
+    expect(pkg).not.toMatch(/nedzen\/decision-gate/);
+    expect(pkg).not.toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(pkg).not.toMatch(/ruban-24\/switchboard/);
+    expect(pkg).not.toMatch(/vuckuola619\/reflex/);
     expect(pkg).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -2950,6 +3007,13 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/AltSlate-Labs\/certo/);
     expect(lock).not.toMatch(/gbesse\/agent-mandates/);
     expect(lock).not.toMatch(/taifoon-io\/n8n-nodes-typesafe/);
+    expect(lock).not.toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(lock).not.toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(lock).not.toMatch(/eyenpi\/actionreflex/);
+    expect(lock).not.toMatch(/nedzen\/decision-gate/);
+    expect(lock).not.toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(lock).not.toMatch(/ruban-24\/switchboard/);
+    expect(lock).not.toMatch(/vuckuola619\/reflex/);
     expect(lock).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -3247,6 +3311,13 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/AltSlate-Labs\/certo/);
     expect(lock).not.toMatch(/gbesse\/agent-mandates/);
     expect(lock).not.toMatch(/taifoon-io\/n8n-nodes-typesafe/);
+    expect(lock).not.toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(lock).not.toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(lock).not.toMatch(/eyenpi\/actionreflex/);
+    expect(lock).not.toMatch(/nedzen\/decision-gate/);
+    expect(lock).not.toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(lock).not.toMatch(/ruban-24\/switchboard/);
+    expect(lock).not.toMatch(/vuckuola619\/reflex/);
     expect(lock).not.toMatch(/jomatsu\/pi-jev-auto-mode/);
 
 
@@ -4205,6 +4276,14 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/gbesse\/agent-mandates/);
     expect(skill).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
 
+    expect(skill).toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(skill).toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(skill).toMatch(/eyenpi\/actionreflex/);
+    expect(skill).toMatch(/nedzen\/decision-gate/);
+    expect(skill).toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(skill).toMatch(/ruban-24\/switchboard/);
+    expect(skill).toMatch(/vuckuola619\/reflex/);
+
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -5116,6 +5195,14 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/gbesse\/agent-mandates/);
     expect(evalDoc).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
 
+    expect(evalDoc).toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(evalDoc).toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(evalDoc).toMatch(/eyenpi\/actionreflex/);
+    expect(evalDoc).toMatch(/nedzen\/decision-gate/);
+    expect(evalDoc).toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(evalDoc).toMatch(/ruban-24\/switchboard/);
+    expect(evalDoc).toMatch(/vuckuola619\/reflex/);
+
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
 
@@ -5582,6 +5669,14 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/AltSlate-Labs\/certo/);
     expect(install).toMatch(/gbesse\/agent-mandates/);
     expect(install).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
+
+    expect(install).toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(install).toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(install).toMatch(/eyenpi\/actionreflex/);
+    expect(install).toMatch(/nedzen\/decision-gate/);
+    expect(install).toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(install).toMatch(/ruban-24\/switchboard/);
+    expect(install).toMatch(/vuckuola619\/reflex/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -6189,6 +6284,14 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/AltSlate-Labs\/certo/);
     expect(shape).toMatch(/gbesse\/agent-mandates/);
     expect(shape).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
+
+    expect(shape).toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(shape).toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(shape).toMatch(/eyenpi\/actionreflex/);
+    expect(shape).toMatch(/nedzen\/decision-gate/);
+    expect(shape).toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(shape).toMatch(/ruban-24\/switchboard/);
+    expect(shape).toMatch(/vuckuola619\/reflex/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -6847,6 +6950,14 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/AltSlate-Labs\/certo/);
     expect(hosts).toMatch(/gbesse\/agent-mandates/);
     expect(hosts).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
+
+    expect(hosts).toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(hosts).toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(hosts).toMatch(/eyenpi\/actionreflex/);
+    expect(hosts).toMatch(/nedzen\/decision-gate/);
+    expect(hosts).toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(hosts).toMatch(/ruban-24\/switchboard/);
+    expect(hosts).toMatch(/vuckuola619\/reflex/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -7613,6 +7724,14 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/AltSlate-Labs\/certo/);
     expect(gates).toMatch(/gbesse\/agent-mandates/);
     expect(gates).toMatch(/taifoon-io\/n8n-nodes-typesafe/);
+
+    expect(gates).toMatch(/ashishakkumar\/Jev-Checkpoint/);
+    expect(gates).toMatch(/bhzdcz\/multica-typed-decision-router/);
+    expect(gates).toMatch(/eyenpi\/actionreflex/);
+    expect(gates).toMatch(/nedzen\/decision-gate/);
+    expect(gates).toMatch(/phamhongviet\/pi-ext-model-router/);
+    expect(gates).toMatch(/ruban-24\/switchboard/);
+    expect(gates).toMatch(/vuckuola619\/reflex/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
