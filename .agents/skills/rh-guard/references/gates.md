@@ -867,6 +867,24 @@ a merge, and not a reward-hack detector.
 
 [AkashPriyadarshii/jev-seo](https://github.com/AkashPriyadarshii/jev-seo) Quoted **Thresholds live in one place.** Distinct jev-git. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[revsmoke/promptrejectormcp](https://github.com/revsmoke/promptrejectormcp) Quoted **A low Jev score does not let a prompt skip reasoning.** `unavailable` means do not approve. Hope-the-model-looks. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[sirkirby/routr](https://github.com/sirkirby/routr) Quoted **Advice, never an override.** Pin `jev-1.13.0`. *Theirs* 61 of 68 is not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Debasishhh/jevguard](https://github.com/Debasishhh/jevguard) `BLOCK_NOUL` **0.75**. *Theirs* 83% catch is not a rh-guard ROC. Distinct seb4ez / navidkashani. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[khursheed33/laya-routing-and-descision-making](https://github.com/khursheed33/laya-routing-and-descision-making) Uninitialized engine returns 503. **Not TypeSafe Jev.** Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[krisitown/jev-router](https://github.com/krisitown/jev-router) Quoted **Fallback is off by default.** Distinct sonson0910. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[lldois/dsh-jev](https://github.com/lldois/dsh-jev) Quoted **local keyword heuristic shortlists.** Gate default **0.7**. Distinct tr1v3r. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[navidkashani/jev-guard](https://github.com/navidkashani/jev-guard) Quoted **The plugin never approves a comment on its own.** Spam **0.85** is not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[sonson0910/jev-router](https://github.com/sonson0910/jev-router) Quoted **never uses Jev to lower risk or bypass a gate.** Fail-open. Distinct krisitown. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[vishalbitit/jev-prior-auth-triage](https://github.com/vishalbitit/jev-prior-auth-triage) advertised prior-auth triage ships `README.md`, `pipeline/triage.py`, `policy/policies.py`, `data/*`, and `analysis/*`. No license. Quoted **Jev never denies anything.** Routes are `auto_approve`, `pend_clinical_review`, and `peer_to_peer_required`. `auto_approve` is a route, not a permission. `auto_approve` is not a hard grant. Soft judgment is never the sole veto. Distinct from [bhaskarpraveen/jev-healthcare-support-router](https://github.com/bhaskarpraveen/jev-healthcare-support-router). Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
