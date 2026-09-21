@@ -427,6 +427,20 @@ a merge, and not a reward-hack detector.
 
 [jjlecocq-v/outbound-draft-gate](https://github.com/jjlecocq-v/outbound-draft-gate) draft-only LinkedIn demo. Quoted: **You always click send.** Quoted: **Code owns policy.** Jev-style evaluate, not TypeSafe Jev. Distinct jev-linkedin / Postmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
+[notque/vexjoy-agent](https://github.com/notque/vexjoy-agent) Jev-first `/d` router plus evidence hooks. Quoted: `/d` falls back to `/do`. Quoted EVAL.md: force routes make no Jev calls; gateway errors fail open. Quoted: exit gate requires test output. Routing ≠ permission. Distinct JoacoMarc/jev-harness-router. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[qkal/Canny](https://github.com/qkal/Canny) Claude/Codex done-gate warden. Quoted: **Facts go to code. Judgments go to Jev. Only facts can block.** Quoted hook.ts: Jev can only relax the block. YES **0.9** / NO **0.1**. Distinct clear-head / pi-warden. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[seb4ez/jevguard-mcp](https://github.com/seb4ez/jevguard-mcp) MCP wrap of seb4ez/jevguard. Quoted: `UNRESOLVED_OR_OTHER`; `AMBIGUOUS_STATE`. Quoted: **Official** (*theirs*, not TypeSafe). Distinct raniellimontagna/jev-guard-mcp. Hope-the-model-looks. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[sathariels/jevtriage](https://github.com/sathariels/jevtriage) PR triage Action+CLI. Quoted: **`ready` only exits 0 when confidence ≥ threshold** (**0.8**). Fail closed. Distinct ThyFriendlyFox/jev-triage / HexyeDEV/JevPR. Soft-score-as-hard-gate. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jamubc/opencode-langsearch](https://github.com/jamubc/opencode-langsearch) optional Jev search-result gate. Quoted: **Fails open**. Quoted: **Treat it as a mitigation, not a security boundary.** Off by default. Distinct Astro-Han/jev-harness / Atikpui007/jev-sift. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[bramtechs/Focus](https://github.com/bramtechs/Focus) browser distraction blocker. Allowlist/blocklist first; Jev via OpenRouter; `P(distracting) >= 0.6`. Named heuristic fallback. Soft-as-veto. Distinct gentle-browser-jev. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[RefoundAI/jev-editor-skill](https://github.com/RefoundAI/jev-editor-skill) editorial gate skill. Code lint first; pass at **70** / voice **60**. Quoted: to-do list, not a grade. Hope the model looks. Distinct claude-jev-warden. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) (current listing [harshwasan/jev-sentinel](https://github.com/harshwasan/jev-sentinel); keep both slugs) is a Pi/Claude/Codex integrity gate: Jev on calls, outputs, and replies. Quoted: **never auto-allows** (fail-closed ask). **allow / ask / warn** ladder; secret scrub before Jev; optional task pin. Contrast fail-open pruners / [pi-jev-gate](https://github.com/fivethirty/pi-jev-gate). Distinct from alsoleg89/jev-guard. Quoted: **Prompt injection is not solved.** Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
