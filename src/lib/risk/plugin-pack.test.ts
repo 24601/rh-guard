@@ -2094,6 +2094,55 @@ describe("discoverability copy", () => {
 
 
 
+  it("does not invent hourly 1110 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/codearia-sieve is a safety veto/);
+      expect(text, rel).not.toMatch(/11 of 11 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/98\.5% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/astra-jev ships a gate/);
+      expect(text, rel).not.toMatch(/advertised Astra gates are shipped source/);
+      expect(text, rel).not.toMatch(/Alpha-Harper-Franklin\/astra-jev is 0xNatoshi\/jev-codex-router/);
+      expect(text, rel).not.toMatch(/Jev overrides the hunt cap/);
+      expect(text, rel).not.toMatch(/StubJev is live Jev/);
+      expect(text, rel).not.toMatch(/0\.6 noul is a safety envelope/);
+      expect(text, rel).not.toMatch(/MarkChu-git\/typesafe-mcp is itsmostafa\/typesafe-mcp/);
+      expect(text, rel).not.toMatch(/MarkChu-git\/typesafe-mcp is Renwang-Huang\/typesafe-mcp/);
+      expect(text, rel).not.toMatch(/decision=act is a run grant/);
+      expect(text, rel).not.toMatch(/jev_gate is implemented in MarkChu-git\/typesafe-mcp/);
+      expect(text, rel).not.toMatch(/ticket-rerank Score is a deny/);
+      expect(text, rel).not.toMatch(/jev-codex-router-lab is 0xNatoshi\/jev-codex-router/);
+      expect(text, rel).not.toMatch(/n=1 proves routing quality/);
+      expect(text, rel).not.toMatch(/low-confidence grants execution/);
+      expect(text, rel).not.toMatch(/pi-smart-subagents is philippdubach\/pi-jev-router/);
+      expect(text, rel).not.toMatch(/profile is a sandbox/);
+      expect(text, rel).not.toMatch(/low-confidence substitutes a model/);
+      expect(text, rel).not.toMatch(/jev-rerank-server is gbesse\/jev-proxy/);
+      expect(text, rel).not.toMatch(/SciFact nDCG is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/rerank score is authorization/);
+      expect(text, rel).not.toMatch(/81\.7% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/merged student is the hard envelope/);
+      expect(text, rel).not.toMatch(/adapter n=60 is the merged checkpoint/);
+      expect(text, rel).not.toMatch(/issue-triage-bot v0\.1 classifies with Jev/);
+      expect(text, rel).not.toMatch(/0\.6 min_confidence is applied in v0\.1/);
+      expect(text, rel).not.toMatch(/jev-agent-skills installs hooks/);
+      expect(text, rel).not.toMatch(/jev-agent-skills grants permissions/);
+      expect(text, rel).not.toMatch(/51 tests is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/cookie-clicker unknown action executes/);
+      expect(text, rel).not.toMatch(/cookie-clicker is a coding-agent hook/);
+      expect(text, rel).not.toMatch(/walidboulanouar\/jev-agent-kit is jonathanavis96\/jev-kit/);
+      expect(text, rel).not.toMatch(/jev guard is a security boundary/);
+      expect(text, rel).not.toMatch(/15 of 15 is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/0\.85 deny is a safety envelope/);
+      expect(text, rel).not.toMatch(/JevFence fails open by default/);
+      expect(text, rel).not.toMatch(/JevFence is GLiGuard/);
+      expect(text, rel).not.toMatch(/author eval is a benchmark/);
+      expect(text, rel).not.toMatch(/0\.70 is a safety proof/);
+      expect(text, rel).not.toMatch(/priority weight is a calibrated risk score/);
+      expect(text, rel).not.toMatch(/investigation outcome is a confirmed vulnerability/);
+    }
+  });
+
   it("does not invent hourly 1019 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");

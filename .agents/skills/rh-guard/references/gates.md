@@ -808,9 +808,37 @@ a merge, and not a reward-hack detector.
 
 [rdutra/laya-mcp](https://github.com/rdutra/laya-mcp) Quoted **Laya decisions are probabilistic signals, not authorization**; Distinct PerryLink/laya-mcp. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
-[turenlabs/jast](https://github.com/turenlabs/jast) Quoted **Findings are candidate signals, not verdicts**; 80% Youden is not what the app achieves today. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+[turenlabs/jast](https://github.com/turenlabs/jast) Quoted **Findings are candidate signals, not verdicts**; 80% Youden is not what the app achieves today. `priority` is a routing weight, not a calibrated risk score. Each scan records its threshold. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [wjw66/deepseek-harness-jev-pre-compaction](https://github.com/wjw66/deepseek-harness-jev-pre-compaction) **advertised pre-compaction ≠ shipped source**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[AntonG87/codearia-sieve](https://github.com/AntonG87/codearia-sieve) Quoted **Sieve prepares. The judge judges. The agent writes.** Optional selector is not a veto. *Theirs* 11 of 11 is not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Alpha-Harper-Franklin/astra-jev](https://github.com/Alpha-Harper-Franklin/astra-jev) **advertised gates ≠ shipped source**. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Anxiety471/idle-mmo-bot](https://github.com/Anxiety471/idle-mmo-bot) Hunt cap **cannot be overridden by Jev**. Stub on API failure. Fold the hook only. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[MarkChu-git/typesafe-mcp](https://github.com/MarkChu-git/typesafe-mcp) `decision` computed in code. `jev_gate` **not implemented yet**. Distinct itsmostafa / Renwang-Huang. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[Obrais-cloud/ticket-rerank](https://github.com/Obrais-cloud/ticket-rerank) Urgency Score is a sort key. Caller owns composite. All-fail HTTP 502. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[apolenkov/jev-codex-router-lab](https://github.com/apolenkov/jev-codex-router-lab) Quoted **does not execute skills**. *Theirs* n=1 ended in fallback. Distinct 0xNatoshi. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[awoaCrim/pi-smart-subagents](https://github.com/awoaCrim/pi-smart-subagents) Quoted **Resolve every worker before allowing a launch.** Failed `select` throws before finalize. **Profiles are tool-selection policy, not a sandbox.** Thin card. Do not merge into `examples/pi-extension.ts`. Cousin, not this sidecar.
+
+[gbesse/jev-rerank-server](https://github.com/gbesse/jev-rerank-server) Quoted **Do not rerank untrusted text for authorization decisions.** *Theirs* SciFact nDCG is not a rh-guard ROC. Distinct jev-proxy. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[jev-gate-student-b-merged](https://huggingface.co/SargeDev/jev-gate-student-b-merged) Merged Student B weights. *Theirs* 81.7% agreement is not a rh-guard ROC. Not the adapter n=60 card. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[nathan1313/issue-triage-bot](https://github.com/nathan1313/issue-triage-bot) **advertised triage ≠ shipped classifier**. v0.1 posts `bot:received` only. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[sisodias/jev-agent-skills](https://github.com/sisodias/jev-agent-skills) Quoted **does not** install hooks or grant permissions. *Theirs* 51 cases are not a rh-guard ROC. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[uzuraDev/cookie-clicker-jev](https://github.com/uzuraDev/cookie-clicker-jev) Closed candidate Choice. A Jev error stops the loop without `act`. Not a coding-agent hook. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[walidboulanouar/jev-agent-kit](https://github.com/walidboulanouar/jev-agent-kit) Hook **never returns `allow`**. Quoted **It is not a security boundary.** Distinct jonathanavis96/jev-kit. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
+
+[arnavm-codes/JevFence](https://github.com/arnavm-codes/JevFence) Fail closed by default. Quoted **one layer of defence, not the only one.** Author set is not a benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
 [one-dollar-tahoe](https://github.com/PavitarSinghArneja/one-dollar-tahoe) is a prompt-injection eval including TypeSafe Jev. Quoted: **demonstration set, not a statistically powered** benchmark. Thin card. Do not merge into `examples/`. Cousin, not this sidecar.
 
