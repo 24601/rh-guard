@@ -969,6 +969,9 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(readme).toMatch(/microchipgnu\/jev-hooks/);
     expect(readme).toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(readme).toMatch(/ryanzen9\/XFlow/);
+    expect(readme).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(readme).toMatch(/nk412\/judgements/);
     expect(readme).toMatch(/Routing is fail-open/);
     expect(readme).toMatch(/Jev owns the decision probabilities/);
     expect(readme).toMatch(/classified only, not executed/);
@@ -1989,6 +1992,24 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0445 2026-09-21 README claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/ryanzen9\/XFlow is qs-lll\/twitter-jev-guard/);
+      expect(text, rel).not.toMatch(/ryanzen9\/XFlow is yonsakhan\/x-spam-filter-typesafe/);
+      expect(text, rel).not.toMatch(/Blur Veil deletes posts/);
+      expect(text, rel).not.toMatch(/advertised sync\/cache is shipped Features/);
+      expect(text, rel).not.toMatch(/XFlow fail-closed/);
+      expect(text, rel).not.toMatch(/ChuckNomis\/linkedin-post-filtering-jev is ashafizullah\/jev-linkedin/);
+      expect(text, rel).not.toMatch(/linkedin-post-filtering-jev hides posts/);
+      expect(text, rel).not.toMatch(/match_level is a hire/);
+      expect(text, rel).not.toMatch(/nk412\/judgements is microchipgnu\/jev-hooks/);
+      expect(text, rel).not.toMatch(/nk412\/judgements is harshpuri84\/typed-gate/);
+      expect(text, rel).not.toMatch(/0\.5 bool flip is a safety deny/);
+      expect(text, rel).not.toMatch(/judgements \.ask\(\) is a grant/);
+    }
+  });
+
   it("does not invent hourly 2347 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -2385,6 +2406,9 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(pkg).not.toMatch(/microchipgnu\/jev-hooks/);
     expect(pkg).not.toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(pkg).not.toMatch(/ryanzen9\/XFlow/);
+    expect(pkg).not.toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(pkg).not.toMatch(/nk412\/judgements/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -2698,6 +2722,9 @@ describe("discoverability copy", () => {
     expect(pkg).not.toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(pkg).not.toMatch(/microchipgnu\/jev-hooks/);
     expect(pkg).not.toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(pkg).not.toMatch(/ryanzen9\/XFlow/);
+    expect(pkg).not.toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(pkg).not.toMatch(/nk412\/judgements/);
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3081,6 +3108,9 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(lock).not.toMatch(/microchipgnu\/jev-hooks/);
     expect(lock).not.toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(lock).not.toMatch(/ryanzen9\/XFlow/);
+    expect(lock).not.toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(lock).not.toMatch(/nk412\/judgements/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3394,6 +3424,9 @@ describe("discoverability copy", () => {
     expect(lock).not.toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(lock).not.toMatch(/microchipgnu\/jev-hooks/);
     expect(lock).not.toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(lock).not.toMatch(/ryanzen9\/XFlow/);
+    expect(lock).not.toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(lock).not.toMatch(/nk412\/judgements/);
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4367,6 +4400,9 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(skill).toMatch(/microchipgnu\/jev-hooks/);
     expect(skill).toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(skill).toMatch(/ryanzen9\/XFlow/);
+    expect(skill).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(skill).toMatch(/nk412\/judgements/);
 
 
     expect(skill).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5295,6 +5331,9 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(evalDoc).toMatch(/microchipgnu\/jev-hooks/);
     expect(evalDoc).toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(evalDoc).toMatch(/ryanzen9\/XFlow/);
+    expect(evalDoc).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(evalDoc).toMatch(/nk412\/judgements/);
 
 
     expect(evalDoc).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -5779,6 +5818,9 @@ describe("discoverability copy", () => {
     expect(install).toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(install).toMatch(/microchipgnu\/jev-hooks/);
     expect(install).toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(install).toMatch(/ryanzen9\/XFlow/);
+    expect(install).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(install).toMatch(/nk412\/judgements/);
 
 
     expect(install).toMatch(/nekowasabi\/jev-routing-mcp/);
@@ -6403,6 +6445,9 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(shape).toMatch(/microchipgnu\/jev-hooks/);
     expect(shape).toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(shape).toMatch(/ryanzen9\/XFlow/);
+    expect(shape).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(shape).toMatch(/nk412\/judgements/);
 
 
     expect(shape).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -7078,6 +7123,9 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(hosts).toMatch(/microchipgnu\/jev-hooks/);
     expect(hosts).toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(hosts).toMatch(/ryanzen9\/XFlow/);
+    expect(hosts).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(hosts).toMatch(/nk412\/judgements/);
 
 
     expect(hosts).toMatch(/Stages 1.4 are built and one Consumer is live/);
@@ -7861,6 +7909,9 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/hiro1202\/jev-review-gate-poc/);
     expect(gates).toMatch(/microchipgnu\/jev-hooks/);
     expect(gates).toMatch(/wylu1037\/pi-jev-checkpoints/);
+    expect(gates).toMatch(/ryanzen9\/XFlow/);
+    expect(gates).toMatch(/ChuckNomis\/linkedin-post-filtering-jev/);
+    expect(gates).toMatch(/nk412\/judgements/);
 
 
     expect(gates).toMatch(/Stages 1.4 are built and one Consumer is live/);
