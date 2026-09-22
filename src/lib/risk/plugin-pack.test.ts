@@ -1667,6 +1667,36 @@ describe("discoverability copy", () => {
     expect(readme).toContain('keeltrace/hermes-nerve');
     expect(readme).toContain('watchdog and forecaster');
 
+    expect(readme).toContain('jackie-cqz/dsh-jev-plugin');
+    expect(readme).toContain('accident-prevention layer, not a security boundary');
+    expect(readme).toContain('takumi-golf/jev-fill-pdf');
+    expect(readme).toContain('Labels go to Jev. Your values never leave the browser');
+    expect(readme).toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(readme).toContain('Acceptance means the declared checks passed, not that all claims are true');
+    expect(readme).toContain('Dphoshoba/ticket-triage');
+    expect(readme).toContain('MDGChamomile/pi-jev');
+    expect(readme).toContain('Advice is not authority');
+    expect(readme).toContain('MaururuTakumi/codex-jev-compaction');
+    expect(readme).toContain('It never rewrites the Codex transcript and fails open');
+    expect(readme).toContain('OrMizL/jev-skill-router-bench');
+    expect(readme).toContain('not estimates of production accuracy');
+    expect(readme).toContain('chriscoveries/jevalaya');
+    expect(readme).toContain("we don't dress it up as an answer");
+    expect(readme).toContain('dl013209-ai/jev-preflight-director');
+    expect(readme).toContain('drycool/jev-mcp');
+    expect(readme).toContain('There is deliberately no `unknown`');
+    expect(readme).toContain('forestwas/gmail-jev');
+    expect(readme).toContain('Nothing in this repo sends mail for you');
+    expect(readme).toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(readme).toContain('Needs Review');
+    expect(readme).toContain('hanshs474/jevx-mcp');
+    expect(readme).toContain('normal tool error, not a silent success');
+    expect(readme).toContain('Mezahir2025/laya-triage');
+    expect(readme).toContain('NatBrian/pokemon-showdown-jev-agent');
+    expect(readme).toContain('never presents a fallback choice as if it were a successful Jev decision');
+    expect(readme).toContain('echohello-dev/jev-mcp-server');
+    expect(readme).toContain('HEAD `6c07e23`');
+
     expect(readme).toMatch(/does not write the file/);
     expect(readme).toMatch(/Only the human can consent and submit/);
     expect(readme).toMatch(/never sends policy data to a model/);
@@ -2816,6 +2846,43 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toMatch(/Nerve grants stop\/continue authority/);
     }
   });
+
+
+  it("does not invent hourly 0703 2026-09-22 cousin claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toMatch(/dsh-jev-plugin is a security boundary/);
+      expect(text, rel).not.toMatch(/offline rules are a security boundary/);
+      expect(text, rel).not.toMatch(/0\.8 approveAt is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/jev-fill-pdf values leave the browser/);
+      expect(text, rel).not.toMatch(/0\.8 fill is a safety envelope/);
+      expect(text, rel).not.toMatch(/Acceptance means all claims are true/);
+      expect(text, rel).not.toMatch(/JEV advice waives checks/);
+      expect(text, rel).not.toMatch(/85\.3% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/MDGChamomile\/pi-jev is y0usaf\/pi-jev/);
+      expect(text, rel).not.toMatch(/Advice is authority/);
+      expect(text, rel).not.toMatch(/codex-jev-compaction rewrites the Codex transcript/);
+      expect(text, rel).not.toMatch(/0\.5 keepThreshold is a safety deny/);
+      expect(text, rel).not.toMatch(/84\.1% is production accuracy/);
+      expect(text, rel).not.toMatch(/53\.6% is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/93% AG News is a rh-guard ROC/);
+      expect(text, rel).not.toMatch(/dl013209-ai\/jev-preflight-director is muse0509\/jev-preflight/);
+      expect(text, rel).not.toMatch(/dl013209-ai\/jev-preflight-director is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/drycool\/jev-mcp is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/drycool\/jev-mcp is echohello-dev\/jev-mcp-server/);
+      expect(text, rel).not.toMatch(/gmail-jev sends mail/);
+      expect(text, rel).not.toMatch(/gmail-jev hard-deletes threads/);
+      expect(text, rel).not.toMatch(/0\.75 is a calibrated n8n ROC/);
+      expect(text, rel).not.toMatch(/jevx refusal is a silent success/);
+      expect(text, rel).not.toMatch(/laya-triage is TypeSafe Jev/);
+      expect(text, rel).not.toMatch(/fallback choice is a successful Jev decision/);
+      expect(text, rel).not.toMatch(/fallback is evidence of Jev strategic quality/);
+      expect(text, rel).not.toMatch(/advertised verbatim extract is shipped presence noul/);
+      expect(text, rel).not.toMatch(/MCP warning is a host deny/);
+    }
+  });
+
+
 
 
 
@@ -4325,6 +4392,21 @@ describe("discoverability copy", () => {
     expect(pkg).not.toContain('muhandis525/jev-code-reviewer');
     expect(pkg).not.toContain('vlados/laravel-spam-guard');
     expect(pkg).not.toContain('keeltrace/hermes-nerve');
+    expect(pkg).not.toContain('jackie-cqz/dsh-jev-plugin');
+    expect(pkg).not.toContain('takumi-golf/jev-fill-pdf');
+    expect(pkg).not.toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(pkg).not.toContain('Dphoshoba/ticket-triage');
+    expect(pkg).not.toContain('MDGChamomile/pi-jev');
+    expect(pkg).not.toContain('MaururuTakumi/codex-jev-compaction');
+    expect(pkg).not.toContain('OrMizL/jev-skill-router-bench');
+    expect(pkg).not.toContain('chriscoveries/jevalaya');
+    expect(pkg).not.toContain('dl013209-ai/jev-preflight-director');
+    expect(pkg).not.toContain('drycool/jev-mcp');
+    expect(pkg).not.toContain('forestwas/gmail-jev');
+    expect(pkg).not.toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(pkg).not.toContain('hanshs474/jevx-mcp');
+    expect(pkg).not.toContain('Mezahir2025/laya-triage');
+    expect(pkg).not.toContain('NatBrian/pokemon-showdown-jev-agent');
     expect(pkg).not.toContain('jev-chat/jev-chat-jarvis');
     expect(pkg).not.toContain('yangyu666/dsh-jev-prune');
     expect(pkg).not.toContain('wotai-dev/typesafe-jev-tools');
@@ -4503,6 +4585,21 @@ describe("discoverability copy", () => {
     expect(pkg).not.toContain('muhandis525/jev-code-reviewer');
     expect(pkg).not.toContain('vlados/laravel-spam-guard');
     expect(pkg).not.toContain('keeltrace/hermes-nerve');
+    expect(pkg).not.toContain('jackie-cqz/dsh-jev-plugin');
+    expect(pkg).not.toContain('takumi-golf/jev-fill-pdf');
+    expect(pkg).not.toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(pkg).not.toContain('Dphoshoba/ticket-triage');
+    expect(pkg).not.toContain('MDGChamomile/pi-jev');
+    expect(pkg).not.toContain('MaururuTakumi/codex-jev-compaction');
+    expect(pkg).not.toContain('OrMizL/jev-skill-router-bench');
+    expect(pkg).not.toContain('chriscoveries/jevalaya');
+    expect(pkg).not.toContain('dl013209-ai/jev-preflight-director');
+    expect(pkg).not.toContain('drycool/jev-mcp');
+    expect(pkg).not.toContain('forestwas/gmail-jev');
+    expect(pkg).not.toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(pkg).not.toContain('hanshs474/jevx-mcp');
+    expect(pkg).not.toContain('Mezahir2025/laya-triage');
+    expect(pkg).not.toContain('NatBrian/pokemon-showdown-jev-agent');
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -5749,6 +5846,21 @@ describe("discoverability copy", () => {
     expect(lock).not.toContain('muhandis525/jev-code-reviewer');
     expect(lock).not.toContain('vlados/laravel-spam-guard');
     expect(lock).not.toContain('keeltrace/hermes-nerve');
+    expect(lock).not.toContain('jackie-cqz/dsh-jev-plugin');
+    expect(lock).not.toContain('takumi-golf/jev-fill-pdf');
+    expect(lock).not.toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(lock).not.toContain('Dphoshoba/ticket-triage');
+    expect(lock).not.toContain('MDGChamomile/pi-jev');
+    expect(lock).not.toContain('MaururuTakumi/codex-jev-compaction');
+    expect(lock).not.toContain('OrMizL/jev-skill-router-bench');
+    expect(lock).not.toContain('chriscoveries/jevalaya');
+    expect(lock).not.toContain('dl013209-ai/jev-preflight-director');
+    expect(lock).not.toContain('drycool/jev-mcp');
+    expect(lock).not.toContain('forestwas/gmail-jev');
+    expect(lock).not.toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(lock).not.toContain('hanshs474/jevx-mcp');
+    expect(lock).not.toContain('Mezahir2025/laya-triage');
+    expect(lock).not.toContain('NatBrian/pokemon-showdown-jev-agent');
     expect(lock).not.toContain('jev-chat/jev-chat-jarvis');
     expect(lock).not.toContain('yangyu666/dsh-jev-prune');
     expect(lock).not.toContain('wotai-dev/typesafe-jev-tools');
@@ -5927,6 +6039,21 @@ describe("discoverability copy", () => {
     expect(lock).not.toContain('muhandis525/jev-code-reviewer');
     expect(lock).not.toContain('vlados/laravel-spam-guard');
     expect(lock).not.toContain('keeltrace/hermes-nerve');
+    expect(lock).not.toContain('jackie-cqz/dsh-jev-plugin');
+    expect(lock).not.toContain('takumi-golf/jev-fill-pdf');
+    expect(lock).not.toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(lock).not.toContain('Dphoshoba/ticket-triage');
+    expect(lock).not.toContain('MDGChamomile/pi-jev');
+    expect(lock).not.toContain('MaururuTakumi/codex-jev-compaction');
+    expect(lock).not.toContain('OrMizL/jev-skill-router-bench');
+    expect(lock).not.toContain('chriscoveries/jevalaya');
+    expect(lock).not.toContain('dl013209-ai/jev-preflight-director');
+    expect(lock).not.toContain('drycool/jev-mcp');
+    expect(lock).not.toContain('forestwas/gmail-jev');
+    expect(lock).not.toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(lock).not.toContain('hanshs474/jevx-mcp');
+    expect(lock).not.toContain('Mezahir2025/laya-triage');
+    expect(lock).not.toContain('NatBrian/pokemon-showdown-jev-agent');
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -8097,6 +8224,36 @@ describe("discoverability copy", () => {
     expect(skill).toContain('keeltrace/hermes-nerve');
     expect(skill).toContain('watchdog and forecaster');
 
+    expect(skill).toContain('jackie-cqz/dsh-jev-plugin');
+    expect(skill).toContain('accident-prevention layer, not a security boundary');
+    expect(skill).toContain('takumi-golf/jev-fill-pdf');
+    expect(skill).toContain('Labels go to Jev. Your values never leave the browser');
+    expect(skill).toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(skill).toContain('Acceptance means the declared checks passed, not that all claims are true');
+    expect(skill).toContain('Dphoshoba/ticket-triage');
+    expect(skill).toContain('MDGChamomile/pi-jev');
+    expect(skill).toContain('Advice is not authority');
+    expect(skill).toContain('MaururuTakumi/codex-jev-compaction');
+    expect(skill).toContain('It never rewrites the Codex transcript and fails open');
+    expect(skill).toContain('OrMizL/jev-skill-router-bench');
+    expect(skill).toContain('not estimates of production accuracy');
+    expect(skill).toContain('chriscoveries/jevalaya');
+    expect(skill).toContain("we don't dress it up as an answer");
+    expect(skill).toContain('dl013209-ai/jev-preflight-director');
+    expect(skill).toContain('drycool/jev-mcp');
+    expect(skill).toContain('There is deliberately no `unknown`');
+    expect(skill).toContain('forestwas/gmail-jev');
+    expect(skill).toContain('Nothing in this repo sends mail for you');
+    expect(skill).toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(skill).toContain('Needs Review');
+    expect(skill).toContain('hanshs474/jevx-mcp');
+    expect(skill).toContain('normal tool error, not a silent success');
+    expect(skill).toContain('Mezahir2025/laya-triage');
+    expect(skill).toContain('NatBrian/pokemon-showdown-jev-agent');
+    expect(skill).toContain('never presents a fallback choice as if it were a successful Jev decision');
+    expect(skill).toContain('echohello-dev/jev-mcp-server');
+    expect(skill).toContain('HEAD `6c07e23`');
+
     expect(skill).toMatch(/does not write the file/);
     expect(skill).toMatch(/Only the human can consent and submit/);
     expect(skill).toMatch(/never sends policy data to a model/);
@@ -9765,6 +9922,36 @@ describe("discoverability copy", () => {
     expect(evalDoc).toContain('keeltrace/hermes-nerve');
     expect(evalDoc).toContain('watchdog and forecaster');
 
+    expect(evalDoc).toContain('jackie-cqz/dsh-jev-plugin');
+    expect(evalDoc).toContain('accident-prevention layer, not a security boundary');
+    expect(evalDoc).toContain('takumi-golf/jev-fill-pdf');
+    expect(evalDoc).toContain('Labels go to Jev. Your values never leave the browser');
+    expect(evalDoc).toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(evalDoc).toContain('Acceptance means the declared checks passed, not that all claims are true');
+    expect(evalDoc).toContain('Dphoshoba/ticket-triage');
+    expect(evalDoc).toContain('MDGChamomile/pi-jev');
+    expect(evalDoc).toContain('Advice is not authority');
+    expect(evalDoc).toContain('MaururuTakumi/codex-jev-compaction');
+    expect(evalDoc).toContain('It never rewrites the Codex transcript and fails open');
+    expect(evalDoc).toContain('OrMizL/jev-skill-router-bench');
+    expect(evalDoc).toContain('not estimates of production accuracy');
+    expect(evalDoc).toContain('chriscoveries/jevalaya');
+    expect(evalDoc).toContain("we don't dress it up as an answer");
+    expect(evalDoc).toContain('dl013209-ai/jev-preflight-director');
+    expect(evalDoc).toContain('drycool/jev-mcp');
+    expect(evalDoc).toContain('There is deliberately no `unknown`');
+    expect(evalDoc).toContain('forestwas/gmail-jev');
+    expect(evalDoc).toContain('Nothing in this repo sends mail for you');
+    expect(evalDoc).toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(evalDoc).toContain('Needs Review');
+    expect(evalDoc).toContain('hanshs474/jevx-mcp');
+    expect(evalDoc).toContain('normal tool error, not a silent success');
+    expect(evalDoc).toContain('Mezahir2025/laya-triage');
+    expect(evalDoc).toContain('NatBrian/pokemon-showdown-jev-agent');
+    expect(evalDoc).toContain('never presents a fallback choice as if it were a successful Jev decision');
+    expect(evalDoc).toContain('echohello-dev/jev-mcp-server');
+    expect(evalDoc).toContain('HEAD `6c07e23`');
+
     expect(evalDoc).toMatch(/does not write the file/);
     expect(evalDoc).toMatch(/Only the human can consent and submit/);
     expect(evalDoc).toMatch(/never sends policy data to a model/);
@@ -10987,6 +11174,36 @@ describe("discoverability copy", () => {
     expect(install).toContain('Your application owns persistence, the review queue, approval, and delivery');
     expect(install).toContain('keeltrace/hermes-nerve');
     expect(install).toContain('watchdog and forecaster');
+
+    expect(install).toContain('jackie-cqz/dsh-jev-plugin');
+    expect(install).toContain('accident-prevention layer, not a security boundary');
+    expect(install).toContain('takumi-golf/jev-fill-pdf');
+    expect(install).toContain('Labels go to Jev. Your values never leave the browser');
+    expect(install).toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(install).toContain('Acceptance means the declared checks passed, not that all claims are true');
+    expect(install).toContain('Dphoshoba/ticket-triage');
+    expect(install).toContain('MDGChamomile/pi-jev');
+    expect(install).toContain('Advice is not authority');
+    expect(install).toContain('MaururuTakumi/codex-jev-compaction');
+    expect(install).toContain('It never rewrites the Codex transcript and fails open');
+    expect(install).toContain('OrMizL/jev-skill-router-bench');
+    expect(install).toContain('not estimates of production accuracy');
+    expect(install).toContain('chriscoveries/jevalaya');
+    expect(install).toContain("we don't dress it up as an answer");
+    expect(install).toContain('dl013209-ai/jev-preflight-director');
+    expect(install).toContain('drycool/jev-mcp');
+    expect(install).toContain('There is deliberately no `unknown`');
+    expect(install).toContain('forestwas/gmail-jev');
+    expect(install).toContain('Nothing in this repo sends mail for you');
+    expect(install).toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(install).toContain('Needs Review');
+    expect(install).toContain('hanshs474/jevx-mcp');
+    expect(install).toContain('normal tool error, not a silent success');
+    expect(install).toContain('Mezahir2025/laya-triage');
+    expect(install).toContain('NatBrian/pokemon-showdown-jev-agent');
+    expect(install).toContain('never presents a fallback choice as if it were a successful Jev decision');
+    expect(install).toContain('echohello-dev/jev-mcp-server');
+    expect(install).toContain('HEAD `6c07e23`');
 
     expect(install).toMatch(/does not write the file/);
     expect(install).toMatch(/Only the human can consent and submit/);
@@ -12321,6 +12538,36 @@ describe("discoverability copy", () => {
     expect(shape).toContain('Your application owns persistence, the review queue, approval, and delivery');
     expect(shape).toContain('keeltrace/hermes-nerve');
     expect(shape).toContain('watchdog and forecaster');
+
+    expect(shape).toContain('jackie-cqz/dsh-jev-plugin');
+    expect(shape).toContain('accident-prevention layer, not a security boundary');
+    expect(shape).toContain('takumi-golf/jev-fill-pdf');
+    expect(shape).toContain('Labels go to Jev. Your values never leave the browser');
+    expect(shape).toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(shape).toContain('Acceptance means the declared checks passed, not that all claims are true');
+    expect(shape).toContain('Dphoshoba/ticket-triage');
+    expect(shape).toContain('MDGChamomile/pi-jev');
+    expect(shape).toContain('Advice is not authority');
+    expect(shape).toContain('MaururuTakumi/codex-jev-compaction');
+    expect(shape).toContain('It never rewrites the Codex transcript and fails open');
+    expect(shape).toContain('OrMizL/jev-skill-router-bench');
+    expect(shape).toContain('not estimates of production accuracy');
+    expect(shape).toContain('chriscoveries/jevalaya');
+    expect(shape).toContain("we don't dress it up as an answer");
+    expect(shape).toContain('dl013209-ai/jev-preflight-director');
+    expect(shape).toContain('drycool/jev-mcp');
+    expect(shape).toContain('There is deliberately no `unknown`');
+    expect(shape).toContain('forestwas/gmail-jev');
+    expect(shape).toContain('Nothing in this repo sends mail for you');
+    expect(shape).toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(shape).toContain('Needs Review');
+    expect(shape).toContain('hanshs474/jevx-mcp');
+    expect(shape).toContain('normal tool error, not a silent success');
+    expect(shape).toContain('Mezahir2025/laya-triage');
+    expect(shape).toContain('NatBrian/pokemon-showdown-jev-agent');
+    expect(shape).toContain('never presents a fallback choice as if it were a successful Jev decision');
+    expect(shape).toContain('echohello-dev/jev-mcp-server');
+    expect(shape).toContain('HEAD `6c07e23`');
 
     expect(shape).toMatch(/does not write the file/);
     expect(shape).toMatch(/Only the human can consent and submit/);
@@ -13732,6 +13979,36 @@ describe("discoverability copy", () => {
     expect(hosts).toContain('Your application owns persistence, the review queue, approval, and delivery');
     expect(hosts).toContain('keeltrace/hermes-nerve');
     expect(hosts).toContain('watchdog and forecaster');
+
+    expect(hosts).toContain('jackie-cqz/dsh-jev-plugin');
+    expect(hosts).toContain('accident-prevention layer, not a security boundary');
+    expect(hosts).toContain('takumi-golf/jev-fill-pdf');
+    expect(hosts).toContain('Labels go to Jev. Your values never leave the browser');
+    expect(hosts).toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(hosts).toContain('Acceptance means the declared checks passed, not that all claims are true');
+    expect(hosts).toContain('Dphoshoba/ticket-triage');
+    expect(hosts).toContain('MDGChamomile/pi-jev');
+    expect(hosts).toContain('Advice is not authority');
+    expect(hosts).toContain('MaururuTakumi/codex-jev-compaction');
+    expect(hosts).toContain('It never rewrites the Codex transcript and fails open');
+    expect(hosts).toContain('OrMizL/jev-skill-router-bench');
+    expect(hosts).toContain('not estimates of production accuracy');
+    expect(hosts).toContain('chriscoveries/jevalaya');
+    expect(hosts).toContain("we don't dress it up as an answer");
+    expect(hosts).toContain('dl013209-ai/jev-preflight-director');
+    expect(hosts).toContain('drycool/jev-mcp');
+    expect(hosts).toContain('There is deliberately no `unknown`');
+    expect(hosts).toContain('forestwas/gmail-jev');
+    expect(hosts).toContain('Nothing in this repo sends mail for you');
+    expect(hosts).toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(hosts).toContain('Needs Review');
+    expect(hosts).toContain('hanshs474/jevx-mcp');
+    expect(hosts).toContain('normal tool error, not a silent success');
+    expect(hosts).toContain('Mezahir2025/laya-triage');
+    expect(hosts).toContain('NatBrian/pokemon-showdown-jev-agent');
+    expect(hosts).toContain('never presents a fallback choice as if it were a successful Jev decision');
+    expect(hosts).toContain('echohello-dev/jev-mcp-server');
+    expect(hosts).toContain('HEAD `6c07e23`');
 
     expect(hosts).toMatch(/does not write the file/);
     expect(hosts).toMatch(/Only the human can consent and submit/);
@@ -15251,6 +15528,36 @@ describe("discoverability copy", () => {
     expect(gates).toContain('Your application owns persistence, the review queue, approval, and delivery');
     expect(gates).toContain('keeltrace/hermes-nerve');
     expect(gates).toContain('watchdog and forecaster');
+
+    expect(gates).toContain('jackie-cqz/dsh-jev-plugin');
+    expect(gates).toContain('accident-prevention layer, not a security boundary');
+    expect(gates).toContain('takumi-golf/jev-fill-pdf');
+    expect(gates).toContain('Labels go to Jev. Your values never leave the browser');
+    expect(gates).toContain('Agnuxo1/Universal-Cognitive-Architecture-JEV-v2');
+    expect(gates).toContain('Acceptance means the declared checks passed, not that all claims are true');
+    expect(gates).toContain('Dphoshoba/ticket-triage');
+    expect(gates).toContain('MDGChamomile/pi-jev');
+    expect(gates).toContain('Advice is not authority');
+    expect(gates).toContain('MaururuTakumi/codex-jev-compaction');
+    expect(gates).toContain('It never rewrites the Codex transcript and fails open');
+    expect(gates).toContain('OrMizL/jev-skill-router-bench');
+    expect(gates).toContain('not estimates of production accuracy');
+    expect(gates).toContain('chriscoveries/jevalaya');
+    expect(gates).toContain("we don't dress it up as an answer");
+    expect(gates).toContain('dl013209-ai/jev-preflight-director');
+    expect(gates).toContain('drycool/jev-mcp');
+    expect(gates).toContain('There is deliberately no `unknown`');
+    expect(gates).toContain('forestwas/gmail-jev');
+    expect(gates).toContain('Nothing in this repo sends mail for you');
+    expect(gates).toContain('guptadivyanshu765/n8n-nodes-jev-router');
+    expect(gates).toContain('Needs Review');
+    expect(gates).toContain('hanshs474/jevx-mcp');
+    expect(gates).toContain('normal tool error, not a silent success');
+    expect(gates).toContain('Mezahir2025/laya-triage');
+    expect(gates).toContain('NatBrian/pokemon-showdown-jev-agent');
+    expect(gates).toContain('never presents a fallback choice as if it were a successful Jev decision');
+    expect(gates).toContain('echohello-dev/jev-mcp-server');
+    expect(gates).toContain('HEAD `6c07e23`');
 
     expect(gates).toMatch(/does not write the file/);
     expect(gates).toMatch(/Only the human can consent and submit/);
