@@ -1205,6 +1205,36 @@ describe("discoverability copy", () => {
     expect(readme).toContain("Historical text never grants new permission");
     expect(readme).toContain("a complete live Codex compaction cycle has not yet been verified");
 
+    expect(readme).toContain("Taf0711/system-one-compiler");
+    expect(readme).toContain("it is the only thing that authorises a substitution");
+    expect(readme).toContain("The provider's call is never skipped");
+    expect(readme).toContain("The application's own recorded answer is never ground truth");
+    expect(readme).toContain("Confidence cannot compensate for failure of the others");
+    expect(readme).toContain("a rejected prediction is not a fallback answer");
+    expect(readme).toContain("A missing gate **fails closed**");
+    expect(readme).toContain("Zero observed errors is reported as a bound, not as safety");
+    expect(readme).toContain("abgregs/jev-skill-router");
+    expect(readme).toContain("routing is a policy layer, not a security boundary");
+    expect(readme).toContain("it never breaks a turn");
+    expect(readme).toContain("bloat guard, not a quality mechanism");
+    expect(readme).toContain("ehab-ayman-gharib/border-protocol");
+    expect(readme).toContain("It never returns an admission verdict");
+    expect(readme).toContain("These thresholds are game rules, not measured calibration guarantees");
+    expect(readme).toContain("not a real border decision system");
+    expect(readme).toContain("a plausible story cannot override invalid papers");
+    expect(readme).toContain("Credentials are never sent to the browser");
+    expect(readme).toContain("lifeporterlab/jev-verdict");
+    expect(readme).toContain("Does not guarantee judgment accuracy");
+    expect(readme).toContain("It never stores source text or prompt bodies");
+    expect(readme).toContain("Keys are never printed and never written to the ledger");
+    expect(readme).toContain("No other location is ever read");
+    expect(readme).toContain("A service failure must not silently publish unverified content");
+    expect(readme).toContain("nikkoxgonzales/elmridge-ai-town");
+    expect(readme).toContain("Without a key the layer stays offline");
+    expect(readme).toContain("answers below the confidence gate are recorded but not acted on");
+    expect(readme).toContain("the heuristic schedule in characters.js keeps working as the baseline either way");
+    expect(readme).toContain("confidenceGate");
+
     expect(readme).toMatch(/does not write the file/);
     expect(readme).toMatch(/Only the human can consent and submit/);
     expect(readme).toMatch(/never sends policy data to a model/);
@@ -2533,6 +2563,43 @@ describe("discoverability copy", () => {
     }
   });
 
+
+  it("does not invent hourly 1751 cousin claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("system-one-compiler is Python");
+      expect(text, rel).not.toContain("system-one-compiler is rawwerks/one-system");
+      expect(text, rel).not.toContain("system-one-compiler is localjev");
+      expect(text, rel).not.toContain("The provider's call is skipped");
+      expect(text, rel).not.toContain("recorded answer is ground truth");
+      expect(text, rel).not.toContain("a rejected prediction is a fallback answer");
+      expect(text, rel).not.toContain("Zero observed errors is safety");
+      expect(text, rel).not.toContain("Confidence compensates for a failed contract");
+      expect(text, rel).not.toContain("abgregs/jev-skill-router is abgregs/jev-experiments");
+      expect(text, rel).not.toContain("abgregs/jev-skill-router is shimo4228/jev-skill-router");
+      expect(text, rel).not.toContain("abgregs/jev-skill-router is aleksvega/jev-skill-router");
+      expect(text, rel).not.toContain("340ms is a rh-guard ROC");
+      expect(text, rel).not.toContain("0.85 is a safety envelope");
+      expect(text, rel).not.toContain("border-protocol is a real border decision system");
+      expect(text, rel).not.toContain("Jev returns an admission verdict");
+      expect(text, rel).not.toContain("0.7 is a measured calibration guarantee");
+      expect(text, rel).not.toContain("coherence is a probability of innocence");
+      expect(text, rel).not.toContain("Credentials are sent to the browser");
+      expect(text, rel).not.toContain("jev-verdict guarantees judgment accuracy");
+      expect(text, rel).not.toContain("source text is stored in the ledger");
+      expect(text, rel).not.toContain("Keys are written to the ledger");
+      expect(text, rel).not.toContain("cache hit is a correctness proof");
+      expect(text, rel).not.toContain("on_error defaults to stop");
+      expect(text, rel).not.toContain("elmridge-ai-town is nikkoxgonzales/jev-certify");
+      expect(text, rel).not.toContain("elmridge-ai-town is a coding-agent hook");
+      expect(text, rel).not.toContain("0.5 is a rh-guard ROC");
+      expect(text, rel).not.toContain("0 deaths is a rh-guard ROC");
+      expect(text, rel).not.toContain("52 headless assertions are a rh-guard ROC");
+      expect(text, rel).not.toContain("calibrated probabilities are a measured ECE");
+      expect(text, rel).not.toContain("Without a key the layer still steers");
+    }
+  });
+
   it("does not invent hourly 1454 2026-09-21 README claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
@@ -3253,6 +3320,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toContain("marwan404/Jev-gate");
     expect(pkg).not.toContain("takezou621/jev-mcp");
     expect(pkg).not.toContain("upcastr/codex-jevroid");
+    expect(pkg).not.toContain("Taf0711/system-one-compiler");
+    expect(pkg).not.toContain("abgregs/jev-skill-router");
+    expect(pkg).not.toContain("ehab-ayman-gharib/border-protocol");
+    expect(pkg).not.toContain("lifeporterlab/jev-verdict");
+    expect(pkg).not.toContain("nikkoxgonzales/elmridge-ai-town");
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -3729,6 +3801,11 @@ describe("discoverability copy", () => {
     expect(pkg).not.toContain("marwan404/Jev-gate");
     expect(pkg).not.toContain("takezou621/jev-mcp");
     expect(pkg).not.toContain("upcastr/codex-jevroid");
+    expect(pkg).not.toContain("Taf0711/system-one-compiler");
+    expect(pkg).not.toContain("abgregs/jev-skill-router");
+    expect(pkg).not.toContain("ehab-ayman-gharib/border-protocol");
+    expect(pkg).not.toContain("lifeporterlab/jev-verdict");
+    expect(pkg).not.toContain("nikkoxgonzales/elmridge-ai-town");
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4275,6 +4352,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toContain("marwan404/Jev-gate");
     expect(lock).not.toContain("takezou621/jev-mcp");
     expect(lock).not.toContain("upcastr/codex-jevroid");
+    expect(lock).not.toContain("Taf0711/system-one-compiler");
+    expect(lock).not.toContain("abgregs/jev-skill-router");
+    expect(lock).not.toContain("ehab-ayman-gharib/border-protocol");
+    expect(lock).not.toContain("lifeporterlab/jev-verdict");
+    expect(lock).not.toContain("nikkoxgonzales/elmridge-ai-town");
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -4751,6 +4833,11 @@ describe("discoverability copy", () => {
     expect(lock).not.toContain("marwan404/Jev-gate");
     expect(lock).not.toContain("takezou621/jev-mcp");
     expect(lock).not.toContain("upcastr/codex-jevroid");
+    expect(lock).not.toContain("Taf0711/system-one-compiler");
+    expect(lock).not.toContain("abgregs/jev-skill-router");
+    expect(lock).not.toContain("ehab-ayman-gharib/border-protocol");
+    expect(lock).not.toContain("lifeporterlab/jev-verdict");
+    expect(lock).not.toContain("nikkoxgonzales/elmridge-ai-town");
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -5960,6 +6047,36 @@ describe("discoverability copy", () => {
     expect(skill).toContain("Historical text never grants new permission");
     expect(skill).toContain("a complete live Codex compaction cycle has not yet been verified");
 
+    expect(skill).toContain("Taf0711/system-one-compiler");
+    expect(skill).toContain("it is the only thing that authorises a substitution");
+    expect(skill).toContain("The provider's call is never skipped");
+    expect(skill).toContain("The application's own recorded answer is never ground truth");
+    expect(skill).toContain("Confidence cannot compensate for failure of the others");
+    expect(skill).toContain("a rejected prediction is not a fallback answer");
+    expect(skill).toContain("A missing gate **fails closed**");
+    expect(skill).toContain("Zero observed errors is reported as a bound, not as safety");
+    expect(skill).toContain("abgregs/jev-skill-router");
+    expect(skill).toContain("routing is a policy layer, not a security boundary");
+    expect(skill).toContain("it never breaks a turn");
+    expect(skill).toContain("bloat guard, not a quality mechanism");
+    expect(skill).toContain("ehab-ayman-gharib/border-protocol");
+    expect(skill).toContain("It never returns an admission verdict");
+    expect(skill).toContain("These thresholds are game rules, not measured calibration guarantees");
+    expect(skill).toContain("not a real border decision system");
+    expect(skill).toContain("a plausible story cannot override invalid papers");
+    expect(skill).toContain("Credentials are never sent to the browser");
+    expect(skill).toContain("lifeporterlab/jev-verdict");
+    expect(skill).toContain("Does not guarantee judgment accuracy");
+    expect(skill).toContain("It never stores source text or prompt bodies");
+    expect(skill).toContain("Keys are never printed and never written to the ledger");
+    expect(skill).toContain("No other location is ever read");
+    expect(skill).toContain("A service failure must not silently publish unverified content");
+    expect(skill).toContain("nikkoxgonzales/elmridge-ai-town");
+    expect(skill).toContain("Without a key the layer stays offline");
+    expect(skill).toContain("answers below the confidence gate are recorded but not acted on");
+    expect(skill).toContain("the heuristic schedule in characters.js keeps working as the baseline either way");
+    expect(skill).toContain("confidenceGate");
+
     expect(skill).toMatch(/does not write the file/);
     expect(skill).toMatch(/Only the human can consent and submit/);
     expect(skill).toMatch(/never sends policy data to a model/);
@@ -7166,6 +7283,36 @@ describe("discoverability copy", () => {
     expect(evalDoc).toContain("Historical text never grants new permission");
     expect(evalDoc).toContain("a complete live Codex compaction cycle has not yet been verified");
 
+    expect(evalDoc).toContain("Taf0711/system-one-compiler");
+    expect(evalDoc).toContain("it is the only thing that authorises a substitution");
+    expect(evalDoc).toContain("The provider's call is never skipped");
+    expect(evalDoc).toContain("The application's own recorded answer is never ground truth");
+    expect(evalDoc).toContain("Confidence cannot compensate for failure of the others");
+    expect(evalDoc).toContain("a rejected prediction is not a fallback answer");
+    expect(evalDoc).toContain("A missing gate **fails closed**");
+    expect(evalDoc).toContain("Zero observed errors is reported as a bound, not as safety");
+    expect(evalDoc).toContain("abgregs/jev-skill-router");
+    expect(evalDoc).toContain("routing is a policy layer, not a security boundary");
+    expect(evalDoc).toContain("it never breaks a turn");
+    expect(evalDoc).toContain("bloat guard, not a quality mechanism");
+    expect(evalDoc).toContain("ehab-ayman-gharib/border-protocol");
+    expect(evalDoc).toContain("It never returns an admission verdict");
+    expect(evalDoc).toContain("These thresholds are game rules, not measured calibration guarantees");
+    expect(evalDoc).toContain("not a real border decision system");
+    expect(evalDoc).toContain("a plausible story cannot override invalid papers");
+    expect(evalDoc).toContain("Credentials are never sent to the browser");
+    expect(evalDoc).toContain("lifeporterlab/jev-verdict");
+    expect(evalDoc).toContain("Does not guarantee judgment accuracy");
+    expect(evalDoc).toContain("It never stores source text or prompt bodies");
+    expect(evalDoc).toContain("Keys are never printed and never written to the ledger");
+    expect(evalDoc).toContain("No other location is ever read");
+    expect(evalDoc).toContain("A service failure must not silently publish unverified content");
+    expect(evalDoc).toContain("nikkoxgonzales/elmridge-ai-town");
+    expect(evalDoc).toContain("Without a key the layer stays offline");
+    expect(evalDoc).toContain("answers below the confidence gate are recorded but not acted on");
+    expect(evalDoc).toContain("the heuristic schedule in characters.js keeps working as the baseline either way");
+    expect(evalDoc).toContain("confidenceGate");
+
     expect(evalDoc).toMatch(/does not write the file/);
     expect(evalDoc).toMatch(/Only the human can consent and submit/);
     expect(evalDoc).toMatch(/never sends policy data to a model/);
@@ -7927,6 +8074,36 @@ describe("discoverability copy", () => {
     expect(install).toContain("upcastr/codex-jevroid");
     expect(install).toContain("Historical text never grants new permission");
     expect(install).toContain("a complete live Codex compaction cycle has not yet been verified");
+
+    expect(install).toContain("Taf0711/system-one-compiler");
+    expect(install).toContain("it is the only thing that authorises a substitution");
+    expect(install).toContain("The provider's call is never skipped");
+    expect(install).toContain("The application's own recorded answer is never ground truth");
+    expect(install).toContain("Confidence cannot compensate for failure of the others");
+    expect(install).toContain("a rejected prediction is not a fallback answer");
+    expect(install).toContain("A missing gate **fails closed**");
+    expect(install).toContain("Zero observed errors is reported as a bound, not as safety");
+    expect(install).toContain("abgregs/jev-skill-router");
+    expect(install).toContain("routing is a policy layer, not a security boundary");
+    expect(install).toContain("it never breaks a turn");
+    expect(install).toContain("bloat guard, not a quality mechanism");
+    expect(install).toContain("ehab-ayman-gharib/border-protocol");
+    expect(install).toContain("It never returns an admission verdict");
+    expect(install).toContain("These thresholds are game rules, not measured calibration guarantees");
+    expect(install).toContain("not a real border decision system");
+    expect(install).toContain("a plausible story cannot override invalid papers");
+    expect(install).toContain("Credentials are never sent to the browser");
+    expect(install).toContain("lifeporterlab/jev-verdict");
+    expect(install).toContain("Does not guarantee judgment accuracy");
+    expect(install).toContain("It never stores source text or prompt bodies");
+    expect(install).toContain("Keys are never printed and never written to the ledger");
+    expect(install).toContain("No other location is ever read");
+    expect(install).toContain("A service failure must not silently publish unverified content");
+    expect(install).toContain("nikkoxgonzales/elmridge-ai-town");
+    expect(install).toContain("Without a key the layer stays offline");
+    expect(install).toContain("answers below the confidence gate are recorded but not acted on");
+    expect(install).toContain("the heuristic schedule in characters.js keeps working as the baseline either way");
+    expect(install).toContain("confidenceGate");
 
     expect(install).toMatch(/does not write the file/);
     expect(install).toMatch(/Only the human can consent and submit/);
@@ -8800,6 +8977,36 @@ describe("discoverability copy", () => {
     expect(shape).toContain("upcastr/codex-jevroid");
     expect(shape).toContain("Historical text never grants new permission");
     expect(shape).toContain("a complete live Codex compaction cycle has not yet been verified");
+
+    expect(shape).toContain("Taf0711/system-one-compiler");
+    expect(shape).toContain("it is the only thing that authorises a substitution");
+    expect(shape).toContain("The provider's call is never skipped");
+    expect(shape).toContain("The application's own recorded answer is never ground truth");
+    expect(shape).toContain("Confidence cannot compensate for failure of the others");
+    expect(shape).toContain("a rejected prediction is not a fallback answer");
+    expect(shape).toContain("A missing gate **fails closed**");
+    expect(shape).toContain("Zero observed errors is reported as a bound, not as safety");
+    expect(shape).toContain("abgregs/jev-skill-router");
+    expect(shape).toContain("routing is a policy layer, not a security boundary");
+    expect(shape).toContain("it never breaks a turn");
+    expect(shape).toContain("bloat guard, not a quality mechanism");
+    expect(shape).toContain("ehab-ayman-gharib/border-protocol");
+    expect(shape).toContain("It never returns an admission verdict");
+    expect(shape).toContain("These thresholds are game rules, not measured calibration guarantees");
+    expect(shape).toContain("not a real border decision system");
+    expect(shape).toContain("a plausible story cannot override invalid papers");
+    expect(shape).toContain("Credentials are never sent to the browser");
+    expect(shape).toContain("lifeporterlab/jev-verdict");
+    expect(shape).toContain("Does not guarantee judgment accuracy");
+    expect(shape).toContain("It never stores source text or prompt bodies");
+    expect(shape).toContain("Keys are never printed and never written to the ledger");
+    expect(shape).toContain("No other location is ever read");
+    expect(shape).toContain("A service failure must not silently publish unverified content");
+    expect(shape).toContain("nikkoxgonzales/elmridge-ai-town");
+    expect(shape).toContain("Without a key the layer stays offline");
+    expect(shape).toContain("answers below the confidence gate are recorded but not acted on");
+    expect(shape).toContain("the heuristic schedule in characters.js keeps working as the baseline either way");
+    expect(shape).toContain("confidenceGate");
 
     expect(shape).toMatch(/does not write the file/);
     expect(shape).toMatch(/Only the human can consent and submit/);
@@ -9750,6 +9957,36 @@ describe("discoverability copy", () => {
     expect(hosts).toContain("upcastr/codex-jevroid");
     expect(hosts).toContain("Historical text never grants new permission");
     expect(hosts).toContain("a complete live Codex compaction cycle has not yet been verified");
+
+    expect(hosts).toContain("Taf0711/system-one-compiler");
+    expect(hosts).toContain("it is the only thing that authorises a substitution");
+    expect(hosts).toContain("The provider's call is never skipped");
+    expect(hosts).toContain("The application's own recorded answer is never ground truth");
+    expect(hosts).toContain("Confidence cannot compensate for failure of the others");
+    expect(hosts).toContain("a rejected prediction is not a fallback answer");
+    expect(hosts).toContain("A missing gate **fails closed**");
+    expect(hosts).toContain("Zero observed errors is reported as a bound, not as safety");
+    expect(hosts).toContain("abgregs/jev-skill-router");
+    expect(hosts).toContain("routing is a policy layer, not a security boundary");
+    expect(hosts).toContain("it never breaks a turn");
+    expect(hosts).toContain("bloat guard, not a quality mechanism");
+    expect(hosts).toContain("ehab-ayman-gharib/border-protocol");
+    expect(hosts).toContain("It never returns an admission verdict");
+    expect(hosts).toContain("These thresholds are game rules, not measured calibration guarantees");
+    expect(hosts).toContain("not a real border decision system");
+    expect(hosts).toContain("a plausible story cannot override invalid papers");
+    expect(hosts).toContain("Credentials are never sent to the browser");
+    expect(hosts).toContain("lifeporterlab/jev-verdict");
+    expect(hosts).toContain("Does not guarantee judgment accuracy");
+    expect(hosts).toContain("It never stores source text or prompt bodies");
+    expect(hosts).toContain("Keys are never printed and never written to the ledger");
+    expect(hosts).toContain("No other location is ever read");
+    expect(hosts).toContain("A service failure must not silently publish unverified content");
+    expect(hosts).toContain("nikkoxgonzales/elmridge-ai-town");
+    expect(hosts).toContain("Without a key the layer stays offline");
+    expect(hosts).toContain("answers below the confidence gate are recorded but not acted on");
+    expect(hosts).toContain("the heuristic schedule in characters.js keeps working as the baseline either way");
+    expect(hosts).toContain("confidenceGate");
 
     expect(hosts).toMatch(/does not write the file/);
     expect(hosts).toMatch(/Only the human can consent and submit/);
@@ -10807,6 +11044,36 @@ describe("discoverability copy", () => {
     expect(gates).toContain("upcastr/codex-jevroid");
     expect(gates).toContain("Historical text never grants new permission");
     expect(gates).toContain("a complete live Codex compaction cycle has not yet been verified");
+
+    expect(gates).toContain("Taf0711/system-one-compiler");
+    expect(gates).toContain("it is the only thing that authorises a substitution");
+    expect(gates).toContain("The provider's call is never skipped");
+    expect(gates).toContain("The application's own recorded answer is never ground truth");
+    expect(gates).toContain("Confidence cannot compensate for failure of the others");
+    expect(gates).toContain("a rejected prediction is not a fallback answer");
+    expect(gates).toContain("A missing gate **fails closed**");
+    expect(gates).toContain("Zero observed errors is reported as a bound, not as safety");
+    expect(gates).toContain("abgregs/jev-skill-router");
+    expect(gates).toContain("routing is a policy layer, not a security boundary");
+    expect(gates).toContain("it never breaks a turn");
+    expect(gates).toContain("bloat guard, not a quality mechanism");
+    expect(gates).toContain("ehab-ayman-gharib/border-protocol");
+    expect(gates).toContain("It never returns an admission verdict");
+    expect(gates).toContain("These thresholds are game rules, not measured calibration guarantees");
+    expect(gates).toContain("not a real border decision system");
+    expect(gates).toContain("a plausible story cannot override invalid papers");
+    expect(gates).toContain("Credentials are never sent to the browser");
+    expect(gates).toContain("lifeporterlab/jev-verdict");
+    expect(gates).toContain("Does not guarantee judgment accuracy");
+    expect(gates).toContain("It never stores source text or prompt bodies");
+    expect(gates).toContain("Keys are never printed and never written to the ledger");
+    expect(gates).toContain("No other location is ever read");
+    expect(gates).toContain("A service failure must not silently publish unverified content");
+    expect(gates).toContain("nikkoxgonzales/elmridge-ai-town");
+    expect(gates).toContain("Without a key the layer stays offline");
+    expect(gates).toContain("answers below the confidence gate are recorded but not acted on");
+    expect(gates).toContain("the heuristic schedule in characters.js keeps working as the baseline either way");
+    expect(gates).toContain("confidenceGate");
 
     expect(gates).toMatch(/does not write the file/);
     expect(gates).toMatch(/Only the human can consent and submit/);
