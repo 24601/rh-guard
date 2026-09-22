@@ -3217,6 +3217,39 @@ describe("discoverability copy", () => {
 
 
 
+  it("does not invent hourly 1354 2026-09-22 cousin claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("$agent without a key still calls Jev");
+      expect(text, rel).not.toContain("agentbot-router confidence floor is a safety envelope");
+      expect(text, rel).not.toContain("JevTicktRouter 0.75 is a rh-guard ROC");
+      expect(text, rel).not.toContain("AlphaPerseii3000/jev-router is hermes-plugin-jev");
+      expect(text, rel).not.toContain("Hermes router fail-open blocks the turn");
+      expect(text, rel).not.toContain("0.5 Hermes threshold is a safety envelope");
+      expect(text, rel).not.toContain("laya-support-ticket-triage is TypeSafe Jev");
+      expect(text, rel).not.toContain("97.0% is a rh-guard ROC");
+      expect(text, rel).not.toContain("39.0% is a rh-guard ROC");
+      expect(text, rel).not.toContain("dagos ships a Rust runtime");
+      expect(text, rel).not.toContain("Jev routes in dagos");
+      expect(text, rel).not.toContain("insurance fast_track is a payout");
+      expect(text, rel).not.toContain("0.8 fast-track is a safety envelope");
+      expect(text, rel).not.toContain("Jev failure on FNOL is auto-approve");
+      expect(text, rel).not.toContain("all3n2601/jev-langgraph-router is Sahil-coder-30/jev-langgraph-router");
+      expect(text, rel).not.toContain("0.9875 is a rh-guard ROC");
+      expect(text, rel).not.toContain("80-case pilot tested the fallback policy");
+      expect(text, rel).not.toContain("jev-edge-router blocks the request when the judge fails");
+      expect(text, rel).not.toContain("darthzen/jev-mcp is emlama/jev-mcp");
+      expect(text, rel).not.toContain("path secret is a safety envelope");
+      expect(text, rel).not.toContain("healthz verifies TypeSafe");
+      expect(text, rel).not.toContain("jevcode is jev-guardrails");
+      expect(text, rel).not.toContain("harness demo purchases tickets");
+      expect(text, rel).not.toContain("0.7 risk noul is a safety envelope");
+      expect(text, rel).not.toContain("MacJev is TypeSafe Jev");
+      expect(text, rel).not.toContain("74.0% is a rh-guard ROC");
+      expect(text, rel).not.toContain("74.0% replaces the validation 0.7313");
+    }
+  });
+
   it("does not invent hourly 1300 2026-09-22 cousin claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
