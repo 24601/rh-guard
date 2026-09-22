@@ -1810,6 +1810,35 @@ describe("discoverability copy", () => {
     expect(readme).toContain('siffat-22/laya-api');
     expect(readme).toContain('INV-285965956230/notification-manager-jevofz46');
     expect(readme).toContain('Your payment was confirmed');
+
+    expect(readme).toContain('Barneyjm/call-center-circuit');
+    expect(readme).toContain('the decisions, the reply, and the audit are code');
+    expect(readme).toContain('BilalUchiha/vibecheck-mcp');
+    expect(readme).toContain('The gate is advisory');
+    expect(readme).toContain('The offline judge is not a review');
+    expect(readme).toContain('CHALETOS-MANDALA/twoonesys');
+    expect(readme).toContain('A high number does not move the policy');
+    expect(readme).toContain('amidabuddha/jev-decision-mcp');
+    expect(readme).toContain('the caller owns thresholds, escalation, and action execution');
+    expect(readme).toContain('notsointresting/sift');
+    expect(readme).toContain('It only labels');
+    expect(readme).toContain('The model never sees the thresholds');
+    expect(readme).toContain('siren2345/jev-gateway');
+    expect(readme).toContain('A schema-valid answer is not a guarantee');
+    expect(readme).toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(readme).toContain('No Laya call and no Hermes hook');
+    expect(readme).toContain('marianoberton/agent-evals');
+    expect(readme).toContain('advertised CI gate ≠ shipped source');
+    expect(readme).toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(readme).toContain('not p-values, FDR');
+    expect(readme).toContain('youdotcom-oss/risk-analysis-server');
+    expect(readme).toContain('TRIAGE_THRESHOLD');
+    expect(readme).toContain('JonusNattapong/jev-my-bro-th960');
+    expect(readme).toContain('must not replace explicit authorization');
+    expect(readme).toContain('HEAD `1f80582`');
+    expect(readme).toContain('HEAD `42ca77e`');
+    expect(readme).toContain('ChatGPT Work remains unverified');
+    expect(readme).toContain('no dedicated tool here');
     expect(readme).toContain('HEAD `334dc66`');
     expect(readme).toContain('不设包名白名单');
     expect(readme).toContain('Georgy-hook/rimworld-autopilot');
@@ -3084,6 +3113,48 @@ describe("discoverability copy", () => {
     }
   });
 
+
+
+  it("does not invent hourly 1106 2026-09-22 cousin claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain('12 of 12 is a rh-guard ROC');
+      expect(text, rel).not.toContain('8% is a rh-guard ROC');
+      expect(text, rel).not.toContain('vibecheck-mcp forces the agent');
+      expect(text, rel).not.toContain('The offline judge is a review');
+      expect(text, rel).not.toContain('BilalUchiha/vibecheck-mcp is psyb0t/vibecheck');
+      expect(text, rel).not.toContain('balanced 0.70 is a safety envelope');
+      expect(text, rel).not.toContain('twoonesys is TypeSafe Jev');
+      expect(text, rel).not.toContain('0.999 moves the policy');
+      expect(text, rel).not.toContain('soft :8018 down is a deny');
+      expect(text, rel).not.toContain('jev_decide authorizes the action');
+      expect(text, rel).not.toContain('noul near 0.5 is medium intensity');
+      expect(text, rel).not.toContain('live smoke is decision quality');
+      expect(text, rel).not.toContain('Sift deletes or bans');
+      expect(text, rel).not.toContain('notsointresting/sift is bohutang/sift');
+      expect(text, rel).not.toContain('0.85 removeAt is a safety envelope');
+      expect(text, rel).not.toContain('siren2345/jev-gateway is siren2345/jevlocal');
+      expect(text, rel).not.toContain('siren2345/jev-gateway is FreeJolan/jev-gateway');
+      expect(text, rel).not.toContain('174/231 is a rh-guard ROC');
+      expect(text, rel).not.toContain('schema-valid answer is correct');
+      expect(text, rel).not.toContain('laya-hermes-guardrail calls Laya');
+      expect(text, rel).not.toContain('EXECUTE is a host grant');
+      expect(text, rel).not.toContain('agent-evals ships a CI gate');
+      expect(text, rel).not.toContain('Jev probabilities are p-values');
+      expect(text, rel).not.toContain('0.60 overrides local unknown');
+      expect(text, rel).not.toContain('0.5 skip proves no threat');
+      expect(text, rel).not.toContain('score 1 means the tail was judged');
+      expect(text, rel).not.toContain('88.00% is a rh-guard ROC');
+      expect(text, rel).not.toContain('jev-my-bro-th960 is TypeSafe Jev');
+      expect(text, rel).not.toContain('advisory signal replaces authorization');
+      expect(text, rel).not.toContain('ChatGPT Work is verified');
+      expect(text, rel).not.toContain('seven of eight is a rh-guard ROC');
+      expect(text, rel).not.toContain('jev-filter install remote is this listing');
+      expect(text, rel).not.toContain('macos recoveries can send');
+      expect(text, rel).not.toContain('Signed-in ChatGPT injection is still unverified');
+      expect(text, rel).not.toContain('advertised clone path ≠ this listing');
+    }
+  });
 
   it("does not invent hourly 1016 2026-09-22 cousin claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
@@ -4711,6 +4782,18 @@ describe("discoverability copy", () => {
     expect(pkg).not.toContain('dwidlee/systemone-lite-phase2');
     expect(pkg).not.toContain('siffat-22/laya-api');
     expect(pkg).not.toContain('INV-285965956230/notification-manager-jevofz46');
+
+    expect(pkg).not.toContain('Barneyjm/call-center-circuit');
+    expect(pkg).not.toContain('BilalUchiha/vibecheck-mcp');
+    expect(pkg).not.toContain('CHALETOS-MANDALA/twoonesys');
+    expect(pkg).not.toContain('amidabuddha/jev-decision-mcp');
+    expect(pkg).not.toContain('notsointresting/sift');
+    expect(pkg).not.toContain('siren2345/jev-gateway');
+    expect(pkg).not.toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(pkg).not.toContain('marianoberton/agent-evals');
+    expect(pkg).not.toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(pkg).not.toContain('youdotcom-oss/risk-analysis-server');
+    expect(pkg).not.toContain('JonusNattapong/jev-my-bro-th960');
     expect(pkg).not.toContain('jev-chat/jev-chat-jarvis');
     expect(pkg).not.toContain('yangyu666/dsh-jev-prune');
     expect(pkg).not.toContain('wotai-dev/typesafe-jev-tools');
@@ -4962,6 +5045,18 @@ describe("discoverability copy", () => {
     expect(pkg).not.toContain('dwidlee/systemone-lite-phase2');
     expect(pkg).not.toContain('siffat-22/laya-api');
     expect(pkg).not.toContain('INV-285965956230/notification-manager-jevofz46');
+
+    expect(pkg).not.toContain('Barneyjm/call-center-circuit');
+    expect(pkg).not.toContain('BilalUchiha/vibecheck-mcp');
+    expect(pkg).not.toContain('CHALETOS-MANDALA/twoonesys');
+    expect(pkg).not.toContain('amidabuddha/jev-decision-mcp');
+    expect(pkg).not.toContain('notsointresting/sift');
+    expect(pkg).not.toContain('siren2345/jev-gateway');
+    expect(pkg).not.toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(pkg).not.toContain('marianoberton/agent-evals');
+    expect(pkg).not.toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(pkg).not.toContain('youdotcom-oss/risk-analysis-server');
+    expect(pkg).not.toContain('JonusNattapong/jev-my-bro-th960');
 
 
     expect(pkg).not.toMatch(/tacticocc\/Jevbridge/);
@@ -6281,6 +6376,18 @@ describe("discoverability copy", () => {
     expect(lock).not.toContain('dwidlee/systemone-lite-phase2');
     expect(lock).not.toContain('siffat-22/laya-api');
     expect(lock).not.toContain('INV-285965956230/notification-manager-jevofz46');
+
+    expect(lock).not.toContain('Barneyjm/call-center-circuit');
+    expect(lock).not.toContain('BilalUchiha/vibecheck-mcp');
+    expect(lock).not.toContain('CHALETOS-MANDALA/twoonesys');
+    expect(lock).not.toContain('amidabuddha/jev-decision-mcp');
+    expect(lock).not.toContain('notsointresting/sift');
+    expect(lock).not.toContain('siren2345/jev-gateway');
+    expect(lock).not.toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(lock).not.toContain('marianoberton/agent-evals');
+    expect(lock).not.toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(lock).not.toContain('youdotcom-oss/risk-analysis-server');
+    expect(lock).not.toContain('JonusNattapong/jev-my-bro-th960');
     expect(lock).not.toContain('jev-chat/jev-chat-jarvis');
     expect(lock).not.toContain('yangyu666/dsh-jev-prune');
     expect(lock).not.toContain('wotai-dev/typesafe-jev-tools');
@@ -6532,6 +6639,18 @@ describe("discoverability copy", () => {
     expect(lock).not.toContain('dwidlee/systemone-lite-phase2');
     expect(lock).not.toContain('siffat-22/laya-api');
     expect(lock).not.toContain('INV-285965956230/notification-manager-jevofz46');
+
+    expect(lock).not.toContain('Barneyjm/call-center-circuit');
+    expect(lock).not.toContain('BilalUchiha/vibecheck-mcp');
+    expect(lock).not.toContain('CHALETOS-MANDALA/twoonesys');
+    expect(lock).not.toContain('amidabuddha/jev-decision-mcp');
+    expect(lock).not.toContain('notsointresting/sift');
+    expect(lock).not.toContain('siren2345/jev-gateway');
+    expect(lock).not.toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(lock).not.toContain('marianoberton/agent-evals');
+    expect(lock).not.toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(lock).not.toContain('youdotcom-oss/risk-analysis-server');
+    expect(lock).not.toContain('JonusNattapong/jev-my-bro-th960');
 
 
     expect(lock).not.toMatch(/tacticocc\/Jevbridge/);
@@ -8845,6 +8964,35 @@ describe("discoverability copy", () => {
     expect(skill).toContain('siffat-22/laya-api');
     expect(skill).toContain('INV-285965956230/notification-manager-jevofz46');
     expect(skill).toContain('Your payment was confirmed');
+
+    expect(skill).toContain('Barneyjm/call-center-circuit');
+    expect(skill).toContain('the decisions, the reply, and the audit are code');
+    expect(skill).toContain('BilalUchiha/vibecheck-mcp');
+    expect(skill).toContain('The gate is advisory');
+    expect(skill).toContain('The offline judge is not a review');
+    expect(skill).toContain('CHALETOS-MANDALA/twoonesys');
+    expect(skill).toContain('A high number does not move the policy');
+    expect(skill).toContain('amidabuddha/jev-decision-mcp');
+    expect(skill).toContain('the caller owns thresholds, escalation, and action execution');
+    expect(skill).toContain('notsointresting/sift');
+    expect(skill).toContain('It only labels');
+    expect(skill).toContain('The model never sees the thresholds');
+    expect(skill).toContain('siren2345/jev-gateway');
+    expect(skill).toContain('A schema-valid answer is not a guarantee');
+    expect(skill).toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(skill).toContain('No Laya call and no Hermes hook');
+    expect(skill).toContain('marianoberton/agent-evals');
+    expect(skill).toContain('advertised CI gate ≠ shipped source');
+    expect(skill).toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(skill).toContain('not p-values, FDR');
+    expect(skill).toContain('youdotcom-oss/risk-analysis-server');
+    expect(skill).toContain('TRIAGE_THRESHOLD');
+    expect(skill).toContain('JonusNattapong/jev-my-bro-th960');
+    expect(skill).toContain('must not replace explicit authorization');
+    expect(skill).toContain('HEAD `1f80582`');
+    expect(skill).toContain('HEAD `42ca77e`');
+    expect(skill).toContain('ChatGPT Work remains unverified');
+    expect(skill).toContain('no dedicated tool here');
     expect(skill).toContain('HEAD `334dc66`');
     expect(skill).toContain('不设包名白名单');
     expect(skill).toContain('Georgy-hook/rimworld-autopilot');
@@ -10664,6 +10812,35 @@ describe("discoverability copy", () => {
     expect(evalDoc).toContain('siffat-22/laya-api');
     expect(evalDoc).toContain('INV-285965956230/notification-manager-jevofz46');
     expect(evalDoc).toContain('Your payment was confirmed');
+
+    expect(evalDoc).toContain('Barneyjm/call-center-circuit');
+    expect(evalDoc).toContain('the decisions, the reply, and the audit are code');
+    expect(evalDoc).toContain('BilalUchiha/vibecheck-mcp');
+    expect(evalDoc).toContain('The gate is advisory');
+    expect(evalDoc).toContain('The offline judge is not a review');
+    expect(evalDoc).toContain('CHALETOS-MANDALA/twoonesys');
+    expect(evalDoc).toContain('A high number does not move the policy');
+    expect(evalDoc).toContain('amidabuddha/jev-decision-mcp');
+    expect(evalDoc).toContain('the caller owns thresholds, escalation, and action execution');
+    expect(evalDoc).toContain('notsointresting/sift');
+    expect(evalDoc).toContain('It only labels');
+    expect(evalDoc).toContain('The model never sees the thresholds');
+    expect(evalDoc).toContain('siren2345/jev-gateway');
+    expect(evalDoc).toContain('A schema-valid answer is not a guarantee');
+    expect(evalDoc).toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(evalDoc).toContain('No Laya call and no Hermes hook');
+    expect(evalDoc).toContain('marianoberton/agent-evals');
+    expect(evalDoc).toContain('advertised CI gate ≠ shipped source');
+    expect(evalDoc).toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(evalDoc).toContain('not p-values, FDR');
+    expect(evalDoc).toContain('youdotcom-oss/risk-analysis-server');
+    expect(evalDoc).toContain('TRIAGE_THRESHOLD');
+    expect(evalDoc).toContain('JonusNattapong/jev-my-bro-th960');
+    expect(evalDoc).toContain('must not replace explicit authorization');
+    expect(evalDoc).toContain('HEAD `1f80582`');
+    expect(evalDoc).toContain('HEAD `42ca77e`');
+    expect(evalDoc).toContain('ChatGPT Work remains unverified');
+    expect(evalDoc).toContain('no dedicated tool here');
     expect(evalDoc).toContain('HEAD `334dc66`');
     expect(evalDoc).toContain('不设包名白名单');
     expect(evalDoc).toContain('Georgy-hook/rimworld-autopilot');
@@ -12038,6 +12215,35 @@ describe("discoverability copy", () => {
     expect(install).toContain('siffat-22/laya-api');
     expect(install).toContain('INV-285965956230/notification-manager-jevofz46');
     expect(install).toContain('Your payment was confirmed');
+
+    expect(install).toContain('Barneyjm/call-center-circuit');
+    expect(install).toContain('the decisions, the reply, and the audit are code');
+    expect(install).toContain('BilalUchiha/vibecheck-mcp');
+    expect(install).toContain('The gate is advisory');
+    expect(install).toContain('The offline judge is not a review');
+    expect(install).toContain('CHALETOS-MANDALA/twoonesys');
+    expect(install).toContain('A high number does not move the policy');
+    expect(install).toContain('amidabuddha/jev-decision-mcp');
+    expect(install).toContain('the caller owns thresholds, escalation, and action execution');
+    expect(install).toContain('notsointresting/sift');
+    expect(install).toContain('It only labels');
+    expect(install).toContain('The model never sees the thresholds');
+    expect(install).toContain('siren2345/jev-gateway');
+    expect(install).toContain('A schema-valid answer is not a guarantee');
+    expect(install).toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(install).toContain('No Laya call and no Hermes hook');
+    expect(install).toContain('marianoberton/agent-evals');
+    expect(install).toContain('advertised CI gate ≠ shipped source');
+    expect(install).toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(install).toContain('not p-values, FDR');
+    expect(install).toContain('youdotcom-oss/risk-analysis-server');
+    expect(install).toContain('TRIAGE_THRESHOLD');
+    expect(install).toContain('JonusNattapong/jev-my-bro-th960');
+    expect(install).toContain('must not replace explicit authorization');
+    expect(install).toContain('HEAD `1f80582`');
+    expect(install).toContain('HEAD `42ca77e`');
+    expect(install).toContain('ChatGPT Work remains unverified');
+    expect(install).toContain('no dedicated tool here');
     expect(install).toContain('HEAD `334dc66`');
     expect(install).toContain('不设包名白名单');
     expect(install).toContain('Georgy-hook/rimworld-autopilot');
@@ -13523,6 +13729,35 @@ describe("discoverability copy", () => {
     expect(shape).toContain('siffat-22/laya-api');
     expect(shape).toContain('INV-285965956230/notification-manager-jevofz46');
     expect(shape).toContain('Your payment was confirmed');
+
+    expect(shape).toContain('Barneyjm/call-center-circuit');
+    expect(shape).toContain('the decisions, the reply, and the audit are code');
+    expect(shape).toContain('BilalUchiha/vibecheck-mcp');
+    expect(shape).toContain('The gate is advisory');
+    expect(shape).toContain('The offline judge is not a review');
+    expect(shape).toContain('CHALETOS-MANDALA/twoonesys');
+    expect(shape).toContain('A high number does not move the policy');
+    expect(shape).toContain('amidabuddha/jev-decision-mcp');
+    expect(shape).toContain('the caller owns thresholds, escalation, and action execution');
+    expect(shape).toContain('notsointresting/sift');
+    expect(shape).toContain('It only labels');
+    expect(shape).toContain('The model never sees the thresholds');
+    expect(shape).toContain('siren2345/jev-gateway');
+    expect(shape).toContain('A schema-valid answer is not a guarantee');
+    expect(shape).toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(shape).toContain('No Laya call and no Hermes hook');
+    expect(shape).toContain('marianoberton/agent-evals');
+    expect(shape).toContain('advertised CI gate ≠ shipped source');
+    expect(shape).toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(shape).toContain('not p-values, FDR');
+    expect(shape).toContain('youdotcom-oss/risk-analysis-server');
+    expect(shape).toContain('TRIAGE_THRESHOLD');
+    expect(shape).toContain('JonusNattapong/jev-my-bro-th960');
+    expect(shape).toContain('must not replace explicit authorization');
+    expect(shape).toContain('HEAD `1f80582`');
+    expect(shape).toContain('HEAD `42ca77e`');
+    expect(shape).toContain('ChatGPT Work remains unverified');
+    expect(shape).toContain('no dedicated tool here');
     expect(shape).toContain('HEAD `334dc66`');
     expect(shape).toContain('不设包名白名单');
     expect(shape).toContain('Georgy-hook/rimworld-autopilot');
@@ -15085,6 +15320,35 @@ describe("discoverability copy", () => {
     expect(hosts).toContain('siffat-22/laya-api');
     expect(hosts).toContain('INV-285965956230/notification-manager-jevofz46');
     expect(hosts).toContain('Your payment was confirmed');
+
+    expect(hosts).toContain('Barneyjm/call-center-circuit');
+    expect(hosts).toContain('the decisions, the reply, and the audit are code');
+    expect(hosts).toContain('BilalUchiha/vibecheck-mcp');
+    expect(hosts).toContain('The gate is advisory');
+    expect(hosts).toContain('The offline judge is not a review');
+    expect(hosts).toContain('CHALETOS-MANDALA/twoonesys');
+    expect(hosts).toContain('A high number does not move the policy');
+    expect(hosts).toContain('amidabuddha/jev-decision-mcp');
+    expect(hosts).toContain('the caller owns thresholds, escalation, and action execution');
+    expect(hosts).toContain('notsointresting/sift');
+    expect(hosts).toContain('It only labels');
+    expect(hosts).toContain('The model never sees the thresholds');
+    expect(hosts).toContain('siren2345/jev-gateway');
+    expect(hosts).toContain('A schema-valid answer is not a guarantee');
+    expect(hosts).toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(hosts).toContain('No Laya call and no Hermes hook');
+    expect(hosts).toContain('marianoberton/agent-evals');
+    expect(hosts).toContain('advertised CI gate ≠ shipped source');
+    expect(hosts).toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(hosts).toContain('not p-values, FDR');
+    expect(hosts).toContain('youdotcom-oss/risk-analysis-server');
+    expect(hosts).toContain('TRIAGE_THRESHOLD');
+    expect(hosts).toContain('JonusNattapong/jev-my-bro-th960');
+    expect(hosts).toContain('must not replace explicit authorization');
+    expect(hosts).toContain('HEAD `1f80582`');
+    expect(hosts).toContain('HEAD `42ca77e`');
+    expect(hosts).toContain('ChatGPT Work remains unverified');
+    expect(hosts).toContain('no dedicated tool here');
     expect(hosts).toContain('HEAD `334dc66`');
     expect(hosts).toContain('不设包名白名单');
     expect(hosts).toContain('Georgy-hook/rimworld-autopilot');
@@ -16755,6 +17019,35 @@ describe("discoverability copy", () => {
     expect(gates).toContain('siffat-22/laya-api');
     expect(gates).toContain('INV-285965956230/notification-manager-jevofz46');
     expect(gates).toContain('Your payment was confirmed');
+
+    expect(gates).toContain('Barneyjm/call-center-circuit');
+    expect(gates).toContain('the decisions, the reply, and the audit are code');
+    expect(gates).toContain('BilalUchiha/vibecheck-mcp');
+    expect(gates).toContain('The gate is advisory');
+    expect(gates).toContain('The offline judge is not a review');
+    expect(gates).toContain('CHALETOS-MANDALA/twoonesys');
+    expect(gates).toContain('A high number does not move the policy');
+    expect(gates).toContain('amidabuddha/jev-decision-mcp');
+    expect(gates).toContain('the caller owns thresholds, escalation, and action execution');
+    expect(gates).toContain('notsointresting/sift');
+    expect(gates).toContain('It only labels');
+    expect(gates).toContain('The model never sees the thresholds');
+    expect(gates).toContain('siren2345/jev-gateway');
+    expect(gates).toContain('A schema-valid answer is not a guarantee');
+    expect(gates).toContain('sufwanali1090-dev/laya-hermes-guardrail');
+    expect(gates).toContain('No Laya call and no Hermes hook');
+    expect(gates).toContain('marianoberton/agent-evals');
+    expect(gates).toContain('advertised CI gate ≠ shipped source');
+    expect(gates).toContain('krudo-taco/clawbio-jev-supervisor');
+    expect(gates).toContain('not p-values, FDR');
+    expect(gates).toContain('youdotcom-oss/risk-analysis-server');
+    expect(gates).toContain('TRIAGE_THRESHOLD');
+    expect(gates).toContain('JonusNattapong/jev-my-bro-th960');
+    expect(gates).toContain('must not replace explicit authorization');
+    expect(gates).toContain('HEAD `1f80582`');
+    expect(gates).toContain('HEAD `42ca77e`');
+    expect(gates).toContain('ChatGPT Work remains unverified');
+    expect(gates).toContain('no dedicated tool here');
     expect(gates).toContain('HEAD `334dc66`');
     expect(gates).toContain('不设包名白名单');
     expect(gates).toContain('Georgy-hook/rimworld-autopilot');
