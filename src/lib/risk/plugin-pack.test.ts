@@ -1467,7 +1467,7 @@ describe("discoverability copy", () => {
     expect(readme).toContain('drycool/jev-router');
     expect(readme).toContain('Route without executing an agent');
     expect(readme).toContain('fitchgc/jev-ccrouter-extension');
-    expect(readme).toContain('keeps the request's original model');
+    expect(readme).toContain("keeps the request's original model");
     expect(readme).toContain('gbesse/jev-decisionops');
     expect(readme).toContain('Confidence thresholds are policy, not truth');
     expect(readme).toContain('hzq001/cpa-plugin-jev');
@@ -7190,7 +7190,7 @@ describe("discoverability copy", () => {
     expect(skill).toContain('drycool/jev-router');
     expect(skill).toContain('Route without executing an agent');
     expect(skill).toContain('fitchgc/jev-ccrouter-extension');
-    expect(skill).toContain('keeps the request's original model');
+    expect(skill).toContain("keeps the request's original model");
     expect(skill).toContain('gbesse/jev-decisionops');
     expect(skill).toContain('Confidence thresholds are policy, not truth');
     expect(skill).toContain('hzq001/cpa-plugin-jev');
@@ -8672,7 +8672,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toContain('drycool/jev-router');
     expect(evalDoc).toContain('Route without executing an agent');
     expect(evalDoc).toContain('fitchgc/jev-ccrouter-extension');
-    expect(evalDoc).toContain('keeps the request's original model');
+    expect(evalDoc).toContain("keeps the request's original model");
     expect(evalDoc).toContain('gbesse/jev-decisionops');
     expect(evalDoc).toContain('Confidence thresholds are policy, not truth');
     expect(evalDoc).toContain('hzq001/cpa-plugin-jev');
@@ -9710,7 +9710,7 @@ describe("discoverability copy", () => {
     expect(install).toContain('drycool/jev-router');
     expect(install).toContain('Route without executing an agent');
     expect(install).toContain('fitchgc/jev-ccrouter-extension');
-    expect(install).toContain('keeps the request's original model');
+    expect(install).toContain("keeps the request's original model");
     expect(install).toContain('gbesse/jev-decisionops');
     expect(install).toContain('Confidence thresholds are policy, not truth');
     expect(install).toContain('hzq001/cpa-plugin-jev');
@@ -10859,7 +10859,7 @@ describe("discoverability copy", () => {
     expect(shape).toContain('drycool/jev-router');
     expect(shape).toContain('Route without executing an agent');
     expect(shape).toContain('fitchgc/jev-ccrouter-extension');
-    expect(shape).toContain('keeps the request's original model');
+    expect(shape).toContain("keeps the request's original model");
     expect(shape).toContain('gbesse/jev-decisionops');
     expect(shape).toContain('Confidence thresholds are policy, not truth');
     expect(shape).toContain('hzq001/cpa-plugin-jev');
@@ -12085,7 +12085,7 @@ describe("discoverability copy", () => {
     expect(hosts).toContain('drycool/jev-router');
     expect(hosts).toContain('Route without executing an agent');
     expect(hosts).toContain('fitchgc/jev-ccrouter-extension');
-    expect(hosts).toContain('keeps the request's original model');
+    expect(hosts).toContain("keeps the request's original model");
     expect(hosts).toContain('gbesse/jev-decisionops');
     expect(hosts).toContain('Confidence thresholds are policy, not truth');
     expect(hosts).toContain('hzq001/cpa-plugin-jev');
@@ -13418,7 +13418,7 @@ describe("discoverability copy", () => {
     expect(gates).toContain('drycool/jev-router');
     expect(gates).toContain('Route without executing an agent');
     expect(gates).toContain('fitchgc/jev-ccrouter-extension');
-    expect(gates).toContain('keeps the request's original model');
+    expect(gates).toContain("keeps the request's original model");
     expect(gates).toContain('gbesse/jev-decisionops');
     expect(gates).toContain('Confidence thresholds are policy, not truth');
     expect(gates).toContain('hzq001/cpa-plugin-jev');
