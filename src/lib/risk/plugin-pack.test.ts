@@ -3217,6 +3217,45 @@ describe("discoverability copy", () => {
 
 
 
+  it("does not invent hourly 0946 2026-09-23 cousin claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("Intent-Router is a PreToolUse deny");
+      expect(text, rel).not.toContain("clear-head is fail-closed by default");
+      expect(text, rel).not.toContain("JEV_FAIL_CLOSED is the default");
+      expect(text, rel).not.toContain("laya-codex blocks tool calls");
+      expect(text, rel).not.toContain("laya-codex 50% is a rh-guard ROC");
+      expect(text, rel).not.toContain("jev-sec-audit calls TypeSafe");
+      expect(text, rel).not.toContain("JEV_API_KEY enables a live Jev scan");
+      expect(text, rel).not.toContain("s1gate README documents MCP");
+      expect(text, rel).not.toContain("s1gate is an MCP server");
+      expect(text, rel).not.toContain("rlcd selector failure drops context");
+      expect(text, rel).not.toContain("jevpolicy silently allows on provider failure");
+      expect(text, rel).not.toContain("0xSarnavo/jev-router is AlphaPerseii3000/jev-router");
+      expect(text, rel).not.toContain("OpenCode jev-router blocks the prompt");
+      expect(text, rel).not.toContain("70.2% is a rh-guard ROC");
+      expect(text, rel).not.toContain("mindrails twelve-case suite beat always-continue");
+      expect(text, rel).not.toContain("0 false finishes is a safety proof");
+      expect(text, rel).not.toContain("decision-guard is a safety proof");
+      expect(text, rel).not.toContain("jev-feed-guard is fail-closed");
+      expect(text, rel).not.toContain("jev-ultrafast-mcp is browser-use/jev-ultrafast");
+      expect(text, rel).not.toContain("auto-mode-for-paseo falls back to Jev");
+      expect(text, rel).not.toContain("Laya confidence is a guarantee of correct intent");
+      expect(text, rel).not.toContain("sizeup 60% is a safety envelope");
+      expect(text, rel).not.toContain("danna-zhou/jev-mcp is darthzen/jev-mcp");
+      expect(text, rel).not.toContain("ccai40359-wq/jev-kit is jonathanavis96/jev-kit");
+      expect(text, rel).not.toContain("laya-cli-gate 1.000 is a rh-guard ROC");
+      expect(text, rel).not.toContain("inbox-triage deletes mail");
+      expect(text, rel).not.toContain("Clearance heuristic is fail-closed");
+      expect(text, rel).not.toContain("smart ticket router policy detection is safe");
+      expect(text, rel).not.toContain("likhijogi/laya-issue-triage ships a classifier");
+      expect(text, rel).not.toContain("jev-gateway-study ships a gateway");
+      expect(text, rel).not.toContain("53-rule audit is a rh-guard ROC");
+      expect(text, rel).not.toContain("fused gate effects were measured live");
+      expect(text, rel).not.toContain("laya-fast 93% is a rh-guard ROC");
+    }
+  });
+
   it("does not invent hourly 1354 2026-09-22 cousin claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
