@@ -3256,6 +3256,77 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1234 2026-09-23 cousin claims", () => {
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("low-confidence jev-social decisions execute");
+      expect(text, rel).not.toContain("63.969 s is a rh-guard ROC");
+      expect(text, rel).not.toContain("JEV routing is ON by default");
+      expect(text, rel).not.toContain("jevXagent savings are a rh-guard ROC");
+      expect(text, rel).not.toContain("14.7 s is a rh-guard ROC");
+      expect(text, rel).not.toContain("firefox-jev-mcp 0.6 is a safety envelope");
+      expect(text, rel).not.toContain("synthetic fixtures are measured provider performance");
+      expect(text, rel).not.toContain("foundry confidence is calibrated correctness");
+      expect(text, rel).not.toContain("laya-triage output is an autopilot");
+      expect(text, rel).not.toContain("AlexLeow99/laya-triage is Mezahir2025/laya-triage");
+      expect(text, rel).not.toContain("10/13 is a rh-guard ROC");
+      expect(text, rel).not.toContain("Jev can veto pinned lanes");
+      expect(text, rel).not.toContain("security=0.98 is expected yield");
+      expect(text, rel).not.toContain("0.70 deep-research threshold is a safety envelope");
+      expect(text, rel).not.toContain("default Noul 0.5 caught every incident");
+      expect(text, rel).not.toContain("GPT-5.6 Luna estimate was measured");
+      expect(text, rel).not.toContain("jev-podcast-studio ships a scorer");
+      expect(text, rel).not.toContain("jev-podcast-studio LICENSE file is MIT");
+      expect(text, rel).not.toContain("dsh-laya contributes prompt text by default");
+      expect(text, rel).not.toContain("RestCode72/dsh-laya is codebam/dsh-jev-guardrails");
+      expect(text, rel).not.toContain("dsh-laya is TypeSafe Jev");
+      expect(text, rel).not.toContain("jev-deliberation-judge is functional");
+      expect(text, rel).not.toContain("deliberation veto is a host deny");
+      expect(text, rel).not.toContain("JevControl mock run is a rh-guard ROC");
+      expect(text, rel).not.toContain("JevControl 0.5 is a safety envelope");
+      expect(text, rel).not.toContain("JevControl is TypeSafe Jev");
+      expect(text, rel).not.toContain("craxrev/jevgate is thevibeworks/jevgate");
+      expect(text, rel).not.toContain("Jev unsure runs the command");
+      expect(text, rel).not.toContain("craxrev jevgate unreachable is always a deny");
+      expect(text, rel).not.toContain("TYPO3 fallback is a host deny");
+      expect(text, rel).not.toContain("typo3 below 0.5 is a safety envelope");
+      expect(text, rel).not.toContain("eitaar/jev-skill-router is ydmw74/jev-skill-router");
+      expect(text, rel).not.toContain("0.65 skill threshold is a grant");
+      expect(text, rel).not.toContain("routing failure adds skill instructions");
+      expect(text, rel).not.toContain("griteshs6-boop/jev-model-router is Mandrilsquad1441/jev-model-router");
+      expect(text, rel).not.toContain("0.55 tiebreaker is a host deny");
+      expect(text, rel).not.toContain("auto-apply switches the session model");
+      expect(text, rel).not.toContain("Intelligent-Email-Routing README is the email router");
+      expect(text, rel).not.toContain("email_router confidence gate auto-routes");
+      expect(text, rel).not.toContain("hasif154/Intelligent-Email-Routing is NandhaKishorM/laya");
+      expect(text, rel).not.toContain("Tiny-Jev-1.7B is TypeSafe Jev");
+      expect(text, rel).not.toContain("guardrails tag is a host deny");
+      expect(text, rel).not.toContain("97.3 is a rh-guard ROC");
+      expect(text, rel).not.toContain("300 ms is a rh-guard ROC");
+      expect(text, rel).not.toContain("allow_irreversible skips confirmation");
+      expect(text, rel).not.toContain("barq is legostin/jev-mcp");
+      expect(text, rel).not.toContain("System One safely gates shell commands");
+      expect(text, rel).not.toContain("80× cheaper is a rh-guard ROC");
+      expect(text, rel).not.toContain("200× faster is independently verified");
+      expect(text, rel).not.toContain("41-case 100% is a rh-guard ROC");
+      expect(text, rel).not.toContain("legostin/jev-mcp is darthzen/jev-mcp");
+      expect(text, rel).not.toContain("escalate 0 is fail-closed");
+      expect(text, rel).not.toContain("Jev overrides the quality floor");
+      expect(text, rel).not.toContain("80 labelled prompts are a rh-guard ROC");
+      expect(text, rel).not.toContain("mmornati/system-one-router is rahuldegra1/Local-System-One-Router");
+      expect(text, rel).not.toContain("jev-gates approves the edit");
+      expect(text, rel).not.toContain("GitHub six-gate blurb is the shipped table");
+      expect(text, rel).not.toContain("rashedInt32/jev-gates is rashedInt32/jev-lens");
+      expect(text, rel).not.toContain("jev-gates failure is a deny");
+      expect(text, rel).not.toContain("presentation mode is Laya accuracy");
+      expect(text, rel).not.toContain("80% department accuracy is a rh-guard ROC");
+      expect(text, rel).not.toContain("0.85 auto-route is a safety envelope");
+      expect(text, rel).not.toContain("benefit hold vetoes the model choice");
+      expect(text, rel).not.toContain("precision-router confidence threshold gates the route");
+      expect(text, rel).not.toContain("theogrillat/jev-precision-router is da-vinci-noob/pi-jev-model-router");
+    }
+  });
+
   it("does not invent hourly 1354 2026-09-22 cousin claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
