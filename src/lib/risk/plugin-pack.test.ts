@@ -1128,7 +1128,7 @@ describe("discoverability copy", () => {
     expect(readme).toContain("Bodila51/jev-hft-model-router");
     expect(readme).toContain("it never silently forces a recommendation");
     expect(readme).toContain("Tech-Byte-Frontier/jevgate");
-    expect(readme).toContain("a built-in enforcement policy is not implemented yet");
+    expect(readme).toContain("not-yet-implemented enforcement quotes are absent");
     expect(readme).toContain("jon-devlapaz/tink-route");
     expect(readme).toContain("100.0% (6/6 passing)");
     expect(readme).toContain("0x7067/claude-jev");
@@ -3735,6 +3735,87 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toContain("jev-langgraph-example is TypeSafe Jev");
       expect(text, rel).not.toContain("jarvis still collects WeChat");
       expect(text, rel).not.toContain("spark archive runs without confirmation");
+    }
+    const pkg = readFileSync(join(root, "package.json"), "utf8");
+    const lock = readFileSync(join(root, "package-lock.json"), "utf8");
+    for (const slug of slugs) {
+      expect(pkg, slug).not.toContain(slug);
+      expect(lock, slug).not.toContain(slug);
+    }
+  });
+
+  it("does not invent hourly 1510 2026-09-24 cousin claims", () => {
+    const slugs = [
+      "qinpei-dev/permit-mcp",
+      "akanksha-rajhans-ai/diffguard",
+      "Awlaursen/pi-lookout",
+      "NISH1001/reflex-guard",
+      "manas95826/-Semantic-Firewall-laya",
+      "jkudish/jev-agent-tools",
+      "Flam1ngFir3ball/jev-claude-router",
+      "bigknoxy/janus",
+      "kingd2925-beep/handoff",
+      "riefer02/laya-call-router",
+      "RubenVP2/system-one-model-gateway",
+      "blacksinisterx/jev-router",
+      "tmbmartell/jev-mcp",
+      "agencyenterprise/jev-recipes",
+      "bradsec/mynameisjev",
+      "dimitritholen/clouter",
+      "jamesonBradfield/laya-router",
+      "atmaneayoubdev/jev-ar",
+      "advillalba/jev-system-one-demo",
+      "arthurcolle/jev-reasoning-lab",
+      "SaiAbhijyan/Wastegate",
+      "ORiONx888/JevSentinel",
+      "3p3r/sentinel-laya",
+      "pawel-debik/author-tools",
+      "16sulphur/laya-prompt-guard",
+      "AndyInQtr/laya-decision-plugin",
+      "TheUsurper09/aarogyamitra-laya-intent-router",
+      "ai-ml-space/laya",
+      "chaoliangUNSW/jev-style-v3",
+    ];
+    const gates = readFileSync(
+      join(root, ".agents/skills/rh-guard/references/gates.md"),
+      "utf8",
+    );
+    for (const slug of slugs) {
+      expect(gates, slug).toContain(slug);
+    }
+    expect(gates).toContain("HEAD `dfe3be5`");
+    expect(gates).toContain("HEAD `3117ae6`");
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("Findings currently remain advisory");
+      expect(text, rel).not.toContain("jevgate unfinished run exits 0");
+      expect(text, rel).not.toContain("permit-mcp mock is a live TypeSafe verdict");
+      expect(text, rel).not.toContain("diffguard certifies the diff");
+      expect(text, rel).not.toContain("pi-lookout stops when unsure");
+      expect(text, rel).not.toContain("JevGuard is implemented");
+      expect(text, rel).not.toContain("semantic firewall 0 dangerous is a rh-guard ROC");
+      expect(text, rel).not.toContain("malformed jev-agent-tools answer is a decision");
+      expect(text, rel).not.toContain("not routed still switches the model");
+      expect(text, rel).not.toContain("0 corrupt states is a rh-guard ROC");
+      expect(text, rel).not.toContain("handoff fail-open blocks the request");
+      expect(text, rel).not.toContain("laya-call-router sample is a quality ranking");
+      expect(text, rel).not.toContain("system-one-model-gateway is this sidecar");
+      expect(text, rel).not.toContain("blacksinisterx/jev-router calls the downstream model");
+      expect(text, rel).not.toContain("tmbmartell 0.6 is a calibrated deny");
+      expect(text, rel).not.toContain("recipe confidence is a correctness guarantee");
+      expect(text, rel).not.toContain("mynameisjev switches the session model");
+      expect(text, rel).not.toContain("clouter picks the model for you");
+      expect(text, rel).not.toContain("laya-router is TypeSafe Jev");
+      expect(text, rel).not.toContain("Qwen3.8-27B is Archer");
+      expect(text, rel).not.toContain("shell risk printout is a hook deny");
+      expect(text, rel).not.toContain("reasoning lab executes the selected model");
+      expect(text, rel).not.toContain("Wastegate ships a gated CLI");
+      expect(text, rel).not.toContain("JevSentinel ships an engine");
+      expect(text, rel).not.toContain("sentinel-laya ships weights");
+      expect(text, rel).not.toContain("author-tools is a tool gate");
+      expect(text, rel).not.toContain("laya-prompt-guard is TypeSafe Jev");
+      expect(text, rel).not.toContain("Prompt-Router still claims zero hallucinations");
+      expect(text, rel).not.toContain("jevgate unfinished run exits 0");
     }
     const pkg = readFileSync(join(root, "package.json"), "utf8");
     const lock = readFileSync(join(root, "package-lock.json"), "utf8");
@@ -9098,7 +9179,7 @@ describe("discoverability copy", () => {
     expect(skill).toContain("Bodila51/jev-hft-model-router");
     expect(skill).toContain("it never silently forces a recommendation");
     expect(skill).toContain("Tech-Byte-Frontier/jevgate");
-    expect(skill).toContain("a built-in enforcement policy is not implemented yet");
+    expect(skill).toContain("not-yet-implemented enforcement quotes are absent");
     expect(skill).toContain("jon-devlapaz/tink-route");
     expect(skill).toContain("100.0% (6/6 passing)");
     expect(skill).toContain("0x7067/claude-jev");
@@ -11005,7 +11086,7 @@ describe("discoverability copy", () => {
     expect(evalDoc).toContain("Bodila51/jev-hft-model-router");
     expect(evalDoc).toContain("it never silently forces a recommendation");
     expect(evalDoc).toContain("Tech-Byte-Frontier/jevgate");
-    expect(evalDoc).toContain("a built-in enforcement policy is not implemented yet");
+    expect(evalDoc).toContain("not-yet-implemented enforcement quotes are absent");
     expect(evalDoc).toContain("jon-devlapaz/tink-route");
     expect(evalDoc).toContain("100.0% (6/6 passing)");
     expect(evalDoc).toContain("0x7067/claude-jev");
@@ -12468,7 +12549,7 @@ describe("discoverability copy", () => {
     expect(install).toContain("Bodila51/jev-hft-model-router");
     expect(install).toContain("it never silently forces a recommendation");
     expect(install).toContain("Tech-Byte-Frontier/jevgate");
-    expect(install).toContain("a built-in enforcement policy is not implemented yet");
+    expect(install).toContain("not-yet-implemented enforcement quotes are absent");
     expect(install).toContain("jon-devlapaz/tink-route");
     expect(install).toContain("100.0% (6/6 passing)");
     expect(install).toContain("0x7067/claude-jev");
@@ -14041,7 +14122,7 @@ describe("discoverability copy", () => {
     expect(shape).toContain("Bodila51/jev-hft-model-router");
     expect(shape).toContain("it never silently forces a recommendation");
     expect(shape).toContain("Tech-Byte-Frontier/jevgate");
-    expect(shape).toContain("a built-in enforcement policy is not implemented yet");
+    expect(shape).toContain("not-yet-implemented enforcement quotes are absent");
     expect(shape).toContain("jon-devlapaz/tink-route");
     expect(shape).toContain("100.0% (6/6 passing)");
     expect(shape).toContain("0x7067/claude-jev");
@@ -15691,7 +15772,7 @@ describe("discoverability copy", () => {
     expect(hosts).toContain("Bodila51/jev-hft-model-router");
     expect(hosts).toContain("it never silently forces a recommendation");
     expect(hosts).toContain("Tech-Byte-Frontier/jevgate");
-    expect(hosts).toContain("a built-in enforcement policy is not implemented yet");
+    expect(hosts).toContain("not-yet-implemented enforcement quotes are absent");
     expect(hosts).toContain("jon-devlapaz/tink-route");
     expect(hosts).toContain("100.0% (6/6 passing)");
     expect(hosts).toContain("0x7067/claude-jev");
@@ -17448,7 +17529,7 @@ describe("discoverability copy", () => {
     expect(gates).toContain("Bodila51/jev-hft-model-router");
     expect(gates).toContain("it never silently forces a recommendation");
     expect(gates).toContain("Tech-Byte-Frontier/jevgate");
-    expect(gates).toContain("a built-in enforcement policy is not implemented yet");
+    expect(gates).toContain("not-yet-implemented enforcement quotes are absent");
     expect(gates).toContain("jon-devlapaz/tink-route");
     expect(gates).toContain("100.0% (6/6 passing)");
     expect(gates).toContain("0x7067/claude-jev");
