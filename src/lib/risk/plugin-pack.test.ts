@@ -3657,6 +3657,93 @@ describe("discoverability copy", () => {
     expect(lock, "vdaular/laya").not.toContain("vdaular/laya");
   });
 
+  it("does not invent hourly 1211 2026-09-24 cousin claims", () => {
+    const slugs = [
+      "wojciechwiesner/jit-context",
+      "Andrea-Bruno/harness-superfast",
+      "ChristofMilius/mcp-agent-openjev",
+      "PerryLink/perrylink",
+      "AbdulHannan-o1/laya_mcp",
+      "AdityaMogare/Jev-CI-Triage",
+      "Ajasra/jev-hooks",
+      "HappyMonkeyAI/kev-decision-mcp",
+      "JevForge/jev-release-oracle",
+      "JevForge/jev-test-intelligence",
+      "LocoLoboZ/jev-seatbelts",
+      "ManankumarThakkar/jev-escalation-gate",
+      "Solly922/pi-jev-router",
+      "a-chris/pi-ask-jeff",
+      "ajaffer/mock-interview-signals",
+      "carl0s/laya-mcp-server",
+      "dark-hxx/jev-safety-gateway",
+      "dockndevai/mcp-laya",
+      "Deepdive404-3/laya",
+      "himanshu231204/jev_model_routers",
+      "jasonli0226/jev-playground",
+      "kallurayaankit/jev-ticket-router",
+      "kellystuard/jav-gmail-classifier",
+      "kodexArg/laya-mcp",
+      "mekeren/system-one-benchmark",
+      "palladiumailab-collabmAILab/MCP-Jev",
+      "phix/dev",
+      "qinpei-dev/Doubao-jev-agent",
+      "ruralbytest/demojev",
+      "simkeyur/OmniSnap",
+      "sjungwon03/jev-langgraph-example",
+    ];
+    const gates = readFileSync(
+      join(root, ".agents/skills/rh-guard/references/gates.md"),
+      "utf8",
+    );
+    for (const slug of slugs) {
+      expect(gates, slug).toContain(slug);
+    }
+    expect(gates).toContain("HEAD `1341979`");
+    expect(gates).toContain("HEAD `12b0744`");
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("2.44x is a rh-guard ROC");
+      expect(text, rel).not.toContain("harness-superfast is a shipped PreToolUse hook");
+      expect(text, rel).not.toContain("OpenJev logprobs are TypeSafe logits");
+      expect(text, rel).not.toContain("perrylink README is the plugin tree");
+      expect(text, rel).not.toContain("laya_mcp ships an MCP server");
+      expect(text, rel).not.toContain("Jev-CI-Triage ships a triage Action");
+      expect(text, rel).not.toContain("Ajasra 0.7 is a safety envelope");
+      expect(text, rel).not.toContain("kev-decision-mcp is TypeSafe Jev");
+      expect(text, rel).not.toContain("release oracle Jev can loosen a hold");
+      expect(text, rel).not.toContain("test intelligence executes the tests");
+      expect(text, rel).not.toContain("seatbelts unreachable Jev denies");
+      expect(text, rel).not.toContain("escalation 100% is a rh-guard ROC");
+      expect(text, rel).not.toContain("pi-jev-router has a dry-run");
+      expect(text, rel).not.toContain("Jeff is always right is a proof");
+      expect(text, rel).not.toContain("mock interview accuracy is usefulness");
+      expect(text, rel).not.toContain("laya wrong answers above 0.9 are calibrated");
+      expect(text, rel).not.toContain("safety gateway failure always blocks");
+      expect(text, rel).not.toContain("mcp-laya 33ms is a rh-guard ROC");
+      expect(text, rel).not.toContain("Deepdive404-3/laya is NandhaKishorM/laya");
+      expect(text, rel).not.toContain("jev-router is on PyPI");
+      expect(text, rel).not.toContain("jasonli playground is this sidecar");
+      expect(text, rel).not.toContain("ticket router ships a LICENSE file");
+      expect(text, rel).not.toContain("jav-gmail-classifier ships the Apps Script");
+      expect(text, rel).not.toContain("laya-mcp installs without CUDA");
+      expect(text, rel).not.toContain("mekeren/system-one-benchmark is mallahyari/system-one-benchmark");
+      expect(text, rel).not.toContain("MCP-Jev is deployable");
+      expect(text, rel).not.toContain("phix/dev is a GitHub fork");
+      expect(text, rel).not.toContain("Doubao mock is a live TypeSafe call");
+      expect(text, rel).not.toContain("demojev 0.90 is a safety envelope");
+      expect(text, rel).not.toContain("OmniSnap policy re-queries the model");
+      expect(text, rel).not.toContain("jev-langgraph-example is TypeSafe Jev");
+      expect(text, rel).not.toContain("jarvis still collects WeChat");
+      expect(text, rel).not.toContain("spark archive runs without confirmation");
+    }
+    const pkg = readFileSync(join(root, "package.json"), "utf8");
+    const lock = readFileSync(join(root, "package-lock.json"), "utf8");
+    for (const slug of slugs) {
+      expect(pkg, slug).not.toContain(slug);
+      expect(lock, slug).not.toContain(slug);
+    }
+  });
+
   it("does not invent hourly 1354 2026-09-22 cousin claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
