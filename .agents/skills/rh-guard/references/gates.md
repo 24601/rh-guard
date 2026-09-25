@@ -1991,7 +1991,7 @@ omp-greenlight (SemetricLabs/omp-greenlight)
 
 construct-auto-classifier (godspede/construct-auto-classifier)
   OpenCode / agy PreToolUse; Privilege Is Not a Verdict
-  structural fast path then Jev Choice + nine Nouls (data_loss, …)
+  structural fast path then Jev Choice + **eleven** risk questions (the earlier gate’s nine Nouls included data_loss)
   minConfidence 0.6 / riskThreshold 0.7; 0 dangerous allowed (Jev)
   operator owns the dial; do not merge into examples/
 
