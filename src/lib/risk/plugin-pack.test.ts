@@ -3825,6 +3825,80 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 0918 2026-09-25 cousin claims", () => {
+    const slugs = [
+      "AgentiLoop/Agent",
+      "green-dalii/pi-shift-router",
+      "WiktorB2004/llama-index-jev",
+      "vinilana/jev-gateway-bench",
+      "okrath/laya-ocr-guard",
+      "xafold/jev-router",
+      "SamanPandey-in/jevrail",
+      "jangtrinh/design-os-generative-ui",
+      "Babitdor/laya-browserUse-mcp",
+      "CSlawyer1985/dsh-jev-router",
+      "Diwas2055/gatelaya",
+      "GMR714/jev-decision-lab",
+      "P4A-Policies-for-Agents/MCP-Tool-Call-Intent-Alignment",
+      "dandacompany/jev-gatekeeper",
+      "danieljohnmorris/omp-jev-router",
+      "dansya-arsana/jev-harness",
+      "dirien/jev-router",
+      "ericwanderlust/jev-codex-router",
+      "kartikanand73/jev-decision-gateway",
+      "mdad-elec/laya-v2-agent-routing",
+      "seberatolmez/system-one-router",
+      "hrtaym1114-github/x-jev-gate",
+      "idss-mesa/mesa-anyjev",
+    ];
+    const gates = readFileSync(
+      join(root, ".agents/skills/rh-guard/references/gates.md"),
+      "utf8",
+    );
+    for (const slug of slugs) {
+      expect(gates, slug).toContain(slug);
+    }
+    expect(gates).toContain("HEAD `8c22d67`");
+    expect(gates).toContain("HEAD `e04f27c`");
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("AgentiLoop outage stalls the tool loop");
+      expect(text, rel).not.toContain("pi-shift-router Jev is on by default");
+      expect(text, rel).not.toContain("llama-index select fails open");
+      expect(text, rel).not.toContain("120 sessions is a rh-guard ROC");
+      expect(text, rel).not.toContain("laya-ocr-guard is NandhaKishorM/laya");
+      expect(text, rel).not.toContain("xafold safety rules lower the tier");
+      expect(text, rel).not.toContain("jevrail thresholds are calibrated");
+      expect(text, rel).not.toContain("cascade 0.30 is a safety envelope");
+      expect(text, rel).not.toContain("laya-browserUse-mcp ships a server");
+      expect(text, rel).not.toContain("dsh model routing is on by default");
+      expect(text, rel).not.toContain("gatelaya is TypeSafe Jev");
+      expect(text, rel).not.toContain("24/24 is a rh-guard ROC");
+      expect(text, rel).not.toContain("P4A policies ship a 429");
+      expect(text, rel).not.toContain("gatekeeper sends sensitive text to Jev");
+      expect(text, rel).not.toContain("omp routing failure blocks the turn");
+      expect(text, rel).not.toContain("apm triage changes APM");
+      expect(text, rel).not.toContain("64/64 is a rh-guard ROC");
+      expect(text, rel).not.toContain("dirien moves down mid-session");
+      expect(text, rel).not.toContain("plugin install deploys the local router");
+      expect(text, rel).not.toContain("8/8 ECE is a rh-guard ROC");
+      expect(text, rel).not.toContain("x-jev-gate posts to X");
+      expect(text, rel).not.toContain("mesa-anyjev ships an MCP server");
+      expect(text, rel).not.toContain("jevlin-go is an MCP server");
+      expect(text, rel).not.toContain("withdrawal mock is a live payout");
+      expect(text, rel).not.toContain("loopgrid receipt is a permission");
+      expect(text, rel).not.toContain("0.801 is a rh-guard ROC");
+      expect(text, rel).not.toContain("automatic routing is enabled");
+      expect(text, rel).not.toContain("millennium-jev is TypeSafe Jev");
+    }
+    const pkg = readFileSync(join(root, "package.json"), "utf8");
+    const lock = readFileSync(join(root, "package-lock.json"), "utf8");
+    for (const slug of slugs) {
+      expect(pkg, slug).not.toContain(slug);
+      expect(lock, slug).not.toContain(slug);
+    }
+  });
+
   it("does not invent hourly 1354 2026-09-22 cousin claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
