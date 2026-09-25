@@ -575,7 +575,10 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/silence is never consent/);
     expect(readme).toMatch(/A failed judgment is never treated as approval/);
     expect(readme).toMatch(/ktsu2i\/jevgate-action/);
-    expect(readme).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(readme).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(readme).toMatch(/This Action has not been published yet/);
+    expect(readme).toMatch(/\*\*0 Releases\*\*/);
+    expect(readme).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(readme).toMatch(/boldbug1\/jev-triage/);
     expect(readme).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(readme).toMatch(/rubenhassid1\/contact-cleaner/);
@@ -4014,6 +4017,7 @@ describe("discoverability copy", () => {
       "a878db1",
       "60b8de1",
       "43277b8",
+      "41d5706",
       "c19f1d3",
       "18352c5",
       "e3e79ad",
@@ -4043,6 +4047,9 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toContain("pi-jev compaction fails closed");
       expect(text, rel).not.toContain("84% smaller is a rh-guard ROC");
       expect(text, rel).not.toContain("jevgate-action has no action.yml");
+      expect(text, rel).not.toContain("advertised Action ≠ shipped workflow");
+      expect(text, rel).not.toContain("no `action.yml`");
+      expect(text, rel).not.toContain("README title only");
       expect(text, rel).not.toContain(
         "ktsu2i/jevgate-action is Tech-Byte-Frontier/jevgate-action",
       );
@@ -8945,7 +8952,10 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/silence is never consent/);
     expect(skill).toMatch(/A failed judgment is never treated as approval/);
     expect(skill).toMatch(/ktsu2i\/jevgate-action/);
-    expect(skill).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(skill).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(skill).toMatch(/This Action has not been published yet/);
+    expect(skill).toMatch(/\*\*0 Releases\*\*/);
+    expect(skill).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(skill).toMatch(/boldbug1\/jev-triage/);
     expect(skill).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(skill).toMatch(/rubenhassid1\/contact-cleaner/);
@@ -10861,7 +10871,10 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/silence is never consent/);
     expect(evalDoc).toMatch(/A failed judgment is never treated as approval/);
     expect(evalDoc).toMatch(/ktsu2i\/jevgate-action/);
-    expect(evalDoc).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(evalDoc).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(evalDoc).toMatch(/This Action has not been published yet/);
+    expect(evalDoc).toMatch(/\*\*0 Releases\*\*/);
+    expect(evalDoc).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(evalDoc).toMatch(/boldbug1\/jev-triage/);
     expect(evalDoc).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(evalDoc).toMatch(/rubenhassid1\/contact-cleaner/);
@@ -13915,7 +13928,10 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/silence is never consent/);
     expect(shape).toMatch(/A failed judgment is never treated as approval/);
     expect(shape).toMatch(/ktsu2i\/jevgate-action/);
-    expect(shape).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(shape).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(shape).toMatch(/This Action has not been published yet/);
+    expect(shape).toMatch(/\*\*0 Releases\*\*/);
+    expect(shape).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(shape).toMatch(/boldbug1\/jev-triage/);
     expect(shape).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(shape).toMatch(/rubenhassid1\/contact-cleaner/);
@@ -15577,7 +15593,10 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/silence is never consent/);
     expect(hosts).toMatch(/A failed judgment is never treated as approval/);
     expect(hosts).toMatch(/ktsu2i\/jevgate-action/);
-    expect(hosts).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(hosts).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(hosts).toMatch(/This Action has not been published yet/);
+    expect(hosts).toMatch(/\*\*0 Releases\*\*/);
+    expect(hosts).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(hosts).toMatch(/boldbug1\/jev-triage/);
     expect(hosts).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(hosts).toMatch(/rubenhassid1\/contact-cleaner/);
@@ -17307,7 +17326,10 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/silence is never consent/);
     expect(gates).toMatch(/A failed judgment is never treated as approval/);
     expect(gates).toMatch(/ktsu2i\/jevgate-action/);
-    expect(gates).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(gates).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(gates).toMatch(/This Action has not been published yet/);
+    expect(gates).toMatch(/\*\*0 Releases\*\*/);
+    expect(gates).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(gates).toMatch(/boldbug1\/jev-triage/);
     expect(gates).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(gates).toMatch(/rubenhassid1\/contact-cleaner/);
