@@ -3980,6 +3980,118 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1510 2026-09-25 cousin claims", () => {
+    const slugs = [
+      "Nanako0129/stingray",
+      "XYenon/ajevt-browser",
+      "0pilatos0/jev-browser-mcp",
+      "0x7067/pi-jev",
+      "Tech-Byte-Frontier/jevgate-action",
+      "p4u/webscout",
+      "saahmadnejad/cline-option-scorer",
+      "jasonduncan/semantic-operators",
+      "imjbassi/jev-guard-ros2",
+      "ayushap18/tracegraph",
+      "geninchristophe888-spec/skillbox",
+      "guillaumeduranton-lab/lemonde-mcp",
+      "916099/jev-cttai-plugin",
+      "guillermojmontenegro-hub/LayaTUI-MCP",
+      "tx-smitht/jev-focus-guard",
+      "Razeefshaik/JevEval",
+      "coltonspears/JevClassifier",
+      "Emerald7664/laya-multilingual-onnx",
+    ];
+    const gates = readFileSync(
+      join(root, ".agents/skills/rh-guard/references/gates.md"),
+      "utf8",
+    );
+    for (const slug of slugs) {
+      expect(gates, slug).toContain(slug);
+    }
+    for (const sha of [
+      "3594d63",
+      "2117150",
+      "a878db1",
+      "60b8de1",
+      "43277b8",
+      "c19f1d3",
+      "18352c5",
+      "e3e79ad",
+      "9f15343",
+      "a4c91c6",
+      "9a015d2",
+      "5e6c395",
+      "ddce4d2",
+      "af5c74a",
+      "449f01e",
+      "87e0fca",
+      "8c7332a",
+    ]) {
+      expect(gates, sha).toContain(`HEAD \`${sha}\``);
+    }
+    expect(gates).toContain("sha `b9c10748a5e8`");
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("stingray fails closed on a missing key");
+      expect(text, rel).not.toContain("stingray installation blocks without a switch");
+      expect(text, rel).not.toContain("shadow mode blocks the turn");
+      expect(text, rel).not.toContain("81.8% is a rh-guard ROC");
+      expect(text, rel).not.toContain("50 labelled lines are a rh-guard ROC");
+      expect(text, rel).not.toContain("ajevt-browser acts on a failed Jev decision");
+      expect(text, rel).not.toContain("browser_click asks Jev");
+      expect(text, rel).not.toContain("0x7067/pi-jev is y0usaf/pi-jev");
+      expect(text, rel).not.toContain("pi-jev compaction fails closed");
+      expect(text, rel).not.toContain("84% smaller is a rh-guard ROC");
+      expect(text, rel).not.toContain("jevgate-action has no action.yml");
+      expect(text, rel).not.toContain(
+        "ktsu2i/jevgate-action is Tech-Byte-Frontier/jevgate-action",
+      );
+      expect(text, rel).not.toContain(
+        "missing injection answer means not an injection",
+      );
+      expect(text, rel).not.toContain("0.55 injection ceiling is a rh-guard ROC");
+      expect(text, rel).not.toContain("cline hook fails closed");
+      expect(text, rel).not.toContain("percentages are a deny");
+      expect(text, rel).not.toContain("calibrated percentage is a rh-guard ROC");
+      expect(text, rel).not.toContain(
+        "semantic-operators min 0.8 is a safety envelope",
+      );
+      expect(text, rel).not.toContain("don't know is a guess");
+      expect(text, rel).not.toContain("ros2 local limits wait on Jev");
+      expect(text, rel).not.toContain("Jev can loosen a local estop");
+      expect(text, rel).not.toContain("0.85 anomaly is a rh-guard ROC");
+      expect(text, rel).not.toContain("lemonde cookie is sent off lemonde.fr");
+      expect(text, rel).not.toContain("triage score fetches the article");
+      expect(text, rel).not.toContain("LayaTUI is TypeSafe Jev");
+      expect(text, rel).not.toContain("laya_choose_action executes the action");
+      expect(text, rel).not.toContain("skillbox recommendation grants a skill");
+      expect(text, rel).not.toContain("focus-guard hides primary content");
+      expect(text, rel).not.toContain("0.72 is a rh-guard ROC");
+      expect(text, rel).not.toContain("focus-guard is a network blocker");
+      expect(text, rel).not.toContain("jev-cttai is the TypeSafe console");
+      expect(text, rel).not.toContain("upstream error bodies are returned");
+      expect(text, rel).not.toContain("tracegraph 0.7 is a rh-guard ROC");
+      expect(text, rel).not.toContain("claude-opus-5 is Archer");
+      expect(text, rel).not.toContain("JevEval mock is evidence");
+      expect(text, rel).not.toContain("answer keys are sent as prompts");
+      expect(text, rel).not.toContain("JevClassifier simulation calls OpenRouter");
+      expect(text, rel).not.toContain("GPT-6 route is a permission");
+      expect(text, rel).not.toContain(
+        "100% classification accuracy is a rh-guard ROC",
+      );
+      expect(text, rel).not.toContain(
+        "Emerald7664/laya-multilingual-onnx is soyelmismo/laya-multilingual-onnx",
+      );
+      expect(text, rel).not.toContain("Emerald7664 is TypeSafe Jev");
+    }
+    const pkg = readFileSync(join(root, "package.json"), "utf8");
+    const lock = readFileSync(join(root, "package-lock.json"), "utf8");
+    for (const slug of slugs) {
+      expect(pkg, slug).not.toContain(slug);
+      expect(lock, slug).not.toContain(slug);
+    }
+  });
+
   it("does not invent hourly 1354 2026-09-22 cousin claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
