@@ -575,7 +575,10 @@ describe("discoverability copy", () => {
     expect(readme).toMatch(/silence is never consent/);
     expect(readme).toMatch(/A failed judgment is never treated as approval/);
     expect(readme).toMatch(/ktsu2i\/jevgate-action/);
-    expect(readme).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(readme).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(readme).toMatch(/This Action has not been published yet/);
+    expect(readme).toMatch(/\*\*0 Releases\*\*/);
+    expect(readme).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(readme).toMatch(/boldbug1\/jev-triage/);
     expect(readme).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(readme).toMatch(/rubenhassid1\/contact-cleaner/);
@@ -3971,6 +3974,122 @@ describe("discoverability copy", () => {
       expect(text, rel).not.toContain("Jev generates the Kanban title");
       expect(text, rel).not.toContain("Qwen3.8-27B is Archer");
       expect(text, rel).not.toContain("HEAD `b57d3de`");
+    }
+    const pkg = readFileSync(join(root, "package.json"), "utf8");
+    const lock = readFileSync(join(root, "package-lock.json"), "utf8");
+    for (const slug of slugs) {
+      expect(pkg, slug).not.toContain(slug);
+      expect(lock, slug).not.toContain(slug);
+    }
+  });
+
+  it("does not invent hourly 1510 2026-09-25 cousin claims", () => {
+    const slugs = [
+      "Nanako0129/stingray",
+      "XYenon/ajevt-browser",
+      "0pilatos0/jev-browser-mcp",
+      "0x7067/pi-jev",
+      "Tech-Byte-Frontier/jevgate-action",
+      "p4u/webscout",
+      "saahmadnejad/cline-option-scorer",
+      "jasonduncan/semantic-operators",
+      "imjbassi/jev-guard-ros2",
+      "ayushap18/tracegraph",
+      "geninchristophe888-spec/skillbox",
+      "guillaumeduranton-lab/lemonde-mcp",
+      "916099/jev-cttai-plugin",
+      "guillermojmontenegro-hub/LayaTUI-MCP",
+      "tx-smitht/jev-focus-guard",
+      "Razeefshaik/JevEval",
+      "coltonspears/JevClassifier",
+      "Emerald7664/laya-multilingual-onnx",
+    ];
+    const gates = readFileSync(
+      join(root, ".agents/skills/rh-guard/references/gates.md"),
+      "utf8",
+    );
+    for (const slug of slugs) {
+      expect(gates, slug).toContain(slug);
+    }
+    for (const sha of [
+      "3594d63",
+      "2117150",
+      "a878db1",
+      "60b8de1",
+      "43277b8",
+      "41d5706",
+      "c19f1d3",
+      "18352c5",
+      "e3e79ad",
+      "9f15343",
+      "a4c91c6",
+      "9a015d2",
+      "5e6c395",
+      "ddce4d2",
+      "af5c74a",
+      "449f01e",
+      "87e0fca",
+      "8c7332a",
+    ]) {
+      expect(gates, sha).toContain(`HEAD \`${sha}\``);
+    }
+    expect(gates).toContain("sha `b9c10748a5e8`");
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("stingray fails closed on a missing key");
+      expect(text, rel).not.toContain("stingray installation blocks without a switch");
+      expect(text, rel).not.toContain("shadow mode blocks the turn");
+      expect(text, rel).not.toContain("81.8% is a rh-guard ROC");
+      expect(text, rel).not.toContain("50 labelled lines are a rh-guard ROC");
+      expect(text, rel).not.toContain("ajevt-browser acts on a failed Jev decision");
+      expect(text, rel).not.toContain("browser_click asks Jev");
+      expect(text, rel).not.toContain("0x7067/pi-jev is y0usaf/pi-jev");
+      expect(text, rel).not.toContain("pi-jev compaction fails closed");
+      expect(text, rel).not.toContain("84% smaller is a rh-guard ROC");
+      expect(text, rel).not.toContain("jevgate-action has no action.yml");
+      expect(text, rel).not.toContain("advertised Action ≠ shipped workflow");
+      expect(text, rel).not.toContain("no `action.yml`");
+      expect(text, rel).not.toContain("README title only");
+      expect(text, rel).not.toContain(
+        "ktsu2i/jevgate-action is Tech-Byte-Frontier/jevgate-action",
+      );
+      expect(text, rel).not.toContain(
+        "missing injection answer means not an injection",
+      );
+      expect(text, rel).not.toContain("0.55 injection ceiling is a rh-guard ROC");
+      expect(text, rel).not.toContain("cline hook fails closed");
+      expect(text, rel).not.toContain("percentages are a deny");
+      expect(text, rel).not.toContain("calibrated percentage is a rh-guard ROC");
+      expect(text, rel).not.toContain(
+        "semantic-operators min 0.8 is a safety envelope",
+      );
+      expect(text, rel).not.toContain("don't know is a guess");
+      expect(text, rel).not.toContain("ros2 local limits wait on Jev");
+      expect(text, rel).not.toContain("Jev can loosen a local estop");
+      expect(text, rel).not.toContain("0.85 anomaly is a rh-guard ROC");
+      expect(text, rel).not.toContain("lemonde cookie is sent off lemonde.fr");
+      expect(text, rel).not.toContain("triage score fetches the article");
+      expect(text, rel).not.toContain("LayaTUI is TypeSafe Jev");
+      expect(text, rel).not.toContain("laya_choose_action executes the action");
+      expect(text, rel).not.toContain("skillbox recommendation grants a skill");
+      expect(text, rel).not.toContain("focus-guard hides primary content");
+      expect(text, rel).not.toContain("0.72 is a rh-guard ROC");
+      expect(text, rel).not.toContain("focus-guard is a network blocker");
+      expect(text, rel).not.toContain("jev-cttai is the TypeSafe console");
+      expect(text, rel).not.toContain("upstream error bodies are returned");
+      expect(text, rel).not.toContain("tracegraph 0.7 is a rh-guard ROC");
+      expect(text, rel).not.toContain("claude-opus-5 is Archer");
+      expect(text, rel).not.toContain("JevEval mock is evidence");
+      expect(text, rel).not.toContain("answer keys are sent as prompts");
+      expect(text, rel).not.toContain("JevClassifier simulation calls OpenRouter");
+      expect(text, rel).not.toContain("GPT-6 route is a permission");
+      expect(text, rel).not.toContain(
+        "100% classification accuracy is a rh-guard ROC",
+      );
+      expect(text, rel).not.toContain(
+        "Emerald7664/laya-multilingual-onnx is soyelmismo/laya-multilingual-onnx",
+      );
+      expect(text, rel).not.toContain("Emerald7664 is TypeSafe Jev");
     }
     const pkg = readFileSync(join(root, "package.json"), "utf8");
     const lock = readFileSync(join(root, "package-lock.json"), "utf8");
@@ -8833,7 +8952,10 @@ describe("discoverability copy", () => {
     expect(skill).toMatch(/silence is never consent/);
     expect(skill).toMatch(/A failed judgment is never treated as approval/);
     expect(skill).toMatch(/ktsu2i\/jevgate-action/);
-    expect(skill).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(skill).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(skill).toMatch(/This Action has not been published yet/);
+    expect(skill).toMatch(/\*\*0 Releases\*\*/);
+    expect(skill).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(skill).toMatch(/boldbug1\/jev-triage/);
     expect(skill).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(skill).toMatch(/rubenhassid1\/contact-cleaner/);
@@ -10749,7 +10871,10 @@ describe("discoverability copy", () => {
     expect(evalDoc).toMatch(/silence is never consent/);
     expect(evalDoc).toMatch(/A failed judgment is never treated as approval/);
     expect(evalDoc).toMatch(/ktsu2i\/jevgate-action/);
-    expect(evalDoc).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(evalDoc).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(evalDoc).toMatch(/This Action has not been published yet/);
+    expect(evalDoc).toMatch(/\*\*0 Releases\*\*/);
+    expect(evalDoc).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(evalDoc).toMatch(/boldbug1\/jev-triage/);
     expect(evalDoc).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(evalDoc).toMatch(/rubenhassid1\/contact-cleaner/);
@@ -13803,7 +13928,10 @@ describe("discoverability copy", () => {
     expect(shape).toMatch(/silence is never consent/);
     expect(shape).toMatch(/A failed judgment is never treated as approval/);
     expect(shape).toMatch(/ktsu2i\/jevgate-action/);
-    expect(shape).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(shape).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(shape).toMatch(/This Action has not been published yet/);
+    expect(shape).toMatch(/\*\*0 Releases\*\*/);
+    expect(shape).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(shape).toMatch(/boldbug1\/jev-triage/);
     expect(shape).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(shape).toMatch(/rubenhassid1\/contact-cleaner/);
@@ -15465,7 +15593,10 @@ describe("discoverability copy", () => {
     expect(hosts).toMatch(/silence is never consent/);
     expect(hosts).toMatch(/A failed judgment is never treated as approval/);
     expect(hosts).toMatch(/ktsu2i\/jevgate-action/);
-    expect(hosts).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(hosts).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(hosts).toMatch(/This Action has not been published yet/);
+    expect(hosts).toMatch(/\*\*0 Releases\*\*/);
+    expect(hosts).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(hosts).toMatch(/boldbug1\/jev-triage/);
     expect(hosts).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(hosts).toMatch(/rubenhassid1\/contact-cleaner/);
@@ -17195,7 +17326,10 @@ describe("discoverability copy", () => {
     expect(gates).toMatch(/silence is never consent/);
     expect(gates).toMatch(/A failed judgment is never treated as approval/);
     expect(gates).toMatch(/ktsu2i\/jevgate-action/);
-    expect(gates).toMatch(/advertised Action ≠ shipped workflow/);
+    expect(gates).toMatch(/composite `action\.yml` and `action\.sh` on `main`/);
+    expect(gates).toMatch(/This Action has not been published yet/);
+    expect(gates).toMatch(/\*\*0 Releases\*\*/);
+    expect(gates).not.toMatch(/advertised Action ≠ shipped workflow/);
     expect(gates).toMatch(/boldbug1\/jev-triage/);
     expect(gates).toMatch(/ThyFriendlyFox\/jev-triage/);
     expect(gates).toMatch(/rubenhassid1\/contact-cleaner/);
