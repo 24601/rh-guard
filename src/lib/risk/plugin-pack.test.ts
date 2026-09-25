@@ -3899,6 +3899,87 @@ describe("discoverability copy", () => {
     }
   });
 
+  it("does not invent hourly 1210 2026-09-25 cousin claims", () => {
+    const slugs = [
+      "itsmostafa/system-one-connector",
+      "neurono-ml/typed-lm",
+      "CogFlux/opencode-jev-guard",
+      "itscloud0/codex-jev-native-router",
+      "Davidasx/pi-typesafe-approve",
+      "rayanweragala/jev-call-router",
+      "turenlabs/lisa",
+      "HCTDIP/jeveto",
+      "Solizardking/jev-trader-solana",
+      "Theo-Gkisis/jevops",
+      "anuragfolio/figma-jev-console-mcp",
+      "champion19007/local-software-factory",
+      "confident-christmasfactor2015/jev-ultrafast-mcp",
+      "ericmjl/pi-laya-skill-router",
+      "ghchinoy/dgem",
+      "lawrence3699/jev-style",
+      "majidansari786/Jev-Laya-Use-Cases-",
+      "qualixar/jev-decision-layer",
+      "shibammitra24/jev-guard",
+      "srknkrbb/jev-ecc",
+      "twilso24/jev_router",
+      "vinaychawla-ops/jev-adk-guardrail-example",
+      "vinaychawla-ops/jev-adk-model-router",
+      "Arc-Rider/arc-rider-playground",
+    ];
+    const gates = readFileSync(
+      join(root, ".agents/skills/rh-guard/references/gates.md"),
+      "utf8",
+    );
+    for (const slug of slugs) {
+      expect(gates, slug).toContain(slug);
+    }
+    expect(gates).toContain("HEAD `668bb49`");
+    expect(gates).toContain("HEAD `531a39f`");
+    expect(gates).toContain("HEAD `242395c`");
+    expect(gates).toContain("main **181** plus blind **79**");
+    for (const rel of PUBLIC_COPY_PATHS) {
+      const text = readFileSync(join(root, rel), "utf8");
+      expect(text, rel).not.toContain("system-one-connector ships Laya weights");
+      expect(text, rel).not.toContain("typed-lm is TypeSafe Jev");
+      expect(text, rel).not.toContain("chat LLMs all leaked");
+      expect(text, rel).not.toContain("main 113 + blind 82");
+      expect(text, rel).not.toContain("opencode-jev-guard silently runs");
+      expect(text, rel).not.toContain("Jev Auto is an executor model");
+      expect(text, rel).not.toContain("pi-typesafe-approve failMode is closed");
+      expect(text, rel).not.toContain("97% is a rh-guard ROC");
+      expect(text, rel).not.toContain("jev-call-router controls the PBX");
+      expect(text, rel).not.toContain("Lisa reads the PR's .lisa.toml");
+      expect(text, rel).not.toContain("jeveto confidence is a TypeSafe probability");
+      expect(text, rel).not.toContain("16/16 is a rh-guard ROC");
+      expect(text, rel).not.toContain("jev-trader-solana submits a transaction");
+      expect(text, rel).not.toContain("jevops CLI calls Jev");
+      expect(text, rel).not.toContain("figma-jev-console-mcp is a GitHub fork");
+      expect(text, rel).not.toContain("the sandbox is a security boundary");
+      expect(text, rel).not.toContain("turbo is on the critical path");
+      expect(text, rel).not.toContain("pi-laya-skill-router fails closed");
+      expect(text, rel).not.toContain("35 ms is a rh-guard ROC");
+      expect(text, rel).not.toContain("dgem is TypeSafe Jev");
+      expect(text, rel).not.toContain("gemini-3.8-flash is Archer");
+      expect(text, rel).not.toContain("77.6% is a rh-guard ROC");
+      expect(text, rel).not.toContain("jev-style hook exits 2");
+      expect(text, rel).not.toContain("Laya issues the refund");
+      expect(text, rel).not.toContain("automatic-hook coverage is proved");
+      expect(text, rel).not.toContain("userExplicit is a safety proof");
+      expect(text, rel).not.toContain("jev-ecc is live without a key");
+      expect(text, rel).not.toContain("routing failure blocks Agent Zero");
+      expect(text, rel).not.toContain("adk router short-circuits the model");
+      expect(text, rel).not.toContain("Jev generates the Kanban title");
+      expect(text, rel).not.toContain("Qwen3.8-27B is Archer");
+      expect(text, rel).not.toContain("HEAD `b57d3de`");
+    }
+    const pkg = readFileSync(join(root, "package.json"), "utf8");
+    const lock = readFileSync(join(root, "package-lock.json"), "utf8");
+    for (const slug of slugs) {
+      expect(pkg, slug).not.toContain(slug);
+      expect(lock, slug).not.toContain(slug);
+    }
+  });
+
   it("does not invent hourly 1354 2026-09-22 cousin claims", () => {
     for (const rel of PUBLIC_COPY_PATHS) {
       const text = readFileSync(join(root, rel), "utf8");
